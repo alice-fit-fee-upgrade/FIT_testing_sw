@@ -1,0 +1,36 @@
+Core Device Traceback:
+Traceback (most recent call first):
+  File "<artiq>/coredevice/ad53xx.py", line 191, column 17, in ... artiq.coredevice.ad53xx.AD53xx.init<artiq.coredevice.fit.PmtSimDac>(...)
+    raise ValueError("DAC CONTROL readback mismatch")
+    ^
+  File "experiments/repository/pmtsim_example.py", line 21, in artiq_run_pmtsim_example.PmtSimExample.run(..., ...) (RA=+0x1ac)
+    self.dac_pmtsim0.init()
+  File "<artiq>/coredevice/ad53xx.py", line 0, in ... artiq.coredevice.ad53xx.AD53xx.init<artiq.coredevice.fit.PmtSimDac>(...) (RA=+0x9a4)
+    <unknown>
+ValueError(0): DAC CONTROL readback mismatch
+
+End of Core Device Traceback
+
+Traceback (most recent call last):
+  File "/nix/store/jc15fc8j3h47rms3p7kgap407hgq6rjx-python3.12-artiq-8.8989+22e115a/bin/.artiq_run-wrapped", line 9, in <module>
+    sys.exit(main())
+             ^^^^^^
+  File "/nix/store/2k1wxfq2mqd5vm3504fr1n2hcxfbmdwk-python3-3.12.7-env/lib/python3.12/site-packages/artiq/frontend/artiq_run.py", line 269, in main
+    return run(with_file=True)
+           ^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/2k1wxfq2mqd5vm3504fr1n2hcxfbmdwk-python3-3.12.7-env/lib/python3.12/site-packages/artiq/frontend/artiq_run.py", line 253, in run
+    raise exn
+  File "/nix/store/2k1wxfq2mqd5vm3504fr1n2hcxfbmdwk-python3-3.12.7-env/lib/python3.12/site-packages/artiq/frontend/artiq_run.py", line 245, in run
+    exp_inst.run()
+  File "/nix/store/2k1wxfq2mqd5vm3504fr1n2hcxfbmdwk-python3-3.12.7-env/lib/python3.12/site-packages/artiq/language/core.py", line 54, in run_on_core
+    return getattr(self, arg).run(run_on_core, ((self,) + k_args), k_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/nix/store/2k1wxfq2mqd5vm3504fr1n2hcxfbmdwk-python3-3.12.7-env/lib/python3.12/site-packages/artiq/coredevice/core.py", line 172, in run
+    self._run_compiled(kernel_library, embedding_map, symbolizer, demangler)
+  File "/nix/store/2k1wxfq2mqd5vm3504fr1n2hcxfbmdwk-python3-3.12.7-env/lib/python3.12/site-packages/artiq/coredevice/core.py", line 161, in _run_compiled
+    self.comm.serve(embedding_map, symbolizer, demangler)
+  File "/nix/store/2k1wxfq2mqd5vm3504fr1n2hcxfbmdwk-python3-3.12.7-env/lib/python3.12/site-packages/artiq/coredevice/comm_kernel.py", line 734, in serve
+    self._serve_exception(embedding_map, symbolizer, demangler)
+  File "/nix/store/2k1wxfq2mqd5vm3504fr1n2hcxfbmdwk-python3-3.12.7-env/lib/python3.12/site-packages/artiq/coredevice/comm_kernel.py", line 716, in _serve_exception
+    raise python_exn
+ValueError: DAC CONTROL readback mismatch

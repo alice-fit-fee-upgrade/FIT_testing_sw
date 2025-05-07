@@ -59,3 +59,4 @@ nix develop .#
 ```
 artiq_run repository/pmtsim_example.py
 ```
+# FIT-ARTIQ
