@@ -1,3 +1,8 @@
+# TODO
+
+- add note on IP address when flashing using Nix
+- add warning on ddb when flashing with Nix
+
 # FIT Testing Software
 
 ## Current contents

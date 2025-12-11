@@ -1,12 +1,16 @@
 {
     "target": "kasli",
     "variant": "fit-testing",
-    "hw_rev": "v2.0",
+    "hw_rev": "v1.1",
     "base": "standalone",
     "peripherals": [
         {
             "type": "pmtsim",
-            "ports": [0, 1]
+            "pmtsim_eems": [3],
+            "pmtsim_aux_eems": [4],
+            "dio_eem": 0,
+            "trigger_dio": 0,
+            "with_edge_counter": true
         }
     ]
 }

@@ -1,54 +1,79 @@
 {
-  inputs.artiq.url = git+https://github.com/elhep/artiq.git?ref=fit-release-8;
-  inputs.extrapkg.url = "git+https://git.m-labs.hk/M-Labs/artiq-extrapkg.git?ref=release-8";
-  inputs.extrapkg.inputs.artiq.follows = "artiq";
+inputs.artiq.url = git+https://github.com/elhep/artiq.git?ref=fit-r8-pmt-dio-trigger;
 
-  outputs = { self, artiq, extrapkg }:
-  let
-    pkgs = import artiq.inputs.nixpkgs { system = "x86_64-linux"; };
-    aqmain = artiq.packages.x86_64-linux;
-    aqextra = extrapkg.packages.x86_64-linux;
+outputs = { self, artiq }:
+let
+  pkgs = import artiq.inputs.nixpkgs { system = "x86_64-linux"; };
+  aqmain = artiq.packages.x86_64-linux;
+  aqenv = artiq.devShells.x86_64-linux.boards.buildInputs;
 
-    makeArtiqBoardPackage = variant: artiq.makeArtiqBoardPackage {
-        target = "kasli";
-        variant = variant;
-        buildCommand = 
-          "python -m artiq.gateware.targets.kasli ${./variants}/${variant}.json";
+  # Helper funcions -----------------------------------------------------------------------------
+
+  makeArtiqBoardPackage = variantJson: 
+    artiq.makeArtiqBoardPackage {
+      target = "kasli";
+      variant = builtins.fromJSON (builtins.readFile variantJson).variant;
+      buildCommand = 
+        "python -m artiq.gateware.targets.kasli ${variantJson}";
     };
 
-    makeVariantDDB = variant: pkgs.runCommand "ddb-${variant}" {
-        buildInputs = [
-            artiq.devShell.x86_64-linux.buildInputs
-        ];
+  makeDeviceDb = variantJson:
+    pkgs.runCommand "device-db" {
+      buildInputs = artiq.devShell.x86_64-linux.buildInputs;
     }
     ''
     mkdir -p $out
-    artiq_ddb_template ${./variants}/${variant}.json -o $out/device_db.py
+    artiq_ddb_template ${variantJson} -o $out/device_db.py
     '';
 
-  in rec {
+  makeStartupKernel = variantJson: startupExperiment: 
+    pkgs.runCommand "startup-kernel" {
+      buildInputs = artiq.devShell.x86_64-linux.buildInputs;
+    }
+    ''
+    mkdir -p $out
+    artiq_compile --device-db ${makeDeviceDb variantJson} ${startupExperiment} \
+      -o $out/startup_kernel.elf
+    '';
+
+  makeRtioMap = variantJson:
+    pkgs.runCommand "rtio-map" {
+      buildInputs = artiq.devShell.x86_64-linux.buildInputs;
+    }
+    ''
+    mkdir -p $out
+    
+    '';
+
+  makeStorage = { variantJson, clockSource ? "int_125", startupExperiment ? null }:
+    let
+      desc = builtins.fromJSON (builtins.readFile variantJson);
+      core_addr = desc.core_addr;
+      startup-kernel-option = if startupExperiment != null
+        then "-f startup_kernel ${makeStartupKernel variantJson startupExperiment}/startup_kernel"
+        else "";
+      rtio-map-option = "-f device_map ${makeRtioMap}/rtio_map";
+    in
+      pkgs.runCommand "storage" {
+        buildInputs = aqenv;
+      }
+      ''
+        mkdir -p $out
+        artiq_mkfs -s ip ${core_addr} -s rtio_clock ${clockSource} \
+          ${startup-kernel-option} ${rtio-map-option} $out/storage.img
+      '';
+
+  # Helper funcions -----------------------------------------------------------------------------
+
+in rec {
 
     packages.x86_64-linux = {
       fit-testing-firmware = makeArtiqBoardPackage "fit-testing";
-      fit-testing-ddb = makeVariantDDB "fit-testing";
+      fit-testing-ddb = makeDeviceDb "fit-testing";
     };
 
-    defaultPackage.x86_64-linux = pkgs.mkShell {
-        name = "artiq-env";
-        packages = [
-          (pkgs.python3.withPackages(ps: [
-            aqmain.artiq
-            ps.paho-mqtt
-            ps.jsonschema
-            (ps.matplotlib.override { enableQt = true; })
-          ]))
-          aqmain.openocd-bscanspi
-        ];
-        shellHook = ''
-          export QT_QPA_PLATFORM_PLUGIN_PATH="${pkgs.qt5.qtbase.bin}/lib/qt-${pkgs.qt5.qtbase.version}/plugins/platforms";
-        '';
-      };
-  
+    devShells.x86_64-linux.default = artiq.devShells.x86_64-linux.boards;
+      
   };
 
   nixConfig = {

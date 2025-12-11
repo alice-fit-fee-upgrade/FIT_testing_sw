@@ -9,6 +9,7 @@ class PmtSimExample(EnvExperiment):
         for ch in range(6):
             self.setattr_device(f"pmtsim0_ch{ch}")
             self.channels.append(getattr(self, f"pmtsim0_ch{ch}"))
+        self.setattr_device("pmtsim0_trig_gen")
         self.setattr_device("pmtsim0_ttl_dio_ch0")
 
     @kernel
@@ -26,10 +27,9 @@ class PmtSimExample(EnvExperiment):
             ch.write_hit_cal(1, 5.5)
             delay(10*ms)
 
-        # Pulse all channels
-        while True:
-            for ch in self.channels:
-                ch.hit_ttl[0].pulse(200*ns)
-                delay(10*ms)
-                ch.hit_ttl[1].pulse(200*ns)
-                delay(10*ms)
+        # Enable triggering to all channels
+        self.pmtsim0_trig_gen.set_mask(0x3F)
+        delay(1*ms)
+
+        self.pmtsim0_trig_gen.set_length(1)
+        delay(1*ms)
