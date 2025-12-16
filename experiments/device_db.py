@@ -9,7 +9,7 @@ device_db = {
         "class": "Core",
         "arguments": {
             "host": core_addr,
-            "ref_period": 1e-09,
+            "ref_period": 1/120e6/8,
             "analyzer_proxy": "core_analyzer",
             "target": "rv32ima",
             "satellite_cpu_targets": {}

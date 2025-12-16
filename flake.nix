@@ -12,7 +12,7 @@ let
   makeArtiqBoardPackage = variantJson: 
     artiq.makeArtiqBoardPackage {
       target = "kasli";
-      variant = builtins.fromJSON (builtins.readFile variantJson).variant;
+      variant = (builtins.fromJSON (builtins.readFile variantJson)).variant;
       buildCommand = 
         "python -m artiq.gateware.targets.kasli ${variantJson}";
     };
@@ -68,8 +68,8 @@ let
 in rec {
 
     packages.x86_64-linux = {
-      fit-testing-firmware = makeArtiqBoardPackage "fit-testing";
-      fit-testing-ddb = makeDeviceDb "fit-testing";
+      fit-testing-firmware = makeArtiqBoardPackage ./variants/fit-testing.json;
+      fit-testing-ddb = makeDeviceDb ./variants/fit-testing.json;
     };
 
     devShells.x86_64-linux.default = artiq.devShells.x86_64-linux.boards;
