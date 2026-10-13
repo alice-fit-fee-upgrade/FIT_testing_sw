@@ -1,0 +1,41 @@
+{
+  "status": "PASS",
+  "serial": "210249A73E43",
+  "server": "localhost:3121",
+  "time_utc": "20261013T185351Z",
+  "nonvolatile_programming": false,
+  "schematic_sha256": "8a33ca4d4325eea999347ee7f4c26173cb28356f5cb61e6d38a9852a0513de78",
+  "limits": [
+    "Static data/strobe connectivity; acquisition, ADC and analog paths untested",
+    "Clock rate uses approximate host/JTAG timing"
+  ],
+  "bitstream_sha256": "c9fbd02768ce12750dc68b8bb24c34403027a65f9e002661e29bb3d2e2df7a1a",
+  "controls": {
+    "passed": true,
+    "repeats": 3,
+    "approximate_host_timed_clock_hz": [
+      39956246.548323475,
+      39997966.403162055,
+      40019830.37475345
+    ]
+  },
+  "restored": true,
+  "gateware": {
+    "passed": true,
+    "matched": 168,
+    "total": 168,
+    "vectors": 338,
+    "restored": true
+  },
+  "boundary": {
+    "passed": true,
+    "matched": 168,
+    "total": 168,
+    "vectors": 338,
+    "restored": true
+  },
+  "vivado_version": "2025.2",
+  "shared_lock_busy_test": "PASS",
+  "report_parser_tests": "PASS (5)",
+  "final_state": "Vivado PM12 diagnostic loaded in FPGA SRAM; CPLDs restored to functional mode"
+}

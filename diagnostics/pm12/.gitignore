@@ -1,0 +1,6 @@
+results/
+gateware/build/
+__pycache__/
+*.jou
+*.log
+.Xil/

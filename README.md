@@ -3,6 +3,7 @@
 ## Current contents
 
 - PMT Sim firmware (ARTIQ) and example code
+- [PM12 JTAG connection test](diagnostics/pm12/README.md): discovery and schematic comparison for 168 CPLD–FPGA lines
 
 ## Prerequisites
 
