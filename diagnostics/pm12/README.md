@@ -106,3 +106,10 @@ They retain the received FPGA bits and cleanup marker. The failure fixture is
 an earlier openXC7 image whose 26 input configuration faults were correctly
 identified as a failing connection test; it is retained to guard against false
 PASS verdicts.
+
+## Ethernet extension
+
+The [Ethernet / PRBS diagnostic](ethernet/README.md) adds a Kintex GTX,
+1000BASE-X PCS and MAC internal-loopback test, including negative controls
+and restoration of this link diagnostic. Physical PM12 validation PASS;
+external SFP / switch and IP networking remain NOT_RUN.
