@@ -86,3 +86,12 @@ errors; PASS uses settled deltas, not zero lifetime counts.
 The current-board validation is stored in `validation-2026-10-13.json`.
 Regression checks: `python3 -m unittest discover -s diagnostics/pm12/ethernet
 -p test_analyzer.py -v` (join the command onto one line).
+
+## External SFP continuation
+
+The [external SFP/switch diagnostic](external/README.md) passed physical packet
+transmission and reception on 2026-10-14. It uses a fixed IPv4/UDP generator,
+normal TX/RX polarity and fixed-rate FPGA-side 1000BASE-X. Native Clause 37
+negotiation did not complete with the current connection. ARP/ping and a general
+IP service remain unimplemented; the original internal-loopback validation above
+remains a separate diagnostic.

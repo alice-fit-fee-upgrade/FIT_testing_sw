@@ -112,4 +112,6 @@ PASS verdicts.
 The [Ethernet / PRBS diagnostic](ethernet/README.md) adds a Kintex GTX,
 1000BASE-X PCS and MAC internal-loopback test, including negative controls
 and restoration of this link diagnostic. Physical PM12 validation PASS;
-external SFP / switch and IP networking remain NOT_RUN.
+external SFP / switch packet validation subsequently PASS in the
+[external diagnostic](ethernet/external/README.md). ARP/ping and production
+IP networking remain unimplemented.
