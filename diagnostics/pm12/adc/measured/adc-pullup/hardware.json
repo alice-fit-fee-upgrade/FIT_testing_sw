@@ -1,0 +1,745 @@
+{
+  "cpld_jed_sha256": "5ae97debe612894810fa7e94d31d071a0f24f85dd694af9d4b8e333fb7f56f9f",
+  "fpga_bit_sha256": "e5fa0839267ac51bf9c534c5084f5bba7a9192cf136c6419837fed44b9c7675d",
+  "serial": "210249A73E43",
+  "nonvolatile_writes": true,
+  "started": 1791984882.7171786,
+  "adc": {
+    "digital_path_pass": true,
+    "invalid_requests_dropped": 5,
+    "analog_stimulus": "not confirmed; pedestal capture only",
+    "capture_clock_hz": 320000000,
+    "samples_per_channel": 4096,
+    "records": [
+      {
+        "iteration": 0,
+        "channel": 1,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "1d7ab332208eb8ac4d3a21dd6becf3bbed127f6b809652dda0e1f6761b4ff4e0"
+      },
+      {
+        "iteration": 0,
+        "channel": 2,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 32,
+        "maximum": 32,
+        "mean": 32,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "604d627efac26a7d39e1630af650cddb5f607be99628cb8289a88c514d0c6ad6"
+      },
+      {
+        "iteration": 0,
+        "channel": 3,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          3,
+          4,
+          5
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "53ccbf9b7538bb78daa9a27a10014e1eb786adee31bf6928be98cedd35a6e971"
+      },
+      {
+        "iteration": 0,
+        "channel": 4,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "8f66df915d8778cd6e361f0350a588be446c0148d3d3c5a3ca6dd63c9340ed18"
+      },
+      {
+        "iteration": 0,
+        "channel": 5,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 256,
+        "maximum": 256,
+        "mean": 256,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "1e19cbe4d7a67968674a5f34ce7bb685266608a091623e0ebef5a073c7563738"
+      },
+      {
+        "iteration": 0,
+        "channel": 6,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 16,
+        "maximum": 16,
+        "mean": 16,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "0f47707d506bc3ef9f6892d472b6179c0393110b86074593b4fb1cd8dd571ed0"
+      },
+      {
+        "iteration": 0,
+        "channel": 7,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 8,
+        "maximum": 8,
+        "mean": 8,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "404f9c13ca9ad1c0e9fd1ec91e3b2095c74e198012e56245d803ad21d60afe37"
+      },
+      {
+        "iteration": 0,
+        "channel": 8,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 16,
+        "maximum": 16,
+        "mean": 16,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "c10f92495090b69e0a8fde8434a9dfdf3aa6f36f14c8548cd9ac22bc18fe797e"
+      },
+      {
+        "iteration": 0,
+        "channel": 9,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "3ae490058da645251cd36ddc284a29c78599b90a6c3a8b3e85e713543309b213"
+      },
+      {
+        "iteration": 0,
+        "channel": 10,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "1d7ab332208eb8ac4d3a21dd6becf3bbed127f6b809652dda0e1f6761b4ff4e0"
+      },
+      {
+        "iteration": 0,
+        "channel": 11,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "3ae490058da645251cd36ddc284a29c78599b90a6c3a8b3e85e713543309b213"
+      },
+      {
+        "iteration": 0,
+        "channel": 12,
+        "bank": 0,
+        "capture_id": 1,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 8,
+        "maximum": 8,
+        "mean": 8,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "6107287265d773c98375f708f64cc5d3a6e93add5d9c4b2650f2fc4d312fc0db"
+      },
+      {
+        "iteration": 1,
+        "channel": 1,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "0b17f59387c99780858908af259b8638395e7a11b4df6f4911a60b820d02006f"
+      },
+      {
+        "iteration": 1,
+        "channel": 2,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 64,
+        "maximum": 64,
+        "mean": 64,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "d68bc1f3fa921f51d3abae3c00cceb49a3e755dcf6813e1c5c562ed4e39958c6"
+      },
+      {
+        "iteration": 1,
+        "channel": 3,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          3,
+          5
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "51d0b82cbaed46b17fab5514e6774ba7127cf4c09ce4c648c6858b5e030495ed"
+      },
+      {
+        "iteration": 1,
+        "channel": 4,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "454555fb25623823e5926ff35cc3ba6d307508b0f5134f645b61fbd29b289fcb"
+      },
+      {
+        "iteration": 1,
+        "channel": 5,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 1024,
+        "maximum": 1024,
+        "mean": 1024,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "d2a4f20dc40f939c1e379ed3d72c974bba374585258d1d9345083d624ca77639"
+      },
+      {
+        "iteration": 1,
+        "channel": 6,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "c737242d3e4108bc62c95c809857aaa2b32cf5e133c24d12e3aa0aebc742d152"
+      },
+      {
+        "iteration": 1,
+        "channel": 7,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "454555fb25623823e5926ff35cc3ba6d307508b0f5134f645b61fbd29b289fcb"
+      },
+      {
+        "iteration": 1,
+        "channel": 8,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 64,
+        "maximum": 64,
+        "mean": 64,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "29b5b3ee6b3fb227eeada47d4ee396cacdc6e2ef138cb62f33db4dd3a4024bd7"
+      },
+      {
+        "iteration": 1,
+        "channel": 9,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "c737242d3e4108bc62c95c809857aaa2b32cf5e133c24d12e3aa0aebc742d152"
+      },
+      {
+        "iteration": 1,
+        "channel": 10,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "0b17f59387c99780858908af259b8638395e7a11b4df6f4911a60b820d02006f"
+      },
+      {
+        "iteration": 1,
+        "channel": 11,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 256,
+        "maximum": 256,
+        "mean": 256,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "b53b2a0074a5bf3d6b162ef085974428ddd3aba89b55ceb43c2aa39a7ae8332f"
+      },
+      {
+        "iteration": 1,
+        "channel": 12,
+        "bank": 1,
+        "capture_id": 2,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "800eb02724fc15a484961b4ec6242900f6e80739d64efd68d167395ea67b31a8"
+      },
+      {
+        "iteration": 2,
+        "channel": 1,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "1d7ab332208eb8ac4d3a21dd6becf3bbed127f6b809652dda0e1f6761b4ff4e0"
+      },
+      {
+        "iteration": 2,
+        "channel": 2,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 32,
+        "maximum": 32,
+        "mean": 32,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "9cbcd4bd5500b0c890b38caf847384e7be6fe5c7811625bbbcb0da9e2efffb61"
+      },
+      {
+        "iteration": 2,
+        "channel": 3,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          3,
+          4,
+          5
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "a7faf7e63e82c3236cdf643884df1c99aa4d2b99e610d58e69fdf22c159deefc"
+      },
+      {
+        "iteration": 2,
+        "channel": 4,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "8f66df915d8778cd6e361f0350a588be446c0148d3d3c5a3ca6dd63c9340ed18"
+      },
+      {
+        "iteration": 2,
+        "channel": 5,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 256,
+        "maximum": 256,
+        "mean": 256,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "2b2bdaf6fd59d772bfb32a97f98bca2f7075c3e83210cc93a1ab4fc4f77e2abc"
+      },
+      {
+        "iteration": 2,
+        "channel": 6,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 16,
+        "maximum": 16,
+        "mean": 16,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "0f47707d506bc3ef9f6892d472b6179c0393110b86074593b4fb1cd8dd571ed0"
+      },
+      {
+        "iteration": 2,
+        "channel": 7,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1023,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 8,
+        "maximum": 8,
+        "mean": 8,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "404f9c13ca9ad1c0e9fd1ec91e3b2095c74e198012e56245d803ad21d60afe37"
+      },
+      {
+        "iteration": 2,
+        "channel": 8,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 16,
+        "maximum": 16,
+        "mean": 16,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "c10f92495090b69e0a8fde8434a9dfdf3aa6f36f14c8548cd9ac22bc18fe797e"
+      },
+      {
+        "iteration": 2,
+        "channel": 9,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "3ae490058da645251cd36ddc284a29c78599b90a6c3a8b3e85e713543309b213"
+      },
+      {
+        "iteration": 2,
+        "channel": 10,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "1d7ab332208eb8ac4d3a21dd6becf3bbed127f6b809652dda0e1f6761b4ff4e0"
+      },
+      {
+        "iteration": 2,
+        "channel": 11,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 0,
+        "maximum": 0,
+        "mean": 0,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "3ae490058da645251cd36ddc284a29c78599b90a6c3a8b3e85e713543309b213"
+      },
+      {
+        "iteration": 2,
+        "channel": 12,
+        "bank": 0,
+        "capture_id": 3,
+        "selector_correct": true,
+        "clock_edges": 1024,
+        "clock_hz": 80000000.0,
+        "clock_period_capture_ticks": [
+          4
+        ],
+        "minimum": 8,
+        "maximum": 8,
+        "mean": 8,
+        "stddev": 0.0,
+        "distinct_codes": 1,
+        "adc_output_activity": false,
+        "toggling_bits": 0,
+        "raw_sha256": "523547dffec16c8d64ee74ee47bad4e2bde0fdc4c16bef8602d869d6830a22d8"
+      }
+    ]
+  },
+  "nv_unchanged": true,
+  "restoration_errors": [],
+  "restored": true,
+  "finished": 1791985101.7018454
+}

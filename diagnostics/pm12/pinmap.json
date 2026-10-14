@@ -1,0 +1,770 @@
+{
+  "fpga": {
+    "STR1": {
+      "ball": "W5",
+      "boundary_cell": 468
+    },
+    "STR2": {
+      "ball": "AA7",
+      "boundary_cell": 288
+    },
+    "STR3": {
+      "ball": "AA15",
+      "boundary_cell": 144
+    },
+    "STR4": {
+      "ball": "AD20",
+      "boundary_cell": 99
+    },
+    "STR5": {
+      "ball": "AB21",
+      "boundary_cell": 579
+    },
+    "STR8": {
+      "ball": "U20",
+      "boundary_cell": 726
+    },
+    "STR9": {
+      "ball": "R22",
+      "boundary_cell": 753
+    },
+    "STR10": {
+      "ball": "N17",
+      "boundary_cell": 714
+    },
+    "STR11": {
+      "ball": "M26",
+      "boundary_cell": 804
+    },
+    "STR12": {
+      "ball": "J19",
+      "boundary_cell": 1014
+    },
+    "STR6": {
+      "ball": "AA23",
+      "boundary_cell": 621
+    },
+    "STR7": {
+      "ball": "W26",
+      "boundary_cell": 654
+    },
+    "DI1[8]": {
+      "ball": "V4",
+      "boundary_cell": 453
+    },
+    "DI1[9]": {
+      "ball": "W4",
+      "boundary_cell": 450
+    },
+    "DI1[12]": {
+      "ball": "W6",
+      "boundary_cell": 471
+    },
+    "DI2[4]": {
+      "ball": "AB6",
+      "boundary_cell": 393
+    },
+    "DI2[8]": {
+      "ball": "U9",
+      "boundary_cell": 336
+    },
+    "DI2[9]": {
+      "ball": "V7",
+      "boundary_cell": 324
+    },
+    "DI2[10]": {
+      "ball": "V8",
+      "boundary_cell": 327
+    },
+    "DI2[11]": {
+      "ball": "Y7",
+      "boundary_cell": 312
+    },
+    "DI2[12]": {
+      "ball": "Y8",
+      "boundary_cell": 315
+    },
+    "DI3[8]": {
+      "ball": "V13",
+      "boundary_cell": 186
+    },
+    "DI3[9]": {
+      "ball": "W13",
+      "boundary_cell": 39
+    },
+    "DI3[10]": {
+      "ball": "V14",
+      "boundary_cell": 45
+    },
+    "DI3[11]": {
+      "ball": "W14",
+      "boundary_cell": 42
+    },
+    "DI3[12]": {
+      "ball": "AA14",
+      "boundary_cell": 147
+    },
+    "DI4[0]": {
+      "ball": "V18",
+      "boundary_cell": 51
+    },
+    "DI4[1]": {
+      "ball": "W18",
+      "boundary_cell": 63
+    },
+    "DI4[4]": {
+      "ball": "AE18",
+      "boundary_cell": 171
+    },
+    "DI4[5]": {
+      "ball": "AF18",
+      "boundary_cell": 168
+    },
+    "DI4[7]": {
+      "ball": "V19",
+      "boundary_cell": 48
+    },
+    "DI4[9]": {
+      "ball": "AB19",
+      "boundary_cell": 81
+    },
+    "DI4[10]": {
+      "ball": "AD19",
+      "boundary_cell": 84
+    },
+    "DI4[11]": {
+      "ball": "AF19",
+      "boundary_cell": 159
+    },
+    "DI5[0]": {
+      "ball": "AE20",
+      "boundary_cell": 96
+    },
+    "DI5[1]": {
+      "ball": "AF20",
+      "boundary_cell": 156
+    },
+    "DI5[2]": {
+      "ball": "AE21",
+      "boundary_cell": 570
+    },
+    "DI5[3]": {
+      "ball": "AF22",
+      "boundary_cell": 540
+    },
+    "DI5[4]": {
+      "ball": "AE22",
+      "boundary_cell": 543
+    },
+    "DI5[5]": {
+      "ball": "AF23",
+      "boundary_cell": 552
+    },
+    "DI5[6]": {
+      "ball": "AE23",
+      "boundary_cell": 555
+    },
+    "DI5[7]": {
+      "ball": "AF24",
+      "boundary_cell": 567
+    },
+    "DI5[8]": {
+      "ball": "AF25",
+      "boundary_cell": 564
+    },
+    "DI5[9]": {
+      "ball": "AE25",
+      "boundary_cell": 546
+    },
+    "DI5[12]": {
+      "ball": "AD23",
+      "boundary_cell": 591
+    },
+    "DI6[6]": {
+      "ball": "AC26",
+      "boundary_cell": 630
+    },
+    "DI6[8]": {
+      "ball": "AB22",
+      "boundary_cell": 585
+    },
+    "DI7[0]": {
+      "ball": "AA24",
+      "boundary_cell": 612
+    },
+    "DI7[1]": {
+      "ball": "AA25",
+      "boundary_cell": 645
+    },
+    "DI7[2]": {
+      "ball": "Y20",
+      "boundary_cell": 537
+    },
+    "DI7[8]": {
+      "ball": "W20",
+      "boundary_cell": 597
+    },
+    "DI7[9]": {
+      "ball": "W21",
+      "boundary_cell": 648
+    },
+    "DI8[9]": {
+      "ball": "U26",
+      "boundary_cell": 663
+    },
+    "DI8[10]": {
+      "ball": "U16",
+      "boundary_cell": 687
+    },
+    "DI8[11]": {
+      "ball": "U17",
+      "boundary_cell": 699
+    },
+    "DI8[12]": {
+      "ball": "U19",
+      "boundary_cell": 729
+    },
+    "DI9[0]": {
+      "ball": "T17",
+      "boundary_cell": 696
+    },
+    "DI9[1]": {
+      "ball": "T18",
+      "boundary_cell": 723
+    },
+    "DI9[2]": {
+      "ball": "T19",
+      "boundary_cell": 720
+    },
+    "DI9[3]": {
+      "ball": "T20",
+      "boundary_cell": 741
+    },
+    "DI9[4]": {
+      "ball": "T22",
+      "boundary_cell": 735
+    },
+    "DI9[5]": {
+      "ball": "T23",
+      "boundary_cell": 732
+    },
+    "DI9[6]": {
+      "ball": "T24",
+      "boundary_cell": 747
+    },
+    "DI9[7]": {
+      "ball": "T25",
+      "boundary_cell": 744
+    },
+    "DI9[8]": {
+      "ball": "R16",
+      "boundary_cell": 711
+    },
+    "DI9[9]": {
+      "ball": "R17",
+      "boundary_cell": 708
+    },
+    "DI9[10]": {
+      "ball": "R18",
+      "boundary_cell": 693
+    },
+    "DI9[11]": {
+      "ball": "R20",
+      "boundary_cell": 738
+    },
+    "DI9[12]": {
+      "ball": "R21",
+      "boundary_cell": 759
+    },
+    "DI10[0]": {
+      "ball": "R23",
+      "boundary_cell": 750
+    },
+    "DI10[1]": {
+      "ball": "R25",
+      "boundary_cell": 801
+    },
+    "DI10[2]": {
+      "ball": "R26",
+      "boundary_cell": 825
+    },
+    "DI10[3]": {
+      "ball": "P16",
+      "boundary_cell": 717
+    },
+    "DI10[4]": {
+      "ball": "P18",
+      "boundary_cell": 690
+    },
+    "DI10[5]": {
+      "ball": "P19",
+      "boundary_cell": 783
+    },
+    "DI10[6]": {
+      "ball": "P20",
+      "boundary_cell": 780
+    },
+    "DI10[7]": {
+      "ball": "P21",
+      "boundary_cell": 756
+    },
+    "DI10[8]": {
+      "ball": "P23",
+      "boundary_cell": 771
+    },
+    "DI10[9]": {
+      "ball": "P24",
+      "boundary_cell": 813
+    },
+    "DI10[10]": {
+      "ball": "P25",
+      "boundary_cell": 798
+    },
+    "DI10[11]": {
+      "ball": "P26",
+      "boundary_cell": 822
+    },
+    "DI10[12]": {
+      "ball": "N16",
+      "boundary_cell": 834
+    },
+    "DI11[0]": {
+      "ball": "N18",
+      "boundary_cell": 705
+    },
+    "DI11[1]": {
+      "ball": "N19",
+      "boundary_cell": 795
+    },
+    "DI11[2]": {
+      "ball": "N21",
+      "boundary_cell": 765
+    },
+    "DI11[3]": {
+      "ball": "N22",
+      "boundary_cell": 762
+    },
+    "DI11[4]": {
+      "ball": "N23",
+      "boundary_cell": 768
+    },
+    "DI11[5]": {
+      "ball": "N24",
+      "boundary_cell": 810
+    },
+    "DI11[6]": {
+      "ball": "N26",
+      "boundary_cell": 807
+    },
+    "DI11[7]": {
+      "ball": "M19",
+      "boundary_cell": 702
+    },
+    "DI11[8]": {
+      "ball": "M20",
+      "boundary_cell": 792
+    },
+    "DI11[9]": {
+      "ball": "M21",
+      "boundary_cell": 777
+    },
+    "DI11[10]": {
+      "ball": "M22",
+      "boundary_cell": 774
+    },
+    "DI11[11]": {
+      "ball": "M24",
+      "boundary_cell": 789
+    },
+    "DI11[12]": {
+      "ball": "M25",
+      "boundary_cell": 819
+    },
+    "DI12[0]": {
+      "ball": "L24",
+      "boundary_cell": 786
+    },
+    "DI12[1]": {
+      "ball": "L25",
+      "boundary_cell": 816
+    },
+    "DI12[2]": {
+      "ball": "K25",
+      "boundary_cell": 831
+    },
+    "DI12[3]": {
+      "ball": "K26",
+      "boundary_cell": 828
+    },
+    "DI12[4]": {
+      "ball": "M16",
+      "boundary_cell": 987
+    },
+    "DI12[5]": {
+      "ball": "M17",
+      "boundary_cell": 999
+    },
+    "DI12[6]": {
+      "ball": "L17",
+      "boundary_cell": 993
+    },
+    "DI12[7]": {
+      "ball": "L18",
+      "boundary_cell": 996
+    },
+    "DI12[8]": {
+      "ball": "L19",
+      "boundary_cell": 1011
+    },
+    "DI12[9]": {
+      "ball": "L20",
+      "boundary_cell": 1008
+    },
+    "DI12[10]": {
+      "ball": "K18",
+      "boundary_cell": 990
+    },
+    "DI12[11]": {
+      "ball": "K16",
+      "boundary_cell": 1005
+    },
+    "DI12[12]": {
+      "ball": "K17",
+      "boundary_cell": 1002
+    },
+    "DI1[0]": {
+      "ball": "T7",
+      "boundary_cell": 339
+    },
+    "DI1[1]": {
+      "ball": "U7",
+      "boundary_cell": 459
+    },
+    "DI1[2]": {
+      "ball": "U6",
+      "boundary_cell": 483
+    },
+    "DI1[3]": {
+      "ball": "U5",
+      "boundary_cell": 480
+    },
+    "DI1[4]": {
+      "ball": "U4",
+      "boundary_cell": 486
+    },
+    "DI1[5]": {
+      "ball": "U2",
+      "boundary_cell": 477
+    },
+    "DI1[6]": {
+      "ball": "U1",
+      "boundary_cell": 474
+    },
+    "DI1[7]": {
+      "ball": "V6",
+      "boundary_cell": 456
+    },
+    "DI1[10]": {
+      "ball": "V2",
+      "boundary_cell": 441
+    },
+    "DI1[11]": {
+      "ball": "V1",
+      "boundary_cell": 438
+    },
+    "DI2[0]": {
+      "ball": "AF4",
+      "boundary_cell": 360
+    },
+    "DI2[1]": {
+      "ball": "AD5",
+      "boundary_cell": 378
+    },
+    "DI2[2]": {
+      "ball": "AE5",
+      "boundary_cell": 348
+    },
+    "DI2[3]": {
+      "ball": "AF5",
+      "boundary_cell": 363
+    },
+    "DI2[5]": {
+      "ball": "AC6",
+      "boundary_cell": 390
+    },
+    "DI2[6]": {
+      "ball": "AD6",
+      "boundary_cell": 381
+    },
+    "DI2[7]": {
+      "ball": "AE6",
+      "boundary_cell": 351
+    },
+    "DI3[0]": {
+      "ball": "AA8",
+      "boundary_cell": 291
+    },
+    "DI3[1]": {
+      "ball": "AD11",
+      "boundary_cell": 225
+    },
+    "DI3[2]": {
+      "ball": "AE11",
+      "boundary_cell": 222
+    },
+    "DI3[3]": {
+      "ball": "V12",
+      "boundary_cell": 189
+    },
+    "DI3[4]": {
+      "ball": "Y12",
+      "boundary_cell": 228
+    },
+    "DI3[5]": {
+      "ball": "Y13",
+      "boundary_cell": 231
+    },
+    "DI3[6]": {
+      "ball": "AA12",
+      "boundary_cell": 240
+    },
+    "DI3[7]": {
+      "ball": "AA13",
+      "boundary_cell": 243
+    },
+    "DI4[2]": {
+      "ball": "AA19",
+      "boundary_cell": 93
+    },
+    "DI4[3]": {
+      "ball": "AC19",
+      "boundary_cell": 87
+    },
+    "DI4[6]": {
+      "ball": "AB20",
+      "boundary_cell": 78
+    },
+    "DI4[8]": {
+      "ball": "W19",
+      "boundary_cell": 60
+    },
+    "DI5[10]": {
+      "ball": "AE26",
+      "boundary_cell": 558
+    },
+    "DI5[11]": {
+      "ball": "AD21",
+      "boundary_cell": 573
+    },
+    "DI6[0]": {
+      "ball": "AD25",
+      "boundary_cell": 549
+    },
+    "DI6[1]": {
+      "ball": "AD26",
+      "boundary_cell": 561
+    },
+    "DI6[2]": {
+      "ball": "AC21",
+      "boundary_cell": 576
+    },
+    "DI6[3]": {
+      "ball": "AC22",
+      "boundary_cell": 582
+    },
+    "DI6[4]": {
+      "ball": "AC23",
+      "boundary_cell": 603
+    },
+    "DI6[5]": {
+      "ball": "AD24",
+      "boundary_cell": 588
+    },
+    "DI6[9]": {
+      "ball": "AB24",
+      "boundary_cell": 618
+    },
+    "DI6[10]": {
+      "ball": "AB25",
+      "boundary_cell": 642
+    },
+    "DI6[11]": {
+      "ball": "AB26",
+      "boundary_cell": 633
+    },
+    "DI6[12]": {
+      "ball": "AA22",
+      "boundary_cell": 606
+    },
+    "DI7[3]": {
+      "ball": "Y21",
+      "boundary_cell": 594
+    },
+    "DI7[4]": {
+      "ball": "Y22",
+      "boundary_cell": 609
+    },
+    "DI7[5]": {
+      "ball": "Y23",
+      "boundary_cell": 615
+    },
+    "DI7[6]": {
+      "ball": "Y25",
+      "boundary_cell": 627
+    },
+    "DI7[7]": {
+      "ball": "Y26",
+      "boundary_cell": 624
+    },
+    "DI7[10]": {
+      "ball": "W23",
+      "boundary_cell": 639
+    },
+    "DI7[11]": {
+      "ball": "W24",
+      "boundary_cell": 636
+    },
+    "DI7[12]": {
+      "ball": "W25",
+      "boundary_cell": 657
+    },
+    "DI8[0]": {
+      "ball": "V21",
+      "boundary_cell": 651
+    },
+    "DI8[1]": {
+      "ball": "V22",
+      "boundary_cell": 678
+    },
+    "DI8[2]": {
+      "ball": "V23",
+      "boundary_cell": 669
+    },
+    "DI8[3]": {
+      "ball": "V24",
+      "boundary_cell": 666
+    },
+    "DI8[4]": {
+      "ball": "V26",
+      "boundary_cell": 660
+    },
+    "DI8[5]": {
+      "ball": "U21",
+      "boundary_cell": 684
+    },
+    "DI8[6]": {
+      "ball": "U22",
+      "boundary_cell": 681
+    },
+    "DI8[7]": {
+      "ball": "U24",
+      "boundary_cell": 675
+    },
+    "DI8[8]": {
+      "ball": "U25",
+      "boundary_cell": 672
+    },
+    "DI4[12]": {
+      "ball": "AA20",
+      "boundary_cell": 90
+    },
+    "DI6[7]": {
+      "ball": "AC24",
+      "boundary_cell": 600
+    }
+  },
+  "cpld": [
+    {
+      "pin": 99,
+      "signal": "DI0",
+      "output_cell": 253,
+      "enable_cell": 252
+    },
+    {
+      "pin": 97,
+      "signal": "DI1",
+      "output_cell": 250,
+      "enable_cell": 249
+    },
+    {
+      "pin": 96,
+      "signal": "DI2",
+      "output_cell": 247,
+      "enable_cell": 246
+    },
+    {
+      "pin": 95,
+      "signal": "DI3",
+      "output_cell": 244,
+      "enable_cell": 243
+    },
+    {
+      "pin": 94,
+      "signal": "DI4",
+      "output_cell": 241,
+      "enable_cell": 240
+    },
+    {
+      "pin": 93,
+      "signal": "DI5",
+      "output_cell": 235,
+      "enable_cell": 234
+    },
+    {
+      "pin": 92,
+      "signal": "DI6",
+      "output_cell": 232,
+      "enable_cell": 231
+    },
+    {
+      "pin": 91,
+      "signal": "DI7",
+      "output_cell": 229,
+      "enable_cell": 228
+    },
+    {
+      "pin": 90,
+      "signal": "DI8",
+      "output_cell": 226,
+      "enable_cell": 225
+    },
+    {
+      "pin": 89,
+      "signal": "DI9",
+      "output_cell": 73,
+      "enable_cell": 72
+    },
+    {
+      "pin": 87,
+      "signal": "DI10",
+      "output_cell": 76,
+      "enable_cell": 75
+    },
+    {
+      "pin": 86,
+      "signal": "DI11",
+      "output_cell": 79,
+      "enable_cell": 78
+    },
+    {
+      "pin": 85,
+      "signal": "DI12",
+      "output_cell": 82,
+      "enable_cell": 81
+    },
+    {
+      "pin": 82,
+      "signal": "STR",
+      "output_cell": 88,
+      "enable_cell": 87
+    }
+  ],
+  "schematic": "FIT_PM12.pdf",
+  "schematic_sha256": "8a33ca4d4325eea999347ee7f4c26173cb28356f5cb61e6d38a9852a0513de78",
+  "sources": [
+    "Xilinx ISE 14.7 xc2c128_vq100.bsd",
+    "Xilinx ISE 14.7 xc7k160t_ffg676.bsd"
+  ],
+  "cpld_bsdl_sha256": "63b432da4a1f7b74d3d2ea86b76bdcb0e6aae53a777ef2e549434caf2fb0bfce",
+  "fpga_bsdl_sha256": "ef01a3382f49b6a21192cfa5d51ae6edf85ba4a2c2d3ee68b7473dcf9030565b"
+}

@@ -1,0 +1,5 @@
+__pycache__/
+gateware/build/
+gateware/.Xil/
+gateware/*.log
+gateware/*.jou

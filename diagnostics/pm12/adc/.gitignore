@@ -1,0 +1,8 @@
+work/
+**/build/
+cpld/build*/
+__pycache__/
+*.pyc
+*.jou
+*.log
+!measured/**/*.log
