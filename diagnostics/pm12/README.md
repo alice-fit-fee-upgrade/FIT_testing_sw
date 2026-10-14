@@ -115,3 +115,9 @@ and restoration of this link diagnostic. Physical PM12 validation PASS;
 external SFP / switch packet validation subsequently PASS in the
 [external diagnostic](ethernet/external/README.md). ARP/ping and production
 IP networking remain unimplemented.
+
+## ADC capture diagnostic
+
+[ADC diagnostic](adc/README.md) adds temporary SRAM gateware for the 12 CPLDs,
+EV-chain A/B selection, ADC-clock forwarding, 12 Kintex trace buffers and
+Ethernet acquisition control. See its measured validation status before use.

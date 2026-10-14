@@ -1,0 +1,110 @@
+{
+  "date": "2026-10-14",
+  "serial": "210249A73E43",
+  "gateware_part": "xc7k160tffg676-3",
+  "cplds": "12 x xc2c128-7-vq100",
+  "clock_ev_ethernet_capture_pass": true,
+  "raw_samples_per_run": 147456,
+  "runs": 2,
+  "all_12_adc_clocks_hz": 80000000,
+  "nominal_capture_clock_hz": 320000000,
+  "nominal_mclk1_hz": 40000000,
+  "mclk1_differential_termination": true,
+  "host_ip": "192.168.2.107",
+  "fpga_ip": "192.168.2.240",
+  "invalid_requests_dropped_per_run": 5,
+  "adc_output_drive_inferred": true,
+  "bias_test": {
+    "changed_fuses": [
+      55334
+    ],
+    "unchanged_adc_code_pairs": 24,
+    "keeper": "baseline",
+    "pullup": "approximately 100k-ohm weak input bias; datasheet nominal at 1.8V"
+  },
+  "adc_dynamic_activity_seen": false,
+  "analog_conversion_validated": false,
+  "afe_state": "not confirmed; user suspects AFE not initialized",
+  "static_codes": [
+    {
+      "channel": 1,
+      "adc_a_code": 0,
+      "adc_b_code": 0
+    },
+    {
+      "channel": 2,
+      "adc_a_code": 32,
+      "adc_b_code": 64
+    },
+    {
+      "channel": 3,
+      "adc_a_code": 0,
+      "adc_b_code": 0
+    },
+    {
+      "channel": 4,
+      "adc_a_code": 0,
+      "adc_b_code": 0
+    },
+    {
+      "channel": 5,
+      "adc_a_code": 256,
+      "adc_b_code": 1024
+    },
+    {
+      "channel": 6,
+      "adc_a_code": 16,
+      "adc_b_code": 0
+    },
+    {
+      "channel": 7,
+      "adc_a_code": 8,
+      "adc_b_code": 0
+    },
+    {
+      "channel": 8,
+      "adc_a_code": 16,
+      "adc_b_code": 64
+    },
+    {
+      "channel": 9,
+      "adc_a_code": 0,
+      "adc_b_code": 0
+    },
+    {
+      "channel": 10,
+      "adc_a_code": 0,
+      "adc_b_code": 0
+    },
+    {
+      "channel": 11,
+      "adc_a_code": 0,
+      "adc_b_code": 256
+    },
+    {
+      "channel": 12,
+      "adc_a_code": 8,
+      "adc_b_code": 0
+    }
+  ],
+  "baseline_restored": true,
+  "final_cpld_nv_blank": true,
+  "cpld_nv_writes": true,
+  "no_atxmega_pll_or_fpga_flash_writes": true,
+  "fpga_bit_sha256": "e5fa0839267ac51bf9c534c5084f5bba7a9192cf136c6419837fed44b9c7675d",
+  "keeper_cpld_jed_sha256": "884924f1d8f2d07cfd43a5679396afe2f9d0a2360421370e3471512eddd44f15",
+  "pullup_cpld_jed_sha256": "5ae97debe612894810fa7e94d31d071a0f24f85dd694af9d4b8e333fb7f56f9f",
+  "validation": {
+    "cpld_sim": "12-device chain, ADC bit mapping, selector and complementary integrator clocks PASS",
+    "fpga_sim": "dual clocks, capture pages, TX backpressure and malformed requests PASS",
+    "svf_conversion_regressions": "PASS",
+    "vivado_setup_slack_ns": 0.672,
+    "vivado_hold_slack_ns": 0.062,
+    "vivado_drc_violations": 0
+  },
+  "limitations": [
+    "Only static ADC words observed; drive inference is not analog calibration or proof of all bits toggling.",
+    "Clock estimates use nominal capture clock, not a precision external frequency reference.",
+    "Runner requires confirmed blank CPLD NV and erases the diagnostic back to blank."
+  ]
+}

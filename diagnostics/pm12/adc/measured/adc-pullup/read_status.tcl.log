@@ -1,0 +1,33 @@
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Wed Oct 14 13:36:33 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source /home/codex-hil/fit-bringup/gateware/pm12_adc_diag/tools/read_status.tcl -notrace
+INFO: [Labtools 27-2285] Connecting to hw_server url TCP:localhost:3121
+INFO: [Labtools 27-3415] Connecting to cs_server url TCP:localhost:0
+INFO: [Labtools 27-3417] Launching cs_server...
+INFO: [Labtools 27-2221] Launch Output:
+
+
+******** Xilinx cs_server v2025.2.0
+  ****** Build date   : Nov 13 2025-23:16:52
+    **** Build number : 2025.2.1763075812
+      ** Copyright 2017-2022 Xilinx, Inc. All Rights Reserved.
+      ** Copyright 2022-2026 Advanced Micro Devices, Inc. All Rights Reserved.
+
+
+
+INFO: [Labtoolstcl 44-466] Opening hw_target localhost:3121/xilinx_tcf/Digilent/210249A73E43
+INFO: [Labtoolstcl 44-467] Setting hw_target localhost:3121/xilinx_tcf/Digilent/210249A73E43 into jtag_mode
+IDS 16d8a09316d8a09316d8a09316d8a09316d8a09316d8a09316d8a09316d8a09316d8a09316d8a09316d8a09316d8a0930364c093
+ADC_STATUS 1791984999711 0000000000000000000000000000000000000000000000000000000000000000000000000000000001250000012a0000012a0000000e000000037e88d64c504dad01
+ADC_STATUS 1791985000213 0000000000000000000000000000000000000000000000000000000000000000000000000000000001250000012a0000012a0000000e000000037fbb40a4504dad01
+ADC_STATUS 1791985000717 0000000000000000000000000000000000000000000000000000000000000000000000000000000001250000012a0000012a0000000e0000000380ee67eb504dad01
+INFO: [Labtoolstcl 44-464] Closing hw_target localhost:3121/xilinx_tcf/Digilent/210249A73E43
+STATUS_PASS
+INFO: [Common 17-206] Exiting Vivado at Wed Oct 14 13:36:41 2026...
