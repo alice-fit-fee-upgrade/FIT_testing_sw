@@ -49,3 +49,30 @@ class SafetyTests(unittest.TestCase):
         self.assertEqual(dac.writes,0)
 
 if __name__=='__main__':unittest.main()
+
+class SchematicMapTests(unittest.TestCase):
+    def test_reversed_address_bits_and_preserved_analog_controls(self):
+        from mcp23017 import MCP23017Monitor,afe_route
+        class Regs:
+            def __init__(self):self.r={0x0a:0,0x0b:0,0:0xff,0x14:0xa0,0x15:0xe0};self.w=[]
+            def read(self,r):return self.r[r]
+            def write(self,r,v):self.w.append((r,v));self.r[r]=v
+        regs=Regs();gpio=MCP23017Monitor(regs);mux=gpio.initialize_monitor()
+        self.assertEqual(regs.w[:2],[(0x14,0xa8),(0,0xf0)])
+        for channel in range(8):
+            mux.select(channel)
+            expected=((channel&1)<<2)|(channel&2)|((channel>>2)&1)
+            self.assertEqual(regs.r[0x14],0xa0|expected)
+        self.assertEqual(regs.r[0x15],0xe0)
+        with self.assertRaises(ValueError):gpio.write_latch(gpio.read_latch()^0x80)
+        self.assertEqual(afe_route(12),(0x71,8))
+    def test_bad_bank_or_inhibit_readback_cannot_enable_outputs(self):
+        from mcp23017 import MCP23017Monitor
+        class Regs:
+            def __init__(self,bank):self.bank=bank;self.w=[]
+            def read(self,r):return self.bank if r in (0xa,0xb) else 0
+            def write(self,r,v):self.w.append((r,v))
+        for bank in [0,128]:
+            regs=Regs(bank)
+            with self.assertRaises((RuntimeError,OSError)):MCP23017Monitor(regs).initialize_monitor()
+            self.assertFalse(any(r==0 for r,v in regs.w))

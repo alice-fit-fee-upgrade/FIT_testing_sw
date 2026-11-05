@@ -1,3 +1,48 @@
+# Schematic acquired —2026-11-05 update
+
+Correct source is `Alice/cfd_sim.pdf`,339862bytes, SHA256
+`a9191a74a35cb42cab16e857c8262fc32c4f43831b74607d47f1a8c8ac409305`.
+Four schematic pages, print2026-11-05. This supersedes the missing-schematic
+blocker below. [Verified transcription](schematic-map.json).
+
+MCP23017 address0x20 (A0/A1/A2 grounded through56ohm resistors), RESET tied3.3V.
+PM12 schematic sheet35 maps physical AFE12 toTCA0x71 bit3(mask08);0x70 must
+be isolated to avoid another same-address simulator. Restore BOTH mux masks.
+This is schematic-derived routing, not an ACK/address-discovery result.
+
+Monitor IC2: select0..7 = CFD_OFFSET, CFD_CMP_OFFSET, BUFFER_OFFSET, DRV_OFFSET,
+DRV_VOCM, divided negative raw supply, P1V3, divided positive raw supply.
+Supply dividers are33/53: nominal±3.4245V for±5.5V. These are functional
+reference points, not calibrated standards. P1V3 has20k/100nF filtering.
+MCXJ7 is connected toIC2 COM. MCXJ9 center appears unconnected on this PDF;
+do not assume these are a daisy-chain pair without checking the PCB.
+
+`mcp23017.py` implements the physical mapping A0/A1/A2=GPA2/GPA1/GPA0,
+INH=GPA3. Active select codes are0,4,2,6,1,5,3,7. It preloads INH HIGH before
+configuring only GPA0..3 as outputs, and forbids changes to other latch bits.
+GPA7/T1 is left untouched; GPB5..7 ADC injection switching is left untouched.
+Hardware R8/R10 pullups inhibit monitor/ADC switches after MCP reset;
+R23 pulldown keepsT1 off. These defaults are schematic-derived, not measured.
+IC3 switches the positive and negative injection poles separately between
+ADCA andADCB; opposite selector states can mix two different ADCs. A future
+ADC-selection command must change both poles together while inhibited.
+
+Seven software tests pass, including physical bit ordering, unrelated-control
+preservation and abort before output enable on bank/readback mismatch.
+
+Read-only UART probe under BOTH hardware leases: CP2103 serial0001 at115200
+responded to `@PING` with echo and `Password:`. This is not an identified PM12
+extension console; no login attempts, reset or programming performed. Evidence
+is private under artifacts/cfd-simulator-20261105/uart-identify.json. Awaiting
+owner clarification of CP2103 versus historical Prolific/Gembird console.
+
+Remaining implementation: typed MCU I2C backend/console integration, exact SPI
+DAC channel/code mapping and restorable initial state, then real DCV scans.
+`regs.read/write` in the Python adapter is an explicit integration interface,
+not an existing MCU command. No physical mux selection or DMM measurement yet.
+
+The text below records the initial assembly-only stage for provenance.
+
 # CFD_SIM DC monitor and DAC sweeps — work in progress
 
 Owner request2026-11-05: one simulator fitted to PM12 physical channel12

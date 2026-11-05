@@ -3,8 +3,10 @@ test_break_before_make_and_preserved_controls (test_control.SafetyTests.test_bre
 test_dac_restored_after_dmm_failure (test_control.SafetyTests.test_dac_restored_after_dmm_failure) ... ok
 test_isolation_failure_attempts_other_boards (test_control.SafetyTests.test_isolation_failure_attempts_other_boards) ... ok
 test_no_write_before_restorable_dac_state (test_control.SafetyTests.test_no_write_before_restorable_dac_state) ... ok
+test_bad_bank_or_inhibit_readback_cannot_enable_outputs (test_control.SchematicMapTests.test_bad_bank_or_inhibit_readback_cannot_enable_outputs) ... ok
+test_reversed_address_bits_and_preserved_analog_controls (test_control.SchematicMapTests.test_reversed_address_bits_and_preserved_analog_controls) ... ok
 
 ----------------------------------------------------------------------
-Ran 5 tests in 0.001s
+Ran 7 tests in 0.001s
 
 OK
