@@ -1,0 +1,10 @@
+test_all_eight_channels_and_off_after_exception (test_control.SafetyTests.test_all_eight_channels_and_off_after_exception) ... ok
+test_break_before_make_and_preserved_controls (test_control.SafetyTests.test_break_before_make_and_preserved_controls) ... ok
+test_dac_restored_after_dmm_failure (test_control.SafetyTests.test_dac_restored_after_dmm_failure) ... ok
+test_isolation_failure_attempts_other_boards (test_control.SafetyTests.test_isolation_failure_attempts_other_boards) ... ok
+test_no_write_before_restorable_dac_state (test_control.SafetyTests.test_no_write_before_restorable_dac_state) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.001s
+
+OK
