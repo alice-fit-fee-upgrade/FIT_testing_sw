@@ -1,0 +1,28 @@
+{
+  "pipeline_pass": true,
+  "trials": 3,
+  "phase_records_exact": 12288,
+  "signal_candidates": [
+    {
+      "slot": 7,
+      "channel": 1,
+      "logical": 8,
+      "rj45_index": 0,
+      "pair_p": 4,
+      "pair_n": 5
+    },
+    {
+      "slot": 7,
+      "channel": 3,
+      "logical": 9,
+      "rj45_index": 0,
+      "pair_p": 7,
+      "pair_n": 8
+    }
+  ],
+  "nominal_sample_ps": 1041.6666666666667,
+  "nominal_clock_hz": 80000000.0,
+  "scope": "Receive-only captures, hardware records match raw samples. No absolute phase/duty/jitter calibration. Other unconnected-input activity is not classified as a link or short.",
+  "resident": "Kasli RPH1 external120, STOP, mask0; both DIO card direction latches0; all12 CPLDs NV diagnostic INTA/INTB=CLK80. PM FPGA remains passive504d5a03. MCU unchanged.",
+  "hardware_artifacts": "/srv/codex-hil-nvme/fit-phase-20261105"
+}

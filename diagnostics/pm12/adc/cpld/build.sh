@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 here=$(cd "$(dirname "$0")" && pwd)
-settings=/home/codex-hil/.local/opt/xilinx/14.7/ISE_DS/settings64.sh
+settings=${PM12_ISE_SETTINGS:-/home/codex-hil/.local/opt/xilinx/14.7/ISE_DS/settings64.sh}
 set +u
 source "$settings" "$(dirname "$settings")"
 set -u
-compat=/home/codex-hil/coolrunner2-recovery/toolchain/ise-compat/root
+compat=${PM12_ISE_COMPAT:-/home/codex-hil/coolrunner2-recovery/toolchain/ise-compat/root}
 export LD_LIBRARY_PATH="$compat/lib/x86_64-linux-gnu:$compat/usr/lib/x86_64-linux-gnu${LD_LIBRARY_PATH:+:$LD_LIBRARY_PATH}"
 build_dir=${PM12_CPLD_BUILD_DIR:-$here/build}
 termination=${PM12_CPLD_TERMINATION:-keeper}

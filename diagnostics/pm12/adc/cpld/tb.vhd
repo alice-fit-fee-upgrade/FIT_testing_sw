@@ -21,7 +21,7 @@ begin
      else assert dout(ch)(11 downto 0)=b report "ADC B mapping" severity failure;end if;
      assert dout(ch)(12)=ev(0) report "selector tag" severity failure;
      assert dv(ch)=clk report "ADC clock forward" severity failure;
-     assert cp(ch)=not cn(ch) report "integrator complementary clocks" severity failure;
+     assert cp(ch)=clk and cn(ch)=clk report "both gate drivers must mirror ADC clock" severity failure;
     end loop;
    end loop;
   end loop;

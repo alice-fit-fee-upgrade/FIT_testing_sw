@@ -4,7 +4,9 @@ XC2C128 diagnostic multiplexes the two AD9236 outputs on each
 channel, tags the selected ADC in DOUT12, forwards ADC CLK80 through DV/STR,
 and passes EV through the CPLD chain. EV originates on Kintex F23 and enters
 CPLD12 before CPLD11…CPLD1. Selection is global: EV=0 ADC A, EV=1 ADC B.
-Original falling-edge CLK80 charge-integrator clocks are preserved.
+Diagnostic gate outputs INTA_G_DRV/P53 and INTB_G_DRV/P54 both directly mirror
+CLK80/P27 (2026-11-05 phase-test variant). The divided CLK40 output is retained.
+This intentionally changes the earlier complementary integrator-clock behavior.
 
 Kintex captures all 12 channels simultaneously in 12 BRAM buffers of 4096
 16-bit raw samples. Bits 0…11 ADC, bit12 selector, bit13 forwarded clock.
@@ -69,7 +71,7 @@ Pedestal/noise captures check clocks, selection, ADC output activity and the
 transport. Full bit coverage, gain, linearity and analog accuracy require a
 known input stimulus. Results must distinguish these scopes.
 
-Pin/control reference: recovered CPLD branch [recovery/xc2c128-golden-2026](https://github.com/alice-fit-fee-upgrade/FIT_PM_GW_CPLD/tree/recovery/xc2c128-golden-2026), commit b82758b248ba75079bb0573109d63147abb0391a. This is new diagnostic logic with the recovered analog clock behavior and verified package pins.
+Pin/control reference: recovered CPLD branch [recovery/xc2c128-golden-2026](https://github.com/alice-fit-fee-upgrade/FIT_PM_GW_CPLD/tree/recovery/xc2c128-golden-2026), commit b82758b248ba75079bb0573109d63147abb0391a. This is new diagnostic logic with verified package pins; the current phase-test variant overrides the two analog gate clocks as described above.
 
 Run `./build.sh` on the prepared laboratory host to fit CPLDs, export the vendor programming sequence, run receiver simulation, generate RTL and build the Kintex image. Tool paths can be overridden with PM12_ISE_SETTINGS, PM12_ISE_COMPAT and PM12_HDL_PYTHON.
 
