@@ -94,3 +94,12 @@ class ConsoleTransactionTests(unittest.TestCase):
         self.assertEqual(masks,{0x70:2,0x71:4})
         self.assertIn('@I2C WR 20 01 14',sent)
         with self.assertRaises(ValueError):bus.transaction(0,[0])
+
+class ReportingTests(unittest.TestCase):
+    def test_supply_dividers_are_reported_as_physical_rails(self):
+        from mcp23017 import report_voltage
+        for channel,raw,name in [(5,-3.4,'N5V5_PM12'),(7,3.4,'P5V5_PM12')]:
+            row=report_voltage(channel,raw)
+            self.assertEqual(row['signal'],name);self.assertEqual(row['volts_at_mux'],raw)
+            self.assertAlmostEqual(row['volts'],raw*53/33)
+        self.assertEqual(report_voltage(0,1.024)['volts'],1.024)

@@ -48,3 +48,11 @@ class MCP23017Monitor:
         if type(value) is not int or not 0<=value<=65535 or (old^value)&~0xf:
             raise ValueError('Monitor cannot modify integrator, ADC mux, range or strobe pins')
         self._write_checked(0x14,value&255)
+
+
+def report_voltage(channel,volts_at_mux):
+    """Keep raw readings, report physical rails after nominal33/53 dividers."""
+    if not 0<=channel<8:raise ValueError('Monitor channel must be0..7')
+    scale=53/33 if channel in (5,7) else 1
+    name={5:'N5V5_PM12',7:'P5V5_PM12'}.get(channel,MONITOR_NAMES[channel])
+    return dict(signal=name,volts_at_mux=volts_at_mux,volts=volts_at_mux*scale,divider_scale=scale)

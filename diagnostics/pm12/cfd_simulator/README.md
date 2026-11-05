@@ -1,3 +1,85 @@
+# Channel12 B/C/D DAC sweep completed —2026-11-05
+
+65points per DAC across raw0..65535,3 readings per point;13additional lower-edge
+points0..1024. Owner explicitly deferred ADC-clock DAC A/phase to the LVDS task;
+no rawA writes were made. Whole-chain observations through CFD_SIM/MCXJ9/DMM:
+
+| DAC / monitor | Code0 (V) | Code65535 (V) | Interior gain vs nominal |
+|---|---:|---:|---:|
+| B / DRV_OFFSET | 1.043846000 | 1.003721000 | +0.0119% |
+| C / CFD_OFFSET | 1.034097000 | 1.013671333 | +0.0018% |
+| D / CFD_CMP_OFFSET | 0.004514860 | 1.062607333 | -0.0366% |
+
+Nominal slopes from PM12 sheet11: B=-0.612745uV/code, C=-0.3125uV/code,
+D=+16.262755uV/code. Fits use5–95% of the scanned span. All65-point coarse
+curves are monotonic in the expected direction. This is not a complete16bit
+INL/DNL or calibrated uncertainty result. Interior maximum residuals are
+about1.94uV(B),2.03uV(C),80.25uV(D), including the entire analog chain and DMM.
+
+The lower edge is nonlinear/flat: with a10uV comparison threshold, highest
+tested codes remaining near their zero-code voltage are64(B),128(C),256(D).
+D stays about4.49mV through code256, is about5.40mV at512 and13.67mV at1024.
+The responsible part (DAC output amplifier versus external opamp/loading)
+was not isolated. Zero-code residuals from interior fits: about-36.9uV(B),
+-54.6uV(C),+7.412mV(D). Do not claim true zero or full resolution at that edge.
+
+[Full curves](evidence-dac-20261105/dac-curves.png),
+[lower-edge detail](evidence-dac-20261105/dac-low-edge.png),
+[validation](evidence-dac-20261105/validation.json). SVG and raw CSV also retained.
+
+Supply values are now reported AFTER the nominal33/53 divider correction:
+* N5V5_PM12: -5.511384V
+* P5V5_PM12: 5.486824V
+
+Raw mux voltages remain in `volts_at_mux`, physical/report voltage in `volts`.
+`report_voltage()` is used by both DC scanning and DAC scans. Divider component
+tolerances are not calibrated out. DMM model/serial confirmed;10V range for
+8-input scans,1V for DAC curves,5PLC, high-Z AUTO, autozeroON/filterOFF.
+ASCII precision was AUTO. Readings above1V were rounded at roughly1uV in the
+retained output; do not infer sub-LSB INL from averaged samples.
+
+**State-restoration correction:** the original scan used computed STORED RAM
+parameter codes as if they were active hardware state. The voltage guard caught
+that this assumption was false with the diagnostic FPGA. Raw0000 on B/C/D
+reproduced the initial analog levels; an independent full monitor scan and a
+final selected-mux check passed. Original active register codes were not read
+back. Current host REQUIRES explicit known restore codes and preserves the
+failed receipt. The fine scan also initially sampled target-restored readings
+after mux inhibit; those rows are invalid/excluded, ordering is corrected and
+an independent final check confirms the actual voltages returned. Curve rows
+were acquired while selected and are retained. No failure receipt was relabeled.
+
+Current physical state: B/C/D explicit0000; final B/C voltage differences from
+initial about1.3uV, D about5.6uV. Monitor inhibited (latch0E), TCA70/71 masks00.
+Passive FPGA504d5a03 retained; scratch32bit/restore, ADTIDC3, PSU ON/PLL locked
+and normal temperature rechecked. No raw DAC-A writes. Existing parameter RAM
+untouched. DMM returned to10V DCV/high-Z/5PLC. All board/DMM leases released.
+
+MCU application SHA256:
+`f49643c80c6189afebdaa3f7301f4ecebacb55645e60456f66831106d38b9464`.
+`@DAC 12 W B 8000` sends one raw code; `@DAC 12 S` reports computed STORED
+parameter codes, NOT hardware readback. Use explicit known restoration state.
+New bounded3-byte SPI driver matches recovered headers, restores chip-selects
+and CTRL/IRQ state, checks power/bus ownership, times out each byte. Full MCU
+development suite and additional packet/timeout/65536-pattern arithmetic tests
+PASS.10 host safety tests PASS, including an offline flow test that rejects any
+DMM read after mux inhibit and verifies restored codes/A exclusion.
+
+Repeat full-span scan only with verified active restore codes, for example for
+the CURRENT explicit-zero baseline:
+
+```
+python diagnostics/pm12/cfd_simulator/dac_sweep.py --out NEW_DIRECTORY --dmm-host ACTUAL_IP --restore-codes B=0000 C=0000 D=0000
+```
+
+Add `--low-codes --curve-only` for the lower-edge refinement. All scans retain
+raw samples. Plotting uses the separate matplotlib3.10.7 environment on NVMe,
+with requirements retained alongside evidence. No MCU/FPGA recompilation is
+needed to repeat the scans. Protected MCU regions were verified unchanged;
+full private backups remain outsideGit.
+
+The following sections retain earlier work for provenance.
+
 # Installed generic I2C console and physical DC scan —2026-11-05
 
 PM12 S/N1803, Gembird/Prolific115200 hardware flow control. The MCU extension
