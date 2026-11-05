@@ -1,3 +1,75 @@
+# Installed generic I2C console and physical DC scan —2026-11-05
+
+PM12 S/N1803, Gembird/Prolific115200 hardware flow control. The MCU extension
+is installed and checked against full FLASH readback; protected boot/EEPROM/
+fuses/lock/user/prodsig unchanged against a fresh physical backup. Exact
+recovered baseline remains unchanged; firmware source in FIT_PM_FW_uPC,
+see docs/i2c_development_candidate.md for the full command contract.
+
+Generic commands use hexadecimal7-bit addresses/bytes and1..8byte payloads:
+
+```
+@I2C W 70 00
+@I2C W 71 08
+@I2C WR 20 01 14
+@I2C R 71 01
+@I2C W 71 00
+```
+
+The example disconnects0x70, selectsAFE12 on0x71, reads MCP register14 and the
+routing mask, then disconnects0x71. In a reusable script save BOTH old TCA masks
+first and restore them in finally, as ConsoleI2C.routed does. W sends bytes;
+R reads count bytes; WR sends pointer/data and reads count bytes with repeated
+START. Reply example: `I2C ADDR=20 TX=14 RX=0F`. Generic writes intentionally
+permit arbitrary registers: caller owns the target's semantics/restoration.
+Bare @I2C status and @I2C TEST remain available. Main-loop ownership, bounded
+clock stretching, physicalPG/reset guards and deferred temperature service
+remain active. Reserved7-bit addresses and invalid/oversize requests rejected.
+
+Restricted `@CFD 12 R 14` / `@CFD 12 W 14 0F` are also installed for monitor-only
+control with automatic upstream-route restoration and a GPIO whitelist.
+Use the Python MCP adapter for initialization/read-modify-write; preserve all
+unrelated bits rather than blindly using the example on another chip/setup.
+
+`console.py` implements generic UART transport and checked TCA routing.
+`mcp23017.py` safely initializes and controls the monitor pins only.
+`measure_channel12.py` ran24DCV readings through owner-confirmedMCXJ9 and the
+existing labinstruments DMM driver, model/serial checked at192.168.2.16.
+DMM front terminals,10V fixed range,AUTO high impedance,5PLC,autozero ON,
+averaging OFF. Three-reading means (functional observations, not calibration):
+
+| Monitor | Volts |
+|---|---:|
+| CFD_OFFSET | 1.034093667 |
+| CFD_CMP_OFFSET | 0.004463487 |
+| BUFFER_OFFSET | 1.023867667 |
+| DRV_OFFSET | 1.043842333 |
+| DRV_VOCM | 1.535756667 |
+| N5V5_PM12_DIV | -3.431447667 |
+| P1V3 | 1.321909000 |
+| P5V5_PM12_DIV | 3.416380333 |
+
+Final monitor latch0F: INH HIGH (analog output disconnected); bothTCA masks00.
+Passthrough/ADC selector/integrator GPIO were preserved by the monitor scan.
+Passive FPGA504d5a03 retained; legacy RS says FPGA not ready because no
+production PM application is loaded; diagnostic scratch32bit check passes.
+All hardware leases released and private PM hw_server stopped. Existing
+Genesys server untouched. No config-flash/EEPROM/OTP writes.
+
+Eight host safety tests plus MCU bit-level I2C/CFD tests and the full existing
+development suite PASS. [Physical validation](evidence-20261105/validation.json).
+Raw DC readings are in evidence-20261105/dc.csv. Private full memory backups
+remain outside Git. DAC transfer curves are NOT YET measured.
+
+Repeat the scan using the project Python environment with pyserial installed:
+`python diagnostics/pm12/cfd_simulator/measure_channel12.py --out NEW_DIRECTORY --dmm-host ACTUAL_IP`.
+The runner assumes the owner-confirmed inventory contains only one simulator
+connected to the shared DMM (channel12). Add ALL connected simulators before
+extending this to a shared multi-board measurement bus. IP is a hint; exact
+DMM model/serial is checked. No instrument reset or PSU switching is performed.
+
+The following sections retain earlier preparation history.
+
 # Schematic acquired —2026-11-05 update
 
 Correct source is `Alice/cfd_sim.pdf`,339862bytes, SHA256
@@ -14,8 +86,7 @@ Monitor IC2: select0..7 = CFD_OFFSET, CFD_CMP_OFFSET, BUFFER_OFFSET, DRV_OFFSET,
 DRV_VOCM, divided negative raw supply, P1V3, divided positive raw supply.
 Supply dividers are33/53: nominal±3.4245V for±5.5V. These are functional
 reference points, not calibrated standards. P1V3 has20k/100nF filtering.
-MCXJ7 is connected toIC2 COM. MCXJ9 center appears unconnected on this PDF;
-do not assume these are a daisy-chain pair without checking the PCB.
+MCXJ7 is connected toIC2 COM. Owner confirmedMCXJ9 connected; the subsequent physical scan throughJ9 passed.
 
 `mcp23017.py` implements the physical mapping A0/A1/A2=GPA2/GPA1/GPA0,
 INH=GPA3. Active select codes are0,4,2,6,1,5,3,7. It preloads INH HIGH before

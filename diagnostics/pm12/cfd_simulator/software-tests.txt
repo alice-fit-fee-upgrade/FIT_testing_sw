@@ -1,3 +1,4 @@
+test_routing_restored_after_target_nack (test_control.ConsoleTransactionTests.test_routing_restored_after_target_nack) ... ok
 test_all_eight_channels_and_off_after_exception (test_control.SafetyTests.test_all_eight_channels_and_off_after_exception) ... ok
 test_break_before_make_and_preserved_controls (test_control.SafetyTests.test_break_before_make_and_preserved_controls) ... ok
 test_dac_restored_after_dmm_failure (test_control.SafetyTests.test_dac_restored_after_dmm_failure) ... ok
@@ -7,6 +8,6 @@ test_bad_bank_or_inhibit_readback_cannot_enable_outputs (test_control.SchematicM
 test_reversed_address_bits_and_preserved_analog_controls (test_control.SchematicMapTests.test_reversed_address_bits_and_preserved_analog_controls) ... ok
 
 ----------------------------------------------------------------------
-Ran 7 tests in 0.001s
+Ran 8 tests in 0.002s
 
 OK

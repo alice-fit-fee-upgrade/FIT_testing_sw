@@ -76,3 +76,21 @@ class SchematicMapTests(unittest.TestCase):
             regs=Regs(bank)
             with self.assertRaises((RuntimeError,OSError)):MCP23017Monitor(regs).initialize_monitor()
             self.assertFalse(any(r==0 for r,v in regs.w))
+
+class ConsoleTransactionTests(unittest.TestCase):
+    def test_routing_restored_after_target_nack(self):
+        from console import ConsoleI2C
+        masks={0x70:2,0x71:4};sent=[]
+        def capture(serial,command,limit):
+            sent.append(command);parts=command.split();op=parts[1];addr=int(parts[2],16)
+            if addr==0x20:return dict(command=command,reply='ERR I2C NACK\r\n')
+            if op=='W':
+                masks[addr]=int(parts[3],16);reply=f'I2C ADDR={addr:02X} TX={parts[3]} RX='
+            else:reply=f'I2C ADDR={addr:02X} TX= RX={masks[addr]:02X}'
+            return dict(command=command,reply=reply+'\r\n')
+        bus=ConsoleI2C(None,capture)
+        with self.assertRaises(OSError):
+            with bus.routed(0x71,8):bus.transaction(0x20,[0x14],1)
+        self.assertEqual(masks,{0x70:2,0x71:4})
+        self.assertIn('@I2C WR 20 01 14',sent)
+        with self.assertRaises(ValueError):bus.transaction(0,[0])

@@ -3,7 +3,7 @@
   "sha256": "a9191a74a35cb42cab16e857c8262fc32c4f43831b74607d47f1a8c8ac409305",
   "pages": 4,
   "print_date": "2026-11-05",
-  "hardware_verified": false,
+  "hardware_verified": true,
   "channel_numbering": "physical1..12; fitted channel12 per owner",
   "route12": {
     "tca_address": 113,
@@ -47,7 +47,8 @@
   "monitor_inhibit_mask": 8,
   "mcx": {
     "J7": "IC2 COM connected",
-    "J9": "center appears unconnected in PDF; verify PCB if needed"
+    "J9": "Connected: owner-confirmed; physical eight-input DMM scan2026-11-05 PASS"
   },
-  "initialization": "BANK0 verified; preload OLATA.INH=1 then make GPA0..3 outputs. Preserve other GPA directions and all GPB registers. No SPI/I2C hardware writes performed."
+  "initialization": "BANK0 verified; preload OLATA.INH=1 then make GPA0..3 outputs. Preserve other GPA directions and all GPB registers. No SPI/I2C hardware writes performed.",
+  "hardware_verified_scope": "Physicalchannel12 routed0x71/08, MCP0x20, eight-point monitor scan. Other physical channels/transistor/ADC injection not physically tested."
 }
