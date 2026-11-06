@@ -1,6 +1,7 @@
 import sys
 sys.path.insert(0, '/home/codex-hil/fit-testing-publish/diagnostics/pm12/tdc_live120')
 from frontend import Frontend
+from hdmi import HDMI
 from pathlib import Path
 from types import SimpleNamespace
 import re,hashlib
@@ -17,6 +18,7 @@ from analyzer import Analyzer
 from registers import Registers
 root=Path(__file__).resolve().parent
 build_sources=['generate.py','capture.py','analyzer.py','registers.py','pm12_mcu_spi.vhd','k7_phy.py','eth_jtag.v','pins.xdc','build.tcl']+['ipbus/'+n for n in (root/'ipbus-order.txt').read_text().splitlines()]
+build_sources += ['hdmi_slave.v','idle.vhd','trigger.vhd','PM12_pkg.vhd']
 build_sources += ['TDCCHAN_instrumented.vhd','pin_capt.vhd','autophase.vhd','tdc-pins.xdc','tdc-ip.tcl','tdc-timing.tcl']
 extra_sources=b''.join(p.read_bytes() for p in sorted(Path('/home/codex-hil/fit-testing-publish/diagnostics/pm12/tdc_live120').glob('*.py')))
 build_id=int.from_bytes(hashlib.sha256(extra_sources+b''.join(n.encode()+b'\0'+(root/n).read_bytes() for n in build_sources)).digest()[:4],'big')
@@ -44,7 +46,8 @@ class Top(Module):
   command=Signal(16);self.submodules.analyzer=trace=Analyzer(raw,command)
   jtag_report=Signal(512);self.specials += Instance('eth_jtag',i_report=jtag_report,o_command=command)
   self.submodules.tdc_frontend=tdc=Frontend(m);self.ios.update(tdc.ios);self.comb += sys_ref.eq(tdc.sys_reference)
-  self.submodules.registers=regs=Registers(cap,trace,build_id,tdc=tdc.acquisition.window)
+  self.submodules.hdmi=hdmi=HDMI(cap_cm.locked);self.ios.update(hdmi.ios)
+  self.submodules.registers=regs=Registers(cap,trace,build_id,tdc=tdc.acquisition.window,hdmi=hdmi)
   phy_request=Signal();self.specials += MultiReg(command==0x6b52,phy_request)
   startup=Signal(max=2000001,reset=2000000);self.sync += If(startup!=0,startup.eq(startup-1))
   self.comb += phy.reset.eq((startup!=0)|phy_request)

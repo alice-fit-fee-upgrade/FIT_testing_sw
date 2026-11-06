@@ -117,6 +117,18 @@ module pm12_ipbus_adc(
 	input RSD3_N,
 	input RDD3_P,
 	input RDD3_N,
+	output HDMI_P0,
+	output HDMI_N0,
+	output HDMI_P1,
+	output HDMI_N1,
+	output HDMI_P2,
+	output HDMI_N2,
+	output HDMI_P3,
+	output HDMI_N3,
+	input HSCK,
+	input HSEL,
+	input HMOSI,
+	output HMISO,
 	output EVNT,
 	input SCK,
 	input MOSI,
@@ -1491,7 +1503,7 @@ reg [2:0] top_tdc_frontend_locks;
 reg [2:0] top_tdc_frontend_phased;
 reg [2:0] top_tdc_frontend_alive;
 wire tdc1_clk;
-reg tdc1_rst = 1'd0;
+wire tdc1_rst;
 wire coarse1_clk;
 reg coarse1_rst = 1'd0;
 wire top_tdc_frontend_result_v0;
@@ -1529,7 +1541,7 @@ wire top_tdc_frontend_frontend_v9;
 wire top_tdc_frontend_frontend_v10;
 wire top_tdc_frontend_frontend_v11;
 wire tdc2_clk;
-reg tdc2_rst = 1'd0;
+wire tdc2_rst;
 wire coarse2_clk;
 reg coarse2_rst = 1'd0;
 wire top_tdc_frontend_result_v1;
@@ -1568,7 +1580,7 @@ wire top_tdc_frontend_frontend_v21;
 wire top_tdc_frontend_frontend_v22;
 wire top_tdc_frontend_frontend_v23;
 wire tdc3_clk;
-reg tdc3_rst = 1'd0;
+wire tdc3_rst;
 wire coarse3_clk;
 reg coarse3_rst = 1'd0;
 wire top_tdc_frontend_result_v2;
@@ -1606,6 +1618,30 @@ wire top_tdc_frontend_frontend_v32;
 wire top_tdc_frontend_frontend_v33;
 wire top_tdc_frontend_frontend_v34;
 wire top_tdc_frontend_frontend_v35;
+wire [31:0] top_hdmi_address;
+wire [31:0] top_hdmi_wdata;
+wire top_hdmi_write;
+wire top_hdmi_commit;
+wire top_hdmi_selected;
+wire top_hdmi_error;
+reg [31:0] top_hdmi_rdata;
+reg [7:0] top_hdmi_command = 8'd0;
+wire [15:0] top_hdmi_scratch;
+wire [15:0] top_hdmi_writes;
+wire top_hdmi_locked;
+wire [7:0] top_hdmi_cmd;
+reg [2:0] top_hdmi_phase = 3'd0;
+reg [7:0] top_hdmi_div = 8'd0;
+reg [1:0] top_hdmi_oldmode = 2'd0;
+reg [6:0] top_hdmi0 = 7'd1;
+reg [6:0] top_hdmi1 = 7'd19;
+reg [6:0] top_hdmi2 = 7'd53;
+reg [6:0] top_hdmi3 = 7'd87;
+wire [3:0] top_hdmi_idle;
+wire [3:0] top_hdmi_data;
+wire top_hdmi_mi;
+wire [15:0] top_hdmi_hs;
+wire [15:0] top_hdmi_hw;
 wire [31:0] top_registers_address;
 wire [31:0] top_registers_wdata;
 wire top_registers_strobe;
@@ -1638,7 +1674,8 @@ reg top_registers_valid_address;
 reg [31:0] top_registers_read_value;
 reg top_registers_writable;
 reg top_registers_bad_write;
-reg top_registers_is_ongoing;
+reg top_registers_is_ongoing0;
+reg top_registers_is_ongoing1;
 wire top_phy_request;
 reg [20:0] top_startup = 21'd2000000;
 wire top_link;
@@ -2053,6 +2090,7 @@ wire xilinxmultiregimpl37_i;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl982 = 1'd0;
 (* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [12:0] xilinxmultiregimpl990 = 13'd0;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [12:0] xilinxmultiregimpl991 = 13'd0;
+wire xilinxasyncresetsynchronizerimpl4_rst_meta;
 (* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1000 = 1'd0;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1001 = 1'd0;
 (* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl101_xilinxmultiregimpl1010 = 1'd0;
@@ -2062,6 +2100,7 @@ wire xilinxmultiregimpl101_i;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1021 = 1'd0;
 (* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1030 = 1'd0;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1031 = 1'd0;
+wire xilinxasyncresetsynchronizerimpl5_rst_meta;
 (* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1040 = 1'd0;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1041 = 1'd0;
 (* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl105_xilinxmultiregimpl1050 = 1'd0;
@@ -2071,6 +2110,7 @@ wire xilinxmultiregimpl105_i;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1061 = 1'd0;
 (* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1070 = 1'd0;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1071 = 1'd0;
+wire xilinxasyncresetsynchronizerimpl6_rst_meta;
 (* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1080 = 1'd0;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1081 = 1'd0;
 (* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl109_xilinxmultiregimpl1090 = 1'd0;
@@ -2080,19 +2120,27 @@ wire xilinxmultiregimpl109_i;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1101 = 1'd0;
 (* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1110 = 1'd0;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1111 = 1'd0;
-(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl112_xilinxmultiregimpl1120 = 1'd0;
-(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl112_xilinxmultiregimpl1121 = 1'd0;
-wire xilinxmultiregimpl112_i;
+(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [7:0] xilinxmultiregimpl1120 = 8'd0;
+(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [7:0] xilinxmultiregimpl1121 = 8'd0;
 (* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1130 = 1'd0;
 (* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1131 = 1'd0;
-(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1140 = 1'd0;
-(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1141 = 1'd0;
-(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1150 = 1'd0;
-(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1151 = 1'd0;
-(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1160 = 16'd0;
-(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1161 = 16'd0;
-(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1170 = 16'd0;
-(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1171 = 16'd0;
+(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1140 = 16'd0;
+(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1141 = 16'd0;
+(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1150 = 16'd0;
+(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1151 = 16'd0;
+(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl116_xilinxmultiregimpl1160 = 1'd0;
+(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl116_xilinxmultiregimpl1161 = 1'd0;
+wire xilinxmultiregimpl116_i;
+(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1170 = 1'd0;
+(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1171 = 1'd0;
+(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1180 = 1'd0;
+(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1181 = 1'd0;
+(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1190 = 1'd0;
+(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg xilinxmultiregimpl1191 = 1'd0;
+(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1200 = 16'd0;
+(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1201 = 16'd0;
+(* async_reg = "true", mr_ff = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1210 = 16'd0;
+(* async_reg = "true", no_retiming = "true", no_shreg_extract = "true" *) reg [15:0] xilinxmultiregimpl1211 = 16'd0;
 
 // synthesis translate_off
 reg dummy_s;
@@ -4059,6 +4107,37 @@ always @(*) begin
 	dummy_d_35 <= dummy_s;
 // synthesis translate_on
 end
+assign top_hdmi_data = ((top_hdmi_cmd[5:4] == 1'd0) ? top_hdmi_cmd[3:0] : ((top_hdmi_cmd[5:4] == 1'd1) ? top_hdmi_idle : {top_hdmi3[6], top_hdmi2[6], top_hdmi1[6], top_hdmi0[6]}));
+assign top_hdmi_selected = ((top_hdmi_address >= 10'd768) & (top_hdmi_address <= 10'd772));
+assign top_hdmi_error = ($signed({1'd0, top_hdmi_write}) & ($signed({1'd0, (top_hdmi_address != 10'd769)}) | (($signed({1'd0, top_hdmi_wdata}) & 9'sd320) != $signed({1'd0, 1'd0}))));
+
+// synthesis translate_off
+reg dummy_d_36;
+// synthesis translate_on
+always @(*) begin
+	top_hdmi_rdata <= 32'd0;
+	top_hdmi_rdata <= 1'd0;
+	case (top_hdmi_address)
+		10'd768: begin
+			top_hdmi_rdata <= 31'd1212435761;
+		end
+		10'd769: begin
+			top_hdmi_rdata <= top_hdmi_command;
+		end
+		10'd770: begin
+			top_hdmi_rdata <= top_hdmi_locked;
+		end
+		10'd771: begin
+			top_hdmi_rdata <= top_hdmi_scratch;
+		end
+		10'd772: begin
+			top_hdmi_rdata <= top_hdmi_writes;
+		end
+	endcase
+// synthesis translate_off
+	dummy_d_36 <= dummy_s;
+// synthesis translate_on
+end
 assign top_capture_arm = top_registers_arm;
 assign top_capture_pattern0 = top_registers_pattern;
 assign top_capture_bank0 = top_registers_bank;
@@ -4068,9 +4147,12 @@ assign top_analyzer_address = top_registers_adr[11:1];
 assign top_tdc_frontend_address = top_registers_adr;
 assign top_tdc_frontend_wdata = top_registers_wd;
 assign top_tdc_frontend_write = top_registers_wr;
+assign top_hdmi_address = top_registers_adr;
+assign top_hdmi_wdata = top_registers_wd;
+assign top_hdmi_write = top_registers_wr;
 
 // synthesis translate_off
-reg dummy_d_36;
+reg dummy_d_37;
 // synthesis translate_on
 always @(*) begin
 	top_registers_valid_address <= 1'd0;
@@ -4089,7 +4171,7 @@ always @(*) begin
 			top_registers_read_value <= 17'd65537;
 		end
 		2'd2: begin
-			top_registers_read_value <= 32'd2726013502;
+			top_registers_read_value <= 32'd3351522600;
 		end
 		2'd3: begin
 			top_registers_read_value <= top_registers_scratch;
@@ -4181,17 +4263,28 @@ always @(*) begin
 		top_registers_writable <= 1'd1;
 		top_registers_bad_write <= top_tdc_frontend_error;
 	end
+	if ((top_registers_adr == 4'd9)) begin
+		top_registers_read_value <= 6'd63;
+	end
+	if (top_hdmi_selected) begin
+		top_registers_valid_address <= (~top_hdmi_error);
+		top_registers_read_value <= top_hdmi_rdata;
+		top_registers_writable <= 1'd1;
+		top_registers_bad_write <= top_hdmi_error;
+	end
 // synthesis translate_off
-	dummy_d_36 <= dummy_s;
+	dummy_d_37 <= dummy_s;
 // synthesis translate_on
 end
-assign top_tdc_frontend_commit = (top_registers_is_ongoing & (~((~top_registers_valid_address) | (top_registers_wr & ((((~top_registers_writable) | top_registers_bad_write) | ((top_registers_adr == 5'd16) & (top_registers_busy | (~top_registers_locked)))) | ((top_registers_adr == 9'd256) & top_analyzer_active))))));
+assign top_tdc_frontend_commit = (top_registers_is_ongoing0 & (~((~top_registers_valid_address) | (top_registers_wr & ((((~top_registers_writable) | top_registers_bad_write) | ((top_registers_adr == 5'd16) & (top_registers_busy | (~top_registers_locked)))) | ((top_registers_adr == 9'd256) & top_analyzer_active))))));
+assign top_hdmi_commit = (top_registers_is_ongoing1 & (~((~top_registers_valid_address) | (top_registers_wr & ((((~top_registers_writable) | top_registers_bad_write) | ((top_registers_adr == 5'd16) & (top_registers_busy | (~top_registers_locked)))) | ((top_registers_adr == 9'd256) & top_analyzer_active))))));
 
 // synthesis translate_off
-reg dummy_d_37;
+reg dummy_d_38;
 // synthesis translate_on
 always @(*) begin
-	top_registers_is_ongoing <= 1'd0;
+	top_registers_is_ongoing0 <= 1'd0;
+	top_registers_is_ongoing1 <= 1'd0;
 	next_state <= 2'd0;
 	top_registers_adr_registers_next_value0 <= 32'd0;
 	top_registers_adr_registers_next_value_ce0 <= 1'd0;
@@ -4276,7 +4369,8 @@ always @(*) begin
 				end
 			end
 			next_state <= 2'd3;
-			top_registers_is_ongoing <= 1'd1;
+			top_registers_is_ongoing0 <= 1'd1;
+			top_registers_is_ongoing1 <= 1'd1;
 		end
 		2'd3: begin
 			top_registers_ack_registers_next_value3 <= 1'd0;
@@ -4298,13 +4392,13 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_37 <= dummy_s;
+	dummy_d_38 <= dummy_s;
 // synthesis translate_on
 end
 assign slice_proxy = {top_tx_crc_value, top_tx_crc_sink_payload_data[7:0]};
 
 // synthesis translate_off
-reg dummy_d_38;
+reg dummy_d_39;
 // synthesis translate_on
 always @(*) begin
 	comb_rhs_self <= 13'd0;
@@ -4347,12 +4441,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_38 <= dummy_s;
+	dummy_d_39 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_39;
+reg dummy_d_40;
 // synthesis translate_on
 always @(*) begin
 	comb_t_self0 <= 13'd0;
@@ -4395,12 +4489,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_39 <= dummy_s;
+	dummy_d_40 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_40;
+reg dummy_d_41;
 // synthesis translate_on
 always @(*) begin
 	comb_t_self1 <= 16'd0;
@@ -4443,12 +4537,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_40 <= dummy_s;
+	dummy_d_41 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_41;
+reg dummy_d_42;
 // synthesis translate_on
 always @(*) begin
 	comb_t_self2 <= 16'd0;
@@ -4491,12 +4585,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_41 <= dummy_s;
+	dummy_d_42 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_42;
+reg dummy_d_43;
 // synthesis translate_on
 always @(*) begin
 	sync_t_self0 <= 3'd0;
@@ -4551,12 +4645,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_42 <= dummy_s;
+	dummy_d_43 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_43;
+reg dummy_d_44;
 // synthesis translate_on
 always @(*) begin
 	sync_t_self1 <= 3'd0;
@@ -4611,12 +4705,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_43 <= dummy_s;
+	dummy_d_44 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_44;
+reg dummy_d_45;
 // synthesis translate_on
 always @(*) begin
 	sync_f_self <= 3'd0;
@@ -4671,12 +4765,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_44 <= dummy_s;
+	dummy_d_45 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_45;
+reg dummy_d_46;
 // synthesis translate_on
 always @(*) begin
 	sync_rhs_self0 <= 6'd0;
@@ -4779,12 +4873,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_45 <= dummy_s;
+	dummy_d_46 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_46;
+reg dummy_d_47;
 // synthesis translate_on
 always @(*) begin
 	sync_rhs_self1 <= 1'd0;
@@ -4887,12 +4981,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_46 <= dummy_s;
+	dummy_d_47 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_47;
+reg dummy_d_48;
 // synthesis translate_on
 always @(*) begin
 	sync_rhs_self2 <= 1'd0;
@@ -4995,12 +5089,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_47 <= dummy_s;
+	dummy_d_48 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_48;
+reg dummy_d_49;
 // synthesis translate_on
 always @(*) begin
 	sync_rhs_self3 <= 4'd0;
@@ -5031,12 +5125,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_48 <= dummy_s;
+	dummy_d_49 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_49;
+reg dummy_d_50;
 // synthesis translate_on
 always @(*) begin
 	sync_rhs_self4 <= 1'd0;
@@ -5067,12 +5161,12 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_49 <= dummy_s;
+	dummy_d_50 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_50;
+reg dummy_d_51;
 // synthesis translate_on
 always @(*) begin
 	sync_rhs_self5 <= 1'd0;
@@ -5103,7 +5197,7 @@ always @(*) begin
 		end
 	endcase
 // synthesis translate_off
-	dummy_d_50 <= dummy_s;
+	dummy_d_51 <= dummy_s;
 // synthesis translate_on
 end
 assign xilinxasyncresetsynchronizerimpl0_async_reset = (~top_fixed_cm_locked);
@@ -5233,7 +5327,7 @@ assign top_tdc_frontend_hb_sys2 = xilinxmultiregimpl109_xilinxmultiregimpl1091;
 assign xilinxmultiregimpl109_i = top_tdc_frontend_heartbeat2[4];
 
 // synthesis translate_off
-reg dummy_d_51;
+reg dummy_d_52;
 // synthesis translate_on
 always @(*) begin
 	top_tdc_frontend_locks <= 3'd0;
@@ -5241,12 +5335,12 @@ always @(*) begin
 	top_tdc_frontend_locks[1] <= xilinxmultiregimpl1061;
 	top_tdc_frontend_locks[2] <= xilinxmultiregimpl1101;
 // synthesis translate_off
-	dummy_d_51 <= dummy_s;
+	dummy_d_52 <= dummy_s;
 // synthesis translate_on
 end
 
 // synthesis translate_off
-reg dummy_d_52;
+reg dummy_d_53;
 // synthesis translate_on
 always @(*) begin
 	top_tdc_frontend_phased <= 3'd0;
@@ -5254,16 +5348,20 @@ always @(*) begin
 	top_tdc_frontend_phased[1] <= xilinxmultiregimpl1071;
 	top_tdc_frontend_phased[2] <= xilinxmultiregimpl1111;
 // synthesis translate_off
-	dummy_d_52 <= dummy_s;
+	dummy_d_53 <= dummy_s;
 // synthesis translate_on
 end
-assign top_phy_request = xilinxmultiregimpl112_xilinxmultiregimpl1121;
-assign xilinxmultiregimpl112_i = (top_command == 15'd27474);
-assign top_link = xilinxmultiregimpl1131;
-assign top_lock = xilinxmultiregimpl1141;
-assign top_netlock = xilinxmultiregimpl1151;
-assign top_registers_mcu_scratch = xilinxmultiregimpl1161;
-assign top_registers_mcu_writes = xilinxmultiregimpl1171;
+assign top_hdmi_cmd = xilinxmultiregimpl1121;
+assign top_hdmi_locked = xilinxmultiregimpl1131;
+assign top_hdmi_scratch = xilinxmultiregimpl1141;
+assign top_hdmi_writes = xilinxmultiregimpl1151;
+assign top_phy_request = xilinxmultiregimpl116_xilinxmultiregimpl1161;
+assign xilinxmultiregimpl116_i = (top_command == 15'd27474);
+assign top_link = xilinxmultiregimpl1171;
+assign top_lock = xilinxmultiregimpl1181;
+assign top_netlock = xilinxmultiregimpl1191;
+assign top_registers_mcu_scratch = xilinxmultiregimpl1201;
+assign top_registers_mcu_writes = xilinxmultiregimpl1211;
 
 always @(posedge cap_clk) begin
 	if (top_capture_arm_cdc_o) begin
@@ -5282,9 +5380,33 @@ always @(posedge cap_clk) begin
 	if (top_capture_done_cdc_i) begin
 		top_capture_done_cdc_toggle_i <= (~top_capture_done_cdc_toggle_i);
 	end
+	top_hdmi_phase <= (top_hdmi_phase + 1'd1);
+	top_hdmi_div <= (top_hdmi_div + 1'd1);
+	top_hdmi_oldmode <= top_hdmi_cmd[5:4];
+	if (((top_hdmi_cmd[5:4] != top_hdmi_oldmode) | top_hdmi_cmd[7])) begin
+		top_hdmi_div <= 1'd0;
+		top_hdmi0 <= 1'd1;
+		top_hdmi1 <= 5'd19;
+		top_hdmi2 <= 6'd53;
+		top_hdmi3 <= 7'd87;
+	end else begin
+		if (((top_hdmi_cmd[5:4] == 2'd2) | ((top_hdmi_cmd[5:4] == 2'd3) & (top_hdmi_div == 1'd0)))) begin
+			top_hdmi0 <= {top_hdmi0[5:0], (top_hdmi0[6] ^ top_hdmi0[5])};
+			top_hdmi1 <= {top_hdmi1[5:0], (top_hdmi1[6] ^ top_hdmi1[5])};
+			top_hdmi2 <= {top_hdmi2[5:0], (top_hdmi2[6] ^ top_hdmi2[5])};
+			top_hdmi3 <= {top_hdmi3[5:0], (top_hdmi3[6] ^ top_hdmi3[5])};
+		end
+	end
 	if (cap_rst) begin
 		top_capture_active <= 1'd0;
 		top_capture_index <= 12'd0;
+		top_hdmi_phase <= 3'd0;
+		top_hdmi_div <= 8'd0;
+		top_hdmi_oldmode <= 2'd0;
+		top_hdmi0 <= 7'd1;
+		top_hdmi1 <= 7'd19;
+		top_hdmi2 <= 7'd53;
+		top_hdmi3 <= 7'd87;
 	end
 	xilinxmultiregimpl220 <= top_capture_arm_cdc_toggle_i;
 	xilinxmultiregimpl221 <= xilinxmultiregimpl220;
@@ -5316,6 +5438,8 @@ always @(posedge cap_clk) begin
 	xilinxmultiregimpl36_xilinxmultiregimpl361 <= xilinxmultiregimpl36_xilinxmultiregimpl360;
 	xilinxmultiregimpl37_xilinxmultiregimpl370 <= {STR12, DI12};
 	xilinxmultiregimpl37_xilinxmultiregimpl371 <= xilinxmultiregimpl37_xilinxmultiregimpl370;
+	xilinxmultiregimpl1120 <= top_hdmi_command;
+	xilinxmultiregimpl1121 <= xilinxmultiregimpl1120;
 end
 
 always @(posedge coarse1_clk) begin
@@ -6184,6 +6308,9 @@ always @(posedge sys_clk) begin
 			top_tdc_frontend_stop <= 1'd1;
 		end
 	end
+	if ((((top_hdmi_commit & top_hdmi_selected) & top_hdmi_write) & (~top_hdmi_error))) begin
+		top_hdmi_command <= top_hdmi_wdata;
+	end
 	top_registers_arm <= 1'd0;
 	top_registers_trace_arm <= 1'd0;
 	if (top_registers_busy) begin
@@ -6323,6 +6450,7 @@ always @(posedge sys_clk) begin
 		top_tdc_frontend_age1 <= 13'd8191;
 		top_tdc_frontend_previous2 <= 1'd0;
 		top_tdc_frontend_age2 <= 13'd8191;
+		top_hdmi_command <= 8'd0;
 		top_registers_rdata <= 32'd0;
 		top_registers_ack <= 1'd0;
 		top_registers_err <= 1'd0;
@@ -6487,18 +6615,24 @@ always @(posedge sys_clk) begin
 	xilinxmultiregimpl1101 <= xilinxmultiregimpl1100;
 	xilinxmultiregimpl1110 <= top_tdc_frontend_done2;
 	xilinxmultiregimpl1111 <= xilinxmultiregimpl1110;
-	xilinxmultiregimpl112_xilinxmultiregimpl1120 <= (top_command == 15'd27474);
-	xilinxmultiregimpl112_xilinxmultiregimpl1121 <= xilinxmultiregimpl112_xilinxmultiregimpl1120;
-	xilinxmultiregimpl1130 <= top_link_up;
+	xilinxmultiregimpl1130 <= top_cap_cm_locked;
 	xilinxmultiregimpl1131 <= xilinxmultiregimpl1130;
-	xilinxmultiregimpl1140 <= top_cap_cm_locked;
+	xilinxmultiregimpl1140 <= top_hdmi_hs;
 	xilinxmultiregimpl1141 <= xilinxmultiregimpl1140;
-	xilinxmultiregimpl1150 <= top_pma_k7_gtx_basex_tx_mmcm_locked1;
+	xilinxmultiregimpl1150 <= top_hdmi_hw;
 	xilinxmultiregimpl1151 <= xilinxmultiregimpl1150;
-	xilinxmultiregimpl1160 <= top_scratch;
-	xilinxmultiregimpl1161 <= xilinxmultiregimpl1160;
-	xilinxmultiregimpl1170 <= top_writes;
+	xilinxmultiregimpl116_xilinxmultiregimpl1160 <= (top_command == 15'd27474);
+	xilinxmultiregimpl116_xilinxmultiregimpl1161 <= xilinxmultiregimpl116_xilinxmultiregimpl1160;
+	xilinxmultiregimpl1170 <= top_link_up;
 	xilinxmultiregimpl1171 <= xilinxmultiregimpl1170;
+	xilinxmultiregimpl1180 <= top_cap_cm_locked;
+	xilinxmultiregimpl1181 <= xilinxmultiregimpl1180;
+	xilinxmultiregimpl1190 <= top_pma_k7_gtx_basex_tx_mmcm_locked1;
+	xilinxmultiregimpl1191 <= xilinxmultiregimpl1190;
+	xilinxmultiregimpl1200 <= top_scratch;
+	xilinxmultiregimpl1201 <= xilinxmultiregimpl1200;
+	xilinxmultiregimpl1210 <= top_writes;
+	xilinxmultiregimpl1211 <= xilinxmultiregimpl1210;
 end
 
 always @(posedge tdc1_clk) begin
@@ -8815,6 +8949,64 @@ IBUFDS #(
 	.O(top_tdc_frontend_frontend_v35)
 );
 
+pm_hdmi_idle pm_hdmi_idle(
+	.clk(cap_clk),
+	.phase(top_hdmi_phase),
+	.data(top_hdmi_idle)
+);
+
+OBUFDS #(
+	.IOSTANDARD("LVDS"),
+	.SLEW("FAST")
+) OBUFDS (
+	.I(top_hdmi_data[0]),
+	.O(HDMI_P0),
+	.OB(HDMI_N0)
+);
+
+OBUFDS #(
+	.IOSTANDARD("LVDS"),
+	.SLEW("FAST")
+) OBUFDS_1 (
+	.I(top_hdmi_data[1]),
+	.O(HDMI_P1),
+	.OB(HDMI_N1)
+);
+
+OBUFDS #(
+	.IOSTANDARD("LVDS"),
+	.SLEW("FAST")
+) OBUFDS_2 (
+	.I(top_hdmi_data[2]),
+	.O(HDMI_P2),
+	.OB(HDMI_N2)
+);
+
+OBUFDS #(
+	.IOSTANDARD("LVDS"),
+	.SLEW("FAST")
+) OBUFDS_3 (
+	.I(top_hdmi_data[3]),
+	.O(HDMI_P3),
+	.OB(HDMI_N3)
+);
+
+hdmi_slave hdmi_slave(
+	.clk(HSCK),
+	.locked(top_cap_cm_locked),
+	.mosi(HMOSI),
+	.sel(HSEL),
+	.miso(top_hdmi_mi),
+	.scratch_out(top_hdmi_hs),
+	.writes_out(top_hdmi_hw)
+);
+
+OBUFT OBUFT(
+	.I(top_hdmi_mi),
+	.T((~HSEL)),
+	.O(HMISO)
+);
+
 rng_ipbus_endpoint rng_ipbus_endpoint(
 	.ip_addr(32'd3232236272),
 	.ipb_ack(top_registers_ack),
@@ -8850,7 +9042,7 @@ pm12_mcu_spi pm12_mcu_spi(
 	.writes_out(top_writes)
 );
 
-OBUFT OBUFT(
+OBUFT OBUFT_1(
 	.I(top_mi),
 	.T(CS),
 	.O(MISO)
@@ -9268,6 +9460,66 @@ MMCME2_ADV #(
 	.D(xilinxasyncresetsynchronizerimpl3_rst_meta),
 	.PRE(xilinxasyncresetsynchronizerimpl3_async_reset),
 	.Q(eth_rx_rst)
+);
+
+(* ars_ff1 = "true", async_reg = "true" *) FDPE #(
+	.INIT(1'd1)
+) FDPE_8 (
+	.C(tdc1_clk),
+	.CE(1'd1),
+	.D(1'd0),
+	.PRE(sys_rst),
+	.Q(xilinxasyncresetsynchronizerimpl4_rst_meta)
+);
+
+(* ars_ff2 = "true", async_reg = "true" *) FDPE #(
+	.INIT(1'd1)
+) FDPE_9 (
+	.C(tdc1_clk),
+	.CE(1'd1),
+	.D(xilinxasyncresetsynchronizerimpl4_rst_meta),
+	.PRE(sys_rst),
+	.Q(tdc1_rst)
+);
+
+(* ars_ff1 = "true", async_reg = "true" *) FDPE #(
+	.INIT(1'd1)
+) FDPE_10 (
+	.C(tdc2_clk),
+	.CE(1'd1),
+	.D(1'd0),
+	.PRE(sys_rst),
+	.Q(xilinxasyncresetsynchronizerimpl5_rst_meta)
+);
+
+(* ars_ff2 = "true", async_reg = "true" *) FDPE #(
+	.INIT(1'd1)
+) FDPE_11 (
+	.C(tdc2_clk),
+	.CE(1'd1),
+	.D(xilinxasyncresetsynchronizerimpl5_rst_meta),
+	.PRE(sys_rst),
+	.Q(tdc2_rst)
+);
+
+(* ars_ff1 = "true", async_reg = "true" *) FDPE #(
+	.INIT(1'd1)
+) FDPE_12 (
+	.C(tdc3_clk),
+	.CE(1'd1),
+	.D(1'd0),
+	.PRE(sys_rst),
+	.Q(xilinxasyncresetsynchronizerimpl6_rst_meta)
+);
+
+(* ars_ff2 = "true", async_reg = "true" *) FDPE #(
+	.INIT(1'd1)
+) FDPE_13 (
+	.C(tdc3_clk),
+	.CE(1'd1),
+	.D(xilinxasyncresetsynchronizerimpl6_rst_meta),
+	.PRE(sys_rst),
+	.Q(tdc3_rst)
 );
 
 endmodule

@@ -1,6 +1,7 @@
 """PM12 clock/reference frontend, following pinned fit.vhd topology."""
 from migen import *
 from migen.genlib.cdc import MultiReg
+from migen.genlib.resetsync import AsyncResetSynchronizer
 from receiver import TdcAcquisition
 
 class Frontend(Module):
@@ -23,7 +24,10 @@ class Frontend(Module):
             setattr(self.clock_domains, 'cd_tdc%d'%num, td)
             setattr(self.clock_domains, 'cd_coarse%d'%num, coarse)
             result = differential('TDCCLK%d'%num)
-            self.specials += Instance('BUFR',p_BUFR_DIVIDE='BYPASS',i_I=result,i_CE=1,i_CLR=0,o_O=td.clk)
+            self.specials += [Instance('BUFR',p_BUFR_DIVIDE='BYPASS',i_I=result,i_CE=1,i_CLR=0,o_O=td.clk),
+                              AsyncResetSynchronizer(td,ResetSignal('sys'))]
+            # ARM/STOP epochs and their remote acknowledgements must reset
+            # together when SYS MMCM lock is lost, including idle captures.
             reference = mclk1 if group==0 else differential('MCLK%d'%num)
             clock_in=Signal(); bits=Signal(3); st=Signal(); lock=Signal(); done=Signal()
             feedback=Signal(); fb=Signal(); c600=Signal(); c90=Signal(); c300=Signal()

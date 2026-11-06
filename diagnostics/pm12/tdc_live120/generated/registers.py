@@ -1,6 +1,6 @@
 from migen import *
 class Registers(Module):
- def __init__(self, cap, trace, build_id=0x20261015, settle=1000, timeout=40000, tdc=None):
+ def __init__(self, cap, trace, build_id=0x20261015, settle=1000, timeout=40000, tdc=None, hdmi=None):
   self.address=Signal(32);self.wdata=Signal(32);self.strobe=Signal();self.write=Signal();self.rdata=Signal(32);self.ack=Signal();self.err=Signal()
   self.link=Signal();self.locked=Signal();self.ev=Signal();self.scratch=Signal(32);self.writes=Signal(32);self.valid=Signal();self.busy=Signal();self.capture_id=Signal(32);self.timed_out=Signal()
   self.mcu_scratch=Signal(16);self.mcu_writes=Signal(16)
@@ -21,6 +21,9 @@ class Registers(Module):
   if tdc is not None:
    self.comb += [If(adr==1,read_value.eq(0x10002)),If(adr==9,read_value.eq(31)),tdc.address.eq(adr),tdc.wdata.eq(wd),tdc.write.eq(wr),
     If(tdc.selected,valid_address.eq(~tdc.error),read_value.eq(tdc.rdata),writable.eq(1),bad_write.eq(tdc.error))]
+  if hdmi is not None:
+   self.comb += [hdmi.address.eq(adr),hdmi.wdata.eq(wd),hdmi.write.eq(wr),If(adr==9,read_value.eq(63)),
+    If(hdmi.selected,valid_address.eq(~hdmi.error),read_value.eq(hdmi.rdata),writable.eq(1),bad_write.eq(hdmi.error))]
   f=FSM(reset_state='IDLE');self.submodules.fsm=f
   f.act('IDLE',If(self.strobe,NextValue(adr,self.address),NextValue(wd,self.wdata),NextValue(wr,self.write),NextState('MEM_WAIT')))
   f.act('MEM_WAIT',NextState('COMPLETE'))
@@ -35,4 +38,5 @@ class Registers(Module):
   # Bubble after ACK lets the master advance ADDRESS before accepting again.
   if tdc is not None:
    self.comb += tdc.commit.eq(f.ongoing('COMPLETE') & ~fail)
+  if hdmi is not None:self.comb += hdmi.commit.eq(f.ongoing('COMPLETE') & ~fail)
   f.act('ACK',NextValue(self.ack,0),NextValue(self.err,0),NextState('IDLE'))

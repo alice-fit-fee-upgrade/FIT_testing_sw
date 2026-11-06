@@ -1,0 +1,40 @@
+{
+  "pass": true,
+  "runs": [
+    "safe-cli-02",
+    "safe-cli-03"
+  ],
+  "target": "PM12 S/N1803 + Kasli-DIOT00001, DIO slots6/7",
+  "pm_build": "c7c42d28",
+  "pm_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+  "kasli_sha256": "4299ddd3c87ccc4ad76796127de1d08d2d50943c7679555fca140b1e64261745",
+  "hdmi_map": [
+    3,
+    1,
+    2,
+    0
+  ],
+  "spi_allowlist": [
+    0,
+    1,
+    2
+  ],
+  "spi_writes_enabled": false,
+  "prbs_bits_total": 87141,
+  "prbs_errors": 0,
+  "unexpected_sys_resets": 0,
+  "new_bridge_drops": 0,
+  "read_retries": 0,
+  "tdc_pulses_per_run": 64,
+  "expected_channel": 12,
+  "other_tdc_channels": 0,
+  "adc_synthetic_words_per_run": 98304,
+  "adc_physical_words_per_run": 98304,
+  "retained_state": "PM/Kasli SRAM images retained; SPI/CFD disabled, DIO input; bridge1, ADC bank A physical, TDC quiet frozen",
+  "limits": [
+    "Short functional PRBS test, not sustained BER qualification.",
+    "Original empty HDMI frames only.",
+    "SPI writes and addresses beyond0/1/2 are not qualified with the shared MCU bus.",
+    "ADC analog characterization remains physical channel12; this suite verifies all digital ADC banks/strobes."
+  ]
+}

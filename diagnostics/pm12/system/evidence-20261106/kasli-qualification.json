@@ -1,0 +1,11 @@
+{
+  "wns_ns": 0.101,
+  "whs_ns": 0.043,
+  "drc_errors": 0,
+  "iserdes_count": 18,
+  "differential_output_buffers": 7,
+  "reference_hz": 120236100,
+  "hdmi_data_base": 0,
+  "bit_sha256": "4299ddd3c87ccc4ad76796127de1d08d2d50943c7679555fca140b1e64261745",
+  "pass": true
+}

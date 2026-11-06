@@ -4,6 +4,10 @@ cd $here
 create_project -in_memory -part xc7k160tffg676-3
 read_verilog $here/pm12_ipbus_adc.v
 read_verilog $here/eth_jtag.v
+read_verilog $here/hdmi_slave.v
+read_vhdl $here/PM12_pkg.vhd
+read_vhdl $here/trigger.vhd
+read_vhdl $here/idle.vhd
 read_vhdl $here/pm12_mcu_spi.vhd
 set manifest [open $here/ipbus-sources.json r]
 set text [read $manifest]

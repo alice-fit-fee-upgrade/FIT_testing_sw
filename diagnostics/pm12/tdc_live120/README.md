@@ -1,5 +1,9 @@
 # PM12 LHC-clock IPbus / ADC / TDC integration
 
+Latest: the resident PM image is now build`c7c42d28`, adding HDMI diagnostics
+and coherent TDC-domain resets. Use the [integrated system suite](../system/README.md).
+The a27baa3e receipts and build details below describe the earlier baseline.
+
 Physical functional PASS 2026-11-06 on PM12 S/N1803 and Kasli-DIOT00001.
 Resident PM FPGA build a27baa3e, USER1 504d5a04, IPbus504d1202 ABI10002.
 No PM CDCE output-frequency writes, MCU/CPLD programming or flash writes.
