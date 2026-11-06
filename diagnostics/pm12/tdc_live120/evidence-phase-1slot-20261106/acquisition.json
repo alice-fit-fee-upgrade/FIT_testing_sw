@@ -1,0 +1,1250 @@
+{
+  "expected_channel": 12,
+  "captures": [
+    {
+      "label": "quiet-before",
+      "generation": 12,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tx": null,
+      "phase_bin": null,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "label": "00-n128-phase24",
+      "generation": 13,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 8,
+        "repetitions": 128
+      },
+      "phase_bin": 24,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "127": 50,
+          "1": 5,
+          "126": 37,
+          "0": 24,
+          "125": 11,
+          "2": 1
+        }
+      ]
+    },
+    {
+      "label": "01-n128-phase25",
+      "generation": 14,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 9,
+        "repetitions": 128
+      },
+      "phase_bin": 25,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "79": 52,
+          "78": 39,
+          "80": 11,
+          "77": 22,
+          "81": 2,
+          "76": 2
+        }
+      ]
+    },
+    {
+      "label": "02-n128-phase26",
+      "generation": 15,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 10,
+        "repetitions": 128
+      },
+      "phase_bin": 26,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "32": 11,
+          "30": 60,
+          "29": 26,
+          "28": 2,
+          "31": 29
+        }
+      ]
+    },
+    {
+      "label": "03-n128-phase27",
+      "generation": 16,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 11,
+        "repetitions": 128
+      },
+      "phase_bin": 27,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "112": 29,
+          "111": 47,
+          "110": 45,
+          "113": 4,
+          "109": 2,
+          "108": 1
+        }
+      ]
+    },
+    {
+      "label": "04-n128-phase28",
+      "generation": 17,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 12,
+        "repetitions": 128
+      },
+      "phase_bin": 28,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "65": 24,
+          "64": 61,
+          "63": 33,
+          "62": 8,
+          "66": 2
+        }
+      ]
+    },
+    {
+      "label": "05-n128-phase29",
+      "generation": 18,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 13,
+        "repetitions": 128
+      },
+      "phase_bin": 29,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "14": 36,
+          "15": 54,
+          "13": 10,
+          "16": 24,
+          "17": 3,
+          "12": 1
+        }
+      ]
+    },
+    {
+      "label": "06-n128-phase30",
+      "generation": 19,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 14,
+        "repetitions": 128
+      },
+      "phase_bin": 30,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "96": 43,
+          "94": 34,
+          "95": 39,
+          "97": 7,
+          "93": 4,
+          "92": 1
+        }
+      ]
+    },
+    {
+      "label": "07-n128-phase31",
+      "generation": 20,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 15,
+        "repetitions": 128
+      },
+      "phase_bin": 31,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "47": 57,
+          "48": 45,
+          "46": 15,
+          "45": 2,
+          "49": 9
+        }
+      ]
+    },
+    {
+      "label": "08-n128-phase32",
+      "generation": 21,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 16,
+        "repetitions": 128
+      },
+      "phase_bin": 32,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "0": 33,
+          "1": 10,
+          "127": 60,
+          "126": 22,
+          "2": 3
+        }
+      ]
+    },
+    {
+      "label": "09-n128-phase33",
+      "generation": 22,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 17,
+        "repetitions": 128
+      },
+      "phase_bin": 33,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "79": 54,
+          "78": 34,
+          "80": 29,
+          "77": 10,
+          "81": 1
+        }
+      ]
+    },
+    {
+      "label": "10-n128-phase34",
+      "generation": 23,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 18,
+        "repetitions": 128
+      },
+      "phase_bin": 34,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "30": 49,
+          "29": 37,
+          "28": 11,
+          "31": 21,
+          "32": 10
+        }
+      ]
+    },
+    {
+      "label": "11-n128-phase35",
+      "generation": 24,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 19,
+        "repetitions": 128
+      },
+      "phase_bin": 35,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "112": 48,
+          "113": 4,
+          "110": 28,
+          "111": 41,
+          "109": 6,
+          "108": 1
+        }
+      ]
+    },
+    {
+      "label": "12-n128-phase36",
+      "generation": 25,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 20,
+        "repetitions": 128
+      },
+      "phase_bin": 36,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "64": 40,
+          "63": 49,
+          "65": 21,
+          "62": 16,
+          "66": 1,
+          "61": 1
+        }
+      ]
+    },
+    {
+      "label": "13-n128-phase37",
+      "generation": 26,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 21,
+        "repetitions": 128
+      },
+      "phase_bin": 37,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "16": 55,
+          "15": 49,
+          "17": 15,
+          "14": 4,
+          "18": 2,
+          "13": 3
+        }
+      ]
+    },
+    {
+      "label": "14-n128-phase38",
+      "generation": 27,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 22,
+        "repetitions": 128
+      },
+      "phase_bin": 38,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "95": 45,
+          "94": 47,
+          "96": 23,
+          "93": 9,
+          "92": 1,
+          "97": 3
+        }
+      ]
+    },
+    {
+      "label": "15-n128-phase39",
+      "generation": 28,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 23,
+        "repetitions": 128
+      },
+      "phase_bin": 39,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "46": 56,
+          "47": 38,
+          "45": 21,
+          "44": 3,
+          "48": 10
+        }
+      ]
+    },
+    {
+      "label": "16-n128-phase40",
+      "generation": 29,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 24,
+        "repetitions": 128
+      },
+      "phase_bin": 40,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "126": 41,
+          "0": 18,
+          "127": 61,
+          "125": 6,
+          "2": 1,
+          "1": 1
+        }
+      ]
+    },
+    {
+      "label": "17-n128-phase41",
+      "generation": 30,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 25,
+        "repetitions": 128
+      },
+      "phase_bin": 41,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "79": 56,
+          "80": 23,
+          "81": 6,
+          "78": 38,
+          "77": 5
+        }
+      ]
+    },
+    {
+      "label": "18-n128-phase42",
+      "generation": 31,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 26,
+        "repetitions": 128
+      },
+      "phase_bin": 42,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "29": 38,
+          "30": 62,
+          "28": 7,
+          "31": 17,
+          "32": 4
+        }
+      ]
+    },
+    {
+      "label": "19-n128-phase43",
+      "generation": 32,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 27,
+        "repetitions": 128
+      },
+      "phase_bin": 43,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "112": 50,
+          "111": 52,
+          "113": 10,
+          "110": 15,
+          "114": 1
+        }
+      ]
+    },
+    {
+      "label": "20-n128-phase44",
+      "generation": 33,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 28,
+        "repetitions": 128
+      },
+      "phase_bin": 44,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "63": 25,
+          "64": 70,
+          "65": 18,
+          "62": 5,
+          "66": 8,
+          "67": 2
+        }
+      ]
+    },
+    {
+      "label": "21-n128-phase45",
+      "generation": 34,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 29,
+        "repetitions": 128
+      },
+      "phase_bin": 45,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "17": 25,
+          "18": 1,
+          "16": 52,
+          "14": 8,
+          "15": 41,
+          "13": 1
+        }
+      ]
+    },
+    {
+      "label": "22-n128-phase46",
+      "generation": 35,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 30,
+        "repetitions": 128
+      },
+      "phase_bin": 46,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "93": 32,
+          "92": 7,
+          "95": 21,
+          "94": 54,
+          "96": 13,
+          "97": 1
+        }
+      ]
+    },
+    {
+      "label": "23-n128-phase47",
+      "generation": 36,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 31,
+        "repetitions": 128
+      },
+      "phase_bin": 47,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "47": 44,
+          "46": 58,
+          "45": 16,
+          "48": 10
+        }
+      ]
+    },
+    {
+      "label": "24-n128-phase48",
+      "generation": 37,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        128
+      ],
+      "tx": {
+        "generation": 32,
+        "repetitions": 128
+      },
+      "phase_bin": 48,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "127": 57,
+          "126": 26,
+          "0": 31,
+          "125": 9,
+          "1": 4,
+          "124": 1
+        }
+      ]
+    },
+    {
+      "label": "quiet-after",
+      "generation": 38,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tx": null,
+      "phase_bin": null,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    }
+  ],
+  "scope": "functional raw TDC reaction; no timestamp calibration",
+  "stimulus": "slot7 channel0, RJ45 pair1/2; nominal960MS/s,20 samples high,period1200 words",
+  "pgood": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000D403750103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2118
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000000802750103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2128
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000003D00750103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2114
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000005B02750103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2119
+    }
+  ],
+  "identity": {
+    "command": "RS",
+    "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.3 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+    "duration_s": 0.2122
+  },
+  "records_per_pulse": [
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0,
+    1.0
+  ],
+  "pgood_final": {
+    "command": "@HW",
+    "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000005800750103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+    "duration_s": 0.2117
+  },
+  "pass": true
+}
