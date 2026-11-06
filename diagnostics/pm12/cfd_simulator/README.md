@@ -1,3 +1,11 @@
+# External DAC to ADC A/B DC scan —2026-11-06
+
+Physicalchannel12 test complete; integrator disabled, MOD-DAC-28 controlled
+over existing Ethernet SCPI with3.3V per-pin client limit. Both AD9236 paths
+respond and reach saturation. See [results and repeat instructions](ADC_DC_SCAN.md).
+
+![ADC DC characterization](evidence-adc-dc-20261106/adc-dc-characterization.png)
+
 # IPbus repeated scan completed —2026-11-06
 
 Kasli RPH1 now includes native IPbus on SFP0,192.168.2.241:50001, with UART retained.

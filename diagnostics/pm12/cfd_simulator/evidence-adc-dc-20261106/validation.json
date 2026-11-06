@@ -1,0 +1,41 @@
+{
+  "hardware_pass": true,
+  "target": "PM12 S/N1803 physical channel12 ADC A/B",
+  "safe_voltage_limit_v": 3.3,
+  "maximum_commanded_pin_voltage_v": 1.6,
+  "minimum_commanded_pin_voltage_v": 0.4,
+  "scpi_identity": "MODULIQ,MOD-DAC-28,FIT-CTRL-6825DD4C49E4,1.0",
+  "ethernet_mac": "68:25:dd:4c:49:e7",
+  "leases": "PM12,Atmel,Kasli plus ESP32/CPLD leases on BOTH Optiplex and station2",
+  "final_dac_commands_v": [
+    1,
+    1,
+    0,
+    0,
+    0,
+    0,
+    0,
+    0
+  ],
+  "integrator": "GPA7=HIGH; T1 pulls Integrator_PDn low by schematic; latch/pin HIGH read back",
+  "adc_input": "MAX4053 A/B selectors HIGH,INH LOW; external input connected to ADC A",
+  "monitor_mux": "INH HIGH",
+  "tca_final": [
+    0,
+    0
+  ],
+  "final_adc_generation": 251,
+  "final_adc_a_zero_mean_code": 2051.780821917808,
+  "notes": [
+    "Voltage axis is requested DAC voltage, not a calibrated DMM measurement.",
+    "Four-sample pattern subtraction is a statistical comparison, not proof of ADC-only noise.",
+    "No MCU/FPGA/CPLD programming, resets, EEPROM writes or PLL writes."
+  ],
+  "published_source_sha256": {
+    "adc_dc_scan.py": "7e1ab1aa936debcb0c4d51a06d58a4eb5e538d93ef3cf0181061e1794ce8f5d7",
+    "mod_dac28.py": "acdb15186689512cfb89b620c6a25f50ad4a9f8d0f989a9bc8fba09e95f4971a",
+    "plot_adc_dc_scan.py": "8162a14ad72cb49fe8dfb82c27f1f2aea6cf74678f58a94819e70c49340c01da"
+  },
+  "executed_sources_archive": "executed-sources.tar.gz",
+  "subsequent_source_changes": "Added PGOOD recheck before GPIO setup and independent zero-volt DAC parking on errors; successful acquisition path unchanged."
+}
