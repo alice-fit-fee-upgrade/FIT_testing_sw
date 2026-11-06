@@ -1,3 +1,10 @@
+# Reusable DAC-A phase scan —2026-11-06
+
+[Phase scan instructions](PHASE_SCAN.md):101 points across0..65535, selected PM12
+channel and Kasli RX lanes, raw buffers/histograms/CSV, explicit DAC restoration.
+Uses current UART recorder; IPbus migration deferred. Software-tested; no new
+physical DAC sweep has been run.
+
 # Channel12 B/C/D DAC sweep completed —2026-11-05
 
 65points per DAC across raw0..65535,3 readings per point;13additional lower-edge
