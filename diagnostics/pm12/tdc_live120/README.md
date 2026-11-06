@@ -66,6 +66,10 @@ cd /home/codex-hil/kasli-phase-tester
 ./run-python -m host.pm_tdc_test --out /srv/codex-hil-nvme/measurements/NEW-NAME
 ```
 
+The FIT_testing_sw entry point is `test_tdc_from_kasli.py`; it forwards to the
+station Kasli project (local commit561dea9, no remote configured), using its
+pinned environment. --kasli-root selects another local checkout.
+
 Options include --counts 16 64 128, --phase-bins 24 30 36 42 and
 --expected-channel 1..12. Output directories must be new. The driver holds
 PM12/Atmel/Kasli leases, checks PGOOD/identities, waits for TDC STARTED before
