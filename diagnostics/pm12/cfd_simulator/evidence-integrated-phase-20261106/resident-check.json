@@ -1,0 +1,26 @@
+{
+  "pm_identity": [
+    1347228162,
+    65538,
+    3351522600
+  ],
+  "kasli_magic": 1380993073,
+  "hdmi_extension": 1212435761,
+  "hdmi_map": 50462976,
+  "hdmi_enabled": 0,
+  "cfd_enabled": 0,
+  "phase_status": {
+    "raw": 5,
+    "ready": true,
+    "busy": false,
+    "valid": true,
+    "fault": false,
+    "command_error": false,
+    "pattern_error": false,
+    "pending": false,
+    "active_bank": 0,
+    "output_mask": 0,
+    "enabled": false,
+    "slot": 0
+  }
+}

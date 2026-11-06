@@ -1,3 +1,30 @@
+# Phase scan repeated on integrated gateware —2026-11-06
+
+Physical PM channel12, DAC-A20 codes0..65535, Kasli RX8/RX9(slot7 inputs1/3),
+original complementary20MHz gates, IPbus,4095-word captures: PASS.
+All62790 phase records and46 estimates reproduce from retained raw samples.
+DAC-A0000 acknowledged and baseline phase restored (deltas0/.0587sample bins).
+Observed spans19.79/19.61ns on the declared960MS/s time scale. Relative curve
+changes vs the earlier IPbus scan are <=1.015ns/0.975ns; no absolute phase
+calibration or sub-bin accuracy is inferred. At the stated LHC-derived
+961.8888MS/s rate, nominal nanoseconds scale by960/961.8888.
+
+![Previous versus integrated](evidence-integrated-phase-20261106/integrated-comparison.png)
+
+Repeat with the same station Python environment:
+
+```
+/home/codex-hil/kasli-diot-bringup/.venv/bin/python diagnostics/pm12/cfd_simulator/phase_scan.py --afe 12 --lanes 8,9 --restore-code 0000 --initialize-zero --transport ipbus --clock-mhz 20 --intervals 19 --words 4095 --out NEW_DIRECTORY
+```
+
+For the next fitted simulators, select their physical `--afe` and verified
+Kasli `--lanes`; do not infer cabling from the AFE number. Use `--intervals 100`
+for a denser101-point sweep. The driver checks PGOOD, holds all three leases,
+retains raw data and restores the explicitly declared active DAC code. It does
+not modify amplitude DACs, the external MOD-DAC-28 or analog injection muxes.
+DAC writes use the MCU `@DAC` command, not the shared HDMI SPI test interface.
+Results, raw captures and source snapshots: `evidence-integrated-phase-20261106/`.
+
 # External DAC to ADC A/B DC scan —2026-11-06
 
 Physicalchannel12 test complete; integrator disabled, MOD-DAC-28 controlled
