@@ -1,0 +1,22 @@
+{
+  "ADC A": {
+    "samples": 1022,
+    "fs_hz": 80157400.0,
+    "sample_interval_ns": 12.47545454318628,
+    "first_to_last_sample_us": 12.737439088593193,
+    "mean_code": 2051.59686888454,
+    "min_code": 2030,
+    "max_code": 2083,
+    "source_sha256": "ee5a198a7801f25f8cbdb042a7025f903e0c8d28507610dfd7a6953d0b6bd4da"
+  },
+  "ADC B": {
+    "samples": 1022,
+    "fs_hz": 80157400.0,
+    "sample_interval_ns": 12.47545454318628,
+    "first_to_last_sample_us": 12.737439088593193,
+    "mean_code": 2055.3375733855187,
+    "min_code": 2037,
+    "max_code": 2081,
+    "source_sha256": "a4f502d877da28ed2e0425f2f7a3efc55b8081e3e86d1311ecbe9521fb87eabf"
+  }
+}
