@@ -1,0 +1,34 @@
+{
+  "sample_rate_assumed_hz": 961888800,
+  "points": [
+    {
+      "phase_bin": 24,
+      "relative_delay_ns": 0.0,
+      "fine_mean": 126.71875,
+      "fine_std": 0.7417525533449149,
+      "count": 128
+    },
+    {
+      "phase_bin": 30,
+      "relative_delay_ns": 6.23772727159314,
+      "fine_mean": 94.5390625,
+      "fine_std": 0.9952829198530341,
+      "count": 128
+    },
+    {
+      "phase_bin": 36,
+      "relative_delay_ns": 12.47545454318628,
+      "fine_mean": 63.3046875,
+      "fine_std": 0.8562746059456636,
+      "count": 128
+    },
+    {
+      "phase_bin": 42,
+      "relative_delay_ns": 18.71318181477942,
+      "fine_mean": 29.320312500000004,
+      "fine_std": 0.8688266478961688,
+      "count": 128
+    }
+  ],
+  "notes": "Relative programmed delay, not absolute BC phase. Fine modulo128 unwrapped locally; no TDC time calibration."
+}
