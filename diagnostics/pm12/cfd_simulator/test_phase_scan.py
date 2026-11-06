@@ -96,6 +96,21 @@ class FlowTests(unittest.TestCase):
         with self.assertRaises(TimeoutError):self.run_flow('baseline')
         self.assertEqual(self.writes,[])
 
+    def test_explicit_zero_initialization_before_baseline(self):
+        writes=[];events=[];counter=0
+        def acquire():
+            nonlocal counter
+            counter+=10000
+            return capture_at(counter)
+        with contextlib.redirect_stdout(io.StringIO()):
+            result=run_scan(writes.append,acquire,lambda:None,
+                            lambda k,v:events.append((k,v)),0,[0,65535],[8],
+                            sleep=lambda s:None,initialize_zero=True)
+        self.assertEqual(writes,[0,0,65535,0])
+        self.assertEqual([v['stage'] for k,v in events if k=='point'],
+                         ['as-found','baseline','sweep','sweep','restored'])
+        self.assertTrue(result['restore_phase_check'])
+
     def test_counter_reuse_rejected_and_restore_attempted(self):
         with self.assertRaisesRegex(RuntimeError,'restoration/verification failed'):
             self.run_flow('epoch')

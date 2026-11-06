@@ -20,7 +20,7 @@ HERE = Path(__file__).resolve().parent
 
 
 def run_scan(set_code, acquire, check_power, emit, restore_code, codes,
-             lanes, settle_s=.1, repeats=1, sleep=time.sleep):
+             lanes, settle_s=.1, repeats=1, sleep=time.sleep, initialize_zero=False):
     """Hardware-independent scan flow; restore after any possibly executed write."""
     changed = False
     previous_mean = {}
@@ -69,10 +69,20 @@ def run_scan(set_code, acquire, check_power, emit, restore_code, codes,
         return estimates
 
     check_power()
-    baseline = measure('baseline', None)
-    result = dict(baseline=baseline, restore_code=restore_code, restoration_attempted=False)
+    if initialize_zero and restore_code != 0:
+        raise ValueError('zero initialization requires restore_code0')
+    baseline = None
+    result = dict(restore_code=restore_code, restoration_attempted=False,
+                  zero_baseline_established=initialize_zero)
     scan_error = None
     try:
+        if initialize_zero:
+            measure('as-found', None)
+            changed = True
+            set_code(0)
+            sleep(settle_s)
+        baseline = measure('baseline', 0 if initialize_zero else None)
+        result['baseline'] = baseline
         for index, code in enumerate(codes):
             check_power()
             changed = True  # A failed reply does not prove that the DAC was untouched.
@@ -91,6 +101,13 @@ def run_scan(set_code, acquire, check_power, emit, restore_code, codes,
                 set_code(restore_code)
                 sleep(settle_s)
                 restored = measure('restored', restore_code)
+                result['restore_command_accepted'] = True
+                if baseline is None:
+                    result['restored'] = restored
+                    result['restore_phase_check'] = 'unavailable: baseline acquisition failed'
+                    emit('result', result)
+                    if scan_error is None:raise RuntimeError('no baseline for restoration check')
+                    raise RuntimeError('scan failed before baseline was established')
                 deltas = {lane: wrapped_delta(restored[lane]['mean_bin'], baseline[lane]['mean_bin'],
                                                baseline[lane]['period_bins']) for lane in lanes}
                 result.update(restored=restored, restore_phase_deltas_bins=deltas)
@@ -132,6 +149,7 @@ def main():
     parser.add_argument('--lanes', required=True, help='Kasli logical RX lanes, e.g.8,9 for slot7 channels1,3')
     parser.add_argument('--restore-code', required=True, help='Known active DAC-A raw code, hexadecimal; NOT STORED parameter')
     parser.add_argument('--out', type=Path, required=True)
+    parser.add_argument('--initialize-zero', action='store_true', help='Explicitly establish DAC A=0 before baseline, finish at0; prior code is not restored')
     parser.add_argument('--intervals', type=int, default=100)
     parser.add_argument('--words', type=int, default=4095)
     parser.add_argument('--repeats', type=int, default=1)
@@ -145,6 +163,7 @@ def main():
         lanes = [int(v) for v in args.lanes.split(',')]
         codes = scan_codes(args.intervals)
         assert 1 <= args.afe <= 12 and 0 <= restore <= 65535
+        assert not args.initialize_zero or restore == 0
         assert lanes and len(set(lanes)) == len(lanes) and all(0 <= v < 16 for v in lanes)
         assert 150 <= args.words <= 4095 and args.words % 3 == 0
         assert 1 <= args.repeats <= 100 and 0 <= args.settle <= 60
@@ -206,7 +225,7 @@ def main():
                 return data
             dac = ConsoleDAC(uart,args.afe,capture,lambda row:emit('console',row))
             run_scan(dac.set_code,acquire,lambda:require_power_good(uart,capture),emit,
-                     restore,codes,lanes,args.settle,args.repeats)
+                     restore,codes,lanes,args.settle,args.repeats,initialize_zero=args.initialize_zero)
             report['pass_']=True
         except BaseException as error:
             report['error']=repr(error)

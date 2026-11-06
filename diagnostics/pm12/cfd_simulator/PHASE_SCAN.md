@@ -89,3 +89,24 @@ baseline. Run them with:
 ```sh
 python3 -m unittest discover -s diagnostics/pm12/cfd_simulator -v
 ```
+
+## Explicit zero baseline — owner-authorized2026-11-06
+
+When the prior raw DAC-A code is unknown and retaining it is unnecessary, add
+`--initialize-zero --restore-code 0000`. This records an as-found capture, writes
+raw0, records the new baseline, performs the scan and finishes at0. This is NOT
+restoration of an inferred original code. The owner explicitly selected this mode
+for the first physical phase scan. The baseline phase guard compares the final0
+to the explicitly established initial0. The first run uses full4095-word buffers,
+about2730 rising edges per input/point, and101 points; UART download dominates.
+
+Offline report/plots, using the existing plotting environment:
+
+```sh
+/srv/codex-hil-nvme/tool-venvs/fit-measurements/bin/python \
+  diagnostics/pm12/cfd_simulator/plot_phase_scan.py MEASUREMENT_DIRECTORY --plot
+```
+
+For subsequent IPbus comparison, keep the DAC codes, settling, buffer length and
+lane mapping identical. Compare phase relative to code0 and complete histograms;
+reconfiguring FPGA clocks may change the absolute sample-epoch phase zero.
