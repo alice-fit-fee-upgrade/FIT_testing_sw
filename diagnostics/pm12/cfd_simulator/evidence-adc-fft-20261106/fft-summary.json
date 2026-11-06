@@ -1,0 +1,30 @@
+{
+  "A": {
+    "input_sha256": "ee5a198a7801f25f8cbdb042a7025f903e0c8d28507610dfd7a6953d0b6bd4da",
+    "raw_records": 4096,
+    "adc_samples_available": 1022,
+    "fft_samples": 1020,
+    "fs_hz": 80157400.0,
+    "bin_spacing_hz": 78585.6862745098,
+    "mean_code": 2051.630392156863,
+    "raw_rms_codes": 19.86162073642495,
+    "residual_rms_codes": 0.4902823453503555,
+    "fs_over_4_rms_codes": 19.241704923976766,
+    "fs_over_2_rms_codes": 4.899019607843138,
+    "parseval_error_codes_squared": 5.684341886080802e-14
+  },
+  "B": {
+    "input_sha256": "a4f502d877da28ed2e0425f2f7a3efc55b8081e3e86d1311ecbe9521fb87eabf",
+    "raw_records": 4096,
+    "adc_samples_available": 1022,
+    "fft_samples": 1020,
+    "fs_hz": 80157400.0,
+    "bin_spacing_hz": 78585.6862745098,
+    "mean_code": 2055.3058823529414,
+    "raw_rms_codes": 17.405108690702818,
+    "residual_rms_codes": 0.5239735209653424,
+    "fs_over_4_rms_codes": 17.085148158026005,
+    "fs_over_2_rms_codes": 3.2803921568627445,
+    "parseval_error_codes_squared": 5.684341886080802e-14
+  }
+}

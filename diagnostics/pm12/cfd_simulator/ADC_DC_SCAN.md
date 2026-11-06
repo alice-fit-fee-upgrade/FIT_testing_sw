@@ -93,3 +93,30 @@ implemented by this FIT client.
 
 Initial handoff: ~/workspaces/mod-dac-28-support/docs/FIT-DAC-HANDOFF.md.
 Official ADC reference: https://www.analog.com/media/en/technical-documentation/data-sheets/ad9236.pdf .
+
+## Offline buffer FFT
+
+`plot_adc_fft.py` analyzes the zero-input buffers (DAC CH0=CH1=1 V) from
+`dc-scan-01`, separately for ADC A and B on physical channel 12. Extract one
+sample immediately before each rising ADC strobe; verified spacing is four
+FPGA capture records. Retain 1020 samples (complete four-sample periods).
+The ADC rate is inferred as 2 × stated 40.0787 MHz = 80.1574 MS/s; this was
+not checked with a frequency counter. FFT bin spacing is 78.586 kHz.
+
+| Component | ADC A RMS [codes] | ADC B RMS [codes] |
+|---|---:|---:|
+| Fs/4 = 20.03935 MHz | 19.242 | 17.085 |
+| Fs/2 = 40.07870 MHz | 4.899 | 3.280 |
+| Total, DC removed | 19.862 | 17.405 |
+| Four-sample template removed | 0.490 | 0.524 |
+
+Tone RMS uses the coherent unwindowed FFT with correct one-sided/Nyquist
+normalization; Parseval error is below 1e-12 codes squared. The plotted PSD
+uses a Hann window, normalized to a full-scale 12-bit sine RMS power.
+Template subtraction is software processing and does not identify or remove
+the physical cause. These are existing captured data, with no new hardware
+changes. Source buffer SHA-256 hashes and statistics are in
+`evidence-adc-fft-20261106/fft-summary.json`; the buffers themselves are in the
+previous `evidence-adc-dc-20261106/raw-captures.tar.gz` archive.
+
+![Zero-input FFT](evidence-adc-fft-20261106/adc-zero-fft.png)
