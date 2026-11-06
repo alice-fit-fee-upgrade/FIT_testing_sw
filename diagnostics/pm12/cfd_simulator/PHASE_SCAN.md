@@ -110,3 +110,22 @@ Offline report/plots, using the existing plotting environment:
 For subsequent IPbus comparison, keep the DAC codes, settling, buffer length and
 lane mapping identical. Compare phase relative to code0 and complete histograms;
 reconfiguring FPGA clocks may change the absolute sample-epoch phase zero.
+
+
+## First physical result
+
+The2026-11-06 scan has all101 points and exact retained-data checks, with a FAILED
+phase-return guard after an acknowledged final DAC-A=0000. See the top-level
+README and `evidence-phase-20261106/validation.json`; do not relabel the process
+as a complete PASS. Use `validate_phase_scan.py DIRECTORY --data-only` to verify
+all retained buffers and CSV while preserving the restoration failure. Without
+`--data-only`, that verifier rejects a failed phase-return receipt.
+
+`compare_phase_scans.py FIRST SECOND --out comparison.json` requires two completed,
+phase-restored scans with identical settings and complete code grids; this first
+run is not silently accepted as a restored comparison reference.
+
+Owner's next proposed precision method: independent FPGA state machine stepping
+only the receiver MMCM, waiting for step completion, detecting a selected edge,
+stopping at the first crossing and retaining its step count. This was not built
+or loaded during the UART baseline run. Keep it separate from this recorded scan.

@@ -1,0 +1,428 @@
+{
+  "pass_": false,
+  "transport": "Kasli UART1Mbaud, PM12 console115200",
+  "args": {
+    "afe": 12,
+    "lanes": "8,9",
+    "restore_code": "0000",
+    "out": "/srv/codex-hil-nvme/measurements/afe12-phase-uart-20261106-01",
+    "initialize_zero": true,
+    "intervals": 100,
+    "words": 4095,
+    "repeats": 1,
+    "settle": 0.1,
+    "kasli_root": "/home/codex-hil/kasli-phase-tester",
+    "console_tools": "/home/codex-hil/FIT_PM_FW_uPC/tools/hardware",
+    "board_serial": "1803"
+  },
+  "codes": [
+    0,
+    655,
+    1311,
+    1966,
+    2621,
+    3277,
+    3932,
+    4587,
+    5243,
+    5898,
+    6554,
+    7209,
+    7864,
+    8520,
+    9175,
+    9830,
+    10486,
+    11141,
+    11796,
+    12452,
+    13107,
+    13762,
+    14418,
+    15073,
+    15728,
+    16384,
+    17039,
+    17694,
+    18350,
+    19005,
+    19661,
+    20316,
+    20971,
+    21627,
+    22282,
+    22937,
+    23593,
+    24248,
+    24903,
+    25559,
+    26214,
+    26869,
+    27525,
+    28180,
+    28835,
+    29491,
+    30146,
+    30801,
+    31457,
+    32112,
+    32768,
+    33423,
+    34078,
+    34734,
+    35389,
+    36044,
+    36700,
+    37355,
+    38010,
+    38666,
+    39321,
+    39976,
+    40632,
+    41287,
+    41942,
+    42598,
+    43253,
+    43908,
+    44564,
+    45219,
+    45875,
+    46530,
+    47185,
+    47841,
+    48496,
+    49151,
+    49807,
+    50462,
+    51117,
+    51773,
+    52428,
+    53083,
+    53739,
+    54394,
+    55049,
+    55705,
+    56360,
+    57015,
+    57671,
+    58326,
+    58982,
+    59637,
+    60292,
+    60948,
+    61603,
+    62258,
+    62914,
+    63569,
+    64224,
+    64880,
+    65535
+  ],
+  "scope": "80MHz gate phase modulo12.5ns; weighted sampled centroid, not calibrated fine delay",
+  "unwrapping": "Nearest continuation; assumes adjacent DAC steps change delay by less than6.25ns",
+  "restore_warning": "Explicit code is sent; no DAC hardware readback. Phase check is corroboration only.",
+  "power_ready": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000001E005C0103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000003D025C0103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=8900000100000074005C0103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=8900000100000092025C0103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    }
+  ],
+  "identity": {
+    "command": "RS",
+    "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    34.8 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+    "duration_s": 0.2107
+  },
+  "directions": {
+    "6": {
+      "before": [
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ]
+    },
+    "7": {
+      "before": [
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ]
+    }
+  },
+  "kasli_mapping": [
+    {
+      "logical": 0,
+      "slot": 6,
+      "channel": 1,
+      "rj45": 0
+    },
+    {
+      "logical": 1,
+      "slot": 6,
+      "channel": 3,
+      "rj45": 0
+    },
+    {
+      "logical": 2,
+      "slot": 6,
+      "channel": 5,
+      "rj45": 1
+    },
+    {
+      "logical": 3,
+      "slot": 6,
+      "channel": 7,
+      "rj45": 1
+    },
+    {
+      "logical": 4,
+      "slot": 6,
+      "channel": 9,
+      "rj45": 2
+    },
+    {
+      "logical": 5,
+      "slot": 6,
+      "channel": 11,
+      "rj45": 2
+    },
+    {
+      "logical": 6,
+      "slot": 6,
+      "channel": 13,
+      "rj45": 3
+    },
+    {
+      "logical": 7,
+      "slot": 6,
+      "channel": 15,
+      "rj45": 3
+    },
+    {
+      "logical": 8,
+      "slot": 7,
+      "channel": 1,
+      "rj45": 0
+    },
+    {
+      "logical": 9,
+      "slot": 7,
+      "channel": 3,
+      "rj45": 0
+    },
+    {
+      "logical": 10,
+      "slot": 7,
+      "channel": 5,
+      "rj45": 1
+    },
+    {
+      "logical": 11,
+      "slot": 7,
+      "channel": 7,
+      "rj45": 1
+    },
+    {
+      "logical": 12,
+      "slot": 7,
+      "channel": 9,
+      "rj45": 2
+    },
+    {
+      "logical": 13,
+      "slot": 7,
+      "channel": 11,
+      "rj45": 2
+    },
+    {
+      "logical": 14,
+      "slot": 7,
+      "channel": 13,
+      "rj45": 3
+    },
+    {
+      "logical": 15,
+      "slot": 7,
+      "channel": 15,
+      "rj45": 3
+    }
+  ],
+  "initial_status": {
+    "raw": 5,
+    "ready": true,
+    "busy": false,
+    "valid": true,
+    "fault": false,
+    "command_error": false,
+    "pattern_error": false,
+    "pending": false,
+    "active_bank": 0,
+    "output_mask": 0,
+    "enabled": false,
+    "slot": 0
+  },
+  "result": {
+    "restore_code": 0,
+    "restoration_attempted": true,
+    "zero_baseline_established": true,
+    "baseline": {
+      "8": {
+        "mean_bin": 0.0,
+        "spread_bins": 0.0,
+        "occupied_span_bins": 0.0,
+        "rising_edges": 2730,
+        "period_bins": 12,
+        "period_ns": 12.5,
+        "mean_ns": 0.0,
+        "histogram": {
+          "0": 2730
+        },
+        "reference_histogram": {
+          "0": 1365,
+          "12": 1365
+        },
+        "interval_histogram": {
+          "12": 2729
+        },
+        "unexpected_interval_fraction": 0.0,
+        "edge_count_ratio": 1.0,
+        "sample_ps": 1041.6666666666667,
+        "estimator": "occupancy-weighted mean after circular unwrapping around histogram mode",
+        "uncertainty": "Not calibrated; no sqrt(N) error bar from correlated edges",
+        "slot": 7,
+        "channel": 1,
+        "logical": 8
+      },
+      "9": {
+        "mean_bin": 11.197802197802197,
+        "spread_bins": 0.3983421749536672,
+        "occupied_span_bins": 1.0,
+        "rising_edges": 2730,
+        "period_bins": 12,
+        "period_ns": 12.5,
+        "mean_ns": 11.66437728937729,
+        "histogram": {
+          "0": 540,
+          "11": 2190
+        },
+        "reference_histogram": {
+          "0": 104,
+          "11": 929,
+          "12": 436,
+          "23": 1261
+        },
+        "interval_histogram": {
+          "11": 334,
+          "12": 2061,
+          "13": 334
+        },
+        "unexpected_interval_fraction": 0.0,
+        "edge_count_ratio": 1.0,
+        "sample_ps": 1041.6666666666667,
+        "estimator": "occupancy-weighted mean after circular unwrapping around histogram mode",
+        "uncertainty": "Not calibrated; no sqrt(N) error bar from correlated edges",
+        "slot": 7,
+        "channel": 3,
+        "logical": 9
+      }
+    },
+    "restore_command_accepted": true,
+    "restored": {
+      "8": {
+        "mean_bin": 10.0,
+        "spread_bins": 0.0,
+        "occupied_span_bins": 0.0,
+        "rising_edges": 2730,
+        "period_bins": 12,
+        "period_ns": 12.5,
+        "mean_ns": 10.416666666666668,
+        "histogram": {
+          "10": 2730
+        },
+        "reference_histogram": {
+          "10": 1365,
+          "22": 1365
+        },
+        "interval_histogram": {
+          "12": 2729
+        },
+        "unexpected_interval_fraction": 0.0,
+        "edge_count_ratio": 1.0,
+        "sample_ps": 1041.6666666666667,
+        "estimator": "occupancy-weighted mean after circular unwrapping around histogram mode",
+        "uncertainty": "Not calibrated; no sqrt(N) error bar from correlated edges",
+        "slot": 7,
+        "channel": 1,
+        "logical": 8
+      },
+      "9": {
+        "mean_bin": 10.0,
+        "spread_bins": 0.0,
+        "occupied_span_bins": 0.0,
+        "rising_edges": 2730,
+        "period_bins": 12,
+        "period_ns": 12.5,
+        "mean_ns": 10.416666666666668,
+        "histogram": {
+          "10": 2730
+        },
+        "reference_histogram": {
+          "10": 1365,
+          "22": 1365
+        },
+        "interval_histogram": {
+          "12": 2729
+        },
+        "unexpected_interval_fraction": 0.0,
+        "edge_count_ratio": 1.0,
+        "sample_ps": 1041.6666666666667,
+        "estimator": "occupancy-weighted mean after circular unwrapping around histogram mode",
+        "uncertainty": "Not calibrated; no sqrt(N) error bar from correlated edges",
+        "slot": 7,
+        "channel": 3,
+        "logical": 9
+      }
+    },
+    "restore_phase_deltas_bins": {
+      "8": -2.0,
+      "9": -1.197802197802197
+    },
+    "restore_error": "RuntimeError('restored phase differs from baseline by more than one bin')"
+  },
+  "error": "RuntimeError('DAC restoration/verification failed: restored phase differs from baseline by more than one bin; scan error: None')",
+  "final_status": {
+    "raw": 5,
+    "ready": true,
+    "busy": false,
+    "valid": true,
+    "fault": false,
+    "command_error": false,
+    "pattern_error": false,
+    "pending": false,
+    "active_bank": 0,
+    "output_mask": 0,
+    "enabled": false,
+    "slot": 0
+  }
+}

@@ -1,9 +1,35 @@
+# Physical DAC-A phase scan —2026-11-06
+
+Full101-point raw0..65535 UART scan completed on physicalAFE12, Kasli slot7
+inputs1/3 (logical8/9),4095words/input/point, about2730rising edges/input/point.
+All283920 retained hardware phase records exactly match raw samples;208 saved
+estimates and CSV rows reproduce from raw buffers. The original process exits1
+because its final phase-return guard FAILS, not because of incomplete acquisition.
+
+[Observed phase curve](evidence-phase-20261106/phase-curve.png),
+[CSV](evidence-phase-20261106/phase.csv),
+[data/state validation](evidence-phase-20261106/validation.json).
+Full raw captures and the three additional zero-code checks are archived in
+`evidence-phase-20261106/raw-captures.tar.gz`; original failed receipt is retained.
+
+DAC-A explicitly set to0000 before baseline and again after the sweep. Final
+command acknowledged; phases did not return to baseline: RX8 -2bins and RX9
+-1.197802bins. Three independent follow-up captures at final0 give both inputs
+10.4166667ns modulo12.5ns. MCU power-good remains valid. The graph marks final0
+with crosses relative to each lane's first sweep point. No explanation for the
+shape or failed phase return is asserted by this measurement report.
+
+Current state: PM12 DAC-A(channel12)=0000; B/C/D unchanged. Kasli RPH1 external120
+retained, STOP/mask0, DIO cards input, CPLD diagnostic gates unchanged. No FPGA,
+CPLD, firmware, flash or EEPROM programming in this phase sweep. All leases released.
+IPbus migration/comparison and MMCM phase stepping are NOT performed in this run.
+
 # Reusable DAC-A phase scan —2026-11-06
 
 [Phase scan instructions](PHASE_SCAN.md):101 points across0..65535, selected PM12
 channel and Kasli RX lanes, raw buffers/histograms/CSV, explicit DAC restoration.
-Uses current UART recorder; IPbus migration deferred. Software-tested; no new
-physical DAC sweep has been run.
+Uses current UART recorder; IPbus migration deferred. Physical results are
+recorded above.
 
 # Channel12 B/C/D DAC sweep completed —2026-11-05
 
