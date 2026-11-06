@@ -1,0 +1,155 @@
+{
+  "ipbus": true,
+  "ip_address": "192.168.2.241",
+  "part": "xc7a200t-ffg1156-3",
+  "magic": 1380993073,
+  "profile": "external120",
+  "receiver_only": true,
+  "channels": 16,
+  "depth": 4096,
+  "phase_bins": 24,
+  "sample_hz": 960000000,
+  "mapping": [
+    {
+      "logical": 0,
+      "slot": 6,
+      "channel": 1,
+      "rj45": 0,
+      "pair_p": 4,
+      "pair_n": 5
+    },
+    {
+      "logical": 1,
+      "slot": 6,
+      "channel": 3,
+      "rj45": 0,
+      "pair_p": 7,
+      "pair_n": 8
+    },
+    {
+      "logical": 2,
+      "slot": 6,
+      "channel": 5,
+      "rj45": 1,
+      "pair_p": 4,
+      "pair_n": 5
+    },
+    {
+      "logical": 3,
+      "slot": 6,
+      "channel": 7,
+      "rj45": 1,
+      "pair_p": 7,
+      "pair_n": 8
+    },
+    {
+      "logical": 4,
+      "slot": 6,
+      "channel": 9,
+      "rj45": 2,
+      "pair_p": 4,
+      "pair_n": 5
+    },
+    {
+      "logical": 5,
+      "slot": 6,
+      "channel": 11,
+      "rj45": 2,
+      "pair_p": 7,
+      "pair_n": 8
+    },
+    {
+      "logical": 6,
+      "slot": 6,
+      "channel": 13,
+      "rj45": 3,
+      "pair_p": 4,
+      "pair_n": 5
+    },
+    {
+      "logical": 7,
+      "slot": 6,
+      "channel": 15,
+      "rj45": 3,
+      "pair_p": 7,
+      "pair_n": 8
+    },
+    {
+      "logical": 8,
+      "slot": 7,
+      "channel": 1,
+      "rj45": 0,
+      "pair_p": 4,
+      "pair_n": 5
+    },
+    {
+      "logical": 9,
+      "slot": 7,
+      "channel": 3,
+      "rj45": 0,
+      "pair_p": 7,
+      "pair_n": 8
+    },
+    {
+      "logical": 10,
+      "slot": 7,
+      "channel": 5,
+      "rj45": 1,
+      "pair_p": 4,
+      "pair_n": 5
+    },
+    {
+      "logical": 11,
+      "slot": 7,
+      "channel": 7,
+      "rj45": 1,
+      "pair_p": 7,
+      "pair_n": 8
+    },
+    {
+      "logical": 12,
+      "slot": 7,
+      "channel": 9,
+      "rj45": 2,
+      "pair_p": 4,
+      "pair_n": 5
+    },
+    {
+      "logical": 13,
+      "slot": 7,
+      "channel": 11,
+      "rj45": 2,
+      "pair_p": 7,
+      "pair_n": 8
+    },
+    {
+      "logical": 14,
+      "slot": 7,
+      "channel": 13,
+      "rj45": 3,
+      "pair_p": 4,
+      "pair_n": 5
+    },
+    {
+      "logical": 15,
+      "slot": 7,
+      "channel": 15,
+      "rj45": 3,
+      "pair_p": 7,
+      "pair_n": 8
+    }
+  ],
+  "source_sha256": {
+    "gateware/core.py": "95bf1d51dc96cc3e87f2ce5dd32347b8c1194936c2ca1da607a3ae86279520cd",
+    "gateware/lvds8.py": "9be293bcb03306095bbd4a3778e709351792d98169fb886fbfe013cc345f9713",
+    "gateware/lvds8_control.py": "472b5184887a4c176a50da793b028ccb978830be097897499031f196d8f1781e",
+    "gateware/lvds8_phase.py": "a6a722cbe00d702b2ad6c9a4f16b88f9401d4cb01a38e9032167c1ee1d2abeed",
+    "gateware/build_gate_phase.py": "69a2ed8e7bdaec96b90f095b720ec6ebeae280f2c707c057dda326b7781f87e8",
+    "gateware/ipbus_bridge.py": "e9ecf89383be2d6a077e7ad6e111c8862a5e6b4bcab13b38296201b59d9da905",
+    "gateware/gate_ethernet.py": "d0ca60d474dcd2b90d97ccd05fa3850859f7c4dd8e707ebf35344a9af71dd8f5"
+  },
+  "generated_sha256": {
+    "gate_phase.v": "7643422b8bb5fcb0f8a28c4f3fd0ab847d17bc764f80133f82ccfc31d966026f",
+    "gate_phase.xdc": "430fcc236bad67c9d47d2c91d73dc99cbfddc2ad87cbe2405f1600834828cb54"
+  }
+}

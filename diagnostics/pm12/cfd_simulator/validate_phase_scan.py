@@ -37,7 +37,7 @@ def validate(directory, kasli_root, data_only=False):
             for row in data['channels']:
                 records+=check_phase_records(row);pools[row['logical']].append(row)
         for lane,rows in pools.items():
-            result=estimate(rows,data['sample_ps'],data['period_bins']);old=point['estimates'][str(lane)]
+            old=point['estimates'][str(lane)];result=estimate(rows,data['sample_ps'],data['period_bins'],edge_period_bins=old['period_bins'])
             for key in ('mean_bin','spread_bins','rising_edges'):
                 if abs(result[key]-old[key])>1e-12:raise ValueError('raw/estimate mismatch')
             csvcode='' if point['code'] is None else str(point['code'])

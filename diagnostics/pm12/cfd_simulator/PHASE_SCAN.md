@@ -129,3 +129,34 @@ Owner's next proposed precision method: independent FPGA state machine stepping
 only the receiver MMCM, waiting for step completion, detecting a selected edge,
 stopping at the first crossing and retaining its step count. This was not built
 or loaded during the UART baseline run. Keep it separate from this recorded scan.
+
+## Original gate divider restored —20-point run
+
+The recovered original gate-clock fragment is restored in all12 CPLDs:
+falling-edge ADC80 counter, CLK20_P=count(1), CLK20_N=registered complement.
+The existing ADC diagnostic mux/EV logic is retained. Backup two-pass NV read,
+verification against the previous exact JEDEC, new program/verify and passive
+Kintex check are retained with the result. No Kasli or MCU programming in this run.
+
+Repeat with `--clock-mhz 20 --intervals 19` for exactly20 codes including endpoints.
+The raw phase estimator uses48sample bins/50ns; the hardware24-bin record format
+is unchanged and continues to be checked against raw data. The full20-point run
+covers about25ns on RX8 and24.35ns on RX9. It retains a failed final phase-return
+guard (-5bins on both lanes versus baseline) despite an acknowledged final DAC0.
+Evidence: `evidence-original20-phase-20261106/`.
+
+
+## IPbus available
+
+Add `--transport ipbus --ipbus-host 192.168.2.241`. UART remains selectable.
+The same estimator, code grid and raw/hardware consistency checks are used.
+Network block prefetch replaces per-word round trips; measured20-point repeat
+is12s against449s by UART. The sampler/gate configuration is unchanged.
+See `evidence-ipbus-phase-20261106/` and Kasli `docs/GATE_PHASE_IPBUS.md`.
+
+The old UART run failed its phase-return guard. Comparing its complete verified
+raw data requires explicit `compare_phase_scans.py FIRST SECOND --out RESULT.json
+--allow-phase-return-failure`; append `--plot` in the plotting environment.
+Both state receipts are retained, and the comparator reports raw zero-origin
+differences plus centered residuals excluding code0, rather than declaring the
+failed restoration a PASS.

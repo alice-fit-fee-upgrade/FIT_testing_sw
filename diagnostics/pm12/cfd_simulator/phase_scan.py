@@ -20,7 +20,7 @@ HERE = Path(__file__).resolve().parent
 
 
 def run_scan(set_code, acquire, check_power, emit, restore_code, codes,
-             lanes, settle_s=.1, repeats=1, sleep=time.sleep, initialize_zero=False):
+             lanes, settle_s=.1, repeats=1, sleep=time.sleep, initialize_zero=False, clock_mhz=80):
     """Hardware-independent scan flow; restore after any possibly executed write."""
     changed = False
     previous_mean = {}
@@ -53,7 +53,8 @@ def run_scan(set_code, acquire, check_power, emit, restore_code, codes,
         estimates = {}
         for lane in lanes:
             rows = [next(row for row in cap['channels'] if row['logical'] == lane) for cap in captures]
-            result = estimate(rows, profile[0], profile[1])
+            edge_bins=round(1e6/profile[0]/clock_mhz)
+            result = estimate(rows, profile[0], profile[1], edge_period_bins=edge_bins)
             if stage == 'sweep':
                 unwrapped = result['mean_bin']
                 if lane in previous_mean:
@@ -151,6 +152,9 @@ def main():
     parser.add_argument('--out', type=Path, required=True)
     parser.add_argument('--initialize-zero', action='store_true', help='Explicitly establish DAC A=0 before baseline, finish at0; prior code is not restored')
     parser.add_argument('--intervals', type=int, default=100)
+    parser.add_argument('--transport',choices=('uart','ipbus'),default='uart')
+    parser.add_argument('--ipbus-host',default='192.168.2.241')
+    parser.add_argument('--clock-mhz',type=int,choices=(20,40,80),default=80,help='Measured gate frequency; original CPLD uses20MHz')
     parser.add_argument('--words', type=int, default=4095)
     parser.add_argument('--repeats', type=int, default=1)
     parser.add_argument('--settle', type=float, default=.1)
@@ -178,10 +182,10 @@ def main():
     from host.hdmi_check import check_phase_records
 
     out = args.out.resolve();out.mkdir(parents=True,exist_ok=False)
-    report = dict(pass_=False,transport='Kasli UART1Mbaud, PM12 console115200',
+    report = dict(pass_=False,transport=f'Kasli {args.transport}, PM12 console115200',
                   args={k:str(v) if isinstance(v,Path) else v for k,v in vars(args).items()},
-                  codes=codes,scope='80MHz gate phase modulo12.5ns; weighted sampled centroid, not calibrated fine delay',
-                  unwrapping='Nearest continuation; assumes adjacent DAC steps change delay by less than6.25ns',
+                  codes=codes,scope=f'{args.clock_mhz}MHz gate phase; weighted sampled centroid, not calibrated fine delay',
+                  unwrapping=f'Nearest continuation; assumes adjacent DAC steps change delay by less than{500/args.clock_mhz}ns',
                   restore_warning='Explicit code is sent; no DAC hardware readback. Phase check is corroboration only.')
     def save():
         temp = out/'report.tmp'
@@ -193,7 +197,11 @@ def main():
             fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
         uart = serial.Serial(port=None,baudrate=115200,timeout=.03,write_timeout=1,rtscts=True,exclusive=True)
         uart.dtr=False;uart.rts=True;uart.port=PORT;uart.open();stack.callback(uart.close);uart.read(4096)
-        device = GatePhaseDevice();stack.callback(device.close)
+        if args.transport=='ipbus':
+            from host.gate_phase_ipbus import GatePhaseIPbusDevice
+            device=GatePhaseIPbusDevice(args.ipbus_host)
+        else:device=GatePhaseDevice()
+        stack.callback(device.close)
         events = stack.enter_context((out/'events.jsonl').open('w'))
         csvfile = stack.enter_context((out/'phase.csv').open('w',newline=''))
         columns = ['stage','code','logical','slot','channel','mean_ns','unwrapped_ns','relative_ns','spread_bins','rising_edges','occupied_span_bins']
@@ -221,11 +229,13 @@ def main():
             if not report['initial_status']['ready']:
                 raise RuntimeError('Kasli sampling clocks are not ready')
             def acquire():
+                start=time.monotonic()
                 data=device.capture(args.words,channels=lanes)
+                report.setdefault('capture_download_seconds',[]).append(time.monotonic()-start)
                 return data
             dac = ConsoleDAC(uart,args.afe,capture,lambda row:emit('console',row))
             run_scan(dac.set_code,acquire,lambda:require_power_good(uart,capture),emit,
-                     restore,codes,lanes,args.settle,args.repeats,initialize_zero=args.initialize_zero)
+                     restore,codes,lanes,args.settle,args.repeats,initialize_zero=args.initialize_zero,clock_mhz=args.clock_mhz)
             report['pass_']=True
         except BaseException as error:
             report['error']=repr(error)

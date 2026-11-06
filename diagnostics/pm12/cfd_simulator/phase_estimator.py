@@ -37,10 +37,15 @@ def histogram_centroid(histogram, period):
                 rising_edges=count)
 
 
-def estimate(rows, sample_ps, reference_bins=24, edges_per_reference=2):
-    if edges_per_reference < 1 or reference_bins % edges_per_reference:
-        raise ValueError('edge period must be an integer number of sample bins')
-    period = reference_bins // edges_per_reference
+def estimate(rows, sample_ps, reference_bins=24, edges_per_reference=2, edge_period_bins=None):
+    if edge_period_bins is None:
+        if edges_per_reference < 1 or reference_bins % edges_per_reference:
+            raise ValueError('edge period must be an integer number of sample bins')
+        period = reference_bins // edges_per_reference
+    else:
+        if type(edge_period_bins) is not int or edge_period_bins < 2:
+            raise ValueError('invalid edge period')
+        period = edge_period_bins
     histogram, reference_histogram, intervals = Counter(), Counter(), Counter()
     total_samples = 0
     for row in rows:

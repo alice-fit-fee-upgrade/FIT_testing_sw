@@ -1,3 +1,37 @@
+# IPbus repeated scan completed —2026-11-06
+
+Kasli RPH1 now includes native IPbus on SFP0,192.168.2.241:50001, with UART retained.
+Same frozen buffers match bit-for-bit. Capture/download21.878s(UART) vs17.65ms
+(IPbus),1239.6x. Repeated20-point loop449s vs12s,37.4x. All62790 records verified;
+final DAC-A0000 phase-return check PASS. Original UART failure receipt retained.
+
+[UART/IPbus comparison](evidence-ipbus-phase-20261106/uart-ipbus-comparison.png),
+[benchmark](evidence-ipbus-phase-20261106/benchmark.json),
+[CSV](evidence-ipbus-phase-20261106/phase.csv).
+Curves differ by a constant code0 offset; maximum centered differences excluding
+code0 are0.133ns/0.113ns. Both raw offsets and centered residuals are reported;
+this does not establish calibrated absolute accuracy.
+
+Repeat with `--transport ipbus --clock-mhz 20 --intervals 19` and the usual
+explicit DAC restore/baseline parameters. Full integration notes:
+`/home/codex-hil/kasli-phase-tester/docs/GATE_PHASE_IPBUS.md`.
+
+# Original gate divider restored —20-point scan,2026-11-06
+
+Both gate outputs now use the recovered20MHz complementary divider. New scan:
+exactly20 codes0..65535, about682/683rising edges per lane/point, full4095-word
+buffers. Observed phase span25.0ns(RX8) and24.35ns(RX9). All62790 hardware phase
+records match raw;46 point/lane estimates reproduce exactly.
+
+[20-point curve](evidence-original20-phase-20261106/phase-curve.png),
+[CSV](evidence-original20-phase-20261106/phase.csv),
+[validation](evidence-original20-phase-20261106/validation.json).
+
+Final DAC-A=0000 acknowledged. Final phase-return guard still FAILS: -5bins on
+both inputs versus baseline. The failed original receipt is retained. Current
+CPLD gate mode is ORIGINAL divider20MHz, superseding the direct80MHz variant
+used by the101-point scan below. MCU/PM FPGA/Kasli images were unchanged.
+
 # Physical DAC-A phase scan —2026-11-06
 
 Full101-point raw0..65535 UART scan completed on physicalAFE12, Kasli slot7

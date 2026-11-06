@@ -10,6 +10,16 @@ begin
  gen:for ch in 1 to 12 generate
   u:entity work.adc_mux port map(clk,'0','0',ev(ch-1),a,b,dout(ch),c40(ch),cp(ch),cn(ch),dv(ch),ev(ch));
  end generate;
+ process
+  variable last_edge:time:=0 ns;
+ begin
+  for i in 1 to 8 loop
+   wait until rising_edge(cp(1));
+   if i>1 then assert now-last_edge=50 ns report "gate period must be50ns" severity failure;end if;
+   last_edge:=now;
+  end loop;
+  wait;
+ end process;
  process begin
   for sel in 0 to 1 loop
    if sel=0 then ev(0)<='0';else ev(0)<='1';end if;
@@ -21,7 +31,7 @@ begin
      else assert dout(ch)(11 downto 0)=b report "ADC B mapping" severity failure;end if;
      assert dout(ch)(12)=ev(0) report "selector tag" severity failure;
      assert dv(ch)=clk report "ADC clock forward" severity failure;
-     assert cp(ch)=clk and cn(ch)=clk report "both gate drivers must mirror ADC clock" severity failure;
+     assert cp(ch)=not cn(ch) report "original gate outputs must be complementary" severity failure;
     end loop;
    end loop;
   end loop;

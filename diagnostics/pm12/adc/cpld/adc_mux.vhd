@@ -9,18 +9,18 @@ entity adc_mux is
 end;
 architecture rtl of adc_mux is
  signal count : unsigned(1 downto 0) := "11";
+ signal clk20n_reg : std_logic := '0';
 begin
- -- Diagnostic gate drive: both integrator outputs directly mirror the
- -- local ADC sampling clock (CLK80/P27). No division or complement here.
- -- Retain the original divided CLK40 output and ADC/EV mux behavior.
+ -- Preserve original charge-integrator drive and gate-clock behavior.
  process(CLK80) begin
   if falling_edge(CLK80) then
    count <= count + 1;
+   clk20n_reg <= not(count(1) xor count(0));
   end if;
  end process;
  CLK40 <= count(0);
- CLK20_P <= CLK80; -- INTA_G_DRV / P53
- CLK20_N <= CLK80; -- INTB_G_DRV / P54
+ CLK20_P <= count(1);
+ CLK20_N <= clk20n_reg;
  -- EV is a stable global selector passed down the twelve-CPLD chain.
  EV_out <= EV;
  DOUT(11 downto 0) <= ADC0 when EV='0' else ADC1;

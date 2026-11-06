@@ -38,6 +38,16 @@ class EstimatorTests(unittest.TestCase):
         self.assertEqual(set(result['reference_histogram']),{0,12})
         self.assertEqual(result['rising_edges'],128)
 
+    def test_original20MHz_gate_spans_two_reference_frames(self):
+        start=120000;phase=17;count=6144
+        bits=[int((start+i-phase)%48<24) for i in range(count)]
+        words=[sum(bits[j+b]<<b for b in range(8)) for j in range(0,count,8)]
+        row=dict(words=words,start_sample=start,previous=int((start-1-phase)%48<24))
+        result=estimate([row],1e12/960e6,edge_period_bins=48)
+        self.assertEqual(result['period_bins'],48)
+        self.assertEqual(result['mean_bin'],17)
+        self.assertEqual(result['rising_edges'],128)
+
     def test_bad_signal_rejected(self):
         data=capture_at(0)
         data['channels'][0]['words']=[0]*192
