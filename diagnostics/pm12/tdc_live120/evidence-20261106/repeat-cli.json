@@ -1,0 +1,156 @@
+{
+  "expected_channel": 12,
+  "captures": [
+    {
+      "label": "quiet-before",
+      "generation": 9,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tx": null,
+      "phase_bin": null,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    },
+    {
+      "label": "00-n16-phase24",
+      "generation": 10,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        16
+      ],
+      "tx": {
+        "generation": 7,
+        "repetitions": 16
+      },
+      "phase_bin": 24,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {
+          "126": 5,
+          "127": 7,
+          "0": 3,
+          "125": 1
+        }
+      ]
+    },
+    {
+      "label": "quiet-after",
+      "generation": 11,
+      "status": 25,
+      "counts": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "tx": null,
+      "phase_bin": null,
+      "fine_histograms": [
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {},
+        {}
+      ]
+    }
+  ],
+  "scope": "functional raw TDC reaction; no timestamp calibration",
+  "stimulus": "slot7 channel0, RJ45 pair1/2; nominal960MS/s,20 samples high,period1200 words",
+  "pgood": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=89000001000000A203720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2127
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=89000001000000D601720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2125
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=890000010000000B00720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2113
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=890000010000002902720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2119
+    }
+  ],
+  "identity": {
+    "command": "RS",
+    "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.0 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+    "duration_s": 0.2125
+  },
+  "records_per_pulse": [
+    1.0
+  ],
+  "pgood_final": {
+    "command": "@HW",
+    "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=890000010000008901720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+    "duration_s": 0.2108
+  },
+  "pass": true
+}

@@ -1,0 +1,66 @@
+{
+  "build_id": "882901f6",
+  "fpga_sha256": "d4026ffe30109672224951a61c43d0d6b0b5272bf9b22c9ec0d4cfc5e4ea199d",
+  "source_sha256": {
+    "generate.py": "299aee2827fd9955586f00e0e200e07f4d7d7014276b10db0643495266ea61a6",
+    "capture.py": "f6005d98a284fcf567a5d1ebcf56b1502bb50743a5904ef15a46d4c201c448d6",
+    "analyzer.py": "d18a8f53ac3ecfe3d212b6abc2e1fa9c18461a378150c698c0b5abd9c7c217f9",
+    "registers.py": "ed545f8ff9d0fdbc89f7ad6b141c386a431bf1f32868fbedc5390b6bff9319bb",
+    "pm12_mcu_spi.vhd": "dd3c22862fa557578c2430bcb9c87fb4fd5535c73745fe00f074fef57d3d1560",
+    "k7_phy.py": "8ecd79e52f76209d879ef8d413d5a29e67c36f1504a124f690d01a4ea9a524d6",
+    "eth_jtag.v": "95ff712450d05a18181aa96c6c3a265055530d1a27fa648e07b78039f858f019",
+    "pins.xdc": "4cc6aebec7a0e68b54c18c015c2dcc1aa5ddf5268a37cdd2ec6d4bf9cabc8a97",
+    "build.tcl": "8e53ee605b44a936cdbed8322861bdfa934a4bd46bd8d36c09c8b8848070bb7c",
+    "ipbus/udp_ipam_block.vhd": "6d646558a90e9e491f8c8a7ad1f1f7c1cb6cdc0a712a02c833eadec886f2f2d1",
+    "ipbus/udp_build_arp.vhd": "26eef6a6ff5ab1fbfcb553c2d0603c48f8c83e13a9d80349eeb74dfcef688264",
+    "ipbus/udp_build_ping.vhd": "550dfaedbfeebb9d527136b89ed8736a1299e9e0d036526658b97274a874b2fd",
+    "ipbus/udp_ipaddr_ipam.vhd": "c1bbe1a3331cd1b89b340e2a816a936af2e6df1987952e40d0c1311c86224b89",
+    "ipbus/udp_build_payload.vhd": "12ac5acca4c8c206a4b10d90247094715fdf49bc462d627da2fb8ec36132ccf2",
+    "ipbus/udp_build_resend.vhd": "c1afd529924a2b75fb0949c4a03cc4f6a17b35b6018e7116817c12f69fd47bb0",
+    "ipbus/udp_build_status.vhd": "ced2d863b62ca6fc095e586a1f17ed6d0d2436f5cc53e72d77a68b2ffab20573",
+    "ipbus/udp_status_buffer.vhd": "0c2b22f41f48601ae139e834dc8065ca673f79d40d2a7af95f72d5d720b3a2fd",
+    "ipbus/udp_byte_sum.vhd": "c84bd888a385e5d299d7499d94da85cd801a90cf31e236a631ea05b9e65e664d",
+    "ipbus/udp_do_rx_reset.vhd": "c9266169b093fe6d24fbc50e45561144a3e1e29c03a4690df3d6da60e9d09a83",
+    "ipbus/udp_packet_parser.vhd": "d0959ee824437a6129509a3be78cf035b6c3f99f4b30becdb1efb8e395da82ad",
+    "ipbus/udp_rxram_mux.vhd": "56e1ab76f56fdd23ee169bca65d27381d719f634262714e20f6392c0994334ea",
+    "ipbus/udp_dualportram.vhd": "be013d1394ff3e566830e14aad19aa42b28237e2d6a1a97a28ade85af3955d77",
+    "ipbus/udp_buffer_selector.vhd": "100a47848003b0477acdb8451d9ddb91c9b2a51f3e89fcf7fbfcd7e05db68cca",
+    "ipbus/udp_rxram_shim.vhd": "91934b080baed1dc8370d37197cd0d396aca40622e35e16eeb8ec75a8455566f",
+    "ipbus/udp_dualportram_rx-ghdl.vhd": "ee14f528ad5d862e1968b1ff186126fdfea6a0803389286ac572ede91880954d",
+    "ipbus/udp_rxtransactor_if_simple.vhd": "0cc9394bca0ce1565f024f4d85691c481d13da656f041af232b143635ddfd348",
+    "ipbus/udp_dualportram_tx.vhd": "a5563c9d3d771dbd7685234082d67d66b921a61e2958e95eb4279eb517e6eef1",
+    "ipbus/udp_tx_mux.vhd": "f2058e331e193167f19b7c98d44e47353b2131005b14616b028e1bf25b058c82",
+    "ipbus/udp_txtransactor_if_simple.vhd": "b981e96924c8bae9d851fad82190106970af09621b65333c7839fc859021d96a",
+    "ipbus/udp_clock_crossing_if.vhd": "cc6be1617123e0236ef3611387bc1fe4b1723e39052dc3ff0ffc76e0199cf6f3",
+    "ipbus/udp_if_flat.vhd": "168eaad4dd47d16891a799c021d1d958c6675b45a654b52854fe0b9c49523fab",
+    "ipbus/ipbus_trans_decl.vhd": "60edf98d32636677b3b11efbdc810b7e34e7d5a1d2a844dec4a05c1a144ee09a",
+    "ipbus/trans_arb.vhd": "7442979f645c98411a02d7c34c664af530164d35081519c8342f29389543289e",
+    "ipbus/transactor_if.vhd": "688c315d6b774d242e79f2c90004df4aef1b4326c6ff5b3d75156698f005fda2",
+    "ipbus/ipbus_package.vhd": "4a01e2de131a0e9fbfa2df28a280b31ab7626df2299e9709314ba998a8296f85",
+    "ipbus/transactor_sm.vhd": "df1a3086096ed325bbed70fe6645a106922107af20f80c2e27c9d612d457d0f6",
+    "ipbus/transactor_cfg.vhd": "dfa8f00c415c908bb3ea04c9adb15c7ac9edf924212aef1a2084f2097b244856",
+    "ipbus/transactor.vhd": "035a77970646b3b5f8cf8ed456dcf0138fd84efda3c20163ee62abdb7a538f29",
+    "ipbus/ipbus_ctrl.vhd": "22c77247cc7c99d0a4c6caf68200b0dec05f30e540a4537e0325391957e8a5f9",
+    "ipbus/ipbus_endpoint.vhd": "5f287756bad38a6486802be9b335e487c12da01b825f1b28fadada085b43febd"
+  },
+  "dependencies": {
+    "litex": {
+      "revision": "1c019732b7eb959a6fc741e46af46d4eeb706dbd",
+      "status": "",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "https://github.com/enjoy-digital/litex.git"
+    },
+    "liteeth": {
+      "revision": "cb101652f69fab0979cfa1f9afbcfdf185fe662e",
+      "status": "",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "https://github.com/enjoy-digital/liteeth.git"
+    },
+    "liteiclink": {
+      "revision": "6e69216944e94c69f5a7d58d5c6d75dc3d754242",
+      "status": "",
+      "diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "origin": "https://github.com/enjoy-digital/liteiclink.git"
+    }
+  }
+}

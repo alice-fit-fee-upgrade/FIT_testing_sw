@@ -1,0 +1,28 @@
+{
+  "pm_identity": [
+    1347228162,
+    65538,
+    2726013502
+  ],
+  "adc_before": [
+    258,
+    61,
+    2
+  ],
+  "adc_after": [
+    0,
+    12,
+    2
+  ],
+  "tdc_status": [
+    25
+  ],
+  "tdc_clocks": [
+    4095
+  ],
+  "kasli_network": 3,
+  "pm_link_control": 0,
+  "bridge_control": 1,
+  "bridge_link": 1,
+  "cfd_status": 458753
+}
