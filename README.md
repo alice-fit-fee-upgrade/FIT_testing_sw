@@ -69,3 +69,8 @@ artiq_run repository/pmtsim_example.py
 and [rejected post-restore ADC timing capture](diagnostics/pm12/acceptance/evidence-20261107/post-restore-failure.pdf).
 See the validation record before inferring board acceptance; unmeasured channels
 and unresolved timing findings remain explicit.
+
+STR sampling follow-up: [diagnosis and corrected capture validation](diagnostics/pm12/acceptance/ADC_STROBE_DEBUG.md),
+[engineering note PDF](diagnostics/pm12/acceptance/evidence-str-debug-20261107/diagnosis.pdf).
+Original exact4-tick failures are retained; controlled phase/reload tests identify
+sample-grid edge quantization, with independent data-coherency checks.

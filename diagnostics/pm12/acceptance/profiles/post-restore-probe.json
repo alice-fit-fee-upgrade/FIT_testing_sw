@@ -42,7 +42,8 @@
         "{dac_positive}",
         "{dac_negative}",
         "--out",
-        "{output}"
+        "{output}",
+        "--strict-edges"
       ],
       "checks": [
         {

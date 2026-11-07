@@ -11,6 +11,8 @@ import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parent/'cfd_simulator'))
+sys.path.insert(0,str(HERE.parent/'ipbus_adc'))
+from adc_decode import decode
 COLORS=plt.get_cmap('tab20')(np.linspace(0,1,12))
 
 
@@ -36,9 +38,8 @@ def extract(archive,out):
 def waveform(path):
     raw=np.frombuffer(path.read_bytes(),dtype='<u2')
     if len(raw)!=4096:raise ValueError('Truncated raw capture')
-    edges=np.flatnonzero(((raw[:-1]&8192)==0)&((raw[1:]&8192)!=0))+1
-    if len(edges)<900 or not np.all(np.diff(edges)==4):raise ValueError('Bad strobe spacing')
-    return (raw[edges[1:]-1]&4095).astype(float)
+    samples,_=decode([int(w) for w in raw])
+    return np.array(samples,dtype=float)
 
 
 def wiring(out):

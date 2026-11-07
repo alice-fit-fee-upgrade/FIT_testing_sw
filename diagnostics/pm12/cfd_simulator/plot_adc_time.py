@@ -4,6 +4,9 @@ import hashlib
 import json
 from pathlib import Path
 import numpy as np
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'ipbus_adc'))
+from adc_decode import decode
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -21,14 +24,13 @@ def main():
     for bank, color in enumerate(['#1864ab', '#d9480f']):
         data = (args.root/f'mux{bank}-point050-bank{bank}.bin').read_bytes()
         raw = np.frombuffer(data, dtype='<u2')
-        edges = np.flatnonzero(((raw[:-1]&8192)==0)&((raw[1:]&8192)!=0))+1
-        assert len(edges)>100 and np.all(np.diff(edges)==4), 'Unexpected strobe spacing'
-        x = (raw[edges[1:]-1]&4095).astype(float)
+        decoded,timing = decode([int(w) for w in raw])
+        x = np.array(decoded,dtype=float)
         t = np.arange(len(x))/fs
         label = 'ADC '+'AB'[bank]
         axes[0].plot(t*1e6, x, lw=.65, alpha=.8, color=color, label=label)
         axes[1].plot(t[:40]*1e9, x[:40], 'o-', lw=1, ms=4, color=color, label=label)
-        summary[label] = dict(samples=len(x), fs_hz=fs, sample_interval_ns=1e9/fs,
+        summary[label] = dict(strobe_timing=timing,samples=len(x), fs_hz=fs, sample_interval_ns=1e9/fs,
                              first_to_last_sample_us=float(t[-1]*1e6),
                              mean_code=float(x.mean()), min_code=int(x.min()), max_code=int(x.max()),
                              source_sha256=hashlib.sha256(data).hexdigest())

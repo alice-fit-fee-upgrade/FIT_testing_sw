@@ -4,6 +4,9 @@ import hashlib
 import json
 from pathlib import Path
 import numpy as np
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'ipbus_adc'))
+from adc_decode import decode
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
@@ -12,9 +15,8 @@ import matplotlib.pyplot as plt
 def analyze(path, fs):
     data = path.read_bytes()
     raw = np.frombuffer(data, dtype='<u2')
-    edges = np.flatnonzero(((raw[:-1] & 8192) == 0) & ((raw[1:] & 8192) != 0)) + 1
-    assert len(edges) > 100 and np.all(np.diff(edges) == 4), 'Unexpected ADC strobe spacing'
-    samples = (raw[edges[1:] - 1] & 4095).astype(float)
+    decoded,timing = decode([int(w) for w in raw])
+    samples = np.array(decoded,dtype=float)
     # Retain complete four-sample periods for coherent Fs/4 and Fs/2 estimates.
     x = samples[:len(samples) // 4 * 4]
     n = len(x)
@@ -30,7 +32,7 @@ def analyze(path, fs):
     # Parseval power per bin: Nyquist has no negative-frequency counterpart.
     power = abs(np.fft.rfft(centered))**2 / n**2
     power[1:-1] *= 2
-    stats = dict(input_sha256=hashlib.sha256(data).hexdigest(), raw_records=len(raw),
+    stats = dict(strobe_timing=timing,input_sha256=hashlib.sha256(data).hexdigest(), raw_records=len(raw),
                  adc_samples_available=len(samples), fft_samples=n, fs_hz=fs,
                  bin_spacing_hz=fs/n, mean_code=float(x.mean()),
                  raw_rms_codes=float(centered.std()), residual_rms_codes=float(residual.std()),

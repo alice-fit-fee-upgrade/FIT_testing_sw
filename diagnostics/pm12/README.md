@@ -3,9 +3,9 @@
 The current entry point is the [sequential acceptance runner and LaTeX reports](acceptance/README.md).
 It separates up-to-three-channel CFD batches, offline chapter generation and final
 report assembly, with factory-DNA identities, raw-data hashes and editable templates.
-The measured2026-11-07 checkpoint includes a reproduced strict ADC strobe failure
-after FPGA reconfiguration: see its validation record; broad functional PASS does
-not clear that finding. The original static JTAG diagnostic is documented below.
+The2026-11-07 post-reconfiguration STR finding was traced to an invalid exact4-tick
+criterion for asynchronous sampling; see the [diagnosis and controlled repeats](acceptance/ADC_STROBE_DEBUG.md).
+Original strict-mode failure evidence remains available. The original static JTAG diagnostic is documented below.
 
 # PM12 JTAG connection test
 

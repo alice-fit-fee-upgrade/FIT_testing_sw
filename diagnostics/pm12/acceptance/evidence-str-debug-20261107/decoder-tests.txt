@@ -1,0 +1,14 @@
+test_accumulating_drift_rejected (test_adc_decode.Decode.test_accumulating_drift_rejected) ... ok
+test_aligned (test_adc_decode.Decode.test_aligned) ... ok
+test_client_can_be_loaded_by_path_without_sys_path_setup (test_adc_decode.Decode.test_client_can_be_loaded_by_path_without_sys_path_setup) ... ok
+test_missing_pulse_rejected (test_adc_decode.Decode.test_missing_pulse_rejected) ... ok
+test_one_bin_uncertainty_is_bounded_not_cumulative (test_adc_decode.Decode.test_one_bin_uncertainty_is_bounded_not_cumulative) ... ok
+test_original_rejected_hardware_buffers (test_adc_decode.Decode.test_original_rejected_hardware_buffers) ... ok
+test_small_intervals_with_two_bin_cumulative_wander_rejected (test_adc_decode.Decode.test_small_intervals_with_two_bin_cumulative_wander_rejected) ... ok
+test_tags_reserved_bits_and_truncation_rejected (test_adc_decode.Decode.test_tags_reserved_bits_and_truncation_rejected) ... ok
+test_unstable_selected_adc_word_rejected (test_adc_decode.Decode.test_unstable_selected_adc_word_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.061s
+
+OK

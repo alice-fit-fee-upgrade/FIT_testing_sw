@@ -1,3 +1,8 @@
+Latest2026-11-07: the post-reconfiguration STR case is [diagnosed and corrected](ADC_STROBE_DEBUG.md).
+ADC validity now uses bounded4× edge phase and complete-word stability; strict
+all4 spacing remains an explicit alignment diagnostic. Full A/B scan and two
+FPGA-only reload controls PASS; original strict FAIL evidence is retained.
+
 # PM12 evidence collection and editable LaTeX dossiers
 
 Three separate operations: **collect batches → generate a chapter → assemble the report**.
@@ -203,7 +208,7 @@ and LaTeX escaping. Physical tests are separate from software tests.
 JTAG/static connectivity and integrated-image restoration passed; the subsequent
 broad HDMI/ADC/TDC functional check also passed. A stricter standalone ADC check
 then rejected a raw buffer with1024 STR rising edges:1011 intervals of4 samples,
-6 of3 and6 of5. The cause is not established. This is not silently relabeled as
+6 of3 and6 of5. At that checkpoint the cause was not established. The later diagnosis is linked above. This is not silently relabeled as
 a PCB short or cleared by relaxing the test. The buffer and failure are retained.
 A full acceptance run must pass the strict guard after reconfiguration; the
 qualified restoration adapter alone is not proof of stable ADC sample phase.

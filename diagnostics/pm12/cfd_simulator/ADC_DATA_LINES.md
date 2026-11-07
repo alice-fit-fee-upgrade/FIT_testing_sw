@@ -1,3 +1,8 @@
+Follow-up2026-11-07: [STR sampling-boundary diagnosis](../acceptance/ADC_STROBE_DEBUG.md)
+corrects the clock-validity model without changing the bit-pair coverage thresholds.
+The new shared decoder requires bounded edge phase and stable selected words.
+The original all4 result below describes the original measured captures.
+
 # ADC data-line exercise: adjacent bit bridges and stuck bits
 
 Physical channel12, ADC A and B: PASS2026-11-07. The existing PM/Kasli SRAM

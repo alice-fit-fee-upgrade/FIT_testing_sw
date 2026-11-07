@@ -1,6 +1,9 @@
 """Native IPbus2 client for the CERN controller; requests are never emulated."""
 import socket,struct,time,json,array,statistics
 from pathlib import Path
+import sys
+sys.path.insert(0,str(Path(__file__).resolve().parent))
+from adc_decode import decode
 class Client:
  def __init__(self,host='192.168.2.240',port=50001,order='>'):
   self.s=socket.socket(socket.AF_INET,socket.SOCK_DGRAM);self.s.connect((host,port));self.s.settimeout(1);self.order=order;self.tid=0;self.read_retry_events=[]
@@ -57,10 +60,9 @@ def describe(data,bank,pattern):
    rows.append({'channel':ch+1,'kind':'synthetic transport validation','samples':len(v)})
   else:
    tags=[(n>>12)&1 for n in v];assert all(t==bank for t in tags),('EV selector mismatch',ch)
-   edges=[i for i in range(1,len(v)) if not(v[i-1]&8192) and v[i]&8192]
-   periods=[b-a for a,b in zip(edges,edges[1:])];assert len(periods)>100
-   hz=320000000/statistics.median(periods);assert 70e6<hz<90e6,('Forwarded clock',ch,hz)
-   codes=[n&4095 for n in v];rows.append({'channel':ch+1,'kind':'physical CPLD/ADC inputs','clock_hz_nominal':hz,'selector':bank,'adc_min':min(codes),'adc_max':max(codes),'adc_mean':statistics.mean(codes),'adc_stddev':statistics.pstdev(codes),'unique_codes':len(set(codes))})
+   samples,timing=decode(v,bank)
+   hz=80000000
+   codes=[n&4095 for n in v];rows.append({'channel':ch+1,'kind':'physical CPLD/ADC inputs','clock_hz_nominal':hz,'strobe_timing':timing,'selector':bank,'adc_min':min(codes),'adc_max':max(codes),'adc_mean':statistics.mean(codes),'adc_stddev':statistics.pstdev(codes),'unique_codes':len(set(codes))})
  return rows
 def save_capture(root,data,bank,pattern,ident,status):
  root=Path(root);root.mkdir(parents=True,exist_ok=False)

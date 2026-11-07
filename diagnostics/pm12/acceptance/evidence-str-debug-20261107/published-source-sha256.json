@@ -1,0 +1,10 @@
+{
+  "diagnostics/pm12/ipbus_adc/adc_decode.py": "0e660c6891960f467a8b31c12e06406d878cbb48b8ebe0986ab8d7eb89afddaa",
+  "diagnostics/pm12/ipbus_adc/client.py": "05be13b9f17797cb910e20950aa7456dc79d0f2f1364012a43f08c3eb8bc45f9",
+  "diagnostics/pm12/cfd_simulator/adc_dc_scan.py": "00611cddfe49f0a70e8f6d31ea17a9c392ab069fe80a3d8df33f6db22af08192",
+  "diagnostics/pm12/cfd_simulator/validate_adc_lines.py": "74163a7d116b48a1b4c024f049b7a8ba0111dcdcd0378f5ecf604fa0633320fb",
+  "diagnostics/pm12/acceptance/plot_strobe_debug.py": "89cabe9dc888ec5a11daddec88a006486f276d62da1e08e669b040d229cbc37c",
+  "diagnostics/pm12/acceptance/debug_adc_strobe.py": "85030baf09577dd6c06541159185b672dfb6c178117e32b0fb5a08097dd51abb",
+  "diagnostics/pm12/acceptance/report_strobe_debug.py": "3df7f65ad3a5adf5faaf4ad105bb69bef299e7f2eec263bab5ac48fc1b2627a7",
+  "diagnostics/pm12/acceptance/debug_reload_adc.py": "43b2d5ece2659efb45030b2521cd464c5ea74c1c5fe3a42ab019942ed171cb3d"
+}

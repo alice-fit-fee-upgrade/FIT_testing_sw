@@ -1,0 +1,78 @@
+{
+  "corrected-cfd-chapter.pdf": {
+    "bytes": 228080,
+    "sha256": "f635f8730933d0cdc9acc74cb3cb6646463d5b75b90a3629c59104bb5063d738"
+  },
+  "final-system.json": {
+    "bytes": 40524,
+    "sha256": "56408e11d4443f6c78df2ed603c7586ede1fa25706ab446b77c0e284383629b9"
+  },
+  "decoder-tests.txt": {
+    "bytes": 1130,
+    "sha256": "49e8c667d2166a709e965a7048299bbb0738b85312e93267048aa3f7e4898e50"
+  },
+  "validation.json": {
+    "bytes": 2126,
+    "sha256": "7150f25107df9f3289f280855d501ee60e56f4bc1c617fb155b48348a3350984"
+  },
+  "strobe-phase-diagnosis.png": {
+    "bytes": 121825,
+    "sha256": "0fdec64ad1cd5532d0c502b848e19b6a3d2e41b137a8fa7fbca958ea84d9d284"
+  },
+  "diagnosis.pdf": {
+    "bytes": 58435,
+    "sha256": "9502169773159a12db92bd272b066f5181643ecedfb8c1a6c2d280cff0c937c0"
+  },
+  "corrected-cfd-editable-source.tar.gz": {
+    "bytes": 2884271,
+    "sha256": "2a82e85fb6a7c17800005fe9c1c79113987e783fcecc4f9c3eb8b026208f1677"
+  },
+  "published-source-sha256.json": {
+    "bytes": 960,
+    "sha256": "d4877318bf033bba5aaed05b48e31d19100a620ea0ff32cb5b79484cfdab78ce"
+  },
+  "cfd-tests.txt": {
+    "bytes": 4341,
+    "sha256": "488292d004b88ddf5bfd934cf623fd3e9a517f0fc79ce5173e6e4acb4c269c79"
+  },
+  "strobe-phase-diagnosis.pdf": {
+    "bytes": 30936,
+    "sha256": "2c94c83b754d06f1cd94f6c3e8536f5a23b936bb5a71979318d977c4f47c5b6a"
+  },
+  "ipbus-client-test.txt": {
+    "bytes": 129,
+    "sha256": "c1bdb045555f6e8e238f26562f5cc8e7eca6d97abf09ce03023a37f342a469e7"
+  },
+  "adc-raw-validation.json": {
+    "bytes": 367,
+    "sha256": "3a7947a81ae0e7205e505e2f408c60858ebbfbc0eac65808dd1b455b87d75942"
+  },
+  "diagnosis-editable-source.tar.gz": {
+    "bytes": 218085,
+    "sha256": "52a08f5c6f40351ce24f1eae755415a628e24b92d4ed0449c8f696a92714d568"
+  },
+  "acceptance-tests.txt": {
+    "bytes": 1487,
+    "sha256": "69bb1d9f585fc88bc264f5bf7b77877d4c2cf105ff0ef3a43fa59578b26d7104"
+  },
+  "resident-run.json": {
+    "bytes": 20891,
+    "sha256": "ce963f0c60697391d6fbed9d8b700ad143ce38cd43fa914f714635a429eb438a"
+  },
+  "reload-result.json": {
+    "bytes": 130560,
+    "sha256": "46911cc8d510eed4c6fd9561ce422f5c8dad3f50fda5391679ed7d8696fefccb"
+  },
+  "phase-raw-analysis.json": {
+    "bytes": 24853,
+    "sha256": "880c77444b9e32facd0c4b82dc397f877abfecc5711a105067437480b5990dc9"
+  },
+  "qualified-raw-measurements.tar.gz": {
+    "bytes": 1265101,
+    "sha256": "f533820de7ca9cd021f5cc04990165f73b317875f8fc84c162dce862c2b7df6d"
+  },
+  "exploratory-not-qualified.tar.gz": {
+    "bytes": 64998,
+    "sha256": "3c938cde6d8b19beaa901d23ba7ef5afaae416d17c238bfbebc391de295e9b62"
+  }
+}

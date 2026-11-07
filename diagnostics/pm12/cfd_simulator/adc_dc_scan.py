@@ -7,6 +7,7 @@ from mod_dac28 import DAC,remote_lease,voltage
 from console import ConsoleI2C,Registers
 from mcp23017 import afe_route
 from client import Client
+from adc_decode import decode
 from pm12_console_regression import PORT,capture
 from pm12_power import wait_power_good,require_power_good
 import serial
@@ -36,29 +37,27 @@ class Injection:
   self.w(0x14,self.saved[0x14]|8);self.w(0,self.saved[0])
   self.w(0x15,self.saved[0x15]|0x20);self.w(1,self.saved[1]);self.w(0x15,self.saved[0x15]);self.w(0x14,self.saved[0x14])
 
-def acquire(c,bank,out,label,channel=12):
+def acquire(c,bank,out,label,channel=12,strict_edges=False):
  ident,state=c.acquire(bank,False);raw=c.block(0x10000+((channel-1)<<12),4096)
  assert c.read(0x12)==[ident] and all(((w>>12)&1)==bank and w<16384 for w in raw)
  (out/(label+'.bin')).write_bytes(struct.pack('<4096H',*raw))
- edges=[i for i in range(1,len(raw)) if not raw[i-1]&8192 and raw[i]&8192]
- if len(edges)<900 or any(b-a!=4 for a,b in zip(edges,edges[1:])):raise RuntimeError('Missing or irregular ADC strobe clock')
- samples=[raw[i-1]&4095 for i in edges[1:]]
+ samples,timing=decode(raw,bank,strict_edges=strict_edges)
  signed=[n if n<2048 else n-4096 for n in samples]
  return dict(generation=ident,status=state,bank=bank,samples=len(samples),
   centered_mean=statistics.mean(samples)-2048,raw_mean=statistics.mean(samples),raw_median=statistics.median(samples),raw_std=statistics.pstdev(samples),
   signed_mean=statistics.mean(signed),signed_median=statistics.median(signed),signed_std=statistics.pstdev(signed),
   minimum=min(samples),maximum=max(samples),histogram={str(n):samples.count(n) for n in set(samples)},
-  strobe_period_samples=statistics.median(b-a for a,b in zip(edges,edges[1:])))
+  strobe_period_samples=sum(period*count for period,count in timing['interval_counts'].items())/sum(timing['interval_counts'].values()),strobe_timing=timing)
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--afe',type=int,choices=range(1,13),default=12);p.add_argument('--board-serial',required=False,default='1803');p.add_argument('--dac-channels',type=int,nargs=2,default=[0,1]);p.add_argument('--probe',action='store_true');p.add_argument('--differences',type=float,nargs='+');a=p.parse_args()
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--afe',type=int,choices=range(1,13),default=12);p.add_argument('--board-serial',required=False,default='1803');p.add_argument('--dac-channels',type=int,nargs=2,default=[0,1]);p.add_argument('--strict-edges',action='store_true',help='Separate strict phase-alignment diagnostic; requires all STR intervals4');p.add_argument('--probe',action='store_true');p.add_argument('--differences',type=float,nargs='+');a=p.parse_args()
  if len(set(a.dac_channels))!=2 or any(c not in range(8) for c in a.dac_channels):p.error('Two distinct DAC channels0..7 required')
  if a.probe and a.differences:p.error('--probe and --differences are exclusive')
  differences=a.differences if a.differences else ([-.02,-.01,0,.01,.02] if a.probe else [round(-1+i*.02,4) for i in range(101)])
  for v in differences:
   try:voltage(1+v/2);voltage(1-v/2)
   except (ValueError,TypeError):p.error('Both differential legs must remain within0..3.3V')
- a.out.mkdir(parents=True,exist_ok=False);report=dict(pass_=False,channel=a.afe,dac_channels=a.dac_channels,common_mode_v=1.0,max_pin_voltage_v=3.3,measurements=[])
+ a.out.mkdir(parents=True,exist_ok=False);report=dict(pass_=False,strict_edges=a.strict_edges,channel=a.afe,dac_channels=a.dac_channels,common_mode_v=1.0,max_pin_voltage_v=3.3,measurements=[])
  def save():(a.out/'status.json').write_text(json.dumps(report,indent=2)+'\n')
  with contextlib.ExitStack() as st:
   for n in sorted(['atmel-ice-J41800043065','pm12-210249A73E43','kasli-diot-00001','esp32-6825dd4c49e4','lattice-VER00001']):
@@ -81,11 +80,11 @@ def main():
       require_power_good(u,capture);vp,vn=1+diff/2,1-diff/2;dac.pair(vp,vn);time.sleep(.03)
       banks=[0,1] if a.probe else [bank]
       for read_bank in banks:
-       row=acquire(c,read_bank,a.out,f'mux{bank}-point{index:03d}-bank{read_bank}',a.afe)
+       row=acquire(c,read_bank,a.out,f'mux{bank}-point{index:03d}-bank{read_bank}',a.afe,a.strict_edges)
        row.update(injection_bank=bank,diff_setpoint_v=diff,ch0_setpoint_v=vp,ch1_setpoint_v=vn)
        report['measurements'].append(row);save()
        print('MUX',bank,'READ',read_bank,'DIFF',diff,'RAW',round(row['raw_mean'],3),'RMS',round(row['raw_std'],3),flush=True)
-    dac.baseline();inj.select(0);time.sleep(.05);report['final_zero_capture']=acquire(c,0,a.out,'final-zero-bank0',a.afe);report['mcp_final']=inj.snapshot();report['dac_final_setpoints']=dac.snapshot()
+    dac.baseline();inj.select(0);time.sleep(.05);report['final_zero_capture']=acquire(c,0,a.out,'final-zero-bank0',a.afe,a.strict_edges);report['mcp_final']=inj.snapshot();report['dac_final_setpoints']=dac.snapshot()
     assert report['mcp_final']['18']&128 and not report['mcp_final']['21']&32
     report['pgood_final']=require_power_good(u,capture);success=True
    report['tca_final']={str(n):bus.mux(n) for n in [0x70,0x71]};report['pass_']=True
