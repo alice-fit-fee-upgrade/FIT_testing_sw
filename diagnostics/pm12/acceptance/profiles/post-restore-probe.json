@@ -1,0 +1,59 @@
+{
+  "schema": 1,
+  "name": "Post-restore strict ADC timing guard",
+  "steps": [
+    {
+      "id": "identity",
+      "title": "Hardware identity and PGOOD",
+      "command": [
+        "{python}",
+        "{repo}/diagnostics/pm12/acceptance/station.py",
+        "identity",
+        "--station",
+        "{station}",
+        "--out",
+        "{output}"
+      ],
+      "checks": [
+        {
+          "file": "data/result.json",
+          "key": "status",
+          "equals": "PASS"
+        }
+      ],
+      "procedure": "Read factory FPGA DNA and MCU EEPROM serial under leases. Match enrolled UID, integrated build and stable physical PGOOD.",
+      "limits": "MCU EEPROM serial and FPGA IDCODE are not unique factory identity. CPU factory signature not read.",
+      "per_channel": false,
+      "timeout_s": 3600
+    },
+    {
+      "id": "adc-probe",
+      "title": "Strict ADC strobe check after SRAM restoration",
+      "per_channel": true,
+      "command": [
+        "{python}",
+        "{repo}/diagnostics/pm12/cfd_simulator/adc_dc_scan.py",
+        "--probe",
+        "--afe",
+        "{channel}",
+        "--board-serial",
+        "{board_serial}",
+        "--dac-channels",
+        "{dac_positive}",
+        "{dac_negative}",
+        "--out",
+        "{output}"
+      ],
+      "checks": [
+        {
+          "file": "data/status.json",
+          "key": "pass",
+          "equals": true
+        }
+      ],
+      "procedure": "Probe both ADC inputs at five small differential setpoints; every STR rising-edge spacing must be4 raw capture samples. Retain a rejected buffer before analysis raises.",
+      "limits": "Timing guard only; a failure does not locate the cause in ADC, CPLD or FPGA sampling phase.",
+      "timeout_s": 600
+    }
+  ]
+}

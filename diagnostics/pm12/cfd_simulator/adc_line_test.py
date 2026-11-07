@@ -90,6 +90,8 @@ def main():
     modes.add_argument('--report',type=Path,help='Analyze an existing status.json; no hardware access')
     p.add_argument('--out',type=Path,required=True);p.add_argument('--afe',type=int,choices=range(1,13),default=12)
     p.add_argument('--points',type=int,default=257)
+    p.add_argument('--board-serial',default='1803')
+    p.add_argument('--dac-channels',type=int,nargs=2,default=[0,1])
     a=p.parse_args()
     if not 17<=a.points<=4097:p.error('points must be17..4097')
     a.out.mkdir(parents=True,exist_ok=False)
@@ -97,8 +99,12 @@ def main():
     if a.acquire:
         grid=[round(-1.2+2.4*i/(a.points-1),7) for i in range(a.points)]
         command=[sys.executable,str(Path(__file__).with_name('adc_dc_scan.py')),'--afe',str(a.afe),
-                 '--out',str(a.out/'scan'),'--differences',*[str(x) for x in grid]]
-        subprocess.run(command,check=True)
+                 '--board-serial',a.board_serial,'--dac-channels',*[str(c) for c in a.dac_channels],'--out',str(a.out/'scan'),'--differences',*[str(x) for x in grid]]
+        sys.path.insert(0,str(Path(__file__).resolve().parents[1]/'acceptance'))
+        from lease import ENV
+        import os
+        inherited=json.loads(os.environ.get(ENV,'{}'))
+        subprocess.run(command,check=True,pass_fds=tuple(int(fd) for fd in inherited.values()))
         source=a.out/'scan/status.json'
         from validate_adc_lines import validate
         raw_validation=validate(source.parent)

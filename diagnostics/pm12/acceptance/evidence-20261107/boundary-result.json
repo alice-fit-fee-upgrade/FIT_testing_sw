@@ -1,0 +1,5149 @@
+{
+  "status": "PASS",
+  "persistent_writes": false,
+  "diagnostic_sha256": "c9fbd02768ce12750dc68b8bb24c34403027a65f9e002661e29bb3d2e2df7a1a",
+  "restore_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+  "measurement": {
+    "status": "PASS",
+    "serial": "210249A73E43",
+    "server": "localhost:3121",
+    "time_utc": "20261107T190836Z",
+    "nonvolatile_programming": false,
+    "schematic_sha256": "8a33ca4d4325eea999347ee7f4c26173cb28356f5cb61e6d38a9852a0513de78",
+    "limits": [
+      "Static data/strobe connectivity; acquisition, ADC and analog paths untested",
+      "Clock rate uses approximate host/JTAG timing"
+    ],
+    "bitstream_sha256": "c9fbd02768ce12750dc68b8bb24c34403027a65f9e002661e29bb3d2e2df7a1a",
+    "gateware": {
+      "passed": true,
+      "matched": 168,
+      "total": 168,
+      "vectors": 338,
+      "restored": true,
+      "connections": [
+        {
+          "signal": "STR1",
+          "fpga_ball": "W5",
+          "expected_source": 167,
+          "discovered_source": 167,
+          "sources_high": [
+            167
+          ],
+          "sources_low": [
+            167
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR2",
+          "fpga_ball": "AA7",
+          "expected_source": 153,
+          "discovered_source": 153,
+          "sources_high": [
+            153
+          ],
+          "sources_low": [
+            153
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR3",
+          "fpga_ball": "AA15",
+          "expected_source": 139,
+          "discovered_source": 139,
+          "sources_high": [
+            139
+          ],
+          "sources_low": [
+            139
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR4",
+          "fpga_ball": "AD20",
+          "expected_source": 125,
+          "discovered_source": 125,
+          "sources_high": [
+            125
+          ],
+          "sources_low": [
+            125
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR5",
+          "fpga_ball": "AB21",
+          "expected_source": 111,
+          "discovered_source": 111,
+          "sources_high": [
+            111
+          ],
+          "sources_low": [
+            111
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR8",
+          "fpga_ball": "U20",
+          "expected_source": 69,
+          "discovered_source": 69,
+          "sources_high": [
+            69
+          ],
+          "sources_low": [
+            69
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR9",
+          "fpga_ball": "R22",
+          "expected_source": 55,
+          "discovered_source": 55,
+          "sources_high": [
+            55
+          ],
+          "sources_low": [
+            55
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR10",
+          "fpga_ball": "N17",
+          "expected_source": 41,
+          "discovered_source": 41,
+          "sources_high": [
+            41
+          ],
+          "sources_low": [
+            41
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR11",
+          "fpga_ball": "M26",
+          "expected_source": 27,
+          "discovered_source": 27,
+          "sources_high": [
+            27
+          ],
+          "sources_low": [
+            27
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR12",
+          "fpga_ball": "J19",
+          "expected_source": 13,
+          "discovered_source": 13,
+          "sources_high": [
+            13
+          ],
+          "sources_low": [
+            13
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR6",
+          "fpga_ball": "AA23",
+          "expected_source": 97,
+          "discovered_source": 97,
+          "sources_high": [
+            97
+          ],
+          "sources_low": [
+            97
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR7",
+          "fpga_ball": "W26",
+          "expected_source": 83,
+          "discovered_source": 83,
+          "sources_high": [
+            83
+          ],
+          "sources_low": [
+            83
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "DI1[8]",
+          "fpga_ball": "V4",
+          "expected_source": 162,
+          "discovered_source": 162,
+          "sources_high": [
+            162
+          ],
+          "sources_low": [
+            162
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI1[9]",
+          "fpga_ball": "W4",
+          "expected_source": 163,
+          "discovered_source": 163,
+          "sources_high": [
+            163
+          ],
+          "sources_low": [
+            163
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI1[12]",
+          "fpga_ball": "W6",
+          "expected_source": 166,
+          "discovered_source": 166,
+          "sources_high": [
+            166
+          ],
+          "sources_low": [
+            166
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI2[4]",
+          "fpga_ball": "AB6",
+          "expected_source": 144,
+          "discovered_source": 144,
+          "sources_high": [
+            144
+          ],
+          "sources_low": [
+            144
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI2[8]",
+          "fpga_ball": "U9",
+          "expected_source": 148,
+          "discovered_source": 148,
+          "sources_high": [
+            148
+          ],
+          "sources_low": [
+            148
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI2[9]",
+          "fpga_ball": "V7",
+          "expected_source": 149,
+          "discovered_source": 149,
+          "sources_high": [
+            149
+          ],
+          "sources_low": [
+            149
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI2[10]",
+          "fpga_ball": "V8",
+          "expected_source": 150,
+          "discovered_source": 150,
+          "sources_high": [
+            150
+          ],
+          "sources_low": [
+            150
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI2[11]",
+          "fpga_ball": "Y7",
+          "expected_source": 151,
+          "discovered_source": 151,
+          "sources_high": [
+            151
+          ],
+          "sources_low": [
+            151
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI2[12]",
+          "fpga_ball": "Y8",
+          "expected_source": 152,
+          "discovered_source": 152,
+          "sources_high": [
+            152
+          ],
+          "sources_low": [
+            152
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI3[8]",
+          "fpga_ball": "V13",
+          "expected_source": 134,
+          "discovered_source": 134,
+          "sources_high": [
+            134
+          ],
+          "sources_low": [
+            134
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI3[9]",
+          "fpga_ball": "W13",
+          "expected_source": 135,
+          "discovered_source": 135,
+          "sources_high": [
+            135
+          ],
+          "sources_low": [
+            135
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI3[10]",
+          "fpga_ball": "V14",
+          "expected_source": 136,
+          "discovered_source": 136,
+          "sources_high": [
+            136
+          ],
+          "sources_low": [
+            136
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI3[11]",
+          "fpga_ball": "W14",
+          "expected_source": 137,
+          "discovered_source": 137,
+          "sources_high": [
+            137
+          ],
+          "sources_low": [
+            137
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI3[12]",
+          "fpga_ball": "AA14",
+          "expected_source": 138,
+          "discovered_source": 138,
+          "sources_high": [
+            138
+          ],
+          "sources_low": [
+            138
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI4[0]",
+          "fpga_ball": "V18",
+          "expected_source": 112,
+          "discovered_source": 112,
+          "sources_high": [
+            112
+          ],
+          "sources_low": [
+            112
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI4[1]",
+          "fpga_ball": "W18",
+          "expected_source": 113,
+          "discovered_source": 113,
+          "sources_high": [
+            113
+          ],
+          "sources_low": [
+            113
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI4[4]",
+          "fpga_ball": "AE18",
+          "expected_source": 116,
+          "discovered_source": 116,
+          "sources_high": [
+            116
+          ],
+          "sources_low": [
+            116
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI4[5]",
+          "fpga_ball": "AF18",
+          "expected_source": 117,
+          "discovered_source": 117,
+          "sources_high": [
+            117
+          ],
+          "sources_low": [
+            117
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI4[7]",
+          "fpga_ball": "V19",
+          "expected_source": 119,
+          "discovered_source": 119,
+          "sources_high": [
+            119
+          ],
+          "sources_low": [
+            119
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI4[9]",
+          "fpga_ball": "AB19",
+          "expected_source": 121,
+          "discovered_source": 121,
+          "sources_high": [
+            121
+          ],
+          "sources_low": [
+            121
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI4[10]",
+          "fpga_ball": "AD19",
+          "expected_source": 122,
+          "discovered_source": 122,
+          "sources_high": [
+            122
+          ],
+          "sources_low": [
+            122
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI4[11]",
+          "fpga_ball": "AF19",
+          "expected_source": 123,
+          "discovered_source": 123,
+          "sources_high": [
+            123
+          ],
+          "sources_low": [
+            123
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI5[0]",
+          "fpga_ball": "AE20",
+          "expected_source": 98,
+          "discovered_source": 98,
+          "sources_high": [
+            98
+          ],
+          "sources_low": [
+            98
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI5[1]",
+          "fpga_ball": "AF20",
+          "expected_source": 99,
+          "discovered_source": 99,
+          "sources_high": [
+            99
+          ],
+          "sources_low": [
+            99
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI5[2]",
+          "fpga_ball": "AE21",
+          "expected_source": 100,
+          "discovered_source": 100,
+          "sources_high": [
+            100
+          ],
+          "sources_low": [
+            100
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI5[3]",
+          "fpga_ball": "AF22",
+          "expected_source": 101,
+          "discovered_source": 101,
+          "sources_high": [
+            101
+          ],
+          "sources_low": [
+            101
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI5[4]",
+          "fpga_ball": "AE22",
+          "expected_source": 102,
+          "discovered_source": 102,
+          "sources_high": [
+            102
+          ],
+          "sources_low": [
+            102
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI5[5]",
+          "fpga_ball": "AF23",
+          "expected_source": 103,
+          "discovered_source": 103,
+          "sources_high": [
+            103
+          ],
+          "sources_low": [
+            103
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI5[6]",
+          "fpga_ball": "AE23",
+          "expected_source": 104,
+          "discovered_source": 104,
+          "sources_high": [
+            104
+          ],
+          "sources_low": [
+            104
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI5[7]",
+          "fpga_ball": "AF24",
+          "expected_source": 105,
+          "discovered_source": 105,
+          "sources_high": [
+            105
+          ],
+          "sources_low": [
+            105
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI5[8]",
+          "fpga_ball": "AF25",
+          "expected_source": 106,
+          "discovered_source": 106,
+          "sources_high": [
+            106
+          ],
+          "sources_low": [
+            106
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI5[9]",
+          "fpga_ball": "AE25",
+          "expected_source": 107,
+          "discovered_source": 107,
+          "sources_high": [
+            107
+          ],
+          "sources_low": [
+            107
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI5[12]",
+          "fpga_ball": "AD23",
+          "expected_source": 110,
+          "discovered_source": 110,
+          "sources_high": [
+            110
+          ],
+          "sources_low": [
+            110
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI6[6]",
+          "fpga_ball": "AC26",
+          "expected_source": 90,
+          "discovered_source": 90,
+          "sources_high": [
+            90
+          ],
+          "sources_low": [
+            90
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI6[8]",
+          "fpga_ball": "AB22",
+          "expected_source": 92,
+          "discovered_source": 92,
+          "sources_high": [
+            92
+          ],
+          "sources_low": [
+            92
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI7[0]",
+          "fpga_ball": "AA24",
+          "expected_source": 70,
+          "discovered_source": 70,
+          "sources_high": [
+            70
+          ],
+          "sources_low": [
+            70
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI7[1]",
+          "fpga_ball": "AA25",
+          "expected_source": 71,
+          "discovered_source": 71,
+          "sources_high": [
+            71
+          ],
+          "sources_low": [
+            71
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI7[2]",
+          "fpga_ball": "Y20",
+          "expected_source": 72,
+          "discovered_source": 72,
+          "sources_high": [
+            72
+          ],
+          "sources_low": [
+            72
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI7[8]",
+          "fpga_ball": "W20",
+          "expected_source": 78,
+          "discovered_source": 78,
+          "sources_high": [
+            78
+          ],
+          "sources_low": [
+            78
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI7[9]",
+          "fpga_ball": "W21",
+          "expected_source": 79,
+          "discovered_source": 79,
+          "sources_high": [
+            79
+          ],
+          "sources_low": [
+            79
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI8[9]",
+          "fpga_ball": "U26",
+          "expected_source": 65,
+          "discovered_source": 65,
+          "sources_high": [
+            65
+          ],
+          "sources_low": [
+            65
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI8[10]",
+          "fpga_ball": "U16",
+          "expected_source": 66,
+          "discovered_source": 66,
+          "sources_high": [
+            66
+          ],
+          "sources_low": [
+            66
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI8[11]",
+          "fpga_ball": "U17",
+          "expected_source": 67,
+          "discovered_source": 67,
+          "sources_high": [
+            67
+          ],
+          "sources_low": [
+            67
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI8[12]",
+          "fpga_ball": "U19",
+          "expected_source": 68,
+          "discovered_source": 68,
+          "sources_high": [
+            68
+          ],
+          "sources_low": [
+            68
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI9[0]",
+          "fpga_ball": "T17",
+          "expected_source": 42,
+          "discovered_source": 42,
+          "sources_high": [
+            42
+          ],
+          "sources_low": [
+            42
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI9[1]",
+          "fpga_ball": "T18",
+          "expected_source": 43,
+          "discovered_source": 43,
+          "sources_high": [
+            43
+          ],
+          "sources_low": [
+            43
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI9[2]",
+          "fpga_ball": "T19",
+          "expected_source": 44,
+          "discovered_source": 44,
+          "sources_high": [
+            44
+          ],
+          "sources_low": [
+            44
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI9[3]",
+          "fpga_ball": "T20",
+          "expected_source": 45,
+          "discovered_source": 45,
+          "sources_high": [
+            45
+          ],
+          "sources_low": [
+            45
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI9[4]",
+          "fpga_ball": "T22",
+          "expected_source": 46,
+          "discovered_source": 46,
+          "sources_high": [
+            46
+          ],
+          "sources_low": [
+            46
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI9[5]",
+          "fpga_ball": "T23",
+          "expected_source": 47,
+          "discovered_source": 47,
+          "sources_high": [
+            47
+          ],
+          "sources_low": [
+            47
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI9[6]",
+          "fpga_ball": "T24",
+          "expected_source": 48,
+          "discovered_source": 48,
+          "sources_high": [
+            48
+          ],
+          "sources_low": [
+            48
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI9[7]",
+          "fpga_ball": "T25",
+          "expected_source": 49,
+          "discovered_source": 49,
+          "sources_high": [
+            49
+          ],
+          "sources_low": [
+            49
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI9[8]",
+          "fpga_ball": "R16",
+          "expected_source": 50,
+          "discovered_source": 50,
+          "sources_high": [
+            50
+          ],
+          "sources_low": [
+            50
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI9[9]",
+          "fpga_ball": "R17",
+          "expected_source": 51,
+          "discovered_source": 51,
+          "sources_high": [
+            51
+          ],
+          "sources_low": [
+            51
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI9[10]",
+          "fpga_ball": "R18",
+          "expected_source": 52,
+          "discovered_source": 52,
+          "sources_high": [
+            52
+          ],
+          "sources_low": [
+            52
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI9[11]",
+          "fpga_ball": "R20",
+          "expected_source": 53,
+          "discovered_source": 53,
+          "sources_high": [
+            53
+          ],
+          "sources_low": [
+            53
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI9[12]",
+          "fpga_ball": "R21",
+          "expected_source": 54,
+          "discovered_source": 54,
+          "sources_high": [
+            54
+          ],
+          "sources_low": [
+            54
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI10[0]",
+          "fpga_ball": "R23",
+          "expected_source": 28,
+          "discovered_source": 28,
+          "sources_high": [
+            28
+          ],
+          "sources_low": [
+            28
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI10[1]",
+          "fpga_ball": "R25",
+          "expected_source": 29,
+          "discovered_source": 29,
+          "sources_high": [
+            29
+          ],
+          "sources_low": [
+            29
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI10[2]",
+          "fpga_ball": "R26",
+          "expected_source": 30,
+          "discovered_source": 30,
+          "sources_high": [
+            30
+          ],
+          "sources_low": [
+            30
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI10[3]",
+          "fpga_ball": "P16",
+          "expected_source": 31,
+          "discovered_source": 31,
+          "sources_high": [
+            31
+          ],
+          "sources_low": [
+            31
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI10[4]",
+          "fpga_ball": "P18",
+          "expected_source": 32,
+          "discovered_source": 32,
+          "sources_high": [
+            32
+          ],
+          "sources_low": [
+            32
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI10[5]",
+          "fpga_ball": "P19",
+          "expected_source": 33,
+          "discovered_source": 33,
+          "sources_high": [
+            33
+          ],
+          "sources_low": [
+            33
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI10[6]",
+          "fpga_ball": "P20",
+          "expected_source": 34,
+          "discovered_source": 34,
+          "sources_high": [
+            34
+          ],
+          "sources_low": [
+            34
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI10[7]",
+          "fpga_ball": "P21",
+          "expected_source": 35,
+          "discovered_source": 35,
+          "sources_high": [
+            35
+          ],
+          "sources_low": [
+            35
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI10[8]",
+          "fpga_ball": "P23",
+          "expected_source": 36,
+          "discovered_source": 36,
+          "sources_high": [
+            36
+          ],
+          "sources_low": [
+            36
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI10[9]",
+          "fpga_ball": "P24",
+          "expected_source": 37,
+          "discovered_source": 37,
+          "sources_high": [
+            37
+          ],
+          "sources_low": [
+            37
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI10[10]",
+          "fpga_ball": "P25",
+          "expected_source": 38,
+          "discovered_source": 38,
+          "sources_high": [
+            38
+          ],
+          "sources_low": [
+            38
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI10[11]",
+          "fpga_ball": "P26",
+          "expected_source": 39,
+          "discovered_source": 39,
+          "sources_high": [
+            39
+          ],
+          "sources_low": [
+            39
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI10[12]",
+          "fpga_ball": "N16",
+          "expected_source": 40,
+          "discovered_source": 40,
+          "sources_high": [
+            40
+          ],
+          "sources_low": [
+            40
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI11[0]",
+          "fpga_ball": "N18",
+          "expected_source": 14,
+          "discovered_source": 14,
+          "sources_high": [
+            14
+          ],
+          "sources_low": [
+            14
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI11[1]",
+          "fpga_ball": "N19",
+          "expected_source": 15,
+          "discovered_source": 15,
+          "sources_high": [
+            15
+          ],
+          "sources_low": [
+            15
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI11[2]",
+          "fpga_ball": "N21",
+          "expected_source": 16,
+          "discovered_source": 16,
+          "sources_high": [
+            16
+          ],
+          "sources_low": [
+            16
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI11[3]",
+          "fpga_ball": "N22",
+          "expected_source": 17,
+          "discovered_source": 17,
+          "sources_high": [
+            17
+          ],
+          "sources_low": [
+            17
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI11[4]",
+          "fpga_ball": "N23",
+          "expected_source": 18,
+          "discovered_source": 18,
+          "sources_high": [
+            18
+          ],
+          "sources_low": [
+            18
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI11[5]",
+          "fpga_ball": "N24",
+          "expected_source": 19,
+          "discovered_source": 19,
+          "sources_high": [
+            19
+          ],
+          "sources_low": [
+            19
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI11[6]",
+          "fpga_ball": "N26",
+          "expected_source": 20,
+          "discovered_source": 20,
+          "sources_high": [
+            20
+          ],
+          "sources_low": [
+            20
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI11[7]",
+          "fpga_ball": "M19",
+          "expected_source": 21,
+          "discovered_source": 21,
+          "sources_high": [
+            21
+          ],
+          "sources_low": [
+            21
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI11[8]",
+          "fpga_ball": "M20",
+          "expected_source": 22,
+          "discovered_source": 22,
+          "sources_high": [
+            22
+          ],
+          "sources_low": [
+            22
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI11[9]",
+          "fpga_ball": "M21",
+          "expected_source": 23,
+          "discovered_source": 23,
+          "sources_high": [
+            23
+          ],
+          "sources_low": [
+            23
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI11[10]",
+          "fpga_ball": "M22",
+          "expected_source": 24,
+          "discovered_source": 24,
+          "sources_high": [
+            24
+          ],
+          "sources_low": [
+            24
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI11[11]",
+          "fpga_ball": "M24",
+          "expected_source": 25,
+          "discovered_source": 25,
+          "sources_high": [
+            25
+          ],
+          "sources_low": [
+            25
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI11[12]",
+          "fpga_ball": "M25",
+          "expected_source": 26,
+          "discovered_source": 26,
+          "sources_high": [
+            26
+          ],
+          "sources_low": [
+            26
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI12[0]",
+          "fpga_ball": "L24",
+          "expected_source": 0,
+          "discovered_source": 0,
+          "sources_high": [
+            0
+          ],
+          "sources_low": [
+            0
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI12[1]",
+          "fpga_ball": "L25",
+          "expected_source": 1,
+          "discovered_source": 1,
+          "sources_high": [
+            1
+          ],
+          "sources_low": [
+            1
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI12[2]",
+          "fpga_ball": "K25",
+          "expected_source": 2,
+          "discovered_source": 2,
+          "sources_high": [
+            2
+          ],
+          "sources_low": [
+            2
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI12[3]",
+          "fpga_ball": "K26",
+          "expected_source": 3,
+          "discovered_source": 3,
+          "sources_high": [
+            3
+          ],
+          "sources_low": [
+            3
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI12[4]",
+          "fpga_ball": "M16",
+          "expected_source": 4,
+          "discovered_source": 4,
+          "sources_high": [
+            4
+          ],
+          "sources_low": [
+            4
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI12[5]",
+          "fpga_ball": "M17",
+          "expected_source": 5,
+          "discovered_source": 5,
+          "sources_high": [
+            5
+          ],
+          "sources_low": [
+            5
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI12[6]",
+          "fpga_ball": "L17",
+          "expected_source": 6,
+          "discovered_source": 6,
+          "sources_high": [
+            6
+          ],
+          "sources_low": [
+            6
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI12[7]",
+          "fpga_ball": "L18",
+          "expected_source": 7,
+          "discovered_source": 7,
+          "sources_high": [
+            7
+          ],
+          "sources_low": [
+            7
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI12[8]",
+          "fpga_ball": "L19",
+          "expected_source": 8,
+          "discovered_source": 8,
+          "sources_high": [
+            8
+          ],
+          "sources_low": [
+            8
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI12[9]",
+          "fpga_ball": "L20",
+          "expected_source": 9,
+          "discovered_source": 9,
+          "sources_high": [
+            9
+          ],
+          "sources_low": [
+            9
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI12[10]",
+          "fpga_ball": "K18",
+          "expected_source": 10,
+          "discovered_source": 10,
+          "sources_high": [
+            10
+          ],
+          "sources_low": [
+            10
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI12[11]",
+          "fpga_ball": "K16",
+          "expected_source": 11,
+          "discovered_source": 11,
+          "sources_high": [
+            11
+          ],
+          "sources_low": [
+            11
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI12[12]",
+          "fpga_ball": "K17",
+          "expected_source": 12,
+          "discovered_source": 12,
+          "sources_high": [
+            12
+          ],
+          "sources_low": [
+            12
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI1[0]",
+          "fpga_ball": "T7",
+          "expected_source": 154,
+          "discovered_source": 154,
+          "sources_high": [
+            154
+          ],
+          "sources_low": [
+            154
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI1[1]",
+          "fpga_ball": "U7",
+          "expected_source": 155,
+          "discovered_source": 155,
+          "sources_high": [
+            155
+          ],
+          "sources_low": [
+            155
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI1[2]",
+          "fpga_ball": "U6",
+          "expected_source": 156,
+          "discovered_source": 156,
+          "sources_high": [
+            156
+          ],
+          "sources_low": [
+            156
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI1[3]",
+          "fpga_ball": "U5",
+          "expected_source": 157,
+          "discovered_source": 157,
+          "sources_high": [
+            157
+          ],
+          "sources_low": [
+            157
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI1[4]",
+          "fpga_ball": "U4",
+          "expected_source": 158,
+          "discovered_source": 158,
+          "sources_high": [
+            158
+          ],
+          "sources_low": [
+            158
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI1[5]",
+          "fpga_ball": "U2",
+          "expected_source": 159,
+          "discovered_source": 159,
+          "sources_high": [
+            159
+          ],
+          "sources_low": [
+            159
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI1[6]",
+          "fpga_ball": "U1",
+          "expected_source": 160,
+          "discovered_source": 160,
+          "sources_high": [
+            160
+          ],
+          "sources_low": [
+            160
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI1[7]",
+          "fpga_ball": "V6",
+          "expected_source": 161,
+          "discovered_source": 161,
+          "sources_high": [
+            161
+          ],
+          "sources_low": [
+            161
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI1[10]",
+          "fpga_ball": "V2",
+          "expected_source": 164,
+          "discovered_source": 164,
+          "sources_high": [
+            164
+          ],
+          "sources_low": [
+            164
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI1[11]",
+          "fpga_ball": "V1",
+          "expected_source": 165,
+          "discovered_source": 165,
+          "sources_high": [
+            165
+          ],
+          "sources_low": [
+            165
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI2[0]",
+          "fpga_ball": "AF4",
+          "expected_source": 140,
+          "discovered_source": 140,
+          "sources_high": [
+            140
+          ],
+          "sources_low": [
+            140
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI2[1]",
+          "fpga_ball": "AD5",
+          "expected_source": 141,
+          "discovered_source": 141,
+          "sources_high": [
+            141
+          ],
+          "sources_low": [
+            141
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI2[2]",
+          "fpga_ball": "AE5",
+          "expected_source": 142,
+          "discovered_source": 142,
+          "sources_high": [
+            142
+          ],
+          "sources_low": [
+            142
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI2[3]",
+          "fpga_ball": "AF5",
+          "expected_source": 143,
+          "discovered_source": 143,
+          "sources_high": [
+            143
+          ],
+          "sources_low": [
+            143
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI2[5]",
+          "fpga_ball": "AC6",
+          "expected_source": 145,
+          "discovered_source": 145,
+          "sources_high": [
+            145
+          ],
+          "sources_low": [
+            145
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI2[6]",
+          "fpga_ball": "AD6",
+          "expected_source": 146,
+          "discovered_source": 146,
+          "sources_high": [
+            146
+          ],
+          "sources_low": [
+            146
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI2[7]",
+          "fpga_ball": "AE6",
+          "expected_source": 147,
+          "discovered_source": 147,
+          "sources_high": [
+            147
+          ],
+          "sources_low": [
+            147
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI3[0]",
+          "fpga_ball": "AA8",
+          "expected_source": 126,
+          "discovered_source": 126,
+          "sources_high": [
+            126
+          ],
+          "sources_low": [
+            126
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI3[1]",
+          "fpga_ball": "AD11",
+          "expected_source": 127,
+          "discovered_source": 127,
+          "sources_high": [
+            127
+          ],
+          "sources_low": [
+            127
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI3[2]",
+          "fpga_ball": "AE11",
+          "expected_source": 128,
+          "discovered_source": 128,
+          "sources_high": [
+            128
+          ],
+          "sources_low": [
+            128
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI3[3]",
+          "fpga_ball": "V12",
+          "expected_source": 129,
+          "discovered_source": 129,
+          "sources_high": [
+            129
+          ],
+          "sources_low": [
+            129
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI3[4]",
+          "fpga_ball": "Y12",
+          "expected_source": 130,
+          "discovered_source": 130,
+          "sources_high": [
+            130
+          ],
+          "sources_low": [
+            130
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI3[5]",
+          "fpga_ball": "Y13",
+          "expected_source": 131,
+          "discovered_source": 131,
+          "sources_high": [
+            131
+          ],
+          "sources_low": [
+            131
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI3[6]",
+          "fpga_ball": "AA12",
+          "expected_source": 132,
+          "discovered_source": 132,
+          "sources_high": [
+            132
+          ],
+          "sources_low": [
+            132
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI3[7]",
+          "fpga_ball": "AA13",
+          "expected_source": 133,
+          "discovered_source": 133,
+          "sources_high": [
+            133
+          ],
+          "sources_low": [
+            133
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI4[2]",
+          "fpga_ball": "AA19",
+          "expected_source": 114,
+          "discovered_source": 114,
+          "sources_high": [
+            114
+          ],
+          "sources_low": [
+            114
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI4[3]",
+          "fpga_ball": "AC19",
+          "expected_source": 115,
+          "discovered_source": 115,
+          "sources_high": [
+            115
+          ],
+          "sources_low": [
+            115
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI4[6]",
+          "fpga_ball": "AB20",
+          "expected_source": 118,
+          "discovered_source": 118,
+          "sources_high": [
+            118
+          ],
+          "sources_low": [
+            118
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI4[8]",
+          "fpga_ball": "W19",
+          "expected_source": 120,
+          "discovered_source": 120,
+          "sources_high": [
+            120
+          ],
+          "sources_low": [
+            120
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI5[10]",
+          "fpga_ball": "AE26",
+          "expected_source": 108,
+          "discovered_source": 108,
+          "sources_high": [
+            108
+          ],
+          "sources_low": [
+            108
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI5[11]",
+          "fpga_ball": "AD21",
+          "expected_source": 109,
+          "discovered_source": 109,
+          "sources_high": [
+            109
+          ],
+          "sources_low": [
+            109
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI6[0]",
+          "fpga_ball": "AD25",
+          "expected_source": 84,
+          "discovered_source": 84,
+          "sources_high": [
+            84
+          ],
+          "sources_low": [
+            84
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI6[1]",
+          "fpga_ball": "AD26",
+          "expected_source": 85,
+          "discovered_source": 85,
+          "sources_high": [
+            85
+          ],
+          "sources_low": [
+            85
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI6[2]",
+          "fpga_ball": "AC21",
+          "expected_source": 86,
+          "discovered_source": 86,
+          "sources_high": [
+            86
+          ],
+          "sources_low": [
+            86
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI6[3]",
+          "fpga_ball": "AC22",
+          "expected_source": 87,
+          "discovered_source": 87,
+          "sources_high": [
+            87
+          ],
+          "sources_low": [
+            87
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI6[4]",
+          "fpga_ball": "AC23",
+          "expected_source": 88,
+          "discovered_source": 88,
+          "sources_high": [
+            88
+          ],
+          "sources_low": [
+            88
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI6[5]",
+          "fpga_ball": "AD24",
+          "expected_source": 89,
+          "discovered_source": 89,
+          "sources_high": [
+            89
+          ],
+          "sources_low": [
+            89
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI6[9]",
+          "fpga_ball": "AB24",
+          "expected_source": 93,
+          "discovered_source": 93,
+          "sources_high": [
+            93
+          ],
+          "sources_low": [
+            93
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI6[10]",
+          "fpga_ball": "AB25",
+          "expected_source": 94,
+          "discovered_source": 94,
+          "sources_high": [
+            94
+          ],
+          "sources_low": [
+            94
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI6[11]",
+          "fpga_ball": "AB26",
+          "expected_source": 95,
+          "discovered_source": 95,
+          "sources_high": [
+            95
+          ],
+          "sources_low": [
+            95
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI6[12]",
+          "fpga_ball": "AA22",
+          "expected_source": 96,
+          "discovered_source": 96,
+          "sources_high": [
+            96
+          ],
+          "sources_low": [
+            96
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI7[3]",
+          "fpga_ball": "Y21",
+          "expected_source": 73,
+          "discovered_source": 73,
+          "sources_high": [
+            73
+          ],
+          "sources_low": [
+            73
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI7[4]",
+          "fpga_ball": "Y22",
+          "expected_source": 74,
+          "discovered_source": 74,
+          "sources_high": [
+            74
+          ],
+          "sources_low": [
+            74
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI7[5]",
+          "fpga_ball": "Y23",
+          "expected_source": 75,
+          "discovered_source": 75,
+          "sources_high": [
+            75
+          ],
+          "sources_low": [
+            75
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI7[6]",
+          "fpga_ball": "Y25",
+          "expected_source": 76,
+          "discovered_source": 76,
+          "sources_high": [
+            76
+          ],
+          "sources_low": [
+            76
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI7[7]",
+          "fpga_ball": "Y26",
+          "expected_source": 77,
+          "discovered_source": 77,
+          "sources_high": [
+            77
+          ],
+          "sources_low": [
+            77
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI7[10]",
+          "fpga_ball": "W23",
+          "expected_source": 80,
+          "discovered_source": 80,
+          "sources_high": [
+            80
+          ],
+          "sources_low": [
+            80
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI7[11]",
+          "fpga_ball": "W24",
+          "expected_source": 81,
+          "discovered_source": 81,
+          "sources_high": [
+            81
+          ],
+          "sources_low": [
+            81
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI7[12]",
+          "fpga_ball": "W25",
+          "expected_source": 82,
+          "discovered_source": 82,
+          "sources_high": [
+            82
+          ],
+          "sources_low": [
+            82
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI8[0]",
+          "fpga_ball": "V21",
+          "expected_source": 56,
+          "discovered_source": 56,
+          "sources_high": [
+            56
+          ],
+          "sources_low": [
+            56
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI8[1]",
+          "fpga_ball": "V22",
+          "expected_source": 57,
+          "discovered_source": 57,
+          "sources_high": [
+            57
+          ],
+          "sources_low": [
+            57
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI8[2]",
+          "fpga_ball": "V23",
+          "expected_source": 58,
+          "discovered_source": 58,
+          "sources_high": [
+            58
+          ],
+          "sources_low": [
+            58
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI8[3]",
+          "fpga_ball": "V24",
+          "expected_source": 59,
+          "discovered_source": 59,
+          "sources_high": [
+            59
+          ],
+          "sources_low": [
+            59
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI8[4]",
+          "fpga_ball": "V26",
+          "expected_source": 60,
+          "discovered_source": 60,
+          "sources_high": [
+            60
+          ],
+          "sources_low": [
+            60
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI8[5]",
+          "fpga_ball": "U21",
+          "expected_source": 61,
+          "discovered_source": 61,
+          "sources_high": [
+            61
+          ],
+          "sources_low": [
+            61
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI8[6]",
+          "fpga_ball": "U22",
+          "expected_source": 62,
+          "discovered_source": 62,
+          "sources_high": [
+            62
+          ],
+          "sources_low": [
+            62
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI8[7]",
+          "fpga_ball": "U24",
+          "expected_source": 63,
+          "discovered_source": 63,
+          "sources_high": [
+            63
+          ],
+          "sources_low": [
+            63
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI8[8]",
+          "fpga_ball": "U25",
+          "expected_source": 64,
+          "discovered_source": 64,
+          "sources_high": [
+            64
+          ],
+          "sources_low": [
+            64
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI4[12]",
+          "fpga_ball": "AA20",
+          "expected_source": 124,
+          "discovered_source": 124,
+          "sources_high": [
+            124
+          ],
+          "sources_low": [
+            124
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI6[7]",
+          "fpga_ball": "AC24",
+          "expected_source": 91,
+          "discovered_source": 91,
+          "sources_high": [
+            91
+          ],
+          "sources_low": [
+            91
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 91,
+          "passed": true
+        }
+      ]
+    },
+    "boundary": {
+      "passed": true,
+      "matched": 168,
+      "total": 168,
+      "vectors": 338,
+      "restored": true,
+      "connections": [
+        {
+          "signal": "STR1",
+          "fpga_ball": "W5",
+          "expected_source": 167,
+          "discovered_source": 167,
+          "sources_high": [
+            167
+          ],
+          "sources_low": [
+            167
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR2",
+          "fpga_ball": "AA7",
+          "expected_source": 153,
+          "discovered_source": 153,
+          "sources_high": [
+            153
+          ],
+          "sources_low": [
+            153
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR3",
+          "fpga_ball": "AA15",
+          "expected_source": 139,
+          "discovered_source": 139,
+          "sources_high": [
+            139
+          ],
+          "sources_low": [
+            139
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR4",
+          "fpga_ball": "AD20",
+          "expected_source": 125,
+          "discovered_source": 125,
+          "sources_high": [
+            125
+          ],
+          "sources_low": [
+            125
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR5",
+          "fpga_ball": "AB21",
+          "expected_source": 111,
+          "discovered_source": 111,
+          "sources_high": [
+            111
+          ],
+          "sources_low": [
+            111
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR8",
+          "fpga_ball": "U20",
+          "expected_source": 69,
+          "discovered_source": 69,
+          "sources_high": [
+            69
+          ],
+          "sources_low": [
+            69
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR9",
+          "fpga_ball": "R22",
+          "expected_source": 55,
+          "discovered_source": 55,
+          "sources_high": [
+            55
+          ],
+          "sources_low": [
+            55
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR10",
+          "fpga_ball": "N17",
+          "expected_source": 41,
+          "discovered_source": 41,
+          "sources_high": [
+            41
+          ],
+          "sources_low": [
+            41
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR11",
+          "fpga_ball": "M26",
+          "expected_source": 27,
+          "discovered_source": 27,
+          "sources_high": [
+            27
+          ],
+          "sources_low": [
+            27
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR12",
+          "fpga_ball": "J19",
+          "expected_source": 13,
+          "discovered_source": 13,
+          "sources_high": [
+            13
+          ],
+          "sources_low": [
+            13
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR6",
+          "fpga_ball": "AA23",
+          "expected_source": 97,
+          "discovered_source": 97,
+          "sources_high": [
+            97
+          ],
+          "sources_low": [
+            97
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "STR7",
+          "fpga_ball": "W26",
+          "expected_source": 83,
+          "discovered_source": 83,
+          "sources_high": [
+            83
+          ],
+          "sources_low": [
+            83
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 82,
+          "passed": true
+        },
+        {
+          "signal": "DI1[8]",
+          "fpga_ball": "V4",
+          "expected_source": 162,
+          "discovered_source": 162,
+          "sources_high": [
+            162
+          ],
+          "sources_low": [
+            162
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI1[9]",
+          "fpga_ball": "W4",
+          "expected_source": 163,
+          "discovered_source": 163,
+          "sources_high": [
+            163
+          ],
+          "sources_low": [
+            163
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI1[12]",
+          "fpga_ball": "W6",
+          "expected_source": 166,
+          "discovered_source": 166,
+          "sources_high": [
+            166
+          ],
+          "sources_low": [
+            166
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI2[4]",
+          "fpga_ball": "AB6",
+          "expected_source": 144,
+          "discovered_source": 144,
+          "sources_high": [
+            144
+          ],
+          "sources_low": [
+            144
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI2[8]",
+          "fpga_ball": "U9",
+          "expected_source": 148,
+          "discovered_source": 148,
+          "sources_high": [
+            148
+          ],
+          "sources_low": [
+            148
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI2[9]",
+          "fpga_ball": "V7",
+          "expected_source": 149,
+          "discovered_source": 149,
+          "sources_high": [
+            149
+          ],
+          "sources_low": [
+            149
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI2[10]",
+          "fpga_ball": "V8",
+          "expected_source": 150,
+          "discovered_source": 150,
+          "sources_high": [
+            150
+          ],
+          "sources_low": [
+            150
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI2[11]",
+          "fpga_ball": "Y7",
+          "expected_source": 151,
+          "discovered_source": 151,
+          "sources_high": [
+            151
+          ],
+          "sources_low": [
+            151
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI2[12]",
+          "fpga_ball": "Y8",
+          "expected_source": 152,
+          "discovered_source": 152,
+          "sources_high": [
+            152
+          ],
+          "sources_low": [
+            152
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI3[8]",
+          "fpga_ball": "V13",
+          "expected_source": 134,
+          "discovered_source": 134,
+          "sources_high": [
+            134
+          ],
+          "sources_low": [
+            134
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI3[9]",
+          "fpga_ball": "W13",
+          "expected_source": 135,
+          "discovered_source": 135,
+          "sources_high": [
+            135
+          ],
+          "sources_low": [
+            135
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI3[10]",
+          "fpga_ball": "V14",
+          "expected_source": 136,
+          "discovered_source": 136,
+          "sources_high": [
+            136
+          ],
+          "sources_low": [
+            136
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI3[11]",
+          "fpga_ball": "W14",
+          "expected_source": 137,
+          "discovered_source": 137,
+          "sources_high": [
+            137
+          ],
+          "sources_low": [
+            137
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI3[12]",
+          "fpga_ball": "AA14",
+          "expected_source": 138,
+          "discovered_source": 138,
+          "sources_high": [
+            138
+          ],
+          "sources_low": [
+            138
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI4[0]",
+          "fpga_ball": "V18",
+          "expected_source": 112,
+          "discovered_source": 112,
+          "sources_high": [
+            112
+          ],
+          "sources_low": [
+            112
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI4[1]",
+          "fpga_ball": "W18",
+          "expected_source": 113,
+          "discovered_source": 113,
+          "sources_high": [
+            113
+          ],
+          "sources_low": [
+            113
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI4[4]",
+          "fpga_ball": "AE18",
+          "expected_source": 116,
+          "discovered_source": 116,
+          "sources_high": [
+            116
+          ],
+          "sources_low": [
+            116
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI4[5]",
+          "fpga_ball": "AF18",
+          "expected_source": 117,
+          "discovered_source": 117,
+          "sources_high": [
+            117
+          ],
+          "sources_low": [
+            117
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI4[7]",
+          "fpga_ball": "V19",
+          "expected_source": 119,
+          "discovered_source": 119,
+          "sources_high": [
+            119
+          ],
+          "sources_low": [
+            119
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI4[9]",
+          "fpga_ball": "AB19",
+          "expected_source": 121,
+          "discovered_source": 121,
+          "sources_high": [
+            121
+          ],
+          "sources_low": [
+            121
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI4[10]",
+          "fpga_ball": "AD19",
+          "expected_source": 122,
+          "discovered_source": 122,
+          "sources_high": [
+            122
+          ],
+          "sources_low": [
+            122
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI4[11]",
+          "fpga_ball": "AF19",
+          "expected_source": 123,
+          "discovered_source": 123,
+          "sources_high": [
+            123
+          ],
+          "sources_low": [
+            123
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI5[0]",
+          "fpga_ball": "AE20",
+          "expected_source": 98,
+          "discovered_source": 98,
+          "sources_high": [
+            98
+          ],
+          "sources_low": [
+            98
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI5[1]",
+          "fpga_ball": "AF20",
+          "expected_source": 99,
+          "discovered_source": 99,
+          "sources_high": [
+            99
+          ],
+          "sources_low": [
+            99
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI5[2]",
+          "fpga_ball": "AE21",
+          "expected_source": 100,
+          "discovered_source": 100,
+          "sources_high": [
+            100
+          ],
+          "sources_low": [
+            100
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI5[3]",
+          "fpga_ball": "AF22",
+          "expected_source": 101,
+          "discovered_source": 101,
+          "sources_high": [
+            101
+          ],
+          "sources_low": [
+            101
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI5[4]",
+          "fpga_ball": "AE22",
+          "expected_source": 102,
+          "discovered_source": 102,
+          "sources_high": [
+            102
+          ],
+          "sources_low": [
+            102
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI5[5]",
+          "fpga_ball": "AF23",
+          "expected_source": 103,
+          "discovered_source": 103,
+          "sources_high": [
+            103
+          ],
+          "sources_low": [
+            103
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI5[6]",
+          "fpga_ball": "AE23",
+          "expected_source": 104,
+          "discovered_source": 104,
+          "sources_high": [
+            104
+          ],
+          "sources_low": [
+            104
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI5[7]",
+          "fpga_ball": "AF24",
+          "expected_source": 105,
+          "discovered_source": 105,
+          "sources_high": [
+            105
+          ],
+          "sources_low": [
+            105
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI5[8]",
+          "fpga_ball": "AF25",
+          "expected_source": 106,
+          "discovered_source": 106,
+          "sources_high": [
+            106
+          ],
+          "sources_low": [
+            106
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI5[9]",
+          "fpga_ball": "AE25",
+          "expected_source": 107,
+          "discovered_source": 107,
+          "sources_high": [
+            107
+          ],
+          "sources_low": [
+            107
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI5[12]",
+          "fpga_ball": "AD23",
+          "expected_source": 110,
+          "discovered_source": 110,
+          "sources_high": [
+            110
+          ],
+          "sources_low": [
+            110
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI6[6]",
+          "fpga_ball": "AC26",
+          "expected_source": 90,
+          "discovered_source": 90,
+          "sources_high": [
+            90
+          ],
+          "sources_low": [
+            90
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI6[8]",
+          "fpga_ball": "AB22",
+          "expected_source": 92,
+          "discovered_source": 92,
+          "sources_high": [
+            92
+          ],
+          "sources_low": [
+            92
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI7[0]",
+          "fpga_ball": "AA24",
+          "expected_source": 70,
+          "discovered_source": 70,
+          "sources_high": [
+            70
+          ],
+          "sources_low": [
+            70
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI7[1]",
+          "fpga_ball": "AA25",
+          "expected_source": 71,
+          "discovered_source": 71,
+          "sources_high": [
+            71
+          ],
+          "sources_low": [
+            71
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI7[2]",
+          "fpga_ball": "Y20",
+          "expected_source": 72,
+          "discovered_source": 72,
+          "sources_high": [
+            72
+          ],
+          "sources_low": [
+            72
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI7[8]",
+          "fpga_ball": "W20",
+          "expected_source": 78,
+          "discovered_source": 78,
+          "sources_high": [
+            78
+          ],
+          "sources_low": [
+            78
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI7[9]",
+          "fpga_ball": "W21",
+          "expected_source": 79,
+          "discovered_source": 79,
+          "sources_high": [
+            79
+          ],
+          "sources_low": [
+            79
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI8[9]",
+          "fpga_ball": "U26",
+          "expected_source": 65,
+          "discovered_source": 65,
+          "sources_high": [
+            65
+          ],
+          "sources_low": [
+            65
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI8[10]",
+          "fpga_ball": "U16",
+          "expected_source": 66,
+          "discovered_source": 66,
+          "sources_high": [
+            66
+          ],
+          "sources_low": [
+            66
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI8[11]",
+          "fpga_ball": "U17",
+          "expected_source": 67,
+          "discovered_source": 67,
+          "sources_high": [
+            67
+          ],
+          "sources_low": [
+            67
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI8[12]",
+          "fpga_ball": "U19",
+          "expected_source": 68,
+          "discovered_source": 68,
+          "sources_high": [
+            68
+          ],
+          "sources_low": [
+            68
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI9[0]",
+          "fpga_ball": "T17",
+          "expected_source": 42,
+          "discovered_source": 42,
+          "sources_high": [
+            42
+          ],
+          "sources_low": [
+            42
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI9[1]",
+          "fpga_ball": "T18",
+          "expected_source": 43,
+          "discovered_source": 43,
+          "sources_high": [
+            43
+          ],
+          "sources_low": [
+            43
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI9[2]",
+          "fpga_ball": "T19",
+          "expected_source": 44,
+          "discovered_source": 44,
+          "sources_high": [
+            44
+          ],
+          "sources_low": [
+            44
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI9[3]",
+          "fpga_ball": "T20",
+          "expected_source": 45,
+          "discovered_source": 45,
+          "sources_high": [
+            45
+          ],
+          "sources_low": [
+            45
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI9[4]",
+          "fpga_ball": "T22",
+          "expected_source": 46,
+          "discovered_source": 46,
+          "sources_high": [
+            46
+          ],
+          "sources_low": [
+            46
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI9[5]",
+          "fpga_ball": "T23",
+          "expected_source": 47,
+          "discovered_source": 47,
+          "sources_high": [
+            47
+          ],
+          "sources_low": [
+            47
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI9[6]",
+          "fpga_ball": "T24",
+          "expected_source": 48,
+          "discovered_source": 48,
+          "sources_high": [
+            48
+          ],
+          "sources_low": [
+            48
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI9[7]",
+          "fpga_ball": "T25",
+          "expected_source": 49,
+          "discovered_source": 49,
+          "sources_high": [
+            49
+          ],
+          "sources_low": [
+            49
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI9[8]",
+          "fpga_ball": "R16",
+          "expected_source": 50,
+          "discovered_source": 50,
+          "sources_high": [
+            50
+          ],
+          "sources_low": [
+            50
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI9[9]",
+          "fpga_ball": "R17",
+          "expected_source": 51,
+          "discovered_source": 51,
+          "sources_high": [
+            51
+          ],
+          "sources_low": [
+            51
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI9[10]",
+          "fpga_ball": "R18",
+          "expected_source": 52,
+          "discovered_source": 52,
+          "sources_high": [
+            52
+          ],
+          "sources_low": [
+            52
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI9[11]",
+          "fpga_ball": "R20",
+          "expected_source": 53,
+          "discovered_source": 53,
+          "sources_high": [
+            53
+          ],
+          "sources_low": [
+            53
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI9[12]",
+          "fpga_ball": "R21",
+          "expected_source": 54,
+          "discovered_source": 54,
+          "sources_high": [
+            54
+          ],
+          "sources_low": [
+            54
+          ],
+          "cpld_channel": 9,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI10[0]",
+          "fpga_ball": "R23",
+          "expected_source": 28,
+          "discovered_source": 28,
+          "sources_high": [
+            28
+          ],
+          "sources_low": [
+            28
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI10[1]",
+          "fpga_ball": "R25",
+          "expected_source": 29,
+          "discovered_source": 29,
+          "sources_high": [
+            29
+          ],
+          "sources_low": [
+            29
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI10[2]",
+          "fpga_ball": "R26",
+          "expected_source": 30,
+          "discovered_source": 30,
+          "sources_high": [
+            30
+          ],
+          "sources_low": [
+            30
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI10[3]",
+          "fpga_ball": "P16",
+          "expected_source": 31,
+          "discovered_source": 31,
+          "sources_high": [
+            31
+          ],
+          "sources_low": [
+            31
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI10[4]",
+          "fpga_ball": "P18",
+          "expected_source": 32,
+          "discovered_source": 32,
+          "sources_high": [
+            32
+          ],
+          "sources_low": [
+            32
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI10[5]",
+          "fpga_ball": "P19",
+          "expected_source": 33,
+          "discovered_source": 33,
+          "sources_high": [
+            33
+          ],
+          "sources_low": [
+            33
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI10[6]",
+          "fpga_ball": "P20",
+          "expected_source": 34,
+          "discovered_source": 34,
+          "sources_high": [
+            34
+          ],
+          "sources_low": [
+            34
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI10[7]",
+          "fpga_ball": "P21",
+          "expected_source": 35,
+          "discovered_source": 35,
+          "sources_high": [
+            35
+          ],
+          "sources_low": [
+            35
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI10[8]",
+          "fpga_ball": "P23",
+          "expected_source": 36,
+          "discovered_source": 36,
+          "sources_high": [
+            36
+          ],
+          "sources_low": [
+            36
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI10[9]",
+          "fpga_ball": "P24",
+          "expected_source": 37,
+          "discovered_source": 37,
+          "sources_high": [
+            37
+          ],
+          "sources_low": [
+            37
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI10[10]",
+          "fpga_ball": "P25",
+          "expected_source": 38,
+          "discovered_source": 38,
+          "sources_high": [
+            38
+          ],
+          "sources_low": [
+            38
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI10[11]",
+          "fpga_ball": "P26",
+          "expected_source": 39,
+          "discovered_source": 39,
+          "sources_high": [
+            39
+          ],
+          "sources_low": [
+            39
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI10[12]",
+          "fpga_ball": "N16",
+          "expected_source": 40,
+          "discovered_source": 40,
+          "sources_high": [
+            40
+          ],
+          "sources_low": [
+            40
+          ],
+          "cpld_channel": 10,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI11[0]",
+          "fpga_ball": "N18",
+          "expected_source": 14,
+          "discovered_source": 14,
+          "sources_high": [
+            14
+          ],
+          "sources_low": [
+            14
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI11[1]",
+          "fpga_ball": "N19",
+          "expected_source": 15,
+          "discovered_source": 15,
+          "sources_high": [
+            15
+          ],
+          "sources_low": [
+            15
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI11[2]",
+          "fpga_ball": "N21",
+          "expected_source": 16,
+          "discovered_source": 16,
+          "sources_high": [
+            16
+          ],
+          "sources_low": [
+            16
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI11[3]",
+          "fpga_ball": "N22",
+          "expected_source": 17,
+          "discovered_source": 17,
+          "sources_high": [
+            17
+          ],
+          "sources_low": [
+            17
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI11[4]",
+          "fpga_ball": "N23",
+          "expected_source": 18,
+          "discovered_source": 18,
+          "sources_high": [
+            18
+          ],
+          "sources_low": [
+            18
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI11[5]",
+          "fpga_ball": "N24",
+          "expected_source": 19,
+          "discovered_source": 19,
+          "sources_high": [
+            19
+          ],
+          "sources_low": [
+            19
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI11[6]",
+          "fpga_ball": "N26",
+          "expected_source": 20,
+          "discovered_source": 20,
+          "sources_high": [
+            20
+          ],
+          "sources_low": [
+            20
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI11[7]",
+          "fpga_ball": "M19",
+          "expected_source": 21,
+          "discovered_source": 21,
+          "sources_high": [
+            21
+          ],
+          "sources_low": [
+            21
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI11[8]",
+          "fpga_ball": "M20",
+          "expected_source": 22,
+          "discovered_source": 22,
+          "sources_high": [
+            22
+          ],
+          "sources_low": [
+            22
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI11[9]",
+          "fpga_ball": "M21",
+          "expected_source": 23,
+          "discovered_source": 23,
+          "sources_high": [
+            23
+          ],
+          "sources_low": [
+            23
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI11[10]",
+          "fpga_ball": "M22",
+          "expected_source": 24,
+          "discovered_source": 24,
+          "sources_high": [
+            24
+          ],
+          "sources_low": [
+            24
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI11[11]",
+          "fpga_ball": "M24",
+          "expected_source": 25,
+          "discovered_source": 25,
+          "sources_high": [
+            25
+          ],
+          "sources_low": [
+            25
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI11[12]",
+          "fpga_ball": "M25",
+          "expected_source": 26,
+          "discovered_source": 26,
+          "sources_high": [
+            26
+          ],
+          "sources_low": [
+            26
+          ],
+          "cpld_channel": 11,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI12[0]",
+          "fpga_ball": "L24",
+          "expected_source": 0,
+          "discovered_source": 0,
+          "sources_high": [
+            0
+          ],
+          "sources_low": [
+            0
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI12[1]",
+          "fpga_ball": "L25",
+          "expected_source": 1,
+          "discovered_source": 1,
+          "sources_high": [
+            1
+          ],
+          "sources_low": [
+            1
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI12[2]",
+          "fpga_ball": "K25",
+          "expected_source": 2,
+          "discovered_source": 2,
+          "sources_high": [
+            2
+          ],
+          "sources_low": [
+            2
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI12[3]",
+          "fpga_ball": "K26",
+          "expected_source": 3,
+          "discovered_source": 3,
+          "sources_high": [
+            3
+          ],
+          "sources_low": [
+            3
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI12[4]",
+          "fpga_ball": "M16",
+          "expected_source": 4,
+          "discovered_source": 4,
+          "sources_high": [
+            4
+          ],
+          "sources_low": [
+            4
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI12[5]",
+          "fpga_ball": "M17",
+          "expected_source": 5,
+          "discovered_source": 5,
+          "sources_high": [
+            5
+          ],
+          "sources_low": [
+            5
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI12[6]",
+          "fpga_ball": "L17",
+          "expected_source": 6,
+          "discovered_source": 6,
+          "sources_high": [
+            6
+          ],
+          "sources_low": [
+            6
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI12[7]",
+          "fpga_ball": "L18",
+          "expected_source": 7,
+          "discovered_source": 7,
+          "sources_high": [
+            7
+          ],
+          "sources_low": [
+            7
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI12[8]",
+          "fpga_ball": "L19",
+          "expected_source": 8,
+          "discovered_source": 8,
+          "sources_high": [
+            8
+          ],
+          "sources_low": [
+            8
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI12[9]",
+          "fpga_ball": "L20",
+          "expected_source": 9,
+          "discovered_source": 9,
+          "sources_high": [
+            9
+          ],
+          "sources_low": [
+            9
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI12[10]",
+          "fpga_ball": "K18",
+          "expected_source": 10,
+          "discovered_source": 10,
+          "sources_high": [
+            10
+          ],
+          "sources_low": [
+            10
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI12[11]",
+          "fpga_ball": "K16",
+          "expected_source": 11,
+          "discovered_source": 11,
+          "sources_high": [
+            11
+          ],
+          "sources_low": [
+            11
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI12[12]",
+          "fpga_ball": "K17",
+          "expected_source": 12,
+          "discovered_source": 12,
+          "sources_high": [
+            12
+          ],
+          "sources_low": [
+            12
+          ],
+          "cpld_channel": 12,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI1[0]",
+          "fpga_ball": "T7",
+          "expected_source": 154,
+          "discovered_source": 154,
+          "sources_high": [
+            154
+          ],
+          "sources_low": [
+            154
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI1[1]",
+          "fpga_ball": "U7",
+          "expected_source": 155,
+          "discovered_source": 155,
+          "sources_high": [
+            155
+          ],
+          "sources_low": [
+            155
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI1[2]",
+          "fpga_ball": "U6",
+          "expected_source": 156,
+          "discovered_source": 156,
+          "sources_high": [
+            156
+          ],
+          "sources_low": [
+            156
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI1[3]",
+          "fpga_ball": "U5",
+          "expected_source": 157,
+          "discovered_source": 157,
+          "sources_high": [
+            157
+          ],
+          "sources_low": [
+            157
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI1[4]",
+          "fpga_ball": "U4",
+          "expected_source": 158,
+          "discovered_source": 158,
+          "sources_high": [
+            158
+          ],
+          "sources_low": [
+            158
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI1[5]",
+          "fpga_ball": "U2",
+          "expected_source": 159,
+          "discovered_source": 159,
+          "sources_high": [
+            159
+          ],
+          "sources_low": [
+            159
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI1[6]",
+          "fpga_ball": "U1",
+          "expected_source": 160,
+          "discovered_source": 160,
+          "sources_high": [
+            160
+          ],
+          "sources_low": [
+            160
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI1[7]",
+          "fpga_ball": "V6",
+          "expected_source": 161,
+          "discovered_source": 161,
+          "sources_high": [
+            161
+          ],
+          "sources_low": [
+            161
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI1[10]",
+          "fpga_ball": "V2",
+          "expected_source": 164,
+          "discovered_source": 164,
+          "sources_high": [
+            164
+          ],
+          "sources_low": [
+            164
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI1[11]",
+          "fpga_ball": "V1",
+          "expected_source": 165,
+          "discovered_source": 165,
+          "sources_high": [
+            165
+          ],
+          "sources_low": [
+            165
+          ],
+          "cpld_channel": 1,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI2[0]",
+          "fpga_ball": "AF4",
+          "expected_source": 140,
+          "discovered_source": 140,
+          "sources_high": [
+            140
+          ],
+          "sources_low": [
+            140
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI2[1]",
+          "fpga_ball": "AD5",
+          "expected_source": 141,
+          "discovered_source": 141,
+          "sources_high": [
+            141
+          ],
+          "sources_low": [
+            141
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI2[2]",
+          "fpga_ball": "AE5",
+          "expected_source": 142,
+          "discovered_source": 142,
+          "sources_high": [
+            142
+          ],
+          "sources_low": [
+            142
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI2[3]",
+          "fpga_ball": "AF5",
+          "expected_source": 143,
+          "discovered_source": 143,
+          "sources_high": [
+            143
+          ],
+          "sources_low": [
+            143
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI2[5]",
+          "fpga_ball": "AC6",
+          "expected_source": 145,
+          "discovered_source": 145,
+          "sources_high": [
+            145
+          ],
+          "sources_low": [
+            145
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI2[6]",
+          "fpga_ball": "AD6",
+          "expected_source": 146,
+          "discovered_source": 146,
+          "sources_high": [
+            146
+          ],
+          "sources_low": [
+            146
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI2[7]",
+          "fpga_ball": "AE6",
+          "expected_source": 147,
+          "discovered_source": 147,
+          "sources_high": [
+            147
+          ],
+          "sources_low": [
+            147
+          ],
+          "cpld_channel": 2,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI3[0]",
+          "fpga_ball": "AA8",
+          "expected_source": 126,
+          "discovered_source": 126,
+          "sources_high": [
+            126
+          ],
+          "sources_low": [
+            126
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI3[1]",
+          "fpga_ball": "AD11",
+          "expected_source": 127,
+          "discovered_source": 127,
+          "sources_high": [
+            127
+          ],
+          "sources_low": [
+            127
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI3[2]",
+          "fpga_ball": "AE11",
+          "expected_source": 128,
+          "discovered_source": 128,
+          "sources_high": [
+            128
+          ],
+          "sources_low": [
+            128
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI3[3]",
+          "fpga_ball": "V12",
+          "expected_source": 129,
+          "discovered_source": 129,
+          "sources_high": [
+            129
+          ],
+          "sources_low": [
+            129
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI3[4]",
+          "fpga_ball": "Y12",
+          "expected_source": 130,
+          "discovered_source": 130,
+          "sources_high": [
+            130
+          ],
+          "sources_low": [
+            130
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI3[5]",
+          "fpga_ball": "Y13",
+          "expected_source": 131,
+          "discovered_source": 131,
+          "sources_high": [
+            131
+          ],
+          "sources_low": [
+            131
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI3[6]",
+          "fpga_ball": "AA12",
+          "expected_source": 132,
+          "discovered_source": 132,
+          "sources_high": [
+            132
+          ],
+          "sources_low": [
+            132
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI3[7]",
+          "fpga_ball": "AA13",
+          "expected_source": 133,
+          "discovered_source": 133,
+          "sources_high": [
+            133
+          ],
+          "sources_low": [
+            133
+          ],
+          "cpld_channel": 3,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI4[2]",
+          "fpga_ball": "AA19",
+          "expected_source": 114,
+          "discovered_source": 114,
+          "sources_high": [
+            114
+          ],
+          "sources_low": [
+            114
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI4[3]",
+          "fpga_ball": "AC19",
+          "expected_source": 115,
+          "discovered_source": 115,
+          "sources_high": [
+            115
+          ],
+          "sources_low": [
+            115
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI4[6]",
+          "fpga_ball": "AB20",
+          "expected_source": 118,
+          "discovered_source": 118,
+          "sources_high": [
+            118
+          ],
+          "sources_low": [
+            118
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI4[8]",
+          "fpga_ball": "W19",
+          "expected_source": 120,
+          "discovered_source": 120,
+          "sources_high": [
+            120
+          ],
+          "sources_low": [
+            120
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI5[10]",
+          "fpga_ball": "AE26",
+          "expected_source": 108,
+          "discovered_source": 108,
+          "sources_high": [
+            108
+          ],
+          "sources_low": [
+            108
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI5[11]",
+          "fpga_ball": "AD21",
+          "expected_source": 109,
+          "discovered_source": 109,
+          "sources_high": [
+            109
+          ],
+          "sources_low": [
+            109
+          ],
+          "cpld_channel": 5,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI6[0]",
+          "fpga_ball": "AD25",
+          "expected_source": 84,
+          "discovered_source": 84,
+          "sources_high": [
+            84
+          ],
+          "sources_low": [
+            84
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI6[1]",
+          "fpga_ball": "AD26",
+          "expected_source": 85,
+          "discovered_source": 85,
+          "sources_high": [
+            85
+          ],
+          "sources_low": [
+            85
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI6[2]",
+          "fpga_ball": "AC21",
+          "expected_source": 86,
+          "discovered_source": 86,
+          "sources_high": [
+            86
+          ],
+          "sources_low": [
+            86
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI6[3]",
+          "fpga_ball": "AC22",
+          "expected_source": 87,
+          "discovered_source": 87,
+          "sources_high": [
+            87
+          ],
+          "sources_low": [
+            87
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI6[4]",
+          "fpga_ball": "AC23",
+          "expected_source": 88,
+          "discovered_source": 88,
+          "sources_high": [
+            88
+          ],
+          "sources_low": [
+            88
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI6[5]",
+          "fpga_ball": "AD24",
+          "expected_source": 89,
+          "discovered_source": 89,
+          "sources_high": [
+            89
+          ],
+          "sources_low": [
+            89
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI6[9]",
+          "fpga_ball": "AB24",
+          "expected_source": 93,
+          "discovered_source": 93,
+          "sources_high": [
+            93
+          ],
+          "sources_low": [
+            93
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 89,
+          "passed": true
+        },
+        {
+          "signal": "DI6[10]",
+          "fpga_ball": "AB25",
+          "expected_source": 94,
+          "discovered_source": 94,
+          "sources_high": [
+            94
+          ],
+          "sources_low": [
+            94
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI6[11]",
+          "fpga_ball": "AB26",
+          "expected_source": 95,
+          "discovered_source": 95,
+          "sources_high": [
+            95
+          ],
+          "sources_low": [
+            95
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI6[12]",
+          "fpga_ball": "AA22",
+          "expected_source": 96,
+          "discovered_source": 96,
+          "sources_high": [
+            96
+          ],
+          "sources_low": [
+            96
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI7[3]",
+          "fpga_ball": "Y21",
+          "expected_source": 73,
+          "discovered_source": 73,
+          "sources_high": [
+            73
+          ],
+          "sources_low": [
+            73
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI7[4]",
+          "fpga_ball": "Y22",
+          "expected_source": 74,
+          "discovered_source": 74,
+          "sources_high": [
+            74
+          ],
+          "sources_low": [
+            74
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI7[5]",
+          "fpga_ball": "Y23",
+          "expected_source": 75,
+          "discovered_source": 75,
+          "sources_high": [
+            75
+          ],
+          "sources_low": [
+            75
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI7[6]",
+          "fpga_ball": "Y25",
+          "expected_source": 76,
+          "discovered_source": 76,
+          "sources_high": [
+            76
+          ],
+          "sources_low": [
+            76
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI7[7]",
+          "fpga_ball": "Y26",
+          "expected_source": 77,
+          "discovered_source": 77,
+          "sources_high": [
+            77
+          ],
+          "sources_low": [
+            77
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI7[10]",
+          "fpga_ball": "W23",
+          "expected_source": 80,
+          "discovered_source": 80,
+          "sources_high": [
+            80
+          ],
+          "sources_low": [
+            80
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 87,
+          "passed": true
+        },
+        {
+          "signal": "DI7[11]",
+          "fpga_ball": "W24",
+          "expected_source": 81,
+          "discovered_source": 81,
+          "sources_high": [
+            81
+          ],
+          "sources_low": [
+            81
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 86,
+          "passed": true
+        },
+        {
+          "signal": "DI7[12]",
+          "fpga_ball": "W25",
+          "expected_source": 82,
+          "discovered_source": 82,
+          "sources_high": [
+            82
+          ],
+          "sources_low": [
+            82
+          ],
+          "cpld_channel": 7,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI8[0]",
+          "fpga_ball": "V21",
+          "expected_source": 56,
+          "discovered_source": 56,
+          "sources_high": [
+            56
+          ],
+          "sources_low": [
+            56
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 99,
+          "passed": true
+        },
+        {
+          "signal": "DI8[1]",
+          "fpga_ball": "V22",
+          "expected_source": 57,
+          "discovered_source": 57,
+          "sources_high": [
+            57
+          ],
+          "sources_low": [
+            57
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 97,
+          "passed": true
+        },
+        {
+          "signal": "DI8[2]",
+          "fpga_ball": "V23",
+          "expected_source": 58,
+          "discovered_source": 58,
+          "sources_high": [
+            58
+          ],
+          "sources_low": [
+            58
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 96,
+          "passed": true
+        },
+        {
+          "signal": "DI8[3]",
+          "fpga_ball": "V24",
+          "expected_source": 59,
+          "discovered_source": 59,
+          "sources_high": [
+            59
+          ],
+          "sources_low": [
+            59
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 95,
+          "passed": true
+        },
+        {
+          "signal": "DI8[4]",
+          "fpga_ball": "V26",
+          "expected_source": 60,
+          "discovered_source": 60,
+          "sources_high": [
+            60
+          ],
+          "sources_low": [
+            60
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 94,
+          "passed": true
+        },
+        {
+          "signal": "DI8[5]",
+          "fpga_ball": "U21",
+          "expected_source": 61,
+          "discovered_source": 61,
+          "sources_high": [
+            61
+          ],
+          "sources_low": [
+            61
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 93,
+          "passed": true
+        },
+        {
+          "signal": "DI8[6]",
+          "fpga_ball": "U22",
+          "expected_source": 62,
+          "discovered_source": 62,
+          "sources_high": [
+            62
+          ],
+          "sources_low": [
+            62
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 92,
+          "passed": true
+        },
+        {
+          "signal": "DI8[7]",
+          "fpga_ball": "U24",
+          "expected_source": 63,
+          "discovered_source": 63,
+          "sources_high": [
+            63
+          ],
+          "sources_low": [
+            63
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 91,
+          "passed": true
+        },
+        {
+          "signal": "DI8[8]",
+          "fpga_ball": "U25",
+          "expected_source": 64,
+          "discovered_source": 64,
+          "sources_high": [
+            64
+          ],
+          "sources_low": [
+            64
+          ],
+          "cpld_channel": 8,
+          "cpld_pin": 90,
+          "passed": true
+        },
+        {
+          "signal": "DI4[12]",
+          "fpga_ball": "AA20",
+          "expected_source": 124,
+          "discovered_source": 124,
+          "sources_high": [
+            124
+          ],
+          "sources_low": [
+            124
+          ],
+          "cpld_channel": 4,
+          "cpld_pin": 85,
+          "passed": true
+        },
+        {
+          "signal": "DI6[7]",
+          "fpga_ball": "AC24",
+          "expected_source": 91,
+          "discovered_source": 91,
+          "sources_high": [
+            91
+          ],
+          "sources_low": [
+            91
+          ],
+          "cpld_channel": 6,
+          "cpld_pin": 91,
+          "passed": true
+        }
+      ]
+    },
+    "controls": {
+      "passed": true,
+      "repeats": 3,
+      "approximate_host_timed_clock_hz": [
+        40080214.28571428,
+        40084517.85714286,
+        40079341.26984127
+      ]
+    },
+    "restored": true
+  },
+  "restoration": "PASS",
+  "restored_identity": [
+    1347228162,
+    65538,
+    3351522600
+  ],
+  "post_restore_functional_status": "PASS",
+  "identity": {
+    "uid": "PM12-K7-3A17A1B402212223",
+    "fpga_dna": "3A17A1B402212223",
+    "mcu_eeprom_serial": "1803",
+    "asset_label": null,
+    "cpu_factory_id": null,
+    "cpu_factory_id_status": "NOT_READ; do not reset MCU for a PDI signature read",
+    "jtag_cable": "210249A73E43",
+    "fpga_ipbus_identity": [
+      1347228162,
+      65538,
+      3351522600
+    ],
+    "pgood": [
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000C000740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2107
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000DF02750103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2108
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000001501750103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2108
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000003403730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2108
+      }
+    ],
+    "pgood_final": {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000005A01730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2114
+    },
+    "mcu_reply": {
+      "command": "RS",
+      "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.1 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+      "duration_s": 0.2107
+    },
+    "uptime_before": [
+      3107273212,
+      838
+    ],
+    "uptime_after": [
+      3877070939,
+      838
+    ],
+    "observed_utc": "2026-11-07T19:08:33Z"
+  }
+}

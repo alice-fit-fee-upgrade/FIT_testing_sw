@@ -1,3 +1,12 @@
+# PM12 board acceptance and evidence
+
+The current entry point is the [sequential acceptance runner and LaTeX reports](acceptance/README.md).
+It separates up-to-three-channel CFD batches, offline chapter generation and final
+report assembly, with factory-DNA identities, raw-data hashes and editable templates.
+The measured2026-11-07 checkpoint includes a reproduced strict ADC strobe failure
+after FPGA reconfiguration: see its validation record; broad functional PASS does
+not clear that finding. The original static JTAG diagnostic is documented below.
+
 # PM12 JTAG connection test
 
 Tests the 168 CPLD-to-FPGA DI/STR connections on PM12: twelve XC2C128 VQ100

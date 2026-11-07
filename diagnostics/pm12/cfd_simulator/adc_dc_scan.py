@@ -1,5 +1,5 @@
 """External differential DAC->MAX4053->AD9236 A/B DC scan, selected PM channel."""
-import argparse,contextlib,fcntl,json,math,socket,statistics,struct,sys,time
+import argparse,contextlib,fcntl,json,math,re,socket,statistics,struct,sys,time
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 sys.path[:0]=[str(HERE),str(HERE.parent/'ipbus_adc'),'/home/codex-hil/FIT_PM_FW_uPC/tools/hardware']
@@ -10,6 +10,8 @@ from client import Client
 from pm12_console_regression import PORT,capture
 from pm12_power import wait_power_good,require_power_good
 import serial
+sys.path.insert(0,str(HERE.parent/'acceptance'))
+from lease import acquire as acquire_lease
 
 class Injection:
  def __init__(self,regs):
@@ -49,22 +51,23 @@ def acquire(c,bank,out,label,channel=12):
   strobe_period_samples=statistics.median(b-a for a,b in zip(edges,edges[1:])))
 
 def main():
- p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--afe',type=int,choices=range(1,13),default=12);p.add_argument('--probe',action='store_true');p.add_argument('--differences',type=float,nargs='+');a=p.parse_args()
+ p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--afe',type=int,choices=range(1,13),default=12);p.add_argument('--board-serial',required=False,default='1803');p.add_argument('--dac-channels',type=int,nargs=2,default=[0,1]);p.add_argument('--probe',action='store_true');p.add_argument('--differences',type=float,nargs='+');a=p.parse_args()
+ if len(set(a.dac_channels))!=2 or any(c not in range(8) for c in a.dac_channels):p.error('Two distinct DAC channels0..7 required')
  if a.probe and a.differences:p.error('--probe and --differences are exclusive')
  differences=a.differences if a.differences else ([-.02,-.01,0,.01,.02] if a.probe else [round(-1+i*.02,4) for i in range(101)])
  for v in differences:
   try:voltage(1+v/2);voltage(1-v/2)
   except (ValueError,TypeError):p.error('Both differential legs must remain within0..3.3V')
- a.out.mkdir(parents=True,exist_ok=False);report=dict(pass_=False,channel=a.afe,common_mode_v=1.0,max_pin_voltage_v=3.3,measurements=[])
+ a.out.mkdir(parents=True,exist_ok=False);report=dict(pass_=False,channel=a.afe,dac_channels=a.dac_channels,common_mode_v=1.0,max_pin_voltage_v=3.3,measurements=[])
  def save():(a.out/'status.json').write_text(json.dumps(report,indent=2)+'\n')
  with contextlib.ExitStack() as st:
   for n in sorted(['atmel-ice-J41800043065','pm12-210249A73E43','kasli-diot-00001','esp32-6825dd4c49e4','lattice-VER00001']):
-   f=st.enter_context(open('/home/codex-hil/.cache/'+n+'.lock','a+'));fcntl.flock(f,fcntl.LOCK_EX|fcntl.LOCK_NB)
+   f=st.enter_context(acquire_lease(Path.home()/'.cache'/(n+'.lock')))
   remote=st.enter_context(remote_lease());dac=c=u=bus=inj=None;success=False
   try:
-   dac=DAC(remote);report['dac_initial_setpoints']=dac.snapshot()
+   dac=DAC(remote,channels=a.dac_channels);report['dac_initial_setpoints']=dac.snapshot()
    u=serial.Serial(port=None,baudrate=115200,timeout=.03,write_timeout=1,rtscts=True,exclusive=True);u.dtr=False;u.rts=True;u.port=PORT;u.open();u.read(4096)
-   report['pgood']=wait_power_good(u,capture);report['identity']=capture(u,'RS');assert 'Board S/N: 1803' in report['identity']['reply']
+   report['pgood']=wait_power_good(u,capture);report['identity']=capture(u,'RS');assert re.search(r'Board S/N:\s*'+re.escape(a.board_serial)+r'\b',report['identity']['reply'])
    c=Client();report['fpga_identity']=c.read(0,3)
    assert report['fpga_identity'][:2]==[0x504d1202,0x10002] and report['fpga_identity'][2] in (0xa27baa3e,0xc7c42d28)
    assert c.read(0x13,2)==[4096,12]

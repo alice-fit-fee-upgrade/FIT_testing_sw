@@ -1,0 +1,188 @@
+{
+  "schema": 1,
+  "name": "JTAG plus resident integrated diagnostic batch",
+  "steps": [
+    {
+      "id": "identity",
+      "title": "Hardware identity and PGOOD",
+      "command": [
+        "{python}",
+        "{repo}/diagnostics/pm12/acceptance/station.py",
+        "identity",
+        "--station",
+        "{station}",
+        "--out",
+        "{output}"
+      ],
+      "checks": [
+        {
+          "file": "data/result.json",
+          "key": "status",
+          "equals": "PASS"
+        }
+      ],
+      "procedure": "Read factory FPGA DNA and MCU EEPROM serial under leases. Match enrolled UID, integrated build and stable physical PGOOD.",
+      "limits": "MCU EEPROM serial and FPGA IDCODE are not unique factory identity. CPU factory signature not read.",
+      "per_channel": false,
+      "timeout_s": 3600
+    },
+    {
+      "id": "jtag-boundary",
+      "title": "JTAG chain and168 static CPLD–FPGA links",
+      "command": [
+        "{python}",
+        "{repo}/diagnostics/pm12/acceptance/boundary.py",
+        "--station",
+        "{station}",
+        "--out",
+        "{output}"
+      ],
+      "checks": [
+        {
+          "file": "data/result.json",
+          "key": "status",
+          "equals": "PASS"
+        },
+        {
+          "file": "data/result.json",
+          "key": "restoration",
+          "equals": "PASS"
+        },
+        {
+          "file": "data/result.json",
+          "key": "post_restore_functional_status",
+          "equals": "PASS"
+        }
+      ],
+      "procedure": "Validate13 IDCODEs. Program checksum-verified link diagnostic into FPGA SRAM only.338 walking-one/zero vectors in each of gateware and independent boundary-scan receive paths. Restore checksum-verified integrated image, initialize private link, verify build and repeat HDMI/ADC/TDC functional tests.",
+      "limits": "Static connectivity, not at-speed margin or analog quality. Expected SYS reset from deliberate FPGA SRAM reconfiguration; never reset or program MCU/CPLD/flash.",
+      "per_channel": false,
+      "timeout_s": 1800
+    },
+    {
+      "id": "mcu",
+      "title": "CPU peripherals, SPI walking patterns and power telemetry",
+      "command": [
+        "{python}",
+        "{repo}/diagnostics/pm12/acceptance/station.py",
+        "mcu",
+        "--station",
+        "{station}",
+        "--out",
+        "{output}"
+      ],
+      "checks": [
+        {
+          "file": "data/result.json",
+          "key": "status",
+          "equals": "PASS"
+        }
+      ],
+      "procedure": "Read PING, GPIO, temperature ID, three TDC chip IDs, PLL, FPGA signature, 32 walking patterns with scratch restoration, INA and POWER. Recheck PGOOD before sensor access.",
+      "limits": "No power cycling or timeout fault injection. Unfitted P3V8 shunt: voltage only; no current acceptance. Sensor numeric limits require a frozen acceptance specification.",
+      "per_channel": false,
+      "timeout_s": 3600
+    },
+    {
+      "id": "integrated",
+      "title": "HDMI, all digital ADC paths and stimulated TDC",
+      "command": [
+        "{python}",
+        "{repo}/diagnostics/pm12/acceptance/station.py",
+        "integrated",
+        "--station",
+        "{station}",
+        "--out",
+        "{output}"
+      ],
+      "checks": [
+        {
+          "file": "data/result.json",
+          "key": "status",
+          "equals": "PASS"
+        }
+      ],
+      "procedure": "Four HDMI lanes: walking discovery and slow/fast PRBS, empty frames; SPI signature reads only. Capture both ADC banks, synthetic and physical, all12 channels. Quiet/stimulated/quiet TDC:64 pulses to configured channel. Check uptime.",
+      "limits": "TDC stimulus only on the physically connected channel. No calibrated ADC analog acceptance for unconnected channels. HDMI SPI writes disabled: bus shared with MCU.",
+      "per_channel": false,
+      "timeout_s": 3600
+    },
+    {
+      "id": "gate-phase",
+      "title": "Gate delay versus internal DAC-A",
+      "command": [
+        "{python}",
+        "{repo}/diagnostics/pm12/cfd_simulator/phase_scan.py",
+        "--afe",
+        "{channel}",
+        "--lanes",
+        "{lanes}",
+        "--board-serial",
+        "{board_serial}",
+        "--transport",
+        "ipbus",
+        "--clock-mhz",
+        "20",
+        "--restore-code",
+        "0000",
+        "--initialize-zero",
+        "--intervals",
+        "19",
+        "--out",
+        "{output}"
+      ],
+      "checks": [
+        {
+          "file": "data/report.json",
+          "key": "pass_",
+          "equals": true
+        },
+        {
+          "file": "data/report.json",
+          "key": "result.restore_phase_check",
+          "equals": true
+        }
+      ],
+      "procedure": "Establish explicit DAC-A0000 baseline;20 code points0..65535; common trigger and ISERDES phase buffers; restore0000 and verify phase return. Save every raw capture.",
+      "limits": "Sampled centroid, nominal sample metadata; no calibrated absolute phase/jitter claim. Original20MHz CPLD gate divider required.",
+      "per_channel": true,
+      "timeout_s": 3600
+    },
+    {
+      "id": "adc-lines",
+      "title": "ADC differential transfer and adjacent data-bit coverage",
+      "command": [
+        "{python}",
+        "{repo}/diagnostics/pm12/cfd_simulator/adc_line_test.py",
+        "--acquire",
+        "--afe",
+        "{channel}",
+        "--board-serial",
+        "{board_serial}",
+        "--points",
+        "257",
+        "--out",
+        "{output}",
+        "--dac-channels",
+        "{dac_positive}",
+        "{dac_negative}"
+      ],
+      "checks": [
+        {
+          "file": "data/line-test.json",
+          "key": "pass_",
+          "equals": true
+        },
+        {
+          "file": "data/raw-validation.json",
+          "key": "pass",
+          "equals": true
+        }
+      ],
+      "procedure": "SCPI DAC differential−1.2..+1.2V, commonmode1V,257 points, ADC A/B. Decode4096-word buffers at STR edges, verify tags/generations;12 bits and11 neighbor pairs, all4 states with sufficient population. Restore1V/1V.",
+      "limits": "Requested voltage, no calibrated gain/DNL. Per-pin0..3.3V ceiling. Functional persistent-tie test, not resistance/pin-order/timing-margin proof.",
+      "per_channel": true,
+      "timeout_s": 3600
+    }
+  ]
+}

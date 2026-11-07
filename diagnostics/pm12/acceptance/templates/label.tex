@@ -1,0 +1,11 @@
+% Supply metadata.tex from the report, then compile this printable identity card.
+\documentclass[12pt,a4paper]{article}
+\usepackage[margin=20mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\input{metadata.tex}
+\pagestyle{empty}
+\begin{document}
+\fbox{\parbox{150mm}{\centering\Large FIT PM12\\[4mm]\texttt{\ReportUID}\\[3mm]\normalsize
+Factory FPGA DNA identity\\Secondary EEPROM serial and photographs: see board registry.}}
+\end{document}

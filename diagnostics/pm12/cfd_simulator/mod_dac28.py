@@ -29,7 +29,9 @@ with contextlib.ExitStack() as st:
             except (BrokenPipeError,subprocess.TimeoutExpired):p.terminate();p.wait(timeout=5)
 
 class DAC:
-    def __init__(self,lease,host='fit-mod-dac-28.local'):
+    def __init__(self,lease,host='fit-mod-dac-28.local',channels=(0,1)):
+        if len(channels)!=2 or any(type(c) is not int or c not in range(8) for c in channels) or channels[0]==channels[1]:raise ValueError('Two distinct DAC channels0..7 required')
+        self.channels=tuple(channels)
         self.lease=lease;self.host=host;self.s=None;self.f=None;self.records=[];self.connect()
     def connect(self):
         self.close();self.s=socket.create_connection((self.host,5025),timeout=3);self.s.settimeout(3);self.f=self.s.makefile('rb')
@@ -46,7 +48,7 @@ class DAC:
     def pair(self,positive,negative):
         # Validate BOTH before either channel can be changed.
         positive,negative=voltage(positive),voltage(negative)
-        for ch,value in [(0,positive),(1,negative)]:
+        for ch,value in zip(getattr(self,'channels',(0,1)),(positive,negative)):
             self.send(f'SOUR:{WORDS[ch]}:VOLT {value:.4f}')
             if abs(float(self.query(f'SOUR:{WORDS[ch]}:VOLT?'))-value)>.00006:raise RuntimeError('SCPI entity readback mismatch')
         if self.query('SYST:ERR?')!='0,"No error"':raise RuntimeError('SCPI error')

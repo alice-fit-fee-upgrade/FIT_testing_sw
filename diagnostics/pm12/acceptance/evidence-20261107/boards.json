@@ -1,0 +1,67 @@
+{
+  "schema": 1,
+  "boards": {
+    "PM12-K7-3A17A1B402212223": {
+      "uid": "PM12-K7-3A17A1B402212223",
+      "fpga_dna": "3A17A1B402212223",
+      "asset_label": "PM12-K7-3A17A1B402212223",
+      "observations": [
+        {
+          "uid": "PM12-K7-3A17A1B402212223",
+          "fpga_dna": "3A17A1B402212223",
+          "mcu_eeprom_serial": "1803",
+          "asset_label": null,
+          "cpu_factory_id": null,
+          "cpu_factory_id_status": "NOT_READ; do not reset MCU for a PDI signature read",
+          "jtag_cable": "210249A73E43",
+          "fpga_ipbus_identity": [
+            1347228162,
+            65538,
+            3351522600
+          ],
+          "pgood": [
+            {
+              "command": "@HW",
+              "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000009E02730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+              "duration_s": 0.2115
+            },
+            {
+              "command": "@HW",
+              "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000D300730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+              "duration_s": 0.2119
+            },
+            {
+              "command": "@HW",
+              "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000F002720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+              "duration_s": 0.212
+            },
+            {
+              "command": "@HW",
+              "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000002501720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+              "duration_s": 0.2117
+            }
+          ],
+          "pgood_final": {
+            "command": "@HW",
+            "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000B101730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+            "duration_s": 0.2121
+          },
+          "mcu_reply": {
+            "command": "RS",
+            "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.0 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+            "duration_s": 0.212
+          },
+          "uptime_before": [
+            3285862533,
+            832
+          ],
+          "uptime_after": [
+            4192331988,
+            832
+          ],
+          "observed_utc": "2026-11-07T18:57:58Z"
+        }
+      ]
+    }
+  }
+}

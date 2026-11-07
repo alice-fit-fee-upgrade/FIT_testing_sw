@@ -17,6 +17,8 @@ import time
 from phase_estimator import estimate, scan_codes, wrapped_delta
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0,str(HERE.parent/'acceptance'))
+from lease import acquire as acquire_lease
 
 
 def run_scan(set_code, acquire, check_power, emit, restore_code, codes,
@@ -193,8 +195,7 @@ def main():
     save()
     with contextlib.ExitStack() as stack:
         for name in sorted(('atmel-ice-J41800043065','pm12-210249A73E43','kasli-diot-00001')):
-            lock = stack.enter_context(open('/home/codex-hil/.cache/'+name+'.lock','a+'))
-            fcntl.flock(lock,fcntl.LOCK_EX|fcntl.LOCK_NB)
+            lock = stack.enter_context(acquire_lease(Path.home()/'.cache'/(name+'.lock')))
         uart = serial.Serial(port=None,baudrate=115200,timeout=.03,write_timeout=1,rtscts=True,exclusive=True)
         uart.dtr=False;uart.rts=True;uart.port=PORT;uart.open();stack.callback(uart.close);uart.read(4096)
         if args.transport=='ipbus':

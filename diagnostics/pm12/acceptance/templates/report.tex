@@ -1,0 +1,48 @@
+% Editable master. Generated content is in content.tex; figures are rebuilt from data.
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=20mm,headheight=16pt]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern,import,titlesec}
+\titleformat{\section}{\Large\sffamily\bfseries\color{fitblue}}{\thesection}{.7em}{}[\titlerule]
+\titleformat{\subsection}{\large\sffamily\bfseries\color{fitblue}}{\thesubsection}{.7em}{}
+\usepackage{graphicx,xcolor,longtable,booktabs,array,fancyhdr,hyperref}
+\definecolor{fitblue}{HTML}{173B62}
+\definecolor{fitorange}{HTML}{AF4D16}
+\hypersetup{colorlinks=true,linkcolor=fitblue,urlcolor=fitblue}
+\setlength{\emergencystretch}{3em}
+\pagestyle{fancy}
+\fancyhf{}
+\fancyhead[L]{\small FIT PM12 --- hardware test dossier}
+\fancyhead[R]{\small \ReportUID}
+\fancyfoot[L]{\small \ReportMode}
+\fancyfoot[R]{\thepage}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{5pt}
+\newcommand{\Result}[1]{\textbf{\textcolor{fitblue}{#1}}}
+\newcommand{\Warning}[1]{\textbf{\textcolor{fitorange}{#1}}}
+\newcommand{\PhotoMissing}[1]{\fbox{\parbox[c][30mm][c]{.92\linewidth}{\centering Photograph not supplied\\#1}}}
+\newcommand{\Figure}[2]{\begin{center}\includegraphics[width=.96\linewidth,height=.68\textheight,keepaspectratio]{#1}\\{\small #2}\end{center}}
+\input{metadata.tex}
+\begin{document}
+\hypersetup{pageanchor=false}
+\begin{titlepage}
+{\color{fitblue}\Huge FIT PM12\\Hardware test dossier}\vspace{14mm}
+
+{\Large \ReportUID}\\[5mm]
+\ReportMode\\[5mm]
+Generated: \ReportDate\\[10mm]
+\Warning{\ReportVerdict}\\[5mm]
+\ReportScope
+\vfill
+\begin{tabular}{p{.4\linewidth}p{.5\linewidth}}
+Prepared by & \hrulefill\\[10mm]
+Reviewed by & \hrulefill\\[10mm]
+Disposition / deviations & \hrulefill\\[10mm]
+Signature and date & \hrulefill
+\end{tabular}
+\end{titlepage}
+\hypersetup{pageanchor=true}
+\tableofcontents
+\clearpage
+\input{content.tex}
+\end{document}

@@ -1,0 +1,70 @@
+{
+  "live-cfd-chapter.pdf": {
+    "bytes": 228888,
+    "sha256": "3996460a1a9fb9490a65517041af8632a0693d79d05e55bd61baf803df28d5e8"
+  },
+  "boundary-result.json": {
+    "bytes": 118302,
+    "sha256": "4fff9d13fab94ed47de4a2a09a20c5de94ec456142133a56c744ccce39d5143b"
+  },
+  "cfd-regression.txt": {
+    "bytes": 4341,
+    "sha256": "fb27d0ba9d451778611e02c06d941ba2023601a182cacba06b489eb3593d612f"
+  },
+  "validation.json": {
+    "bytes": 3030,
+    "sha256": "01908597250715b0c1f2dd8a1cc848025f457aa30d76b502abfa805831281e51"
+  },
+  "jtag-parser-tests.txt": {
+    "bytes": 598,
+    "sha256": "671d1fc8f5e7f2121aef793c53ec2cb3d99501b93e3730827ee163257d430cbe"
+  },
+  "published-source-sha256.json": {
+    "bytes": 2737,
+    "sha256": "7e9daba659bc89a8814f3583246700793ceef3fa52730a24eb5ee94a22dfdaaf"
+  },
+  "live-cfd-editable-source.tar.gz": {
+    "bytes": 2860143,
+    "sha256": "cd2eb466b5534c0a5f712c528c414842e8318986f1faa0e89bec2db1fcd38f4c"
+  },
+  "historical-212pages.pdf": {
+    "bytes": 508489,
+    "sha256": "e2ff7a553d8cc9a3611807595a8b710a8e442c0b8d6c1a86832910f743eba2cf"
+  },
+  "acceptance-tests.txt": {
+    "bytes": 1487,
+    "sha256": "f4a8e6ed66adec3eba772710ff9399b1b37af1261b52900a1a5b69648455eb2e"
+  },
+  "post-restore-failure.pdf": {
+    "bytes": 97645,
+    "sha256": "c5e2de714fef8c3e17bf8322e3b3c8551251270f510ed17783861c25e8d473a4"
+  },
+  "resident-run.json": {
+    "bytes": 17451,
+    "sha256": "879d902c18ce50d42b2ee268f01aa236d63cd4a9acc6b94674c01ef8d7f9ad03"
+  },
+  "boards.json": {
+    "bytes": 2455,
+    "sha256": "532e26ada167e46437507502ba39fc3338855b625e27ad7d84c75f5f93b46974"
+  },
+  "physical-qualification.tar.gz": {
+    "bytes": 326867,
+    "sha256": "987db2feada463826250280527811d58ce4b8e65f1c623775e5cdcdffb58c87b"
+  },
+  "baseline-recovery.json": {
+    "bytes": 2462,
+    "sha256": "0fb6ace769699aa864ab8233cd7729e71016a86bf6b0e4c73799594c61f2c821"
+  },
+  "strict-guard-failed-run.json": {
+    "bytes": 10463,
+    "sha256": "6f31ba8b2d5cdee9d227c68fab6c56074e2aa63303dad262fbfd90312fae07d2"
+  },
+  "failure-editable-source.tar.gz": {
+    "bytes": 439593,
+    "sha256": "70cc333682f15de3cdf720efc75b73a759c47a316c11e1f91e46c9856e90c6bf"
+  },
+  "historical-editable-source.tar.gz": {
+    "bytes": 3834348,
+    "sha256": "10916b02b8de43b95e8d0c4750d94d0d572a084a68e374c971d0f58e6bab4543"
+  }
+}
