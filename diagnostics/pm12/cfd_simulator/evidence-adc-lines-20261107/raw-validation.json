@@ -1,0 +1,9 @@
+{
+  "pass": true,
+  "captures": 514,
+  "raw_words": 2105344,
+  "histograms_exact": true,
+  "ev_tags_exact": true,
+  "all_strobe_periods": 4,
+  "generations_contiguous": true
+}

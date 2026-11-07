@@ -1,0 +1,14 @@
+test_each_adjacent_hard_bridge_is_found (test_adc_lines.Tests.test_each_adjacent_hard_bridge_is_found) ... ok
+test_healthy_ramp_exercises_every_adjacent_state (test_adc_lines.Tests.test_healthy_ramp_exercises_every_adjacent_state) ... ok
+test_missing_codes_alone_are_not_a_short (test_adc_lines.Tests.test_missing_codes_alone_are_not_a_short) ... ok
+test_rails_or_one_setting_cannot_pass (test_adc_lines.Tests.test_rails_or_one_setting_cannot_pass) ... ok
+test_rare_glitches_do_not_clear_a_nearly_tied_pair (test_adc_lines.Tests.test_rare_glitches_do_not_clear_a_nearly_tied_pair) ... ok
+test_stuck_bits_detected_even_when_rails_are_reached (test_adc_lines.Tests.test_stuck_bits_detected_even_when_rails_are_reached) ... ok
+test_invalid_levels (test_mod_dac28.TestLimits.test_invalid_levels) ... ok
+test_second_leg_checked_before_first_write (test_mod_dac28.TestLimits.test_second_leg_checked_before_first_write) ... ok
+test_valid_endpoints (test_mod_dac28.TestLimits.test_valid_endpoints) ... ok
+
+----------------------------------------------------------------------
+Ran 9 tests in 0.683s
+
+OK

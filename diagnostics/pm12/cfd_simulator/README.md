@@ -1,3 +1,10 @@
+# Adjacent ADC data-line test —2026-11-07
+
+Channel12 ADC A/B passed a257-level DC sweep: all12 individual bits and all11
+adjacent pairs exercised, each pair state supported by at least61 settings.
+All514 raw buffers validate exactly. No persistent stuck/equal-neighbor signature
+observed. [Method, limits and repeat command](ADC_DATA_LINES.md).
+
 # Phase scan repeated on integrated gateware —2026-11-06
 
 Physical PM channel12, DAC-A20 codes0..65535, Kasli RX8/RX9(slot7 inputs1/3),
