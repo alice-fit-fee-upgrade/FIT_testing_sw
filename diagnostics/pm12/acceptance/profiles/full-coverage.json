@@ -123,7 +123,7 @@
         }
       ],
       "procedure": "Read PING, GPIO, temperature ID, three TDC chip IDs, PLL, FPGA signature, 32 walking patterns with scratch restoration, INA and POWER. Recheck PGOOD before sensor access.",
-      "limits": "No power cycling or timeout fault injection. Unfitted P3V8 shunt: voltage only; no current acceptance. Sensor numeric limits require a frozen acceptance specification.",
+      "limits": "No power cycling or timeout fault injection. Sensor numeric limits require a frozen acceptance specification.",
       "per_channel": false,
       "timeout_s": 3600
     },

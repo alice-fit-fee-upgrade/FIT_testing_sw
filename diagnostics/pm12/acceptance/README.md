@@ -116,7 +116,7 @@ process exit alone is insufficient: explicit JSON result checks must pass.
 `PASS` means the **selected plan and fitted channels**, not entire board release.
 Static PGOOD does not prove startup timing or shutdown protection. Sensor reads
 without approved rail limits are observations, not numerical rail acceptance.
-P3V8 has no fitted shunt: do not accept a current from that channel.
+P3V8 current readout is available according to the owner update2026-11-08. New MCU captures record numeric INA5/channel1 current; an unavailable/clipped reply is kept explicit. Historical measurements made without the shunt remain excluded. Numerical current acceptance still requires configured limits.
 
 ## Generate the CFD chapter after all batches
 

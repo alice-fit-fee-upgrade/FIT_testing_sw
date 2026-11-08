@@ -17,5 +17,6 @@
   "hardware_access": false,
   "verification": "English diagram visually inspected; LaTeX compiled and embedded figure text checked",
   "source_generator": "bench_setup.py",
-  "internal_clock_multiplier": true
+  "internal_clock_multiplier": true,
+  "p3v8_update": "Owner confirms current readout available2026-11-08; historical shunt-absent data not reclassified; no fresh hardware measurement"
 }

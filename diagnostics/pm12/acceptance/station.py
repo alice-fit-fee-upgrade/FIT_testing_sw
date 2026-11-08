@@ -145,7 +145,10 @@ def mcu(cfg, out):
                     raise RuntimeError('Unexpected temperature sensor ID')
             result['status'] = 'PASS'
             result['pg_timing_acceptance'] = 'NOT_RUN: static PGOOD does not validate EN-to-PG timeout protection'
-            result['p3v8_current_acceptance'] = 'NOT_APPLICABLE: shunt not fitted; voltage only'
+            reply=next(r['reply'] for r in rows if r['command']=='@INA 5')
+            match=re.search(r'INA 5 CH=1 .*?MV=(-?\d+) MA=(-?\d+) STATUS=([^\r\n]+)',reply)
+            result['p3v8_current_readout'] = (dict(status='AVAILABLE',voltage_v=int(match[1])/1000,current_a=int(match[2])/1000,sensor_status=match[3],calibrated=False) if match else dict(status='NOT_REPORTED',reply=reply))
+            result['p3v8_current_acceptance'] = 'Readout recorded; numerical acceptance requires configured limits'
     finally:
         (out/'result.json').write_text(json.dumps(result, indent=2)+'\n')
     return result

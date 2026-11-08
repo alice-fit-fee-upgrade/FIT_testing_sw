@@ -81,7 +81,7 @@ Test & Result & Scope / deviation\\\midrule
 {Configuration flash read / ownership} & {HISTORICAL PASS} & {Read-only ownership sequence; stored-image boot NOT CONFIRMED}\\
 {Power startup / timeout fault injection} & {NOT RUN} & {Static PGOOD cannot substitute for fault testing}\\
 {GTX PRBS / Ethernet loopback} & {HISTORICAL PASS} & {Old exact 40 MHz setup, not current LHC private link}\\
-{I2C mux / power monitors} & {HISTORICAL PASS} & {2026-10-14; uncalibrated currents, missing P3V8 shunt}\\
+{I2C mux / power monitors} & {HISTORICAL PASS} & {2026-10-14; uncalibrated currents; P3V8 shunt absent at that historical measurement}\\
 {HDMI / digital ADC / TDC} & {HISTORICAL PASS} & {2026-11-06; all digital ADC channels, stimulated TDC only channel 12}\\
 {CFD monitor and B/C/D DAC curves} & {HISTORICAL} & {Channel 12 only; restored-code correction retained}\\
 {Gate phase and DAC-A} & {HISTORICAL PASS} & {Channel 12,20 settings; nominal sample time units}\\
@@ -125,7 +125,7 @@ Limits: Fault injection and power-cycle qualification NOT\_RUN; static PGOOD is 
 \subsection{CPU peripherals, SPI walking patterns and power telemetry}
 Read PING, GPIO, temperature ID, three TDC chip IDs, PLL, FPGA signature, 32 walking patterns with scratch restoration, INA and POWER. Recheck PGOOD before sensor access.
 
-Limits: No power cycling or timeout fault injection. Unfitted P3V8 shunt: voltage only; no current acceptance. Sensor numeric limits require a frozen acceptance specification.
+Limits: No power cycling or timeout fault injection. Sensor numeric limits require a frozen acceptance specification.
 
 \subsection{HDMI, all digital ADC paths and stimulated TDC}
 Four HDMI lanes: walking discovery and slow/fast PRBS, empty frames; SPI signature reads only. Capture both ADC banks, synthetic and physical, all12 channels. Quiet/stimulated/quiet TDC:64 pulses to configured channel. Check uptime.
@@ -257,7 +257,7 @@ Rail & Bus [V] & Current [A] & Note\\\midrule
 {TP1/TP2} & {0.0} & {None} & {Uncalibrated; inspect shunt/clipping metadata}\\
 \bottomrule
 \end{longtable}
-P3V8 has no fitted shunt: current is not an accepted measurement. Original clipping observations are preserved in raw telemetry and are not interpreted as a rail current.
+The historical P3V8 measurement above was taken without its shunt, so its current is excluded. The owner confirms current readout is available as of2026-11-08; subsequent captures record it normally. Historical clipping observations are retained.
 
 \clearpage
 \section{CFD and ADC --- channel comparison}
