@@ -1,5 +1,5 @@
 library ieee;use ieee.std_logic_1164.all;use ieee.numeric_std.all;
-entity tb is end;
+entity tb is generic (INTB_ENABLE : boolean := true); end;
 architecture test of tb is
  signal clk:std_logic:='0';signal ev:std_logic_vector(12 downto 0):=(others=>'0');
  type words is array(1 to 12) of std_logic_vector(12 downto 0);
@@ -8,7 +8,7 @@ architecture test of tb is
 begin
  clk<=not clk after 6.25 ns;
  gen:for ch in 1 to 12 generate
-  u:entity work.adc_mux port map(clk,'0','0',ev(ch-1),a,b,dout(ch),c40(ch),cp(ch),cn(ch),dv(ch),ev(ch));
+  u:entity work.adc_mux generic map(INTB_ENABLE=>INTB_ENABLE) port map(clk,'0','0',ev(ch-1),a,b,dout(ch),c40(ch),cp(ch),cn(ch),dv(ch),ev(ch));
  end generate;
  process
   variable last_edge:time:=0 ns;
@@ -31,7 +31,11 @@ begin
      else assert dout(ch)(11 downto 0)=b report "ADC B mapping" severity failure;end if;
      assert dout(ch)(12)=ev(0) report "selector tag" severity failure;
      assert dv(ch)=clk report "ADC clock forward" severity failure;
-     assert cp(ch)=not cn(ch) report "original gate outputs must be complementary" severity failure;
+     if INTB_ENABLE then
+      assert cp(ch)=not cn(ch) report "original gate outputs must be complementary" severity failure;
+     else
+      assert cn(ch)='0' report "INTB must remain inactive" severity failure;
+     end if;
     end loop;
    end loop;
   end loop;

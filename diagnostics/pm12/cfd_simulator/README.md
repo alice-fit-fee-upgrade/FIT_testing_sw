@@ -1,3 +1,10 @@
+# INTB gate isolation —2026-11-08
+
+Channel12 only: INTB LOW, INTA preserved; eight fresh A/B buffers per state.
+ADC B RMS17.35→1.47codes; ADC A19.87→20.63codes. Hardware repeat PASS.
+Experimental CPLD12 retained; other11 CPLDs and all FPGA/MCU images unchanged.
+[Procedure, results and raw data](INTB_GATE_EXPERIMENT.md).
+
 # Adjacent ADC data-line test —2026-11-07
 
 Channel12 ADC A/B passed a257-level DC sweep: all12 individual bits and all11
