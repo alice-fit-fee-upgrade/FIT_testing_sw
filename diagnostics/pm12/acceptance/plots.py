@@ -8,7 +8,7 @@ import numpy as np
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
-from matplotlib.patches import FancyBboxPatch
+from bench_setup import wiring
 HERE=Path(__file__).resolve().parent
 sys.path.insert(0,str(HERE.parent/'cfd_simulator'))
 sys.path.insert(0,str(HERE.parent/'ipbus_adc'))
@@ -40,26 +40,6 @@ def waveform(path):
     if len(raw)!=4096:raise ValueError('Truncated raw capture')
     samples,_=decode([int(w) for w in raw])
     return np.array(samples,dtype=float)
-
-
-def wiring(out):
-    fig,ax=plt.subplots(figsize=(11,6),layout='constrained');ax.set(xlim=(0,11),ylim=(0,7));ax.axis('off')
-    boxes={'PM12':(1,3),'Kasli-DIOT':(7,3),'LHC clock':(4,6),'MOD-DAC-28':(1,.8),'Host':(7,.8),'CFD_SIM':(1,4.8)}
-    patches={}
-    for name,(x,y) in boxes.items():
-        patch=FancyBboxPatch((x-.9,y-.35),1.8,.7,boxstyle='round,pad=.1',facecolor='#eaf0f7',edgecolor='#173b62')
-        ax.add_patch(patch);patches[name]=patch
-        ax.text(x,y,name,ha='center',va='center',fontsize=11)
-    def arrow(a,b,label,xy):
-        ax.annotate('',xy=boxes[b],xytext=boxes[a],arrowprops=dict(arrowstyle='<->',color='#315b7a',patchA=patches[a],patchB=patches[b],shrinkA=4,shrinkB=4))
-        ax.text(*xy,label,ha='center',fontsize=9,bbox=dict(facecolor='white',edgecolor='none',alpha=.9))
-    arrow('LHC clock','PM12','40.0787 MHz',(2.2,5.5));arrow('LHC clock','Kasli-DIOT','120.2361 MHz (x3)',(7.1,5.5))
-    arrow('PM12','Kasli-DIOT','SFP private link via SFP1\nHDMI adapter to DIO slot6\nCFD LVDS stimulus / gates via slot7',(4.2,3.2))
-    arrow('CFD_SIM','PM12','Channel under test',(1.4,3.9));arrow('MOD-DAC-28','PM12','CH0/1 analog USB pair\nvia CFD_SIM mux',(2.6,1.8))
-    arrow('Host','Kasli-DIOT','IPbus / SFP0 control\nSFP2 bridges PM to LAN',(8.6,1.9));arrow('Host','MOD-DAC-28','SCPI Ethernet',(4,.7))
-    ax.text(5.5,6.75,'Logical bench wiring — confirm physical mapping before each batch',ha='center',fontweight='bold')
-    ax.text(5.5,.05,'MCU UART + PM/MCU JTAG/programmers are separate host connections. SFP3 is not used.\nDMM7510 reads shared MCX/J9 monitor; only one monitor mux may be enabled.',ha='center',fontsize=9)
-    save(fig,out/'bench')
 
 
 def build(datasets,out):

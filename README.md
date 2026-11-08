@@ -64,7 +64,7 @@ artiq_run repository/pmtsim_example.py
 ## PM12 acceptance dossiers
 
 [Runner, batch collection and editable LaTeX/PDF reports](diagnostics/pm12/acceptance/README.md).
-[Compact historical specimen — connection tables](diagnostics/pm12/acceptance/evidence-connection-table-20261108/historical-connections.pdf),
+[Compact historical specimen — connection tables](diagnostics/pm12/acceptance/evidence-english-setup-20261108/report.pdf),
 [fresh channel12 CFD chapter](diagnostics/pm12/acceptance/evidence-20261107/live-cfd-chapter.pdf),
 and [rejected post-restore ADC timing capture](diagnostics/pm12/acceptance/evidence-20261107/post-restore-failure.pdf).
 See the validation record before inferring board acceptance; unmeasured channels

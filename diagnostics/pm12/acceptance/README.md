@@ -1,3 +1,16 @@
+Setup2026-11-08: [English wiring diagram](evidence-english-setup-20261108/bench.pdf)
+is included in the [current report](evidence-english-setup-20261108/report.pdf),
+page4. Source: `bench_setup.py`; standalone PNG/PDF/SVG generation:
+
+```sh
+/srv/codex-hil-nvme/tool-venvs/fit-measurements/bin/python \
+ diagnostics/pm12/acceptance/bench_setup.py --out NEW-DIRECTORY
+```
+
+The corrected physical routes are MOD-DAC-28→CFD_SIM, CFD_SIM→DIO-LVDS slot7,
+and PM HDMI→LVDS-HDMI adapter→2RJ45→DIO-LVDS slot6. LHC enters the HDMI adapter;
+x3 supplies Kasli. The generator uses this diagram for future reports.
+
 Report layout2026-11-08: all168 static connections are now one multipage table,
 with one common procedure and repeated column headings. This applies to both
 historical and live boundary-scan runs. The [compact specimen](evidence-connection-table-20261108/historical-connections.pdf)

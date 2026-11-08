@@ -127,14 +127,16 @@ def content(loaded,summary,inventory,extended,chapter):
     text('Canonical new board label: PM12-K7-<full FPGA factory DNA>. Preserve leading zeroes. JTAG IDCODE identifies chip type, not the individual device. EEPROM serial and debugger cable serial are secondary labels. Replacing the FPGA changes this hardware identity and requires an explicit board genealogy record.')
     text('Historical evidence predating factory-DNA reads is never assigned to a newly enrolled DNA automatically. No chip or EEPROM is programmed to assign this number; the printed asset label and registry use the hardware value.')
     section('Bench inventory and wiring')
-    fig('bench','Logical wiring, not a verified pin-level schematic. Physical port/channel mappings belong to each acquisition snapshot.')
+    fig('bench','User-reviewed bench wiring, updated2026-11-08; not a pin-level schematic. Historical wiring and configuration are retained with each acquisition snapshot.')
     out.append(table(['Connection','Physical assignment / observation'],[
+        ('Analog stimulus','MOD-DAC-28 analog USB outputs feed CFD_SIM, then the selected PM12 ADC input'),
+        ('HDMI cabling','PM12 HDMI to LVDS-HDMI adapter, then2RJ45 cables to DIO-LVDS slot6 and Kasli DIOT backplane'),
         ('PM data LVDS via HDMI','Kasli slot6 channels0..3 are inputs; observed PM lane order3,1,2,0'),
         ('Shared HDMI SPI','Slot6:SELECT4,CLOCK5,MISO6,MOSI7; only4/5/7 may drive; mask0x00b0'),
-        ('CFD test and phase observation','Slot7 channel0:CFD stimulus; phase RX8/9 correspond to slot7 channels1/3'),
+        ('CFD cabling and phase observation','CFD_SIM RJ45 to DIO-LVDS slot7 and Kasli backplane; channel0:CFD stimulus; phase RX8/9:channels1/3'),
         ('PM SFP','Private cable to Kasli SFP1, line rate1.202361Gb/s; not standard switch-facing1000BASE-X'),
         ('Kasli Ethernet','SFP0:control IPbus; SFP2:optical PM bridge to LAN; SFP3 unused'),
-        ('Common reference','PM40.0787MHz; Kasli120.2361MHz; stated generator settings, no frequency-counter calibration')]))
+        ('Common reference','40.0787MHz enters the LVDS-HDMI adapter and reaches PM12 via HDMI; x3 gives Kasli120.2361MHz. Stated settings, no frequency-counter calibration')]))
     rows=[]
     for module in inventory.get('modules',[]):rows.append((module.get('role',''),module.get('type',''),module.get('hardware_uid') or module.get('label') or module.get('eeprom_serial') or 'NOT READ'))
     out.append(table(['Role','Module','Identity'],rows,['.22\\linewidth','.36\\linewidth','.34\\linewidth']))
