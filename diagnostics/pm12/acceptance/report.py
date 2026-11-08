@@ -136,7 +136,7 @@ def content(loaded,summary,inventory,extended,chapter):
         ('CFD cabling and phase observation','CFD_SIM RJ45 to DIO-LVDS slot7 and Kasli backplane; channel0:CFD stimulus; phase RX8/9:channels1/3'),
         ('PM SFP','Private cable to Kasli SFP1, line rate1.202361Gb/s; not standard switch-facing1000BASE-X'),
         ('Kasli Ethernet','SFP0:control IPbus; SFP2:optical PM bridge to LAN; SFP3 unused'),
-        ('Common reference','40.0787MHz enters the LVDS-HDMI adapter and reaches PM12 via HDMI; x3 gives Kasli120.2361MHz. Stated settings, no frequency-counter calibration')]))
+        ('Common reference','40.0787MHz enters the LVDS-HDMI adapter and reaches PM12 via HDMI; The generator internal x3 output supplies Kasli120.2361MHz. Stated settings, no frequency-counter calibration')]))
     rows=[]
     for module in inventory.get('modules',[]):rows.append((module.get('role',''),module.get('type',''),module.get('hardware_uid') or module.get('label') or module.get('eeprom_serial') or 'NOT READ'))
     out.append(table(['Role','Module','Identity'],rows,['.22\\linewidth','.36\\linewidth','.34\\linewidth']))

@@ -1,5 +1,5 @@
 {
-  "change": "User-approved setup translated to English and integrated into all generated reports",
+  "change": "English setup correction: clock x3 multiplication is inside the LHC generator",
   "pages": 22,
   "diagram_pdf_page": 4,
   "language": "English",
@@ -10,11 +10,12 @@
     "PM12 HDMI to LVDS-HDMI adapter",
     "LHC40.0787MHz to adapter, then PM through HDMI",
     "Adapter2xRJ45 to separate DIO-LVDS slot6 to Kasli",
-    "LHCx3 clock120.2361MHz to Kasli",
+    "LHC generator internal x3 output120.2361MHz to Kasli",
     "PM private SFP1 and controller Ethernet links retained"
   ],
   "service_cables": "UART/JTAG and DMM intentionally omitted as in approved preview",
   "hardware_access": false,
   "verification": "English diagram visually inspected; LaTeX compiled and embedded figure text checked",
-  "source_generator": "bench_setup.py"
+  "source_generator": "bench_setup.py",
+  "internal_clock_multiplier": true
 }

@@ -9,7 +9,7 @@ page4. Source: `bench_setup.py`; standalone PNG/PDF/SVG generation:
 
 The corrected physical routes are MOD-DAC-28→CFD_SIM, CFD_SIM→DIO-LVDS slot7,
 and PM HDMI→LVDS-HDMI adapter→2RJ45→DIO-LVDS slot6. LHC enters the HDMI adapter;
-x3 supplies Kasli. The generator uses this diagram for future reports.
+the generator internal x3 output supplies Kasli. The generator uses this diagram for future reports.
 
 Report layout2026-11-08: all168 static connections are now one multipage table,
 with one common procedure and repeated column headings. This applies to both
