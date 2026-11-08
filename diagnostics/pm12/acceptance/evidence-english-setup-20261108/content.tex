@@ -24,18 +24,20 @@ Historical evidence predating factory-DNA reads is never assigned to a newly enr
 \clearpage
 \section{Bench inventory and wiring}
 \Figure{figures/bench.pdf}{User-reviewed bench wiring, updated2026-11-08; not a pin-level schematic. Historical wiring and configuration are retained with each acquisition snapshot.}
+Diagram parameters describe the illustrated bench; they do not configure hardware. Recorded signal assignments retain the acquisition mapping and are not rewritten by diagram edits.
+
 \begin{longtable}{>{\raggedright\arraybackslash}p{0.4400\linewidth}>{\raggedright\arraybackslash}p{0.4400\linewidth}}
 \toprule
 Connection & Physical assignment / observation\\\midrule
 \endhead
 {Analog stimulus} & {MOD-DAC-28 analog USB outputs feed CFD\_SIM, then the selected PM12 ADC input}\\
-{HDMI cabling} & {PM12 HDMI to LVDS-HDMI adapter, then2RJ45 cables to DIO-LVDS slot6 and Kasli DIOT backplane}\\
-{PM data LVDS via HDMI} & {Kasli slot6 channels0..3 are inputs; observed PM lane order3,1,2,0}\\
-{Shared HDMI SPI} & {Slot6:SELECT4,CLOCK5,MISO6,MOSI7; only4/5/7 may drive; mask0x00b0}\\
-{CFD cabling and phase observation} & {CFD\_SIM RJ45 to DIO-LVDS slot7 and Kasli backplane; channel0:CFD stimulus; phase RX8/9:channels1/3}\\
+{HDMI cabling} & {PM12 HDMI to LVDS-HDMI adapter, then2RJ45 cables to DIO-LVDS slot6 and Kasli-DIOT backplane}\\
+{Recorded HDMI data mapping} & {Kasli slot6 channels0..3 are inputs; observed PM lane order3,1,2,0}\\
+{Recorded HDMI SPI mapping} & {Slot6:SELECT4,CLOCK5,MISO6,MOSI7; only4/5/7 may drive; mask0x00b0}\\
+{Recorded CFD wiring and phase mapping} & {CFD\_SIM RJ45 to DIO-LVDS slot7 and Kasli backplane; channel0:CFD stimulus; phase RX8/9:channels1/3}\\
 {PM SFP} & {Private cable to Kasli SFP1, line rate1.202361Gb/s; not standard switch-facing1000BASE-X}\\
 {Kasli Ethernet} & {SFP0:control IPbus; SFP2:optical PM bridge to LAN; SFP3 unused}\\
-{Common reference} & {40.0787MHz enters the LVDS-HDMI adapter and reaches PM12 via HDMI; The generator internal x3 output supplies Kasli120.2361MHz. Stated settings, no frequency-counter calibration}\\
+{Common reference} & {40.0787MHz enters the LVDS-HDMI adapter and reaches PM12 via HDMI; the generator internal x3 output supplies Kasli-DIOT at 120.2361MHz. Declared settings, no frequency-counter calibration}\\
 \bottomrule
 \end{longtable}
 \begin{longtable}{>{\raggedright\arraybackslash}p{.22\linewidth}>{\raggedright\arraybackslash}p{.36\linewidth}>{\raggedright\arraybackslash}p{.34\linewidth}}

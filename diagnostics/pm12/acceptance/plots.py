@@ -42,10 +42,10 @@ def waveform(path):
     return np.array(samples,dtype=float)
 
 
-def build(datasets,out):
+def build(datasets,out,bench_config=None):
     out.mkdir(parents=True,exist_ok=False)
-    wiring(out)
-    summary={'channels':{},'phase':{},'figures':[]}
+    bench_parameters=wiring(out,bench_config)
+    summary={'channels':{},'phase':{},'figures':[],'bench_parameters':bench_parameters}
     for item in datasets:
         channel=int(item['channel']);entry=summary['channels'].setdefault(str(channel),{})
         if 'adc_scan' in item:

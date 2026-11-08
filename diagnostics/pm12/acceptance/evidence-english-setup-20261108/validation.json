@@ -18,5 +18,8 @@
   "verification": "English diagram visually inspected; LaTeX compiled and embedded figure text checked",
   "source_generator": "bench_setup.py",
   "internal_clock_multiplier": true,
-  "p3v8_update": "Owner confirms current readout available2026-11-08; historical shunt-absent data not reclassified; no fresh hardware measurement"
+  "p3v8_update": "Owner confirms current readout available2026-11-08; historical shunt-absent data not reclassified; no fresh hardware measurement",
+  "parameterization": "JSON full configuration or partial override; exact derived clock, parent containment, anchored connections; diagram-only, no hardware actions",
+  "parameter_tests": 16,
+  "variant_render_test": "40MHz x4 ->160MHz, CFD slot5, alternate DUT name; standalone and LaTeX render PASS; illustrative only"
 }

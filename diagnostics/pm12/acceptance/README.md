@@ -1,3 +1,5 @@
+Parameterized diagrams: see [BENCH_CONFIGURATION.md](BENCH_CONFIGURATION.md). A small JSON override changes labels, slots and clocks; `--bench-config` applies it to a report and archives the effective configuration.
+
 Setup2026-11-08: [English wiring diagram](evidence-english-setup-20261108/bench.pdf)
 is included in the [current report](evidence-english-setup-20261108/report.pdf),
 page4. Source: `bench_setup.py`; standalone PNG/PDF/SVG generation:

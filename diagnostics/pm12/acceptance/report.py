@@ -128,15 +128,17 @@ def content(loaded,summary,inventory,extended,chapter):
     text('Historical evidence predating factory-DNA reads is never assigned to a newly enrolled DNA automatically. No chip or EEPROM is programmed to assign this number; the printed asset label and registry use the hardware value.')
     section('Bench inventory and wiring')
     fig('bench','User-reviewed bench wiring, updated2026-11-08; not a pin-level schematic. Historical wiring and configuration are retained with each acquisition snapshot.')
+    bench=summary['bench_parameters']
+    text('Diagram parameters describe the illustrated bench; they do not configure hardware. Recorded signal assignments retain the acquisition mapping and are not rewritten by diagram edits.')
     out.append(table(['Connection','Physical assignment / observation'],[
-        ('Analog stimulus','MOD-DAC-28 analog USB outputs feed CFD_SIM, then the selected PM12 ADC input'),
-        ('HDMI cabling','PM12 HDMI to LVDS-HDMI adapter, then2RJ45 cables to DIO-LVDS slot6 and Kasli DIOT backplane'),
-        ('PM data LVDS via HDMI','Kasli slot6 channels0..3 are inputs; observed PM lane order3,1,2,0'),
-        ('Shared HDMI SPI','Slot6:SELECT4,CLOCK5,MISO6,MOSI7; only4/5/7 may drive; mask0x00b0'),
-        ('CFD cabling and phase observation','CFD_SIM RJ45 to DIO-LVDS slot7 and Kasli backplane; channel0:CFD stimulus; phase RX8/9:channels1/3'),
+        ('Analog stimulus',f"{bench['dac']} analog USB outputs feed {bench['cfd']}, then the selected {bench['dut']} ADC input"),
+        ('HDMI cabling',f"{bench['dut']} HDMI to LVDS-HDMI adapter, then2RJ45 cables to DIO-LVDS slot{bench['hdmi_slot']} and {bench['controller']} backplane"),
+        ('Recorded HDMI data mapping','Kasli slot6 channels0..3 are inputs; observed PM lane order3,1,2,0'),
+        ('Recorded HDMI SPI mapping','Slot6:SELECT4,CLOCK5,MISO6,MOSI7; only4/5/7 may drive; mask0x00b0'),
+        ('Recorded CFD wiring and phase mapping','CFD_SIM RJ45 to DIO-LVDS slot7 and Kasli backplane; channel0:CFD stimulus; phase RX8/9:channels1/3'),
         ('PM SFP','Private cable to Kasli SFP1, line rate1.202361Gb/s; not standard switch-facing1000BASE-X'),
         ('Kasli Ethernet','SFP0:control IPbus; SFP2:optical PM bridge to LAN; SFP3 unused'),
-        ('Common reference','40.0787MHz enters the LVDS-HDMI adapter and reaches PM12 via HDMI; The generator internal x3 output supplies Kasli120.2361MHz. Stated settings, no frequency-counter calibration')]))
+        ('Common reference',f"{bench['lhc_mhz']}MHz enters the LVDS-HDMI adapter and reaches {bench['dut']} via HDMI; the generator internal x{bench['multiplier']} output supplies {bench['controller']} at {bench['kasli_mhz']}MHz. Declared settings, no frequency-counter calibration")]))
     rows=[]
     for module in inventory.get('modules',[]):rows.append((module.get('role',''),module.get('type',''),module.get('hardware_uid') or module.get('label') or module.get('eeprom_serial') or 'NOT READ'))
     out.append(table(['Role','Module','Identity'],rows,['.22\\linewidth','.36\\linewidth','.34\\linewidth']))
@@ -276,7 +278,7 @@ def compile_pdf(out,engine):
     if not (out/'report.pdf').is_file():raise RuntimeError('LaTeX did not produce PDF')
 
 
-def generate(runs,out,inventory_path=None,engine=None,extended=False,chapter='full'):
+def generate(runs,out,inventory_path=None,engine=None,extended=False,chapter='full',bench_config=None):
     loaded,_=gather(runs) # Reject mismatches before copying anything.
     out.mkdir(parents=True,exist_ok=False)
     inputs=out/'inputs';inputs.mkdir()
@@ -284,7 +286,7 @@ def generate(runs,out,inventory_path=None,engine=None,extended=False,chapter='fu
     for i,(p,_) in enumerate(loaded):
         dest=inputs/f'{i:02d}-{p.name}';shutil.copytree(p,dest);copied.append(dest)
     loaded,datasets=gather(copied)
-    summary=build_plots(datasets,out/'figures')
+    summary=build_plots(datasets,out/'figures',bench_config)
     summary['failed_captures']=plot_failures(loaded,out/'figures')
     inventory=read(inventory_path) if inventory_path else loaded[0][1].get('station',read(HERE/'profiles/optiplex.example.json'))
     (out/'photos').mkdir()
@@ -351,6 +353,7 @@ def main():
         c=sub.add_parser(name);c.add_argument('--runs',nargs='+',type=Path)
         c.add_argument('--chapters',nargs='+',type=Path)
         c.add_argument('--out',type=Path,required=True);c.add_argument('--inventory',type=Path)
+        c.add_argument('--bench-config',type=Path,help='Declarative diagram JSON; archived with generated figures')
         c.add_argument('--latex',help='pdflatex or tectonic executable; omit to generate editable sources only')
         c.add_argument('--allow-edited-tex',action='store_true',help='Accept and record editorial .tex changes; raw inputs must remain exact')
         c.add_argument('--extended',action='store_true',help='Individual ADC channel cards; connections always use one consolidated table')
@@ -358,6 +361,7 @@ def main():
     a=p.parse_args()
     if a.action=='historical':historical(a.out);print(a.out);return
     if a.action=='report' and a.chapters:
+        if a.bench_config:p.error('--bench-config applies when generating from --runs; assembled chapters retain their own diagrams')
         if a.runs:p.error('Use either --runs to regenerate or --chapters to preserve edited chapter sources')
         compose([v.resolve() for v in a.chapters],a.out.resolve(),a.latex,a.allow_edited_tex)
         print(a.out);return
@@ -367,7 +371,7 @@ def main():
         meta=read(chapter/'chapter.json')
         runs.extend(chapter/v for v in meta['input_runs'])
     if not runs:p.error('Supply --runs or --chapters')
-    generate([v.resolve() for v in runs],a.out.resolve(),a.inventory,a.latex,a.extended,a.name if a.action=='chapter' else 'full')
+    generate([v.resolve() for v in runs],a.out.resolve(),a.inventory,a.latex,a.extended,a.name if a.action=='chapter' else 'full',a.bench_config)
     print(a.out)
 
 if __name__=='__main__':main()

@@ -1,70 +1,139 @@
-"""User-reviewed PM12 bench wiring, rendered as editable vector graphics."""
+"""Render a declarative bench diagram. Configuration never controls hardware."""
+import argparse
+from decimal import Decimal,InvalidOperation
+import json
+import math
 from pathlib import Path
+import string
 import matplotlib
 matplotlib.use('Agg')
 import matplotlib.pyplot as plt
 from matplotlib.patches import FancyBboxPatch,FancyArrowPatch
 
+DEFAULT_CONFIG=Path(__file__).with_suffix('.json')
 
-def wiring(out):
-    out=Path(out)
-    fig,ax=plt.subplots(figsize=(16,9));fig.subplots_adjust(left=.025,right=.985,top=.91,bottom=.045)
-    ax.set(xlim=(-.8,15.3),ylim=(-2.1,7.3));ax.axis('off')
-    colors=dict(analog='#c46a14',lvds='#17679c',clock='#8849a4',sfp='#2b8261',control='#6e7782')
-    boxes={}
-    def box(key,label,x,y,w=2.2,h=1,color='#eaf1f8'):
-     p=FancyBboxPatch((x-w/2,y-h/2),w,h,boxstyle='round,pad=.06,rounding_size=.12',facecolor=color,edgecolor='#34516c',lw=1.5,zorder=4)
-     ax.add_patch(p);ax.text(x,y,label,ha='center',va='center',fontsize=18,fontweight='bold',zorder=5);boxes[key]=(x,y,w,h)
-    def link(points,kind,label=None,labelxy=None,bidir=True):
-     color=colors[kind]
-     for a,b in zip(points,points[1:]):ax.plot([a[0],b[0]],[a[1],b[1]],color=color,lw=2,zorder=2)
-     # Heads at endpoints, following the local cable direction.
-     def head(endpoint,near):
-      dx,dy=near[0]-endpoint[0],near[1]-endpoint[1];scale=.18/(dx*dx+dy*dy)**.5
-      ax.add_patch(FancyArrowPatch((endpoint[0]+dx*scale,endpoint[1]+dy*scale),endpoint,arrowstyle='-|>',mutation_scale=13,color=color,lw=2,zorder=3))
-     head(points[-1],points[-2])
-     if bidir:head(points[0],points[1])
-     if label:ax.text(*labelxy,label,color=color,ha='center',va='center',fontsize=14,bbox=dict(facecolor='white',edgecolor='none',pad=2),zorder=6)
-    box('dac','MOD-DAC-28',1.5,6,color='#fff1de')
-    box('cfd','CFD_SIM',3.9,6,color='#fff1de')
-    box('dio7','DIO-LVDS\nslot 7',8.3,6,w=2,color='#e5f2ff')
-    box('pm','PM12',3.9,2.8,color='#eef1f5')
-    box('adapter','LVDS–HDMI\nadapter',7,2.8,w=2,color='#e5f2ff')
-    box('dio6','DIO-LVDS\nslot 6',9.7,2.8,w=1.8,color='#e5f2ff')
-    box('kasli','Kasli-DIOT\n\nDIOT\nbackplane',12.7,4.5,w=2.8,h=4.4,color='#e5f2ff')
-    # Both clock outputs belong to one physical generator.
-    box('clock','',8.3,.55,w=5.1,h=1.2,color='#f3eafa')
-    ax.text(7.3,.72,'LHC generator',ha='center',va='center',fontsize=18,fontweight='bold',zorder=5)
-    ax.text(7.3,.30,'40.0787 MHz',ha='center',va='center',fontsize=14,zorder=5)
-    box('x3','×3',10,.55,w=.85,h=.65,color='#eadcf4')
-    ax.text(10,.08,'internal',ha='center',va='center',fontsize=11,color=colors['clock'],zorder=5)
-    ax.add_patch(FancyArrowPatch((8.8,.55),(9.53,.55),arrowstyle='-|>',mutation_scale=13,color=colors['clock'],lw=2,zorder=5))
-    ax.plot([10.425,10.85],[.55,.55],color=colors['clock'],lw=2,zorder=5)
-    box('host','Test-bench\ncontroller',1.5,-1.5,w=2.4,color='#f0f1f3')
-    link([(2.6,6),(2.8,6)],'analog',bidir=False)
-    ax.text(2.7,6.82,'USB: analog DAC outputs',ha='center',fontsize=14,color=colors['analog'])
-    link([(3.9,5.5),(3.9,3.3)],'analog','Daughtercard\non channel under test',(3.9,4.4))
-    link([(5,6),(7.3,6)],'lvds','RJ45\nCFD pulses /\ngate strobes',(6.15,6.15))
-    link([(9.3,6),(11.3,6)],'lvds','DIOT backplane',(10.3,6.35))
-    link([(5,2.8),(6,2.8)],'lvds','HDMI',(5.5,3.55))
-    link([(8,2.8),(8.8,2.8)],'lvds','2 × RJ45',(8.4,3.55))
-    link([(10.6,2.8),(11.3,2.8)],'lvds')
-    link([(7,1.15),(7,2.3)],'clock','LHC clock',(7,1.65),bidir=False)
-    link([(10.85,.55),(12.1,.55),(12.1,2.3)],'clock','120.2361 MHz',(12.1,1.35),bidir=False)
-    link([(3.9,2.3),(3.9,-.55),(13.6,-.55),(13.6,2.3)],'sfp','PM ↔ Kasli private link: SFP1',(8.6,-.33))
-    link([(.3,-1.5),(-.1,-1.5),(-.1,6),(.4,6)],'control')
-    ax.text(-.42,2.2,'Ethernet / SCPI',rotation=90,ha='center',va='center',fontsize=14,color=colors['control'])
-    link([(2.7,-1.5),(14.8,-1.5),(14.8,4.5),(14.1,4.5)],'control','Ethernet / IPbus: SFP0 control, SFP2 PM bridge',(8.6,-1.3))
-    fig.suptitle('FIT PM12 — test-bench connections',fontsize=24,fontweight='bold',color='#173b62',y=.98)
-    fig.text(.5,.92,'Both clock outputs come from the LHC generator; ×3 multiplication is internal.',ha='center',fontsize=14,color='#34516c')
-    fig.text(.5,.015,'Main measurement paths and Ethernet control. UART/JTAG service cables and the DMM are omitted for clarity.',ha='center',fontsize=11,color='#5c6570')
-    for ext in ['png','pdf','svg']:fig.savefig(out/('bench.'+ext),dpi=170)
-    svg=out/'bench.svg'
-    svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
-    plt.close(fig)
+
+def load_config(path=None):
+    """A small override can change parameters while retaining the reviewed layout."""
+    fields={'schema','parameters','canvas','colors','title','nodes','links','annotations'}
+    if path is None or Path(path).resolve()==DEFAULT_CONFIG.resolve():return json.loads(DEFAULT_CONFIG.read_text())
+    override=json.loads(Path(path).read_text())
+    if not isinstance(override,dict) or set(override)-fields:raise ValueError('Unknown diagram configuration keys')
+    # Materialized report configurations must not depend on future defaults.
+    if set(override)==fields:return override
+    base=json.loads(DEFAULT_CONFIG.read_text())
+    for key,value in override.items():
+        if key in ('parameters','canvas','colors','title'):
+            if not isinstance(value,dict):raise ValueError('Expected object for '+key)
+            base[key].update(value)
+        else:base[key]=value
+    return base
+
+
+def parameters(config):
+    values=dict(config['parameters'])
+    try:
+        reference=Decimal(str(values['lhc_mhz']))
+        multiplier=values['multiplier']
+        if not reference.is_finite() or reference<=0 or type(multiplier) is not int or multiplier<1:
+            raise ValueError('Positive reference and integer multiplier required')
+    except (KeyError,InvalidOperation) as e:raise ValueError('Invalid clock parameters') from e
+    values['lhc_mhz']=format(reference,'f')
+    values['kasli_mhz']=format(reference*multiplier,'f')
+    return values
+
+
+def label(text,values):
+    for _,field,_,_ in string.Formatter().parse(text):
+        if field is not None and field not in values:raise ValueError('Unknown diagram parameter: '+field)
+    return text.format_map(values)
+
+
+def resolve(config):
+    if config.get('schema')!=1:raise ValueError('Unsupported diagram schema')
+    values=parameters(config);nodes={}
+    for n in config['nodes']:
+        if n['id'] in nodes:raise ValueError('Duplicate node: '+n['id'])
+        nodes[n['id']]=dict(n)
+    positions={}
+    def position(name,visiting=()):
+        if name not in nodes:raise ValueError('Unknown node: '+name)
+        if name in visiting:raise ValueError('Cyclic node containment')
+        if name in positions:return positions[name]
+        n=nodes[name];x,y=n['xy'];w,h=n['size']
+        if not all(math.isfinite(v) for v in [x,y,w,h]) or min(w,h)<=0:raise ValueError('Invalid node geometry')
+        if n.get('parent'):
+            px,py=position(n['parent'],visiting+(name,));pw,ph=nodes[n['parent']]['size']
+            if abs(x)+w/2>pw/2+1e-9 or abs(y)+h/2>ph/2+1e-9:raise ValueError('Child outside parent: '+name)
+            x+=px;y+=py
+        positions[name]=(x,y);return x,y
+    for name in nodes:position(name)
+    def endpoint(spec):
+        x,y=position(spec['node']);w,h=nodes[spec['node']]['size']
+        if 'at' in spec:
+            dx,dy=spec['at'];return x+dx,y+dy
+        side=spec['side'];offset=spec.get('offset',0)
+        if side not in ('left','right','top','bottom'):raise ValueError('Unknown anchor side')
+        if abs(offset)>(h/2 if side in ('left','right') else w/2)+1e-9:raise ValueError('Anchor outside node')
+        return {'left':(x-w/2,y+offset),'right':(x+w/2,y+offset),'top':(x+offset,y+h/2),'bottom':(x+offset,y-h/2)}[side]
+    links=[]
+    for link in config['links']:
+        if link['kind'] not in config['colors']:raise ValueError('Unknown cable kind')
+        if link.get('direction','both') not in ('both','forward','none'):raise ValueError('Invalid direction')
+        points=[endpoint(link['start']),*link.get('via',[]),endpoint(link['end'])]
+        if any(not all(math.isfinite(v) for v in pt) for pt in points):raise ValueError('Nonfinite cable geometry')
+        if any(tuple(a)==tuple(b) for a,b in zip(points,points[1:])):raise ValueError('Zero-length cable segment')
+        links.append(dict(link,points=points))
+        if 'label' in link:label(link['label'],values)
+    for n in nodes.values():label(n['label'],values)
+    for a in config['annotations']:
+        label(a['text'],values)
+        if a.get('parent') and a['parent'] not in nodes:raise ValueError('Unknown annotation parent')
+    label(config['title']['text'],values)
+    return values,nodes,positions,links
+
+
+def wiring(out,config_path=None):
+    out=Path(out);config=load_config(config_path)
+    values,nodes,positions,links=resolve(config)
+    canvas=config['canvas'];colors=config['colors']
+    fig,ax=plt.subplots(figsize=canvas['size']);fig.subplots_adjust(left=.025,right=.985,top=.91,bottom=.045)
+    ax.set(xlim=canvas['xlim'],ylim=canvas['ylim']);ax.axis('off')
+    try:
+        for name,n in nodes.items():
+            x,y=positions[name];w,h=n['size']
+            ax.add_patch(FancyBboxPatch((x-w/2,y-h/2),w,h,boxstyle='round,pad=.06,rounding_size=.12',facecolor=n['color'],edgecolor='#34516c',lw=1.5,zorder=4))
+            ax.text(x,y,label(n['label'],values),ha='center',va='center',fontsize=18,fontweight='bold',zorder=5)
+        for link in links:
+            color=colors[link['kind']];points=link['points'];layer=link.get('layer',2)
+            for a,b in zip(points,points[1:]):ax.plot([a[0],b[0]],[a[1],b[1]],color=color,lw=2,zorder=layer)
+            def head(point,near):
+                dx,dy=near[0]-point[0],near[1]-point[1];scale=min(.18,math.hypot(dx,dy))/math.hypot(dx,dy)
+                ax.add_patch(FancyArrowPatch((point[0]+dx*scale,point[1]+dy*scale),point,arrowstyle='-|>',mutation_scale=13,color=color,lw=2,zorder=layer+1))
+            if link.get('direction','both')!='none':head(points[-1],points[-2])
+            if link.get('direction','both')=='both':head(points[0],points[1])
+            if link.get('label'):
+                xy=link.get('label_xy',[(points[0][i]+points[-1][i])/2 for i in (0,1)])
+                ax.text(*xy,label(link['label'],values),color=color,ha='center',va='center',fontsize=14,bbox=dict(facecolor='white',edgecolor='none',pad=2),zorder=6)
+        for a in config['annotations']:
+            opts={k:v for k,v in a.items() if k not in ('xy','text','parent','coordinates')}
+            if str(opts.get('color','')).startswith('@'):opts['color']=colors[opts['color'][1:]]
+            x,y=a['xy']
+            if a.get('parent'):px,py=positions[a['parent']];x+=px;y+=py
+            target=fig.text if a.get('coordinates')=='figure' else ax.text
+            target(x,y,label(a['text'],values),**opts)
+        title=dict(config['title']);title['text']=label(title['text'],values)
+        fig.suptitle(title.pop('text'),**title)
+        for ext in ['png','pdf','svg']:fig.savefig(out/('bench.'+ext),dpi=170)
+        svg=out/'bench.svg';svg.write_text('\n'.join(line.rstrip() for line in svg.read_text().splitlines())+'\n')
+        (out/'bench-configuration.json').write_text(json.dumps(config,indent=2,ensure_ascii=False)+'\n')
+        (out/'bench-parameters.json').write_text(json.dumps(values,indent=2,ensure_ascii=False)+'\n')
+    finally:plt.close(fig)
+    return values
 
 
 if __name__=='__main__':
-    import argparse
-    p=argparse.ArgumentParser();p.add_argument('--out',type=Path,required=True);a=p.parse_args()
-    a.out.mkdir(parents=True,exist_ok=False);wiring(a.out)
+    p=argparse.ArgumentParser(description=__doc__);p.add_argument('--out',type=Path,required=True);p.add_argument('--config',type=Path,default=DEFAULT_CONFIG);a=p.parse_args()
+    # Reject invalid configuration before creating output artifacts.
+    resolve(load_config(a.config))
+    a.out.mkdir(parents=True,exist_ok=False);wiring(a.out,a.config)

@@ -120,6 +120,42 @@ class Acceptance(unittest.TestCase):
         self.assertIn('{Unresolved}',rendered);self.assertEqual(rendered.count('{FAIL}'),1)
         with self.assertRaises(ValueError):connection_table(dict(gate,connections=gate['connections'][:-1]),boundary,pinmap)
 
+    def test_bench_parameters_derive_clock_and_keep_internal_multiplier(self):
+        from bench_setup import load_config,resolve,label
+        cfg=load_config();cfg['parameters'].update(lhc_mhz='40',multiplier=4,cfd_slot=5)
+        values,nodes,positions,links=resolve(cfg)
+        self.assertEqual(values['kasli_mhz'],'160')
+        self.assertEqual(label(nodes['dio_cfd']['label'],values),'DIO-LVDS\nslot 5')
+        self.assertEqual(nodes['clock_multiplier']['parent'],'clock')
+        before=positions['clock_multiplier'];next(n for n in cfg['nodes'] if n['id']=='clock')['xy'][0]+=1
+        # Locate by ID rather than relying on a node order in the assertion.
+        moved=resolve(cfg)[2]['clock_multiplier'];self.assertEqual(moved[0],before[0]+1)
+
+    def test_bench_partial_override_is_self_contained_and_rejects_unknowns(self):
+        from bench_setup import load_config,resolve
+        p=self.root/'bench.json';write(p,dict(parameters=dict(lhc_mhz='40.0787',multiplier=3,dut='PM12-NEW')))
+        cfg=load_config(p);self.assertEqual(resolve(cfg)[0]['kasli_mhz'],'120.2361')
+        self.assertEqual(resolve(cfg)[0]['dut'],'PM12-NEW')
+        write(p,dict(paramters={}))
+        with self.assertRaises(ValueError):load_config(p)
+
+    def test_archived_full_bench_config_does_not_require_default_file(self):
+        import bench_setup
+        cfg=bench_setup.load_config();p=self.root/'frozen.json';write(p,cfg)
+        with patch.object(bench_setup,'DEFAULT_CONFIG',self.root/'absent.json'):
+            frozen=bench_setup.load_config(p)
+        self.assertEqual(bench_setup.resolve(frozen)[0]['kasli_mhz'],'120.2361')
+
+    def test_bench_invalid_geometry_and_parameters_are_rejected(self):
+        from bench_setup import load_config,resolve
+        for kind in ['clock','parent','endpoint','label']:
+            cfg=load_config()
+            if kind=='clock':cfg['parameters']['lhc_mhz']='NaN'
+            elif kind=='parent':next(n for n in cfg['nodes'] if n['id']=='clock_multiplier')['parent']='clock_multiplier'
+            elif kind=='endpoint':cfg['links'][0]['end']['node']='missing'
+            else:cfg['nodes'][0]['label']='{unknown_parameter}'
+            with self.subTest(kind=kind),self.assertRaises(ValueError):resolve(cfg)
+
     def test_latex_text_is_escaped(self):
         escaped=tex('D0_D1 & 50% {test} \\input')
         for expected in [r'D0\_D1',r'\&',r'50\%',r'\{test\}',r'\textbackslash{}input']:self.assertIn(expected,escaped)

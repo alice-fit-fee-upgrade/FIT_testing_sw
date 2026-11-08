@@ -1,0 +1,14 @@
+{
+  "dut": "PM12",
+  "dac": "MOD-DAC-28",
+  "cfd": "CFD_SIM",
+  "controller": "Kasli-DIOT",
+  "cfd_slot": 7,
+  "hdmi_slot": 6,
+  "lhc_mhz": "40.0787",
+  "multiplier": 3,
+  "pm_sfp": 1,
+  "control_sfp": 0,
+  "bridge_sfp": 2,
+  "kasli_mhz": "120.2361"
+}

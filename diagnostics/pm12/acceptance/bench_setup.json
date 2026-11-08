@@ -1,0 +1,541 @@
+{
+  "schema": 1,
+  "parameters": {
+    "dut": "PM12",
+    "dac": "MOD-DAC-28",
+    "cfd": "CFD_SIM",
+    "controller": "Kasli-DIOT",
+    "cfd_slot": 7,
+    "hdmi_slot": 6,
+    "lhc_mhz": "40.0787",
+    "multiplier": 3,
+    "pm_sfp": 1,
+    "control_sfp": 0,
+    "bridge_sfp": 2
+  },
+  "canvas": {
+    "size": [
+      16,
+      9
+    ],
+    "xlim": [
+      -0.8,
+      15.3
+    ],
+    "ylim": [
+      -2.1,
+      7.3
+    ]
+  },
+  "colors": {
+    "analog": "#c46a14",
+    "lvds": "#17679c",
+    "clock": "#8849a4",
+    "sfp": "#2b8261",
+    "control": "#6e7782"
+  },
+  "nodes": [
+    {
+      "id": "dac",
+      "label": "{dac}",
+      "xy": [
+        1.5,
+        6
+      ],
+      "size": [
+        2.2,
+        1
+      ],
+      "color": "#fff1de"
+    },
+    {
+      "id": "cfd",
+      "label": "{cfd}",
+      "xy": [
+        3.9,
+        6
+      ],
+      "size": [
+        2.2,
+        1
+      ],
+      "color": "#fff1de"
+    },
+    {
+      "id": "dio_cfd",
+      "label": "DIO-LVDS\nslot {cfd_slot}",
+      "xy": [
+        8.3,
+        6
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "color": "#e5f2ff"
+    },
+    {
+      "id": "pm",
+      "label": "{dut}",
+      "xy": [
+        3.9,
+        2.8
+      ],
+      "size": [
+        2.2,
+        1
+      ],
+      "color": "#eef1f5"
+    },
+    {
+      "id": "adapter",
+      "label": "LVDS–HDMI\nadapter",
+      "xy": [
+        7,
+        2.8
+      ],
+      "size": [
+        2,
+        1
+      ],
+      "color": "#e5f2ff"
+    },
+    {
+      "id": "dio_hdmi",
+      "label": "DIO-LVDS\nslot {hdmi_slot}",
+      "xy": [
+        9.7,
+        2.8
+      ],
+      "size": [
+        1.8,
+        1
+      ],
+      "color": "#e5f2ff"
+    },
+    {
+      "id": "kasli",
+      "label": "{controller}\n\nDIOT\nbackplane",
+      "xy": [
+        12.7,
+        4.5
+      ],
+      "size": [
+        2.8,
+        4.4
+      ],
+      "color": "#e5f2ff"
+    },
+    {
+      "id": "clock",
+      "label": "",
+      "xy": [
+        8.3,
+        0.55
+      ],
+      "size": [
+        5.1,
+        1.2
+      ],
+      "color": "#f3eafa"
+    },
+    {
+      "id": "clock_multiplier",
+      "label": "×{multiplier}",
+      "xy": [
+        1.7,
+        0
+      ],
+      "size": [
+        0.85,
+        0.65
+      ],
+      "color": "#eadcf4",
+      "parent": "clock"
+    },
+    {
+      "id": "host",
+      "label": "Test-bench\ncontroller",
+      "xy": [
+        1.5,
+        -1.5
+      ],
+      "size": [
+        2.4,
+        1
+      ],
+      "color": "#f0f1f3"
+    }
+  ],
+  "links": [
+    {
+      "kind": "analog",
+      "direction": "forward",
+      "start": {
+        "node": "dac",
+        "side": "right",
+        "offset": 0
+      },
+      "end": {
+        "node": "cfd",
+        "side": "left",
+        "offset": 0
+      }
+    },
+    {
+      "kind": "analog",
+      "direction": "both",
+      "label": "Daughtercard\non channel under test",
+      "label_xy": [
+        3.9,
+        4.4
+      ],
+      "start": {
+        "node": "cfd",
+        "side": "bottom",
+        "offset": 0.0
+      },
+      "end": {
+        "node": "pm",
+        "side": "top",
+        "offset": 0.0
+      }
+    },
+    {
+      "kind": "lvds",
+      "direction": "both",
+      "label": "RJ45\nCFD pulses /\ngate strobes",
+      "label_xy": [
+        6.15,
+        6.15
+      ],
+      "start": {
+        "node": "cfd",
+        "side": "right",
+        "offset": 0
+      },
+      "end": {
+        "node": "dio_cfd",
+        "side": "left",
+        "offset": 0
+      }
+    },
+    {
+      "kind": "lvds",
+      "direction": "both",
+      "label": "DIOT backplane",
+      "label_xy": [
+        10.3,
+        6.35
+      ],
+      "start": {
+        "node": "dio_cfd",
+        "side": "right",
+        "offset": 0
+      },
+      "end": {
+        "node": "kasli",
+        "side": "left",
+        "offset": 1.5
+      }
+    },
+    {
+      "kind": "lvds",
+      "direction": "both",
+      "label": "HDMI",
+      "label_xy": [
+        5.5,
+        3.55
+      ],
+      "start": {
+        "node": "pm",
+        "side": "right",
+        "offset": 0.0
+      },
+      "end": {
+        "node": "adapter",
+        "side": "left",
+        "offset": 0.0
+      }
+    },
+    {
+      "kind": "lvds",
+      "direction": "both",
+      "label": "2 × RJ45",
+      "label_xy": [
+        8.4,
+        3.55
+      ],
+      "start": {
+        "node": "adapter",
+        "side": "right",
+        "offset": 0.0
+      },
+      "end": {
+        "node": "dio_hdmi",
+        "side": "left",
+        "offset": 0.0
+      }
+    },
+    {
+      "kind": "lvds",
+      "direction": "both",
+      "start": {
+        "node": "dio_hdmi",
+        "side": "right",
+        "offset": 0.0
+      },
+      "end": {
+        "node": "kasli",
+        "side": "left",
+        "offset": -1.7
+      }
+    },
+    {
+      "kind": "clock",
+      "direction": "forward",
+      "label": "LHC clock",
+      "label_xy": [
+        7,
+        1.65
+      ],
+      "start": {
+        "node": "clock",
+        "side": "top",
+        "offset": -1.3
+      },
+      "end": {
+        "node": "adapter",
+        "side": "bottom",
+        "offset": 0
+      }
+    },
+    {
+      "kind": "clock",
+      "direction": "forward",
+      "label": "{kasli_mhz} MHz",
+      "label_xy": [
+        12.1,
+        1.35
+      ],
+      "start": {
+        "node": "clock",
+        "side": "right",
+        "offset": 0.0
+      },
+      "end": {
+        "node": "kasli",
+        "side": "bottom",
+        "offset": -0.6
+      },
+      "via": [
+        [
+          12.1,
+          0.55
+        ]
+      ]
+    },
+    {
+      "kind": "sfp",
+      "direction": "both",
+      "label": "PM ↔ Kasli private link: SFP{pm_sfp}",
+      "label_xy": [
+        8.6,
+        -0.33
+      ],
+      "start": {
+        "node": "pm",
+        "side": "bottom",
+        "offset": 0.0
+      },
+      "end": {
+        "node": "kasli",
+        "side": "bottom",
+        "offset": 0.9
+      },
+      "via": [
+        [
+          3.9,
+          -0.55
+        ],
+        [
+          13.6,
+          -0.55
+        ]
+      ]
+    },
+    {
+      "kind": "control",
+      "direction": "both",
+      "start": {
+        "node": "host",
+        "side": "left",
+        "offset": 0.0
+      },
+      "end": {
+        "node": "dac",
+        "side": "left",
+        "offset": 0
+      },
+      "via": [
+        [
+          -0.1,
+          -1.5
+        ],
+        [
+          -0.1,
+          6
+        ]
+      ]
+    },
+    {
+      "kind": "control",
+      "direction": "both",
+      "label": "Ethernet / IPbus: SFP{control_sfp} control, SFP{bridge_sfp} PM bridge",
+      "label_xy": [
+        8.6,
+        -1.3
+      ],
+      "start": {
+        "node": "host",
+        "side": "right",
+        "offset": 0.0
+      },
+      "end": {
+        "node": "kasli",
+        "side": "right",
+        "offset": 0.0
+      },
+      "via": [
+        [
+          14.8,
+          -1.5
+        ],
+        [
+          14.8,
+          4.5
+        ]
+      ]
+    },
+    {
+      "kind": "clock",
+      "start": {
+        "node": "clock",
+        "at": [
+          0.5,
+          0
+        ]
+      },
+      "end": {
+        "node": "clock_multiplier",
+        "side": "left"
+      },
+      "direction": "forward",
+      "layer": 5
+    },
+    {
+      "kind": "clock",
+      "start": {
+        "node": "clock_multiplier",
+        "side": "right"
+      },
+      "end": {
+        "node": "clock",
+        "side": "right"
+      },
+      "direction": "none",
+      "layer": 5
+    }
+  ],
+  "annotations": [
+    {
+      "xy": [
+        -1,
+        0.17
+      ],
+      "text": "LHC generator",
+      "ha": "center",
+      "va": "center",
+      "fontsize": 18,
+      "fontweight": "bold",
+      "zorder": 5,
+      "parent": "clock"
+    },
+    {
+      "xy": [
+        -1,
+        -0.25
+      ],
+      "text": "{lhc_mhz} MHz",
+      "ha": "center",
+      "va": "center",
+      "fontsize": 14,
+      "zorder": 5,
+      "parent": "clock"
+    },
+    {
+      "xy": [
+        0,
+        -0.47
+      ],
+      "text": "internal",
+      "ha": "center",
+      "va": "center",
+      "fontsize": 11,
+      "color": "@clock",
+      "zorder": 5,
+      "parent": "clock_multiplier"
+    },
+    {
+      "xy": [
+        2.7,
+        6.82
+      ],
+      "text": "USB: analog DAC outputs",
+      "ha": "center",
+      "fontsize": 14,
+      "color": "@analog"
+    },
+    {
+      "xy": [
+        -0.42,
+        2.2
+      ],
+      "text": "Ethernet / SCPI",
+      "rotation": 90,
+      "ha": "center",
+      "va": "center",
+      "fontsize": 14,
+      "color": "@control"
+    },
+    {
+      "coordinates": "figure",
+      "xy": [
+        0.5,
+        0.92
+      ],
+      "text": "Both clock outputs come from the LHC generator; ×{multiplier} multiplication is internal.",
+      "ha": "center",
+      "fontsize": 14,
+      "color": "#34516c"
+    },
+    {
+      "coordinates": "figure",
+      "xy": [
+        0.5,
+        0.015
+      ],
+      "text": "Main measurement paths and Ethernet control. UART/JTAG service cables and the DMM are omitted for clarity.",
+      "ha": "center",
+      "fontsize": 11,
+      "color": "#5c6570"
+    }
+  ],
+  "title": {
+    "text": "FIT {dut} — test-bench connections",
+    "fontsize": 24,
+    "fontweight": "bold",
+    "color": "#173b62",
+    "y": 0.98
+  }
+}
