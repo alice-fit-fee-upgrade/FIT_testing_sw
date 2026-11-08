@@ -29,6 +29,33 @@ def table(headers,rows,widths=None):
     return text+'\\bottomrule\n\\end{longtable}\n'
 
 
+def connection_table(gate,boundary,pinmap):
+    """One row per measured net; common method/provenance appears only once."""
+    gate_rows=gate['connections'];boundary_rows=boundary['connections']
+    gmap={r['signal']:r for r in gate_rows};bmap={r['signal']:r for r in boundary_rows}
+    if len(gmap)!=168 or len(bmap)!=168 or len(gate_rows)!=168 or len(boundary_rows)!=168 or set(gmap)!=set(bmap):
+        raise ValueError('Expected168 unique matching gateware/boundary nets')
+    def endpoint(row):
+        channel,pin=row.get('cpld_channel'),row.get('cpld_pin')
+        return f'{channel} / {pin}' if channel is not None and pin is not None else 'Unresolved'
+    rows=[]
+    for g in sorted(gate_rows,key=lambda r:(12-r['expected_source']//14,r['expected_source']%14)):
+        b=bmap[g['signal']];source=g['expected_source']
+        expected=f"{12-source//14} / {pinmap['cpld'][source%14]['pin']}"
+        rows.append((g['signal'],g['fpga_ball'],expected,endpoint(g),endpoint(b),
+                     'PASS' if g['passed'] else 'FAIL','PASS' if b['passed'] else 'FAIL'))
+    result=tex('CPLD endpoints are physical channel / package pin. Each result includes walking-one, walking-zero, all-zero/all-one baselines and agreement with the schematic. Vector indices, boundary cells and full per-vector observations remain in the archived JSON/logs.')+'\n\n'
+    result+=r'\begingroup\small\setlength{\tabcolsep}{3pt}'+'\n'
+    result+=table(['Signal','FPGA ball','Expected CPLD','Gateware CPLD','Boundary CPLD','Gateware','Boundary'],rows,
+                  ['.14\\linewidth','.08\\linewidth','.16\\linewidth','.16\\linewidth','.16\\linewidth','.09\\linewidth','.09\\linewidth'])
+    result+=r'\endgroup'+'\n'
+    result+=table(['Common test condition','Recorded value'],[
+        ('Discovery vectors per receive path',gate['vectors']),
+        ('Functional CPLD restoration',bool(gate['restored'] and boundary['restored']))])
+    result+=tex('Schematic SHA256: '+pinmap['schematic_sha256'])+'\n'
+    return result
+
+
 def verify(directory,allow_edited_tex=False):
     manifest=read(directory/'files.sha256.json')
     for name,item in manifest.items():
@@ -188,20 +215,23 @@ def content(loaded,summary,inventory,extended,chapter):
         data=read(root/'cfd-dacs/analysis.json')
         text('Physical channel 12 only. First attempted restoration using computed STORED parameters was rejected; explicit active-code 0000 restoration then reproduced initial voltages. The original failed attempt remains in the source evidence.')
         out.append(table(['DAC','Signal','Start [V]','End [V]'],[(k,v['signal'],v['volts'][0],v['volts'][-1]) for k,v in data['curves'].items()],['.12\\linewidth','.35\\linewidth','.21\\linewidth','.21\\linewidth']))
-    if chapter=='full' and historical_mode and extended:
-        section('Per-link static connection test cards')
-        gate=read(root/'jtag/gateware-decoded.json');boundary=read(root/'jtag/boundary-decoded.json');pinmap=read(root/'pinmap.json')
-        bound={r['signal']:r for r in boundary['connections']}
-        for i,g in enumerate(gate['connections']):
-            if i:out.append('\\clearpage\n')
-            b=bound[g['signal']]
-            out.append('\\subsection*{'+tex(f'Link {i+1:03d}/168 — '+g['signal'])+'}\n')
-            text('Historical measured 338-vector discovery in each of two independent receive paths. Source logs are reduced original laboratory measurements; every required vector is present.')
-            rows=[('Net',g['signal']),('FPGA package ball',g['fpga_ball']),('FPGA boundary cell',pinmap['fpga'][g['signal']]['boundary_cell']),('Expected source vector',g['expected_source']),('Measured CPLD channel',g['cpld_channel']),('Measured CPLD pin',g['cpld_pin']),('Gateware discovered vector',g['discovered_source']),('Boundary discovered vector',b['discovered_source']),('Walking-one active sources',g['sources_high']),('Walking-zero inactive sources',g['sources_low']),('Gateware verdict',g['passed']),('Boundary verdict',b['passed']),('CPLD functional restoration',gate['restored'] and boundary['restored'])]
-            out.append(table(['Check','Observed / expected'],rows))
-            text('Procedure: preload sampled non-link boundary values, drive one CPLD link at a time, observe independent FPGA boundary cells and input capture, compare with schematic pin map; reset TAPs to release EXTEST.')
-            text('Acceptance: exactly one discovered source, matching walking-one and walking-zero source indices and the schematic; both all-zero and all-one baselines correct; functional mode restored. Not an at-speed or analog qualification.')
-            text('Schematic SHA256: '+pinmap['schematic_sha256'])
+    if chapter=='full':
+        if historical_mode:
+            section('Static connection results')
+            text('Results follow the static connection procedure in the test-procedure chapter. All rows below share one discovery and schematic revision; at-speed and analog tests are documented separately.')
+            out.append(connection_table(read(root/'jtag/gateware-decoded.json'),read(root/'jtag/boundary-decoded.json'),read(root/'pinmap.json')))
+        else:
+            for batch,record in loaded:
+                for step in record['steps']:
+                    path=batch/step.get('instance','')/'data/diagnostic/report.json'
+                    if step['id']!='jtag-boundary' or not path.exists():continue
+                    report=read(path)
+                    if not all(k in report for k in ['gateware','boundary']):continue
+                    pinmap=read(HERE.parent/'pinmap.json')
+                    if report.get('schematic_sha256')!=pinmap['schematic_sha256']:
+                        raise ValueError('Connection table schematic does not match acquisition provenance')
+                    section('Static connection results — '+batch.name)
+                    out.append(connection_table(report['gateware'],report['boundary'],pinmap))
     if extended:
         section('Per-channel ADC test cards')
         # One card per physical channel and ADC; missing analog coverage stays explicit.
@@ -269,7 +299,7 @@ def generate(runs,out,inventory_path=None,engine=None,extended=False,chapter='fu
     values={'ReportUID':uid,'ReportMode':mode+' — '+chapter+' dossier','ReportDate':utc(),'ReportVerdict':('FAIL / NOT RELEASED' if any(r['status']=='FAIL' for _,r in loaded) else 'INCOMPLETE / NOT RELEASED'),'ReportScope':('Historical multi-date engineering evidence. Factory DNA was not recorded during these measurements. This is not a new batch acceptance certificate.' if mode=='HISTORICAL' else 'Selected live evidence. Unmeasured channels and unqualified tests remain explicit. Final acceptance requires complete reviewed coverage.')}
     (out/'metadata.tex').write_text(''.join('\\newcommand{\\'+k+'}{'+tex(v)+'}\n' for k,v in values.items()))
     shutil.copy2(HERE/'templates/report.tex',out/'report.tex')
-    (out/'content.tex').write_text(content(loaded,summary,inventory,extended,chapter))
+    (out/'content.tex').write_text(content(loaded,summary,inventory,extended,chapter).rstrip()+'\n')
     write(out/'chapter.json',dict(schema=1,name=chapter,board_uid=uid,mode=mode,input_runs=[str(p.relative_to(out)) for p in copied],extended=extended))
     if engine:compile_pdf(out,engine)
     write(out/'files.sha256.json',files_manifest(out))
@@ -321,7 +351,7 @@ def main():
         c.add_argument('--out',type=Path,required=True);c.add_argument('--inventory',type=Path)
         c.add_argument('--latex',help='pdflatex or tectonic executable; omit to generate editable sources only')
         c.add_argument('--allow-edited-tex',action='store_true',help='Accept and record editorial .tex changes; raw inputs must remain exact')
-        c.add_argument('--extended',action='store_true',help='Individual connection/channel cards (~200 pages when full evidence is present)')
+        c.add_argument('--extended',action='store_true',help='Individual ADC channel cards; connections always use one consolidated table')
         if name=='chapter':c.add_argument('--name',choices=['cfd','full'],default='cfd')
     a=p.parse_args()
     if a.action=='historical':historical(a.out);print(a.out);return

@@ -1,3 +1,9 @@
+Report layout2026-11-08: all168 static connections are now one multipage table,
+with one common procedure and repeated column headings. This applies to both
+historical and live boundary-scan runs. The [compact specimen](evidence-connection-table-20261108/historical-connections.pdf)
+has22 pages; [editable LaTeX and complete inputs](evidence-connection-table-20261108/editable-report-source.tar.gz)
+are retained. The earlier212-page specimen remains archived.
+
 Latest2026-11-07: the post-reconfiguration STR case is [diagnosed and corrected](ADC_STROBE_DEBUG.md).
 ADC validity now uses bounded4× edge phase and complete-word stability; strict
 all4 spacing remains an explicit alignment diagnostic. Full A/B scan and two
@@ -150,9 +156,10 @@ and regenerate a substitute. After editorial `.tex` changes use
 `--allow-edited-tex`: old/new hashes are recorded in `editorial-changes.json`.
 This flag does **not** permit modified raw inputs, images or result JSON.
 To regenerate a complete dossier directly from data instead, use
-`report --runs ... --extended`; the extended historical specimen has roughly
-200 pages, with one card per168 JTAG links and24 ADC paths. The compact mode
-omits those individual cards. Page count is not an acceptance criterion.
+`report --runs ... --extended`; connections are always consolidated into one multipage table with repeated
+column headers and one common procedure. `--extended` adds individual ADC-channel
+cards only. Raw per-vector results remain in the evidence archive. Page count is
+not an acceptance criterion.
 
 Signing/release remains a human disposition. The template defaults to
 INCOMPLETE / NOT RELEASED until the required coverage, tolerances, calibration

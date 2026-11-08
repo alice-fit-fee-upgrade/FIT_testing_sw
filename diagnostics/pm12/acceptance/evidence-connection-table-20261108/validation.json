@@ -1,0 +1,16 @@
+{
+  "change": "Consolidated connection tables, shared method once",
+  "pages": 22,
+  "connections": 168,
+  "unique_connections": 168,
+  "methods": [
+    "gateware",
+    "independent boundary scan"
+  ],
+  "results_retained": true,
+  "full_vector_evidence": "Original input JSON and logs retained in source archive",
+  "hardware_access": false,
+  "software_tests": 12,
+  "latex_engine": "Tectonic0.15.0",
+  "original_specimen": "Historical212-page specimen retained unchanged"
+}

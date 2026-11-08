@@ -13,7 +13,7 @@ sys.path.insert(0,str(Path(__file__).resolve().parents[1]))
 from identity import board_uid,canonical_dna,register
 from lease import acquire,ENV
 from suite import verdict,execute_step,write,files_manifest
-from report import verify,gather,tex,compose
+from report import verify,gather,tex,compose,connection_table
 from plots import extract
 
 class Acceptance(unittest.TestCase):
@@ -103,6 +103,22 @@ class Acceptance(unittest.TestCase):
         self.assertEqual(len(json.loads((self.root/'assembled/editorial-changes.json').read_text())),1)
         write(batch/'run.json',dict(mode='FAKE'))
         with self.assertRaises(ValueError):compose([chapter],self.root/'raw-refused',allow_edited_tex=True)
+
+    def test_connection_table_keeps_all_measured_nets_and_failure_results(self):
+        import copy,gzip
+        pm=Path(__file__).resolve().parents[2]
+        sys.path.insert(0,str(pm))
+        from test_board import analyze
+        gate=analyze(gzip.decompress((pm/'tests/fixtures/gateware-pass.log.gz').read_bytes()).decode())
+        boundary=analyze(gzip.decompress((pm/'tests/fixtures/boundary-pass.log.gz').read_bytes()).decode(),boundary=True)
+        pinmap=json.loads((pm/'pinmap.json').read_text())
+        rendered=connection_table(gate,boundary,pinmap)
+        for row in gate['connections']:self.assertEqual(rendered.count('{'+row['signal']+'} & '),1)
+        self.assertEqual(rendered.count('{PASS}'),336)
+        broken=copy.deepcopy(gate);broken['connections'][0].update(passed=False,cpld_channel=None,cpld_pin=None)
+        rendered=connection_table(broken,boundary,pinmap)
+        self.assertIn('{Unresolved}',rendered);self.assertEqual(rendered.count('{FAIL}'),1)
+        with self.assertRaises(ValueError):connection_table(dict(gate,connections=gate['connections'][:-1]),boundary,pinmap)
 
     def test_latex_text_is_escaped(self):
         escaped=tex('D0_D1 & 50% {test} \\input')
