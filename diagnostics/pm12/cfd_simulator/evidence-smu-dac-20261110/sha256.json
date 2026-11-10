@@ -1,0 +1,22 @@
+{
+  "console.txt": "4d48e0f0fd7da473176fe7dcdc985203d96b03e414bb7cdaebd2440af30083df",
+  "dac-channel-differences.pdf": "45053cea6e9ab6924aab3d8c344e0f1c21efc8907a6c5eb071bf0cef92b44422",
+  "dac-channel-differences.png": "5c4b6289573ddb81bf861edbc614fa1d83074abfff15653b2fd452eba246a326",
+  "dac-channel-differences.svg": "dd6aa84759cac36431d6bae17e719a61934dc41f5cf4c931d19f7d067a92224d",
+  "dac-transfer.pdf": "50b56cf258725c9d5010690086591291c67ce9faf7523a18ad3a5542cde97d2c",
+  "dac-transfer.png": "e23c87f9eb33bdf540185ab0574603b2c2dd7b85474d2b14fc22017e6b98f906",
+  "dac-transfer.svg": "c5bcecf385f03bef6251e59808689d7531ea3b746351101c208fc0058439f592",
+  "executed-scan-source.py": "065381ccbf87a1e1aa2aa679562f7a82a6aee8104f6fc53fe4623510d7754eda",
+  "post-scan-smu-settings.json": "f51972d69091c9bdd442b2d439e83a6ed73930fbadb36bb1cc5061d695bf57ca",
+  "preflight/acquisition-only-check.json": "3891226e8e949afff3c3d8083c9ba920a7139d942af753c5682af79079f88897",
+  "preflight/safe-preflight.json": "b3f6fdb0c2e8cf12833ab08693842ae9a391f098aec4b61103b736d26882bbee",
+  "preflight/voltmeter-check.json": "e8c134ed6decf70f90e726fe52cebdc651e3312cdf39a502770ad6e6d283099e",
+  "preflight/voltmeter-force-check.json": "bf578924bb5b036c0305b4605a7cc56984bb3fb89d032594ea35268fe9be0ae1",
+  "report.pdf": "f7dc36d3a15b4ab017f5247460190e5237bb3a25e31f945b00fb56f6afa822c8",
+  "report.tex": "900272c1ba167ab1ee3fcd36cfa96f1c081a4326d342678376c1d3ce7a17d868",
+  "samples.csv": "c2679301542590c7c435392c84038482f34f8ec979ef3f2d1e94eef9afa3de27",
+  "scan-report.json": "bacc58ed0d799f2dbbf3a6ffb95447ebba67dd874559004b11d9cd2867c1fdbc",
+  "summary.csv": "7970fe0e641b9802a8d25bf6d06c4e0d393886c0c80d913d52f646991a68ae50",
+  "summary.json": "6842343c990429bfc9cb7c5e886e90451efadc454150c088bd8f22b0fc714240",
+  "validation.json": "5ffe74700d55762542363ebb99c5c32d2addd78bb0f84ddc0024d6de058d605b"
+}

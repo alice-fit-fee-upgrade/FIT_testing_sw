@@ -1,0 +1,11 @@
+{
+  "identity": "Keysight Technologies,B2910BL,MY63320299,5.0.2429.8966",
+  "OUTP?": "0",
+  "OUTP:ON:AUTO?": "0",
+  "OUTP:OFF:MODE?": "HIZ",
+  "SOUR:CURR:RANG?": "+1.00000000E-006",
+  "SOUR:CURR:RANG:AUTO?": "0",
+  "SOUR:CURR?": "+0.00000000E+000",
+  "SENS:REM?": "0",
+  "SYST:ERR?": "+0,\"No error\""
+}

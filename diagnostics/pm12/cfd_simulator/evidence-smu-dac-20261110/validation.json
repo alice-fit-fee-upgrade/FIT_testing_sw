@@ -1,0 +1,9 @@
+{
+  "pass_": true,
+  "samples": 2727,
+  "transfer_curves": 9,
+  "points_per_curve": 101,
+  "samples_per_point": 3,
+  "safe_final_state": true,
+  "scope": "Acquisition completeness/status/restore checks; no calibrated analog acceptance limits"
+}
