@@ -1,0 +1,124 @@
+{
+  "annotation_date": "2026-11-10",
+  "new_hardware_measurement": false,
+  "mapping": [
+    {
+      "pm_channel": 10,
+      "signal": "INTA",
+      "slot": 7,
+      "physical_dio_channel": 5,
+      "logical_rx": 10
+    },
+    {
+      "pm_channel": 8,
+      "signal": "INTA",
+      "slot": 7,
+      "physical_dio_channel": 9,
+      "logical_rx": 12
+    }
+  ],
+  "sources": [
+    {
+      "path": "/home/codex-hil/kasli-diot-bringup/evidence/lvds-loopback-2026-10-16-slot7/summary.json",
+      "sha256": "80cb18bcfe7069e7e6b148ff2e9328eb08720f56a83dce06a31192dda4e55d41",
+      "receipt": {
+        "status": "LOOPBACK_TOPOLOGY_IDENTIFIED_WITH_ONE_FAILED_PAIR",
+        "slot_zero_based": 7,
+        "connections": [
+          {
+            "ports": [
+              "A",
+              "D"
+            ],
+            "module_channels": [
+              [
+                0,
+                12
+              ],
+              [
+                1,
+                13
+              ],
+              [
+                2,
+                14
+              ],
+              [
+                3,
+                15
+              ]
+            ],
+            "all_four_pairs_bidirectional": true
+          },
+          {
+            "ports": [
+              "B",
+              "C"
+            ],
+            "verified_module_channels": [
+              [
+                4,
+                8
+              ],
+              [
+                6,
+                10
+              ],
+              [
+                7,
+                11
+              ]
+            ],
+            "unverified_module_channels": [
+              5,
+              9
+            ],
+            "unverified_rj45_pins": [
+              4,
+              5
+            ]
+          }
+        ],
+        "source_patterns": 16,
+        "bits_per_source": 64,
+        "anomaly": "Channel 5 did not follow its own FPGA output (29 mismatches); no loopback route 5->9 or 9->5. Fault location not determined.",
+        "bitstream_sha256": "6bad2927790c5c64b383ecbc41666cd00279dccfef34d4af9f201657e14b9c87",
+        "restoration": {
+          "stage": "released",
+          "fpga_outputs_enabled": 0,
+          "pcf_restored": true,
+          "ic38_restored": true,
+          "flash_writes": false,
+          "eeprom_writes": false
+        }
+      }
+    },
+    {
+      "path": "/home/codex-hil/kasli-phase-tester/evidence/lvds8-ramp-slot7-20261028/summary.json",
+      "sha256": "b48d5c4cf8e54faaed304344cf9496363b07e17e2e743083ccd9065e5f783140",
+      "receipt": {
+        "date": "2026-10-28",
+        "slot": 7,
+        "overall_pass": false,
+        "profile": "external120",
+        "sample_bins": 24,
+        "passing_pairs_both_directions": [
+          "8<->12",
+          "10<->14",
+          "11<->15"
+        ],
+        "bits_per_pair_per_direction": 32760,
+        "total_exact_bits": 196560,
+        "failing_pair": "9<->13",
+        "forward_best_fit_mismatches": 16929,
+        "reverse_best_fit_mismatches": 17030,
+        "hardware_phase_records_cross_checked": 10920,
+        "comparison": "Failure pair changed relative to slot6. Same-cable move alone does not establish root cause; need cable replacement or endpoint isolation.",
+        "resident": "slot6 external120 tester restored; ramp TX8..11 retained, stopped, mask0",
+        "persistent_writes": false,
+        "remote_build": "/srv/nvme-fast-1/vivado-work/lvds8-slot7-ramp-20261028-01"
+      }
+    }
+  ],
+  "interpretation": "Both current static-HIGH INTA returns coincide with the historically failed/unqualified slot7 DIO5/9 pair. This supports checking the LVDS fixture before assigning a PM/CFD fault; it does not physically isolate the root cause. The later dynamic9/13 failure also implicates a loop path involving9, without proving which endpoint failed. CPLD source generates INTA on all channels; only INTB12 was intentionally suppressed."
+}

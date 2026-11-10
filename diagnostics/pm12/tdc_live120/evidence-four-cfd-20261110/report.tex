@@ -67,8 +67,12 @@ part of the DAC range (around code 48,000). The sampler bins are approximately
 
 \textbf{Unresolved return-path findings:} INTA for PM channels 10 and 8 stayed
 HIGH throughout the sweep. Their INTB returns respond to the corresponding DAC.
-The observation does not locate the cause among driver, simulator, cabling,
-repeater or receiver and is not a board-wide hardware PASS.
+These coincide with slot7 DIO channels 5 and 9, already unqualified in the
+16 October loopback (5$\leftrightarrow$9). The 28 October dynamic loopback also
+failed 9$\leftrightarrow$13. This is evidence to check the LVDS fixture before
+assigning a PM/CFD fault. The CPLD source generates INTA on both channels; only
+INTB12 was intentionally suppressed. Historical correlation added after the
+initial report; no new endpoint-isolation measurement was performed.
 
 On channel 12, the prior INTB-off experiment suppressed the measured DAC-dependent
 gate movement. Original complementary gates were temporarily restored for this

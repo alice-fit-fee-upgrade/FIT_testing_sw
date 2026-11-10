@@ -100,3 +100,12 @@ For offline overlays, extract the archived run directory and use
 `plot_four_cfd.py --run-root EXTRACTED-RUN --out NEW-PLOT-DIRECTORY` with the
 existing `fit-measurements` Python environment. It writes editable SVG, PNG,
 PDF, CSV and JSON. All four physical channels share the same plot axes.
+
+## Historical return-path qualification
+
+Slot7 physical DIO5 and9 (logical RX10/12, currently INTA from PM10/8)
+already belonged to a failed5↔9 loopback on2026-10-16. The later2026-10-28
+dynamic9↔13 loopback also failed. Check these fixture paths before attributing
+constant-HIGH returns to PM or CFD hardware. The historical failures do not
+physically isolate a specific endpoint. Exact receipts are archived with the
+four-channel report as `historical-lvds-context.json`.

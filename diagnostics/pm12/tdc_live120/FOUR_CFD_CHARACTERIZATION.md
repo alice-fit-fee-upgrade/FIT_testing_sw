@@ -58,8 +58,15 @@ fractional centroids are estimates, not a calibrated fine-delay measurement.
 
 **Unresolved findings:** the INTA return paths for channels10 and8 remain HIGH
 throughout the sweep. Their INTB returns respond to the respective DAC writes.
-This observation does not locate the fault among the PM driver, CFD simulator,
-cable, repeater or Kasli input. It is not a board-wide hardware PASS.
+These map to **slot7 physical DIO channels5 and9**, respectively (logical
+RX10/RX12). The16October2026 static loopback had already failed to establish
+5→9 or9→5; channel5 also failed its own output-follow check. The28October
+dynamic loopback additionally failed9↔13. Thus these are previously unqualified
+LVDS fixture paths, and the new observation must not be assigned to PM/CFD
+hardware without endpoint isolation. CPLD source and the last verified baseline
+generate INTA on both PM channels; the only intentionally suppressed gate is
+INTB12. This documentary correlation was added after the initial report; raw
+measurements are unchanged. [Historical receipts and mapping](evidence-four-cfd-20261110/historical-lvds-context.json).
 
 For channel12, the initial20-point scan with the previous INTB-off experimental
 CPLD image showed no DAC-dependent movement of its active gate. Temporarily
