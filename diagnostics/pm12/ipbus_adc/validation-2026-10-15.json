@@ -1,0 +1,66 @@
+{
+  "result": "PASS",
+  "date": "2026-10-15",
+  "board": "PM12 S/N1803, HS2 210249A73E43, xc7k160tffg676-3",
+  "build_id": "882901f6",
+  "fpga_sha256": "d4026ffe30109672224951a61c43d0d6b0b5272bf9b22c9ec0d4cfc5e4ea199d",
+  "jtag_magic": "504d5a04",
+  "ipbus_abi": "00010001",
+  "ipbus": "actual CERN v1.16, UDP192.168.2.240:50001, native + official uHAL2.8.22",
+  "official_uhal_synthetic": {
+    "official_uhal": "PASS",
+    "build_id": 2284388854,
+    "verified_samples": 49152,
+    "scratch_roundtrips": 100
+  },
+  "official_uhal_physical": {
+    "official_uhal_physical": "PASS",
+    "capture_id": 5,
+    "samples": 49152,
+    "status": 13
+  },
+  "official_native_byte_comparison": "PASS 12x4096u16",
+  "native_functional": "PASS walking bits/nonincrementing/RMW/errors/recovery/both endian modes",
+  "native_read_retries": [],
+  "adc": {
+    "channels": 12,
+    "depth": 4096,
+    "nominal_sample_rate_hz": 320000000,
+    "physical_sequence": [
+      0,
+      1,
+      0
+    ],
+    "physical_samples": 147456,
+    "selector_and_STR_clock": "PASS12/12 both banks, nominal80MHz",
+    "all_ADC_codes_static": true,
+    "observed_noise_stddev_codes": 0,
+    "analog_conversion_qualification": "NOT_ESTABLISHED; AFE/reference and known stimulus required"
+  },
+  "i2c": {
+    "arm_transport": "IPbus only",
+    "jtag_ipbus_exact_event_comparison": {
+      "result": "PASS",
+      "events": 1799
+    },
+    "initial_acquisition_id": 1,
+    "frozen_across_three_phy_resets": true,
+    "explicit_second_arm": {
+      "result": "PASS",
+      "events": 145,
+      "elapsed": 120000000,
+      "post_close_ipbus_data_match": true
+    }
+  },
+  "phy_reset_cycles": 3,
+  "preservation": {
+    "cpld_nv_blank_verified": true,
+    "cpld_sram_blank_verified": true,
+    "mcu_firmware_writes": false,
+    "fpga_flash_writes": false,
+    "mcu_sensor_SPI_regression": "PASS",
+    "integrated_FPGA_left_in_SRAM": true,
+    "retained_ADC_capture_id": 5
+  },
+  "scope": "Functional digital bringup. Not source-synchronous ADC timing or analog accuracy qualification."
+}

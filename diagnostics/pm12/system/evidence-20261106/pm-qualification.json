@@ -1,0 +1,10 @@
+{
+  "build_id": "c7c42d28",
+  "wns_ns": 0.09,
+  "whs_ns": 0.074,
+  "wpws_ns": 0.314,
+  "drc_errors": 0,
+  "drc_warning": "RTSTAT-10 unused vendor FIFO almost-full",
+  "bit_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+  "pass": true
+}

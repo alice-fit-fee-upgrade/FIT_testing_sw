@@ -1,0 +1,60 @@
+{
+  "hex_sha256": "0a1383a1507948b14e7e111f15f36afcbd6b1c8a333a11daa988b5f819344f4c",
+  "candidate_full_sha256": "d250f14c4cca4c1a1bef7f457268a269149438a36d22999d74681c898bf1d5ca",
+  "protected_regions_unchanged": {
+    "boot": true,
+    "eeprom": true,
+    "fuse0": true,
+    "fuse1": true,
+    "fuse2": true,
+    "fuse4": true,
+    "fuse5": true,
+    "lock": true,
+    "usersig": true,
+    "prodsig": true,
+    "signature": true
+  },
+  "programming": "PASS full FLASH/readback and protected regions",
+  "fpga_restore_target": "known resident analyzer 504d5a03, same as pre-trial FPGA",
+  "basic_validation": "PASS",
+  "candidate_left_running": true,
+  "firmware_commit": "b66b151f5b7a8743c0948c525ed84fb89f7ba585",
+  "physical_board_serial": 1803,
+  "uart": "Gembird/Prolific",
+  "dmm": {
+    "identity": "KEITHLEY INSTRUMENTS,MODEL DMM7510,04679690,1.7.16a",
+    "terminals": "FRON",
+    "settings": {
+      "function": "VOLT:DC",
+      "range": "10",
+      "nplc": "5",
+      "impedance": "AUTO",
+      "autozero": "1",
+      "filter": "0",
+      "autorange": "0"
+    }
+  },
+  "scan_pass": true,
+  "dc_means_volts": {
+    "CFD_OFFSET": 1.0340936666666667,
+    "CFD_CMP_OFFSET": 0.004463487,
+    "BUFFER_OFFSET": 1.0238676666666666,
+    "DRV_OFFSET": 1.0438423333333333,
+    "DRV_VOCM": 1.5357566666666667,
+    "N5V5_PM12_DIV": -3.4314476666666667,
+    "P1V3": 1.321909,
+    "P5V5_PM12_DIV": 3.416380333333333
+  },
+  "monitor_final_latch": 15,
+  "tca_final": {
+    "70": 0,
+    "71": 0
+  },
+  "fpga_sram": "passive analyzer504d5a03, scratch32bit/restoration PASS",
+  "general_i2c": "physically exercised W/R/WR throughout24DCV reads; invalid argument guards checked",
+  "dac_transfer_curves": "NOT_RUN",
+  "limits": [
+    "Three readings per monitor input; no analog isolation/leakage calibration",
+    "No injected physical PG fault or thermal-trip trial; existing software guards retained"
+  ]
+}

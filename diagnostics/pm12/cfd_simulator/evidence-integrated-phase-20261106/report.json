@@ -1,0 +1,373 @@
+{
+  "pass_": true,
+  "transport": "Kasli ipbus, PM12 console115200",
+  "args": {
+    "afe": 12,
+    "lanes": "8,9",
+    "restore_code": "0000",
+    "out": "/srv/codex-hil-nvme/pm12-phase-integrated-20261106/repeat20",
+    "initialize_zero": true,
+    "intervals": 19,
+    "transport": "ipbus",
+    "ipbus_host": "192.168.2.241",
+    "clock_mhz": 20,
+    "words": 4095,
+    "repeats": 1,
+    "settle": 0.1,
+    "kasli_root": "/home/codex-hil/kasli-phase-tester",
+    "console_tools": "/home/codex-hil/FIT_PM_FW_uPC/tools/hardware",
+    "board_serial": "1803"
+  },
+  "codes": [
+    0,
+    3449,
+    6898,
+    10348,
+    13797,
+    17246,
+    20695,
+    24144,
+    27594,
+    31043,
+    34492,
+    37941,
+    41391,
+    44840,
+    48289,
+    51738,
+    55187,
+    58637,
+    62086,
+    65535
+  ],
+  "scope": "20MHz gate phase; weighted sampled centroid, not calibrated fine delay",
+  "unwrapping": "Nearest continuation; assumes adjacent DAC steps change delay by less than25.0ns",
+  "restore_warning": "Explicit code is sent; no DAC hardware readback. Phase check is corroboration only.",
+  "power_ready": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000003202730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2117
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000006600730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2118
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000008402730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2115
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000B900730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2121
+    }
+  ],
+  "identity": {
+    "command": "RS",
+    "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.2 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+    "duration_s": 0.2111
+  },
+  "directions": {
+    "6": {
+      "before": [
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ]
+    },
+    "7": {
+      "before": [
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ]
+    }
+  },
+  "kasli_mapping": [
+    {
+      "logical": 0,
+      "slot": 6,
+      "channel": 1,
+      "rj45": 0
+    },
+    {
+      "logical": 1,
+      "slot": 6,
+      "channel": 3,
+      "rj45": 0
+    },
+    {
+      "logical": 2,
+      "slot": 6,
+      "channel": 5,
+      "rj45": 1
+    },
+    {
+      "logical": 3,
+      "slot": 6,
+      "channel": 7,
+      "rj45": 1
+    },
+    {
+      "logical": 4,
+      "slot": 6,
+      "channel": 9,
+      "rj45": 2
+    },
+    {
+      "logical": 5,
+      "slot": 6,
+      "channel": 11,
+      "rj45": 2
+    },
+    {
+      "logical": 6,
+      "slot": 6,
+      "channel": 13,
+      "rj45": 3
+    },
+    {
+      "logical": 7,
+      "slot": 6,
+      "channel": 15,
+      "rj45": 3
+    },
+    {
+      "logical": 8,
+      "slot": 7,
+      "channel": 1,
+      "rj45": 0
+    },
+    {
+      "logical": 9,
+      "slot": 7,
+      "channel": 3,
+      "rj45": 0
+    },
+    {
+      "logical": 10,
+      "slot": 7,
+      "channel": 5,
+      "rj45": 1
+    },
+    {
+      "logical": 11,
+      "slot": 7,
+      "channel": 7,
+      "rj45": 1
+    },
+    {
+      "logical": 12,
+      "slot": 7,
+      "channel": 9,
+      "rj45": 2
+    },
+    {
+      "logical": 13,
+      "slot": 7,
+      "channel": 11,
+      "rj45": 2
+    },
+    {
+      "logical": 14,
+      "slot": 7,
+      "channel": 13,
+      "rj45": 3
+    },
+    {
+      "logical": 15,
+      "slot": 7,
+      "channel": 15,
+      "rj45": 3
+    }
+  ],
+  "initial_status": {
+    "raw": 5,
+    "ready": true,
+    "busy": false,
+    "valid": true,
+    "fault": false,
+    "command_error": false,
+    "pattern_error": false,
+    "pending": false,
+    "active_bank": 0,
+    "output_mask": 0,
+    "enabled": false,
+    "slot": 0
+  },
+  "capture_download_seconds": [
+    0.0185161461122334,
+    0.030045036925002933,
+    0.02966778795234859,
+    0.02309146081097424,
+    0.022490606177598238,
+    0.017088022083044052,
+    0.014980660052970052,
+    0.017721769865602255,
+    0.014995934907346964,
+    0.02928291796706617,
+    0.029060293920338154,
+    0.01826221588999033,
+    0.017519034910947084,
+    0.015898076817393303,
+    0.01489248895086348,
+    0.016939868917688727,
+    0.01580476900562644,
+    0.022674208041280508,
+    0.02407080912962556,
+    0.015219691907986999,
+    0.024605836952105165,
+    0.015246568014845252,
+    0.040902688866481185
+  ],
+  "result": {
+    "restore_code": 0,
+    "restoration_attempted": true,
+    "zero_baseline_established": true,
+    "baseline": {
+      "8": {
+        "mean_bin": 8.0,
+        "spread_bins": 0.0,
+        "occupied_span_bins": 0.0,
+        "rising_edges": 682,
+        "period_bins": 48,
+        "period_ns": 50.0,
+        "mean_ns": 8.333333333333334,
+        "histogram": {
+          "8": 682
+        },
+        "reference_histogram": {
+          "8": 682
+        },
+        "interval_histogram": {
+          "48": 681
+        },
+        "unexpected_interval_fraction": 0.0,
+        "edge_count_ratio": 0.9992673992673993,
+        "sample_ps": 1041.6666666666667,
+        "estimator": "occupancy-weighted mean after circular unwrapping around histogram mode",
+        "uncertainty": "Not calibrated; no sqrt(N) error bar from correlated edges",
+        "slot": 7,
+        "channel": 1,
+        "logical": 8
+      },
+      "9": {
+        "mean_bin": 31.026354319180086,
+        "spread_bins": 0.16018666935997483,
+        "occupied_span_bins": 1.0,
+        "rising_edges": 683,
+        "period_bins": 48,
+        "period_ns": 50.0,
+        "mean_ns": 32.319119082479254,
+        "histogram": {
+          "31": 665,
+          "32": 18
+        },
+        "reference_histogram": {
+          "7": 665,
+          "8": 18
+        },
+        "interval_histogram": {
+          "47": 10,
+          "48": 662,
+          "49": 10
+        },
+        "unexpected_interval_fraction": 0.0,
+        "edge_count_ratio": 1.0007326007326007,
+        "sample_ps": 1041.6666666666667,
+        "estimator": "occupancy-weighted mean after circular unwrapping around histogram mode",
+        "uncertainty": "Not calibrated; no sqrt(N) error bar from correlated edges",
+        "slot": 7,
+        "channel": 3,
+        "logical": 9
+      }
+    },
+    "restore_command_accepted": true,
+    "restored": {
+      "8": {
+        "mean_bin": 8.0,
+        "spread_bins": 0.0,
+        "occupied_span_bins": 0.0,
+        "rising_edges": 683,
+        "period_bins": 48,
+        "period_ns": 50.0,
+        "mean_ns": 8.333333333333334,
+        "histogram": {
+          "8": 683
+        },
+        "reference_histogram": {
+          "8": 683
+        },
+        "interval_histogram": {
+          "48": 682
+        },
+        "unexpected_interval_fraction": 0.0,
+        "edge_count_ratio": 1.0007326007326007,
+        "sample_ps": 1041.6666666666667,
+        "estimator": "occupancy-weighted mean after circular unwrapping around histogram mode",
+        "uncertainty": "Not calibrated; no sqrt(N) error bar from correlated edges",
+        "slot": 7,
+        "channel": 1,
+        "logical": 8
+      },
+      "9": {
+        "mean_bin": 31.085043988269796,
+        "spread_bins": 0.2789471425359323,
+        "occupied_span_bins": 1.0,
+        "rising_edges": 682,
+        "period_bins": 48,
+        "period_ns": 50.0,
+        "mean_ns": 32.380254154447705,
+        "histogram": {
+          "31": 624,
+          "32": 58
+        },
+        "reference_histogram": {
+          "7": 624,
+          "8": 58
+        },
+        "interval_histogram": {
+          "47": 23,
+          "48": 634,
+          "49": 24
+        },
+        "unexpected_interval_fraction": 0.0,
+        "edge_count_ratio": 0.9992673992673993,
+        "sample_ps": 1041.6666666666667,
+        "estimator": "occupancy-weighted mean after circular unwrapping around histogram mode",
+        "uncertainty": "Not calibrated; no sqrt(N) error bar from correlated edges",
+        "slot": 7,
+        "channel": 3,
+        "logical": 9
+      }
+    },
+    "restore_phase_deltas_bins": {
+      "8": 0.0,
+      "9": 0.058689669089709184
+    },
+    "restore_phase_check": true
+  },
+  "final_status": {
+    "raw": 5,
+    "ready": true,
+    "busy": false,
+    "valid": true,
+    "fault": false,
+    "command_error": false,
+    "pattern_error": false,
+    "pending": false,
+    "active_bank": 0,
+    "output_mask": 0,
+    "enabled": false,
+    "slot": 0
+  }
+}

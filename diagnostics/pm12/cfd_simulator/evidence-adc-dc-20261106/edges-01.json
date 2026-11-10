@@ -1,0 +1,1921 @@
+{
+  "channel": 12,
+  "common_mode_v": 1.0,
+  "max_pin_voltage_v": 3.3,
+  "measurements": [
+    {
+      "generation": 225,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": 2047,
+      "raw_mean": 4095,
+      "raw_median": 4095.0,
+      "raw_std": 0.0,
+      "signed_mean": -1,
+      "signed_median": -1.0,
+      "signed_std": 0.0,
+      "minimum": 4095,
+      "maximum": 4095,
+      "histogram": {
+        "4095": 1022
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": -1.2,
+      "ch0_setpoint_v": 0.4,
+      "ch1_setpoint_v": 1.6
+    },
+    {
+      "generation": 226,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": 2047,
+      "raw_mean": 4095,
+      "raw_median": 4095.0,
+      "raw_std": 0.0,
+      "signed_mean": -1,
+      "signed_median": -1.0,
+      "signed_std": 0.0,
+      "minimum": 4095,
+      "maximum": 4095,
+      "histogram": {
+        "4095": 1022
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": -1.16,
+      "ch0_setpoint_v": 0.42000000000000004,
+      "ch1_setpoint_v": 1.58
+    },
+    {
+      "generation": 227,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": 2045.6497064579257,
+      "raw_mean": 4093.6497064579257,
+      "raw_median": 4095.0,
+      "raw_std": 2.5235863710501523,
+      "signed_mean": -2.350293542074364,
+      "signed_median": -1.0,
+      "signed_std": 2.5235863710501523,
+      "minimum": 4085,
+      "maximum": 4095,
+      "histogram": {
+        "4085": 3,
+        "4086": 35,
+        "4087": 20,
+        "4088": 3,
+        "4089": 2,
+        "4090": 74,
+        "4091": 118,
+        "4095": 767
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": -1.12,
+      "ch0_setpoint_v": 0.43999999999999995,
+      "ch1_setpoint_v": 1.56
+    },
+    {
+      "generation": 228,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": 2028.6771037181998,
+      "raw_mean": 4076.6771037181998,
+      "raw_median": 4077.0,
+      "raw_std": 15.61772552312472,
+      "signed_mean": -19.322896281800393,
+      "signed_median": -19.0,
+      "signed_std": 15.61772552312472,
+      "minimum": 4050,
+      "maximum": 4095,
+      "histogram": {
+        "4050": 62,
+        "4051": 16,
+        "4052": 5,
+        "4053": 13,
+        "4054": 140,
+        "4055": 20,
+        "4071": 10,
+        "4072": 60,
+        "4073": 9,
+        "4074": 3,
+        "4075": 10,
+        "4076": 139,
+        "4077": 25,
+        "4080": 3,
+        "4081": 52,
+        "4082": 21,
+        "4083": 5,
+        "4084": 4,
+        "4085": 80,
+        "4086": 89,
+        "4087": 1,
+        "4095": 255
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": -1.1,
+      "ch0_setpoint_v": 0.44999999999999996,
+      "ch1_setpoint_v": 1.55
+    },
+    {
+      "generation": 229,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": 2001.1545988258317,
+      "raw_mean": 4049.1545988258317,
+      "raw_median": 4040.0,
+      "raw_std": 28.441507480007825,
+      "signed_mean": -46.845401174168295,
+      "signed_median": -56.0,
+      "signed_std": 28.441507480007825,
+      "minimum": 4013,
+      "maximum": 4095,
+      "histogram": {
+        "4013": 26,
+        "4014": 46,
+        "4015": 5,
+        "4016": 3,
+        "4017": 51,
+        "4018": 115,
+        "4019": 10,
+        "4034": 3,
+        "4035": 48,
+        "4036": 24,
+        "4037": 3,
+        "4038": 5,
+        "4039": 122,
+        "4040": 51,
+        "4044": 12,
+        "4045": 50,
+        "4046": 13,
+        "4047": 4,
+        "4048": 10,
+        "4049": 126,
+        "4050": 40,
+        "4092": 35,
+        "4093": 36,
+        "4094": 7,
+        "4095": 177
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": -1.08,
+      "ch0_setpoint_v": 0.45999999999999996,
+      "ch1_setpoint_v": 1.54
+    },
+    {
+      "generation": 230,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": 1929.5156555772996,
+      "raw_mean": 3977.5156555772996,
+      "raw_median": 3969.0,
+      "raw_std": 28.683802364963622,
+      "signed_mean": -118.48434442270059,
+      "signed_median": -127.0,
+      "signed_std": 28.683802364963622,
+      "minimum": 3940,
+      "maximum": 4026,
+      "histogram": {
+        "3968": 30,
+        "3969": 2,
+        "3972": 9,
+        "3973": 21,
+        "3974": 15,
+        "3975": 4,
+        "3976": 50,
+        "3977": 117,
+        "3978": 38,
+        "3979": 1,
+        "4019": 14,
+        "4020": 20,
+        "4021": 12,
+        "4022": 6,
+        "4023": 61,
+        "4024": 115,
+        "4025": 26,
+        "4026": 1,
+        "3940": 3,
+        "3941": 14,
+        "3942": 21,
+        "3943": 10,
+        "3944": 13,
+        "3945": 105,
+        "3946": 80,
+        "3947": 9,
+        "3948": 1,
+        "3962": 13,
+        "3963": 19,
+        "3964": 14,
+        "3965": 10,
+        "3966": 48,
+        "3967": 120
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": -1.04,
+      "ch0_setpoint_v": 0.48,
+      "ch1_setpoint_v": 1.52
+    },
+    {
+      "generation": 231,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": -1922.2455968688846,
+      "raw_mean": 125.75440313111547,
+      "raw_median": 122.0,
+      "raw_std": 14.148062288611003,
+      "signed_mean": 125.75440313111547,
+      "signed_median": 122.0,
+      "signed_std": 14.148062288611003,
+      "minimum": 104,
+      "maximum": 144,
+      "histogram": {
+        "136": 2,
+        "137": 80,
+        "138": 206,
+        "139": 52,
+        "140": 12,
+        "141": 67,
+        "142": 84,
+        "143": 6,
+        "144": 1,
+        "104": 13,
+        "105": 143,
+        "106": 14,
+        "107": 3,
+        "108": 20,
+        "109": 59,
+        "110": 4,
+        "116": 3,
+        "117": 96,
+        "118": 70,
+        "119": 5,
+        "120": 6,
+        "121": 54,
+        "122": 22
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": 1.04,
+      "ch0_setpoint_v": 1.52,
+      "ch1_setpoint_v": 0.48
+    },
+    {
+      "generation": 232,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": -1994.4334637964776,
+      "raw_mean": 53.5665362035225,
+      "raw_median": 64.0,
+      "raw_std": 14.165881102671651,
+      "signed_mean": 53.5665362035225,
+      "signed_median": 64.0,
+      "signed_std": 14.165881102671651,
+      "minimum": 31,
+      "maximum": 71,
+      "histogram": {
+        "31": 2,
+        "32": 110,
+        "33": 57,
+        "34": 3,
+        "35": 6,
+        "36": 28,
+        "37": 48,
+        "38": 1,
+        "45": 69,
+        "46": 96,
+        "47": 7,
+        "48": 3,
+        "49": 33,
+        "50": 46,
+        "51": 1,
+        "64": 6,
+        "65": 184,
+        "66": 150,
+        "67": 6,
+        "68": 11,
+        "69": 62,
+        "70": 89,
+        "71": 4
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": 1.08,
+      "ch0_setpoint_v": 1.54,
+      "ch1_setpoint_v": 0.45999999999999996
+    },
+    {
+      "generation": 233,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": -2030.2123287671234,
+      "raw_mean": 17.78767123287671,
+      "raw_median": 27.0,
+      "raw_std": 12.861862976815525,
+      "signed_mean": 17.78767123287671,
+      "signed_median": 27.0,
+      "signed_std": 12.861862976815525,
+      "minimum": 0,
+      "maximum": 34,
+      "histogram": {
+        "32": 32,
+        "33": 69,
+        "0": 236,
+        "1": 19,
+        "34": 26,
+        "9": 11,
+        "10": 133,
+        "11": 43,
+        "12": 5,
+        "13": 9,
+        "14": 42,
+        "15": 12,
+        "27": 2,
+        "28": 127,
+        "29": 167,
+        "30": 84,
+        "31": 5
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": 1.1,
+      "ch0_setpoint_v": 1.55,
+      "ch1_setpoint_v": 0.44999999999999996
+    },
+    {
+      "generation": 234,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": -2048,
+      "raw_mean": 0,
+      "raw_median": 0.0,
+      "raw_std": 0.0,
+      "signed_mean": 0,
+      "signed_median": 0.0,
+      "signed_std": 0.0,
+      "minimum": 0,
+      "maximum": 0,
+      "histogram": {
+        "0": 1022
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": 1.12,
+      "ch0_setpoint_v": 1.56,
+      "ch1_setpoint_v": 0.43999999999999995
+    },
+    {
+      "generation": 235,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": -2048,
+      "raw_mean": 0,
+      "raw_median": 0.0,
+      "raw_std": 0.0,
+      "signed_mean": 0,
+      "signed_median": 0.0,
+      "signed_std": 0.0,
+      "minimum": 0,
+      "maximum": 0,
+      "histogram": {
+        "0": 1022
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": 1.16,
+      "ch0_setpoint_v": 1.58,
+      "ch1_setpoint_v": 0.42000000000000004
+    },
+    {
+      "generation": 236,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": -2048,
+      "raw_mean": 0,
+      "raw_median": 0.0,
+      "raw_std": 0.0,
+      "signed_mean": 0,
+      "signed_median": 0.0,
+      "signed_std": 0.0,
+      "minimum": 0,
+      "maximum": 0,
+      "histogram": {
+        "0": 1022
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": 1.2,
+      "ch0_setpoint_v": 1.6,
+      "ch1_setpoint_v": 0.4
+    },
+    {
+      "generation": 237,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": 2047,
+      "raw_mean": 4095,
+      "raw_median": 4095.0,
+      "raw_std": 0.0,
+      "signed_mean": -1,
+      "signed_median": -1.0,
+      "signed_std": 0.0,
+      "minimum": 4095,
+      "maximum": 4095,
+      "histogram": {
+        "4095": 1022
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": -1.2,
+      "ch0_setpoint_v": 0.4,
+      "ch1_setpoint_v": 1.6
+    },
+    {
+      "generation": 238,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": 2047,
+      "raw_mean": 4095,
+      "raw_median": 4095.0,
+      "raw_std": 0.0,
+      "signed_mean": -1,
+      "signed_median": -1.0,
+      "signed_std": 0.0,
+      "minimum": 4095,
+      "maximum": 4095,
+      "histogram": {
+        "4095": 1022
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": -1.16,
+      "ch0_setpoint_v": 0.42000000000000004,
+      "ch1_setpoint_v": 1.58
+    },
+    {
+      "generation": 239,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": 2047,
+      "raw_mean": 4095,
+      "raw_median": 4095.0,
+      "raw_std": 0.0,
+      "signed_mean": -1,
+      "signed_median": -1.0,
+      "signed_std": 0.0,
+      "minimum": 4095,
+      "maximum": 4095,
+      "histogram": {
+        "4095": 1022
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": -1.12,
+      "ch0_setpoint_v": 0.43999999999999995,
+      "ch1_setpoint_v": 1.56
+    },
+    {
+      "generation": 240,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": 2034.450097847358,
+      "raw_mean": 4082.450097847358,
+      "raw_median": 4089.0,
+      "raw_std": 13.557623449955312,
+      "signed_mean": -13.549902152641879,
+      "signed_median": -7.0,
+      "signed_std": 13.557623449955312,
+      "minimum": 4058,
+      "maximum": 4095,
+      "histogram": {
+        "4058": 26,
+        "4059": 49,
+        "4060": 5,
+        "4061": 18,
+        "4062": 128,
+        "4063": 29,
+        "4077": 2,
+        "4078": 48,
+        "4079": 28,
+        "4080": 2,
+        "4081": 9,
+        "4082": 143,
+        "4083": 23,
+        "4089": 16,
+        "4090": 59,
+        "4091": 5,
+        "4092": 1,
+        "4093": 11,
+        "4094": 134,
+        "4095": 286
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": -1.1,
+      "ch0_setpoint_v": 0.44999999999999996,
+      "ch1_setpoint_v": 1.55
+    },
+    {
+      "generation": 241,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": 2006.861056751468,
+      "raw_mean": 4054.861056751468,
+      "raw_median": 4046.0,
+      "raw_std": 25.228122995603922,
+      "signed_mean": -41.13894324853229,
+      "signed_median": -50.0,
+      "signed_std": 25.228122995603922,
+      "minimum": 4021,
+      "maximum": 4095,
+      "histogram": {
+        "4021": 1,
+        "4022": 46,
+        "4023": 27,
+        "4024": 6,
+        "4025": 5,
+        "4026": 102,
+        "4027": 69,
+        "4041": 46,
+        "4042": 28,
+        "4043": 5,
+        "4044": 3,
+        "4045": 83,
+        "4046": 91,
+        "4052": 2,
+        "4053": 44,
+        "4054": 28,
+        "4055": 7,
+        "4056": 2,
+        "4057": 108,
+        "4058": 64,
+        "4091": 15,
+        "4092": 51,
+        "4093": 10,
+        "4094": 5,
+        "4095": 174
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": -1.08,
+      "ch0_setpoint_v": 0.45999999999999996,
+      "ch1_setpoint_v": 1.54
+    },
+    {
+      "generation": 242,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": 1934.7084148727986,
+      "raw_mean": 3982.7084148727986,
+      "raw_median": 3980.0,
+      "raw_std": 25.34241256067376,
+      "signed_mean": -113.29158512720157,
+      "signed_median": -116.0,
+      "signed_std": 25.34241256067376,
+      "minimum": 3949,
+      "maximum": 4024,
+      "histogram": {
+        "3968": 13,
+        "3969": 56,
+        "3970": 11,
+        "3971": 3,
+        "3972": 9,
+        "3973": 143,
+        "3974": 20,
+        "3980": 2,
+        "3981": 51,
+        "3982": 24,
+        "3983": 4,
+        "3984": 6,
+        "3985": 124,
+        "3986": 45,
+        "4018": 6,
+        "4019": 45,
+        "4020": 25,
+        "4021": 5,
+        "4022": 11,
+        "4023": 113,
+        "4024": 51,
+        "3949": 4,
+        "3950": 46,
+        "3951": 28,
+        "3952": 4,
+        "3953": 11,
+        "3954": 133,
+        "3955": 29
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": -1.04,
+      "ch0_setpoint_v": 0.48,
+      "ch1_setpoint_v": 1.52
+    },
+    {
+      "generation": 243,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": -1918.381604696673,
+      "raw_mean": 129.61839530332682,
+      "raw_median": 129.0,
+      "raw_std": 14.221038622383126,
+      "signed_mean": 129.61839530332682,
+      "signed_median": 129.0,
+      "signed_std": 14.221038622383126,
+      "minimum": 106,
+      "maximum": 150,
+      "histogram": {
+        "128": 52,
+        "129": 11,
+        "135": 19,
+        "136": 92,
+        "137": 58,
+        "138": 5,
+        "139": 19,
+        "140": 28,
+        "141": 30,
+        "142": 4,
+        "144": 6,
+        "145": 96,
+        "146": 70,
+        "147": 2,
+        "148": 6,
+        "149": 44,
+        "150": 31,
+        "106": 1,
+        "107": 50,
+        "108": 112,
+        "109": 12,
+        "110": 2,
+        "111": 21,
+        "112": 52,
+        "113": 6,
+        "123": 13,
+        "124": 117,
+        "125": 43,
+        "126": 4,
+        "127": 16
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": 1.04,
+      "ch0_setpoint_v": 1.52,
+      "ch1_setpoint_v": 0.48
+    },
+    {
+      "generation": 244,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": -1991.6311154598825,
+      "raw_mean": 56.36888454011741,
+      "raw_median": 57.0,
+      "raw_std": 14.30934207347459,
+      "signed_mean": 56.36888454011741,
+      "signed_median": 57.0,
+      "signed_std": 14.30934207347459,
+      "minimum": 33,
+      "maximum": 78,
+      "histogram": {
+        "33": 22,
+        "34": 143,
+        "35": 13,
+        "36": 1,
+        "37": 4,
+        "38": 18,
+        "39": 49,
+        "40": 6,
+        "50": 1,
+        "51": 75,
+        "52": 102,
+        "53": 2,
+        "54": 2,
+        "55": 14,
+        "56": 52,
+        "57": 8,
+        "61": 5,
+        "62": 80,
+        "63": 86,
+        "64": 8,
+        "65": 2,
+        "66": 13,
+        "67": 39,
+        "68": 20,
+        "69": 2,
+        "71": 25,
+        "72": 135,
+        "73": 18,
+        "74": 2,
+        "75": 2,
+        "76": 16,
+        "77": 47,
+        "78": 10
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": 1.08,
+      "ch0_setpoint_v": 1.54,
+      "ch1_setpoint_v": 0.45999999999999996
+    },
+    {
+      "generation": 245,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": -2027.858121330724,
+      "raw_mean": 20.14187866927593,
+      "raw_median": 21.0,
+      "raw_std": 13.614428701845949,
+      "signed_mean": 20.14187866927593,
+      "signed_median": 21.0,
+      "signed_std": 13.614428701845949,
+      "minimum": 0,
+      "maximum": 42,
+      "histogram": {
+        "0": 214,
+        "1": 5,
+        "2": 24,
+        "3": 13,
+        "15": 53,
+        "16": 151,
+        "17": 8,
+        "18": 2,
+        "19": 10,
+        "20": 30,
+        "21": 2,
+        "25": 15,
+        "26": 138,
+        "27": 58,
+        "28": 3,
+        "29": 5,
+        "30": 12,
+        "31": 24,
+        "35": 15,
+        "36": 140,
+        "37": 55,
+        "38": 3,
+        "39": 4,
+        "40": 13,
+        "41": 24,
+        "42": 1
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": 1.1,
+      "ch0_setpoint_v": 1.55,
+      "ch1_setpoint_v": 0.44999999999999996
+    },
+    {
+      "generation": 246,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": -2047.5538160469666,
+      "raw_mean": 0.4461839530332681,
+      "raw_median": 0.0,
+      "raw_std": 1.2428032031571692,
+      "signed_mean": 0.4461839530332681,
+      "signed_median": 0.0,
+      "signed_std": 1.2428032031571692,
+      "minimum": 0,
+      "maximum": 6,
+      "histogram": {
+        "0": 850,
+        "1": 91,
+        "2": 2,
+        "3": 5,
+        "4": 26,
+        "5": 46,
+        "6": 2
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": 1.12,
+      "ch0_setpoint_v": 1.56,
+      "ch1_setpoint_v": 0.43999999999999995
+    },
+    {
+      "generation": 247,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": -2048,
+      "raw_mean": 0,
+      "raw_median": 0.0,
+      "raw_std": 0.0,
+      "signed_mean": 0,
+      "signed_median": 0.0,
+      "signed_std": 0.0,
+      "minimum": 0,
+      "maximum": 0,
+      "histogram": {
+        "0": 1022
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": 1.16,
+      "ch0_setpoint_v": 1.58,
+      "ch1_setpoint_v": 0.42000000000000004
+    },
+    {
+      "generation": 248,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": -2048,
+      "raw_mean": 0,
+      "raw_median": 0.0,
+      "raw_std": 0.0,
+      "signed_mean": 0,
+      "signed_median": 0.0,
+      "signed_std": 0.0,
+      "minimum": 0,
+      "maximum": 0,
+      "histogram": {
+        "0": 1022
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": 1.2,
+      "ch0_setpoint_v": 1.6,
+      "ch1_setpoint_v": 0.4
+    }
+  ],
+  "dac_initial_setpoints": [
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "pgood": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=89000001000000A100740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=89000001000000C002740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=89000001000000F700740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=890000010000001503740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2109
+    }
+  ],
+  "identity": {
+    "command": "RS",
+    "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.2 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+    "duration_s": 0.2108
+  },
+  "mcp_original": {
+    "0": 112,
+    "1": 31,
+    "20": 142,
+    "21": 192
+  },
+  "baseline_setpoints": [
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "mcp_final": {
+    "0": 112,
+    "1": 31,
+    "18": 174,
+    "19": 192,
+    "20": 142,
+    "21": 192
+  },
+  "dac_final_setpoints": [
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "pgood_final": {
+    "command": "@HW",
+    "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=890000010000004800750103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+    "duration_s": 0.2108
+  },
+  "tca_final": {
+    "112": 0,
+    "113": 0
+  },
+  "i2c_commands": [
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C W 70 00",
+      "reply": "I2C ADDR=70 TX=00 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2109
+    },
+    {
+      "command": "@I2C W 71 00",
+      "reply": "I2C ADDR=71 TX=00 RX=\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 71 08",
+      "reply": "I2C ADDR=71 TX=08 RX=\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=08\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 0A",
+      "reply": "I2C ADDR=20 TX=0A RX=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 0B",
+      "reply": "I2C ADDR=20 TX=0B RX=00\r\n",
+      "duration_s": 0.2106
+    },
+    {
+      "command": "@I2C WR 20 01 00",
+      "reply": "I2C ADDR=20 TX=00 RX=70\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 01",
+      "reply": "I2C ADDR=20 TX=01 RX=1F\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 14",
+      "reply": "I2C ADDR=20 TX=14 RX=8E\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=C0\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2106
+    },
+    {
+      "command": "@I2C W 20 01 1F",
+      "reply": "I2C ADDR=20 TX=011F RX=\r\n",
+      "duration_s": 0.2106
+    },
+    {
+      "command": "@I2C WR 20 01 01",
+      "reply": "I2C ADDR=20 TX=01 RX=1F\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 20 14 8E",
+      "reply": "I2C ADDR=20 TX=148E RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 14",
+      "reply": "I2C ADDR=20 TX=14 RX=8E\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C W 20 00 70",
+      "reply": "I2C ADDR=20 TX=0070 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 00",
+      "reply": "I2C ADDR=20 TX=00 RX=70\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 01",
+      "reply": "I2C ADDR=20 TX=01 RX=1F\r\n",
+      "duration_s": 0.2106
+    },
+    {
+      "command": "@I2C W 20 01 1F",
+      "reply": "I2C ADDR=20 TX=011F RX=\r\n",
+      "duration_s": 0.2106
+    },
+    {
+      "command": "@I2C WR 20 01 01",
+      "reply": "I2C ADDR=20 TX=01 RX=1F\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2106
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 20 15 C0",
+      "reply": "I2C ADDR=20 TX=15C0 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=C0\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=C0\r\n",
+      "duration_s": 0.2106
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2106
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 20 15 20",
+      "reply": "I2C ADDR=20 TX=1520 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=20\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 20 15 00",
+      "reply": "I2C ADDR=20 TX=1500 RX=\r\n",
+      "duration_s": 0.2106
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=00\r\n",
+      "duration_s": 0.2106
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 20 15 20",
+      "reply": "I2C ADDR=20 TX=1520 RX=\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=20\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=20\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C W 20 15 C0",
+      "reply": "I2C ADDR=20 TX=15C0 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=C0\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 00",
+      "reply": "I2C ADDR=20 TX=00 RX=70\r\n",
+      "duration_s": 0.2109
+    },
+    {
+      "command": "@I2C WR 20 01 01",
+      "reply": "I2C ADDR=20 TX=01 RX=1F\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 12",
+      "reply": "I2C ADDR=20 TX=12 RX=AE\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 13",
+      "reply": "I2C ADDR=20 TX=13 RX=C0\r\n",
+      "duration_s": 0.2109
+    },
+    {
+      "command": "@I2C WR 20 01 14",
+      "reply": "I2C ADDR=20 TX=14 RX=8E\r\n",
+      "duration_s": 0.2109
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=C0\r\n",
+      "duration_s": 0.2109
+    },
+    {
+      "command": "@I2C W 70 00",
+      "reply": "I2C ADDR=70 TX=00 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C W 71 00",
+      "reply": "I2C ADDR=71 TX=00 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C W 70 00",
+      "reply": "I2C ADDR=70 TX=00 RX=\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 71 00",
+      "reply": "I2C ADDR=71 TX=00 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2109
+    }
+  ],
+  "scpi_commands": [
+    {
+      "command": "*IDN?",
+      "reply": "MODULIQ,MOD-DAC-28,FIT-CTRL-6825DD4C49E4,1.0"
+    },
+    {
+      "command": "STAT:READ?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:PROJ?",
+      "reply": "28"
+    },
+    {
+      "command": "SYST:REV?",
+      "reply": "16"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:TWO:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:THR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FOUR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FIVE:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SIX:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SEV:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:TWO:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:THR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FOUR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FIVE:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SIX:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SEV:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.400000006"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.6000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.60000002"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4200"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.419999987"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.5800"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.58000004"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4400"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.439999998"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.5600"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.55999994"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4500"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.449999988"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.5500"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.54999995"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4600"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.460000008"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.5400"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.53999996"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4800"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.479999989"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.5200"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.51999998"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.5200"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.51999998"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4800"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.479999989"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.5400"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.53999996"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4600"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.460000008"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.5500"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.54999995"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4500"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.449999988"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.5600"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.55999994"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4400"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.439999998"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.5800"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.58000004"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4200"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.419999987"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.6000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.60000002"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.400000006"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.400000006"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.6000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.60000002"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4200"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.419999987"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.5800"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.58000004"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4400"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.439999998"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.5600"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.55999994"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4500"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.449999988"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.5500"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.54999995"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4600"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.460000008"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.5400"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.53999996"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 0.4800"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "0.479999989"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.5200"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1.51999998"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.5200"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.51999998"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4800"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.479999989"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.5400"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.53999996"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4600"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.460000008"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.5500"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.54999995"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4500"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.449999988"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.5600"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.55999994"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4400"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.439999998"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.5800"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.58000004"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4200"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.419999987"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.6000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1.60000002"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 0.4000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "0.400000006"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:TWO:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:THR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FOUR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FIVE:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SIX:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SEV:VOLT?",
+      "reply": "0"
+    }
+  ],
+  "pass": true
+}

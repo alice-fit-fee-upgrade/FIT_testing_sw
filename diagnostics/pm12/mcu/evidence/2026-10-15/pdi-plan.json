@@ -1,0 +1,48 @@
+{
+  "programmer": "atmelice_pdi",
+  "serial": "J41800043065",
+  "part": "x128a3u",
+  "expected_signature": "1e9742",
+  "bitclock_us": 10,
+  "locks": [
+    "/home/codex-hil/.cache/pm12-210249A73E43.lock",
+    "/home/codex-hil/.cache/atmel-ice-J41800043065.lock"
+  ],
+  "backups_before_write": [
+    "flash",
+    "eeprom",
+    "fuse0",
+    "fuse1",
+    "fuse2",
+    "fuse4",
+    "fuse5",
+    "lock",
+    "usersig",
+    "prodsig",
+    "signature"
+  ],
+  "write_memory": "application only, all HEX addresses below0x20000",
+  "erase_policy": "Use AVRDUDE6.3 default Xmega per-page erase. NO -e; NO -D (disables per-page erase and may prevent required0->1 changes). Callback and source checked. NO chip erase.",
+  "verify_after_write": [
+    "Written application bytes",
+    "Entire boot0x20000..0x21fff byte-identical",
+    "Entire EEPROM byte-identical",
+    "Fuses,lock,usersig,prodsig unchanged",
+    "Unmodified application bytes preserved except reviewed extension/reserved window",
+    "UART PING/HELP/HW/PGTIME/TEMP/TDC/PLL plus legacy RS",
+    "FPGA SPI identity/32walkingbits/restoration withmatchingSRAMimage"
+  ],
+  "reference_source": "https://github.com/avrdudes/avrdude/tree/v6.3",
+  "source_audit": {
+    "main.c": "5d0b8d8cd785d3a08637ef81a2e2e786dd25f960cd856f79b081e2778b464347",
+    "avr.c": "ad9c542f1d510d3ec7fb1407964182f156629064ea644e2665b3a439528a1ec3",
+    "jtag3.c": "31ca65d1671ef11273a1a67b32f0fd18e963e8bceb766771c716f9665a135e2a"
+  },
+  "execution": "NOT_RUN, pending USB permission",
+  "source_audit_details": {
+    "main.c:1159": "For Xmega PDI + page_erase callback retain UF_AUTO_ERASE and do not enter chip-erase branch.",
+    "avr.c:934": "For each affected page, auto_erase calls pgm->page_erase before paged_write.",
+    "jtag3.c:1449": "application memory falls through to XMEGA_ERASE_APP_PAGE; boot/eeprom/usersig have separate selectors.",
+    "operation": "Use application:w (not flash:w), normal auto-erase, no -D/no -e/no -F, and disable legacy fuse rescue with -u. Verify all protected regions from physical backups."
+  }
+}

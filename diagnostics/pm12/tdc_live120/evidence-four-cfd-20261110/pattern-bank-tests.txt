@@ -1,0 +1,2 @@
+DOUBLE_BANK_PATTERN_UPDATE_PASS: 204 commits, all ports, rising/falling phase sweeps byte-exact
+LEGACY_ROUTE_GUARD_PASS: initialize on port0; reject stale route before enabling

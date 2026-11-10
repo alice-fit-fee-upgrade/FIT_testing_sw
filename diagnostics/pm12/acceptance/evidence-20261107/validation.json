@@ -1,0 +1,80 @@
+{
+  "schema": 1,
+  "date": "2026-11-07",
+  "overall_acceptance": "NOT_RELEASED",
+  "board_uid": "PM12-K7-3A17A1B402212223",
+  "eeprom_serial": "1803",
+  "factory_identity": "Read-only Vivado FUSE_DNA; raw log retained",
+  "resident_sequential_plan": "PASS:identity,mcu,integrated,gate-phase,adc-lines channel12 A/B257points",
+  "boundary": {
+    "gateware_links": 168,
+    "boundary_links": 168,
+    "verdict": "PASS",
+    "restoration": "PASS integrated bit SHA verified; private link reinitialized",
+    "post_restore_hdmi_adc_tdc": "PASS broad functional check"
+  },
+  "post_restore_strict_adc_guard": {
+    "verdict": "FAIL",
+    "reproduced": true,
+    "first_interval_counts": {
+      "3": 6,
+      "4": 1011,
+      "5": 6
+    },
+    "second_interval_counts": {
+      "3": 12,
+      "4": 1000,
+      "5": 11
+    },
+    "cause": "NOT_ESTABLISHED",
+    "threshold_relaxed": false
+  },
+  "final_state": {
+    "fpga": "Integrated c7c42d28 in SRAM",
+    "mcu_cpld_flash_programmed": false,
+    "dac_pair": [
+      0,
+      1
+    ],
+    "dac_setpoints_v": [
+      1,
+      1
+    ],
+    "dac_other_outputs_v": [
+      0,
+      0,
+      0,
+      0,
+      0,
+      0
+    ],
+    "monitor": "Inhibited; GPIO restored after failed probe",
+    "tdc": "Quiet frozen from post-restore suite",
+    "adc": "Rejected raw capture retained; no claim of clean STR after reconfiguration",
+    "leases": "Released"
+  },
+  "software_tests": {
+    "acceptance": 11,
+    "cfd": 35,
+    "jtag_parsers": 5,
+    "verdict": "PASS"
+  },
+  "report_engine": "Tectonic0.15.0, actual LaTeX compilation",
+  "historical_pdf_pages": 212,
+  "live_cfd_pdf": "Actual sequential resident run with factory UID; only channel12 analog",
+  "scope_limits": [
+    "Historical report is multi-date evidence, not a fresh acceptance certificate",
+    "Only channel12 analog physically qualified, before reconfiguration timing finding",
+    "Pair selection across56ordered pairs software-tested; physical stimulus pair0/1 only",
+    "No photos supplied; tester module factory IDs other than DUT not read",
+    "Legacy exact1G/I2C-topology/config-flash/DMM transitions and power fault tests not integrated into automatic acceptance",
+    "Configured image hashes are qualified artifact identifiers, not a cryptographic FPGA readback",
+    "Standalone boundary adapter qualified; complete acceptance.json composition was not run as one command"
+  ],
+  "published_source_changes_after_resident_run": [
+    "Added selected DAC pair parameters; default0/1 unchanged. All56ordered pairs checked with software, physical default pair exercised by strict rejected probes and successful guarded baseline recovery.",
+    "Added unknown-EEPROM enrollment and stronger per-channel protocol matching. Existing1803 identity branch unchanged.",
+    "Added failure-buffer figures and preservation of edited LaTeX chapters. Actual successful and failed-run PDFs compiled from measured data."
+  ],
+  "tectonic_binary_sha256": "4df19452c202c5bef9f7c7e4a01a3f2b9d5199f0a1f73b70b4fe1bffbc9837f6"
+}

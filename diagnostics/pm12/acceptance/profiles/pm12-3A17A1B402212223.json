@@ -1,0 +1,112 @@
+{
+  "schema": 1,
+  "asset_label": "PM12-K7-3A17A1B402212223",
+  "board_serial": "1803",
+  "jtag_cable": "210249A73E43",
+  "hw_server": "localhost:3121",
+  "python": "/home/codex-hil/kasli-phase-tester/run-python",
+  "uart": "/dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0",
+  "kasli_root": "/home/codex-hil/kasli-phase-tester",
+  "console_tools": "/home/codex-hil/FIT_PM_FW_uPC/tools/hardware",
+  "stimulated_channel": 12,
+  "channels": {
+    "12": {
+      "analog_connected": true,
+      "phase_lanes": [
+        8,
+        9
+      ],
+      "dac_channels": [
+        0,
+        1
+      ]
+    }
+  },
+  "identity_leases": [
+    "atmel-ice-J41800043065",
+    "pm12-210249A73E43",
+    "kasli-diot-00001"
+  ],
+  "run_leases": [
+    "atmel-ice-J41800043065",
+    "pm12-210249A73E43",
+    "kasli-diot-00001",
+    "esp32-6825dd4c49e4",
+    "lattice-VER00001"
+  ],
+  "modules": [
+    {
+      "role": "DUT",
+      "type": "FIT PM12",
+      "eeprom_serial": "1803",
+      "hardware_uid": "PM12-K7-3A17A1B402212223",
+      "photo": null,
+      "identity_source": "Vivado FUSE_DNA read2026-11-07; EEPROM serial secondary"
+    },
+    {
+      "role": "Timing and readout",
+      "type": "Kasli-DIOT",
+      "label": "00001",
+      "hardware_uid": null,
+      "photo": null
+    },
+    {
+      "role": "LVDS stimulus/capture",
+      "type": "DIO-LVDS RJ45 slot 6",
+      "hardware_uid": null,
+      "photo": null
+    },
+    {
+      "role": "LVDS stimulus/capture",
+      "type": "DIO-LVDS RJ45 slot 7",
+      "hardware_uid": null,
+      "photo": null
+    },
+    {
+      "role": "Analog stimulus",
+      "type": "MOD-DAC-28",
+      "hardware_uid": "ESP32-MAC-6825DD4C49E4",
+      "identity_source": "SCPI IDN; base MAC, Ethernet MAC differs",
+      "photo": null
+    },
+    {
+      "role": "DC voltage measurement",
+      "type": "Keithley DMM7510",
+      "label": "04679690",
+      "hardware_uid": null,
+      "photo": null
+    },
+    {
+      "role": "Analog adapter",
+      "type": "CFD_SIM channel 12",
+      "hardware_uid": null,
+      "photo": null
+    },
+    {
+      "role": "Clock reference",
+      "type": "External LHC generator",
+      "hardware_uid": null,
+      "photo": null
+    }
+  ],
+  "measurement_configuration": {
+    "pm_bit_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+    "kasli_bit_sha256": "4299ddd3c87ccc4ad76796127de1d08d2d50943c7679555fca140b1e64261745",
+    "reference_mhz": 40.0787,
+    "kasli_reference_multiplier": 3,
+    "cpld_gate_mhz": 20,
+    "analog_common_mode_v": 1.0,
+    "dac_legs_max_v": 3.3
+  },
+  "managed_jtag": {
+    "socket": "unix:///run/user/1001/docker-vivado.sock",
+    "image": "codex-vivado-runtime:ubuntu22.04",
+    "vivado_bin": "/srv/codex-hil-data/toolchains/amd/Xilinx/2025.2/Vivado/bin"
+  },
+  "board_uid": "PM12-K7-3A17A1B402212223",
+  "boundary": {
+    "diagnostic_bit": "/home/codex-hil/fit-bringup/gateware/pm12_link_diag/build/pm12_link_diag.bit",
+    "diagnostic_sha256": "c9fbd02768ce12750dc68b8bb24c34403027a65f9e002661e29bb3d2e2df7a1a",
+    "restore_bit": "/srv/codex-hil-nvme/pm12-hdmi-integrated-20261106/pm-final-candidate/pm12_ipbus_adc.bit"
+  }
+}

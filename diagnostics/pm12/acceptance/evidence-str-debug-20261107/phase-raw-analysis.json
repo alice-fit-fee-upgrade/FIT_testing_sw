@@ -1,0 +1,774 @@
+{
+  "unique_raw_captures": 38,
+  "recorded_rows": 38,
+  "all_unique": true,
+  "status_counts": {
+    "EDGE_QUANTIZED": 11,
+    "ALIGNED": 27
+  },
+  "all_selected_words_stable": true,
+  "max_edge_phase_span_samples": 1,
+  "identity": {
+    "uid": "PM12-K7-3A17A1B402212223",
+    "fpga_dna": "3A17A1B402212223",
+    "mcu_eeprom_serial": "1803",
+    "asset_label": "PM12-K7-3A17A1B402212223",
+    "cpu_factory_id": null,
+    "cpu_factory_id_status": "NOT_READ; do not reset MCU for a PDI signature read",
+    "jtag_cable": "210249A73E43",
+    "fpga_ipbus_identity": [
+      1347228162,
+      65538,
+      3351522600
+    ],
+    "pgood": [
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000EB02740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2115
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000001F01740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2115
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000003D03740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2112
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000007301740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2115
+      }
+    ],
+    "pgood_final": {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000A303740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2115
+    },
+    "mcu_reply": {
+      "command": "RS",
+      "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.2 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+      "duration_s": 0.2116
+    },
+    "uptime_before": [
+      1550477179,
+      20
+    ],
+    "uptime_after": [
+      2238000853,
+      20
+    ],
+    "observed_utc": "2026-11-07T19:48:13Z"
+  },
+  "rows": [
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 12,
+      "raw": "gen00000649-code00000-bank1-rep99-ch12.bin",
+      "generation": 649,
+      "status": "EDGE_QUANTIZED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 531,
+        "5": 246,
+        "3": 246
+      },
+      "rising_phase_span_samples": 1,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 12,
+      "raw": "gen00000648-code00000-bank0-rep99-ch12.bin",
+      "generation": 648,
+      "status": "EDGE_QUANTIZED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 511,
+        "5": 256,
+        "3": 256
+      },
+      "rising_phase_span_samples": 1,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 8192,
+      "bank": 1,
+      "channel": 12,
+      "raw": "gen00000647-code08192-bank1-rep1-ch12.bin",
+      "generation": 647,
+      "status": "EDGE_QUANTIZED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1021,
+        "5": 1,
+        "3": 1
+      },
+      "rising_phase_span_samples": 1,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 8192,
+      "bank": 1,
+      "channel": 12,
+      "raw": "gen00000646-code08192-bank1-rep0-ch12.bin",
+      "generation": 646,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 8192,
+      "bank": 0,
+      "channel": 12,
+      "raw": "gen00000645-code08192-bank0-rep1-ch12.bin",
+      "generation": 645,
+      "status": "EDGE_QUANTIZED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1001,
+        "5": 11,
+        "3": 11
+      },
+      "rising_phase_span_samples": 1,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 8192,
+      "bank": 0,
+      "channel": 12,
+      "raw": "gen00000644-code08192-bank0-rep0-ch12.bin",
+      "generation": 644,
+      "status": "EDGE_QUANTIZED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "3": 15,
+        "4": 994,
+        "5": 14
+      },
+      "rising_phase_span_samples": 1,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 1024,
+      "bank": 1,
+      "channel": 12,
+      "raw": "gen00000643-code01024-bank1-rep1-ch12.bin",
+      "generation": 643,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 1024,
+      "bank": 1,
+      "channel": 12,
+      "raw": "gen00000642-code01024-bank1-rep0-ch12.bin",
+      "generation": 642,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 1024,
+      "bank": 0,
+      "channel": 12,
+      "raw": "gen00000641-code01024-bank0-rep1-ch12.bin",
+      "generation": 641,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 1024,
+      "bank": 0,
+      "channel": 12,
+      "raw": "gen00000640-code01024-bank0-rep0-ch12.bin",
+      "generation": 640,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 12,
+      "raw": "gen00000639-code00000-bank1-rep1-ch12.bin",
+      "generation": 639,
+      "status": "EDGE_QUANTIZED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 549,
+        "5": 237,
+        "3": 237
+      },
+      "rising_phase_span_samples": 1,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 12,
+      "raw": "gen00000638-code00000-bank1-rep0-ch12.bin",
+      "generation": 638,
+      "status": "EDGE_QUANTIZED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 573,
+        "5": 225,
+        "3": 225
+      },
+      "rising_phase_span_samples": 1,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 12,
+      "raw": "gen00000637-code00000-bank0-rep1-ch12.bin",
+      "generation": 637,
+      "status": "EDGE_QUANTIZED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 511,
+        "5": 256,
+        "3": 256
+      },
+      "rising_phase_span_samples": 1,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 12,
+      "raw": "gen00000636-code00000-bank0-rep0-ch12.bin",
+      "generation": 636,
+      "status": "EDGE_QUANTIZED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "3": 256,
+        "4": 512,
+        "5": 255
+      },
+      "rising_phase_span_samples": 1,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 12,
+      "raw": "gen00000635-code00000-bank1-rep0-ch12.bin",
+      "generation": 635,
+      "status": "EDGE_QUANTIZED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "3": 244,
+        "4": 536,
+        "5": 243
+      },
+      "rising_phase_span_samples": 1,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 11,
+      "raw": "gen00000635-code00000-bank1-rep0-ch11.bin",
+      "generation": 635,
+      "status": "ALIGNED",
+      "rising_edges": 1023,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1022
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 1,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 10,
+      "raw": "gen00000635-code00000-bank1-rep0-ch10.bin",
+      "generation": 635,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 9,
+      "raw": "gen00000635-code00000-bank1-rep0-ch09.bin",
+      "generation": 635,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 8,
+      "raw": "gen00000635-code00000-bank1-rep0-ch08.bin",
+      "generation": 635,
+      "status": "ALIGNED",
+      "rising_edges": 1023,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1022
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 7,
+      "raw": "gen00000635-code00000-bank1-rep0-ch07.bin",
+      "generation": 635,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 6,
+      "raw": "gen00000635-code00000-bank1-rep0-ch06.bin",
+      "generation": 635,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 5,
+      "raw": "gen00000635-code00000-bank1-rep0-ch05.bin",
+      "generation": 635,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 1,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 4,
+      "raw": "gen00000635-code00000-bank1-rep0-ch04.bin",
+      "generation": 635,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 1,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 3,
+      "raw": "gen00000635-code00000-bank1-rep0-ch03.bin",
+      "generation": 635,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 2,
+      "raw": "gen00000635-code00000-bank1-rep0-ch02.bin",
+      "generation": 635,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 1,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 1,
+      "channel": 1,
+      "raw": "gen00000635-code00000-bank1-rep0-ch01.bin",
+      "generation": 635,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 12,
+      "raw": "gen00000634-code00000-bank0-rep0-ch12.bin",
+      "generation": 634,
+      "status": "EDGE_QUANTIZED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 511,
+        "5": 256,
+        "3": 256
+      },
+      "rising_phase_span_samples": 1,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 11,
+      "raw": "gen00000634-code00000-bank0-rep0-ch11.bin",
+      "generation": 634,
+      "status": "ALIGNED",
+      "rising_edges": 1023,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1022
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 1,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 10,
+      "raw": "gen00000634-code00000-bank0-rep0-ch10.bin",
+      "generation": 634,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 9,
+      "raw": "gen00000634-code00000-bank0-rep0-ch09.bin",
+      "generation": 634,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 8,
+      "raw": "gen00000634-code00000-bank0-rep0-ch08.bin",
+      "generation": 634,
+      "status": "ALIGNED",
+      "rising_edges": 1023,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1022
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 7,
+      "raw": "gen00000634-code00000-bank0-rep0-ch07.bin",
+      "generation": 634,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 6,
+      "raw": "gen00000634-code00000-bank0-rep0-ch06.bin",
+      "generation": 634,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 5,
+      "raw": "gen00000634-code00000-bank0-rep0-ch05.bin",
+      "generation": 634,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 1,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 4,
+      "raw": "gen00000634-code00000-bank0-rep0-ch04.bin",
+      "generation": 634,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 1,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 3,
+      "raw": "gen00000634-code00000-bank0-rep0-ch03.bin",
+      "generation": 634,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 1,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 2,
+      "raw": "gen00000634-code00000-bank0-rep0-ch02.bin",
+      "generation": 634,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1023,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 1,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    },
+    {
+      "code": 0,
+      "bank": 0,
+      "channel": 1,
+      "raw": "gen00000634-code00000-bank0-rep0-ch01.bin",
+      "generation": 634,
+      "status": "ALIGNED",
+      "rising_edges": 1024,
+      "falling_edges": 1024,
+      "interval_counts": {
+        "4": 1023
+      },
+      "rising_phase_span_samples": 0,
+      "falling_phase_span_samples": 0,
+      "selected_words_stable": true,
+      "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+      "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+    }
+  ]
+}

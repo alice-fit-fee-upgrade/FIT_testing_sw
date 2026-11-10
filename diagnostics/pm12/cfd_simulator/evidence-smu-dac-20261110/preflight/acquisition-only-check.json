@@ -1,0 +1,223 @@
+{
+  "commands": [
+    {
+      "write": "ABOR"
+    },
+    {
+      "write": "OUTP:ON:AUTO OFF"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "SOUR:FUNC:MODE CURR"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "SOUR:CURR:MODE FIX"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "SOUR:CURR 0"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "SOUR:CURR:RANG 1e-6"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "SENS:VOLT:PROT 6"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "SENS:REM ON"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "SENS:FUNC \"VOLT\""
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "SENS:VOLT:RANG:AUTO OFF"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "SENS:VOLT:RANG 20"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "SENS:VOLT:NPLC 1"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "TRIG:ACQ:SOUR AINT"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "TRIG:ACQ:COUN 1"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "write": "FORM:ELEM:SENS VOLT,TIME,STAT"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "query": "OUTP?",
+      "reply": "0"
+    },
+    {
+      "query": "OUTP:ON:AUTO?",
+      "reply": "0"
+    },
+    {
+      "query": "OUTP:OFF:MODE?",
+      "reply": "HIZ"
+    },
+    {
+      "query": "SOUR:FUNC:MODE?",
+      "reply": "CURR"
+    },
+    {
+      "query": "SOUR:CURR?",
+      "reply": "+0.00000000E+000"
+    },
+    {
+      "query": "SENS:REM?",
+      "reply": "1"
+    },
+    {
+      "query": "SENS:FUNC?",
+      "reply": "\"VOLT\",\"CURR\""
+    },
+    {
+      "query": "SENS:VOLT:RANG?",
+      "reply": "+2.00000000E+001"
+    },
+    {
+      "query": "SENS:VOLT:NPLC?",
+      "reply": "+1.00000000E+000"
+    },
+    {
+      "write": "INIT:ACQ (@1)"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+212,\"Output relay must be on; Channel1\""
+    },
+    {
+      "query": "FETC:ARR:VOLT? (@1)",
+      "reply": "+9.910000E+37"
+    },
+    {
+      "query": "OUTP?",
+      "reply": "0"
+    },
+    {
+      "query": "SYST:ERR?",
+      "reply": "+0,\"No error\""
+    },
+    {
+      "query": "OUTP?",
+      "reply": "0"
+    },
+    {
+      "query": "OUTP:ON:AUTO?",
+      "reply": "0"
+    },
+    {
+      "query": "OUTP:OFF:MODE?",
+      "reply": "HIZ"
+    }
+  ],
+  "measurements": [
+    {
+      "mux_channel": 6,
+      "result": "+9.910000E+37",
+      "output_after": "0",
+      "error": "+0,\"No error\""
+    }
+  ],
+  "pg": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000008C01720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2125
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000A803720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2122
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000DD01720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2118
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000001300720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2122
+    }
+  ],
+  "identity": "Keysight Technologies,B2910BL,MY63320299,5.0.2429.8966",
+  "initial_errors": [
+    "+0,\"No error\""
+  ],
+  "settings": {
+    "OUTP?": "0",
+    "OUTP:ON:AUTO?": "0",
+    "OUTP:OFF:MODE?": "HIZ",
+    "SOUR:FUNC:MODE?": "CURR",
+    "SOUR:CURR?": "+0.00000000E+000",
+    "SENS:REM?": "1",
+    "SENS:FUNC?": "\"VOLT\",\"CURR\"",
+    "SENS:VOLT:RANG?": "+2.00000000E+001",
+    "SENS:VOLT:NPLC?": "+1.00000000E+000"
+  },
+  "acquisition_error": "+212,\"Output relay must be on; Channel1\"",
+  "final": {
+    "OUTP?": "0",
+    "OUTP:ON:AUTO?": "0",
+    "OUTP:OFF:MODE?": "HIZ"
+  }
+}

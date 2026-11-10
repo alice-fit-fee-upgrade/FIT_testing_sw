@@ -1,0 +1,72 @@
+{
+  "port": "/dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0",
+  "baud": 115200,
+  "rtscts": true,
+  "records": [
+    {
+      "command": "PING",
+      "reply": "PONG\r\n",
+      "timestamp": 1792075272.2520967
+    },
+    {
+      "command": "HW",
+      "reply": "HW V2 PORTS A..F=BEFC6FBF9EFC STATE 2157..2162=89000001000000DD033F0109\r\n",
+      "timestamp": 1792075272.302283
+    },
+    {
+      "command": "PGTIME",
+      "reply": "PGTIME STATE=00 TICKS=0000 OVF=00 US_NOMINAL=00000000\r\n",
+      "timestamp": 1792075272.352624,
+      "timing": {
+        "state": "NOT_STARTED",
+        "raw_ticks": 0,
+        "overflow": false,
+        "elapsed_us_nominal": 0,
+        "pg_rise_us_nominal": null,
+        "scope": "32 us nominal timer step plus GPIO interrupt latency; not calibrated"
+      }
+    },
+    {
+      "command": "TEMP",
+      "reply": "ADT7311 REG=00 80\r\nADT7311 REG=01 00\r\nADT7311 REG=02 0FF8\r\nADT7311 REG=03 C3\r\n",
+      "timestamp": 1792075272.4032083
+    },
+    {
+      "command": "TDC 0 83",
+      "reply": "THS788 0 83 8010\r\n",
+      "timestamp": 1792075272.4534729
+    },
+    {
+      "command": "TDC 1 83",
+      "reply": "THS788 1 83 8010\r\n",
+      "timestamp": 1792075272.5040255
+    },
+    {
+      "command": "TDC 2 83",
+      "reply": "THS788 2 83 8010\r\n",
+      "timestamp": 1792075272.5546322
+    },
+    {
+      "command": "PLL",
+      "reply": "CDCE62005 80009D38\r\n",
+      "timestamp": 1792075272.6052587
+    },
+    {
+      "command": "HW",
+      "reply": "HW V2 PORTS A..F=BEFC6FBF9EFC STATE 2157..2162=890000010000007E023F0109\r\n",
+      "timestamp": 1792075272.6556838
+    },
+    {
+      "command": "FPGA",
+      "reply": "FPGA REG=40 0000\r\nFPGA REG=41 504D\r\nFPGA REG=42 5350\r\nFPGA REG=43 0001\r\nFPGA REG=44 014A\r\n",
+      "timestamp": 1792075272.706062
+    },
+    {
+      "command": "FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n",
+      "timestamp": 1792075272.7566571
+    }
+  ],
+  "hardware_test": "UART capture with optional FPGA scratch test; no config reset/flash writes",
+  "fpga_test_requested": true
+}

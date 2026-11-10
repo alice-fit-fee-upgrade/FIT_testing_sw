@@ -1,0 +1,33 @@
+{
+  "pass": true,
+  "channel": 12,
+  "adc_banks": [
+    "A",
+    "B"
+  ],
+  "adjacent_pairs_passed_per_adc": 11,
+  "bits_passed_per_adc": 12,
+  "points_per_adc": 257,
+  "diff_range_v": [
+    -1.2,
+    1.2
+  ],
+  "pin_range_v": [
+    0.4,
+    1.6
+  ],
+  "raw_validation": {
+    "pass": true,
+    "captures": 514,
+    "raw_words": 2105344,
+    "histograms_exact": true,
+    "ev_tags_exact": true,
+    "all_strobe_periods": 4,
+    "generations_contiguous": true
+  },
+  "final_setpoints_v": [
+    1,
+    1
+  ],
+  "scope": "Simple persistent stuck/tied data-line exercise; not electrical continuity, bit-order or ADC DNL qualification"
+}

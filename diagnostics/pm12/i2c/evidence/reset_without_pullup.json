@@ -1,0 +1,7 @@
+{
+  "serial": "210249A73E43",
+  "nonvolatile_writes": false,
+  "fpga_sha256": "836610e94f3c13dec373841d744210d06bc5c1a430b904ac0818d07555cf7037",
+  "error": "RuntimeError('MUX RESET remains low')",
+  "restored": true
+}

@@ -1,0 +1,70 @@
+{
+  "capture_id": 1,
+  "status": 61,
+  "bank": 1,
+  "synthetic": true,
+  "format": "12files each4096little-endianu16; ADC bits0..11,EV12,STR13 for physical mode",
+  "sample_rate_nominal_hz": 320000000,
+  "channels": [
+    {
+      "channel": 1,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    },
+    {
+      "channel": 2,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    },
+    {
+      "channel": 3,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    },
+    {
+      "channel": 4,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    },
+    {
+      "channel": 5,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    },
+    {
+      "channel": 6,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    },
+    {
+      "channel": 7,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    },
+    {
+      "channel": 8,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    },
+    {
+      "channel": 9,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    },
+    {
+      "channel": 10,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    },
+    {
+      "channel": 11,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    },
+    {
+      "channel": 12,
+      "kind": "synthetic transport validation",
+      "samples": 4096
+    }
+  ]
+}

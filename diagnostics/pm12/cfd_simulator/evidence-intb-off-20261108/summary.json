@@ -1,0 +1,1077 @@
+{
+  "hardware_pass": true,
+  "fs_hz_inferred_not_counter_verified": 80157400.0,
+  "statistics": {
+    "original": {
+      "A": {
+        "captures": [
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "6ed7a228bf47670609d5765cc14d18f7e990db746ac8ad55d7fc4e6d0c4b044f",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.9,
+            "raw_rms_codes": 19.861130627532805,
+            "residual_rms_codes": 0.4622213719567491,
+            "fs_over_4_rms_codes": 19.252577632164133,
+            "fs_over_2_rms_codes": 4.856862745098039,
+            "parseval_error_codes_squared": 0.0,
+            "file": "original-adcA-00.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "48f29c417a582cc87af72fba7493eae03edcd172af1ff79f33f8153e7f9ec379",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.786274509804,
+            "raw_rms_codes": 19.887117907573796,
+            "residual_rms_codes": 0.49302711903095303,
+            "fs_over_4_rms_codes": 19.279115899875052,
+            "fs_over_2_rms_codes": 4.854901960784314,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "original-adcA-01.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "b1c55895fd7d3a293edab609851493ec44c8425b3ff31abbc501fd13cc71409a",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.812745098039,
+            "raw_rms_codes": 19.887162928059446,
+            "residual_rms_codes": 0.4855544954094267,
+            "fs_over_4_rms_codes": 19.271176032677143,
+            "fs_over_2_rms_codes": 4.887254901960785,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "original-adcA-02.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "7f5be4ea93128fede53c9b780a05f60dda3f61d54a462fe0e42fdb1d0dc8a757",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.836274509804,
+            "raw_rms_codes": 19.86759253607609,
+            "residual_rms_codes": 0.48280705548473113,
+            "fs_over_4_rms_codes": 19.25700664388776,
+            "fs_over_2_rms_codes": 4.863725490196078,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "original-adcA-03.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "e0e8b4b3c26ce602d4f32f1e1d615aeab4d390127a85ac541aeee6901fe6a337",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.8470588235296,
+            "raw_rms_codes": 19.859855586043437,
+            "residual_rms_codes": 0.47625670984424434,
+            "fs_over_4_rms_codes": 19.24943514901994,
+            "fs_over_2_rms_codes": 4.862745098039215,
+            "parseval_error_codes_squared": 4.547473508864641e-13,
+            "file": "original-adcA-04.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "bd18ad2e47bf69bef1fc0bfe91ed1bd42c2b6a188ecb6e1a83868ce27f49eb8b",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.8274509803923,
+            "raw_rms_codes": 19.893136844210844,
+            "residual_rms_codes": 0.4932610065750775,
+            "fs_over_4_rms_codes": 19.28086754099541,
+            "fs_over_2_rms_codes": 4.872549019607844,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "original-adcA-05.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "e50932f8910fe8cc325b9b5b5f79f49c73a111c6282685035cce9105dd64a5f1",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.8411764705884,
+            "raw_rms_codes": 19.84983505113061,
+            "residual_rms_codes": 0.5144135491024631,
+            "fs_over_4_rms_codes": 19.237122597029646,
+            "fs_over_2_rms_codes": 4.866666666666667,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "original-adcA-06.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "d15da4c0ef9adb2a1e76de71b080e65ec30520203792c9847c5efece29e7bc51",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.880392156863,
+            "raw_rms_codes": 19.866204622945034,
+            "residual_rms_codes": 0.47950698761605753,
+            "fs_over_4_rms_codes": 19.25590478998704,
+            "fs_over_2_rms_codes": 4.862745098039216,
+            "parseval_error_codes_squared": 1.7053025658242404e-13,
+            "file": "original-adcA-07.bin"
+          }
+        ],
+        "aggregate": {
+          "mean_code": {
+            "mean": 2051.8414215686275,
+            "min": 2051.786274509804,
+            "max": 2051.9
+          },
+          "raw_rms_codes": {
+            "mean": 19.871504512946508,
+            "min": 19.84983505113061,
+            "max": 19.893136844210844
+          },
+          "residual_rms_codes": {
+            "mean": 0.4858810368774628,
+            "min": 0.4622213719567491,
+            "max": 0.5144135491024631
+          },
+          "fs_over_4_rms_codes": {
+            "mean": 19.260400785704515,
+            "min": 19.237122597029646,
+            "max": 19.28086754099541
+          },
+          "fs_over_2_rms_codes": {
+            "mean": 4.865931372549019,
+            "min": 4.854901960784314,
+            "max": 4.887254901960785
+          }
+        }
+      },
+      "B": {
+        "captures": [
+          {
+            "strobe_timing": {
+              "status": "EDGE_QUANTIZED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1021,
+                "3": 1,
+                "5": 1
+              },
+              "rising_phase_span_samples": 1,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "532bf715b1a0550d3b1cc9a144e4131446a84ea8757dff2e20b8b1af30bb7c8e",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2055.3549019607844,
+            "raw_rms_codes": 17.29647831916342,
+            "residual_rms_codes": 0.5249411823297974,
+            "fs_over_4_rms_codes": 16.983093680855166,
+            "fs_over_2_rms_codes": 3.235294117647059,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "original-adcB-00.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "EDGE_QUANTIZED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1019,
+                "3": 2,
+                "5": 2
+              },
+              "rising_phase_span_samples": 1,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "dd84dea0eabd5822ccde468117625ba681a73d44bf907f7f48d14d7aa54c763d",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2055.3539215686274,
+            "raw_rms_codes": 17.346447743765346,
+            "residual_rms_codes": 0.5158912587451674,
+            "fs_over_4_rms_codes": 17.028458494320926,
+            "fs_over_2_rms_codes": 3.265686274509803,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "original-adcB-01.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "14580ba395621e538ece10f577821c0c8e14a1399d3677479c49267e0cfe80f7",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2055.3705882352942,
+            "raw_rms_codes": 17.335216271607084,
+            "residual_rms_codes": 0.49808553127238986,
+            "fs_over_4_rms_codes": 17.017735733306537,
+            "fs_over_2_rms_codes": 3.264705882352941,
+            "parseval_error_codes_squared": 0.0,
+            "file": "original-adcB-02.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "EDGE_QUANTIZED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1019,
+                "3": 2,
+                "5": 2
+              },
+              "rising_phase_span_samples": 1,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "b2bf7ea52456f8ba10b8cceaa0f4549f5ff70522120650d7b0da89c24a4b83d2",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2055.449019607843,
+            "raw_rms_codes": 17.362579465779213,
+            "residual_rms_codes": 0.5018228977282246,
+            "fs_over_4_rms_codes": 17.04097556289934,
+            "fs_over_2_rms_codes": 3.288235294117647,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "original-adcB-03.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "EDGE_QUANTIZED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1011,
+                "3": 6,
+                "5": 6
+              },
+              "rising_phase_span_samples": 1,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "8b184a253b0db4d8498a77d4f37f4071b60fc5b5b1673913266e576f6d98bf05",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2055.2401960784314,
+            "raw_rms_codes": 17.309358002865302,
+            "residual_rms_codes": 0.5027873097203628,
+            "fs_over_4_rms_codes": 16.985007580414212,
+            "fs_over_2_rms_codes": 3.2970588235294125,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "original-adcB-04.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "EDGE_QUANTIZED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1017,
+                "3": 3,
+                "5": 3
+              },
+              "rising_phase_span_samples": 1,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "ac03251d41129d791b6d9969db92e22b7983efc5ff4f4377612a94a38614fba4",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2055.399019607843,
+            "raw_rms_codes": 17.35614823028924,
+            "residual_rms_codes": 0.5004265769709575,
+            "fs_over_4_rms_codes": 17.036542187426416,
+            "fs_over_2_rms_codes": 3.2774509803921568,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "original-adcB-05.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "EDGE_QUANTIZED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1021,
+                "3": 1,
+                "5": 1
+              },
+              "rising_phase_span_samples": 1,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "5b72fa4b4c528d3f905860497fda730a6d06974fae37f3d2abc851f373f3e435",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2055.378431372549,
+            "raw_rms_codes": 17.374195579917128,
+            "residual_rms_codes": 0.5014703486477108,
+            "fs_over_4_rms_codes": 17.051306885775052,
+            "fs_over_2_rms_codes": 3.296078431372549,
+            "parseval_error_codes_squared": 1.7053025658242404e-13,
+            "file": "original-adcB-06.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "08e1b7978c1b3d46ac516957d751c17a273ba6d464946b96c5da748684c91b75",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2055.3539215686274,
+            "raw_rms_codes": 17.38303303691493,
+            "residual_rms_codes": 0.5099698070986646,
+            "fs_over_4_rms_codes": 17.059111841151626,
+            "fs_over_2_rms_codes": 3.300980392156862,
+            "parseval_error_codes_squared": 1.1368683772161603e-13,
+            "file": "original-adcB-07.bin"
+          }
+        ],
+        "aggregate": {
+          "mean_code": {
+            "mean": 2055.3625,
+            "min": 2055.2401960784314,
+            "max": 2055.449019607843
+          },
+          "raw_rms_codes": {
+            "mean": 17.345432081287708,
+            "min": 17.29647831916342,
+            "max": 17.38303303691493
+          },
+          "residual_rms_codes": {
+            "mean": 0.5069243640641593,
+            "min": 0.49808553127238986,
+            "max": 0.5249411823297974
+          },
+          "fs_over_4_rms_codes": {
+            "mean": 17.02527899576866,
+            "min": 16.983093680855166,
+            "max": 17.059111841151626
+          },
+          "fs_over_2_rms_codes": {
+            "mean": 3.278186274509804,
+            "min": 3.235294117647059,
+            "max": 3.300980392156862
+          }
+        }
+      }
+    },
+    "intb-off": {
+      "A": {
+        "captures": [
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "48f03a8f10a040fad55de32efbfc221017f99a9e82c1f077cbb3803ce4db9140",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2048.68431372549,
+            "raw_rms_codes": 20.62808738673825,
+            "residual_rms_codes": 0.5097285012084887,
+            "fs_over_4_rms_codes": 20.230905151779158,
+            "fs_over_2_rms_codes": 3.996078431372549,
+            "parseval_error_codes_squared": 1.1368683772161603e-13,
+            "file": "intb-off-adcA-00.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "13093b0e9b915c2e3ee8bc3b6b0a0ea76081f8d08c15856b29c7c353f780a681",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2048.6107843137256,
+            "raw_rms_codes": 20.60288580045088,
+            "residual_rms_codes": 0.528626869144964,
+            "fs_over_4_rms_codes": 20.201029518760656,
+            "fs_over_2_rms_codes": 4.01470588235294,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "intb-off-adcA-01.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "e4b4387c94160049f0e47acbe15ebc8e07d4c561b0e9573d6cba5d338d4cf1de",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2048.7039215686273,
+            "raw_rms_codes": 20.635315823391302,
+            "residual_rms_codes": 0.5041618409408062,
+            "fs_over_4_rms_codes": 20.238801945537585,
+            "fs_over_2_rms_codes": 3.9941176470588236,
+            "parseval_error_codes_squared": 0.0,
+            "file": "intb-off-adcA-02.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "9d6570454af490b2f27bd7252830970c17c429fe1b1de410cbae02c1aeed34b0",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2048.763725490196,
+            "raw_rms_codes": 20.67977267489729,
+            "residual_rms_codes": 0.5414534670478022,
+            "fs_over_4_rms_codes": 20.281040069803044,
+            "fs_over_2_rms_codes": 4.004901960784315,
+            "parseval_error_codes_squared": 2.2737367544323206e-13,
+            "file": "intb-off-adcA-03.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "8d8757e9606b5a5c056773979636dd3f8348288fa15c3e9aef4151cd69a7a8a5",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2048.619607843137,
+            "raw_rms_codes": 20.588413071127885,
+            "residual_rms_codes": 0.5110542736229052,
+            "fs_over_4_rms_codes": 20.185745691061072,
+            "fs_over_2_rms_codes": 4.019607843137254,
+            "parseval_error_codes_squared": 0.0,
+            "file": "intb-off-adcA-04.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "c20ef354192624771999d7a945587dfddf1eef71c9c01c86e7061ee22bd9e36a",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2048.65,
+            "raw_rms_codes": 20.625180926122663,
+            "residual_rms_codes": 0.512939077767488,
+            "fs_over_4_rms_codes": 20.225727000029906,
+            "fs_over_2_rms_codes": 4.006862745098038,
+            "parseval_error_codes_squared": 1.1368683772161603e-13,
+            "file": "intb-off-adcA-05.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "6a767038f3ed261db256ecb2562561d298996e9c01a02ef9a66eb7578ee91144",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2048.679411764706,
+            "raw_rms_codes": 20.65055114032256,
+            "residual_rms_codes": 0.5070438103414106,
+            "fs_over_4_rms_codes": 20.247466746487934,
+            "fs_over_2_rms_codes": 4.0284313725490195,
+            "parseval_error_codes_squared": 0.0,
+            "file": "intb-off-adcA-06.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "92ae6ff73ebef2c8cc47f7ab10b01b4b2f713895a17237641aba64643c5c05f4",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2048.676470588235,
+            "raw_rms_codes": 20.61042081974024,
+            "residual_rms_codes": 0.50827826010589,
+            "fs_over_4_rms_codes": 20.212540216581402,
+            "fs_over_2_rms_codes": 3.9980392156862745,
+            "parseval_error_codes_squared": 5.684341886080802e-14,
+            "file": "intb-off-adcA-07.bin"
+          }
+        ],
+        "aggregate": {
+          "mean_code": {
+            "mean": 2048.673529411765,
+            "min": 2048.6107843137256,
+            "max": 2048.763725490196
+          },
+          "raw_rms_codes": {
+            "mean": 20.627578455348885,
+            "min": 20.588413071127885,
+            "max": 20.67977267489729
+          },
+          "residual_rms_codes": {
+            "mean": 0.5154107625224693,
+            "min": 0.5041618409408062,
+            "max": 0.5414534670478022
+          },
+          "fs_over_4_rms_codes": {
+            "mean": 20.227907042505095,
+            "min": 20.185745691061072,
+            "max": 20.281040069803044
+          },
+          "fs_over_2_rms_codes": {
+            "mean": 4.007843137254902,
+            "min": 3.9941176470588236,
+            "max": 4.0284313725490195
+          }
+        }
+      },
+      "B": {
+        "captures": [
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "029730cb2e4522aacdaea727f724cb5d25f87152be3ca444910ab85c9d702bb6",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.142156862745,
+            "raw_rms_codes": 1.4945611379270913,
+            "residual_rms_codes": 0.4823051147977722,
+            "fs_over_4_rms_codes": 1.138053303246545,
+            "fs_over_2_rms_codes": 0.8401960784313726,
+            "parseval_error_codes_squared": 4.440892098500626e-16,
+            "file": "intb-off-adcB-00.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "70dec467d484de2ab0dd1e8fe8b73bcc605cd5b56c446ddb287f36cf023bc074",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.15,
+            "raw_rms_codes": 1.4659702000555743,
+            "residual_rms_codes": 0.46748979967777715,
+            "fs_over_4_rms_codes": 1.1311473932344402,
+            "fs_over_2_rms_codes": 0.8068627450980392,
+            "parseval_error_codes_squared": 0.0,
+            "file": "intb-off-adcB-01.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "fd97339d30ea9a6bd247260c1995d4e2307ec9d040b39e3adedfbf00c5328eed",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.1911764705883,
+            "raw_rms_codes": 1.4651910764220342,
+            "residual_rms_codes": 0.4638985292540384,
+            "fs_over_4_rms_codes": 1.1344022708504804,
+            "fs_over_2_rms_codes": 0.8029411764705883,
+            "parseval_error_codes_squared": 4.440892098500626e-16,
+            "file": "intb-off-adcB-02.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "1d281cce099af1349a71784a4363ba1df7507c6b76544716d32476d42b19a3ae",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.1950980392157,
+            "raw_rms_codes": 1.4773371282101835,
+            "residual_rms_codes": 0.47977952132320384,
+            "fs_over_4_rms_codes": 1.1365658832291312,
+            "fs_over_2_rms_codes": 0.8127450980392157,
+            "parseval_error_codes_squared": 4.440892098500626e-16,
+            "file": "intb-off-adcB-03.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "c4e9c6c97084ac8f3197c22de3240cea1598305c5e7168e637ba35d0ef9a4acd",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.035294117647,
+            "raw_rms_codes": 1.4480309185047777,
+            "residual_rms_codes": 0.4765230343119959,
+            "fs_over_4_rms_codes": 1.1187009135369834,
+            "fs_over_2_rms_codes": 0.7862745098039216,
+            "parseval_error_codes_squared": 0.0,
+            "file": "intb-off-adcB-04.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "36f03735c84e93e4bd696690e393fad89236d1abde4ebcdd9a15f522c476cf17",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.1294117647058,
+            "raw_rms_codes": 1.4835429397153421,
+            "residual_rms_codes": 0.5107984266613774,
+            "fs_over_4_rms_codes": 1.136018597786803,
+            "fs_over_2_rms_codes": 0.8058823529411765,
+            "parseval_error_codes_squared": 4.440892098500626e-16,
+            "file": "intb-off-adcB-05.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "43d80fd66ee720d66e04448d202cce42d91b89ff4a2a287436e1b15877a44933",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.1294117647058,
+            "raw_rms_codes": 1.4385851052195804,
+            "residual_rms_codes": 0.47379625494055344,
+            "fs_over_4_rms_codes": 1.1062230041321703,
+            "fs_over_2_rms_codes": 0.788235294117647,
+            "parseval_error_codes_squared": 0.0,
+            "file": "intb-off-adcB-06.bin"
+          },
+          {
+            "strobe_timing": {
+              "status": "ALIGNED",
+              "rising_edges": 1024,
+              "falling_edges": 1024,
+              "interval_counts": {
+                "4": 1023
+              },
+              "rising_phase_span_samples": 0,
+              "falling_phase_span_samples": 0,
+              "selected_words_stable": true,
+              "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+              "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+            },
+            "input_sha256": "daa99e37bd64cfaa16b0dc6d1eb6e1632128e0de889adf2665cda7060ca8ec48",
+            "raw_records": 4096,
+            "adc_samples_available": 1023,
+            "fft_samples": 1020,
+            "fs_hz": 80157400.0,
+            "bin_spacing_hz": 78585.6862745098,
+            "mean_code": 2051.2029411764706,
+            "raw_rms_codes": 1.4656161042944513,
+            "residual_rms_codes": 0.5075667352898333,
+            "fs_over_4_rms_codes": 1.1230938826656682,
+            "fs_over_2_rms_codes": 0.7931372549019607,
+            "parseval_error_codes_squared": 4.440892098500626e-16,
+            "file": "intb-off-adcB-07.bin"
+          }
+        ],
+        "aggregate": {
+          "mean_code": {
+            "mean": 2051.14693627451,
+            "min": 2051.035294117647,
+            "max": 2051.2029411764706
+          },
+          "raw_rms_codes": {
+            "mean": 1.4673543262936293,
+            "min": 1.4385851052195804,
+            "max": 1.4945611379270913
+          },
+          "residual_rms_codes": {
+            "mean": 0.48276967703206897,
+            "min": 0.4638985292540384,
+            "max": 0.5107984266613774
+          },
+          "fs_over_4_rms_codes": {
+            "mean": 1.1280256560852777,
+            "min": 1.1062230041321703,
+            "max": 1.138053303246545
+          },
+          "fs_over_2_rms_codes": {
+            "mean": 0.8045343137254902,
+            "min": 0.7862745098039216,
+            "max": 0.8401960784313726
+          }
+        }
+      }
+    }
+  },
+  "gate_validation": {
+    "original": {
+      "8": {
+        "samples": 32760,
+        "high_samples": 17742,
+        "rising_edges": 682,
+        "falling_edges": 683,
+        "raw_sha256": "9cbddff5b63b574f58bac4757c1e668ae36ea0021824dce14b40513fc1fb5eac"
+      },
+      "9": {
+        "samples": 32760,
+        "high_samples": 18431,
+        "rising_edges": 683,
+        "falling_edges": 682,
+        "raw_sha256": "9cbddff5b63b574f58bac4757c1e668ae36ea0021824dce14b40513fc1fb5eac"
+      }
+    },
+    "intb-off": {
+      "8": {
+        "samples": 32760,
+        "high_samples": 17754,
+        "rising_edges": 682,
+        "falling_edges": 683,
+        "raw_sha256": "88a3b2b363e9e8cc1adf55c1b71dd464b2341040116123b2743b82adb8942906"
+      },
+      "9": {
+        "samples": 32760,
+        "high_samples": 0,
+        "rising_edges": 0,
+        "falling_edges": 0,
+        "raw_sha256": "88a3b2b363e9e8cc1adf55c1b71dd464b2341040116123b2743b82adb8942906"
+      }
+    }
+  },
+  "scope": "Whole-chain zero-input observation; no intrinsic ADC noise or analog isolation claim. Sequential A/B injection selection. Raw per-capture RMS and coherent tone RMS averaged across 8 captures."
+}

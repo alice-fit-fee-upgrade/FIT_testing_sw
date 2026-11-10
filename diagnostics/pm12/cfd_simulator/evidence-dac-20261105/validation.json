@@ -1,0 +1,50 @@
+{
+  "candidate_full_sha256": "f49643c80c6189afebdaa3f7301f4ecebacb55645e60456f66831106d38b9464",
+  "hex_sha256": "80a2401b8a570e87fa4da1269f4761d21f9cc2bbe7a50867fc9f8b6acd42dde5",
+  "protected_regions_unchanged": {
+    "boot": true,
+    "eeprom": true,
+    "fuse0": true,
+    "fuse1": true,
+    "fuse2": true,
+    "fuse4": true,
+    "fuse5": true,
+    "lock": true,
+    "usersig": true,
+    "prodsig": true,
+    "signature": true
+  },
+  "basic_validation": "PASS",
+  "candidate_left_running": true,
+  "firmware_commit": "af6cacdea18262c9db09c262ea1ef751caa10fde",
+  "scope": "Physicalchannel12 B/C/D DC transfer; ADC-clock DAC A not swept",
+  "full_curve_points": 65,
+  "replicates": 3,
+  "low_edge_points": 13,
+  "analysis_pass": true,
+  "independent_final_voltage_check_pass": true,
+  "final_voltage_deltas": {
+    "CFD_OFFSET": 1.3333333332976594e-06,
+    "CFD_CMP_OFFSET": 5.610666666666826e-06,
+    "DRV_OFFSET": 1.3333333332976594e-06
+  },
+  "final_monitor_latch": 14,
+  "final_tca_masks": {
+    "70": 0,
+    "71": 0
+  },
+  "explicit_current_raw_codes": {
+    "B": 0,
+    "C": 0,
+    "D": 0
+  },
+  "original_active_registers": "NOT_READABLE; analog initial levels recovered and independently checked",
+  "whole_chain_not_bare_dac": true,
+  "attempt_notes": [
+    "Full sweep data valid; its original STORED-code restoration failed voltage guard. Explicit raw0000 restoration independently recovered baseline.",
+    "First low-edge attempt stopped on host configuration initialization error before curve collection; cleanup sent raw0000.",
+    "Second low-edge curve rows valid; its target-restored rows were sampled after mux inhibit and are excluded. Independent final selected-mux check passed. Current runner fixes ordering and requires explicit restore codes."
+  ],
+  "leases_released": true,
+  "private_hw_server_stopped": true
+}

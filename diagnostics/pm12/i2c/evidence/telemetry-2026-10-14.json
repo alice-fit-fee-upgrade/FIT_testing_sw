@@ -1,0 +1,2086 @@
+{
+  "serial": "210249A73E43",
+  "nonvolatile_writes": false,
+  "fpga_sha256": "b26bdccb44ff0d323a58637efd3cee59a98752afdf432d392f4aa47a1a3d9652",
+  "telemetry": {
+    "samples_per_monitor": 20,
+    "shunt_values_source": "FIT_PM12v1.1.PDF pages14,16,17,19,20,21",
+    "calibrated": false,
+    "monitors": [
+      {
+        "mux": "0x71",
+        "mux_channel": 4,
+        "address": "0x40",
+        "manufacturer_id": 21577,
+        "die_id": 12832,
+        "config_before": 28967,
+        "config_after": 28967,
+        "channels": [
+          {
+            "rail": "P1V0_LDO",
+            "shunt_ohm": 0.01,
+            "resistor": "R53",
+            "bus_V_mean": 1.0,
+            "bus_V_min": 1.0,
+            "bus_V_max": 1.0,
+            "current_A_mean": 0.128,
+            "current_A_min": 0.128,
+            "current_A_max": 0.128,
+            "clipped_samples": 0
+          },
+          {
+            "rail": "P1V2_LDO",
+            "shunt_ohm": 0.01,
+            "resistor": "R55",
+            "bus_V_mean": 1.2,
+            "bus_V_min": 1.2,
+            "bus_V_max": 1.2,
+            "current_A_mean": 0.092,
+            "current_A_min": 0.092,
+            "current_A_max": 0.092,
+            "clipped_samples": 0
+          },
+          {
+            "rail": "P1V8_LDO",
+            "shunt_ohm": 0.01,
+            "resistor": "R56",
+            "bus_V_mean": 1.792,
+            "bus_V_min": 1.792,
+            "bus_V_max": 1.792,
+            "current_A_mean": 0.004,
+            "current_A_min": 0.004,
+            "current_A_max": 0.004,
+            "clipped_samples": 0
+          }
+        ],
+        "samples": [
+          {
+            "start_unix": 1791990455.1148112,
+            "end_unix": 1791990455.169171,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990455.2192721,
+            "end_unix": 1791990455.274085,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990455.3241951,
+            "end_unix": 1791990455.3791869,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990455.4292715,
+            "end_unix": 1791990455.4839263,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990455.5340374,
+            "end_unix": 1791990455.588811,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990455.6389205,
+            "end_unix": 1791990455.6940582,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990455.7441952,
+            "end_unix": 1791990455.7993596,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990455.8494346,
+            "end_unix": 1791990455.9047499,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990455.9548533,
+            "end_unix": 1791990456.0096114,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990456.0597224,
+            "end_unix": 1791990456.114542,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990456.1646154,
+            "end_unix": 1791990456.2189894,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990456.269096,
+            "end_unix": 1791990456.3248098,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990456.3748803,
+            "end_unix": 1791990456.4244385,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990456.4745333,
+            "end_unix": 1791990456.5261505,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990456.5762439,
+            "end_unix": 1791990456.6300328,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990456.6801374,
+            "end_unix": 1791990456.7341607,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990456.7842584,
+            "end_unix": 1791990456.8388786,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990456.8889875,
+            "end_unix": 1791990456.9442391,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990456.9942753,
+            "end_unix": 1791990457.048762,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990457.0988693,
+            "end_unix": 1791990457.15351,
+            "raw": [
+              256,
+              1000,
+              184,
+              1200,
+              8,
+              1792
+            ],
+            "channels": [
+              {
+                "bus_V": 1.0,
+                "shunt_V": 0.00128,
+                "shunt_clipped": false,
+                "current_A": 0.128
+              },
+              {
+                "bus_V": 1.2,
+                "shunt_V": 0.00092,
+                "shunt_clipped": false,
+                "current_A": 0.092
+              },
+              {
+                "bus_V": 1.792,
+                "shunt_V": 4e-05,
+                "shunt_clipped": false,
+                "current_A": 0.004
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mux": "0x71",
+        "mux_channel": 5,
+        "address": "0x40",
+        "manufacturer_id": 21577,
+        "die_id": 12832,
+        "config_before": 28967,
+        "config_after": 28967,
+        "channels": [
+          {
+            "rail": "P3V8",
+            "shunt_ohm": 0.001,
+            "resistor": "R15",
+            "bus_V_mean": 1.48,
+            "bus_V_min": 1.48,
+            "bus_V_max": 1.48,
+            "current_A_mean": null,
+            "current_A_min": null,
+            "current_A_max": null,
+            "clipped_samples": 20
+          },
+          {
+            "rail": "P3V3",
+            "shunt_ohm": 0.001,
+            "resistor": "R92",
+            "bus_V_mean": 3.336,
+            "bus_V_min": 3.336,
+            "bus_V_max": 3.336,
+            "current_A_mean": 4.920000000000001,
+            "current_A_min": 4.920000000000001,
+            "current_A_max": 4.920000000000001,
+            "clipped_samples": 0
+          },
+          {
+            "rail": "P1V8",
+            "shunt_ohm": 0.001,
+            "resistor": "R84",
+            "bus_V_mean": 1.784,
+            "bus_V_min": 1.784,
+            "bus_V_max": 1.784,
+            "current_A_mean": 0.36000000000000004,
+            "current_A_min": 0.36000000000000004,
+            "current_A_max": 0.36000000000000004,
+            "clipped_samples": 0
+          }
+        ],
+        "samples": [
+          {
+            "start_unix": 1791990457.2521386,
+            "end_unix": 1791990457.3067997,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990457.356903,
+            "end_unix": 1791990457.4111767,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990457.4612775,
+            "end_unix": 1791990457.5156672,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990457.5657797,
+            "end_unix": 1791990457.6209445,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990457.671055,
+            "end_unix": 1791990457.72562,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990457.775722,
+            "end_unix": 1791990457.8303337,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990457.8804107,
+            "end_unix": 1791990457.9354737,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990457.9855933,
+            "end_unix": 1791990458.0405698,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990458.090678,
+            "end_unix": 1791990458.1455758,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990458.195683,
+            "end_unix": 1791990458.2499952,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990458.3001037,
+            "end_unix": 1791990458.3547704,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990458.404887,
+            "end_unix": 1791990458.4593976,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990458.5094743,
+            "end_unix": 1791990458.5644343,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990458.6145508,
+            "end_unix": 1791990458.668895,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990458.719006,
+            "end_unix": 1791990458.7733831,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990458.8234894,
+            "end_unix": 1791990458.877727,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990458.9278371,
+            "end_unix": 1791990458.9828117,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990459.0329354,
+            "end_unix": 1791990459.0875251,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990459.1376388,
+            "end_unix": 1791990459.1923757,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990459.2424893,
+            "end_unix": 1791990459.2971303,
+            "raw": [
+              32760,
+              1480,
+              984,
+              3336,
+              72,
+              1784
+            ],
+            "channels": [
+              {
+                "bus_V": 1.48,
+                "shunt_V": 0.1638,
+                "shunt_clipped": true,
+                "current_A": null
+              },
+              {
+                "bus_V": 3.336,
+                "shunt_V": 0.004920000000000001,
+                "shunt_clipped": false,
+                "current_A": 4.920000000000001
+              },
+              {
+                "bus_V": 1.784,
+                "shunt_V": 0.00036,
+                "shunt_clipped": false,
+                "current_A": 0.36000000000000004
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "mux": "0x71",
+        "mux_channel": 6,
+        "address": "0x40",
+        "manufacturer_id": 21577,
+        "die_id": 12832,
+        "config_before": 28967,
+        "config_after": 28967,
+        "channels": [
+          {
+            "rail": "P1V0",
+            "shunt_ohm": 0.001,
+            "resistor": "R74",
+            "bus_V_mean": 1.008,
+            "bus_V_min": 1.008,
+            "bus_V_max": 1.008,
+            "current_A_mean": 0.11000000000000001,
+            "current_A_min": 0.08,
+            "current_A_max": 0.12000000000000001,
+            "clipped_samples": 0
+          },
+          {
+            "rail": "P5V5",
+            "shunt_ohm": 0.001,
+            "resistor": "R216",
+            "bus_V_mean": 5.5040000000000004,
+            "bus_V_min": 5.5040000000000004,
+            "bus_V_max": 5.5040000000000004,
+            "current_A_mean": 0.08,
+            "current_A_min": 0.08,
+            "current_A_max": 0.08,
+            "clipped_samples": 0
+          },
+          {
+            "rail": "TP1/TP2",
+            "shunt_ohm": null,
+            "resistor": null,
+            "bus_V_mean": 0.0,
+            "bus_V_min": 0.0,
+            "bus_V_max": 0.0,
+            "current_A_mean": null,
+            "current_A_min": null,
+            "current_A_max": null,
+            "clipped_samples": 0
+          }
+        ],
+        "samples": [
+          {
+            "start_unix": 1791990459.3951073,
+            "end_unix": 1791990459.449772,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990459.4998822,
+            "end_unix": 1791990459.554229,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990459.604339,
+            "end_unix": 1791990459.658748,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990459.7088656,
+            "end_unix": 1791990459.763181,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990459.8132915,
+            "end_unix": 1791990459.8676753,
+            "raw": [
+              16,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990459.9177904,
+            "end_unix": 1791990459.972037,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990460.0221412,
+            "end_unix": 1791990460.0770779,
+            "raw": [
+              16,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990460.1271834,
+            "end_unix": 1791990460.1821687,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990460.2322786,
+            "end_unix": 1791990460.2867563,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990460.336866,
+            "end_unix": 1791990460.3919463,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990460.4420736,
+            "end_unix": 1791990460.4969041,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990460.5470023,
+            "end_unix": 1791990460.6014876,
+            "raw": [
+              16,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990460.6516066,
+            "end_unix": 1791990460.7059941,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990460.7561078,
+            "end_unix": 1791990460.8111174,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990460.8612225,
+            "end_unix": 1791990460.9159606,
+            "raw": [
+              16,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990460.966068,
+            "end_unix": 1791990461.0213985,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990461.0715163,
+            "end_unix": 1791990461.1258342,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990461.1759431,
+            "end_unix": 1791990461.2302024,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990461.2803154,
+            "end_unix": 1791990461.3354366,
+            "raw": [
+              16,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          },
+          {
+            "start_unix": 1791990461.3855562,
+            "end_unix": 1791990461.4415689,
+            "raw": [
+              24,
+              1008,
+              16,
+              5504,
+              0,
+              0
+            ],
+            "channels": [
+              {
+                "bus_V": 1.008,
+                "shunt_V": 0.00012000000000000002,
+                "shunt_clipped": false,
+                "current_A": 0.12000000000000001
+              },
+              {
+                "bus_V": 5.5040000000000004,
+                "shunt_V": 8e-05,
+                "shunt_clipped": false,
+                "current_A": 0.08
+              },
+              {
+                "bus_V": 0.0,
+                "shunt_V": 0.0,
+                "shunt_clipped": false,
+                "current_A": null
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "mux_restored": {
+      "0x70": true,
+      "0x71": true
+    },
+    "final_lines": 7
+  },
+  "digital_pass": true,
+  "restored": true
+}

@@ -1,0 +1,20 @@
+{
+  "scope": "Prepared offline artifacts; no MCU programmed",
+  "candidate_source": "fit-pm12-mcu-diag f9869c9",
+  "features": "TEMP/TDC/PLL/PGTIME/FPGA/CFG/read-only flash; no direct MCU I2C driver",
+  "programming_requirements": "Identify PDI programmer, backup physical FLASH/EEPROM/fuses/lock/signature, preserve boot>=0x20000 and EEPROM, no chip erase, application-only update with verify and rollback",
+  "images": {
+    "candidate-application.hex": {
+      "sha256": "93c010b4a13323259453b2b19b2154e73ba6f96968d4140cb778592881e0ac9d",
+      "populated_bytes": 17419,
+      "max_address": "0x582e",
+      "boot_included": false
+    },
+    "rollback-original-application.hex": {
+      "sha256": "7a5212c4de42a8adbce5010b03631eb0739a65a4639e97e39d3219caf15860e8",
+      "populated_bytes": 11228,
+      "max_address": "0x2bdb",
+      "boot_included": false
+    }
+  }
+}

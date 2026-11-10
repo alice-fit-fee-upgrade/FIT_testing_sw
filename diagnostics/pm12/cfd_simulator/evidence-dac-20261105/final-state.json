@@ -1,0 +1,66 @@
+{
+  "power_ready": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FAF9EFC STATE 2157..2162=89000001000000F000640103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FAF9EFC STATE 2157..2162=890000010000000E03650103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2109
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FAF9EFC STATE 2157..2162=890000010000004401650103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2109
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FAF9EFC STATE 2157..2162=890000010000006303650103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2109
+    }
+  ],
+  "commands": [
+    {
+      "command": "@FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@TEMP",
+      "reply": "ADT7311 REG=00 80\r\nADT7311 REG=01 50\r\nADT7311 REG=02 11E0\r\nADT7311 REG=03 C3\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C",
+      "reply": "I2C PF7/PA1 RESET_PB6 LINES=07 OWNER=00 DEFER=01 A_DIR=FB A_OUT=9A A_CTRL1=80 A_CTRL2=18\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "RS",
+      "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    35.8 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+      "duration_s": 0.2108
+    }
+  ],
+  "temp_power_recheck": {
+    "command": "@HW",
+    "reply": "HW V2 PORTS A..F=9EFC6FAF9EFC STATE 2157..2162=89000001000000C001650103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+    "duration_s": 0.2109
+  },
+  "dmm_identity": "KEITHLEY INSTRUMENTS,MODEL DMM7510,04679690,1.7.16a",
+  "ascii_precision": "0",
+  "dmm_final": {
+    "identity": "KEITHLEY INSTRUMENTS,MODEL DMM7510,04679690,1.7.16a",
+    "terminals": "FRON",
+    "settings": {
+      "function": "VOLT:DC",
+      "range": "10",
+      "nplc": "5",
+      "impedance": "AUTO",
+      "autozero": "1",
+      "filter": "0",
+      "autorange": "0"
+    }
+  }
+}

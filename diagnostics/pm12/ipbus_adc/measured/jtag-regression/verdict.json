@@ -1,0 +1,8 @@
+{
+  "result": "PASS",
+  "old_expected_failure": "TAP reset corrupted command",
+  "new": "Normal USER2 commands, stale UPDATE during TAP reset, empty transaction, idle/readback hold pass",
+  "test_sha256": "0b411cfe923fb9c67a666636cfdc6d07d512a90fe651f8244527f03523fbce89",
+  "new_source_sha256": "95ff712450d05a18181aa96c6c3a265055530d1a27fa648e07b78039f858f019",
+  "old_source_sha256": "5d1fe391cd245db91c1380f9551d6632e72975c6efbac5e85a624a71f3238989"
+}

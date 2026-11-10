@@ -1,0 +1,16 @@
+{
+  "pass_": false,
+  "raw_data_pass": true,
+  "restore_phase_pass": false,
+  "restore_command_accepted": true,
+  "sweep_points": 101,
+  "captures": 104,
+  "phase_records_exact": 283920,
+  "rising_edges_analyzed": 567840,
+  "estimates_exact": 208,
+  "dac_final_code": 0,
+  "restore_phase_deltas_bins": {
+    "8": -2.0,
+    "9": -1.197802197802197
+  }
+}

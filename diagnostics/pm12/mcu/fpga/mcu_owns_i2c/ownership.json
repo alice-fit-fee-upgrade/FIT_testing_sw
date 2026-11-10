@@ -1,0 +1,15 @@
+{
+  "mode": "MCU owns I2C",
+  "SDA_SCL_RESET": "input-only IBUF primitives; no output driver in RTL",
+  "RESET": "Existing FPGA input PULLUP maintained",
+  "UDP": "Only zero-mask read/release accepted; nonzero drive requests dropped",
+  "spi": "Original MCU SPI diagnostic unchanged",
+  "jtag_signature": "504d5a02",
+  "hardware_validation": "PASS SRAM load with exact13-device chain/signature,10 Ethernet line queries,5 denied drive requests and recovery, original MCU status/PSU/temperature still OK",
+  "offline_validation": {
+    "generated_RTL": "PASS: three input ports and three IBUF, no IOBUF",
+    "Vivado": "2025.2 implementation/bitstream PASS, zero reported setup/hold failures",
+    "bitstream_sha256": "a3c7301f466f193ec01347285fd858ba52767683342fa6114abb02eaa3de5aa9"
+  },
+  "physical_limits": "MCU programming/SPI scratch/INA from MCU NOT_RUN; no PDI access yet. Input-only gateware remains in FPGA SRAM."
+}

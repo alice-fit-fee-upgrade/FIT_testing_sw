@@ -1,0 +1,66 @@
+{
+  "programmer": "J41800043065",
+  "signature": "1e9742",
+  "flash_matches_reference": true,
+  "flash_sha256": "e80e8612f7114caff6d7a2494ad0f51010182f2c2c83fdfb3047c9f8a34663c0",
+  "fuses": {
+    "fuse0": "ff",
+    "fuse1": "00",
+    "fuse2": "fe",
+    "fuse4": "f3",
+    "fuse5": "e8",
+    "lock": "ff"
+  },
+  "memories": {
+    "flash": {
+      "size": 132326,
+      "sha256": "ad5cc7a6a879ab7021c5a0c88e61a061f14a1f08f45dc003dc2fb67f137e083c"
+    },
+    "boot": {
+      "size": 1254,
+      "sha256": "9c3642d0e2a826a69521049492313193eb346a10f9e2a6642e9bbc4e63220b45"
+    },
+    "eeprom": {
+      "size": 2048,
+      "sha256": "952d350415c8cc2469b85715fc58338628587aca436785cc7273fdfefdeffc30"
+    },
+    "fuse0": {
+      "size": 1,
+      "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89"
+    },
+    "fuse1": {
+      "size": 1,
+      "sha256": "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d"
+    },
+    "fuse2": {
+      "size": 1,
+      "sha256": "aa687b58b0e73e2e383f8c500d75b591e188efe0168b3ffbcd3771caaa6dd4c7"
+    },
+    "fuse4": {
+      "size": 1,
+      "sha256": "782e02029374527bd2a5fe7b9545df6c2911078e337a62573970b178d93db481"
+    },
+    "fuse5": {
+      "size": 1,
+      "sha256": "e6f207509afa3908da116ce61a7576954248d9fe64a3c652b493cca57ce36e2e"
+    },
+    "lock": {
+      "size": 1,
+      "sha256": "a8100ae6aa1940d0b663bb31cd466142ebbdbd5187131b92d93818987832eb89"
+    },
+    "usersig": {
+      "size": 512,
+      "sha256": "9f56cda75fefeab90f6fa5d5ddc9601544b121732c5ecccab32e631060453a5d"
+    },
+    "prodsig": {
+      "size": 50,
+      "sha256": "dd05ab7da36d310fbfa76adc32b5e274461a33b80473761cfbbadeaf14adaec1"
+    },
+    "signature": {
+      "size": 3,
+      "sha256": "d1d9412892f64083c1b42f60a563276a077ec4a11b1acef77948beb3b01e69ea"
+    }
+  },
+  "normalization": "AVRDUDE6.3 avr.c reads complete memory then avr_mem_hiaddr trims trailing FF for flash/boot. Preserve raw outputs and pad documented FF tail to canonical139264/8192 bytes.",
+  "nonvolatile_writes": false
+}

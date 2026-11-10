@@ -1,0 +1,37 @@
+{
+  "schematic": "FIT_PM12v1.1.PDF",
+  "sha256": "3bff65447a5b5fff46e856405f6b7edac444683c9ae6759fccd73d3cc5df3b70",
+  "source": "SMB codex-hil/ALICE/FIT_PM12v1.1.PDF",
+  "hardware_validated": false,
+  "mcu_isolated": "User confirms R226/R227/R228 removed",
+  "fpga_bank": 14,
+  "signals": {
+    "sda": {
+      "net": "FPGA_AFE_I2C_SDA",
+      "pin": "H22",
+      "series_resistor": "R229",
+      "ohms": 10
+    },
+    "scl": {
+      "net": "FPGA_AFE_I2C_SCL",
+      "pin": "H21",
+      "series_resistor": "R230",
+      "ohms": 10
+    },
+    "reset_n": {
+      "net": "FPGA_I2C_SW_RSTn",
+      "pin": "B26",
+      "series_resistor": "R231",
+      "ohms": 10,
+      "fpga_pullup": true,
+      "reason": "No external RESET pull-up drawn on page 35; MCU isolated"
+    }
+  },
+  "pin_page": 26,
+  "mux_page": 35,
+  "mux_addresses_7bit_expected": [
+    112,
+    113
+  ],
+  "current_monitor": "3 x INA3221AIRGV, page 13"
+}

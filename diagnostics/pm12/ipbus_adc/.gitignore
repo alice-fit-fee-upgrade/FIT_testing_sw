@@ -1,0 +1,11 @@
+build/
+__pycache__/
+*.log
+*.jou
+*.init
+pm12_ipbus_adc.v
+build-id.txt
+uhal_probe
+.Xil/
+clockInfo.txt
+tight_setup_hold_pins.txt

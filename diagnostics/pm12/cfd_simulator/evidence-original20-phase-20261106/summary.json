@@ -1,0 +1,24 @@
+{
+  "points": 20,
+  "raw_data_pass": true,
+  "phase_restore_pass": false,
+  "original_gate_logic_restored": true,
+  "gate_frequency_mhz": 20,
+  "period_bins": 48,
+  "gate_pair": "complementary, from falling-edge ADC80 divider4",
+  "endpoint_change_ns": {
+    "slot7_channel1": -25.0,
+    "slot7_channel3": -24.318265007320655
+  },
+  "dac_final_code": 0,
+  "dac_command_acknowledged": true,
+  "phase_records_exact": 62790,
+  "restore_phase_deltas_bins": {
+    "8": -5.0,
+    "9": -5.0
+  },
+  "current_state": "Original gate divider remains in all12 CPLD NV. Kasli unchanged RPH1 external120,STOP/mask0,all DIO inputs. MCU and PM FPGA unchanged.",
+  "raw_directory": "/srv/codex-hil-nvme/measurements/afe12-phase-original20-uart-20261106-01",
+  "new_jed_sha256": "bbcae0c51ae947ee73ea7c2ab94821edae838a865bea243278ffaa04f8e58726",
+  "note": "Original process exit1 and phase-return failure retained; all20 points and raw buffers verified."
+}

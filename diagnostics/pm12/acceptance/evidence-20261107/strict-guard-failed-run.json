@@ -1,0 +1,316 @@
+{
+  "schema": 1,
+  "mode": "LIVE",
+  "run_id": "post-restore-probe-run",
+  "board_uid": "PM12-K7-3A17A1B402212223",
+  "board_serial": "1803",
+  "channels": [
+    12
+  ],
+  "started_utc": "2026-11-07T19:19:49.984140+00:00",
+  "status": "FAIL",
+  "steps": [
+    {
+      "id": "identity",
+      "title": "Hardware identity and PGOOD",
+      "started_utc": "2026-11-07T19:19:49.998225+00:00",
+      "command": [
+        "/home/codex-hil/kasli-phase-tester/run-python",
+        "/home/codex-hil/fit-testing-publish/diagnostics/pm12/acceptance/station.py",
+        "identity",
+        "--station",
+        "/srv/codex-hil-nvme/pm12-acceptance-20261107/post-restore-probe-run/station.json",
+        "--out",
+        "/srv/codex-hil-nvme/pm12-acceptance-20261107/post-restore-probe-run/identity/data"
+      ],
+      "channel": null,
+      "status": "PASS",
+      "checks": [
+        {
+          "file": "data/result.json",
+          "key": "status",
+          "equals": "PASS"
+        }
+      ],
+      "procedure": "Read factory FPGA DNA and MCU EEPROM serial under leases. Match enrolled UID, integrated build and stable physical PGOOD.",
+      "limits": "MCU EEPROM serial and FPGA IDCODE are not unique factory identity. CPU factory signature not read.",
+      "pid": 2701460,
+      "returncode": 0,
+      "finished_utc": "2026-11-07T19:20:09.699901+00:00",
+      "instance": "identity"
+    },
+    {
+      "id": "adc-probe",
+      "title": "Strict ADC strobe check after SRAM restoration",
+      "started_utc": "2026-11-07T19:20:09.700668+00:00",
+      "command": [
+        "/home/codex-hil/kasli-phase-tester/run-python",
+        "/home/codex-hil/fit-testing-publish/diagnostics/pm12/cfd_simulator/adc_dc_scan.py",
+        "--probe",
+        "--afe",
+        "12",
+        "--board-serial",
+        "1803",
+        "--dac-channels",
+        "0",
+        "1",
+        "--out",
+        "/srv/codex-hil-nvme/pm12-acceptance-20261107/post-restore-probe-run/adc-probe-ch12/data"
+      ],
+      "channel": 12,
+      "status": "ERROR",
+      "checks": [
+        {
+          "file": "data/status.json",
+          "key": "pass",
+          "equals": true
+        }
+      ],
+      "procedure": "Probe both ADC inputs at five small differential setpoints; every STR rising-edge spacing must be4 raw capture samples. Retain a rejected buffer before analysis raises.",
+      "limits": "Timing guard only; a failure does not locate the cause in ADC, CPLD or FPGA sampling phase.",
+      "pid": 2701967,
+      "returncode": 1,
+      "error": "Test process exited nonzero",
+      "finished_utc": "2026-11-07T19:20:31.388998+00:00",
+      "instance": "adc-probe-ch12"
+    }
+  ],
+  "plan": {
+    "schema": 1,
+    "name": "Post-restore strict ADC timing guard",
+    "steps": [
+      {
+        "id": "identity",
+        "title": "Hardware identity and PGOOD",
+        "command": [
+          "{python}",
+          "{repo}/diagnostics/pm12/acceptance/station.py",
+          "identity",
+          "--station",
+          "{station}",
+          "--out",
+          "{output}"
+        ],
+        "checks": [
+          {
+            "file": "data/result.json",
+            "key": "status",
+            "equals": "PASS"
+          }
+        ],
+        "procedure": "Read factory FPGA DNA and MCU EEPROM serial under leases. Match enrolled UID, integrated build and stable physical PGOOD.",
+        "limits": "MCU EEPROM serial and FPGA IDCODE are not unique factory identity. CPU factory signature not read.",
+        "per_channel": false,
+        "timeout_s": 3600
+      },
+      {
+        "id": "adc-probe",
+        "title": "Strict ADC strobe check after SRAM restoration",
+        "per_channel": true,
+        "command": [
+          "{python}",
+          "{repo}/diagnostics/pm12/cfd_simulator/adc_dc_scan.py",
+          "--probe",
+          "--afe",
+          "{channel}",
+          "--board-serial",
+          "{board_serial}",
+          "--dac-channels",
+          "{dac_positive}",
+          "{dac_negative}",
+          "--out",
+          "{output}"
+        ],
+        "checks": [
+          {
+            "file": "data/status.json",
+            "key": "pass",
+            "equals": true
+          }
+        ],
+        "procedure": "Probe both ADC inputs at five small differential setpoints; every STR rising-edge spacing must be4 raw capture samples. Retain a rejected buffer before analysis raises.",
+        "limits": "Timing guard only; a failure does not locate the cause in ADC, CPLD or FPGA sampling phase.",
+        "timeout_s": 600
+      }
+    ]
+  },
+  "station": {
+    "schema": 1,
+    "asset_label": "PM12-K7-3A17A1B402212223",
+    "board_serial": "1803",
+    "jtag_cable": "210249A73E43",
+    "hw_server": "localhost:3121",
+    "python": "/home/codex-hil/kasli-phase-tester/run-python",
+    "uart": "/dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0",
+    "kasli_root": "/home/codex-hil/kasli-phase-tester",
+    "console_tools": "/home/codex-hil/FIT_PM_FW_uPC/tools/hardware",
+    "stimulated_channel": 12,
+    "channels": {
+      "12": {
+        "analog_connected": true,
+        "phase_lanes": [
+          8,
+          9
+        ],
+        "dac_channels": [
+          0,
+          1
+        ]
+      }
+    },
+    "identity_leases": [
+      "atmel-ice-J41800043065",
+      "pm12-210249A73E43",
+      "kasli-diot-00001"
+    ],
+    "run_leases": [
+      "atmel-ice-J41800043065",
+      "pm12-210249A73E43",
+      "kasli-diot-00001",
+      "esp32-6825dd4c49e4",
+      "lattice-VER00001"
+    ],
+    "modules": [
+      {
+        "role": "DUT",
+        "type": "FIT PM12",
+        "eeprom_serial": "1803",
+        "hardware_uid": "PM12-K7-3A17A1B402212223",
+        "photo": null,
+        "identity_source": "Vivado FUSE_DNA read2026-11-07; EEPROM serial secondary"
+      },
+      {
+        "role": "Timing and readout",
+        "type": "Kasli-DIOT",
+        "label": "00001",
+        "hardware_uid": null,
+        "photo": null
+      },
+      {
+        "role": "LVDS stimulus/capture",
+        "type": "DIO-LVDS RJ45 slot 6",
+        "hardware_uid": null,
+        "photo": null
+      },
+      {
+        "role": "LVDS stimulus/capture",
+        "type": "DIO-LVDS RJ45 slot 7",
+        "hardware_uid": null,
+        "photo": null
+      },
+      {
+        "role": "Analog stimulus",
+        "type": "MOD-DAC-28",
+        "hardware_uid": "ESP32-MAC-6825DD4C49E4",
+        "identity_source": "SCPI IDN; base MAC, Ethernet MAC differs",
+        "photo": null
+      },
+      {
+        "role": "DC voltage measurement",
+        "type": "Keithley DMM7510",
+        "label": "04679690",
+        "hardware_uid": null,
+        "photo": null
+      },
+      {
+        "role": "Analog adapter",
+        "type": "CFD_SIM channel 12",
+        "hardware_uid": null,
+        "photo": null
+      },
+      {
+        "role": "Clock reference",
+        "type": "External LHC generator",
+        "hardware_uid": null,
+        "photo": null
+      }
+    ],
+    "measurement_configuration": {
+      "pm_bit_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+      "kasli_bit_sha256": "4299ddd3c87ccc4ad76796127de1d08d2d50943c7679555fca140b1e64261745",
+      "reference_mhz": 40.0787,
+      "kasli_reference_multiplier": 3,
+      "cpld_gate_mhz": 20,
+      "analog_common_mode_v": 1.0,
+      "dac_legs_max_v": 3.3
+    },
+    "managed_jtag": {
+      "socket": "unix:///run/user/1001/docker-vivado.sock",
+      "image": "codex-vivado-runtime:ubuntu22.04",
+      "vivado_bin": "/srv/codex-hil-data/toolchains/amd/Xilinx/2025.2/Vivado/bin"
+    },
+    "board_uid": "PM12-K7-3A17A1B402212223",
+    "boundary": {
+      "diagnostic_bit": "/home/codex-hil/fit-bringup/gateware/pm12_link_diag/build/pm12_link_diag.bit",
+      "diagnostic_sha256": "c9fbd02768ce12750dc68b8bb24c34403027a65f9e002661e29bb3d2e2df7a1a",
+      "restore_bit": "/srv/codex-hil-nvme/pm12-hdmi-integrated-20261106/pm-final-candidate/pm12_ipbus_adc.bit"
+    }
+  },
+  "configuration": {
+    "pm_bit_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+    "kasli_bit_sha256": "4299ddd3c87ccc4ad76796127de1d08d2d50943c7679555fca140b1e64261745",
+    "reference_mhz": 40.0787,
+    "kasli_reference_multiplier": 3,
+    "cpld_gate_mhz": 20,
+    "analog_common_mode_v": 1.0,
+    "dac_legs_max_v": 3.3
+  },
+  "source_fingerprint": "086742e54654cd7c12c4725660baf21382295a22c218e18b54d4414bf889f703",
+  "identity": {
+    "uid": "PM12-K7-3A17A1B402212223",
+    "fpga_dna": "3A17A1B402212223",
+    "mcu_eeprom_serial": "1803",
+    "asset_label": "PM12-K7-3A17A1B402212223",
+    "cpu_factory_id": null,
+    "cpu_factory_id_status": "NOT_READ; do not reset MCU for a PDI signature read",
+    "jtag_cable": "210249A73E43",
+    "fpga_ipbus_identity": [
+      1347228162,
+      65538,
+      3351522600
+    ],
+    "pgood": [
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000AD03730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2108
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000E401730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2109
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000001A00730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2108
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000003902730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.211
+      }
+    ],
+    "pgood_final": {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000004403730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2109
+    },
+    "mcu_reply": {
+      "command": "RS",
+      "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.1 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+      "duration_s": 0.2109
+    },
+    "uptime_before": [
+      2756072755,
+      4
+    ],
+    "uptime_after": [
+      3455502301,
+      4
+    ],
+    "observed_utc": "2026-11-07T19:20:09Z"
+  },
+  "finished_utc": "2026-11-07T19:20:31.389718+00:00",
+  "scope": "Selected plan and fitted channels only; final report checks required coverage separately"
+}

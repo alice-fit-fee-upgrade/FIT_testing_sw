@@ -1,0 +1,10 @@
+test_measured_boundary_pass (test_reports.Reports.test_measured_boundary_pass) ... ok
+test_measured_gateware_pass (test_reports.Reports.test_measured_gateware_pass) ... ok
+test_missing_restoration_cannot_pass (test_reports.Reports.test_missing_restoration_cannot_pass) ... ok
+test_real_backend_fault_is_not_reported_as_success (test_reports.Reports.test_real_backend_fault_is_not_reported_as_success) ... ok
+test_truncated_log_is_rejected (test_reports.Reports.test_truncated_log_is_rejected) ... ok
+
+----------------------------------------------------------------------
+Ran 5 tests in 0.065s
+
+OK

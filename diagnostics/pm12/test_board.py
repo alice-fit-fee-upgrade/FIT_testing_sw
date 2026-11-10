@@ -14,6 +14,8 @@ import subprocess
 import sys
 
 HERE = Path(__file__).resolve().parent
+sys.path.insert(0,str(HERE/'acceptance'))
+from lease import acquire as acquire_lease
 PINMAP = json.loads((HERE / 'pinmap.json').read_text())
 PIN_MASK = (1 << 168) - 1
 
@@ -141,14 +143,14 @@ def main():
                            timeout=args.step_timeout, check=True)
         return logfile.read_text()
 
-    with lock.open('a+') as lease:
-        try:
-            fcntl.flock(lease, fcntl.LOCK_EX | fcntl.LOCK_NB)
-        except BlockingIOError:
-            summary['error'] = f'Board busy: {lock}'
-            (output / 'report.json').write_text(json.dumps(summary, indent=2) + '\n')
-            print(summary['error'], file=sys.stderr)
-            return 1
+    try:
+        lease = acquire_lease(lock)
+    except BlockingIOError:
+        summary['error'] = f'Board busy: {lock}'
+        (output / 'report.json').write_text(json.dumps(summary, indent=2) + '\n')
+        print(summary['error'], file=sys.stderr)
+        return 1
+    with lease:
         try:
             if args.bitstream:
                 bitstream = args.bitstream.resolve()

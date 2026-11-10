@@ -1,0 +1,63 @@
+{
+  "status": "CASE_RESOLVED",
+  "board_uid": "PM12-K7-3A17A1B402212223",
+  "cause": "Strict exact4-tick STR spacing assumption invalid for asynchronous4x oversampling at a sampling boundary",
+  "fpga_changed": false,
+  "fpga_reload_control_count": 2,
+  "fpga_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+  "mcu_cpld_flash_programmed": false,
+  "pll_profiles_changed": false,
+  "phase_repeat": {
+    "raw_buffers": 38,
+    "all_unique": true,
+    "aligned": 27,
+    "edge_quantized": 11,
+    "selected_words_stable": true
+  },
+  "reload_control": {
+    "raw_buffers": 216,
+    "contexts": 3,
+    "all12channels": true,
+    "both_banks": true,
+    "all_checks_pass": true,
+    "quantized_channels": {
+      "before": [
+        12
+      ],
+      "reload0": [
+        10
+      ],
+      "reload1": [
+        3
+      ]
+    },
+    "cpld_extest": false
+  },
+  "full_adc_scan": {
+    "points_per_bank": 257,
+    "raw_buffers": 514,
+    "raw_words": 2105344,
+    "edge_quantized_buffers": 369,
+    "aligned_buffers": 145,
+    "histograms_and_tags_exact": true,
+    "generations_contiguous": true,
+    "all_selected_words_stable": true,
+    "bits_pass_per_bank": 12,
+    "pairs_pass_per_bank": 11
+  },
+  "final_system": "PASS HDMI/ADC/TDC after both FPGA-only reloads",
+  "original_strict_fail_evidence": "Retained unchanged; original two raw buffers added as regression fixtures",
+  "software_tests": {
+    "decoder": 9,
+    "cfd": 35,
+    "acceptance": 11,
+    "ipbus_udp_regression": "PASS"
+  },
+  "limits": [
+    "No physical jitter, sub-sample glitch or timing-margin certification",
+    "Analog qualification channel12 only; visited3099/3053codes, not full4096-code/DNL",
+    "The exploratory122-observation sweep retained120unique raw files; only the38-buffer repeat is qualified here",
+    "Metadata-only final source change computes mean strobe interval instead of reporting nominal4; ADC word selection and guard checks unchanged"
+  ],
+  "final_state": "Integrated c7c42d28 retained, DAC-A0000, external DAC last verified1V/1V, ADC bankA, TDC quiet, SPI/CFD off, DIO inputs, leases released"
+}

@@ -1,0 +1,83 @@
+{
+  "scope": "Physical MCU SPI with original slave protocol, passive FPGA I2C pins",
+  "rows": [
+    {
+      "command": "@CFG",
+      "reply": "CFG PORTD IN=BF 07\r\n"
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=BEFC6FBF9EFC STATE 2157..2162=89000001000000CE003C0109\r\n"
+    },
+    {
+      "command": "@FPGA",
+      "reply": "FPGA REG=40 0000\r\nFPGA REG=41 504D\r\nFPGA REG=42 5350\r\nFPGA REG=43 0001\r\nFPGA REG=44 0000\r\n"
+    },
+    {
+      "command": "@FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n"
+    },
+    {
+      "command": "@FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n"
+    },
+    {
+      "command": "@FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n"
+    },
+    {
+      "command": "@FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n"
+    },
+    {
+      "command": "@FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n"
+    },
+    {
+      "command": "@FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n"
+    },
+    {
+      "command": "@FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n"
+    },
+    {
+      "command": "@FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n"
+    },
+    {
+      "command": "@FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n"
+    },
+    {
+      "command": "@FPGATEST",
+      "reply": "FPGA TEST PASS 32 RESTORED\r\n"
+    },
+    {
+      "command": "@FPGA",
+      "reply": "FPGA REG=40 0000\r\nFPGA REG=41 504D\r\nFPGA REG=42 5350\r\nFPGA REG=43 0001\r\nFPGA REG=44 014A\r\n"
+    },
+    {
+      "command": "RS",
+      "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    31.6 NORMAL\r\nBoard power ON, OK\r\nClock source INTERNAL, PLL LOCKED\r\nFPGA not ready\r\n"
+    },
+    {
+      "command": "@TEMP",
+      "reply": "ADT7311 REG=00 00\r\nADT7311 REG=01 00\r\nADT7311 REG=02 0FD0\r\nADT7311 REG=03 C3\r\n"
+    },
+    {
+      "command": "@PLL",
+      "reply": "CDCE62005 80009D38\r\n"
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=BEFC6FBF9EFC STATE 2157..2162=890000010000001F033C0109\r\n"
+    }
+  ],
+  "mcu_source": "f9869c9",
+  "fpga_magic": "504d5a02",
+  "nonvolatile_writes": false,
+  "fpga_load": "PASS",
+  "spi_test": "PASS10 runs,320 walking-bit patterns with readback and scratch restoration",
+  "restored_image": "Matching passive SPI diagnostic left in SRAM"
+}

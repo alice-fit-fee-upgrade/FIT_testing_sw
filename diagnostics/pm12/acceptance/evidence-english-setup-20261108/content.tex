@@ -1,0 +1,568 @@
+\clearpage
+\section{Scope, identity and disposition}
+This dossier records evidence and test coverage. A long report is not proof of compliance: incomplete channels, unknown configuration, absent raw data and failed restoration remain visible.
+
+Measurements from multiple dates/configurations. No factory DNA was recorded at acquisition. Not one acceptance run and not automatically bound to a newly enrolled board.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.4400\linewidth}>{\raggedright\arraybackslash}p{0.4400\linewidth}}
+\toprule
+Field & Recorded value\\\midrule
+\endhead
+{Hardware identity} & {LEGACY-SN1803-UNBOUND}\\
+{MCU EEPROM label} & {1803}\\
+{Evidence mode} & {HISTORICAL}\\
+{Merged batches} & {1}\\
+{Analog channels measured} & {12}\\
+{Final acceptance} & {NOT RELEASED --- requires complete required coverage, frozen limits and reviewer disposition}\\
+{Missing channels} & {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11}\\
+\bottomrule
+\end{longtable}
+Canonical new board label: PM12-K7-<full FPGA factory DNA>. Preserve leading zeroes. JTAG IDCODE identifies chip type, not the individual device. EEPROM serial and debugger cable serial are secondary labels. Replacing the FPGA changes this hardware identity and requires an explicit board genealogy record.
+
+Historical evidence predating factory-DNA reads is never assigned to a newly enrolled DNA automatically. No chip or EEPROM is programmed to assign this number; the printed asset label and registry use the hardware value.
+
+\clearpage
+\section{Bench inventory and wiring}
+\Figure{figures/bench.pdf}{User-reviewed bench wiring, updated2026-11-08; not a pin-level schematic. Historical wiring and configuration are retained with each acquisition snapshot.}
+Diagram parameters describe the illustrated bench; they do not configure hardware. Recorded signal assignments retain the acquisition mapping and are not rewritten by diagram edits.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.4400\linewidth}>{\raggedright\arraybackslash}p{0.4400\linewidth}}
+\toprule
+Connection & Physical assignment / observation\\\midrule
+\endhead
+{Analog stimulus} & {MOD-DAC-28 analog USB outputs feed CFD\_SIM, then the selected PM12 ADC input}\\
+{HDMI cabling} & {PM12 HDMI to LVDS-HDMI adapter, then2RJ45 cables to DIO-LVDS slot6 and Kasli-DIOT backplane}\\
+{Recorded HDMI data mapping} & {Kasli slot6 channels0..3 are inputs; observed PM lane order3,1,2,0}\\
+{Recorded HDMI SPI mapping} & {Slot6:SELECT4,CLOCK5,MISO6,MOSI7; only4/5/7 may drive; mask0x00b0}\\
+{Recorded CFD wiring and phase mapping} & {CFD\_SIM RJ45 to DIO-LVDS slot7 and Kasli backplane; channel0:CFD stimulus; phase RX8/9:channels1/3}\\
+{PM SFP} & {Private cable to Kasli SFP1, line rate1.202361Gb/s; not standard switch-facing1000BASE-X}\\
+{Kasli Ethernet} & {SFP0:control IPbus; SFP2:optical PM bridge to LAN; SFP3 unused}\\
+{Common reference} & {40.0787MHz enters the LVDS-HDMI adapter and reaches PM12 via HDMI; the generator internal x3 output supplies Kasli-DIOT at 120.2361MHz. Declared settings, no frequency-counter calibration}\\
+\bottomrule
+\end{longtable}
+\begin{longtable}{>{\raggedright\arraybackslash}p{.22\linewidth}>{\raggedright\arraybackslash}p{.36\linewidth}>{\raggedright\arraybackslash}p{.34\linewidth}}
+\toprule
+Role & Module & Identity\\\midrule
+\endhead
+{DUT} & {FIT PM12} & {1803}\\
+{Timing and readout} & {Kasli-DIOT} & {00001}\\
+{LVDS stimulus/capture} & {DIO-LVDS RJ45 slot 6} & {NOT READ}\\
+{LVDS stimulus/capture} & {DIO-LVDS RJ45 slot 7} & {NOT READ}\\
+{Analog stimulus} & {MOD-DAC-28} & {ESP32-MAC-6825DD4C49E4}\\
+{DC voltage measurement} & {Keithley DMM7510} & {04679690}\\
+{Analog adapter} & {CFD\_SIM channel 12} & {NOT READ}\\
+{Clock reference} & {External LHC generator} & {NOT READ}\\
+\bottomrule
+\end{longtable}
+Photographs supplement, but never replace, hardware identity. Each photo is associated with the identified module and its file hash. Missing photos or unread device IDs are left explicit.
+
+\subsection*{FIT PM12}
+\PhotoMissing{DUT}
+\subsection*{Kasli-DIOT}
+\PhotoMissing{Timing and readout}
+\subsection*{DIO-LVDS RJ45 slot 6}
+\PhotoMissing{LVDS stimulus/capture}
+\subsection*{DIO-LVDS RJ45 slot 7}
+\PhotoMissing{LVDS stimulus/capture}
+\subsection*{MOD-DAC-28}
+\PhotoMissing{Analog stimulus}
+\subsection*{Keithley DMM7510}
+\PhotoMissing{DC voltage measurement}
+\subsection*{CFD\_SIM channel 12}
+\PhotoMissing{Analog adapter}
+\subsection*{External LHC generator}
+\PhotoMissing{Clock reference}
+\clearpage
+\section{Test coverage and acceptance rules}
+\begin{longtable}{>{\raggedright\arraybackslash}p{.34\linewidth}>{\raggedright\arraybackslash}p{.19\linewidth}>{\raggedright\arraybackslash}p{.39\linewidth}}
+\toprule
+Test & Result & Scope / deviation\\\midrule
+\endhead
+{JTAG chain / 168 static links} & {HISTORICAL PASS} & {2026-10-13; exact reduced measured logs retained}\\
+{CPU--FPGA SPI / peripherals} & {HISTORICAL PASS} & {2026-10-15; original diagnostic image}\\
+{Configuration flash read / ownership} & {HISTORICAL PASS} & {Read-only ownership sequence; stored-image boot NOT CONFIRMED}\\
+{Power startup / timeout fault injection} & {NOT RUN} & {Static PGOOD cannot substitute for fault testing}\\
+{GTX PRBS / Ethernet loopback} & {HISTORICAL PASS} & {Old exact 40 MHz setup, not current LHC private link}\\
+{I2C mux / power monitors} & {HISTORICAL PASS} & {2026-10-14; uncalibrated currents; P3V8 shunt absent at that historical measurement}\\
+{HDMI / digital ADC / TDC} & {HISTORICAL PASS} & {2026-11-06; all digital ADC channels, stimulated TDC only channel 12}\\
+{CFD monitor and B/C/D DAC curves} & {HISTORICAL} & {Channel 12 only; restored-code correction retained}\\
+{Gate phase and DAC-A} & {HISTORICAL PASS} & {Channel 12,20 settings; nominal sample time units}\\
+{ADC transfer / adjacent bits} & {HISTORICAL PASS} & {2026-11-07 channel 12, A/B; 257 levels, raw revalidated}\\
+\bottomrule
+\end{longtable}
+PASS requires the configured process to finish successfully AND every declared result check to match. NOT\_RUN, BLOCKED, ERROR and INCONCLUSIVE cannot become PASS. Failed cleanup is a failure. Repeated runs do not overwrite earlier evidence.
+
+\clearpage
+\section{Test procedure and criteria}
+\subsection{Hardware identity and PGOOD}
+Read factory FPGA DNA and MCU EEPROM serial under leases. Match enrolled UID, integrated build and stable physical PGOOD.
+
+Limits: MCU EEPROM serial and FPGA IDCODE are not unique factory identity. CPU factory signature not read.
+
+\subsection{JTAG chain and168 static CPLD--FPGA links}
+Validate13 IDCODEs. Program checksum-verified link diagnostic into FPGA SRAM only.338 walking-one/zero vectors in each of gateware and independent boundary-scan receive paths. Restore checksum-verified integrated image, initialize private link, verify build and repeat HDMI/ADC/TDC functional tests.
+
+Limits: Static connectivity, not at-speed margin or analog quality. Expected SYS reset from deliberate FPGA SRAM reconfiguration; never reset or program MCU/CPLD/flash.
+
+\subsection{GTX internal PRBS, MAC loopback and external link}
+Exercise GTX PRBS and MAC loopback with negative controls; restore integrated image. External PM$\leftrightarrow$Kasli private link checked separately by integrated suite.
+
+Limits: Legacy1000BASE-X image expects old exact40MHz clock. Requalify with present40.0787MHz; old PASS is historical only.
+
+\subsection{I2C mux address inventory and bus topology}
+Single-branch scans through both muxes, address readback and decoded monitor IDs; preserve current/voltage samples.
+
+Limits: Legacy runner programs older FPGA and restores obsolete baseline. MCU telemetry is integrated, exhaustive topology adapter still requires migration.
+
+\subsection{FPGA configuration flash ownership and read-only access}
+Verify ownership guard, PROGRAM\_B hold, JEDEC and bounded READ03, bus release, reload integrated SRAM image.
+
+Limits: Destructive to volatile FPGA state. Qualified current-image restoration/recovery adapter required; stored-image boot remains unconfirmed.
+
+\subsection{Power sequencing and timeout shutdown}
+Observe EN-to-PG rise and timeout shutdown without replacing original MCU protection; record rails and fault state.
+
+Limits: Fault injection and power-cycle qualification NOT\_RUN; static PGOOD is not equivalent.
+
+\subsection{CPU peripherals, SPI walking patterns and power telemetry}
+Read PING, GPIO, temperature ID, three TDC chip IDs, PLL, FPGA signature, 32 walking patterns with scratch restoration, INA and POWER. Recheck PGOOD before sensor access.
+
+Limits: No power cycling or timeout fault injection. Sensor numeric limits require a frozen acceptance specification.
+
+\subsection{HDMI, all digital ADC paths and stimulated TDC}
+Four HDMI lanes: walking discovery and slow/fast PRBS, empty frames; SPI signature reads only. Capture both ADC banks, synthetic and physical, all12 channels. Quiet/stimulated/quiet TDC:64 pulses to configured channel. Check uptime.
+
+Limits: TDC stimulus only on the physically connected channel. No calibrated ADC analog acceptance for unconnected channels. HDMI SPI writes disabled: bus shared with MCU.
+
+\subsection{Gate delay versus internal DAC-A}
+Establish explicit DAC-A0000 baseline;20 code points0..65535; common trigger and ISERDES phase buffers; restore0000 and verify phase return. Save every raw capture.
+
+Limits: Sampled centroid, nominal sample metadata; no calibrated absolute phase/jitter claim. Original20MHz CPLD gate divider required.
+
+\subsection{ADC differential transfer and adjacent data-bit coverage}
+SCPI DAC differential-1.2..+1.2V, commonmode1V,257 points, ADC A/B. Decode4096-word buffers at STR edges, verify tags/generations;12 bits and11 neighbor pairs, all4 states with sufficient population. Restore1V/1V.
+
+Limits: Requested voltage, no calibrated gain/DNL. Per-pin0..3.3V ceiling. Functional persistent-tie test, not resistance/pin-order/timing-margin proof.
+
+\subsection{CFD analog monitor DC levels}
+Read all8 monitor nodes with DMM7510, correct divider ratios, leave all shared monitor muxes inhibited.
+
+Limits: Original script is channel12-specific. Parameterized multi-module inhibition and DMM/wiring qualification required.
+
+\subsection{Internal DAC B/C/D transfer curves}
+65 code settings perDAC, three DMM readings per setting, corrected analog-node voltage and verified explicit-code restoration.
+
+Limits: Original script is channel12-specific. Per-channel restore codes, shared mux inhibition and DMM wiring must be configured.
+
+\clearpage
+\section{Digital link and peripheral evidence}
+\subsection{MCU / SPI}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.4400\linewidth}>{\raggedright\arraybackslash}p{0.4400\linewidth}}
+\toprule
+Recorded field & Result\\\midrule
+\endhead
+{scope} & {Physical MCU SPI with original slave protocol, passive FPGA I2C pins}\\
+{rows} & {18 entries; see archived JSON/raw files}\\
+{mcu\_source} & {f9869c9}\\
+{fpga\_magic} & {504d5a02}\\
+{nonvolatile\_writes} & {False}\\
+{fpga\_load} & {PASS}\\
+{spi\_test} & {PASS10 runs,320 walking-bit patterns with readback and scratch restoration}\\
+{restored\_image} & {Matching passive SPI diagnostic left in SRAM}\\
+\bottomrule
+\end{longtable}
+\subsection{Flash ownership}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.4400\linewidth}>{\raggedright\arraybackslash}p{0.4400\linewidth}}
+\toprule
+Recorded field & Result\\\midrule
+\endhead
+{scope} & {Physical config bus ownership/read-only flash/reset-release; no flash write/erase}\\
+{rows} & {18 entries; see archived JSON/raw files}\\
+{jedec\_id} & {016017}\\
+{flash\_ownership\_read\_release} & {PASS}\\
+{boot\_done\_within2s} & {False}\\
+{boot\_validation} & {DONE did not assert; stored image unknown, not a successful FPGA boot}\\
+\bottomrule
+\end{longtable}
+\subsection{Ethernet / PRBS}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.4400\linewidth}>{\raggedright\arraybackslash}p{0.4400\linewidth}}
+\toprule
+Recorded field & Result\\\midrule
+\endhead
+{board} & {PM12}\\
+{serial} & {210249A73E43}\\
+{external\_sfp} & {NOT\_RUN}\\
+{persistent\_writes} & {False}\\
+{status} & {PASS}\\
+{bitstream\_sha256} & {fb6e39d8375d46dd01fde00d22a6075bf78756666cb79a8cc96f235622a59211}\\
+{restore\_bitstream\_sha256} & {c9fbd02768ce12750dc68b8bb24c34403027a65f9e002661e29bb3d2e2df7a1a}\\
+{samples} & {12 entries; see archived JSON/raw files}\\
+{checks.initial\_mac\_clocks} & {True}\\
+{checks.initial\_mac} & {True}\\
+{checks.payload\_recovery\_clocks} & {True}\\
+{checks.payload\_recovery} & {True}\\
+{checks.prbs\_clocks} & {True}\\
+{checks.prbs} & {True}\\
+{checks.prbs\_recovery\_clocks} & {True}\\
+{checks.prbs\_recovery} & {True}\\
+{checks.final\_mac\_clocks} & {True}\\
+{checks.final\_mac} & {True}\\
+{checks.payload\_negative\_control} & {True}\\
+{checks.prbs\_negative\_control} & {True}\\
+{windows.initial\_mac.tick} & {360504425}\\
+{windows.initial\_mac.refcount} & {300420354}\\
+{windows.initial\_mac.txframes} & {88576}\\
+{windows.initial\_mac.rxframes} & {88576}\\
+{windows.initial\_mac.badframes} & {0}\\
+{windows.initial\_mac.prbs\_error\_samples} & {0}\\
+{windows.initial\_mac.rxbytes} & {5314560}\\
+{windows.initial\_mac.sys\_mhz} & {120.00813082556591}\\
+\bottomrule
+\end{longtable}
+\subsection{I2C topology}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.4400\linewidth}>{\raggedright\arraybackslash}p{0.4400\linewidth}}
+\toprule
+Recorded field & Result\\\midrule
+\endhead
+{date} & {2026-10-14}\\
+{digital\_pass} & {True}\\
+{physical\_restore\_verified} & {True}\\
+{fpga\_sha256} & {b26bdccb44ff0d323a58637efd3cee59a98752afdf432d392f4aa47a1a3d9652}\\
+{nonvolatile\_writes} & {False}\\
+{mux\_addresses} & {['0x70', '0x71']}\\
+{mux\_selection\_readback\_cases} & {16}\\
+{reset\_test} & {True}\\
+{automatic\_line\_release\_test} & {True}\\
+{downstream\_scan\_address\_range} & {0x08..0x77 excluding upstream mux addresses}\\
+{confirmed\_monitors} & {3}\\
+{afe\_device\_ack\_count} & {0}\\
+{warnings} & {2 entries; see archived JSON/raw files}\\
+{coverage\_limits} & {['AFE routes yielded no downstream ACK; physical connectivity of unloaded branches is not proven', 'No sensor configuration or power-controller writes', 'Voltage/current calibration not validated', 'Slow host-driven I2C over UDP; high-speed I2C electrical margins not measured']}\\
+{bus\_voltages\_by\_monitor.4} & {[1.0, 1.2, 1.792]}\\
+{bus\_voltages\_by\_monitor.5} & {[1.456, 3.336, 1.784]}\\
+{bus\_voltages\_by\_monitor.6} & {[1.008, 5.5040000000000004, 0.0]}\\
+\bottomrule
+\end{longtable}
+\subsection{Power rail observations}
+\begin{longtable}{>{\raggedright\arraybackslash}p{.25\linewidth}>{\raggedright\arraybackslash}p{.17\linewidth}>{\raggedright\arraybackslash}p{.17\linewidth}>{\raggedright\arraybackslash}p{.33\linewidth}}
+\toprule
+Rail & Bus [V] & Current [A] & Note\\\midrule
+\endhead
+{P1V0\_LDO} & {1.0} & {0.1276} & {Uncalibrated; inspect shunt/clipping metadata}\\
+{P1V2\_LDO} & {1.2} & {0.092} & {Uncalibrated; inspect shunt/clipping metadata}\\
+{P1V8\_LDO} & {1.792} & {0.004} & {Uncalibrated; inspect shunt/clipping metadata}\\
+{P3V8} & {1.48} & {None} & {Uncalibrated; inspect shunt/clipping metadata}\\
+{P3V3} & {3.336} & {4.920000000000001} & {Uncalibrated; inspect shunt/clipping metadata}\\
+{P1V8} & {1.784} & {0.36000000000000004} & {Uncalibrated; inspect shunt/clipping metadata}\\
+{P1V0} & {1.008} & {0.10800000000000001} & {Uncalibrated; inspect shunt/clipping metadata}\\
+{P5V5} & {5.5040000000000004} & {0.08} & {Uncalibrated; inspect shunt/clipping metadata}\\
+{TP1/TP2} & {0.0} & {None} & {Uncalibrated; inspect shunt/clipping metadata}\\
+\bottomrule
+\end{longtable}
+The historical P3V8 measurement above was taken without its shunt, so its current is excluded. The owner confirms current readout is available as of2026-11-08; subsequent captures record it normally. Historical clipping observations are retained.
+
+\clearpage
+\section{CFD and ADC --- channel comparison}
+All measured channels share one overlay per observable, with a fixed channel color and common axes. ADC A/B occupy separate panels. No line is invented for an unmeasured channel. The twelve-channel requirement is independent of the number of connected simulators in a batch.
+
+\Figure{figures/transfer.pdf}{Requested DAC voltage, not a calibrated voltage measurement.}
+\Figure{figures/waveform.pdf}{One sample per STR edge; time origins are local to sequential captures. Fs inferred as 80.1574 MHz.}
+\Figure{figures/fft.pdf}{DC removed, Hann window, one-sided PSD. Fs inferred from stated LHC reference, not measured by a frequency counter. No ENOB/SINAD acceptance from a DC capture.}
+\Figure{figures/histogram.pdf}{Stepped DC code density; unvisited codes are not automatically ADC missing-code/DNL faults.}
+\Figure{figures/phase.pdf}{Nominal sampled-centroid units; original 20 MHz gate divider. Curves use the same reported sample metadata.}
+\begin{longtable}{>{\raggedright\arraybackslash}p{.12\linewidth}>{\raggedright\arraybackslash}p{.10\linewidth}>{\raggedright\arraybackslash}p{.25\linewidth}>{\raggedright\arraybackslash}p{.18\linewidth}>{\raggedright\arraybackslash}p{.23\linewidth}}
+\toprule
+Channel & ADC & Line exercise & Visited codes & Interior samples\\\midrule
+\endhead
+{1} & {A} & {NOT MEASURED} & {-} & {-}\\
+{1} & {B} & {NOT MEASURED} & {-} & {-}\\
+{2} & {A} & {NOT MEASURED} & {-} & {-}\\
+{2} & {B} & {NOT MEASURED} & {-} & {-}\\
+{3} & {A} & {NOT MEASURED} & {-} & {-}\\
+{3} & {B} & {NOT MEASURED} & {-} & {-}\\
+{4} & {A} & {NOT MEASURED} & {-} & {-}\\
+{4} & {B} & {NOT MEASURED} & {-} & {-}\\
+{5} & {A} & {NOT MEASURED} & {-} & {-}\\
+{5} & {B} & {NOT MEASURED} & {-} & {-}\\
+{6} & {A} & {NOT MEASURED} & {-} & {-}\\
+{6} & {B} & {NOT MEASURED} & {-} & {-}\\
+{7} & {A} & {NOT MEASURED} & {-} & {-}\\
+{7} & {B} & {NOT MEASURED} & {-} & {-}\\
+{8} & {A} & {NOT MEASURED} & {-} & {-}\\
+{8} & {B} & {NOT MEASURED} & {-} & {-}\\
+{9} & {A} & {NOT MEASURED} & {-} & {-}\\
+{9} & {B} & {NOT MEASURED} & {-} & {-}\\
+{10} & {A} & {NOT MEASURED} & {-} & {-}\\
+{10} & {B} & {NOT MEASURED} & {-} & {-}\\
+{11} & {A} & {NOT MEASURED} & {-} & {-}\\
+{11} & {B} & {NOT MEASURED} & {-} & {-}\\
+{12} & {A} & {PASS} & {3129} & {241856}\\
+{12} & {B} & {PASS} & {3057} & {241760}\\
+\bottomrule
+\end{longtable}
+\begin{longtable}{>{\raggedright\arraybackslash}p{.12\linewidth}>{\raggedright\arraybackslash}p{.15\linewidth}>{\raggedright\arraybackslash}p{.30\linewidth}>{\raggedright\arraybackslash}p{.30\linewidth}}
+\toprule
+ADC & Channel & Max deviation [codes] & RMS deviation [codes]\\\midrule
+\endhead
+\bottomrule
+\end{longtable}
+Deviation is relative to the median of measured channels at common requested stimulus settings, without interpolation. With fewer than two channels this comparison is NOT COMPARABLE, rather than zero dispersion. Values are descriptive, not a calibrated gain/error acceptance limit.
+
+Bit decisions exclude rail codes 0/4095. Both values of every bit and all four states of each neighboring pair must be populated: at least 64 samples and 2\% of all interior samples per state, plus at least 8 samples at each of 3 distinct settings. At least 16 settings, 4096 interior samples and 3000-code mean span are required for PASS.
+
+ADC strobe validation uses the4x sampled clock model:1023 or1024 rising and falling edges, intervals3/4/5 only, cumulative rising and falling phase spans at most one sample, and pulse widths1..3 samples. The ADC word selected immediately before STR must equal its preceding sample. EDGE QUANTIZED is reported separately from ALIGNED; neither is a calibrated jitter result. A strict all4-interval check is a separate phase-alignment diagnostic.
+
+This excludes sampled persistent stuck/tied signatures under these conditions. It does not establish electrical resistance, bit order, timing margin, ADC INL/DNL or full missing-code compliance. A sine histogram is arcsine-shaped; a calibrated continuous ramp is a separate density test.
+
+\clearpage
+\section{TDC phase response}
+\Figure{figures/tdc-phase.pdf}{Recomputed circular means from raw 13-bit TDC records. Response and event counting, not calibrated picosecond accuracy.}
+\begin{longtable}{>{\raggedright\arraybackslash}p{.21\linewidth}>{\raggedright\arraybackslash}p{.21\linewidth}>{\raggedright\arraybackslash}p{.21\linewidth}>{\raggedright\arraybackslash}p{.21\linewidth}}
+\toprule
+Applied slot & Applied delay [ns] & Fine circular mean & Events\\\midrule
+\endhead
+{24} & {0} & {126.828} & {128}\\
+{25} & {1.03962} & {78.4219} & {128}\\
+{26} & {2.07924} & {30.164} & {128}\\
+{27} & {3.11886} & {110.883} & {128}\\
+{28} & {4.15848} & {63.836} & {128}\\
+{29} & {5.19811} & {14.7735} & {128}\\
+{30} & {6.23773} & {95.0938} & {128}\\
+{31} & {7.27735} & {47.3438} & {128}\\
+{32} & {8.31697} & {127.312} & {128}\\
+{33} & {9.35659} & {78.8204} & {128}\\
+{34} & {10.3962} & {29.8593} & {128}\\
+{35} & {11.4358} & {111.102} & {128}\\
+{36} & {12.4755} & {63.5234} & {128}\\
+{37} & {13.5151} & {15.6329} & {128}\\
+{38} & {14.5547} & {94.6953} & {128}\\
+{39} & {15.5943} & {46.2422} & {128}\\
+{40} & {16.6339} & {126.766} & {128}\\
+{41} & {17.6736} & {78.8984} & {128}\\
+{42} & {18.7132} & {29.789} & {128}\\
+{43} & {19.7528} & {111.453} & {128}\\
+{44} & {20.7924} & {64.0389} & {128}\\
+{45} & {21.832} & {15.7422} & {128}\\
+{46} & {22.8717} & {94.0311} & {128}\\
+{47} & {23.9113} & {46.375} & {128}\\
+{48} & {24.9509} & {126.938} & {128}\\
+\bottomrule
+\end{longtable}
+\clearpage
+\section{Internal CFD DAC B/C/D characteristics}
+Physical channel 12 only. First attempted restoration using computed STORED parameters was rejected; explicit active-code 0000 restoration then reproduced initial voltages. The original failed attempt remains in the source evidence.
+
+\begin{longtable}{>{\raggedright\arraybackslash}p{.12\linewidth}>{\raggedright\arraybackslash}p{.35\linewidth}>{\raggedright\arraybackslash}p{.21\linewidth}>{\raggedright\arraybackslash}p{.21\linewidth}}
+\toprule
+DAC & Signal & Start [V] & End [V]\\\midrule
+\endhead
+{B} & {DRV\_OFFSET} & {1.043846} & {1.003721}\\
+{C} & {CFD\_OFFSET} & {1.034097} & {1.0136713333333334}\\
+{D} & {CFD\_CMP\_OFFSET} & {0.004514859666666667} & {1.0626073333333335}\\
+\bottomrule
+\end{longtable}
+\clearpage
+\section{Static connection results}
+Results follow the static connection procedure in the test-procedure chapter. All rows below share one discovery and schematic revision; at-speed and analog tests are documented separately.
+
+CPLD endpoints are physical channel / package pin. Each result includes walking-one, walking-zero, all-zero/all-one baselines and agreement with the schematic. Vector indices, boundary cells and full per-vector observations remain in the archived JSON/logs.
+
+\begingroup\small\setlength{\tabcolsep}{3pt}
+\begin{longtable}{>{\raggedright\arraybackslash}p{.14\linewidth}>{\raggedright\arraybackslash}p{.08\linewidth}>{\raggedright\arraybackslash}p{.16\linewidth}>{\raggedright\arraybackslash}p{.16\linewidth}>{\raggedright\arraybackslash}p{.16\linewidth}>{\raggedright\arraybackslash}p{.09\linewidth}>{\raggedright\arraybackslash}p{.09\linewidth}}
+\toprule
+Signal & FPGA ball & Expected CPLD & Gateware CPLD & Boundary CPLD & Gateware & Boundary\\\midrule
+\endhead
+{DI1[0]} & {T7} & {1 / 99} & {1 / 99} & {1 / 99} & {PASS} & {PASS}\\
+{DI1[1]} & {U7} & {1 / 97} & {1 / 97} & {1 / 97} & {PASS} & {PASS}\\
+{DI1[2]} & {U6} & {1 / 96} & {1 / 96} & {1 / 96} & {PASS} & {PASS}\\
+{DI1[3]} & {U5} & {1 / 95} & {1 / 95} & {1 / 95} & {PASS} & {PASS}\\
+{DI1[4]} & {U4} & {1 / 94} & {1 / 94} & {1 / 94} & {PASS} & {PASS}\\
+{DI1[5]} & {U2} & {1 / 93} & {1 / 93} & {1 / 93} & {PASS} & {PASS}\\
+{DI1[6]} & {U1} & {1 / 92} & {1 / 92} & {1 / 92} & {PASS} & {PASS}\\
+{DI1[7]} & {V6} & {1 / 91} & {1 / 91} & {1 / 91} & {PASS} & {PASS}\\
+{DI1[8]} & {V4} & {1 / 90} & {1 / 90} & {1 / 90} & {PASS} & {PASS}\\
+{DI1[9]} & {W4} & {1 / 89} & {1 / 89} & {1 / 89} & {PASS} & {PASS}\\
+{DI1[10]} & {V2} & {1 / 87} & {1 / 87} & {1 / 87} & {PASS} & {PASS}\\
+{DI1[11]} & {V1} & {1 / 86} & {1 / 86} & {1 / 86} & {PASS} & {PASS}\\
+{DI1[12]} & {W6} & {1 / 85} & {1 / 85} & {1 / 85} & {PASS} & {PASS}\\
+{STR1} & {W5} & {1 / 82} & {1 / 82} & {1 / 82} & {PASS} & {PASS}\\
+{DI2[0]} & {AF4} & {2 / 99} & {2 / 99} & {2 / 99} & {PASS} & {PASS}\\
+{DI2[1]} & {AD5} & {2 / 97} & {2 / 97} & {2 / 97} & {PASS} & {PASS}\\
+{DI2[2]} & {AE5} & {2 / 96} & {2 / 96} & {2 / 96} & {PASS} & {PASS}\\
+{DI2[3]} & {AF5} & {2 / 95} & {2 / 95} & {2 / 95} & {PASS} & {PASS}\\
+{DI2[4]} & {AB6} & {2 / 94} & {2 / 94} & {2 / 94} & {PASS} & {PASS}\\
+{DI2[5]} & {AC6} & {2 / 93} & {2 / 93} & {2 / 93} & {PASS} & {PASS}\\
+{DI2[6]} & {AD6} & {2 / 92} & {2 / 92} & {2 / 92} & {PASS} & {PASS}\\
+{DI2[7]} & {AE6} & {2 / 91} & {2 / 91} & {2 / 91} & {PASS} & {PASS}\\
+{DI2[8]} & {U9} & {2 / 90} & {2 / 90} & {2 / 90} & {PASS} & {PASS}\\
+{DI2[9]} & {V7} & {2 / 89} & {2 / 89} & {2 / 89} & {PASS} & {PASS}\\
+{DI2[10]} & {V8} & {2 / 87} & {2 / 87} & {2 / 87} & {PASS} & {PASS}\\
+{DI2[11]} & {Y7} & {2 / 86} & {2 / 86} & {2 / 86} & {PASS} & {PASS}\\
+{DI2[12]} & {Y8} & {2 / 85} & {2 / 85} & {2 / 85} & {PASS} & {PASS}\\
+{STR2} & {AA7} & {2 / 82} & {2 / 82} & {2 / 82} & {PASS} & {PASS}\\
+{DI3[0]} & {AA8} & {3 / 99} & {3 / 99} & {3 / 99} & {PASS} & {PASS}\\
+{DI3[1]} & {AD11} & {3 / 97} & {3 / 97} & {3 / 97} & {PASS} & {PASS}\\
+{DI3[2]} & {AE11} & {3 / 96} & {3 / 96} & {3 / 96} & {PASS} & {PASS}\\
+{DI3[3]} & {V12} & {3 / 95} & {3 / 95} & {3 / 95} & {PASS} & {PASS}\\
+{DI3[4]} & {Y12} & {3 / 94} & {3 / 94} & {3 / 94} & {PASS} & {PASS}\\
+{DI3[5]} & {Y13} & {3 / 93} & {3 / 93} & {3 / 93} & {PASS} & {PASS}\\
+{DI3[6]} & {AA12} & {3 / 92} & {3 / 92} & {3 / 92} & {PASS} & {PASS}\\
+{DI3[7]} & {AA13} & {3 / 91} & {3 / 91} & {3 / 91} & {PASS} & {PASS}\\
+{DI3[8]} & {V13} & {3 / 90} & {3 / 90} & {3 / 90} & {PASS} & {PASS}\\
+{DI3[9]} & {W13} & {3 / 89} & {3 / 89} & {3 / 89} & {PASS} & {PASS}\\
+{DI3[10]} & {V14} & {3 / 87} & {3 / 87} & {3 / 87} & {PASS} & {PASS}\\
+{DI3[11]} & {W14} & {3 / 86} & {3 / 86} & {3 / 86} & {PASS} & {PASS}\\
+{DI3[12]} & {AA14} & {3 / 85} & {3 / 85} & {3 / 85} & {PASS} & {PASS}\\
+{STR3} & {AA15} & {3 / 82} & {3 / 82} & {3 / 82} & {PASS} & {PASS}\\
+{DI4[0]} & {V18} & {4 / 99} & {4 / 99} & {4 / 99} & {PASS} & {PASS}\\
+{DI4[1]} & {W18} & {4 / 97} & {4 / 97} & {4 / 97} & {PASS} & {PASS}\\
+{DI4[2]} & {AA19} & {4 / 96} & {4 / 96} & {4 / 96} & {PASS} & {PASS}\\
+{DI4[3]} & {AC19} & {4 / 95} & {4 / 95} & {4 / 95} & {PASS} & {PASS}\\
+{DI4[4]} & {AE18} & {4 / 94} & {4 / 94} & {4 / 94} & {PASS} & {PASS}\\
+{DI4[5]} & {AF18} & {4 / 93} & {4 / 93} & {4 / 93} & {PASS} & {PASS}\\
+{DI4[6]} & {AB20} & {4 / 92} & {4 / 92} & {4 / 92} & {PASS} & {PASS}\\
+{DI4[7]} & {V19} & {4 / 91} & {4 / 91} & {4 / 91} & {PASS} & {PASS}\\
+{DI4[8]} & {W19} & {4 / 90} & {4 / 90} & {4 / 90} & {PASS} & {PASS}\\
+{DI4[9]} & {AB19} & {4 / 89} & {4 / 89} & {4 / 89} & {PASS} & {PASS}\\
+{DI4[10]} & {AD19} & {4 / 87} & {4 / 87} & {4 / 87} & {PASS} & {PASS}\\
+{DI4[11]} & {AF19} & {4 / 86} & {4 / 86} & {4 / 86} & {PASS} & {PASS}\\
+{DI4[12]} & {AA20} & {4 / 85} & {4 / 85} & {4 / 85} & {PASS} & {PASS}\\
+{STR4} & {AD20} & {4 / 82} & {4 / 82} & {4 / 82} & {PASS} & {PASS}\\
+{DI5[0]} & {AE20} & {5 / 99} & {5 / 99} & {5 / 99} & {PASS} & {PASS}\\
+{DI5[1]} & {AF20} & {5 / 97} & {5 / 97} & {5 / 97} & {PASS} & {PASS}\\
+{DI5[2]} & {AE21} & {5 / 96} & {5 / 96} & {5 / 96} & {PASS} & {PASS}\\
+{DI5[3]} & {AF22} & {5 / 95} & {5 / 95} & {5 / 95} & {PASS} & {PASS}\\
+{DI5[4]} & {AE22} & {5 / 94} & {5 / 94} & {5 / 94} & {PASS} & {PASS}\\
+{DI5[5]} & {AF23} & {5 / 93} & {5 / 93} & {5 / 93} & {PASS} & {PASS}\\
+{DI5[6]} & {AE23} & {5 / 92} & {5 / 92} & {5 / 92} & {PASS} & {PASS}\\
+{DI5[7]} & {AF24} & {5 / 91} & {5 / 91} & {5 / 91} & {PASS} & {PASS}\\
+{DI5[8]} & {AF25} & {5 / 90} & {5 / 90} & {5 / 90} & {PASS} & {PASS}\\
+{DI5[9]} & {AE25} & {5 / 89} & {5 / 89} & {5 / 89} & {PASS} & {PASS}\\
+{DI5[10]} & {AE26} & {5 / 87} & {5 / 87} & {5 / 87} & {PASS} & {PASS}\\
+{DI5[11]} & {AD21} & {5 / 86} & {5 / 86} & {5 / 86} & {PASS} & {PASS}\\
+{DI5[12]} & {AD23} & {5 / 85} & {5 / 85} & {5 / 85} & {PASS} & {PASS}\\
+{STR5} & {AB21} & {5 / 82} & {5 / 82} & {5 / 82} & {PASS} & {PASS}\\
+{DI6[0]} & {AD25} & {6 / 99} & {6 / 99} & {6 / 99} & {PASS} & {PASS}\\
+{DI6[1]} & {AD26} & {6 / 97} & {6 / 97} & {6 / 97} & {PASS} & {PASS}\\
+{DI6[2]} & {AC21} & {6 / 96} & {6 / 96} & {6 / 96} & {PASS} & {PASS}\\
+{DI6[3]} & {AC22} & {6 / 95} & {6 / 95} & {6 / 95} & {PASS} & {PASS}\\
+{DI6[4]} & {AC23} & {6 / 94} & {6 / 94} & {6 / 94} & {PASS} & {PASS}\\
+{DI6[5]} & {AD24} & {6 / 93} & {6 / 93} & {6 / 93} & {PASS} & {PASS}\\
+{DI6[6]} & {AC26} & {6 / 92} & {6 / 92} & {6 / 92} & {PASS} & {PASS}\\
+{DI6[7]} & {AC24} & {6 / 91} & {6 / 91} & {6 / 91} & {PASS} & {PASS}\\
+{DI6[8]} & {AB22} & {6 / 90} & {6 / 90} & {6 / 90} & {PASS} & {PASS}\\
+{DI6[9]} & {AB24} & {6 / 89} & {6 / 89} & {6 / 89} & {PASS} & {PASS}\\
+{DI6[10]} & {AB25} & {6 / 87} & {6 / 87} & {6 / 87} & {PASS} & {PASS}\\
+{DI6[11]} & {AB26} & {6 / 86} & {6 / 86} & {6 / 86} & {PASS} & {PASS}\\
+{DI6[12]} & {AA22} & {6 / 85} & {6 / 85} & {6 / 85} & {PASS} & {PASS}\\
+{STR6} & {AA23} & {6 / 82} & {6 / 82} & {6 / 82} & {PASS} & {PASS}\\
+{DI7[0]} & {AA24} & {7 / 99} & {7 / 99} & {7 / 99} & {PASS} & {PASS}\\
+{DI7[1]} & {AA25} & {7 / 97} & {7 / 97} & {7 / 97} & {PASS} & {PASS}\\
+{DI7[2]} & {Y20} & {7 / 96} & {7 / 96} & {7 / 96} & {PASS} & {PASS}\\
+{DI7[3]} & {Y21} & {7 / 95} & {7 / 95} & {7 / 95} & {PASS} & {PASS}\\
+{DI7[4]} & {Y22} & {7 / 94} & {7 / 94} & {7 / 94} & {PASS} & {PASS}\\
+{DI7[5]} & {Y23} & {7 / 93} & {7 / 93} & {7 / 93} & {PASS} & {PASS}\\
+{DI7[6]} & {Y25} & {7 / 92} & {7 / 92} & {7 / 92} & {PASS} & {PASS}\\
+{DI7[7]} & {Y26} & {7 / 91} & {7 / 91} & {7 / 91} & {PASS} & {PASS}\\
+{DI7[8]} & {W20} & {7 / 90} & {7 / 90} & {7 / 90} & {PASS} & {PASS}\\
+{DI7[9]} & {W21} & {7 / 89} & {7 / 89} & {7 / 89} & {PASS} & {PASS}\\
+{DI7[10]} & {W23} & {7 / 87} & {7 / 87} & {7 / 87} & {PASS} & {PASS}\\
+{DI7[11]} & {W24} & {7 / 86} & {7 / 86} & {7 / 86} & {PASS} & {PASS}\\
+{DI7[12]} & {W25} & {7 / 85} & {7 / 85} & {7 / 85} & {PASS} & {PASS}\\
+{STR7} & {W26} & {7 / 82} & {7 / 82} & {7 / 82} & {PASS} & {PASS}\\
+{DI8[0]} & {V21} & {8 / 99} & {8 / 99} & {8 / 99} & {PASS} & {PASS}\\
+{DI8[1]} & {V22} & {8 / 97} & {8 / 97} & {8 / 97} & {PASS} & {PASS}\\
+{DI8[2]} & {V23} & {8 / 96} & {8 / 96} & {8 / 96} & {PASS} & {PASS}\\
+{DI8[3]} & {V24} & {8 / 95} & {8 / 95} & {8 / 95} & {PASS} & {PASS}\\
+{DI8[4]} & {V26} & {8 / 94} & {8 / 94} & {8 / 94} & {PASS} & {PASS}\\
+{DI8[5]} & {U21} & {8 / 93} & {8 / 93} & {8 / 93} & {PASS} & {PASS}\\
+{DI8[6]} & {U22} & {8 / 92} & {8 / 92} & {8 / 92} & {PASS} & {PASS}\\
+{DI8[7]} & {U24} & {8 / 91} & {8 / 91} & {8 / 91} & {PASS} & {PASS}\\
+{DI8[8]} & {U25} & {8 / 90} & {8 / 90} & {8 / 90} & {PASS} & {PASS}\\
+{DI8[9]} & {U26} & {8 / 89} & {8 / 89} & {8 / 89} & {PASS} & {PASS}\\
+{DI8[10]} & {U16} & {8 / 87} & {8 / 87} & {8 / 87} & {PASS} & {PASS}\\
+{DI8[11]} & {U17} & {8 / 86} & {8 / 86} & {8 / 86} & {PASS} & {PASS}\\
+{DI8[12]} & {U19} & {8 / 85} & {8 / 85} & {8 / 85} & {PASS} & {PASS}\\
+{STR8} & {U20} & {8 / 82} & {8 / 82} & {8 / 82} & {PASS} & {PASS}\\
+{DI9[0]} & {T17} & {9 / 99} & {9 / 99} & {9 / 99} & {PASS} & {PASS}\\
+{DI9[1]} & {T18} & {9 / 97} & {9 / 97} & {9 / 97} & {PASS} & {PASS}\\
+{DI9[2]} & {T19} & {9 / 96} & {9 / 96} & {9 / 96} & {PASS} & {PASS}\\
+{DI9[3]} & {T20} & {9 / 95} & {9 / 95} & {9 / 95} & {PASS} & {PASS}\\
+{DI9[4]} & {T22} & {9 / 94} & {9 / 94} & {9 / 94} & {PASS} & {PASS}\\
+{DI9[5]} & {T23} & {9 / 93} & {9 / 93} & {9 / 93} & {PASS} & {PASS}\\
+{DI9[6]} & {T24} & {9 / 92} & {9 / 92} & {9 / 92} & {PASS} & {PASS}\\
+{DI9[7]} & {T25} & {9 / 91} & {9 / 91} & {9 / 91} & {PASS} & {PASS}\\
+{DI9[8]} & {R16} & {9 / 90} & {9 / 90} & {9 / 90} & {PASS} & {PASS}\\
+{DI9[9]} & {R17} & {9 / 89} & {9 / 89} & {9 / 89} & {PASS} & {PASS}\\
+{DI9[10]} & {R18} & {9 / 87} & {9 / 87} & {9 / 87} & {PASS} & {PASS}\\
+{DI9[11]} & {R20} & {9 / 86} & {9 / 86} & {9 / 86} & {PASS} & {PASS}\\
+{DI9[12]} & {R21} & {9 / 85} & {9 / 85} & {9 / 85} & {PASS} & {PASS}\\
+{STR9} & {R22} & {9 / 82} & {9 / 82} & {9 / 82} & {PASS} & {PASS}\\
+{DI10[0]} & {R23} & {10 / 99} & {10 / 99} & {10 / 99} & {PASS} & {PASS}\\
+{DI10[1]} & {R25} & {10 / 97} & {10 / 97} & {10 / 97} & {PASS} & {PASS}\\
+{DI10[2]} & {R26} & {10 / 96} & {10 / 96} & {10 / 96} & {PASS} & {PASS}\\
+{DI10[3]} & {P16} & {10 / 95} & {10 / 95} & {10 / 95} & {PASS} & {PASS}\\
+{DI10[4]} & {P18} & {10 / 94} & {10 / 94} & {10 / 94} & {PASS} & {PASS}\\
+{DI10[5]} & {P19} & {10 / 93} & {10 / 93} & {10 / 93} & {PASS} & {PASS}\\
+{DI10[6]} & {P20} & {10 / 92} & {10 / 92} & {10 / 92} & {PASS} & {PASS}\\
+{DI10[7]} & {P21} & {10 / 91} & {10 / 91} & {10 / 91} & {PASS} & {PASS}\\
+{DI10[8]} & {P23} & {10 / 90} & {10 / 90} & {10 / 90} & {PASS} & {PASS}\\
+{DI10[9]} & {P24} & {10 / 89} & {10 / 89} & {10 / 89} & {PASS} & {PASS}\\
+{DI10[10]} & {P25} & {10 / 87} & {10 / 87} & {10 / 87} & {PASS} & {PASS}\\
+{DI10[11]} & {P26} & {10 / 86} & {10 / 86} & {10 / 86} & {PASS} & {PASS}\\
+{DI10[12]} & {N16} & {10 / 85} & {10 / 85} & {10 / 85} & {PASS} & {PASS}\\
+{STR10} & {N17} & {10 / 82} & {10 / 82} & {10 / 82} & {PASS} & {PASS}\\
+{DI11[0]} & {N18} & {11 / 99} & {11 / 99} & {11 / 99} & {PASS} & {PASS}\\
+{DI11[1]} & {N19} & {11 / 97} & {11 / 97} & {11 / 97} & {PASS} & {PASS}\\
+{DI11[2]} & {N21} & {11 / 96} & {11 / 96} & {11 / 96} & {PASS} & {PASS}\\
+{DI11[3]} & {N22} & {11 / 95} & {11 / 95} & {11 / 95} & {PASS} & {PASS}\\
+{DI11[4]} & {N23} & {11 / 94} & {11 / 94} & {11 / 94} & {PASS} & {PASS}\\
+{DI11[5]} & {N24} & {11 / 93} & {11 / 93} & {11 / 93} & {PASS} & {PASS}\\
+{DI11[6]} & {N26} & {11 / 92} & {11 / 92} & {11 / 92} & {PASS} & {PASS}\\
+{DI11[7]} & {M19} & {11 / 91} & {11 / 91} & {11 / 91} & {PASS} & {PASS}\\
+{DI11[8]} & {M20} & {11 / 90} & {11 / 90} & {11 / 90} & {PASS} & {PASS}\\
+{DI11[9]} & {M21} & {11 / 89} & {11 / 89} & {11 / 89} & {PASS} & {PASS}\\
+{DI11[10]} & {M22} & {11 / 87} & {11 / 87} & {11 / 87} & {PASS} & {PASS}\\
+{DI11[11]} & {M24} & {11 / 86} & {11 / 86} & {11 / 86} & {PASS} & {PASS}\\
+{DI11[12]} & {M25} & {11 / 85} & {11 / 85} & {11 / 85} & {PASS} & {PASS}\\
+{STR11} & {M26} & {11 / 82} & {11 / 82} & {11 / 82} & {PASS} & {PASS}\\
+{DI12[0]} & {L24} & {12 / 99} & {12 / 99} & {12 / 99} & {PASS} & {PASS}\\
+{DI12[1]} & {L25} & {12 / 97} & {12 / 97} & {12 / 97} & {PASS} & {PASS}\\
+{DI12[2]} & {K25} & {12 / 96} & {12 / 96} & {12 / 96} & {PASS} & {PASS}\\
+{DI12[3]} & {K26} & {12 / 95} & {12 / 95} & {12 / 95} & {PASS} & {PASS}\\
+{DI12[4]} & {M16} & {12 / 94} & {12 / 94} & {12 / 94} & {PASS} & {PASS}\\
+{DI12[5]} & {M17} & {12 / 93} & {12 / 93} & {12 / 93} & {PASS} & {PASS}\\
+{DI12[6]} & {L17} & {12 / 92} & {12 / 92} & {12 / 92} & {PASS} & {PASS}\\
+{DI12[7]} & {L18} & {12 / 91} & {12 / 91} & {12 / 91} & {PASS} & {PASS}\\
+{DI12[8]} & {L19} & {12 / 90} & {12 / 90} & {12 / 90} & {PASS} & {PASS}\\
+{DI12[9]} & {L20} & {12 / 89} & {12 / 89} & {12 / 89} & {PASS} & {PASS}\\
+{DI12[10]} & {K18} & {12 / 87} & {12 / 87} & {12 / 87} & {PASS} & {PASS}\\
+{DI12[11]} & {K16} & {12 / 86} & {12 / 86} & {12 / 86} & {PASS} & {PASS}\\
+{DI12[12]} & {K17} & {12 / 85} & {12 / 85} & {12 / 85} & {PASS} & {PASS}\\
+{STR12} & {J19} & {12 / 82} & {12 / 82} & {12 / 82} & {PASS} & {PASS}\\
+\bottomrule
+\end{longtable}
+\endgroup
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.4400\linewidth}>{\raggedright\arraybackslash}p{0.4400\linewidth}}
+\toprule
+Common test condition & Recorded value\\\midrule
+\endhead
+{Discovery vectors per receive path} & {338}\\
+{Functional CPLD restoration} & {True}\\
+\bottomrule
+\end{longtable}
+Schematic SHA256: 8a33ca4d4325eea999347ee7f4c26173cb28356f5cb61e6d38a9852a0513de78
+\clearpage
+\section{Raw data, reproducibility and review}
+\begin{longtable}{>{\raggedright\arraybackslash}p{0.4400\linewidth}>{\raggedright\arraybackslash}p{0.4400\linewidth}}
+\toprule
+Batch & Mode / original status\\\midrule
+\endhead
+{00-historical} & {HISTORICAL / INCOMPLETE}\\
+\bottomrule
+\end{longtable}
+The inputs directory retains complete evidence bundles. files.sha256.json lists every file hash and size. Generated figures retain their offline analysis JSON. Edit report.tex for typography and content.tex for this report; edit the source template for future reports. Rebuilding figures does not contact instruments.
+
+Review checklist: verify factory UID and photographs; confirm pin-level cabling; approve numerical acceptance limits and calibration status; review every failure and deviation; confirm channel coverage and cleanup; retain raw records with this signed PDF.
+
+No result is an assertion that the hardware is free of every possible defect. The evidence defines tested behavior, test conditions and observed limitations. This dossier is not a substitute for the separate CERN-equivalent detector validation bench.

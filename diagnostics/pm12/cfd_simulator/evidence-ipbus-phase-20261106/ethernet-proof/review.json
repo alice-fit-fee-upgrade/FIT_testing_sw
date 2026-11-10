@@ -1,0 +1,7 @@
+{
+  "timing_drc_pass": true,
+  "cdc_critical_unwaived_count": 11,
+  "cdc_review": "Reviewed upstream structures: 2 async-FIFO RAM read paths qualified by synchronized pointers;5 negotiated SGMII speed controls static while link is up;2 GTP comma-align control ports;2 combinational handshake/status inputs before synchronizers. No claim of CDC-clean production operation; frozen-buffer exact transport and settled link tested below. IPbus40MHz,MAC125MHz per upstream CDC pulse-width assumption.",
+  "bit_sha256": "b6ccd68e471d8748dfbf056bd67b99302e4fa3128a077d60448bceef323d7537",
+  "manifest_sha256": "d9db44d5517aef8411515b76a1e1bcccbe4f47e4fc17a29dfb52478e69e4dc03"
+}

@@ -1,0 +1,209 @@
+{
+  "usb": {
+    "sysfs": "/sys/bus/usb/devices/1-6.2",
+    "serial": "00001",
+    "manufacturer": "Xilinx",
+    "product": "Artix-7 DIOT System Board",
+    "idVendor": "0403",
+    "idProduct": "6011"
+  },
+  "before": {
+    "raw": 1,
+    "ready": true,
+    "busy": false,
+    "valid": false,
+    "fault": false,
+    "command_error": false,
+    "pattern_error": false,
+    "pending": false,
+    "active_bank": 0,
+    "output_mask": 0,
+    "enabled": false,
+    "slot": 0
+  },
+  "dio_inputs": {
+    "6": {
+      "before": [
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ]
+    },
+    "7": {
+      "before": [
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ]
+    }
+  },
+  "qualification": {
+    "wns_ns": 0.181,
+    "whs_ns": 0.066,
+    "drc_errors": 0,
+    "iserdes_count": 16,
+    "differential_output_buffers": 0
+  },
+  "bit_sha256": "b6ccd68e471d8748dfbf056bd67b99302e4fa3128a077d60448bceef323d7537",
+  "sfp0": {
+    "before": {
+      "0": 2,
+      "1": 2,
+      "2": 255,
+      "3": 255,
+      "4": 0,
+      "5": 0,
+      "6": 255,
+      "7": 255
+    },
+    "after": {
+      "0": 0,
+      "1": 2,
+      "2": 253,
+      "3": 255,
+      "4": 0,
+      "5": 0,
+      "6": 253,
+      "7": 255
+    }
+  },
+  "link_status": 3,
+  "pings": [
+    "PING 192.168.2.241 (192.168.2.241) 56(84) bytes of data.\n\n--- 192.168.2.241 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+    "PING 192.168.2.241 (192.168.2.241) 56(84) bytes of data.\n\n--- 192.168.2.241 ping statistics ---\n1 packets transmitted, 0 received, 100% packet loss, time 0ms\n\n",
+    "PING 192.168.2.241 (192.168.2.241) 56(84) bytes of data.\n64 bytes from 192.168.2.241: icmp_seq=1 ttl=64 time=0.149 ms\n\n--- 192.168.2.241 ping statistics ---\n1 packets transmitted, 1 received, 0% packet loss, time 0ms\nrtt min/avg/max/mdev = 0.149/0.149/0.149/0.000 ms\n"
+  ],
+  "neighbor": "192.168.2.241 dev enp2s0 lladdr 02:00:00:00:12:02 REACHABLE \n",
+  "network_identity": {
+    "mapping": [
+      {
+        "logical": 0,
+        "slot": 6,
+        "channel": 1,
+        "rj45": 0
+      },
+      {
+        "logical": 1,
+        "slot": 6,
+        "channel": 3,
+        "rj45": 0
+      },
+      {
+        "logical": 2,
+        "slot": 6,
+        "channel": 5,
+        "rj45": 1
+      },
+      {
+        "logical": 3,
+        "slot": 6,
+        "channel": 7,
+        "rj45": 1
+      },
+      {
+        "logical": 4,
+        "slot": 6,
+        "channel": 9,
+        "rj45": 2
+      },
+      {
+        "logical": 5,
+        "slot": 6,
+        "channel": 11,
+        "rj45": 2
+      },
+      {
+        "logical": 6,
+        "slot": 6,
+        "channel": 13,
+        "rj45": 3
+      },
+      {
+        "logical": 7,
+        "slot": 6,
+        "channel": 15,
+        "rj45": 3
+      },
+      {
+        "logical": 8,
+        "slot": 7,
+        "channel": 1,
+        "rj45": 0
+      },
+      {
+        "logical": 9,
+        "slot": 7,
+        "channel": 3,
+        "rj45": 0
+      },
+      {
+        "logical": 10,
+        "slot": 7,
+        "channel": 5,
+        "rj45": 1
+      },
+      {
+        "logical": 11,
+        "slot": 7,
+        "channel": 7,
+        "rj45": 1
+      },
+      {
+        "logical": 12,
+        "slot": 7,
+        "channel": 9,
+        "rj45": 2
+      },
+      {
+        "logical": 13,
+        "slot": 7,
+        "channel": 11,
+        "rj45": 2
+      },
+      {
+        "logical": 14,
+        "slot": 7,
+        "channel": 13,
+        "rj45": 3
+      },
+      {
+        "logical": 15,
+        "slot": 7,
+        "channel": 15,
+        "rj45": 3
+      }
+    ],
+    "profile": "external120",
+    "sample_ps": 1041.6666666666667
+  },
+  "frozen_comparison": {
+    "exact": true,
+    "uart_seconds": 21.878248677123338,
+    "ipbus_seconds": 0.017648832872509956,
+    "speedup": 1239.6428044372935,
+    "phase_records_exact": 2730,
+    "raw_bytes": 8190
+  },
+  "read_retry_events": [],
+  "final": {
+    "raw": 5,
+    "ready": true,
+    "busy": false,
+    "valid": true,
+    "fault": false,
+    "command_error": false,
+    "pattern_error": false,
+    "pending": false,
+    "active_bank": 0,
+    "output_mask": 0,
+    "enabled": false,
+    "slot": 0
+  },
+  "pass_": true
+}

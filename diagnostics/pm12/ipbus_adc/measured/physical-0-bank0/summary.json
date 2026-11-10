@@ -1,0 +1,142 @@
+{
+  "capture_id": 3,
+  "status": 13,
+  "bank": 0,
+  "synthetic": false,
+  "format": "12files each4096little-endianu16; ADC bits0..11,EV12,STR13 for physical mode",
+  "sample_rate_nominal_hz": 320000000,
+  "channels": [
+    {
+      "channel": 1,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 512,
+      "adc_max": 512,
+      "adc_mean": 512,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    },
+    {
+      "channel": 2,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 32,
+      "adc_max": 32,
+      "adc_mean": 32,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    },
+    {
+      "channel": 3,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 0,
+      "adc_max": 0,
+      "adc_mean": 0,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    },
+    {
+      "channel": 4,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 0,
+      "adc_max": 0,
+      "adc_mean": 0,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    },
+    {
+      "channel": 5,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 1280,
+      "adc_max": 1280,
+      "adc_mean": 1280,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    },
+    {
+      "channel": 6,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 20,
+      "adc_max": 20,
+      "adc_mean": 20,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    },
+    {
+      "channel": 7,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 2088,
+      "adc_max": 2088,
+      "adc_mean": 2088,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    },
+    {
+      "channel": 8,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 16,
+      "adc_max": 16,
+      "adc_mean": 16,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    },
+    {
+      "channel": 9,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 264,
+      "adc_max": 264,
+      "adc_mean": 264,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    },
+    {
+      "channel": 10,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 0,
+      "adc_max": 0,
+      "adc_mean": 0,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    },
+    {
+      "channel": 11,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 2048,
+      "adc_max": 2048,
+      "adc_mean": 2048,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    },
+    {
+      "channel": 12,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000.0,
+      "selector": 0,
+      "adc_min": 8,
+      "adc_max": 8,
+      "adc_mean": 8,
+      "adc_stddev": 0.0,
+      "unique_codes": 1
+    }
+  ]
+}

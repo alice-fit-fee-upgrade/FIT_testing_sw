@@ -1,0 +1,19 @@
+{
+  "pre_fix_frozen_events": 1799,
+  "pre_fix_after_close_active": true,
+  "pre_fix_after_close_events": 1,
+  "observed_final_command_transition": "8000->0000",
+  "fresh_shift_guard_sufficient": false,
+  "rising_arm_sufficient": false,
+  "exact_hardware_manager_scan_sequence": "not established",
+  "final_fix": "IPbus-only ARM; JTAG cannot arm, new magic504d5a04",
+  "final_after_close_events": 1799,
+  "final_after_close_active": false,
+  "three_phy_close_reopen_data_checks": "PASS",
+  "subsequent_explicit_ipbus_rearm": {
+    "result": "PASS",
+    "events": 145,
+    "elapsed": 120000000,
+    "post_close_ipbus_data_match": true
+  }
+}

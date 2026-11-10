@@ -1,3 +1,12 @@
+# PM12 board acceptance and evidence
+
+The current entry point is the [sequential acceptance runner and LaTeX reports](acceptance/README.md).
+It separates up-to-three-channel CFD batches, offline chapter generation and final
+report assembly, with factory-DNA identities, raw-data hashes and editable templates.
+The2026-11-07 post-reconfiguration STR finding was traced to an invalid exact4-tick
+criterion for asynchronous sampling; see the [diagnosis and controlled repeats](acceptance/ADC_STROBE_DEBUG.md).
+Original strict-mode failure evidence remains available. The original static JTAG diagnostic is documented below.
+
 # PM12 JTAG connection test
 
 Tests the 168 CPLD-to-FPGA DI/STR connections on PM12: twelve XC2C128 VQ100
@@ -121,3 +130,18 @@ IP networking remain unimplemented.
 [ADC diagnostic](adc/README.md) adds temporary SRAM gateware for the 12 CPLDs,
 EV-chain A/B selection, ADC-clock forwarding, 12 Kintex trace buffers and
 Ethernet acquisition control. See its measured validation status before use.
+
+
+## MCU and FPGA control
+
+[MCU/SPI diagnostics](mcu/README.md) add PG startup timing, read-only device
+checks, an original-protocol FPGA SPI slave and explicit config-flash read /
+FPGA boot requests. Native tests, GHDL and Vivado builds pass; physical MCU
+UART/SPI/configuration tests remain NOT_RUN. Config inspection resets FPGA SRAM.
+
+## Integrated IPbus ADC capture
+
+[IPbus ADC diagnostic](ipbus_adc/README.md) combines the twelve ADC trace buffers,
+original MCU SPI diagnostic and input-only passive I2C event analyzer. It uses
+the actual CERN IPbus controller and the official uHAL address table/client.
+See its separate measured validation and current-state record.

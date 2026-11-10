@@ -1,0 +1,767 @@
+{
+  "channel": 12,
+  "common_mode_v": 1.0,
+  "max_pin_voltage_v": 3.3,
+  "measurements": [
+    {
+      "generation": 249,
+      "status": 13,
+      "bank": 0,
+      "samples": 1022,
+      "centered_mean": 3.821917808219041,
+      "raw_mean": 2051.821917808219,
+      "raw_median": 2038.0,
+      "raw_std": 19.935698713876715,
+      "signed_mean": 7.829745596868885,
+      "signed_median": 2030.0,
+      "signed_std": 2030.2158490451268,
+      "minimum": 2030,
+      "maximum": 2083,
+      "histogram": {
+        "2081": 17,
+        "2082": 199,
+        "2083": 39,
+        "2056": 11,
+        "2057": 175,
+        "2058": 69,
+        "2030": 3,
+        "2031": 121,
+        "2032": 128,
+        "2033": 4,
+        "2036": 112,
+        "2037": 136,
+        "2038": 8
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 0,
+      "diff_setpoint_v": 0.0,
+      "ch0_setpoint_v": 1.0,
+      "ch1_setpoint_v": 1.0
+    },
+    {
+      "generation": 250,
+      "status": 45,
+      "bank": 1,
+      "samples": 1022,
+      "centered_mean": 7.196673189823741,
+      "raw_mean": 2055.1966731898237,
+      "raw_median": 2040.0,
+      "raw_std": 17.243776173477308,
+      "signed_mean": 11.20450097847358,
+      "signed_median": 2037.0,
+      "signed_std": 2031.5077542641372,
+      "minimum": 2037,
+      "maximum": 2080,
+      "histogram": {
+        "2080": 21,
+        "2063": 1,
+        "2064": 89,
+        "2065": 158,
+        "2066": 7,
+        "2037": 11,
+        "2038": 206,
+        "2039": 203,
+        "2040": 92,
+        "2078": 78,
+        "2079": 156
+      },
+      "strobe_period_samples": 4.0,
+      "injection_bank": 1,
+      "diff_setpoint_v": 0.0,
+      "ch0_setpoint_v": 1.0,
+      "ch1_setpoint_v": 1.0
+    }
+  ],
+  "dac_initial_setpoints": [
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "pgood": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=890000010000001103740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2118
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=890000010000004601740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=890000010000006303730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2123
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC7FBF9EFC STATE 2157..2162=890000010000009801730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2122
+    }
+  ],
+  "identity": {
+    "command": "RS",
+    "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.1 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+    "duration_s": 0.2121
+  },
+  "mcp_original": {
+    "0": 112,
+    "1": 31,
+    "20": 142,
+    "21": 192
+  },
+  "baseline_setpoints": [
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "final_zero_capture": {
+    "generation": 251,
+    "status": 13,
+    "bank": 0,
+    "samples": 1022,
+    "centered_mean": 3.7808219178082254,
+    "raw_mean": 2051.780821917808,
+    "raw_median": 2037.5,
+    "raw_std": 20.018262310673535,
+    "signed_mean": 7.788649706457925,
+    "signed_median": 2030.0,
+    "signed_std": 2030.1476483059184,
+    "minimum": 2030,
+    "maximum": 2083,
+    "histogram": {
+      "2081": 12,
+      "2082": 185,
+      "2083": 58,
+      "2056": 7,
+      "2057": 193,
+      "2058": 55,
+      "2030": 4,
+      "2031": 149,
+      "2032": 102,
+      "2033": 1,
+      "2035": 2,
+      "2036": 124,
+      "2037": 129,
+      "2038": 1
+    },
+    "strobe_period_samples": 4.0
+  },
+  "mcp_final": {
+    "0": 112,
+    "1": 31,
+    "18": 174,
+    "19": 192,
+    "20": 142,
+    "21": 192
+  },
+  "dac_final_setpoints": [
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "pgood_final": {
+    "command": "@HW",
+    "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000C103740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+    "duration_s": 0.2119
+  },
+  "tca_final": {
+    "112": 0,
+    "113": 0
+  },
+  "i2c_commands": [
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2124
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2113
+    },
+    {
+      "command": "@I2C W 70 00",
+      "reply": "I2C ADDR=70 TX=00 RX=\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2118
+    },
+    {
+      "command": "@I2C W 71 00",
+      "reply": "I2C ADDR=71 TX=00 RX=\r\n",
+      "duration_s": 0.2126
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2124
+    },
+    {
+      "command": "@I2C W 71 08",
+      "reply": "I2C ADDR=71 TX=08 RX=\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=08\r\n",
+      "duration_s": 0.2123
+    },
+    {
+      "command": "@I2C WR 20 01 0A",
+      "reply": "I2C ADDR=20 TX=0A RX=00\r\n",
+      "duration_s": 0.2114
+    },
+    {
+      "command": "@I2C WR 20 01 0B",
+      "reply": "I2C ADDR=20 TX=0B RX=00\r\n",
+      "duration_s": 0.211
+    },
+    {
+      "command": "@I2C WR 20 01 00",
+      "reply": "I2C ADDR=20 TX=00 RX=70\r\n",
+      "duration_s": 0.212
+    },
+    {
+      "command": "@I2C WR 20 01 01",
+      "reply": "I2C ADDR=20 TX=01 RX=1F\r\n",
+      "duration_s": 0.212
+    },
+    {
+      "command": "@I2C WR 20 01 14",
+      "reply": "I2C ADDR=20 TX=14 RX=8E\r\n",
+      "duration_s": 0.2125
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=C0\r\n",
+      "duration_s": 0.2129
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2118
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2129
+    },
+    {
+      "command": "@I2C W 20 01 1F",
+      "reply": "I2C ADDR=20 TX=011F RX=\r\n",
+      "duration_s": 0.2126
+    },
+    {
+      "command": "@I2C WR 20 01 01",
+      "reply": "I2C ADDR=20 TX=01 RX=1F\r\n",
+      "duration_s": 0.2123
+    },
+    {
+      "command": "@I2C W 20 14 8E",
+      "reply": "I2C ADDR=20 TX=148E RX=\r\n",
+      "duration_s": 0.2126
+    },
+    {
+      "command": "@I2C WR 20 01 14",
+      "reply": "I2C ADDR=20 TX=14 RX=8E\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@I2C W 20 00 70",
+      "reply": "I2C ADDR=20 TX=0070 RX=\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@I2C WR 20 01 00",
+      "reply": "I2C ADDR=20 TX=00 RX=70\r\n",
+      "duration_s": 0.2126
+    },
+    {
+      "command": "@I2C WR 20 01 01",
+      "reply": "I2C ADDR=20 TX=01 RX=1F\r\n",
+      "duration_s": 0.2122
+    },
+    {
+      "command": "@I2C W 20 01 1F",
+      "reply": "I2C ADDR=20 TX=011F RX=\r\n",
+      "duration_s": 0.2123
+    },
+    {
+      "command": "@I2C WR 20 01 01",
+      "reply": "I2C ADDR=20 TX=01 RX=1F\r\n",
+      "duration_s": 0.2124
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2119
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2125
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2122
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2119
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2125
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2117
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2122
+    },
+    {
+      "command": "@I2C W 20 15 C0",
+      "reply": "I2C ADDR=20 TX=15C0 RX=\r\n",
+      "duration_s": 0.2119
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=C0\r\n",
+      "duration_s": 0.212
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=C0\r\n",
+      "duration_s": 0.2123
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.212
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.2123
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2111
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2109
+    },
+    {
+      "command": "@I2C W 20 15 20",
+      "reply": "I2C ADDR=20 TX=1520 RX=\r\n",
+      "duration_s": 0.2126
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=20\r\n",
+      "duration_s": 0.2122
+    },
+    {
+      "command": "@I2C W 20 15 00",
+      "reply": "I2C ADDR=20 TX=1500 RX=\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=00\r\n",
+      "duration_s": 0.2124
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=00\r\n",
+      "duration_s": 0.2114
+    },
+    {
+      "command": "@I2C W 20 15 20",
+      "reply": "I2C ADDR=20 TX=1520 RX=\r\n",
+      "duration_s": 0.2128
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=20\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=20\r\n",
+      "duration_s": 0.2119
+    },
+    {
+      "command": "@I2C W 20 15 E0",
+      "reply": "I2C ADDR=20 TX=15E0 RX=\r\n",
+      "duration_s": 0.212
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=E0\r\n",
+      "duration_s": 0.2125
+    },
+    {
+      "command": "@I2C W 20 15 C0",
+      "reply": "I2C ADDR=20 TX=15C0 RX=\r\n",
+      "duration_s": 0.2126
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=C0\r\n",
+      "duration_s": 0.212
+    },
+    {
+      "command": "@I2C WR 20 01 00",
+      "reply": "I2C ADDR=20 TX=00 RX=70\r\n",
+      "duration_s": 0.2117
+    },
+    {
+      "command": "@I2C WR 20 01 01",
+      "reply": "I2C ADDR=20 TX=01 RX=1F\r\n",
+      "duration_s": 0.2122
+    },
+    {
+      "command": "@I2C WR 20 01 12",
+      "reply": "I2C ADDR=20 TX=12 RX=AE\r\n",
+      "duration_s": 0.2126
+    },
+    {
+      "command": "@I2C WR 20 01 13",
+      "reply": "I2C ADDR=20 TX=13 RX=C0\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@I2C WR 20 01 14",
+      "reply": "I2C ADDR=20 TX=14 RX=8E\r\n",
+      "duration_s": 0.2117
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=C0\r\n",
+      "duration_s": 0.2117
+    },
+    {
+      "command": "@I2C W 70 00",
+      "reply": "I2C ADDR=70 TX=00 RX=\r\n",
+      "duration_s": 0.212
+    },
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2118
+    },
+    {
+      "command": "@I2C W 71 00",
+      "reply": "I2C ADDR=71 TX=00 RX=\r\n",
+      "duration_s": 0.2122
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2122
+    },
+    {
+      "command": "@I2C W 70 00",
+      "reply": "I2C ADDR=70 TX=00 RX=\r\n",
+      "duration_s": 0.2124
+    },
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2126
+    },
+    {
+      "command": "@I2C W 71 00",
+      "reply": "I2C ADDR=71 TX=00 RX=\r\n",
+      "duration_s": 0.2125
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2129
+    },
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2127
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2127
+    }
+  ],
+  "scpi_commands": [
+    {
+      "command": "*IDN?",
+      "reply": "MODULIQ,MOD-DAC-28,FIT-CTRL-6825DD4C49E4,1.0"
+    },
+    {
+      "command": "STAT:READ?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:PROJ?",
+      "reply": "28"
+    },
+    {
+      "command": "SYST:REV?",
+      "reply": "16"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:TWO:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:THR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FOUR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FIVE:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SIX:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SEV:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:TWO:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:THR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FOUR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FIVE:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SIX:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SEV:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT 1.0000"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:ERR?",
+      "reply": "0,\"No error\""
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:TWO:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:THR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FOUR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FIVE:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SIX:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SEV:VOLT?",
+      "reply": "0"
+    }
+  ],
+  "pass": true
+}

@@ -1,0 +1,40 @@
+<?xml version="1.0"?>
+<node id="pm12">
+ <node id="DEVICE_ID" address="0x0" permission="r"/>
+ <node id="ABI" address="0x1" permission="r"/>
+ <node id="BUILD_ID" address="0x2" permission="r"/>
+ <node id="SCRATCH" address="0x3" permission="rw"/>
+ <node id="WRITE_COUNT" address="0x4" permission="r"/>
+ <node id="UPTIME_LO" address="0x5" permission="r"/>
+ <node id="UPTIME_HI" address="0x6" permission="r"/>
+ <node id="CLOCK_HZ" address="0x7" permission="r"/>
+ <node id="CAPTURE_HZ" address="0x8" permission="r"/>
+ <node id="CONTROL" address="0x10" permission="rw"/>
+ <node id="STATUS" address="0x11" permission="r"/>
+ <node id="CAPTURE_ID" address="0x12" permission="r"/>
+ <node id="DEPTH" address="0x13" permission="r"/>
+ <node id="CHANNELS" address="0x14" permission="r"/>
+ <node id="MCU_SPI_SCRATCH" address="0x20" permission="r"/>
+ <node id="MCU_SPI_WRITES" address="0x21" permission="r"/>
+ <node id="TRACE_CONTROL" address="0x100" permission="rw"/>
+ <node id="TRACE_COUNT" address="0x101" permission="r"/>
+ <node id="TRACE_ACTIVE" address="0x102" permission="r"/>
+ <node id="TRACE_ELAPSED" address="0x103" permission="r"/>
+ <node id="TRACE_LINES" address="0x104" permission="r"/>
+ <node id="TRACE_CAPTURE_ID" address="0x105" permission="r"/>
+ <node id="adc">
+  <node id="ch1" address="0x10000" mode="incremental" size="4096" permission="r"/>
+  <node id="ch2" address="0x11000" mode="incremental" size="4096" permission="r"/>
+  <node id="ch3" address="0x12000" mode="incremental" size="4096" permission="r"/>
+  <node id="ch4" address="0x13000" mode="incremental" size="4096" permission="r"/>
+  <node id="ch5" address="0x14000" mode="incremental" size="4096" permission="r"/>
+  <node id="ch6" address="0x15000" mode="incremental" size="4096" permission="r"/>
+  <node id="ch7" address="0x16000" mode="incremental" size="4096" permission="r"/>
+  <node id="ch8" address="0x17000" mode="incremental" size="4096" permission="r"/>
+  <node id="ch9" address="0x18000" mode="incremental" size="4096" permission="r"/>
+  <node id="ch10" address="0x19000" mode="incremental" size="4096" permission="r"/>
+  <node id="ch11" address="0x1a000" mode="incremental" size="4096" permission="r"/>
+  <node id="ch12" address="0x1b000" mode="incremental" size="4096" permission="r"/>
+ </node>
+ <node id="trace" address="0x2000" mode="incremental" size="4096" permission="r"/>
+</node>

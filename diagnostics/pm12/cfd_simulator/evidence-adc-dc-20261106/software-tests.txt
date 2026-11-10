@@ -1,0 +1,8 @@
+test_invalid_levels (test_mod_dac28.TestLimits.test_invalid_levels) ... ok
+test_second_leg_checked_before_first_write (test_mod_dac28.TestLimits.test_second_leg_checked_before_first_write) ... ok
+test_valid_endpoints (test_mod_dac28.TestLimits.test_valid_endpoints) ... ok
+
+----------------------------------------------------------------------
+Ran 3 tests in 0.000s
+
+OK

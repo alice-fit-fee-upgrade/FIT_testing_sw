@@ -1,0 +1,895 @@
+{
+  "pm_identity": [
+    1347228162,
+    65538,
+    3351522600
+  ],
+  "kasli_identity": 1380993073,
+  "suites": {
+    "hdmi": {
+      "walking": [
+        {
+          "value": 0,
+          "lanes": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        {
+          "value": 15,
+          "lanes": {
+            "0": 1,
+            "1": 1,
+            "2": 1,
+            "3": 1
+          }
+        },
+        {
+          "value": 1,
+          "lanes": {
+            "0": 0,
+            "1": 0,
+            "2": 0,
+            "3": 1
+          }
+        },
+        {
+          "value": 2,
+          "lanes": {
+            "0": 0,
+            "1": 1,
+            "2": 0,
+            "3": 0
+          }
+        },
+        {
+          "value": 4,
+          "lanes": {
+            "0": 0,
+            "1": 0,
+            "2": 1,
+            "3": 0
+          }
+        },
+        {
+          "value": 8,
+          "lanes": {
+            "0": 1,
+            "1": 0,
+            "2": 0,
+            "3": 0
+          }
+        },
+        {
+          "value": 5,
+          "lanes": {
+            "0": 0,
+            "1": 0,
+            "2": 1,
+            "3": 1
+          }
+        },
+        {
+          "value": 10,
+          "lanes": {
+            "0": 1,
+            "1": 1,
+            "2": 0,
+            "3": 0
+          }
+        }
+      ],
+      "spi": [
+        {
+          "address": 0,
+          "readback": 18500
+        },
+        {
+          "address": 1,
+          "readback": 19785
+        },
+        {
+          "address": 2,
+          "readback": 1
+        }
+      ],
+      "invalid_pm_writes_rejected": true,
+      "mapping": [
+        3,
+        1,
+        2,
+        0
+      ],
+      "inversions": {
+        "0": 0,
+        "1": 0,
+        "2": 0,
+        "3": 0
+      },
+      "prbs-slow": [
+        {
+          "lane": 3,
+          "seed": 1,
+          "compared_bits": 19,
+          "training_edges": 8,
+          "edges": 18,
+          "errors": 0,
+          "samples_per_bit_fit": 768.0,
+          "estimated_bitrate_hz": 1250000.0,
+          "scope": "Fixed run-length training then continuous PRBS check; nominal time scale, not calibrated BER/jitter"
+        },
+        {
+          "lane": 1,
+          "seed": 19,
+          "compared_bits": 22,
+          "training_edges": 12,
+          "edges": 25,
+          "errors": 0,
+          "samples_per_bit_fit": 768.0,
+          "estimated_bitrate_hz": 1250000.0,
+          "scope": "Fixed run-length training then continuous PRBS check; nominal time scale, not calibrated BER/jitter"
+        },
+        {
+          "lane": 2,
+          "seed": 53,
+          "compared_bits": 21,
+          "training_edges": 12,
+          "edges": 25,
+          "errors": 0,
+          "samples_per_bit_fit": 768.0000000000001,
+          "estimated_bitrate_hz": 1249999.9999999998,
+          "scope": "Fixed run-length training then continuous PRBS check; nominal time scale, not calibrated BER/jitter"
+        },
+        {
+          "lane": 0,
+          "seed": 87,
+          "compared_bits": 22,
+          "training_edges": 8,
+          "edges": 18,
+          "errors": 0,
+          "samples_per_bit_fit": 768.0027185577336,
+          "estimated_bitrate_hz": 1249995.575279768,
+          "scope": "Fixed run-length training then continuous PRBS check; nominal time scale, not calibrated BER/jitter"
+        }
+      ],
+      "prbs-fast": [
+        {
+          "lane": 3,
+          "seed": 1,
+          "compared_bits": 10900,
+          "training_edges": 12,
+          "edges": 5504,
+          "errors": 0,
+          "samples_per_bit_fit": 3.0,
+          "estimated_bitrate_hz": 320000000.0,
+          "scope": "Fixed run-length training then continuous PRBS check; nominal time scale, not calibrated BER/jitter"
+        },
+        {
+          "lane": 1,
+          "seed": 19,
+          "compared_bits": 10888,
+          "training_edges": 12,
+          "edges": 5504,
+          "errors": 0,
+          "samples_per_bit_fit": 2.9999998941855304,
+          "estimated_bitrate_hz": 320000011.28687716,
+          "scope": "Fixed run-length training then continuous PRBS check; nominal time scale, not calibrated BER/jitter"
+        },
+        {
+          "lane": 2,
+          "seed": 53,
+          "compared_bits": 10893,
+          "training_edges": 12,
+          "edges": 5504,
+          "errors": 0,
+          "samples_per_bit_fit": 3.0,
+          "estimated_bitrate_hz": 320000000.0,
+          "scope": "Fixed run-length training then continuous PRBS check; nominal time scale, not calibrated BER/jitter"
+        },
+        {
+          "lane": 0,
+          "seed": 87,
+          "compared_bits": 10894,
+          "training_edges": 12,
+          "edges": 5504,
+          "errors": 0,
+          "samples_per_bit_fit": 2.999997514029731,
+          "estimated_bitrate_hz": 320000265.1703818,
+          "scope": "Fixed run-length training then continuous PRBS check; nominal time scale, not calibrated BER/jitter"
+        }
+      ],
+      "native-idle": [
+        {
+          "lane": 3,
+          "frames": 1364,
+          "frame_period_samples_median": 24.0,
+          "high_width_samples": [
+            3
+          ],
+          "scope": "Native empty-frame training only; not nonempty trigger payload validation"
+        },
+        {
+          "lane": 1,
+          "frames": 1364,
+          "frame_period_samples_median": 24.0,
+          "high_width_samples": [
+            3
+          ],
+          "scope": "Native empty-frame training only; not nonempty trigger payload validation"
+        },
+        {
+          "lane": 2,
+          "frames": 1364,
+          "frame_period_samples_median": 24.0,
+          "high_width_samples": [
+            3
+          ],
+          "scope": "Native empty-frame training only; not nonempty trigger payload validation"
+        },
+        {
+          "lane": 0,
+          "frames": 1364,
+          "frame_period_samples_median": 24.0,
+          "high_width_samples": [
+            3
+          ],
+          "scope": "Native empty-frame training only; not nonempty trigger payload validation"
+        }
+      ],
+      "spi_signature": [
+        18500,
+        19785,
+        1
+      ],
+      "spi_access": "allowlisted signature reads0/1/2 only; shared MCU bus, other addresses and writes disabled",
+      "pass": true,
+      "pm_uptime_before": [
+        245621446,
+        4
+      ],
+      "pm_uptime_after": [
+        275633487,
+        4
+      ],
+      "pm_sys_reset_observed": false
+    },
+    "adc": {
+      "tests": [
+        {
+          "capture_id": 11,
+          "status": 29,
+          "bank": 0,
+          "synthetic": true,
+          "format": "12files each4096little-endianu16; ADC bits0..11,EV12,STR13 for physical mode",
+          "sample_rate_nominal_hz": 320000000,
+          "channels": [
+            {
+              "channel": 1,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 2,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 3,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 4,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 5,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 6,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 7,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 8,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 9,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 10,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 11,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 12,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            }
+          ]
+        },
+        {
+          "capture_id": 12,
+          "status": 61,
+          "bank": 1,
+          "synthetic": true,
+          "format": "12files each4096little-endianu16; ADC bits0..11,EV12,STR13 for physical mode",
+          "sample_rate_nominal_hz": 320000000,
+          "channels": [
+            {
+              "channel": 1,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 2,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 3,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 4,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 5,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 6,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 7,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 8,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 9,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 10,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 11,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            },
+            {
+              "channel": 12,
+              "kind": "synthetic transport validation",
+              "samples": 4096
+            }
+          ]
+        },
+        {
+          "capture_id": 13,
+          "status": 13,
+          "bank": 0,
+          "synthetic": false,
+          "format": "12files each4096little-endianu16; ADC bits0..11,EV12,STR13 for physical mode",
+          "sample_rate_nominal_hz": 320000000,
+          "channels": [
+            {
+              "channel": 1,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 2053,
+              "adc_max": 2104,
+              "adc_mean": 2074.698486328125,
+              "adc_stddev": 20.541691543268715,
+              "unique_codes": 13
+            },
+            {
+              "channel": 2,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 2095,
+              "adc_max": 2160,
+              "adc_mean": 2114.796142578125,
+              "adc_stddev": 17.25374152027384,
+              "unique_codes": 17
+            },
+            {
+              "channel": 3,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 1792,
+              "adc_max": 2180,
+              "adc_mean": 2030.5205078125,
+              "adc_stddev": 58.607307342693,
+              "unique_codes": 49
+            },
+            {
+              "channel": 4,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 2075,
+              "adc_max": 2139,
+              "adc_mean": 2120.7978515625,
+              "adc_stddev": 14.338886541821031,
+              "unique_codes": 20
+            },
+            {
+              "channel": 5,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 2080,
+              "adc_max": 2143,
+              "adc_mean": 2106.85498046875,
+              "adc_stddev": 23.19124726711149,
+              "unique_codes": 33
+            },
+            {
+              "channel": 6,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 2082,
+              "adc_max": 2123,
+              "adc_mean": 2101.855712890625,
+              "adc_stddev": 17.865831115972277,
+              "unique_codes": 13
+            },
+            {
+              "channel": 7,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 2112,
+              "adc_max": 2155,
+              "adc_mean": 2134.3515625,
+              "adc_stddev": 17.913173222585208,
+              "unique_codes": 16
+            },
+            {
+              "channel": 8,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 2077,
+              "adc_max": 2111,
+              "adc_mean": 2093.712890625,
+              "adc_stddev": 14.145228527025893,
+              "unique_codes": 14
+            },
+            {
+              "channel": 9,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 2048,
+              "adc_max": 2107,
+              "adc_mean": 2081.9091796875,
+              "adc_stddev": 18.616820081638203,
+              "unique_codes": 22
+            },
+            {
+              "channel": 10,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 2050,
+              "adc_max": 2116,
+              "adc_mean": 2087.74267578125,
+              "adc_stddev": 22.911017901387417,
+              "unique_codes": 20
+            },
+            {
+              "channel": 11,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 2056,
+              "adc_max": 2109,
+              "adc_mean": 2082.98779296875,
+              "adc_stddev": 13.790241093827477,
+              "unique_codes": 37
+            },
+            {
+              "channel": 12,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 0,
+              "adc_min": 2030,
+              "adc_max": 2083,
+              "adc_mean": 2051.88818359375,
+              "adc_stddev": 19.81951514757723,
+              "unique_codes": 14
+            }
+          ]
+        },
+        {
+          "capture_id": 14,
+          "status": 45,
+          "bank": 1,
+          "synthetic": false,
+          "format": "12files each4096little-endianu16; ADC bits0..11,EV12,STR13 for physical mode",
+          "sample_rate_nominal_hz": 320000000,
+          "channels": [
+            {
+              "channel": 1,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 2058,
+              "adc_max": 2111,
+              "adc_mean": 2083.1728515625,
+              "adc_stddev": 21.330898520979872,
+              "unique_codes": 19
+            },
+            {
+              "channel": 2,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 2057,
+              "adc_max": 2128,
+              "adc_mean": 2105.44140625,
+              "adc_stddev": 16.853965025624117,
+              "unique_codes": 21
+            },
+            {
+              "channel": 3,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 1792,
+              "adc_max": 2558,
+              "adc_mean": 2071.850830078125,
+              "adc_stddev": 57.4423748636408,
+              "unique_codes": 55
+            },
+            {
+              "channel": 4,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 2052,
+              "adc_max": 2101,
+              "adc_mean": 2073.9541015625,
+              "adc_stddev": 19.97884239222671,
+              "unique_codes": 15
+            },
+            {
+              "channel": 5,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 521,
+              "adc_max": 2547,
+              "adc_mean": 1991.28515625,
+              "adc_stddev": 375.09402432503583,
+              "unique_codes": 40
+            },
+            {
+              "channel": 6,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 2084,
+              "adc_max": 2142,
+              "adc_mean": 2101.31689453125,
+              "adc_stddev": 17.067469163215556,
+              "unique_codes": 15
+            },
+            {
+              "channel": 7,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 2072,
+              "adc_max": 2141,
+              "adc_mean": 2092.6416015625,
+              "adc_stddev": 17.704068757209388,
+              "unique_codes": 26
+            },
+            {
+              "channel": 8,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 2070,
+              "adc_max": 2110,
+              "adc_mean": 2089.9208984375,
+              "adc_stddev": 17.004324839737393,
+              "unique_codes": 13
+            },
+            {
+              "channel": 9,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 2048,
+              "adc_max": 2105,
+              "adc_mean": 2076.8310546875,
+              "adc_stddev": 14.778368259685651,
+              "unique_codes": 32
+            },
+            {
+              "channel": 10,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 1010,
+              "adc_max": 2096,
+              "adc_mean": 2056.0283203125,
+              "adc_stddev": 67.00457787175739,
+              "unique_codes": 24
+            },
+            {
+              "channel": 11,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 2027,
+              "adc_max": 2079,
+              "adc_mean": 2053.28564453125,
+              "adc_stddev": 19.313118137726153,
+              "unique_codes": 22
+            },
+            {
+              "channel": 12,
+              "kind": "physical CPLD/ADC inputs",
+              "clock_hz_nominal": 80000000.0,
+              "selector": 1,
+              "adc_min": 1952,
+              "adc_max": 2039,
+              "adc_mean": 2001.48974609375,
+              "adc_stddev": 32.724568076521756,
+              "unique_codes": 22
+            }
+          ]
+        }
+      ],
+      "scope": "All 12 digital ADC banks and strobes; analog input currently connected only to selected CFD mux path",
+      "pm_uptime_before": [
+        275713567,
+        4
+      ],
+      "pm_uptime_after": [
+        286974832,
+        4
+      ],
+      "pm_sys_reset_observed": false,
+      "pass": true
+    },
+    "tdc": {
+      "captures": [
+        {
+          "label": "quiet-before",
+          "generation": 7,
+          "status": 25,
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "tx": null,
+          "phase_bin": null,
+          "fine_histograms": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        },
+        {
+          "label": "stimulated",
+          "generation": 8,
+          "status": 25,
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            64
+          ],
+          "tx": {
+            "generation": 4,
+            "repetitions": 64
+          },
+          "phase_bin": 24,
+          "fine_histograms": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {
+              "127": 31,
+              "126": 11,
+              "0": 16,
+              "125": 4,
+              "1": 2
+            }
+          ]
+        },
+        {
+          "label": "quiet-after",
+          "generation": 9,
+          "status": 25,
+          "counts": [
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0,
+            0
+          ],
+          "tx": null,
+          "phase_bin": null,
+          "fine_histograms": [
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {},
+            {}
+          ]
+        }
+      ],
+      "expected_channel": 12,
+      "pm_uptime_before": [
+        286996006,
+        4
+      ],
+      "pm_uptime_after": [
+        317495363,
+        4
+      ],
+      "pm_sys_reset_observed": false,
+      "pass": true
+    }
+  },
+  "dio_initial": {
+    "6": {
+      "before": [
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ]
+    },
+    "7": {
+      "before": [
+        0,
+        0
+      ],
+      "after": [
+        0,
+        0
+      ]
+    }
+  },
+  "bridge_before": {
+    "0x128": 4954,
+    "0x12c": 12432,
+    "0x130": 1,
+    "0x134": 0
+  },
+  "bridge_after": {
+    "0x128": 6582,
+    "0x12c": 14065,
+    "0x130": 1,
+    "0x134": 0
+  },
+  "read_retries": {
+    "pm": [],
+    "kasli": []
+  },
+  "functional_pass": true,
+  "unexpected_sys_resets": [],
+  "pass": true,
+  "pgood": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000C802740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2119
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000FD00740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2121
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000001A03740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2123
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000004F01740103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.212
+    }
+  ],
+  "pgood_final": {
+    "command": "@HW",
+    "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000004201730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+    "duration_s": 0.2123
+  }
+}

@@ -1,0 +1,2 @@
+../cpld/tb.vhd:42:3:@624ns:(report note): CPLD_CHAIN_SIM_PASS
+simulation stopped @624ns

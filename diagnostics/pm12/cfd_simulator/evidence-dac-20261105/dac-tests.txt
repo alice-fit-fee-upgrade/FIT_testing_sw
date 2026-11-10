@@ -1,0 +1,2 @@
+PASS DAC all12x4 SPI headers, protected chip selects, IRQ/CTRL restoration, timeout at each byte and power/busy guards
+PASS stored A/B/C/D code reconstruction:65536 input patterns; computed state is NOT DAC hardware readback

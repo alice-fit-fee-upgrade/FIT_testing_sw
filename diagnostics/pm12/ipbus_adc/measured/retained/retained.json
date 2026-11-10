@@ -1,0 +1,45 @@
+{
+  "mcu_writes": false,
+  "cpld_writes": false,
+  "flash_writes": false,
+  "started_unix": 1792095206.6632216,
+  "official_uhal_physical": {
+    "official_uhal_physical": "PASS",
+    "capture_id": 5,
+    "samples": 49152,
+    "status": 13
+  },
+  "official_native_byte_comparison": "PASS 12x4096u16",
+  "initial_command": 0,
+  "phy_cycles": [
+    {
+      "cycle": 0,
+      "result": "PASS",
+      "host_wrapper_s": 9.931,
+      "jtag_report": "0x2e3f44af001577840000000000176e6400033b8d000009fe00000b7f000003ef504d44420000000000070000000007270e00000707075680e7b4504d5a04"
+    },
+    {
+      "cycle": 1,
+      "result": "PASS",
+      "host_wrapper_s": 9.994,
+      "jtag_report": "0x786b54940018afdc00000000001af8f60003b61100000ba300000d43000003ef504d44420000000000070000000007270e00000707076e3d15c0504d5a04"
+    },
+    {
+      "cycle": 2,
+      "result": "PASS",
+      "host_wrapper_s": 9.879,
+      "jtag_report": "0xc27ddc93001be83400000000001e83880004217500000d4800000efd000003ef504d44420000000000070000000007270e000007070785f1184f504d5a04"
+    }
+  ],
+  "explicit_subsequent_ipbus_rearm": {
+    "result": "PASS",
+    "events": 145,
+    "elapsed": 120000000,
+    "post_close_ipbus_data_match": true
+  },
+  "read_retry_events": [],
+  "result": "PASS",
+  "capture_id": 5,
+  "trace_events": 1799,
+  "finished_unix": 1792095258.782843
+}

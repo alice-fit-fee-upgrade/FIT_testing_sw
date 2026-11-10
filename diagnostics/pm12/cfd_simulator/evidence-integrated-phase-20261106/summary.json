@@ -1,0 +1,10 @@
+{
+  "pass": true,
+  "target": "PM12 physical channel12, Kasli RX8/RX9 slot7 inputs1/3",
+  "pm_build": "c7c42d28",
+  "kasli_bit_sha256": "4299ddd3c87ccc4ad76796127de1d08d2d50943c7679555fca140b1e64261745",
+  "points": 20,
+  "final_dac_a_code": 0,
+  "transport": "IPbus sampling; DAC-A via MCU @DAC console",
+  "note": "No programming, clock reconfiguration, HDMI SPI probes, external DAC or analog mux writes."
+}

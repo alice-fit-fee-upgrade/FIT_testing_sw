@@ -1,0 +1,143 @@
+{
+  "firmware_source_checkout": "/home/codex-hil/fit-pm12-mcu-diag",
+  "source_branch": "pm12-hardware-diagnostics",
+  "reference_commit": "30dec0a",
+  "target": "ATxmega128A3U",
+  "uart": "USARTF0 PF2 RX / PF3 TX; PF1 RTS / PF0 CTS, verify wiring before running",
+  "baud_default": 115200,
+  "terminator": "CR",
+  "commands": {
+    "@PING": "firmware extension identification",
+    "@HW": "atomic input GPIO + original power/status RAM snapshot",
+    "@TEMP": "ADT7311 status/config/raw temperature/ID, no sensor writes",
+    "@TDC <0..2> <two hex digits>": "THS788 register read; 83 is chip ID",
+    "@PLL": "CDCE62005 0x8e readback only; no clock profile change",
+    "@PGTIME": "First PG assertion after EN, or original shutdown: state/ticks/overflow/nominal microseconds",
+    "@FPGA": "read diagnostic SPI registers 40..44",
+    "@FPGATEST": "verify diagnostic IDs, 32 walking-bit write/read patterns, restore and verify initial scratch value",
+    "@CFG [HOLD|BOOT]": "raw INIT/DONE/PROGRAM status; explicitly reset FPGA or request boot with bus release",
+    "@FLASHID": "read JEDEC ID only while FPGA held and SPIE owned",
+    "@FLASHREAD <six hex address> <two hex count>": "read 1..16 config-flash bytes; no write/erase opcodes"
+  },
+  "preserved": [
+    "startup",
+    "power control",
+    "power/thermal IRQs",
+    "bootloader",
+    "legacy console",
+    "original RAM layout"
+  ],
+  "never_written": [
+    "PSU enable PE2",
+    "THS reset PB5",
+    "PLL reset/sync PF5",
+    "DAC registers",
+    "EEPROM",
+    "flash",
+    "I2C signals"
+  ],
+  "transaction_limits": {
+    "spi_polls_per_byte": 128,
+    "spi_bytes_per_pll_command": 8,
+    "interrupt_policy": "short bounded critical section, restore original SREG; hardware latency NOT_RUN",
+    "spi_bytes_per_fpga_operation": 4,
+    "spi_bytes_per_flash_read_max": 20
+  },
+  "tests": {
+    "development_checks": "PASS",
+    "baseline_exact_check": "PASS zero differing bytes",
+    "physical_uart": "PASS original RS plus11-command published runner with RTS/CTS",
+    "physical_peripherals": "ADT7311 ID/temp,3THS788 chipID reads,CDCE readback PASS; functional acquisition NOT_RUN",
+    "programmed_board": true,
+    "pg_instrumentation": "PASS decoded instruction models + original fault-path comparison",
+    "spi_flash_host": "PASS framing, walking patterns/restoration, image guard, ownership, every byte timeout, PSU-preserving GPIO whitelist",
+    "fpga_spi_simulation": "PASS GHDL; Vivado 2025.2 Kintex implementation PASS",
+    "physical_fpga_spi": "PASS672 walking-bit patterns,21scratch restorations",
+    "physical_flash_boot": "Read-only ownership/JEDEC/data/release PASS; DONE not observed in2s, boot NOT_CONFIRMED",
+    "physical_pg_timing": "NOT_VALIDATED: NOT_STARTED"
+  },
+  "layout": {
+    "acceptance": "planned development differences only; NOT binary-exact PM.hex",
+    "golden_sha256": "e80e8612f7114caff6d7a2494ad0f51010182f2c2c83fdfb3047c9f8a34663c0",
+    "development_sha256": "56fe5ccb19340b05a8810d93beb5cb496d24e7c1f7e0418828923b30ad2806d9",
+    "differing_bytes": 6161,
+    "gate_start": 4842,
+    "gate_length": 6,
+    "extension_start": 16384,
+    "extension_size": 6191,
+    "extension_limit": 32768,
+    "legacy_symbols_preserved": 4657,
+    "bootloader_unchanged": true,
+    "power_instrumentation_sites": [
+      "0x106a",
+      "0x662",
+      "0xac",
+      "0x68e",
+      "0x5e6",
+      "0xad4",
+      "0xbcc",
+      "0xc0c",
+      "0x1446",
+      "0x1550",
+      "0x1c3e"
+    ],
+    "ram_globals": "rejected by linker; no unverified SRAM reservation"
+  },
+  "images": {
+    "development.hex": "8c460c0eb100dd353be430fef899a005103910d7d36ed5327b6cc7bc1c99d276",
+    "development.bin": "56fe5ccb19340b05a8810d93beb5cb496d24e7c1f7e0418828923b30ad2806d9",
+    "development.elf": "de776a6759756a97884539af903a5b2139f4a56b7347934167b5a992b7bed206"
+  },
+  "coverage_limits": [
+    "IRQ critical-section latency not measured on hardware",
+    "DAC8554 is write-only; analog verification needs FPGA ADC/generator setup",
+    "Temperature is reported as raw register data; ID/status checked by host interpretation",
+    "CFG HOLD destroys volatile FPGA image; recovered retry state machine may supersede ownership after roughly 5 seconds",
+    "CFG BOOT reports request only: INIT/DONE deadline and JTAG restoration required",
+    "Physical programming/UART/SPI and selected peripheral register reads PASS2026-10-15; see explicit pending PG/boot/I2C/functional scopes"
+  ],
+  "power_timing": {
+    "timer": "TCE0, no timer IRQ or output pins enabled",
+    "source_clock_nominal_hz": 32000000,
+    "prescaler": 1024,
+    "tick_us_nominal": 32,
+    "overflow_seconds_nominal": 2.097152,
+    "legacy_pg_deadline_ticks": 1000,
+    "legacy_tcc0_per": 125,
+    "legacy_tcc0_divider": 256,
+    "legacy_pg_deadline_seconds_nominal": 1.008,
+    "states": {
+      "0": "NOT_STARTED",
+      "1": "WAITING",
+      "2": "PG_OBSERVED",
+      "3": "ORIGINAL_TIMEOUT",
+      "4": "PG_ALREADY_HIGH",
+      "5": "OTHER_SHUTDOWN"
+    },
+    "measurement_scope": "EN write to PG GPIO ISR observation, includes IRQ latency; no rise measurement if PG already high or timer overflow",
+    "new_sram_bytes": 0,
+    "startup_and_fault_logic": "Preserved by exact replay at fixed four-byte instrumentation gates; shutdown GPIO write runs before telemetry",
+    "software_validation": "2048 decoded gate cases; full original GPIO PG ISR and timer deadline paths compared with golden",
+    "physical_validation": "NOT_RUN"
+  },
+  "physical_validation": {
+    "date": "2026-10-15",
+    "firmware_code_commit": "f9869c9",
+    "summary": "/home/codex-hil/fit-bringup/evidence/pm12-fw-validation-2026-10-15/hardware-summary.json",
+    "protected_memory_unchanged": {
+      "boot": true,
+      "eeprom": true,
+      "fuse0": true,
+      "fuse1": true,
+      "fuse2": true,
+      "fuse4": true,
+      "fuse5": true,
+      "lock": true,
+      "usersig": true,
+      "prodsig": true,
+      "signature": true
+    },
+    "fuse4_retained": "F3 physically read; historical programming ELF E3 not applied"
+  },
+  "diagnostic_source_commit": "c2ac8731c034a5a6a6c25e90c7ae7d5afd5a991b"
+}

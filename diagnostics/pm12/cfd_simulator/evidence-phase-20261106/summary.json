@@ -1,0 +1,22 @@
+{
+  "sweep_complete": true,
+  "raw_data_pass": true,
+  "phase_restore_pass": false,
+  "points": 101,
+  "afe": 12,
+  "kasli_slot": 7,
+  "kasli_channels": [
+    1,
+    3
+  ],
+  "transport": "UART",
+  "dac_final_raw_code": 0,
+  "dac_final_command_acknowledged": true,
+  "phase_records_exact": 283920,
+  "followup": "3 independent reads at code0, no additional DAC writes; both phases10.4166667ns modulo12.5ns",
+  "limits": [
+    "Original report remains failed because phase did not return; data verification is separate.",
+    "Current CPLD diagnostic gate mode retained, no hardware reconfiguration during scan.",
+    "No IPbus comparison or MMCM phase scan performed."
+  ]
+}

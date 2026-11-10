@@ -1,0 +1,177 @@
+{
+  "fit_source_base": "cbfd8b00d00dbd90d7642203b96752900fbc4571",
+  "kasli_source_base": "267774f7c1421ae9d9aff375139c5c9f65710c5c",
+  "kasli_generated_manifest": {
+    "cfd_ports": 4,
+    "hdmi_data_base": 0,
+    "hdmi": true,
+    "pm_bridge": true,
+    "pm_link": true,
+    "cfd_tx": true,
+    "tx_physical": {
+      "slot": 7,
+      "channel": 0,
+      "pair_p": 1,
+      "pair_n": 2
+    },
+    "ipbus": true,
+    "ip_address": "192.168.2.241",
+    "part": "xc7a200t-ffg1156-3",
+    "magic": 1380993073,
+    "profile": "external120",
+    "receiver_only": false,
+    "channels": 16,
+    "depth": 4096,
+    "phase_bins": 24,
+    "sample_hz": 960000000,
+    "mapping": [
+      {
+        "logical": 0,
+        "slot": 6,
+        "channel": 1,
+        "rj45": 0,
+        "pair_p": 4,
+        "pair_n": 5
+      },
+      {
+        "logical": 1,
+        "slot": 6,
+        "channel": 3,
+        "rj45": 0,
+        "pair_p": 7,
+        "pair_n": 8
+      },
+      {
+        "logical": 2,
+        "slot": 6,
+        "channel": 5,
+        "rj45": 1,
+        "pair_p": 4,
+        "pair_n": 5
+      },
+      {
+        "logical": 3,
+        "slot": 6,
+        "channel": 7,
+        "rj45": 1,
+        "pair_p": 7,
+        "pair_n": 8
+      },
+      {
+        "logical": 4,
+        "slot": 6,
+        "channel": 9,
+        "rj45": 2,
+        "pair_p": 4,
+        "pair_n": 5
+      },
+      {
+        "logical": 5,
+        "slot": 6,
+        "channel": 11,
+        "rj45": 2,
+        "pair_p": 7,
+        "pair_n": 8
+      },
+      {
+        "logical": 6,
+        "slot": 6,
+        "channel": 13,
+        "rj45": 3,
+        "pair_p": 4,
+        "pair_n": 5
+      },
+      {
+        "logical": 7,
+        "slot": 6,
+        "channel": 15,
+        "rj45": 3,
+        "pair_p": 7,
+        "pair_n": 8
+      },
+      {
+        "logical": 8,
+        "slot": 7,
+        "channel": 1,
+        "rj45": 0,
+        "pair_p": 4,
+        "pair_n": 5
+      },
+      {
+        "logical": 9,
+        "slot": 7,
+        "channel": 3,
+        "rj45": 0,
+        "pair_p": 7,
+        "pair_n": 8
+      },
+      {
+        "logical": 10,
+        "slot": 7,
+        "channel": 5,
+        "rj45": 1,
+        "pair_p": 4,
+        "pair_n": 5
+      },
+      {
+        "logical": 11,
+        "slot": 7,
+        "channel": 7,
+        "rj45": 1,
+        "pair_p": 7,
+        "pair_n": 8
+      },
+      {
+        "logical": 12,
+        "slot": 7,
+        "channel": 9,
+        "rj45": 2,
+        "pair_p": 4,
+        "pair_n": 5
+      },
+      {
+        "logical": 13,
+        "slot": 7,
+        "channel": 11,
+        "rj45": 2,
+        "pair_p": 7,
+        "pair_n": 8
+      },
+      {
+        "logical": 14,
+        "slot": 7,
+        "channel": 13,
+        "rj45": 3,
+        "pair_p": 4,
+        "pair_n": 5
+      },
+      {
+        "logical": 15,
+        "slot": 7,
+        "channel": 15,
+        "rj45": 3,
+        "pair_p": 7,
+        "pair_n": 8
+      }
+    ],
+    "source_sha256": {
+      "gateware/core.py": "95bf1d51dc96cc3e87f2ce5dd32347b8c1194936c2ca1da607a3ae86279520cd",
+      "gateware/lvds8.py": "9be293bcb03306095bbd4a3778e709351792d98169fb886fbfe013cc345f9713",
+      "gateware/lvds8_control.py": "472b5184887a4c176a50da793b028ccb978830be097897499031f196d8f1781e",
+      "gateware/lvds8_phase.py": "a6a722cbe00d702b2ad6c9a4f16b88f9401d4cb01a38e9032167c1ee1d2abeed",
+      "gateware/build_gate_phase.py": "df47c1425fa898d7f9f1e302b16300b095ef508c7f859206555838675357dcbc",
+      "gateware/ipbus_bridge.py": "a9d207736e02213853c3d1f67d682ad1bf6bdf0880eb8202e48dc1fcf034c316",
+      "gateware/gate_ethernet.py": "6bff6113a831443e95820f99f3f0c14ee09f9399b0f7dd6d58bd68e5e28929dc",
+      "gateware/cfd_tx.py": "c6aedf235d8ce8240d3b80f2db0c3fa2c59f2978e2ad168c35c4f4be9215c0dc",
+      "gateware/pm_link.py": "0eec39b7853682d358c2c9f72ca40f7b1611c9894c5c243c87f0a797494828e1",
+      "gateware/pm_bridge.py": "8da57e3f6ec0e1bbb632b8455b39fb2ae0b648d58dab5d08ce68e2cbcfcaf2a8",
+      "gateware/hdmi_integrated.py": "cafd0f3b5e31707bfbdabd5ec42325cccf096aa67e2418df14c08a66344fee44"
+    },
+    "generated_sha256": {
+      "gate_phase.v": "dbfcde23ba55117e8aaf37a699316b165e538a901c5f1a2144a88f83de8e54b4",
+      "gate_phase.xdc": "674b350990fcb02eda0e574af003936eb810c2d4d2886446c3aedfe58aa3a1a4"
+    }
+  },
+  "updated_host_sha256": "e16b6dd9a6c01c3e0c2c78d33de6d6343fe6abdb214aadd7e6fce604d07c7a34",
+  "acquisition_host_sha256": "1f206e1cf18ce7253e42109d4ca6b7dcb59a3c840b4a2376fbfc20145c4efb32"
+}

@@ -1,0 +1,89 @@
+{
+  "status": "PASS",
+  "scope": "DAC control recovery only; does not clear previous ADC timing failure",
+  "channel": 12,
+  "dac_channels": [
+    0,
+    1
+  ],
+  "identity": {
+    "uid": "PM12-K7-3A17A1B402212223",
+    "fpga_dna": "3A17A1B402212223",
+    "mcu_eeprom_serial": "1803",
+    "asset_label": "PM12-K7-3A17A1B402212223",
+    "cpu_factory_id": null,
+    "cpu_factory_id_status": "NOT_READ; do not reset MCU for a PDI signature read",
+    "jtag_cable": "210249A73E43",
+    "fpga_ipbus_identity": [
+      1347228162,
+      65538,
+      3351522600
+    ],
+    "pgood": [
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000B800730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2113
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000D502730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2117
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000000B01730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2121
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000002803730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2116
+      }
+    ],
+    "pgood_final": {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000004901730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2106
+    },
+    "mcu_reply": {
+      "command": "RS",
+      "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.1 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+      "duration_s": 0.212
+    },
+    "uptime_before": [
+      1239035193,
+      5
+    ],
+    "uptime_after": [
+      1928119480,
+      5
+    ],
+    "observed_utc": "2026-11-07T19:21:18Z"
+  },
+  "before": [
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "pgood": {
+    "command": "@HW",
+    "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000006700730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+    "duration_s": 0.2119
+  },
+  "after": [
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ]
+}

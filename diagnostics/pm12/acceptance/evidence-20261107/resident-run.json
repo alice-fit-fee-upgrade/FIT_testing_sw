@@ -1,0 +1,501 @@
+{
+  "schema": 1,
+  "mode": "LIVE",
+  "run_id": "live-ch12-batch01",
+  "board_uid": "PM12-K7-3A17A1B402212223",
+  "board_serial": "1803",
+  "channels": [
+    12
+  ],
+  "started_utc": "2026-11-07T18:59:02.083192+00:00",
+  "status": "PASS",
+  "steps": [
+    {
+      "id": "identity",
+      "title": "Hardware identity and PGOOD",
+      "started_utc": "2026-11-07T18:59:02.095208+00:00",
+      "command": [
+        "/home/codex-hil/kasli-phase-tester/run-python",
+        "/home/codex-hil/fit-testing-publish/diagnostics/pm12/acceptance/station.py",
+        "identity",
+        "--station",
+        "/srv/codex-hil-nvme/pm12-acceptance-20261107/live-ch12-batch01/station.json",
+        "--out",
+        "/srv/codex-hil-nvme/pm12-acceptance-20261107/live-ch12-batch01/identity/data"
+      ],
+      "channel": null,
+      "status": "PASS",
+      "checks": [
+        {
+          "file": "data/result.json",
+          "key": "status",
+          "equals": "PASS"
+        }
+      ],
+      "procedure": "Read factory FPGA DNA and MCU EEPROM serial under leases. Match enrolled UID, integrated build and stable physical PGOOD.",
+      "limits": "MCU EEPROM serial and FPGA IDCODE are not unique factory identity. CPU factory signature not read.",
+      "returncode": 0,
+      "finished_utc": "2026-11-07T18:59:23.937578+00:00",
+      "instance": "identity"
+    },
+    {
+      "id": "mcu",
+      "title": "CPU peripherals, SPI walking patterns and power telemetry",
+      "started_utc": "2026-11-07T18:59:23.938333+00:00",
+      "command": [
+        "/home/codex-hil/kasli-phase-tester/run-python",
+        "/home/codex-hil/fit-testing-publish/diagnostics/pm12/acceptance/station.py",
+        "mcu",
+        "--station",
+        "/srv/codex-hil-nvme/pm12-acceptance-20261107/live-ch12-batch01/station.json",
+        "--out",
+        "/srv/codex-hil-nvme/pm12-acceptance-20261107/live-ch12-batch01/mcu/data"
+      ],
+      "channel": null,
+      "status": "PASS",
+      "checks": [
+        {
+          "file": "data/result.json",
+          "key": "status",
+          "equals": "PASS"
+        }
+      ],
+      "procedure": "Read PING, GPIO, temperature ID, three TDC chip IDs, PLL, FPGA signature, 32 walking patterns with scratch restoration, INA and POWER. Recheck PGOOD before sensor access.",
+      "limits": "No power cycling or timeout fault injection. Unfitted P3V8 shunt: voltage only; no current acceptance. Sensor numeric limits require a frozen acceptance specification.",
+      "returncode": 0,
+      "finished_utc": "2026-11-07T18:59:52.893365+00:00",
+      "instance": "mcu"
+    },
+    {
+      "id": "integrated",
+      "title": "HDMI, all digital ADC paths and stimulated TDC",
+      "started_utc": "2026-11-07T18:59:52.894217+00:00",
+      "command": [
+        "/home/codex-hil/kasli-phase-tester/run-python",
+        "/home/codex-hil/fit-testing-publish/diagnostics/pm12/acceptance/station.py",
+        "integrated",
+        "--station",
+        "/srv/codex-hil-nvme/pm12-acceptance-20261107/live-ch12-batch01/station.json",
+        "--out",
+        "/srv/codex-hil-nvme/pm12-acceptance-20261107/live-ch12-batch01/integrated/data"
+      ],
+      "channel": null,
+      "status": "PASS",
+      "checks": [
+        {
+          "file": "data/result.json",
+          "key": "status",
+          "equals": "PASS"
+        }
+      ],
+      "procedure": "Four HDMI lanes: walking discovery and slow/fast PRBS, empty frames; SPI signature reads only. Capture both ADC banks, synthetic and physical, all12 channels. Quiet/stimulated/quiet TDC:64 pulses to configured channel. Check uptime.",
+      "limits": "TDC stimulus only on the physically connected channel. No calibrated ADC analog acceptance for unconnected channels. HDMI SPI writes disabled: bus shared with MCU.",
+      "returncode": 0,
+      "finished_utc": "2026-11-07T19:00:18.038475+00:00",
+      "instance": "integrated"
+    },
+    {
+      "id": "gate-phase",
+      "title": "Gate delay versus internal DAC-A",
+      "started_utc": "2026-11-07T19:00:18.039860+00:00",
+      "command": [
+        "/home/codex-hil/kasli-phase-tester/run-python",
+        "/home/codex-hil/fit-testing-publish/diagnostics/pm12/cfd_simulator/phase_scan.py",
+        "--afe",
+        "12",
+        "--lanes",
+        "8,9",
+        "--board-serial",
+        "1803",
+        "--transport",
+        "ipbus",
+        "--clock-mhz",
+        "20",
+        "--restore-code",
+        "0000",
+        "--initialize-zero",
+        "--intervals",
+        "19",
+        "--out",
+        "/srv/codex-hil-nvme/pm12-acceptance-20261107/live-ch12-batch01/gate-phase-ch12/data"
+      ],
+      "channel": 12,
+      "status": "PASS",
+      "checks": [
+        {
+          "file": "data/report.json",
+          "key": "pass_",
+          "equals": true
+        },
+        {
+          "file": "data/report.json",
+          "key": "result.restore_phase_check",
+          "equals": true
+        }
+      ],
+      "procedure": "Establish explicit DAC-A0000 baseline;20 code points0..65535; common trigger and ISERDES phase buffers; restore0000 and verify phase return. Save every raw capture.",
+      "limits": "Sampled centroid, nominal sample metadata; no calibrated absolute phase/jitter claim. Original20MHz CPLD gate divider required.",
+      "returncode": 0,
+      "finished_utc": "2026-11-07T19:00:33.954724+00:00",
+      "instance": "gate-phase-ch12"
+    },
+    {
+      "id": "adc-lines",
+      "title": "ADC differential transfer and adjacent data-bit coverage",
+      "started_utc": "2026-11-07T19:00:33.956068+00:00",
+      "command": [
+        "/home/codex-hil/kasli-phase-tester/run-python",
+        "/home/codex-hil/fit-testing-publish/diagnostics/pm12/cfd_simulator/adc_line_test.py",
+        "--acquire",
+        "--afe",
+        "12",
+        "--board-serial",
+        "1803",
+        "--points",
+        "257",
+        "--out",
+        "/srv/codex-hil-nvme/pm12-acceptance-20261107/live-ch12-batch01/adc-lines-ch12/data"
+      ],
+      "channel": 12,
+      "status": "PASS",
+      "checks": [
+        {
+          "file": "data/line-test.json",
+          "key": "pass_",
+          "equals": true
+        },
+        {
+          "file": "data/raw-validation.json",
+          "key": "pass",
+          "equals": true
+        }
+      ],
+      "procedure": "SCPI DAC differential\u22121.2..+1.2V, commonmode1V,257 points, ADC A/B. Decode4096-word buffers at STR edges, verify tags/generations;12 bits and11 neighbor pairs, all4 states with sufficient population. Restore1V/1V.",
+      "limits": "Requested voltage, no calibrated gain/DNL. Per-pin0..3.3V ceiling. Functional persistent-tie test, not resistance/pin-order/timing-margin proof.",
+      "returncode": 0,
+      "finished_utc": "2026-11-07T19:07:16.635719+00:00",
+      "instance": "adc-lines-ch12"
+    }
+  ],
+  "plan": {
+    "schema": 1,
+    "name": "Resident integrated diagnostic batch",
+    "steps": [
+      {
+        "id": "identity",
+        "title": "Hardware identity and PGOOD",
+        "command": [
+          "{python}",
+          "{repo}/diagnostics/pm12/acceptance/station.py",
+          "identity",
+          "--station",
+          "{station}",
+          "--out",
+          "{output}"
+        ],
+        "checks": [
+          {
+            "file": "data/result.json",
+            "key": "status",
+            "equals": "PASS"
+          }
+        ],
+        "procedure": "Read factory FPGA DNA and MCU EEPROM serial under leases. Match enrolled UID, integrated build and stable physical PGOOD.",
+        "limits": "MCU EEPROM serial and FPGA IDCODE are not unique factory identity. CPU factory signature not read.",
+        "per_channel": false,
+        "timeout_s": 3600
+      },
+      {
+        "id": "mcu",
+        "title": "CPU peripherals, SPI walking patterns and power telemetry",
+        "command": [
+          "{python}",
+          "{repo}/diagnostics/pm12/acceptance/station.py",
+          "mcu",
+          "--station",
+          "{station}",
+          "--out",
+          "{output}"
+        ],
+        "checks": [
+          {
+            "file": "data/result.json",
+            "key": "status",
+            "equals": "PASS"
+          }
+        ],
+        "procedure": "Read PING, GPIO, temperature ID, three TDC chip IDs, PLL, FPGA signature, 32 walking patterns with scratch restoration, INA and POWER. Recheck PGOOD before sensor access.",
+        "limits": "No power cycling or timeout fault injection. Unfitted P3V8 shunt: voltage only; no current acceptance. Sensor numeric limits require a frozen acceptance specification.",
+        "per_channel": false,
+        "timeout_s": 3600
+      },
+      {
+        "id": "integrated",
+        "title": "HDMI, all digital ADC paths and stimulated TDC",
+        "command": [
+          "{python}",
+          "{repo}/diagnostics/pm12/acceptance/station.py",
+          "integrated",
+          "--station",
+          "{station}",
+          "--out",
+          "{output}"
+        ],
+        "checks": [
+          {
+            "file": "data/result.json",
+            "key": "status",
+            "equals": "PASS"
+          }
+        ],
+        "procedure": "Four HDMI lanes: walking discovery and slow/fast PRBS, empty frames; SPI signature reads only. Capture both ADC banks, synthetic and physical, all12 channels. Quiet/stimulated/quiet TDC:64 pulses to configured channel. Check uptime.",
+        "limits": "TDC stimulus only on the physically connected channel. No calibrated ADC analog acceptance for unconnected channels. HDMI SPI writes disabled: bus shared with MCU.",
+        "per_channel": false,
+        "timeout_s": 3600
+      },
+      {
+        "id": "gate-phase",
+        "title": "Gate delay versus internal DAC-A",
+        "command": [
+          "{python}",
+          "{repo}/diagnostics/pm12/cfd_simulator/phase_scan.py",
+          "--afe",
+          "{channel}",
+          "--lanes",
+          "{lanes}",
+          "--board-serial",
+          "{board_serial}",
+          "--transport",
+          "ipbus",
+          "--clock-mhz",
+          "20",
+          "--restore-code",
+          "0000",
+          "--initialize-zero",
+          "--intervals",
+          "19",
+          "--out",
+          "{output}"
+        ],
+        "checks": [
+          {
+            "file": "data/report.json",
+            "key": "pass_",
+            "equals": true
+          },
+          {
+            "file": "data/report.json",
+            "key": "result.restore_phase_check",
+            "equals": true
+          }
+        ],
+        "procedure": "Establish explicit DAC-A0000 baseline;20 code points0..65535; common trigger and ISERDES phase buffers; restore0000 and verify phase return. Save every raw capture.",
+        "limits": "Sampled centroid, nominal sample metadata; no calibrated absolute phase/jitter claim. Original20MHz CPLD gate divider required.",
+        "per_channel": true,
+        "timeout_s": 3600
+      },
+      {
+        "id": "adc-lines",
+        "title": "ADC differential transfer and adjacent data-bit coverage",
+        "command": [
+          "{python}",
+          "{repo}/diagnostics/pm12/cfd_simulator/adc_line_test.py",
+          "--acquire",
+          "--afe",
+          "{channel}",
+          "--board-serial",
+          "{board_serial}",
+          "--points",
+          "257",
+          "--out",
+          "{output}"
+        ],
+        "checks": [
+          {
+            "file": "data/line-test.json",
+            "key": "pass_",
+            "equals": true
+          },
+          {
+            "file": "data/raw-validation.json",
+            "key": "pass",
+            "equals": true
+          }
+        ],
+        "procedure": "SCPI DAC differential\u22121.2..+1.2V, commonmode1V,257 points, ADC A/B. Decode4096-word buffers at STR edges, verify tags/generations;12 bits and11 neighbor pairs, all4 states with sufficient population. Restore1V/1V.",
+        "limits": "Requested voltage, no calibrated gain/DNL. Per-pin0..3.3V ceiling. Functional persistent-tie test, not resistance/pin-order/timing-margin proof.",
+        "per_channel": true,
+        "timeout_s": 3600
+      }
+    ]
+  },
+  "station": {
+    "schema": 1,
+    "asset_label": null,
+    "board_serial": "1803",
+    "jtag_cable": "210249A73E43",
+    "hw_server": "localhost:3121",
+    "python": "/home/codex-hil/kasli-phase-tester/run-python",
+    "uart": "/dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0",
+    "kasli_root": "/home/codex-hil/kasli-phase-tester",
+    "console_tools": "/home/codex-hil/FIT_PM_FW_uPC/tools/hardware",
+    "stimulated_channel": 12,
+    "channels": {
+      "12": {
+        "analog_connected": true,
+        "phase_lanes": [
+          8,
+          9
+        ]
+      }
+    },
+    "identity_leases": [
+      "atmel-ice-J41800043065",
+      "pm12-210249A73E43",
+      "kasli-diot-00001"
+    ],
+    "run_leases": [
+      "atmel-ice-J41800043065",
+      "pm12-210249A73E43",
+      "kasli-diot-00001",
+      "esp32-6825dd4c49e4",
+      "lattice-VER00001"
+    ],
+    "modules": [
+      {
+        "role": "DUT",
+        "type": "FIT PM12",
+        "eeprom_serial": "1803",
+        "hardware_uid": null,
+        "photo": null
+      },
+      {
+        "role": "Timing and readout",
+        "type": "Kasli-DIOT",
+        "label": "00001",
+        "hardware_uid": null,
+        "photo": null
+      },
+      {
+        "role": "LVDS stimulus/capture",
+        "type": "DIO-LVDS RJ45 slot 6",
+        "hardware_uid": null,
+        "photo": null
+      },
+      {
+        "role": "LVDS stimulus/capture",
+        "type": "DIO-LVDS RJ45 slot 7",
+        "hardware_uid": null,
+        "photo": null
+      },
+      {
+        "role": "Analog stimulus",
+        "type": "MOD-DAC-28",
+        "hardware_uid": "ESP32-MAC-6825DD4C49E4",
+        "identity_source": "SCPI IDN; base MAC, Ethernet MAC differs",
+        "photo": null
+      },
+      {
+        "role": "DC voltage measurement",
+        "type": "Keithley DMM7510",
+        "label": "04679690",
+        "hardware_uid": null,
+        "photo": null
+      },
+      {
+        "role": "Analog adapter",
+        "type": "CFD_SIM channel 12",
+        "hardware_uid": null,
+        "photo": null
+      },
+      {
+        "role": "Clock reference",
+        "type": "External LHC generator",
+        "hardware_uid": null,
+        "photo": null
+      }
+    ],
+    "measurement_configuration": {
+      "pm_bit_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+      "kasli_bit_sha256": "4299ddd3c87ccc4ad76796127de1d08d2d50943c7679555fca140b1e64261745",
+      "reference_mhz": 40.0787,
+      "kasli_reference_multiplier": 3,
+      "cpld_gate_mhz": 20,
+      "analog_common_mode_v": 1.0,
+      "dac_legs_max_v": 3.3
+    },
+    "managed_jtag": {
+      "socket": "unix:///run/user/1001/docker-vivado.sock",
+      "image": "codex-vivado-runtime:ubuntu22.04",
+      "vivado_bin": "/srv/codex-hil-data/toolchains/amd/Xilinx/2025.2/Vivado/bin"
+    },
+    "board_uid": "PM12-K7-3A17A1B402212223"
+  },
+  "configuration": {
+    "pm_bit_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+    "kasli_bit_sha256": "4299ddd3c87ccc4ad76796127de1d08d2d50943c7679555fca140b1e64261745",
+    "reference_mhz": 40.0787,
+    "kasli_reference_multiplier": 3,
+    "cpld_gate_mhz": 20,
+    "analog_common_mode_v": 1.0,
+    "dac_legs_max_v": 3.3
+  },
+  "source_fingerprint": "7e563e19279587c57a5284bc327d4b2897a1becb517b862ce4ebaf9f005cbd6e",
+  "identity": {
+    "uid": "PM12-K7-3A17A1B402212223",
+    "fpga_dna": "3A17A1B402212223",
+    "mcu_eeprom_serial": "1803",
+    "asset_label": null,
+    "cpu_factory_id": null,
+    "cpu_factory_id_status": "NOT_READ; do not reset MCU for a PDI signature read",
+    "jtag_cable": "210249A73E43",
+    "fpga_ipbus_identity": [
+      1347228162,
+      65538,
+      3351522600
+    ],
+    "pgood": [
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000CD03730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2114
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000000302730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2108
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000003900730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2123
+      },
+      {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000005602720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2118
+      }
+    ],
+    "pgood_final": {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000C202730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2107
+    },
+    "mcu_reply": {
+      "command": "RS",
+      "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.0 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+      "duration_s": 0.2121
+    },
+    "uptime_before": [
+      2533644847,
+      833
+    ],
+    "uptime_after": [
+      3320191625,
+      833
+    ],
+    "observed_utc": "2026-11-07T18:59:23Z"
+  },
+  "finished_utc": "2026-11-07T19:07:16.636434+00:00",
+  "scope": "Selected plan and fitted channels only; final report checks required coverage separately"
+}

@@ -1,0 +1,54 @@
+{
+  "date": "2026-10-14",
+  "digital_pass": true,
+  "physical_restore_verified": true,
+  "fpga_sha256": "b26bdccb44ff0d323a58637efd3cee59a98752afdf432d392f4aa47a1a3d9652",
+  "nonvolatile_writes": false,
+  "mux_addresses": [
+    "0x70",
+    "0x71"
+  ],
+  "mux_selection_readback_cases": 16,
+  "reset_test": true,
+  "automatic_line_release_test": true,
+  "downstream_scan_address_range": "0x08..0x77 excluding upstream mux addresses",
+  "confirmed_monitors": 3,
+  "afe_device_ack_count": 0,
+  "warnings": [
+    {
+      "monitor": "IC4 / Imeas2 / 0x71 channel5 / INA3221 channel1",
+      "schematic_rail": "P3V8",
+      "measured_bus_volts": 1.456,
+      "shunt_raw_hex": "0x7ff8",
+      "interpretation": "Positive full-scale shunt code; do not infer current from this clipped reading. Repeats across six measurements. Analog input/shunt/power rail verification needed."
+    },
+    {
+      "signal": "I2C_SW_RSTn",
+      "finding": "RESET did not recover HIGH without FPGA pull-up after MCU isolation",
+      "fix": "PULLUP TRUE on B26 in diagnostic XDC; low/high/reset masks passed physically"
+    }
+  ],
+  "coverage_limits": [
+    "AFE routes yielded no downstream ACK; physical connectivity of unloaded branches is not proven",
+    "No sensor configuration or power-controller writes",
+    "Voltage/current calibration not validated",
+    "Slow host-driven I2C over UDP; high-speed I2C electrical margins not measured"
+  ],
+  "bus_voltages_by_monitor": {
+    "4": [
+      1.0,
+      1.2,
+      1.792
+    ],
+    "5": [
+      1.456,
+      3.336,
+      1.784
+    ],
+    "6": [
+      1.008,
+      5.5040000000000004,
+      0.0
+    ]
+  }
+}

@@ -1,0 +1,81 @@
+{
+  "scope": "Physical config bus ownership/read-only flash/reset-release; no flash write/erase",
+  "rows": [
+    {
+      "command": "@FLASHID",
+      "reply": "ERR CONFIG OWNERSHIP\r\n"
+    },
+    {
+      "command": "@CFG HOLD",
+      "reply": "CFG HELD FPGA SRAM LOST\r\n"
+    },
+    {
+      "command": "@CFG",
+      "reply": "CFG PORTD IN=F1 05\r\n"
+    },
+    {
+      "command": "@FLASHID",
+      "reply": "FLASH JEDEC=016017\r\n"
+    },
+    {
+      "command": "@FLASHREAD 000000 10",
+      "reply": "FLASH DATA=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\n"
+    },
+    {
+      "command": "@FLASHREAD 000010 10",
+      "reply": "FLASH DATA=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\n"
+    },
+    {
+      "command": "@FLASHREAD 000020 10",
+      "reply": "FLASH DATA=FFFFFFFFFFFFFFFFFFFFFFFFFFFFFFFF\r\n"
+    },
+    {
+      "command": "@CFG BOOT",
+      "reply": "CFG BOOT REQUESTED CHECK INIT DONE\r\n"
+    },
+    {
+      "command": "@CFG",
+      "reply": "CFG PORTD IN=F7 07\r\n"
+    },
+    {
+      "command": "@CFG",
+      "reply": "CFG PORTD IN=F7 07\r\n"
+    },
+    {
+      "command": "@CFG",
+      "reply": "CFG PORTD IN=F7 07\r\n"
+    },
+    {
+      "command": "@CFG",
+      "reply": "CFG PORTD IN=F7 07\r\n"
+    },
+    {
+      "command": "@CFG",
+      "reply": "CFG PORTD IN=F7 07\r\n"
+    },
+    {
+      "command": "@CFG",
+      "reply": "CFG PORTD IN=F7 07\r\n"
+    },
+    {
+      "command": "@CFG",
+      "reply": "CFG PORTD IN=F7 07\r\n"
+    },
+    {
+      "command": "@CFG",
+      "reply": "CFG PORTD IN=F7 07\r\n"
+    },
+    {
+      "command": "@CFG",
+      "reply": "CFG PORTD IN=F7 07\r\n"
+    },
+    {
+      "command": "@PING",
+      "reply": "PONG\r\n"
+    }
+  ],
+  "jedec_id": "016017",
+  "flash_ownership_read_release": "PASS",
+  "boot_done_within2s": false,
+  "boot_validation": "DONE did not assert; stored image unknown, not a successful FPGA boot"
+}

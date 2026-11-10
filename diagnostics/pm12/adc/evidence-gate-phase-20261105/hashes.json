@@ -1,0 +1,6 @@
+{
+  "jed_sha256": "779b56edeeb742d16a12a58267fbdae3c86b098e5791706c7be64385a1a4f508",
+  "remote_job": "/srv/nvme-fast-4/simulations/pm12-adclk-gates-20261105-01",
+  "baseline": "12 CPLDs blank, two full read passes before programming",
+  "program_verify": "3372 vendor scans, NATIVE_EXECUTE_PASS; Kintex passive signature unchanged"
+}

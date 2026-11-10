@@ -1,0 +1,20 @@
+{
+  "validation": "offline only; no physical MCU SPI/flash/boot test",
+  "ghdl": "PASS identity, burst, 32 walking-bit patterns, aborted frame and recovery",
+  "vivado": "2025.2 xc7k160tffg676-3 implementation and bitstream PASS; zero setup/hold failing endpoints",
+  "bitstream_sha256": "66b472ce0359e25ec007bba61ba4d5f59412eeaf79fb34f5a91780b5c92acc86",
+  "physical_spi": "NOT_RUN",
+  "physical_config_flash": "NOT_RUN",
+  "physical_boot": "NOT_RUN",
+  "sources": {
+    "pm12_mcu_spi.vhd": "6c2f1885175bb48a5b5a3feff421e6ab5ceb395ed0c1a73632285deef7b16926",
+    "pm12_mcu_spi_diag.v": "83d685573f7f164c88f3cb468dd6c2e82e29837c0765a46026da1feab35eb675",
+    "pins.xdc": "0ba3870fc807799d2561ab98ce2a73d4169079dbdcefed65d6cd878bb3f0b0e1"
+  },
+  "dependencies": {
+    "litex-eth-check": "1c019732b7eb959a6fc741e46af46d4eeb706dbd",
+    "liteeth-eth-check": "cb101652f69fab0979cfa1f9afbcfdf185fe662e",
+    "liteiclink-eth-check": "6e69216944e94c69f5a7d58d5c6d75dc3d754242"
+  },
+  "note": "Whitespace normalized after original build; VHDL behavior unchanged and GHDL rerun PASS."
+}

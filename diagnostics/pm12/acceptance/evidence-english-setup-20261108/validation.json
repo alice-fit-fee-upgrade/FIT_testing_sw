@@ -1,0 +1,25 @@
+{
+  "change": "English setup correction: clock x3 multiplication is inside the LHC generator",
+  "pages": 22,
+  "diagram_pdf_page": 4,
+  "language": "English",
+  "connections": [
+    "MOD-DAC-28 analog USB to CFD_SIM",
+    "CFD_SIM to PM12 channel daughtercard connector",
+    "CFD_SIM RJ45 to DIO-LVDS slot7 to Kasli backplane",
+    "PM12 HDMI to LVDS-HDMI adapter",
+    "LHC40.0787MHz to adapter, then PM through HDMI",
+    "Adapter2xRJ45 to separate DIO-LVDS slot6 to Kasli",
+    "LHC generator internal x3 output120.2361MHz to Kasli",
+    "PM private SFP1 and controller Ethernet links retained"
+  ],
+  "service_cables": "UART/JTAG and DMM intentionally omitted as in approved preview",
+  "hardware_access": false,
+  "verification": "English diagram visually inspected; LaTeX compiled and embedded figure text checked",
+  "source_generator": "bench_setup.py",
+  "internal_clock_multiplier": true,
+  "p3v8_update": "Owner confirms current readout available2026-11-08; historical shunt-absent data not reclassified; no fresh hardware measurement",
+  "parameterization": "JSON full configuration or partial override; exact derived clock, parent containment, anchored connections; diagram-only, no hardware actions",
+  "parameter_tests": 16,
+  "variant_render_test": "40MHz x4 ->160MHz, CFD slot5, alternate DUT name; standalone and LaTeX render PASS; illustrative only"
+}

@@ -1,0 +1,12 @@
+{
+  "revision": "857b773eec28282b357d4668ab934e95f41b6fe7",
+  "sha256": {
+    "firmware/FT0/PM/hdl/TDCCHAN.vhd": "dde8d417ef7770b329e853cb845d43b8d74e0259ea37f86647695c817f8bf833",
+    "firmware/FT0/PM/hdl/pin_capt.vhd": "875c2ad1053f05b6671d2542eb493a57afa393821e95cde82acba9a0668622bd",
+    "firmware/FT0/PM/hdl/autophase.vhd": "8aa7247df985272acce004a49e318475501d19ce9b3c48efa873bdaa5c389b42",
+    "firmware/FT0/PM/ipcore_properties/CLK600_pll.txt": "4e2822bbaef7f4816e2956c4875a96e510f7b8f611628f5324fc7a4d01edc0aa",
+    "firmware/FT0/PM/ipcore_properties/TDC_FIFO.txt": "964e052293c805300156770d3f12f8201b3a12ab263c61d501140d47dbbba56e",
+    "firmware/FT0/PM/xdc/ios.xdc": "41c4ee1a57d78b65629d03adf1a48c172bfe12b0fca5aac9cd8266863256c574",
+    "firmware/FT0/PM/xdc/fit.xdc": "ee3e22169bae57bc54b3a7fccb7d5b403a20e4632b7868124075a217bc287498"
+  }
+}

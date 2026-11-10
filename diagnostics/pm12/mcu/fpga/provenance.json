@@ -1,0 +1,6 @@
+{
+  "source": "fit-bringup/sources/FIT_TCM_GW_FPGA/firmware/FT0/PM/hdl/fit.vhd",
+  "sha256": "65318a7c35cf7a4c5502440afe6cc50efd3be8df5a449038483501bbd6aa4b22",
+  "extraction": "MCU SCK/SPI_CS process; exact framing retained; register case replaced with diagnostic map; falling-edge MISO separated for synthesis",
+  "not_interface": "HSEL/HSCK"
+}

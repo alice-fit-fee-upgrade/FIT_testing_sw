@@ -1,0 +1,995 @@
+diff --git a/development/Makefile b/development/Makefile
+index c075892..03cd7e6 100644
+--- a/development/Makefile
++++ b/development/Makefile
+@@ -3,9 +3,14 @@ all:
+ 	python3 tools/build.py
+ check: all
+ 	python3 tests/check_bridge.py
++	python3 tests/check_pg_timing.py
+ 	python3 tests/check_layout_guards.py
+ 	python3 tests/check_ram_guard.py
+-	cc -std=c99 -Wall -Wextra -Werror -Isrc src/extension.c tests/check_commands.c -o build/check_commands
++	cc -std=c99 -Wall -Wextra -Werror -Isrc src/extension.c src/hw_commands.c src/hw_drivers.c tests/check_commands.c -o build/check_commands
+ 	build/check_commands
++	cc -std=c99 -Wall -Wextra -Werror -Isrc src/hw_drivers.c tests/check_hw_drivers.c -o build/check_hw_drivers
++	build/check_hw_drivers
++	cc -std=c99 -Wall -Wextra -Werror -Isrc src/extension.c src/hw_commands.c src/hw_drivers.c tests/check_fpga_flash.c -o build/check_fpga_flash
++	build/check_fpga_flash
+ clean:
+ 	rm -rf build
+diff --git a/development/README.md b/development/README.md
+index 1d39b57..ea6a1f0 100644
+--- a/development/README.md
++++ b/development/README.md
+@@ -105,3 +105,50 @@ I2C operation still require device validation.
+ The agreed additive TWI/UART stage and subsequent measured legacy-function
+ replacement stage are described in [hardware development tracks](../docs/hardware_development_tracks.md).
+ Keep binary-different development replacements separate from the exact baseline.
++
++
++## MCU–FPGA SPI and configuration diagnostic
++
++`@FPGA` reads diagnostic registers 40–44. `@FPGATEST` verifies IDs 504D/5350,
++then writes and reads 32 walking-one/zero patterns at register 40, restoring and
++reading back its initial value. It refuses writes if the image IDs do not match.
++The Kintex diagnostic derives its active-low CS protocol from the original
++`SCKI/SPI_CS` slave, not the unrelated `HSCK/HSEL` interface. SPIC uses MSB-first
++mode 0; each operation is a 16-bit header plus 16-bit word. PLL/DAC select lines
++must be inactive. Each transaction restores SPIC control and releases CS.
++
++`@CFG` reports raw PORTD input/output (INIT_B bit 2, DONE bit 3, PROGRAM_B output
++bit 1). `@CFG HOLD` asserts PROGRAM_B, **destroys FPGA SRAM configuration**, and
++makes SPIE own the configuration bus. Once DONE reads low, `@FLASHID` sends 9F;
++`@FLASHREAD 000000 10` sends 03 and reads at most 16 bytes. No WREN, programming
++or erase commands exist. `@CFG BOOT` disables SPIE, releases its GPIO outputs
++and raises PROGRAM_B. Its reply confirms a request, not successful configuration;
++poll INIT/DONE and apply a deadline before reporting success. Flash contents may
++be unknown, so arrange JTAG restoration of the known diagnostic before this test.
++
++The recovered power/FPGA retry state machine remains active, including its
++roughly five-second retry. HOLD is therefore a short inspection operation, not
++a persistent programming mode. Verify ownership on every read; a lost lease
++returns ERR CONFIG OWNERSHIP. Perform these operations under the PM12 board
++lock. Do not run them through the default read-only UART capture script.
++
++Host tests cover read/write framing, both interrupt states, every byte timeout,
++CS/controller restoration, image guard and read-only flash opcodes. GHDL tests
++the slave; Vivado implementation of the combined SPI/Ethernet/I2C diagnostic
++passed. MCU programming, physical SPI, flash ownership and boot completion
++remain NOT_RUN until the identified UART is connected.
++
++
++## Physical checkpoint2026-10-15
++
++Diagnostic code f9869c9 was programmed via Atmel-ICE PDI after a physical full
++backup. Original physical FLASH matched golden exactly. Application-only page
++programming and full readback PASS; boot, EEPROM, fuse/lock, user/production
++signatures were unchanged. Physical fuse4 F3 was retained (historical ELF E3
++was not applied). UART/device reads and672 FPGA SPI walking patterns PASS.
++Config-flash JEDEC016017, read-only ownership/data/release PASS; DONE was not
++observed in a2s boot window, so flash boot remains unconfirmed. PGTIME reports
++NOT_STARTED; physical startup/fault timing remains unvalidated. No MCU INA
++driver exists in this candidate. Input-only I2C FPGA diagnostic504d5a02 remains
++in SRAM; MCU diagnostic remains running. Authoritative raw traces/summary:
++`/home/codex-hil/fit-bringup/evidence/pm12-fw-validation-2026-10-15/`.
+diff --git a/development/diagnostic_contract.json b/development/diagnostic_contract.json
+new file mode 100644
+index 0000000..31a9c43
+--- /dev/null
++++ b/development/diagnostic_contract.json
+@@ -0,0 +1,142 @@
++{
++  "firmware_source_checkout": "/home/codex-hil/fit-pm12-mcu-diag",
++  "source_branch": "pm12-hardware-diagnostics",
++  "reference_commit": "30dec0a",
++  "target": "ATxmega128A3U",
++  "uart": "USARTF0 PF2 RX / PF3 TX; PF1 RTS / PF0 CTS, verify wiring before running",
++  "baud_default": 115200,
++  "terminator": "CR",
++  "commands": {
++    "@PING": "firmware extension identification",
++    "@HW": "atomic input GPIO + original power/status RAM snapshot",
++    "@TEMP": "ADT7311 status/config/raw temperature/ID, no sensor writes",
++    "@TDC <0..2> <two hex digits>": "THS788 register read; 83 is chip ID",
++    "@PLL": "CDCE62005 0x8e readback only; no clock profile change",
++    "@PGTIME": "First PG assertion after EN, or original shutdown: state/ticks/overflow/nominal microseconds",
++    "@FPGA": "read diagnostic SPI registers 40..44",
++    "@FPGATEST": "verify diagnostic IDs, 32 walking-bit write/read patterns, restore and verify initial scratch value",
++    "@CFG [HOLD|BOOT]": "raw INIT/DONE/PROGRAM status; explicitly reset FPGA or request boot with bus release",
++    "@FLASHID": "read JEDEC ID only while FPGA held and SPIE owned",
++    "@FLASHREAD <six hex address> <two hex count>": "read 1..16 config-flash bytes; no write/erase opcodes"
++  },
++  "preserved": [
++    "startup",
++    "power control",
++    "power/thermal IRQs",
++    "bootloader",
++    "legacy console",
++    "original RAM layout"
++  ],
++  "never_written": [
++    "PSU enable PE2",
++    "THS reset PB5",
++    "PLL reset/sync PF5",
++    "DAC registers",
++    "EEPROM",
++    "flash",
++    "I2C signals"
++  ],
++  "transaction_limits": {
++    "spi_polls_per_byte": 128,
++    "spi_bytes_per_pll_command": 8,
++    "interrupt_policy": "short bounded critical section, restore original SREG; hardware latency NOT_RUN",
++    "spi_bytes_per_fpga_operation": 4,
++    "spi_bytes_per_flash_read_max": 20
++  },
++  "tests": {
++    "development_checks": "PASS",
++    "baseline_exact_check": "PASS zero differing bytes",
++    "physical_uart": "PASS original RS plus11-command published runner with RTS/CTS",
++    "physical_peripherals": "ADT7311 ID/temp,3THS788 chipID reads,CDCE readback PASS; functional acquisition NOT_RUN",
++    "programmed_board": true,
++    "pg_instrumentation": "PASS decoded instruction models + original fault-path comparison",
++    "spi_flash_host": "PASS framing, walking patterns/restoration, image guard, ownership, every byte timeout, PSU-preserving GPIO whitelist",
++    "fpga_spi_simulation": "PASS GHDL; Vivado 2025.2 Kintex implementation PASS",
++    "physical_fpga_spi": "PASS672 walking-bit patterns,21scratch restorations",
++    "physical_flash_boot": "Read-only ownership/JEDEC/data/release PASS; DONE not observed in2s, boot NOT_CONFIRMED",
++    "physical_pg_timing": "NOT_VALIDATED: NOT_STARTED"
++  },
++  "layout": {
++    "acceptance": "planned development differences only; NOT binary-exact PM.hex",
++    "golden_sha256": "e80e8612f7114caff6d7a2494ad0f51010182f2c2c83fdfb3047c9f8a34663c0",
++    "development_sha256": "56fe5ccb19340b05a8810d93beb5cb496d24e7c1f7e0418828923b30ad2806d9",
++    "differing_bytes": 6161,
++    "gate_start": 4842,
++    "gate_length": 6,
++    "extension_start": 16384,
++    "extension_size": 6191,
++    "extension_limit": 32768,
++    "legacy_symbols_preserved": 4657,
++    "bootloader_unchanged": true,
++    "power_instrumentation_sites": [
++      "0x106a",
++      "0x662",
++      "0xac",
++      "0x68e",
++      "0x5e6",
++      "0xad4",
++      "0xbcc",
++      "0xc0c",
++      "0x1446",
++      "0x1550",
++      "0x1c3e"
++    ],
++    "ram_globals": "rejected by linker; no unverified SRAM reservation"
++  },
++  "images": {
++    "development.hex": "8c460c0eb100dd353be430fef899a005103910d7d36ed5327b6cc7bc1c99d276",
++    "development.bin": "56fe5ccb19340b05a8810d93beb5cb496d24e7c1f7e0418828923b30ad2806d9",
++    "development.elf": "de776a6759756a97884539af903a5b2139f4a56b7347934167b5a992b7bed206"
++  },
++  "coverage_limits": [
++    "IRQ critical-section latency not measured on hardware",
++    "DAC8554 is write-only; analog verification needs FPGA ADC/generator setup",
++    "Temperature is reported as raw register data; ID/status checked by host interpretation",
++    "CFG HOLD destroys volatile FPGA image; recovered retry state machine may supersede ownership after roughly 5 seconds",
++    "CFG BOOT reports request only: INIT/DONE deadline and JTAG restoration required",
++    "Physical programming/UART/SPI and selected peripheral register reads PASS2026-10-15; see explicit pending PG/boot/I2C/functional scopes"
++  ],
++  "power_timing": {
++    "timer": "TCE0, no timer IRQ or output pins enabled",
++    "source_clock_nominal_hz": 32000000,
++    "prescaler": 1024,
++    "tick_us_nominal": 32,
++    "overflow_seconds_nominal": 2.097152,
++    "legacy_pg_deadline_ticks": 1000,
++    "legacy_tcc0_per": 125,
++    "legacy_tcc0_divider": 256,
++    "legacy_pg_deadline_seconds_nominal": 1.008,
++    "states": {
++      "0": "NOT_STARTED",
++      "1": "WAITING",
++      "2": "PG_OBSERVED",
++      "3": "ORIGINAL_TIMEOUT",
++      "4": "PG_ALREADY_HIGH",
++      "5": "OTHER_SHUTDOWN"
++    },
++    "measurement_scope": "EN write to PG GPIO ISR observation, includes IRQ latency; no rise measurement if PG already high or timer overflow",
++    "new_sram_bytes": 0,
++    "startup_and_fault_logic": "Preserved by exact replay at fixed four-byte instrumentation gates; shutdown GPIO write runs before telemetry",
++    "software_validation": "2048 decoded gate cases; full original GPIO PG ISR and timer deadline paths compared with golden",
++    "physical_validation": "NOT_RUN"
++  },
++  "physical_validation": {
++    "date": "2026-10-15",
++    "firmware_code_commit": "f9869c9",
++    "summary": "/home/codex-hil/fit-bringup/evidence/pm12-fw-validation-2026-10-15/hardware-summary.json",
++    "protected_memory_unchanged": {
++      "boot": true,
++      "eeprom": true,
++      "fuse0": true,
++      "fuse1": true,
++      "fuse2": true,
++      "fuse4": true,
++      "fuse5": true,
++      "lock": true,
++      "usersig": true,
++      "prodsig": true,
++      "signature": true
++    },
++    "fuse4_retained": "F3 physically read; historical programming ELF E3 not applied"
++  }
++}
+diff --git a/development/src/extension.h b/development/src/extension.h
+index cd95623..60c7f56 100644
+--- a/development/src/extension.h
++++ b/development/src/extension.h
+@@ -15,7 +15,27 @@ void pm_extension_dispatch(void);
+ /* Stateless handlers: new commands live here, not in recovered_exact. */
+ void pm_command_ping(const char *arguments);
+ void pm_command_help(const char *arguments);
++void pm_command_pgtime(const char *arguments);
++void pm_command_hw(const char *arguments);
++void pm_command_temp(const char *arguments);
++void pm_command_tdc(const char *arguments);
++void pm_command_pll(const char *arguments);
++void pm_command_fpga(const char *arguments);
++void pm_command_fpgatest(const char *arguments);
++void pm_command_cfg(const char *arguments);
++void pm_command_flashid(const char *arguments);
++void pm_command_flashread(const char *arguments);
+ #define PM_COMMANDS(X) \
+     X("PING", pm_command_ping) \
+-    X("HELP", pm_command_help)
++    X("HELP", pm_command_help) \
++    X("HW", pm_command_hw) \
++    X("TEMP", pm_command_temp) \
++    X("TDC", pm_command_tdc) \
++    X("PLL", pm_command_pll) \
++    X("PGTIME", pm_command_pgtime) \
++    X("FPGA", pm_command_fpga) \
++    X("FPGATEST", pm_command_fpgatest) \
++    X("CFG", pm_command_cfg) \
++    X("FLASHID", pm_command_flashid) \
++    X("FLASHREAD", pm_command_flashread)
+ #endif
+diff --git a/development/src/hw_commands.c b/development/src/hw_commands.c
+new file mode 100644
+index 0000000..37cd141
+--- /dev/null
++++ b/development/src/hw_commands.c
+@@ -0,0 +1,106 @@
++#include "extension.h"
++#include "hw_diag.h"
++static const PM_FLASH char earg[]="ERR ARGUMENTS\r\n";
++static const PM_FLASH char off[]="ERR POWER\r\n",busy[]="ERR BUSY\r\n",timeout[]="ERR TIMEOUT\r\n";
++static const PM_FLASH char config_error[]="ERR CONFIG OWNERSHIP\r\n";
++static void hex(uint32_t v,uint8_t digits) { while(digits){uint8_t n=(v>>(--digits*4))&15;pm_console_putc(n<10?'0'+n:'A'+n-10);} }
++static void line(void){pm_console_putc('\r');pm_console_putc('\n');}
++static uint8_t result(uint8_t s){if(s==PM_DIAG_OK)return 1;pm_console_write(s==PM_DIAG_POWER?off:s==PM_DIAG_BUSY?busy:s==PM_DIAG_TIMEOUT?timeout:s==PM_DIAG_CONFIG?config_error:earg);return 0;}
++void pm_command_hw(const char *args)
++{
++ if(*args){pm_console_write(earg);return;}
++ uint8_t saved=pm_irq_enter();uint8_t ports[6],state[12];
++ for(uint8_t n=0;n<6;++n)ports[n]=pm_read8(0x608u+n*32u);
++ for(uint8_t n=0;n<12;++n)state[n]=pm_read8(0x2157u+n);
++ pm_irq_leave(saved);
++ static const PM_FLASH char banner[]="HW V2 PORTS A..F=";pm_console_write(banner);
++ for(uint8_t n=0;n<6;++n)hex(ports[n],2);
++ static const PM_FLASH char label[]=" STATE 2157..2162=";pm_console_write(label);
++ for(uint8_t n=0;n<12;++n)hex(state[n],2);
++ line();
++}
++void pm_command_temp(const char *args)
++{
++ if(*args){pm_console_write(earg);return;}
++ static const PM_FLASH char label[]="ADT7311 REG=";
++ for(uint8_t reg=0;reg<4;++reg){uint16_t v=0;if(!result(pm_diag_temp(reg,&v)))return;pm_console_write(label);hex(reg,2);pm_console_putc(' ');hex(v,reg==2?4:2);line();}
++}
++void pm_command_tdc(const char *args)
++{
++ /* Chip decimal 0..2, followed by exactly two uppercase hex address digits. */
++ if(args[0]<'0'||args[0]>'2'||args[1]!=' '||!args[2]||!args[3]||args[4]){pm_console_write(earg);return;}
++ uint8_t address=0;
++ for(uint8_t n=2;n<4;++n){uint8_t c=args[n],v;if(c>='0'&&c<='9')v=c-'0';else if(c>='A'&&c<='F')v=c-'A'+10;else{pm_console_write(earg);return;}address=(address<<4)|v;}
++ uint16_t v=0;if(!result(pm_diag_tdc(args[0]-'0',address,&v)))return;
++ static const PM_FLASH char label[]="THS788 ";pm_console_write(label);pm_console_putc(args[0]);pm_console_putc(' ');hex(address,2);pm_console_putc(' ');hex(v,4);line();
++}
++void pm_command_pll(const char *args)
++{
++ if(*args){pm_console_write(earg);return;}uint32_t v=0;if(!result(pm_diag_pll(&v)))return;
++ static const PM_FLASH char label[]="CDCE62005 ";pm_console_write(label);hex(v,8);line();
++}
++
++void pm_command_pgtime(const char *args)
++{
++ if(*args){pm_console_write(earg);return;}
++ uint8_t irq=pm_irq_enter();
++ uint8_t state=pm_read8(0x0a2a),overflow=pm_read8(0x0a2b);
++ uint16_t ticks=pm_read8(0x0a28);ticks|=(uint16_t)pm_read8(0x0a29)<<8;
++ if(state==1){ticks=pm_read8(0x0a20);ticks|=(uint16_t)pm_read8(0x0a21)<<8;}
++ pm_irq_leave(irq);
++ static const PM_FLASH char label[]="PGTIME STATE=";pm_console_write(label);hex(state,2);
++ static const PM_FLASH char t[]=" TICKS=";pm_console_write(t);hex(ticks,4);
++ static const PM_FLASH char o[]=" OVF=";pm_console_write(o);hex(overflow,2);
++ static const PM_FLASH char u[]=" US_NOMINAL=";pm_console_write(u);hex((uint32_t)ticks*32u,8);line();
++}
++
++void pm_command_fpga(const char *args)
++{
++ if(*args){pm_console_write(earg);return;}
++ static const PM_FLASH char label[]="FPGA REG=";
++ for(uint8_t a=0x40;a<=0x44;++a){uint16_t v=0;if(!result(pm_diag_fpga(0,a,&v)))return;pm_console_write(label);hex(a,2);pm_console_putc(' ');hex(v,4);line();}
++}
++void pm_command_fpgatest(const char *args)
++{
++ if(*args){pm_console_write(earg);return;}
++ uint16_t v=0,original=0;
++ if(!result(pm_diag_fpga(0,0x41,&v)))return;
++ if(v!=0x504d)goto wrong_image;
++ if(!result(pm_diag_fpga(0,0x42,&v)))return;
++ if(v!=0x5350)goto wrong_image;
++ if(!result(pm_diag_fpga(0,0x40,&original)))return;
++ uint8_t failure=0;
++ for(uint8_t n=0;n<32;++n){uint16_t pattern=(uint16_t)1<<(n&15);if(n>=16)pattern=(uint16_t)~pattern;v=pattern;
++  uint8_t status=pm_diag_fpga(1,0x40,&v);if(!status)status=pm_diag_fpga(0,0x40,&v);
++  if(status || v!=pattern){failure=1;break;}}
++ v=original;if(pm_diag_fpga(1,0x40,&v) || pm_diag_fpga(0,0x40,&v) || v!=original)failure=1;
++ {static const PM_FLASH char good[]="FPGA TEST PASS 32 RESTORED\r\n",bad[]="ERR FPGA TEST OR RESTORE\r\n";pm_console_write(failure?bad:good);}return;
++wrong_image:
++ {static const PM_FLASH char message[]="ERR FPGA IMAGE\r\n";pm_console_write(message);}
++}
++void pm_command_cfg(const char *args)
++{
++ if(!args[0]){uint8_t irq=pm_irq_enter(),in=pm_read8(0x668),out=pm_read8(0x664);pm_irq_leave(irq);
++  static const PM_FLASH char message[]="CFG PORTD IN=";pm_console_write(message);hex(in,2);pm_console_putc(' ');hex(out,2);line();return;}
++ if(args[0]=='H'&&args[1]=='O'&&args[2]=='L'&&args[3]=='D'&&!args[4]){if(result(pm_diag_config(1))){static const PM_FLASH char message[]="CFG HELD FPGA SRAM LOST\r\n";pm_console_write(message);}return;}
++ if(args[0]=='B'&&args[1]=='O'&&args[2]=='O'&&args[3]=='T'&&!args[4]){if(result(pm_diag_config(0))){static const PM_FLASH char message[]="CFG BOOT REQUESTED CHECK INIT DONE\r\n";pm_console_write(message);}return;}
++ pm_console_write(earg);
++}
++void pm_command_flashid(const char *args)
++{
++ if(*args){pm_console_write(earg);return;}uint8_t data[3];if(!result(pm_diag_flash(1,0,data,3)))return;
++ static const PM_FLASH char message[]="FLASH JEDEC=";pm_console_write(message);for(uint8_t n=0;n<3;++n)hex(data[n],2);line();
++}
++void pm_command_flashread(const char *args)
++{
++ uint32_t address=0;uint8_t count=0,data[16];
++ for(uint8_t n=0;n<9;++n){uint8_t c=args[n],v;
++  if(n==6){if(c!=' ')goto invalid;continue;}
++  if(c>='0'&&c<='9')v=c-'0';else if(c>='A'&&c<='F')v=c-'A'+10;else goto invalid;
++  if(n<6)address=(address<<4)|v;else count=(count<<4)|v;
++ }
++ if(args[9] || !count || count>16)goto invalid;
++ if(!result(pm_diag_flash(0,address,data,count)))return;
++ {static const PM_FLASH char message[]="FLASH DATA=";pm_console_write(message);for(uint8_t n=0;n<count;++n)hex(data[n],2);line();}return;
++invalid:pm_console_write(earg);
++}
+diff --git a/development/src/hw_diag.h b/development/src/hw_diag.h
+new file mode 100644
+index 0000000..091d439
+--- /dev/null
++++ b/development/src/hw_diag.h
+@@ -0,0 +1,23 @@
++#ifndef PM_HW_DIAG_H
++#define PM_HW_DIAG_H
++#include <stdint.h>
++enum pm_diag_result { PM_DIAG_OK, PM_DIAG_POWER, PM_DIAG_BUSY, PM_DIAG_TIMEOUT, PM_DIAG_ARGUMENT, PM_DIAG_CONFIG };
++uint8_t pm_diag_temp(uint8_t reg,uint16_t *value);
++uint8_t pm_diag_tdc(uint8_t chip,uint8_t reg,uint16_t *value);
++uint8_t pm_diag_pll(uint32_t *value);
++uint8_t pm_diag_fpga(uint8_t write,uint8_t address,uint16_t *word);
++uint8_t pm_diag_config(uint8_t hold);
++uint8_t pm_diag_flash(uint8_t id,uint32_t address,uint8_t *data,uint8_t count);
++#ifdef __AVR__
++#include <avr/io.h>
++static inline uint8_t pm_read8(uint16_t a) { return *(volatile uint8_t *)a; }
++static inline void pm_write8(uint16_t a,uint8_t v) { *(volatile uint8_t *)a=v; }
++static inline uint8_t pm_irq_enter(void) { uint8_t s=SREG;asm volatile("cli" ::: "memory");return s; }
++static inline void pm_irq_leave(uint8_t s) { asm volatile("" ::: "memory");SREG=s; }
++#else
++uint8_t pm_read8(uint16_t a);
++void pm_write8(uint16_t a,uint8_t v);
++uint8_t pm_irq_enter(void);
++void pm_irq_leave(uint8_t s);
++#endif
++#endif
+diff --git a/development/src/hw_drivers.c b/development/src/hw_drivers.c
+new file mode 100644
+index 0000000..81b6e09
+--- /dev/null
++++ b/development/src/hw_drivers.c
+@@ -0,0 +1,134 @@
++/* Main-loop diagnostics. Config commands explicitly reset the FPGA and transfer
++ * config-bus ownership. No DAC, PSU, EEPROM, flash-content or I2C writes. IRQ masking serializes against the recovered PLL ISR;
++ * each transaction is finite, with at most 128 SPI polls per byte. Hardware
++ * interrupt latency and electrical ownership still need validation. */
++#include "hw_diag.h"
++#define A 0x600u
++#define B 0x620u
++#define C 0x640u
++#define E 0x680u
++#define F 0x6a0u
++#define PM_SPIC 0x8c0u
++#define DIR 0u
++#define DIRSET 1u
++#define DIRCLR 2u
++#define OUT 4u
++#define SET 5u
++#define CLR 6u
++#define IN 8u
++static uint8_t powered(void) { return (pm_read8(E+OUT)&4) && (pm_read8(E+IN)&10)==10; }
++static void restore_bits(uint16_t port,uint8_t mask,uint8_t out)
++{ pm_write8(port+CLR,mask & (uint8_t)~out);pm_write8(port+SET,mask & out); }
++static uint8_t temp_byte(uint8_t tx)
++{
++ uint8_t rx=0;
++ for(uint8_t n=0;n<8;++n) {
++  pm_write8(A+CLR,2);pm_write8(A+((tx&128)?SET:CLR),8);
++  pm_write8(A+SET,2);rx=(uint8_t)((rx<<1)|((pm_read8(A+IN)>>2)&1));tx<<=1;
++ }
++ return rx;
++}
++uint8_t pm_diag_temp(uint8_t reg,uint16_t *value)
++{
++ if(reg>3)return PM_DIAG_ARGUMENT;
++ uint8_t irq=pm_irq_enter(),result=PM_DIAG_OK;
++ uint8_t old=pm_read8(A+OUT);
++ if(!powered())result=PM_DIAG_POWER;
++ else if((pm_read8(A+DIR)&0x1a)!=0x1a || !(old&16))result=PM_DIAG_BUSY;
++ else {
++  pm_write8(A+CLR,16);(void)temp_byte((uint8_t)(0x40|(reg<<3)));
++  uint16_t v=temp_byte(0);if(reg==2)v=(uint16_t)((v<<8)|temp_byte(0));
++  pm_write8(A+SET,16);restore_bits(A,0x1a,old);*value=v;
++ }
++ pm_irq_leave(irq);return result;
++}
++static void clock_tdc(void) { pm_write8(B+SET,1);pm_write8(B+CLR,1); }
++static void send_tdc_bit(uint8_t bit) { pm_write8(B+(bit?SET:CLR),2);clock_tdc(); }
++uint8_t pm_diag_tdc(uint8_t chip,uint8_t reg,uint16_t *value)
++{
++ if(chip>2)return PM_DIAG_ARGUMENT;
++ uint8_t irq=pm_irq_enter(),result=PM_DIAG_OK;
++ uint8_t old=pm_read8(B+OUT),dir=pm_read8(B+DIR),select=(uint8_t)(4u<<chip);
++ if(!powered() || !(old&32) || !(pm_read8(B+IN)&64))result=PM_DIAG_POWER;
++ else if((old&0x1c)!=0x1c || (dir&0x1f)!=0x1f)result=PM_DIAG_BUSY;
++ else {
++  pm_write8(B+CLR,select);send_tdc_bit(1);send_tdc_bit(0);
++  for(uint8_t n=0;n<8;++n){send_tdc_bit(reg&128);reg<<=1;}
++  pm_write8(B+DIRCLR,2);clock_tdc();uint16_t v=0;
++  for(uint8_t n=0;n<16;++n){pm_write8(B+SET,1);v=(uint16_t)((v<<1)|((pm_read8(B+IN)>>1)&1));pm_write8(B+CLR,1);}
++  pm_write8(B+SET,select);pm_write8(B+DIRSET,2);clock_tdc();clock_tdc();
++  restore_bits(B,0x1f,old);*value=v;
++ }
++ pm_irq_leave(irq);return result;
++}
++static uint8_t spi_at(uint16_t base,uint8_t tx,uint8_t *rx)
++{
++ pm_write8(base+3,tx);
++ for(uint8_t n=0;n<128;++n)if(pm_read8(base+2)&128){*rx=pm_read8(base+3);return PM_DIAG_OK;}
++ return PM_DIAG_TIMEOUT;
++}
++static uint8_t spi_byte(uint8_t tx,uint8_t *rx){return spi_at(PM_SPIC,tx,rx);}
++uint8_t pm_diag_pll(uint32_t *value)
++{
++ uint8_t irq=pm_irq_enter(),result=PM_DIAG_OK,old=pm_read8(PM_SPIC),out=pm_read8(F+OUT),rx=0;
++ if(!powered())result=PM_DIAG_POWER;
++ else if(!(out&16) || (pm_read8(C+OUT)&7)!=7 || !(old&0x40) || !(pm_read8(0x664)&1))result=PM_DIAG_BUSY;
++ else {
++  /* Same 0x8e readback request as recovered FUN_code_001267. No PLL profile writes. */
++  pm_write8(PM_SPIC,0xf1);pm_write8(F+CLR,16);
++  for(uint8_t n=0;n<4 && result==PM_DIAG_OK;++n)result=spi_byte(n?0:0x8e,&rx);
++  pm_write8(F+SET,16);
++  uint32_t v=0;
++  if(result==PM_DIAG_OK){pm_write8(F+CLR,16);for(uint8_t n=0;n<4 && result==PM_DIAG_OK;++n){result=spi_byte(0,&rx);v|=(uint32_t)rx<<(n*8);}}
++  pm_write8(F+SET,16);pm_write8(PM_SPIC,old);
++  if(result==PM_DIAG_OK)*value=v;
++ }
++ pm_irq_leave(irq);return result;
++}
++
++uint8_t pm_diag_fpga(uint8_t write,uint8_t address,uint16_t *word)
++{
++ uint8_t irq=pm_irq_enter(),result=PM_DIAG_OK;
++ uint8_t old=pm_read8(PM_SPIC),rx=0,high=0;
++ if(!powered() || !(pm_read8(0x668)&8) || !(pm_read8(0x664)&2))result=PM_DIAG_POWER;
++ else if(!(pm_read8(0x664)&1) || !(pm_read8(F+OUT)&16) || (pm_read8(C+OUT)&7)!=7)result=PM_DIAG_BUSY;
++ else {
++  pm_write8(PM_SPIC,0xd1);pm_write8(0x666,1);
++  result=spi_byte((address>>2)|(write?0:0x80),&rx);
++  if(!result)result=spi_byte((uint8_t)(address<<6),&rx);
++  if(!result)result=spi_byte(write?(*word>>8):0,&high);
++  if(!result)result=spi_byte(write?(uint8_t)*word:0,&rx);
++  pm_write8(0x665,1);pm_write8(PM_SPIC,old);
++  if(!result && !write)*word=((uint16_t)high<<8)|rx;
++ }
++ pm_irq_leave(irq);return result;
++}
++uint8_t pm_diag_config(uint8_t hold)
++{
++ uint8_t irq=pm_irq_enter(),result=PM_DIAG_OK;
++ if(!powered())result=PM_DIAG_POWER;
++ else if(!(pm_read8(0x660)&2))result=PM_DIAG_CONFIG;
++ else if(hold){
++  /* Original flash interface: PROGRAM_B LOW, CS HIGH, MCU SPIE owns the bus. */
++  pm_write8(0xac0,0);pm_write8(0x666,2);pm_write8(E+SET,16);
++  pm_write8(E+DIRSET,0xb0);pm_write8(0xac0,0x50);
++ }else{
++  /* Release config bus before PROGRAM_B. Original IRQ/state machine handles DONE. */
++  pm_write8(E+SET,16);pm_write8(0xac0,0);pm_write8(E+DIRCLR,0xb0);pm_write8(0x665,2);
++ }
++ pm_irq_leave(irq);return result;
++}
++uint8_t pm_diag_flash(uint8_t id,uint32_t address,uint8_t *data,uint8_t count)
++{
++ if(!count || count>16 || address>0xffffffUL || address+count>0x1000000UL)return PM_DIAG_ARGUMENT;
++ uint8_t irq=pm_irq_enter(),result=PM_DIAG_OK,rx=0;
++ if(!powered())result=PM_DIAG_POWER;
++ else if((pm_read8(0x664)&2) || (pm_read8(0x668)&8) || (pm_read8(E+DIR)&0xb0)!=0xb0 || !(pm_read8(0xac0)&0x40) || !(pm_read8(E+OUT)&16))result=PM_DIAG_CONFIG;
++ else {
++  pm_write8(E+CLR,16);result=spi_at(0xac0,id?0x9f:0x03,&rx);
++  if(!id)for(uint8_t n=3;n && !result;--n)result=spi_at(0xac0,(uint8_t)(address>>((n-1)*8)),&rx);
++  for(uint8_t n=0;n<count && !result;++n)result=spi_at(0xac0,0,data+n);
++  pm_write8(E+SET,16);
++ }
++ pm_irq_leave(irq);return result;
++}
+diff --git a/development/src/pg_timing.S b/development/src/pg_timing.S
+new file mode 100644
+index 0000000..407bfd5
+--- /dev/null
++++ b/development/src/pg_timing.S
+@@ -0,0 +1,141 @@
++/* Instrumentation only. Original PG countdown/fault branches stay intact.
++ * TCE0 (unused by recovered firmware) runs at clk_per/1024, no IRQ/output.
++ * CCA stores elapsed ticks; CCB low: 0 unstarted,1 waiting,2 PG observed,
++ * 3 original PG timeout,4 PG already high,5 other shutdown; CCB high: OVF.
++ * Measurement stops at the original GPIO ISR, so IRQ latency is included.
++ * No new SRAM, vectors, power decisions, PLL profile or GPIO directions. */
++.section .text.pm_pg_hooks,"ax",@progbits
++.macro SAVE
++ push r0
++ in r0,0x3f
++ push r0
++ push r16
++ push r17
++ cli
++.endm
++.macro RESTORE
++ pop r17
++ pop r16
++ pop r0
++ out 0x3f,r0
++ pop r0
++.endm
++.global pm_pg_init_hook
++pm_pg_init_hook:
++ SAVE
++ ldi r16,0
++ sts 0x0a00,r16
++ sts 0x0a01,r16
++ sts 0x0a03,r16
++ sts 0x0a04,r16
++ sts 0x0a06,r16
++ sts 0x0a07,r16
++ sts 0x0a21,r16
++ sts 0x0a20,r16
++ sts 0x0a29,r16
++ sts 0x0a28,r16
++ sts 0x0a2b,r16
++ sts 0x0a2a,r16
++ ldi r16,0xff
++ sts 0x0a27,r16
++ sts 0x0a26,r16
++ sts 0x0a0c,r16
++ RESTORE
++ sts 0x0800,r16
++ jmp 0x106e
++.global pm_pg_start_hook
++pm_pg_start_hook:
++ SAVE
++ ldi r16,0
++ sts 0x0a00,r16
++ sts 0x0a21,r16
++ sts 0x0a20,r16
++ sts 0x0a29,r16
++ sts 0x0a28,r16
++ sts 0x0a2b,r16
++ ldi r16,0xff
++ sts 0x0a0c,r16
++ ldi r16,1
++ sts 0x0a2a,r16
++ lds r17,0x0688
++ sbrc r17,3
++ rjmp .Lalready_high
++ ldi r16,7
++ sts 0x0a00,r16
++ rjmp .Lstart_done
++.Lalready_high:
++ ldi r16,4
++ sts 0x0a2a,r16
++.Lstart_done:
++ RESTORE
++ sts 0x0685,r16
++ jmp 0x0666
++/* Caller supplies result in r16; every gate saved r0/r16/r17/SREG. */
++pm_pg_record:
++ push r16
++ ldi r16,0
++ sts 0x0a00,r16
++ lds r16,0x0a20
++ lds r17,0x0a21
++ sts 0x0a29,r17
++ sts 0x0a28,r16
++ lds r16,0x0a0c
++ andi r16,1
++ sts 0x0a2b,r16
++ pop r16
++ sts 0x0a2a,r16
++ ret
++.global pm_pg_irq_hook
++pm_pg_irq_hook:
++ SAVE
++ lds r16,0x0a2a
++ cpi r16,1
++ brne .Lirq_done
++ lds r16,0x0684
++ sbrs r16,2
++ rjmp .Lirq_done
++ lds r16,0x0688
++ sbrs r16,3
++ rjmp .Lirq_done
++ ldi r16,2
++ rcall pm_pg_record
++.Lirq_done:
++ RESTORE
++ jmp PORTE_INT0_vect_isr
++.macro OFF name, continuation, result
++.global \name
++\name:
++ /* Cut power first; telemetry does not precede the original shutdown. */
++ sts 0x0686,r16
++ SAVE
++ lds r16,0x0a2a
++ cpi r16,1
++ brne 1f
++ ldi r16,\result
++ rcall pm_pg_record
++1:
++ RESTORE
++ jmp \continuation
++.endm
++OFF pm_pg_timeout_hook,0x0692,3
++OFF pm_pg_thermal_hook,0x05ea,5
++OFF pm_pg_alarm_hook,0x0ad8,5
++OFF pm_pg_input_loss_hook,0x0bd0,5
++OFF pm_pg_retry_hook,0x0c10,5
++OFF pm_pg_manual_hook,0x144a,5
++OFF pm_pg_restart_hook,0x1554,5
++OFF pm_pg_reset_hook,0x1c42,5
++.section .text.pm_pg_patch_table,"ax",@progbits
++.global pm_pg_patch_table
++pm_pg_patch_table:
++ jmp pm_pg_init_hook
++ jmp pm_pg_start_hook
++ jmp pm_pg_irq_hook
++ jmp pm_pg_timeout_hook
++ jmp pm_pg_thermal_hook
++ jmp pm_pg_alarm_hook
++ jmp pm_pg_input_loss_hook
++ jmp pm_pg_retry_hook
++ jmp pm_pg_manual_hook
++ jmp pm_pg_restart_hook
++ jmp pm_pg_reset_hook
+diff --git a/development/tests/check_commands.c b/development/tests/check_commands.c
+index 3f12acd..00d1475 100644
+--- a/development/tests/check_commands.c
++++ b/development/tests/check_commands.c
+@@ -12,12 +12,35 @@ static void check(const char *request, const char *reply)
+     input=request; used=0; output[0]=0;
+     pm_extension_dispatch(); assert(!*input); assert(strcmp(output,reply)==0);
+ }
++uint8_t pm_read8(uint16_t a) { (void)a;return 0; }
++void pm_write8(uint16_t a,uint8_t v) { (void)a;(void)v;assert(0); }
++uint8_t pm_irq_enter(void) { return 0; }
++void pm_irq_leave(uint8_t s) { assert(s==0); }
+ int main(void)
+ {
+     check("PING\r", "PONG\r\n");
+-    check("HELP\r", "@PING\r\n@HELP\r\n");
++    check("HELP\r", "@PING\r\n@HELP\r\n@HW\r\n@TEMP\r\n@TDC\r\n@PLL\r\n@PGTIME\r\n@FPGA\r\n@FPGATEST\r\n@CFG\r\n@FLASHID\r\n@FLASHREAD\r\n");
+     check("PING   \r", "PONG\r\n");
+     check("PING 1\r", "ERR ARGUMENTS\r\n");
++    check("PGTIME\r", "PGTIME STATE=00 TICKS=0000 OVF=00 US_NOMINAL=00000000\r\n");
++    check("PGTIME 1\r", "ERR ARGUMENTS\r\n");
++    check("TEMP\r", "ERR POWER\r\n");
++    check("PLL\r", "ERR POWER\r\n");
++    check("TDC 0 83\r", "ERR POWER\r\n");
++    check("TDC 3 83\r", "ERR ARGUMENTS\r\n");
++    check("TDC 0 8G\r", "ERR ARGUMENTS\r\n");
++    check("TDC 0 8\r", "ERR ARGUMENTS\r\n");
++    check("FPGA\r", "ERR POWER\r\n");
++    check("FPGATEST\r", "ERR POWER\r\n");
++    check("FLASHID\r", "ERR POWER\r\n");
++    check("FLASHREAD 000000 10\r", "ERR POWER\r\n");
++    check("FLASHREAD 000000 00\r", "ERR ARGUMENTS\r\n");
++    check("FLASHREAD FFFFFF 02\r", "ERR ARGUMENTS\r\n");
++    check("FLASHREAD 0\r", "ERR ARGUMENTS\r\n");
++    check("CFG HOLD\r", "ERR POWER\r\n");
++    check("CFG BOOT\r", "ERR POWER\r\n");
++    check("CFG H\r", "ERR ARGUMENTS\r\n");
++    check("HW 1\r", "ERR ARGUMENTS\r\n");
+     check("NOPE\r", "ERR UNKNOWN\r\n");
+     check("\r", "ERR UNKNOWN\r\n");
+     char maximum[49]; memset(maximum,'X',47);maximum[47]='\r';maximum[48]=0;
+diff --git a/development/tests/check_fpga_flash.c b/development/tests/check_fpga_flash.c
+new file mode 100644
+index 0000000..567a869
+--- /dev/null
++++ b/development/tests/check_fpga_flash.c
+@@ -0,0 +1,54 @@
++#include "hw_diag.h"
++#include "extension.h"
++#include <assert.h>
++#include <stdio.h>
++#include <string.h>
++static uint8_t mem[0x2500],irq,wire[32],n,fail,rx,selected;
++static uint16_t registers[256];
++static unsigned writes,polls,scratch_writes;
++static char output[512];static unsigned used;static const char *input;
++uint8_t pm_console_getc(void){assert(*input);return *input++;}
++void pm_console_putc(uint8_t c){assert(used+1<sizeof output);output[used++]=c;output[used]=0;}
++uint8_t pm_irq_enter(void){uint8_t s=irq;irq=0;return s;}
++void pm_irq_leave(uint8_t s){assert(!irq);irq=s;}
++uint8_t pm_read8(uint16_t a){assert(!irq);if(a==0x8c2||a==0xac2){++polls;return fail&&n>=fail?0:128;}if(a==0x8c3||a==0xac3)return rx;return mem[a];}
++void pm_write8(uint16_t a,uint8_t v){
++ assert(!irq);++writes;
++ if(a==0x8c0||a==0xac0){mem[a]=v;return;}
++ if(a==0x8c3||a==0xac3){assert(selected && n<sizeof wire);wire[n++]=v;rx=0;
++  if(a==0x8c3 && n>=3){uint8_t addr=((wire[0]&0x7f)<<2)|(wire[1]>>6);assert(addr>=0x40&&addr<=0x44);
++   if(wire[0]&128)rx=n==3?registers[addr]>>8:registers[addr];
++   else if(n==4 && !(fail&&n>=fail)){assert(addr==0x40);registers[addr]=((uint16_t)wire[2]<<8)|v;++scratch_writes;}
++  }else if(a==0xac3){assert(wire[0]==0x9f||wire[0]==3);rx=0xa0+n;}
++  return;}
++ uint16_t port=a&0xffe0;uint8_t off=a-port;
++ assert((port==0x660 && !(v&~3)) || (port==0x680 && !(v&~0xb0)));
++ assert(off==1||off==2||off==5||off==6);
++ uint16_t target=port+(off<4?0:4);
++ if(off==1||off==5)mem[target]|=v;else mem[target]&=~v;
++ if((a==0x666 && (v&1))||(a==0x686 && (v&16))){assert(!selected);selected=1;n=0;}
++ if((a==0x665 && (v&1))||(a==0x685 && (v&16)))selected=0;
++}
++static void init(uint8_t s){memset(mem,0,sizeof mem);irq=s;fail=n=selected=0;writes=polls=scratch_writes=0;
++ mem[0x684]=4|16;mem[0x688]=10;mem[0x660]=3;mem[0x664]=3;mem[0x668]=12;mem[0x644]=7;mem[0x6a4]=16;mem[0x8c0]=0xf1;
++ registers[0x40]=0xbeef;registers[0x41]=0x504d;registers[0x42]=0x5350;
++}
++static void command(const char *in,const char *out){input=in;used=0;output[0]=0;pm_extension_dispatch();assert(!*input);assert(!strcmp(output,out));}
++int main(void){for(uint8_t s=0;s<2;++s){uint16_t word;uint8_t data[16];
++ init(s);word=0;assert(!pm_diag_fpga(0,0x40,&word)&&word==0xbeef&&wire[0]==0x90&&wire[1]==0&&n==4&&mem[0x8c0]==0xf1&&mem[0x664]==3&&irq==s);
++ init(s);word=0x1234;assert(!pm_diag_fpga(1,0x40,&word)&&registers[0x40]==0x1234&&wire[0]==0x10&&wire[2]==0x12&&wire[3]==0x34);
++ for(uint8_t f=1;f<=4;++f){init(s);fail=f;word=0xcafe;assert(pm_diag_fpga(0,0x40,&word)==PM_DIAG_TIMEOUT&&word==0xcafe&&irq==s&&mem[0x664]==3&&mem[0x8c0]==0xf1&&polls==127u+f);}
++ init(s);mem[0x644]=6;assert(pm_diag_fpga(0,0x40,&word)==PM_DIAG_BUSY&&!writes);
++ init(s);assert(pm_diag_flash(1,0,data,3)==PM_DIAG_CONFIG&&!writes);
++ init(s);assert(!pm_diag_config(1)&&mem[0x664]==1&&mem[0x684]==20&&mem[0x680]==0xb0&&mem[0xac0]==0x50&&irq==s);
++ mem[0x668]=0;assert(!pm_diag_flash(1,0,data,3)&&wire[0]==0x9f&&n==4&&data[0]==0xa2&&data[2]==0xa4&&mem[0x684]==20);
++ assert(!pm_diag_flash(0,0x123456,data,16)&&n==20&&wire[0]==3&&wire[1]==0x12&&wire[2]==0x34&&wire[3]==0x56);
++ for(uint8_t f=1;f<=20;++f){fail=f;assert(pm_diag_flash(0,0x123456,data,16)==PM_DIAG_TIMEOUT&&!selected&&mem[0x684]==20&&irq==s);}
++ fail=0;assert(!pm_diag_config(0)&&mem[0x664]==3&&mem[0x680]==0&&mem[0xac0]==0&&mem[0x684]==20&&irq==s);
++ init(s);mem[0x688]=0;assert(pm_diag_config(1)==PM_DIAG_POWER&&!writes);
++ init(s);mem[0x660]=1;assert(pm_diag_config(1)==PM_DIAG_CONFIG&&!writes);
++ init(s);command("FPGATEST\r","FPGA TEST PASS 32 RESTORED\r\n");assert(registers[0x40]==0xbeef&&scratch_writes==33&&irq==s);
++ init(s);registers[0x41]=0;command("FPGATEST\r","ERR FPGA IMAGE\r\n");assert(!scratch_writes);
++ }
++ puts("PASS FPGA headers, walking bits/restoration/image guard; flash read-only opcodes, ownership, reset/release, all byte timeouts and PSU-preserving GPIO whitelist");
++}
+diff --git a/development/tests/check_hw_drivers.c b/development/tests/check_hw_drivers.c
+new file mode 100644
+index 0000000..d0c833c
+--- /dev/null
++++ b/development/tests/check_hw_drivers.c
+@@ -0,0 +1,61 @@
++#include "hw_diag.h"
++#include <assert.h>
++#include <stdio.h>
++#include <string.h>
++static uint8_t mem[0x2500],irq,timeout,spi_count,bit_count,tx[12],tx_count;
++static unsigned polls,writes,steps;
++static uint32_t temp_stream;
++uint8_t pm_irq_enter(void){uint8_t s=irq;irq=0;return s;}
++void pm_irq_leave(uint8_t s){assert(irq==0);irq=s;}
++uint8_t pm_read8(uint16_t a)
++{
++ assert(!irq);++steps;
++ if(a==0x8c2){++polls;return (timeout && spi_count>=timeout)?0:128;}
++ if(a==0x8c3)return spi_count>4?(uint8_t)(0x11*(spi_count-4)):0;
++ if(a==0x608){uint8_t bit=(temp_stream>>(31-bit_count++))&1;return (mem[a]&~4)|(bit<<2);}
++ if(a==0x628 && !(mem[0x620]&2) && (mem[0x624]&1)){
++  uint8_t bit=(0xa55au>>(15-bit_count++))&1;return 64|(bit<<1);
++ }
++ return mem[a];
++}
++void pm_write8(uint16_t a,uint8_t v)
++{
++ assert(!irq);++steps;++writes;
++ if(a==0x8c0){mem[a]=v;return;}
++ if(a==0x8c3){++spi_count;mem[a]=v;return;}
++ uint16_t port=a&0xffe0;uint8_t off=a-port;
++ assert((port==0x600 && !(v&~0x1a)) || (port==0x620 && !(v&~0x1f)) || (port==0x6a0 && !(v&~0x10)));
++ assert(off==1||off==2||off==5||off==6);
++ if(port==0x620 && off==5 && (v&1) && (mem[port]&2) && (mem[port+4]&0x1c)!=0x1c && tx_count<12)tx[tx_count++]=(mem[port+4]>>1)&1;
++ uint16_t target=port+(off<4?0:4);
++ if(off==1||off==5)mem[target]|=v;else mem[target]&=(uint8_t)~v;
++}
++static void init(uint8_t s)
++{
++ memset(mem,0,sizeof mem);irq=s;timeout=spi_count=bit_count=tx_count=0;polls=writes=steps=0;
++ mem[0x684]=4;mem[0x688]=10;mem[0x600]=0x1a;mem[0x604]=0xfa;
++ mem[0x620]=0xbf;mem[0x624]=0xbc;mem[0x628]=64;
++ mem[0x664]=3;mem[0x644]=7;mem[0x6a4]=0xf0;mem[0x8c0]=0xd5;temp_stream=0x00c30000;
++}
++int main(void)
++{
++ for(uint8_t s=0;s<2;++s){
++  uint16_t v=0xbeef;uint32_t p=0;
++  init(s);assert(pm_diag_temp(3,&v)==PM_DIAG_OK && v==0xc3 && irq==s && mem[0x604]==0xfa);
++  init(s);assert(pm_diag_tdc(2,0x83,&v)==PM_DIAG_OK && v==0xa55a && irq==s && mem[0x624]==0xbc && mem[0x620]==0xbf);
++  assert(tx_count==10 && tx[0]==1 && tx[1]==0);
++  for(unsigned n=0;n<8;++n)assert(tx[n+2]==((0x83>>(7-n))&1));
++  init(s);assert(pm_diag_pll(&p)==PM_DIAG_OK && p==0x44332211 && irq==s && mem[0x8c0]==0xd5 && mem[0x6a4]==0xf0);
++  for(uint8_t fail=1;fail<=8;++fail){init(s);timeout=fail;p=0xcafebabe;assert(pm_diag_pll(&p)==PM_DIAG_TIMEOUT && polls==127u+fail && spi_count==fail && p==0xcafebabe && irq==s && mem[0x8c0]==0xd5 && mem[0x6a4]==0xf0);}
++  init(s);mem[0x688]=0;assert(pm_diag_temp(3,&v)==PM_DIAG_POWER && writes==0 && irq==s);
++  assert(pm_diag_tdc(0,0x83,&v)==PM_DIAG_POWER && writes==0 && irq==s);
++  assert(pm_diag_pll(&p)==PM_DIAG_POWER && writes==0 && irq==s);
++  init(s);mem[0x604]&=~16;assert(pm_diag_temp(3,&v)==PM_DIAG_BUSY && writes==0 && irq==s);
++  init(s);mem[0x624]&=~4;assert(pm_diag_tdc(1,0x83,&v)==PM_DIAG_BUSY && writes==0 && irq==s);
++  init(s);mem[0x664]=2;assert(pm_diag_pll(&p)==PM_DIAG_BUSY && writes==0 && irq==s);
++  init(s);mem[0x644]=6;assert(pm_diag_pll(&p)==PM_DIAG_BUSY && writes==0 && irq==s);
++  init(s);assert(pm_diag_temp(4,&v)==PM_DIAG_ARGUMENT && writes==0 && irq==s);
++  assert(pm_diag_tdc(3,0x83,&v)==PM_DIAG_ARGUMENT && writes==0 && irq==s);
++ }
++ puts("PASS device serial framing, readbacks, IRQ restoration, bounded timeout, GPIO restoration, power/busy guards and write whitelist");
++}
+diff --git a/development/tests/check_pg_timing.py b/development/tests/check_pg_timing.py
+new file mode 100644
+index 0000000..0f3457d
+--- /dev/null
++++ b/development/tests/check_pg_timing.py
+@@ -0,0 +1,72 @@
++"""Execute linked instrumentation instructions; no asynchronous IRQ/timing claim."""
++import sys,random
++from pathlib import Path
++ROOT=Path(__file__).resolve().parents[2]
++sys.path.insert(0,str(ROOT/'source_recovery/tests'));from avr_oracle import Machine,load_program
++sys.path.insert(0,str(ROOT/'development/tools'));from build import symbols,BUILD
++names=symbols(BUILD/'development.elf');linked=load_program(BUILD/'development.bin')
++class Model(Machine):
++ def __init__(self,program,ram):
++  self.ram=dict(ram);self.writes=[]
++  def write(a,v):
++   self.writes.append((a,v))
++   if a==0xa0c:self.ram[a]=self.ram.get(a,0)&~v
++   else:self.ram[a]=v
++   if a==0x685:self.ram[0x684]=self.ram.get(0x684,0)|v
++   if a==0x686:self.ram[0x684]=self.ram.get(0x684,0)&~v
++  super().__init__(lambda a:self.ram.get(a,0),write,lambda e:None,program=program)
++ def io_read(self,a):
++  return super().io_read(a) if a==0x3f else self.ram.get(a,0)
++ def io_write(self,a,v):
++  if a==0x3f:super().io_write(a,v)
++  else:self.ram[a]=v
++rng=random.Random(2026);cases=0
++for status in range(256):
++ for scenario in ['init','start','prehigh','pg','pending','timeout','fault','already_done']:
++  memory={0x684:4,0x688:8,0xa2a:1,0xa20:0x39,0xa21:0x30,0xa0c:0}
++  if scenario=='init':entry=names['pm_pg_init_hook'];stop=0x106e
++  elif scenario in ['start','prehigh']:entry=names['pm_pg_start_hook'];stop=0x666;memory[0x688]=8 if scenario=='prehigh' else 0
++  elif scenario in ['pg','pending']:entry=names['pm_pg_irq_hook'];stop=names['PORTE_INT0_vect_isr'];memory[0x688]=0 if scenario=='pending' else 8
++  else:
++   entry=names['pm_pg_timeout_hook'] if scenario=='timeout' else names['pm_pg_thermal_hook'];stop=0x692 if scenario=='timeout' else 0x5ea
++   if scenario=='already_done':memory[0xa2a]=2
++  program=dict(linked);program[stop]=('ret','',2,None)
++  m=Model(program,memory);regs=[rng.randrange(256) for _ in range(32)]
++  if scenario=='init':regs[16]=6
++  elif scenario not in ['pg','pending']:regs[16]=4
++  m.r[:]=regs;m.f[:]=[(status>>i)&1 for i in range(8)];flags=list(m.f)
++  m.run(entry,limit=300)
++  assert m.r==regs and m.f==flags and not m.stack and not m.calls,(scenario,status)
++  assert all(0xa00<=a<=0xa3f or a in [0x800,0x685,0x686] for a,v in m.writes)
++  if scenario=='init':assert m.ram[0xa2a]==0 and m.ram[0x800]==6
++  elif scenario=='start':assert m.ram[0xa2a]==1 and m.ram[0xa00]==7 and m.ram[0xa20]==0
++  elif scenario=='prehigh':assert m.ram[0xa2a]==4 and m.ram[0xa00]==0
++  elif scenario=='pg':assert m.ram[0xa2a]==2 and m.ram[0xa28]==0x39 and m.ram[0xa29]==0x30 and m.ram[0xa00]==0
++  elif scenario=='pending':assert m.ram[0xa2a]==1 and not m.writes
++  elif scenario=='already_done':assert m.ram[0xa2a]==2 and m.writes==[(0x686,4)]
++  else:assert m.writes[0]==(0x686,4) and m.ram[0xa2a]==(3 if scenario=='timeout' else 5) and m.ram[0xa28]==0x39
++  cases+=1
++print('PASS PG instrumentation:',cases,'decoded cases; flags/registers preserved, power cut precedes telemetry')
++# Run the complete legacy timer ISR at the PG deadline against baseline and
++# candidate. Both must cut EN and produce the same legacy state/registers.
++baseline=load_program(ROOT/'reference/flash_golden.bin')
++for pg in [0,8]:
++ mem={0x2159:0,0x215b:2,0x215c:1,0x215d:0,0x2157:pg,0x684:4,0x688:10|pg,0xa2a:1,0xa20:42,0xa21:0}
++ machines=[]
++ for program in [baseline,linked]:
++  # PG-success path invokes system_init; substitute the same RET for both.
++  p=dict(program);p[names['system_init']]=('ret','',2,None)
++  m=Model(p,mem);m.run(names['TCC0_OVF_vect_isr']);machines.append(m)
++ a,b=machines
++ assert a.r==b.r and a.f==b.f and a.stack==b.stack and a.calls==b.calls
++ assert {k:v for k,v in a.ram.items() if not 0xa00<=k<=0xa3f}=={k:v for k,v in b.ram.items() if not 0xa00<=k<=0xa3f}
++ if not pg:assert a.ram[0x684]&4==0 and b.ram[0xa2a]==3
++ else:assert a.ram[0x684]&4 and a.ram[0x215b]==3
++print('PASS original PG deadline paths: missing PG cuts EN; present PG retains original transition')
++mem={0x2157:1,0x215b:2,0x215c:100,0x215d:0,0x684:4,0x688:14,0xa2a:1,0xa20:39,0xa21:0}
++a=Model(baseline,mem);b=Model(linked,mem)
++a.run(0xac);b.run(0xac)
++assert a.r==b.r and a.f==b.f and a.stack==b.stack and a.calls==b.calls
++assert {k:v for k,v in a.ram.items() if not 0xa00<=k<=0xa3f}=={k:v for k,v in b.ram.items() if not 0xa00<=k<=0xa3f}
++assert b.ram[0xa2a]==2 and b.ram[0xa28]==39
++print('PASS full PG GPIO ISR: original status transition unchanged, elapsed captured')
+diff --git a/development/tools/build.py b/development/tools/build.py
+index d7d11c4..2fc844d 100644
+--- a/development/tools/build.py
++++ b/development/tools/build.py
+@@ -48,6 +48,8 @@ def main():
+     original=section.read_bytes();assert len(original)==0x290
+     section.write_bytes(gate+original[6:])
+     run(['avr-objcopy','--update-section','.c_0012ea='+str(section),elf])
++    from power_patch import apply
++    apply(elf,golden,names,BUILD)
+     run(['avr-objcopy','-O','ihex',elf,hexfile]);run([sys.executable,ROOT/'tools/memory_image.py',hexfile,binary])
+     (BUILD/'development.dis').write_text(subprocess.check_output(['avr-objdump','-d',str(elf)],text=True))
+     run([sys.executable,DEV/'tools/check_layout.py'])
+diff --git a/development/tools/check_layout.py b/development/tools/check_layout.py
+index 6bc8917..ef8c98f 100644
+--- a/development/tools/check_layout.py
++++ b/development/tools/check_layout.py
+@@ -25,6 +25,15 @@ def main():
+     destination=2*(((first & 0x1f0)<<13)|((first & 1)<<16)|second)
+     assert destination==names['pm_extension_entry'], 'gate does not reach extension entry'
+     allowed=set(range(0x12ea,0x12f0))|set(range(start,start+size))
++    from power_patch import SITES
++    for n,(address,target) in enumerate(SITES):
++        allowed.update(range(address,address+4))
++        offset=names['pm_pg_patch_table']+4*n
++        gate=dev[offset:offset+4]
++        assert dev[address:address+4]==gate
++        a=int.from_bytes(gate[:2],'little');b=int.from_bytes(gate[2:],'little')
++        assert a & 0xfe0e == 0x940c
++        assert 2*(((a & 0x1f0)<<13)|((a & 1)<<16)|b)==names[target]
+     differing={i for i,(a,b) in enumerate(zip(golden,dev)) if a!=b}
+     assert not differing-allowed, ('unexpected FLASH differences',sorted(differing-allowed)[:16])
+     assert dev[0x20000:]==golden[0x20000:], 'bootloader modified'
+@@ -32,7 +41,7 @@ def main():
+             'golden_sha256':hashlib.sha256(golden).hexdigest(),'development_sha256':hashlib.sha256(dev).hexdigest(),
+             'differing_bytes':len(differing),'gate_start':0x12ea,'gate_length':6,'extension_start':start,
+             'extension_size':size,'extension_limit':0x8000,'legacy_symbols_preserved':len(original),
+-            'bootloader_unchanged':True,'ram_globals':'rejected by linker; no unverified SRAM reservation'}
++            'bootloader_unchanged':True,'power_instrumentation_sites':[hex(a) for a,_ in SITES],'ram_globals':'rejected by linker; no unverified SRAM reservation'}
+     (BUILD/'layout_report.json').write_text(json.dumps(report,indent=2)+'\n')
+     print('PASS development layout:',len(differing),'planned differing bytes; extension',size,'bytes')
+ if __name__=='__main__':main()
+diff --git a/development/tools/power_patch.py b/development/tools/power_patch.py
+new file mode 100644
+index 0000000..4320de7
+--- /dev/null
++++ b/development/tools/power_patch.py
+@@ -0,0 +1,17 @@
++"""Explicit four-byte instrumentation gates; no baseline source edits."""
++import subprocess,re
++SITES=[(0x106a,'pm_pg_init_hook'),(0x662,'pm_pg_start_hook'),(0xac,'pm_pg_irq_hook'),(0x68e,'pm_pg_timeout_hook'),(0x5e6,'pm_pg_thermal_hook'),(0xad4,'pm_pg_alarm_hook'),(0xbcc,'pm_pg_input_loss_hook'),(0xc0c,'pm_pg_retry_hook'),(0x1446,'pm_pg_manual_hook'),(0x1550,'pm_pg_restart_hook'),(0x1c3e,'pm_pg_reset_hook')]
++def apply(elf,golden,names,build):
++ sections=[]
++ for line in subprocess.check_output(['avr-objdump','-h',str(elf)],text=True).splitlines():
++  m=re.match(r'\s*\d+\s+(\S+)\s+([0-9a-f]+)\s+([0-9a-f]+)',line)
++  if m:sections.append((m[1],int(m[3],16),int(m[2],16)))
++ raw=build/'pg-unpatched.bin';subprocess.run(['avr-objcopy','-O','binary',str(elf),str(raw)],check=True);data=raw.read_bytes()
++ for i,(address,target) in enumerate(SITES):
++  if address==0xac:assert golden[address+2:address+4]==b'\xff\xff'
++  else:assert golden[address:address+4] in [bytes.fromhex('00930008'),bytes.fromhex('00938506'),bytes.fromhex('00938606')]
++  name,start,size=next(x for x in sections if x[1]<=address<x[1]+x[2]);path=build/'pg-section.bin'
++  subprocess.run(['avr-objcopy','--dump-section',name+'='+str(path),str(elf)],check=True)
++  current=bytearray(path.read_bytes());assert current[address-start:address-start+4]==golden[address:address+4]
++  offset=names['pm_pg_patch_table']+4*i;current[address-start:address-start+4]=data[offset:offset+4];path.write_bytes(current)
++  subprocess.run(['avr-objcopy','--update-section',name+'='+str(path),str(elf)],check=True)

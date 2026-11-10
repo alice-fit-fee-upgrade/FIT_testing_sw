@@ -1,0 +1,33 @@
+{
+  "tdc_phase_points": 100,
+  "tdc_phase_events": 12800,
+  "tdc_discovery_events": 64,
+  "tdc_quiet_windows": 8,
+  "tdc_raw_records_exact": true,
+  "no_cross_channel_events": true,
+  "gate_dac_points": 404,
+  "gate_raw_captures": 404,
+  "gate_raw_sample_bits": 105880320,
+  "gate_hardware_phase_records_checked_during_acquisition": 4411680,
+  "all_four_dac_A_restored_zero_acknowledged": true,
+  "board_uid": "PM12-K7-3A17A1B402212223",
+  "kasli_bit_sha256": "a71a08a258620b0e5a52c5d03aefd8c69040c9d15e8de6391c484ac182b7173b",
+  "pm_bit_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+  "qualification": {
+    "wns_ns": 0.136,
+    "whs_ns": 0.068,
+    "drc_errors": 0,
+    "iserdes_count": 18,
+    "differential_output_buffers": 10
+  },
+  "tdc_functional_pass": true,
+  "gate_measurement_complete": true,
+  "gate_return_findings": {
+    "10A": "constant HIGH, no edges",
+    "8A": "constant HIGH, no edges"
+  },
+  "external_dac_and_dmm_used": false,
+  "final_cpld12": "INTB-off restored; other11 original gates",
+  "final_state_verified": true,
+  "scope": "Functional TDC counts and relative phase response. Missing gate return edges remain unresolved findings, not a board-wide PASS."
+}

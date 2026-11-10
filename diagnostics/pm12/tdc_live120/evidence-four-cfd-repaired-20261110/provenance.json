@@ -1,0 +1,13 @@
+{
+  "source_git_base": "c3375b49e1553374ff874339f1852813bd038213",
+  "new_build": false,
+  "reused_gateware_archive": "../evidence-four-cfd-20261110/gateware-artifacts.tar.gz",
+  "pm_bit_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+  "kasli_bit_sha256": "a71a08a258620b0e5a52c5d03aefd8c69040c9d15e8de6391c484ac182b7173b",
+  "acquisition_source_sha256": {
+    "diagnostics/pm12/cfd_simulator/scan_four_phase.py": "4f6f98d7f71cdb9b31926dbbda67e8e3b13b3b52ca6816004d0ce883230c6e1f",
+    "diagnostics/pm12/tdc_live120/scan_four_cfd.py": "9d3d5240b653905183751b6335b075d199a83b07ef5510b1d09d0bcae0f7b527",
+    "diagnostics/pm12/tdc_live120/plot_four_cfd.py": "83718743e7b19e8d8f5cd32e0a136e026896dd45825c8024d61438d2873f4666"
+  },
+  "before_repair_context": "../evidence-four-cfd-20261110/historical-lvds-context.json"
+}

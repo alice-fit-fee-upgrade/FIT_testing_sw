@@ -1,0 +1,205 @@
+{
+  "sample_rate_assumed_hz": 961888800,
+  "points": [
+    {
+      "phase_bin": 24,
+      "delay_ns": 0.0,
+      "fine_circular_mean": 126.828125,
+      "fine_std": 1.012592952863576,
+      "coarse_median": 3.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 25,
+      "delay_ns": 1.0396212119321901,
+      "fine_circular_mean": 78.421875,
+      "fine_std": 0.976974076655411,
+      "coarse_median": 3.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 26,
+      "delay_ns": 2.0792424238643803,
+      "fine_circular_mean": 30.164062499999996,
+      "fine_std": 0.9029901661466089,
+      "coarse_median": 4.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 27,
+      "delay_ns": 3.11886363579657,
+      "fine_circular_mean": 110.8828125,
+      "fine_std": 0.9103178794972026,
+      "coarse_median": 4.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 28,
+      "delay_ns": 4.158484847728761,
+      "fine_circular_mean": 63.8359375,
+      "fine_std": 0.8582838007775548,
+      "coarse_median": 5.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 29,
+      "delay_ns": 5.19810605966095,
+      "fine_circular_mean": 14.773437499999996,
+      "fine_std": 0.9492213447965248,
+      "coarse_median": 5.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 30,
+      "delay_ns": 6.23772727159314,
+      "fine_circular_mean": 95.09375,
+      "fine_std": 1.0073548429066885,
+      "coarse_median": 6.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 31,
+      "delay_ns": 7.277348483525331,
+      "fine_circular_mean": 47.34375,
+      "fine_std": 0.8365423776511858,
+      "coarse_median": 6.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 32,
+      "delay_ns": 8.316969695457521,
+      "fine_circular_mean": 127.3125,
+      "fine_std": 0.9285497964080596,
+      "coarse_median": 6.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 33,
+      "delay_ns": 9.35659090738971,
+      "fine_circular_mean": 78.8203125,
+      "fine_std": 0.8999876967662995,
+      "coarse_median": 7.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 34,
+      "delay_ns": 10.3962121193219,
+      "fine_circular_mean": 29.859375,
+      "fine_std": 1.0479404247657724,
+      "coarse_median": 7.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 35,
+      "delay_ns": 11.43583333125409,
+      "fine_circular_mean": 111.1015625,
+      "fine_std": 0.9868413282218242,
+      "coarse_median": 62.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 36,
+      "delay_ns": 12.47545454318628,
+      "fine_circular_mean": 63.5234375,
+      "fine_std": 0.9636286714992622,
+      "coarse_median": 8.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 37,
+      "delay_ns": 13.51507575511847,
+      "fine_circular_mean": 15.632812500000004,
+      "fine_std": 0.8772818951865208,
+      "coarse_median": 62.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 38,
+      "delay_ns": 14.554696967050662,
+      "fine_circular_mean": 94.6953125,
+      "fine_std": 0.9520685622601424,
+      "coarse_median": 9.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 39,
+      "delay_ns": 15.594318178982853,
+      "fine_circular_mean": 46.2421875,
+      "fine_std": 0.9027176270424924,
+      "coarse_median": 63.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 40,
+      "delay_ns": 16.633939390915042,
+      "fine_circular_mean": 126.765625,
+      "fine_std": 0.8369834756927267,
+      "coarse_median": 0.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 41,
+      "delay_ns": 17.673560602847232,
+      "fine_circular_mean": 78.8984375,
+      "fine_std": 0.9035349977316784,
+      "coarse_median": 0.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 42,
+      "delay_ns": 18.71318181477942,
+      "fine_circular_mean": 29.789062499999996,
+      "fine_std": 0.857136266144513,
+      "coarse_median": 1.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 43,
+      "delay_ns": 19.75280302671161,
+      "fine_circular_mean": 111.453125,
+      "fine_std": 0.8310829193874928,
+      "coarse_median": 1.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 44,
+      "delay_ns": 20.7924242386438,
+      "fine_circular_mean": 64.0390625,
+      "fine_std": 0.9424573655220546,
+      "coarse_median": 1.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 45,
+      "delay_ns": 21.83204545057599,
+      "fine_circular_mean": 15.7421875,
+      "fine_std": 0.8983457566133407,
+      "coarse_median": 2.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 46,
+      "delay_ns": 22.87166666250818,
+      "fine_circular_mean": 94.03125,
+      "fine_std": 1.0569418074104027,
+      "coarse_median": 2.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 47,
+      "delay_ns": 23.911287874440372,
+      "fine_circular_mean": 46.375,
+      "fine_std": 0.8035354947596202,
+      "coarse_median": 3.0,
+      "count": 128
+    },
+    {
+      "phase_bin": 48,
+      "delay_ns": 24.95090908637256,
+      "fine_circular_mean": 126.9375,
+      "fine_std": 0.961871535286132,
+      "coarse_median": 3.0,
+      "count": 128
+    }
+  ]
+}
