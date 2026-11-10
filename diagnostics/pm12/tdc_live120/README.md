@@ -1,3 +1,11 @@
+# DIO5/9 repair verified —2026-11-10
+
+All eight gate-return lanes now have valid edges through404 DAC points.
+Four-channel TDC repeat:12,800 phase events, no loss/cross-channel records.
+[Post-repair plots, PDF chapter and data](FOUR_CFD_REPAIR_REPEAT.md).
+The channel8 sweep has a one-off ADC-period-sized phase step, not reproduced
+in three local checks; retained in the report rather than counted as smooth range.
+
 # Four CFD simulators characterized —2026-11-10
 
 Channels12/10/8/6: four-port input discovery and100 TDC phase points PASS,

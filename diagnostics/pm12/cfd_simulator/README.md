@@ -1,3 +1,9 @@
+# Repaired DIO return paths —2026-11-10
+
+INTA from PM10/8 now has edges and follows DAC-A after the owner repaired
+DIO5/9 shorts. All eight returns passed404 DAC-point captures.
+[Fresh repeat and comparison](../tdc_live120/FOUR_CFD_REPAIR_REPEAT.md).
+
 # Four populated channels —2026-11-10
 
 Internal DAC-A phase scans on12/10/8/6 complete,101 points each.

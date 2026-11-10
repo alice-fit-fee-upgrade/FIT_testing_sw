@@ -1,0 +1,126 @@
+{
+  "gate_source": "gate-scan101",
+  "gate": {
+    "12": {
+      "A": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 19.75280302671161,
+        "start_to_end_ns": -19.75280302671161,
+        "rising_edges": 68938,
+        "max_spread_bins": 0.49786839646431347,
+        "errors": []
+      },
+      "B": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 20.286332974184145,
+        "start_to_end_ns": -20.152188301676766,
+        "rising_edges": 68928,
+        "max_spread_bins": 0.4993029256507196,
+        "errors": []
+      }
+    },
+    "10": {
+      "A": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 20.7924242386438,
+        "start_to_end_ns": -17.673560602847232,
+        "rising_edges": 68931,
+        "max_spread_bins": 0.499946248002958,
+        "errors": []
+      },
+      "B": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 20.7924242386438,
+        "start_to_end_ns": -17.673560602847235,
+        "rising_edges": 68932,
+        "max_spread_bins": 0.48555245465659075,
+        "errors": []
+      }
+    },
+    "8": {
+      "A": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 32.22825756989789,
+        "start_to_end_ns": -32.22825756989789,
+        "rising_edges": 68935,
+        "max_spread_bins": 0.47070874433391924,
+        "errors": []
+      },
+      "B": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 33.267878781830085,
+        "start_to_end_ns": -33.267878781830085,
+        "rising_edges": 68931,
+        "max_spread_bins": 0.4968123793704202,
+        "errors": []
+      }
+    },
+    "6": {
+      "A": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 19.94334943652323,
+        "start_to_end_ns": -11.435833331254091,
+        "rising_edges": 68926,
+        "max_spread_bins": 0.4999094215999004,
+        "errors": []
+      },
+      "B": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 19.75280302671161,
+        "start_to_end_ns": -10.396212119321902,
+        "rising_edges": 68941,
+        "max_spread_bins": 0.49876008316333686,
+        "errors": []
+      }
+    }
+  },
+  "notes": [
+    "Times inferred from supplied 40.0787MHz reference; not frequency-counter verified.",
+    "DAC codes acknowledged by MCU, no DAC hardware readback.",
+    "Gate period = 48 serializer bins, two LHC periods.",
+    "Nearest-continuation phase unwrapping assumes adjacent movement below half a gate period."
+  ],
+  "tdc_pass": true,
+  "tdc": {
+    "12": {
+      "points": 25,
+      "events": 3200,
+      "slope_codes_per_ns": -46.16422376940269,
+      "max_fit_residual_codes": 2.312441541994815,
+      "max_fine_std_codes": 1.1386970050325165,
+      "note": "Fine modulo128 only; assumes adjacent movement below64 codes. Not a calibrated time result."
+    },
+    "10": {
+      "points": 25,
+      "events": 3200,
+      "slope_codes_per_ns": -46.17409741419322,
+      "max_fit_residual_codes": 1.2562561542698631,
+      "max_fine_std_codes": 1.0606601775551014,
+      "note": "Fine modulo128 only; assumes adjacent movement below64 codes. Not a calibrated time result."
+    },
+    "8": {
+      "points": 25,
+      "events": 3200,
+      "slope_codes_per_ns": -46.16479527940095,
+      "max_fit_residual_codes": 1.273093232619317,
+      "max_fine_std_codes": 1.1688502958514904,
+      "note": "Fine modulo128 only; assumes adjacent movement below64 codes. Not a calibrated time result."
+    },
+    "6": {
+      "points": 25,
+      "events": 3200,
+      "slope_codes_per_ns": -46.170993460043526,
+      "max_fit_residual_codes": 1.4332526048044656,
+      "max_fine_std_codes": 1.0606601724482332,
+      "note": "Fine modulo128 only; assumes adjacent movement below64 codes. Not a calibrated time result."
+    }
+  }
+}

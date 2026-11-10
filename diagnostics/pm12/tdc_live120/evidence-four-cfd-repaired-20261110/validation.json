@@ -1,0 +1,98 @@
+{
+  "tdc_phase_points": 100,
+  "tdc_phase_events": 12800,
+  "tdc_discovery_events": 64,
+  "tdc_quiet_windows": 8,
+  "tdc_raw_records_exact": true,
+  "no_cross_channel_events": true,
+  "gate_dac_points": 404,
+  "gate_raw_sample_bits": 105880320,
+  "gate_hardware_phase_records_checked_during_acquisition": 4411680,
+  "all_eight_gate_returns_present_at_all_404_points": true,
+  "all_four_dac_A_restored_zero_acknowledged": true,
+  "repair_comparison": {
+    "10": {
+      "signal": "INTA",
+      "physical_dio_channel": 5,
+      "logical_rx": 10,
+      "before_rising_edges": 0,
+      "after_rising_edges": 683
+    },
+    "8": {
+      "signal": "INTA",
+      "physical_dio_channel": 9,
+      "logical_rx": 12,
+      "before_rising_edges": 0,
+      "after_rising_edges": 683
+    }
+  },
+  "board_uid": "PM12-K7-3A17A1B402212223",
+  "owner_reports": "Shorts repaired on DIO channels5/9",
+  "repair_confirmed_by_restored_return_signals": true,
+  "tdc_functional_pass": true,
+  "gate_return_test_pass": true,
+  "external_dac_and_dmm_used": false,
+  "pm_bit_sha256": "1dbafd99033f803a086d4153ed3d873adfc9b4208b806785f00d3024bdfbf1ac",
+  "kasli_bit_sha256": "a71a08a258620b0e5a52c5d03aefd8c69040c9d15e8de6391c484ac182b7173b",
+  "new_build": false,
+  "final_cpld12": "INTB-off restored; other11 original gates",
+  "final_state_verified": true,
+  "scope": "Post-repair fixture returns and relative TDC/gate phase response; not an intrinsic jitter or absolute timestamp calibration.",
+  "phase8_discontinuity": {
+    "main_sweep_codes": [
+      655,
+      1311
+    ],
+    "gate_A_step_ns": -12.476976682588818,
+    "gate_B_step_ns": -13.515075755118474,
+    "local_repeat_points": 21,
+    "local_repeat_cycles": 3,
+    "largest_local_adjacent_step_ns": 1.0396212119321901,
+    "large_step_reproduced_locally": false,
+    "interpretation": "Common phase step about one ADC period in main sweep; not reproduced in three local up/down cycles. Counter-state ambiguity is a hypothesis, not isolated cause. Preserve raw excursion; do not call it continuous delay range."
+  },
+  "initial_sweep_phase_steps_over_2p2_ns": [
+    {
+      "physical_channel": 10,
+      "gate": "A",
+      "from_code": 0,
+      "to_code": 655,
+      "step_ns": 3.1188636357965684
+    },
+    {
+      "physical_channel": 10,
+      "gate": "B",
+      "from_code": 0,
+      "to_code": 655,
+      "step_ns": 3.118863635796565
+    },
+    {
+      "physical_channel": 8,
+      "gate": "A",
+      "from_code": 655,
+      "to_code": 1311,
+      "step_ns": -12.476976682588818
+    },
+    {
+      "physical_channel": 8,
+      "gate": "B",
+      "from_code": 655,
+      "to_code": 1311,
+      "step_ns": -13.515075755118474
+    },
+    {
+      "physical_channel": 6,
+      "gate": "A",
+      "from_code": 655,
+      "to_code": 1311,
+      "step_ns": 8.50751610526914
+    },
+    {
+      "physical_channel": 6,
+      "gate": "B",
+      "from_code": 655,
+      "to_code": 1311,
+      "step_ns": 9.35659090738971
+    }
+  ]
+}

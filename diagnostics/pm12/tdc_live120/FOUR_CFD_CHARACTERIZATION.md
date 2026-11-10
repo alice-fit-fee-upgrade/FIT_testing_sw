@@ -1,3 +1,7 @@
+> Subsequent repair/retest: the owner repaired DIO5/9 shorts. Both missing
+> returns now work; see [post-repair repeat](FOUR_CFD_REPAIR_REPEAT.md).
+> The measurements below retain the original before-repair condition.
+
 # Four-channel CFD / TDC characterization — 2026-11-10
 
 Board **PM12-K7-3A17A1B402212223**, EEPROM serial1803, physically populated CFD
