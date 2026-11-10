@@ -1,0 +1,1130 @@
+{
+  "gate_source": "gate-scan101",
+  "gate": {
+    "12": {
+      "A": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 19.75280302671161,
+        "start_to_end_ns": -19.75280302671161,
+        "rising_edges": 68933,
+        "max_spread_bins": 0.489351790512814,
+        "errors": []
+      },
+      "B": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 20.080545083463548,
+        "start_to_end_ns": -20.065323689438188,
+        "rising_edges": 68931,
+        "max_spread_bins": 0.49999517671187865,
+        "errors": []
+      }
+    },
+    "10": {
+      "A": {
+        "valid_points": 0,
+        "missing_points": 101,
+        "errors": [
+          {
+            "code": 0,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 655,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 1311,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 1966,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 2621,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 3277,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 3932,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 4587,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 5243,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 5898,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 6554,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 7209,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 7864,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 8520,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 9175,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 9830,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 10486,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 11141,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 11796,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 12452,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 13107,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 13762,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 14418,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 15073,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 15728,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 16384,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 17039,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 17694,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 18350,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 19005,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 19661,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 20316,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 20971,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 21627,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 22282,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 22937,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 23593,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 24248,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 24903,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 25559,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 26214,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 26869,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 27525,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 28180,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 28835,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 29491,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 30146,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 30801,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 31457,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 32112,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 32768,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 33423,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 34078,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 34734,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 35389,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 36044,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 36700,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 37355,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 38010,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 38666,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 39321,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 39976,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 40632,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 41287,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 41942,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 42598,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 43253,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 43908,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 44564,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 45219,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 45875,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 46530,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 47185,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 47841,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 48496,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 49151,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 49807,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 50462,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 51117,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 51773,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 52428,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 53083,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 53739,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 54394,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 55049,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 55705,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 56360,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 57015,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 57671,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 58326,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 58982,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 59637,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 60292,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 60948,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 61603,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 62258,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 62914,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 63569,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 64224,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 64880,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 65535,
+            "error": "no rising edges",
+            "high_samples": 32760
+          }
+        ]
+      },
+      "B": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 20.792424238643804,
+        "start_to_end_ns": -20.792424238643804,
+        "rising_edges": 68925,
+        "max_spread_bins": 0.49871160014556065,
+        "errors": []
+      }
+    },
+    "8": {
+      "A": {
+        "valid_points": 0,
+        "missing_points": 101,
+        "errors": [
+          {
+            "code": 0,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 655,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 1311,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 1966,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 2621,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 3277,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 3932,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 4587,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 5243,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 5898,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 6554,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 7209,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 7864,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 8520,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 9175,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 9830,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 10486,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 11141,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 11796,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 12452,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 13107,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 13762,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 14418,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 15073,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 15728,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 16384,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 17039,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 17694,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 18350,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 19005,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 19661,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 20316,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 20971,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 21627,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 22282,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 22937,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 23593,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 24248,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 24903,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 25559,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 26214,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 26869,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 27525,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 28180,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 28835,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 29491,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 30146,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 30801,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 31457,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 32112,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 32768,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 33423,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 34078,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 34734,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 35389,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 36044,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 36700,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 37355,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 38010,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 38666,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 39321,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 39976,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 40632,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 41287,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 41942,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 42598,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 43253,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 43908,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 44564,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 45219,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 45875,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 46530,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 47185,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 47841,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 48496,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 49151,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 49807,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 50462,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 51117,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 51773,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 52428,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 53083,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 53739,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 54394,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 55049,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 55705,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 56360,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 57015,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 57671,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 58326,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 58982,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 59637,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 60292,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 60948,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 61603,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 62258,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 62914,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 63569,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 64224,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 64880,
+            "error": "no rising edges",
+            "high_samples": 32760
+          },
+          {
+            "code": 65535,
+            "error": "no rising edges",
+            "high_samples": 32760
+          }
+        ]
+      },
+      "B": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 20.792424238643804,
+        "start_to_end_ns": -20.792424238643804,
+        "rising_edges": 68935,
+        "max_spread_bins": 0.499784957325589,
+        "errors": []
+      }
+    },
+    "6": {
+      "A": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 20.792424238643804,
+        "start_to_end_ns": -20.792424238643804,
+        "rising_edges": 68936,
+        "max_spread_bins": 0.49973978660740864,
+        "errors": []
+      },
+      "B": {
+        "valid_points": 101,
+        "missing_points": 0,
+        "span_ns": 19.75280302671161,
+        "start_to_end_ns": -19.75280302671161,
+        "rising_edges": 68929,
+        "max_spread_bins": 0.4869543740667022,
+        "errors": []
+      }
+    }
+  },
+  "notes": [
+    "Times inferred from supplied 40.0787MHz reference; not frequency-counter verified.",
+    "DAC codes acknowledged by MCU, no DAC hardware readback.",
+    "Gate period = 48 serializer bins, two LHC periods.",
+    "Nearest-continuation phase unwrapping assumes adjacent movement below half a gate period."
+  ],
+  "tdc_pass": true,
+  "tdc": {
+    "12": {
+      "points": 25,
+      "events": 3200,
+      "slope_codes_per_ns": -46.184549846200646,
+      "max_fit_residual_codes": 1.8967815378930197,
+      "max_fine_std_codes": 1.1472410861946685,
+      "note": "Fine modulo128 only; assumes adjacent movement below64 codes. Not a calibrated time result."
+    },
+    "10": {
+      "points": 25,
+      "events": 3200,
+      "slope_codes_per_ns": -46.20061749416891,
+      "max_fit_residual_codes": 1.1073553176545374,
+      "max_fine_std_codes": 1.1854422987329984,
+      "note": "Fine modulo128 only; assumes adjacent movement below64 codes. Not a calibrated time result."
+    },
+    "8": {
+      "points": 25,
+      "events": 3200,
+      "slope_codes_per_ns": -46.193727902644575,
+      "max_fit_residual_codes": 2.521600214538296,
+      "max_fine_std_codes": 1.0288501910797592,
+      "note": "Fine modulo128 only; assumes adjacent movement below64 codes. Not a calibrated time result."
+    },
+    "6": {
+      "points": 25,
+      "events": 3200,
+      "slope_codes_per_ns": -46.17711428144919,
+      "max_fit_residual_codes": 1.5414251341428837,
+      "max_fine_std_codes": 1.0831799527075214,
+      "note": "Fine modulo128 only; assumes adjacent movement below64 codes. Not a calibrated time result."
+    }
+  }
+}

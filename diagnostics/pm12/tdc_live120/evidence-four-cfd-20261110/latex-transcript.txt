@@ -1,0 +1,20 @@
+note: Running TeX ...
+note: downloading SHA256SUM
+note: downloading size11.clo
+note: downloading lmroman17-regular.otf
+note: downloading lmroman12-bold.otf
+note: downloading lmroman12-regular.otf
+note: downloading lmroman10-bold.otf
+note: downloading lmmono10-regular.otf
+note: downloading cmr8.tfm
+note: downloading cmr6.tfm
+note: downloading cmmi8.tfm
+note: downloading cmmi6.tfm
+note: downloading cmsy8.tfm
+note: downloading cmsy6.tfm
+note: Rerunning TeX because "report.aux" changed ...
+note: Running xdvipdfmx ...
+note: Writing `report.aux` (652 B)
+note: Writing `report.pdf` (97.29 KiB)
+note: Writing `report.log` (10.57 KiB)
+note: Not writing `report.out`: it would be empty.

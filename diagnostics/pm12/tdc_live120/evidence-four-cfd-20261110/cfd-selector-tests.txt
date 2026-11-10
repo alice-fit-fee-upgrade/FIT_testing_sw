@@ -1,0 +1,1 @@
+CFD_PORT_SELECTOR_SIM_PASS: default off; all ports; live switch rejected; STOP/reference-loss release

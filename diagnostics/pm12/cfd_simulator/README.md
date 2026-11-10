@@ -1,3 +1,11 @@
+# Four populated channels —2026-11-10
+
+Internal DAC-A phase scans on12/10/8/6 complete,101 points each.
+Four-channel TDC phase response passed25 phases/channel with128 events/phase.
+Gate-A returns10/8 are static HIGH; kept as unresolved findings.
+External MOD-DAC-28 and DMM were not used.
+[Results, overlays and report](../tdc_live120/FOUR_CFD_CHARACTERIZATION.md).
+
 # INTB gate isolation —2026-11-08
 
 Channel12 only: INTB LOW, INTA preserved; eight fresh A/B buffers per state.

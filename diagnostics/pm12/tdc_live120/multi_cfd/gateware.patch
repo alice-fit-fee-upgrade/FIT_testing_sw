@@ -1,0 +1,61 @@
+--- a/gateware/cfd_tx.py
++++ b/gateware/cfd_tx.py
+@@ -10 +10,3 @@
+-    def __init__(self,bus,ready,depth=4096):
++    def __init__(self,bus,ready,depth=4096,ports=1):
++        assert ports in (1,4)
++        self.port=Signal(2);self.ports=ports
+@@ -27,0 +30 @@
++                    0xdc:If(~self.enabled&~self.running&(bus.write_data<ports),self.port.eq(bus.write_data)).Else(self.error.eq(1)),
+@@ -39,0 +43,2 @@
++            0xd8:self.read_data.eq(0x43464434 if ports==4 else 0x43464430),
++            0xdc:self.read_data.eq(self.port),
+@@ -48,6 +53,9 @@
+-    platform.add_extension([('cfd_tx',0,Subsignal('p',Pins('diot6:d0_cc_p')),Subsignal('n',Pins('diot6:d0_cc_n')),IOStandard('LVDS_25'))])
+-    pads=platform.request('cfd_tx');out=Signal();tristate=Signal()
+-    module.specials += [Instance('OSERDESE2',p_DATA_RATE_OQ='DDR',p_DATA_WIDTH=8,p_INIT_OQ=0,p_DATA_RATE_TQ='BUF',p_TRISTATE_WIDTH=1,p_INIT_TQ=1,
+-        i_CLK=ClockSignal('ser_tx'),i_CLKDIV=ClockSignal('sys'),i_RST=ResetSignal('sys'),i_OCE=1,i_TCE=1,i_T1=~(burst.enabled&ready),
+-        **{'i_D%d'%(n+1):burst.data[n] for n in range(8)},o_OQ=out,o_TQ=tristate),
+-        Instance('OBUFTDS',i_I=out,i_T=tristate,o_O=pads.p,o_OB=pads.n)]
++    for port in range(burst.ports):
++        ch=4*port;conn='diot6:d%d'%ch+('_cc' if ch in (0,8) else '')
++        platform.add_extension([('cfd_tx',port,Subsignal('p',Pins(conn+'_p')),Subsignal('n',Pins(conn+'_n')),IOStandard('LVDS_25'))])
++        pads=platform.request('cfd_tx',port);out=Signal();tristate=Signal()
++        # One serializer per physical IOB: OQ cannot fan out across output IOBs.
++        module.specials += [Instance('OSERDESE2',p_DATA_RATE_OQ='DDR',p_DATA_WIDTH=8,p_INIT_OQ=0,p_DATA_RATE_TQ='BUF',p_TRISTATE_WIDTH=1,p_INIT_TQ=1,
++            i_CLK=ClockSignal('ser_tx'),i_CLKDIV=ClockSignal('sys'),i_RST=ResetSignal('sys'),i_OCE=1,i_TCE=1,i_T1=~(burst.enabled&ready&(burst.port==port)),
++            **{'i_D%d'%(n+1):burst.data[n] for n in range(8)},o_OQ=out,o_TQ=tristate),
++            Instance('OBUFTDS',i_I=out,i_T=tristate,o_O=pads.p,o_OB=pads.n)]
+--- a/gateware/build_gate_phase.py
++++ b/gateware/build_gate_phase.py
+@@ -25 +25 @@
+-    def __init__(self,platform,network=False,cfd_tx=False,pm_link=False,pm_bridge=False,hdmi=False,hdmi_data_base=4):
++    def __init__(self,platform,network=False,cfd_tx=False,pm_link=False,pm_bridge=False,hdmi=False,hdmi_data_base=4,cfd_ports=1):
+@@ -116 +116 @@
+-            self.submodules.cfd=burst=CFDBurst(bus,ready)
++            self.submodules.cfd=burst=CFDBurst(bus,ready,ports=cfd_ports)
+@@ -125 +125 @@
+-            self.comb += tx_write.eq((bus.address==0xe0)|(bus.address==0xe8)|(bus.address==0xec)|(bus.address==0xf0)|(bus.address==0xf4))
++            self.comb += tx_write.eq((bus.address==0xdc)|(bus.address==0xe0)|(bus.address==0xe8)|(bus.address==0xec)|(bus.address==0xf0)|(bus.address==0xf4))
+@@ -140 +140 @@
+-        if cfd_tx:self.comb += If((bus.address>=0xe0)&(bus.address<=0xfc),bus.read_data.eq(burst.read_data))
++        if cfd_tx:self.comb += If((bus.address>=0xd8)&(bus.address<=0xfc),bus.read_data.eq(burst.read_data))
+@@ -152 +152 @@
+-    p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--ipbus',action='store_true');p.add_argument('--cfd-tx',action='store_true');p.add_argument('--pm-link',action='store_true');p.add_argument('--pm-bridge',action='store_true');p.add_argument('--hdmi',action='store_true');p.add_argument('--hdmi-data-base',type=int,choices=[0,4],default=4);a=p.parse_args()
++    p=argparse.ArgumentParser();p.add_argument('--output',required=True);p.add_argument('--ipbus',action='store_true');p.add_argument('--cfd-tx',action='store_true');p.add_argument('--cfd-ports',type=int,choices=[1,4],default=1);p.add_argument('--pm-link',action='store_true');p.add_argument('--pm-bridge',action='store_true');p.add_argument('--hdmi',action='store_true');p.add_argument('--hdmi-data-base',type=int,choices=[0,4],default=4);a=p.parse_args()
+@@ -161 +161 @@
+-    platform.build(Top(platform,network=a.ipbus,cfd_tx=a.cfd_tx,pm_link=a.pm_link,pm_bridge=a.pm_bridge,hdmi=a.hdmi,hdmi_data_base=a.hdmi_data_base),build_dir=str(out),build_name='gate_phase',run=False)
++    platform.build(Top(platform,network=a.ipbus,cfd_tx=a.cfd_tx,pm_link=a.pm_link,pm_bridge=a.pm_bridge,hdmi=a.hdmi,hdmi_data_base=a.hdmi_data_base,cfd_ports=a.cfd_ports),build_dir=str(out),build_name='gate_phase',run=False)
+@@ -168 +168 @@
+-    manifest=dict(hdmi_data_base=a.hdmi_data_base,hdmi=a.hdmi,pm_bridge=a.pm_bridge,pm_link=a.pm_link,cfd_tx=a.cfd_tx,tx_physical={'slot':7,'channel':0,'pair_p':1,'pair_n':2} if a.cfd_tx else None,ipbus=a.ipbus,ip_address='192.168.2.241' if a.ipbus else None,part=platform.device,magic=MAGIC,profile='external120',receiver_only=not a.cfd_tx,channels=16,depth=4096,
++    manifest=dict(cfd_ports=a.cfd_ports,hdmi_data_base=a.hdmi_data_base,hdmi=a.hdmi,pm_bridge=a.pm_bridge,pm_link=a.pm_link,cfd_tx=a.cfd_tx,tx_physical={'slot':7,'channel':0,'pair_p':1,'pair_n':2} if a.cfd_tx else None,ipbus=a.ipbus,ip_address='192.168.2.241' if a.ipbus else None,part=platform.device,magic=MAGIC,profile='external120',receiver_only=not a.cfd_tx,channels=16,depth=4096,
+--- a/host/cfd_pattern.py
++++ b/host/cfd_pattern.py
+@@ -15,0 +16,4 @@
++        if device.read(0xd8)==0x43464434:
++            # Legacy callers always own RJ45 port0. Release before routing.
++            self.stop();device.write(0xdc,0)
++            if device.read(0xdc)!=0:raise RuntimeError('CFD0 route failed')
+@@ -21,0 +26,2 @@
++        if self.device.read(0xd8)==0x43464434 and self.device.read(0xdc)!=0:
++            raise RuntimeError('Legacy CFD0 direction does not match selected port')

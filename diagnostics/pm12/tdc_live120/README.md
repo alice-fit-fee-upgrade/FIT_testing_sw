@@ -1,3 +1,11 @@
+# Four CFD simulators characterized —2026-11-10
+
+Channels12/10/8/6: four-port input discovery and100 TDC phase points PASS,
+12,800 events, zero cross-channel/quiet-window events. Internal DAC-A phase
+scan404 points complete. INTA return paths10/8 remain HIGH (unresolved).
+New Kasli four-port image retained; PMc7c42d28 unchanged after SRAM restore.
+[Full results, plots, PDF chapter and raw data](FOUR_CFD_CHARACTERIZATION.md).
+
 # PM12 LHC-clock IPbus / ADC / TDC integration
 
 Latest: the resident PM image is now build`c7c42d28`, adding HDMI diagnostics
