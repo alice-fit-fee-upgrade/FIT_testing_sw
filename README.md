@@ -5,6 +5,20 @@
 - PMT Sim firmware (ARTIQ) and example code
 - [PM12 JTAG connection test](diagnostics/pm12/README.md): discovery and schematic comparison for 168 CPLD–FPGA lines
 
+## PM12 hardware tests and LaTeX reports
+
+- [Test collection and schematic comparison](diagnostics/pm12/README.md).
+- [Acceptance runner, batch collection and editable LaTeX/PDF dossiers](diagnostics/pm12/acceptance/README.md).
+- [Parameterized bench wiring diagrams](diagnostics/pm12/acceptance/BENCH_CONFIGURATION.md).
+- [CFD DAC voltage scans with Keysight SMU2](diagnostics/pm12/cfd_simulator/SMU_DAC_SCAN.md): acquisition, raw CSV, plot generation and editable LaTeX.
+- [Latest three-channel DAC report (PDF)](diagnostics/pm12/cfd_simulator/evidence-smu-dac-20261110/report.pdf) and [editable source](diagnostics/pm12/cfd_simulator/evidence-smu-dac-20261110/report.tex).
+- [Four-CFD gate/TDC repair verification](diagnostics/pm12/tdc_live120/FOUR_CFD_REPAIR_REPEAT.md).
+
+Hardware acquisition requires the documented station configuration, board leases
+and actual wiring. Report generation from archived data is offline and does not
+access hardware. Read each procedure's qualification and restoration limits;
+individual historical results are not a blanket acceptance of every board.
+
 ## Prerequisites
 
 - Nix (you can use [Determinate Nix Installer](https://determinate.systems/posts/determinate-nix-installer/))
