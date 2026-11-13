@@ -138,3 +138,29 @@ remain disabled from preflight. No MCU/CPLD/FPGA/flash/clock/SMU changes.
 Analog coverage now10,11,12;9 awaits the next confirmed USB move. Earlier
 results remain selected for their own physical channels. See
 [evidence](evidence-campaign-ch10-20261113/README.md).
+
+## Completed timing tests on all four connected channels9–12
+
+No USB move: both cables remain on10. Slot7 ports0/1/2/3→PM12/11/10/9
+reconfirmed with16TDC events each.25phases×128events per channel passed;
+12800scan events,64discovery events, eight empty quiet windows, no cross-talk.
+TDC slope magnitudes46.171..46.176fine codes/ns; this is relative response,
+not an absolute calibration. All raw13bits were independently validated.
+
+DAC-A sweeps101points/channel produced404captures with all eight A/B returns
+valid at every point. Independent validation checked105880320sampled bits and
+4411680hardware phase records. Observed A/B excursions(ns):
+PM9=20.792/20.792,10=21.832/20.792,11=20.905/20.792,12=19.753/19.753.
+No adjacent step exceeded two sampling bins in this repeat. Native time scale
+assumes40.0787MHz×24; gate period48bins. These are sampled relative phases,
+not calibrated fine delay or intrinsic jitter.
+
+All eight new timing cases imported PASS with frozen source/settings contracts.
+Postflight confirmed MCU1803, PMc7c42d28, PGOOD,12ready TDC frontends and all-zero
+quiet counts after the gate sweep. DAC A sent0000 on9–12, CFD TX0/port0, DIO6/7
+inputs, PM bridge1, all monitor inhibits HIGH and TCA masks0. No programming,
+clock profile, external DAC or SMU commands. Prior analog controls preserved;
+prior ADC/integrator measurements remain observations at their own capture
+settings. Hardware leases released. Analog channel9 still awaits USB move.
+See[TIMING_CAMPAIGN.md](TIMING_CAMPAIGN.md) and the
+[combined report](evidence-campaign-timing-20261113/report.pdf).

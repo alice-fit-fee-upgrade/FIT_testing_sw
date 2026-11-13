@@ -1,3 +1,5 @@
+[Latest: TDC and DAC-A phase tests on9–12](evidence-campaign-timing-20261113/README.md), with[repeat procedure](TIMING_CAMPAIGN.md).
+
 [Latest: channel10 ADC/integrators, compared with11and12](evidence-campaign-ch10-20261113/README.md).
 
 [Latest: channel11 ADC/integrator measurements and common plots with12](evidence-campaign-ch11-20261113/README.md).
