@@ -26,14 +26,14 @@ port produced16 TDC events only on its expected channel, with quiet controls.
 Labels identify bench port assignments, not verified factory serial numbers.
 The initial ascending declaration is preserved in `mapping-declared.json`.
 
-Both analog USB cables currently terminate on **channel12 only**:
+Both analog USB cables currently terminate on **channel11 only**, after the owner confirmed the move from12:
 
 | MOD-DAC-28 outputs | CFD_SIM input | Measurement |
 |---|---|---|
 |0/1|J8, direct ADC|ADC transfer and adjacent-bit exercise|
 |2/3|J6, integrator|Balance and signed ramp response|
 
-Move both cables together to11,10,9 only after the owner confirms each move.
+Next move both cables together to10, then9, only after the owner confirms each move.
 Other fitted channels are not implicitly analog-connected. Update that receipt
 before acquiring them; never infer the analog destination from an RJ45 route.
 
@@ -81,5 +81,34 @@ is selected explicitly after raw validation and independent post-cleanup.
 The original restored TCA masks(0,8) are retained in raw metadata; post-cleanup
 explicitly cleared both to0. All monitor muxes inhibited, SMU OFF/HIZ, exercised
 B/C/D sent0000; phase DAC-A and external MOD-DAC-28 were not written.
-No USB cable move was announced: both remain declared on12. ADC/integrator
-coverage for9–11 is still missing. See[evidence](evidence-campaign-smu-20261113/README.md).
+At the end of that SMU scan both USB cables were still declared on12.
+The subsequent confirmed move to11 and its analog measurements are recorded below. See[evidence](evidence-campaign-smu-20261113/README.md).
+
+## Completed analog tests on channel11
+
+The owner confirmed moving both pairs to11:0/1→J8 ADC,2/3→J6 integrator.
+Routing receipt and the previous station map are retained. Preflight confirmed
+MCU1803, FPGAc7c42d28, stable PGOOD and TCA masks0; all four monitor muxes,
+integrator amps and direct-ADC muxes were initially inhibited before parking
+DAC2/3 at the frozen ADC-test bias2.048/1.024V. Probe A/B responses and the
+full257-point scans passed. ADC gains are−1783.31/−1776.86codes/V; phase-template
+residual RMS0.539/0.512codes (total RMS61.46/59.54 includes periodic structure).
+Adjacent-bit tests PASS for both ADC banks.
+
+Integrator balance: A at DAC2/3=1.0260/2.0460V, B at1.0288/2.0432V. Fine-scan
+gains−2558.7/−2553.3codes/V. Four candidate revisits per bank and±5mV sign checks
+PASS. A/B balance separation is about5.70mV in the differential coordinate;
+a common setting does not null both. Final shared park2/3=1.0274/2.0446V;
+0/1=1/1V, other DAC outputs unchanged. Channel11 integrator amps enabled,
+direct ADC injection isolated, all monitor muxes inhibited, TCA masks0, ADC A
+last. Other fitted channels' amps/bypass were disabled at preflight.
+No firmware/gateware/clock changes. Hardware leases released after acquisition.
+
+The channel11 ADC imports used the exact frozen ADC-v1 normalizer, materialized
+at `staging/method-tools/adc-v1/` in the live campaign. Its5source files match
+the channel12 sealed analysis snapshots byte-for-byte. Native acquisition and
+integrator analysis dependencies also matched their frozen per-method versions;
+all three new cases imported without changing comparison contracts.
+
+Analog ADC/integrator coverage is now11and12;9and10 still await confirmed USB
+moves. All four internal DAC B/C/D tests remain covered.

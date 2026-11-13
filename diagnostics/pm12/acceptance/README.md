@@ -1,3 +1,5 @@
+[Latest: channel11 ADC/integrator measurements and common plots with12](evidence-campaign-ch11-20261113/README.md).
+
 [Latest: internal DAC B/C/D scans on channels9–12](evidence-campaign-smu-20261113/README.md).
 
 [First measured campaign channel12: ADC A/B and integrators](evidence-campaign-ch12-20261113/README.md).
