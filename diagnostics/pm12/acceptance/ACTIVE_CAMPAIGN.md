@@ -164,3 +164,7 @@ prior ADC/integrator measurements remain observations at their own capture
 settings. Hardware leases released. Analog channel9 still awaits USB move.
 See[TIMING_CAMPAIGN.md](TIMING_CAMPAIGN.md) and the
 [combined report](evidence-campaign-timing-20261113/report.pdf).
+
+## Fresh assembly verification — 2026-11-13
+
+Completed available tests without moving USB from physical10. Scoped JTAG168links in both paths, MCU/FPGA32patterns, populated rail voltages and Ethernet/IPbus PASS. CFD monitors9/10/12 PASS; fixture11 MUX7 FAIL (5.479V raw; check R3/R4 divider). HDMI data lanes pass but pad release after SPI reads resets SYS: overall HDMI FAIL. These findings prevent unconditional release. Analog9 awaits the next USB move. Current coverage:28PASS,2FAIL,59NOT_MEASURED. See [52-page report and reproducible evidence](evidence-campaign-assembly-20261113/README.md).

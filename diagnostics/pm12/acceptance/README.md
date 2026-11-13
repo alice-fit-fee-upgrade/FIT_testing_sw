@@ -256,3 +256,7 @@ On an ADC error, existing acquisition parks the selected DAC pair at0V and
 attempts GPIO restoration. `recover_dac_baseline.py` is an explicit leased
 control action to return a configured pair to1V/1V after checking physical board
 identity and PGOOD; it does not turn a failed ADC result into PASS.
+
+## Fresh assembly verification — 2026-11-13
+
+Completed available tests without moving USB from physical10. Scoped JTAG168links in both paths, MCU/FPGA32patterns, populated rail voltages and Ethernet/IPbus PASS. CFD monitors9/10/12 PASS; fixture11 MUX7 FAIL (5.479V raw; check R3/R4 divider). HDMI data lanes pass but pad release after SPI reads resets SYS: overall HDMI FAIL. These findings prevent unconditional release. Analog9 awaits the next USB move. Current coverage:28PASS,2FAIL,59NOT_MEASURED. See [52-page report and reproducible evidence](evidence-campaign-assembly-20261113/README.md).

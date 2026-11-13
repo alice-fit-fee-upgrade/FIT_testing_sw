@@ -1,5 +1,7 @@
 # Integrated PM12 / Kasli diagnostic image pair
 
+**2026-11-13 regression:** repeated resident runs reset SYS when FPGA pads are released after SPI signature reads. Walking/PRBS/idle data lanes pass, but the full HDMI test FAILS. Historical qualification below does not qualify the current setup. See [fresh evidence](../acceptance/evidence-campaign-assembly-20261113/README.md). Do not treat SPI release as qualified until fixed and retested.
+
 HDMI is added alongside the resident ADC/TDC and the Kasli SFP bridge. No
 production PM firmware, CPLD mux, MCU firmware, PLL profile or flash changes.
 Build and physical qualification status is recorded in the evidence directory;

@@ -93,3 +93,5 @@ board acceptance. Read each validation record alongside its plots and report.
 [2026-11-13: channel10 ADC/integrator measurements and common plots for10–12](diagnostics/pm12/acceptance/evidence-campaign-ch10-20261113/README.md).
 
 [2026-11-13: TDC and both gate-phase responses on9–12;39-page cumulative report](diagnostics/pm12/acceptance/evidence-campaign-timing-20261113/README.md).
+
+Latest [assembly verification report](diagnostics/pm12/acceptance/evidence-campaign-assembly-20261113/README.md): two open findings (CFD monitor divider at11 and HDMI shared-SPI reset); this board is not unconditionally released.
