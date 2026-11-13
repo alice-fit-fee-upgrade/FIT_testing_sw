@@ -1,0 +1,5220 @@
+{
+  "started_utc": "2026-11-13T20:37:13.316864+00:00",
+  "trials": [
+    {
+      "divider": 600,
+      "address": null,
+      "before": {
+        "seconds": 108143.320934574,
+        "uptime": [
+          460906737,
+          23
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "samples": [
+        {
+          "seconds": 108143.322782736,
+          "uptime": [
+            460980841,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.328751817,
+          "uptime": [
+            461221793,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.335111131,
+          "uptime": [
+            461476622,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.341569822,
+          "uptime": [
+            461735413,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.347987725,
+          "uptime": [
+            461989581,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.353623949,
+          "uptime": [
+            462215370,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.359170084,
+          "uptime": [
+            462437612,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.364901732,
+          "uptime": [
+            462667454,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.370558225,
+          "uptime": [
+            462894059,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.376125728,
+          "uptime": [
+            463117112,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.381751513,
+          "uptime": [
+            463344666,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.387771007,
+          "uptime": [
+            463587186,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.394084122,
+          "uptime": [
+            463838997,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.400100021,
+          "uptime": [
+            464080145,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.406087195,
+          "uptime": [
+            464320030,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.412087921,
+          "uptime": [
+            464560602,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.418108063,
+          "uptime": [
+            464802738,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.424223947,
+          "uptime": [
+            465047230,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.430449791,
+          "uptime": [
+            465297552,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.436371502,
+          "uptime": [
+            465534093,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.44231567,
+          "uptime": [
+            465770047,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.447915191,
+          "uptime": [
+            465994871,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.453348371,
+          "uptime": [
+            466212953,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.458824687,
+          "uptime": [
+            466431819,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.464248904,
+          "uptime": [
+            466649213,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.469847344,
+          "uptime": [
+            466873898,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.475458729,
+          "uptime": [
+            467098407,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.481004724,
+          "uptime": [
+            467320666,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.486622431,
+          "uptime": [
+            467545794,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.492054932,
+          "uptime": [
+            467763866,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.497662647,
+          "uptime": [
+            467988701,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.503167614,
+          "uptime": [
+            468209333,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.508780542,
+          "uptime": [
+            468434051,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.514284281,
+          "uptime": [
+            468654645,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.519881523,
+          "uptime": [
+            468878776,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.525451099,
+          "uptime": [
+            469101882,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.530855174,
+          "uptime": [
+            469318562,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.536287149,
+          "uptime": [
+            469536271,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.541814218,
+          "uptime": [
+            469757750,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.547231403,
+          "uptime": [
+            469974984,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.555423385,
+          "uptime": [
+            470303151,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.560800442,
+          "uptime": [
+            470518678,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.566252165,
+          "uptime": [
+            470737161,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.572304278,
+          "uptime": [
+            470979691,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.578031876,
+          "uptime": [
+            471209432,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.583594556,
+          "uptime": [
+            471432261,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.589109997,
+          "uptime": [
+            471653304,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.594725156,
+          "uptime": [
+            471878666,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.600167666,
+          "uptime": [
+            472096786,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.608022535,
+          "uptime": [
+            472411497,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.613427882,
+          "uptime": [
+            472628182,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.618987004,
+          "uptime": [
+            472851134,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.624528235,
+          "uptime": [
+            473072800,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.630060917,
+          "uptime": [
+            473295219,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.635760461,
+          "uptime": [
+            473523137,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.64118315,
+          "uptime": [
+            473740324,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.646576301,
+          "uptime": [
+            473956503,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.651969951,
+          "uptime": [
+            474172633,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.657615864,
+          "uptime": [
+            474398945,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.663047703,
+          "uptime": [
+            474616649,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108143.668441848,
+          "uptime": [
+            474832775,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        }
+      ],
+      "after": {
+        "seconds": 108143.673832777,
+        "uptime": [
+          475048975,
+          23
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "hw": {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000004A01710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2108
+      },
+      "pll": {
+        "command": "@PLL",
+        "reply": "CDCE62005 20009D38\r\n",
+        "duration_s": 0.2108
+      },
+      "after_telemetry": {
+        "seconds": 108144.095979818,
+        "uptime": [
+          491969558,
+          23
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "restarted": false
+    },
+    {
+      "divider": 600,
+      "address": 0,
+      "before": {
+        "seconds": 108144.09845482,
+        "uptime": [
+          492066793,
+          23
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "samples": [
+        {
+          "seconds": 108144.10029338,
+          "uptime": [
+            492140459,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108144.105661437,
+          "uptime": [
+            492356312,
+            23
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108144.111219062,
+          "uptime": [
+            40192675,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        }
+      ],
+      "value": 18500,
+      "after": {
+        "seconds": 108145.117571755,
+        "uptime": [
+          40413392,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "hw": {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000008103710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2109
+      },
+      "pll": {
+        "command": "@PLL",
+        "reply": "CDCE62005 20009D38\r\n",
+        "duration_s": 0.2108
+      },
+      "after_telemetry": {
+        "seconds": 108145.539860392,
+        "uptime": [
+          57338440,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "restarted": true
+    },
+    {
+      "divider": 600,
+      "address": 0,
+      "before": {
+        "seconds": 108145.542138872,
+        "uptime": [
+          57428768,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "samples": [
+        {
+          "seconds": 108145.543844564,
+          "uptime": [
+            57497106,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.549194119,
+          "uptime": [
+            57712148,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.554628708,
+          "uptime": [
+            57929782,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.560099362,
+          "uptime": [
+            58149059,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.565602762,
+          "uptime": [
+            58369937,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.571053502,
+          "uptime": [
+            58588179,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.576554342,
+          "uptime": [
+            58808619,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.582047871,
+          "uptime": [
+            59028867,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.587575517,
+          "uptime": [
+            59250395,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.593053093,
+          "uptime": [
+            59470473,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.598711212,
+          "uptime": [
+            59697147,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.604163817,
+          "uptime": [
+            59915789,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.609740781,
+          "uptime": [
+            60138965,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.615150028,
+          "uptime": [
+            60356029,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.620723518,
+          "uptime": [
+            60579290,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.626316787,
+          "uptime": [
+            60803335,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.631870331,
+          "uptime": [
+            61025849,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.637383742,
+          "uptime": [
+            61246604,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.642925468,
+          "uptime": [
+            61468532,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.648634926,
+          "uptime": [
+            61697559,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.654181284,
+          "uptime": [
+            61919769,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.659802628,
+          "uptime": [
+            62145297,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.665185443,
+          "uptime": [
+            62360664,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.670745517,
+          "uptime": [
+            62583477,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.676140309,
+          "uptime": [
+            62799777,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.68173429,
+          "uptime": [
+            63024185,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.687158921,
+          "uptime": [
+            63241371,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.692659196,
+          "uptime": [
+            63462141,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.69816193,
+          "uptime": [
+            63682772,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.70372904,
+          "uptime": [
+            63905858,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.709160224,
+          "uptime": [
+            64123375,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.714709758,
+          "uptime": [
+            64345734,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.720121939,
+          "uptime": [
+            64562472,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.725633714,
+          "uptime": [
+            64783674,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.731043608,
+          "uptime": [
+            65000183,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.736444501,
+          "uptime": [
+            65216761,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.741854646,
+          "uptime": [
+            65434241,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.747343689,
+          "uptime": [
+            65653492,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.752745327,
+          "uptime": [
+            65869895,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.758132543,
+          "uptime": [
+            66085919,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.763607401,
+          "uptime": [
+            66305217,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.769050562,
+          "uptime": [
+            66523875,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.774452868,
+          "uptime": [
+            66739915,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.779844885,
+          "uptime": [
+            66955976,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.785209899,
+          "uptime": [
+            67171051,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.790799606,
+          "uptime": [
+            67395490,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.796319603,
+          "uptime": [
+            67616639,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.801954667,
+          "uptime": [
+            67842465,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.807601538,
+          "uptime": [
+            68068756,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.813047601,
+          "uptime": [
+            68287052,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.81847296,
+          "uptime": [
+            68504308,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.824019165,
+          "uptime": [
+            68726391,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.82954449,
+          "uptime": [
+            68947887,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.835046294,
+          "uptime": [
+            69168434,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.840550226,
+          "uptime": [
+            69388996,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.846043064,
+          "uptime": [
+            69609158,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.851552676,
+          "uptime": [
+            69829912,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.857034467,
+          "uptime": [
+            70049674,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.862555183,
+          "uptime": [
+            70270930,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.867948682,
+          "uptime": [
+            70487039,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.87334151,
+          "uptime": [
+            70703292,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.87887729,
+          "uptime": [
+            70925118,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.88431848,
+          "uptime": [
+            71143185,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108145.889836485,
+          "uptime": [
+            71364701,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        }
+      ],
+      "value": 18500,
+      "after": {
+        "seconds": 108145.895217631,
+        "uptime": [
+          71580293,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "hw": {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000007E00710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2108
+      },
+      "pll": {
+        "command": "@PLL",
+        "reply": "CDCE62005 20009D38\r\n",
+        "duration_s": 0.2108
+      },
+      "after_telemetry": {
+        "seconds": 108146.317577873,
+        "uptime": [
+          88508061,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "restarted": false
+    },
+    {
+      "divider": 600,
+      "address": 1,
+      "before": {
+        "seconds": 108146.321252356,
+        "uptime": [
+          88654516,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "samples": [
+        {
+          "seconds": 108146.323906364,
+          "uptime": [
+            88760892,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.329327781,
+          "uptime": [
+            88978633,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.334912835,
+          "uptime": [
+            89202326,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.340528943,
+          "uptime": [
+            89427427,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.34604137,
+          "uptime": [
+            89648336,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.351718636,
+          "uptime": [
+            89875943,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.357298799,
+          "uptime": [
+            90099550,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.362915889,
+          "uptime": [
+            90325462,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.368595207,
+          "uptime": [
+            90553245,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.374200764,
+          "uptime": [
+            90778032,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.379825376,
+          "uptime": [
+            91003351,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.385373769,
+          "uptime": [
+            91225646,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.391008733,
+          "uptime": [
+            91451264,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.396543119,
+          "uptime": [
+            91673090,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.402051315,
+          "uptime": [
+            91893529,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.407572636,
+          "uptime": [
+            92114678,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.413186301,
+          "uptime": [
+            92339726,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.418798595,
+          "uptime": [
+            92564405,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.424393959,
+          "uptime": [
+            92788620,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.429975538,
+          "uptime": [
+            93012297,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.435605465,
+          "uptime": [
+            93238438,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.441166416,
+          "uptime": [
+            93460852,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.44678985,
+          "uptime": [
+            93686240,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.4521777,
+          "uptime": [
+            93902077,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.457709817,
+          "uptime": [
+            94123834,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.463109297,
+          "uptime": [
+            94340791,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.468566793,
+          "uptime": [
+            94559193,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.474074948,
+          "uptime": [
+            94779856,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.479592601,
+          "uptime": [
+            95000813,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.485048681,
+          "uptime": [
+            95219562,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.490551554,
+          "uptime": [
+            95440380,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.496049325,
+          "uptime": [
+            95660734,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.501600381,
+          "uptime": [
+            95883270,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.507046489,
+          "uptime": [
+            96101459,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.512604559,
+          "uptime": [
+            96324321,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.518047426,
+          "uptime": [
+            96542131,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.523558299,
+          "uptime": [
+            96762955,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.529042485,
+          "uptime": [
+            96982733,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.534560923,
+          "uptime": [
+            97203920,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.539976036,
+          "uptime": [
+            97421020,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.545352057,
+          "uptime": [
+            97637236,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.550853424,
+          "uptime": [
+            97857639,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.556379477,
+          "uptime": [
+            98078425,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.561809261,
+          "uptime": [
+            98296806,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.567209336,
+          "uptime": [
+            98512574,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.572771749,
+          "uptime": [
+            98735382,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.578255965,
+          "uptime": [
+            98955150,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.583976928,
+          "uptime": [
+            99184646,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.589635223,
+          "uptime": [
+            99411977,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.595284318,
+          "uptime": [
+            99637803,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.600905666,
+          "uptime": [
+            99863075,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.606530804,
+          "uptime": [
+            100088480,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.612044611,
+          "uptime": [
+            100309565,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.617759197,
+          "uptime": [
+            100538453,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.623275,
+          "uptime": [
+            100760156,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.629013299,
+          "uptime": [
+            100989390,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.634605007,
+          "uptime": [
+            101213536,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.640045424,
+          "uptime": [
+            101431570,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.64562186,
+          "uptime": [
+            101655060,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.651052752,
+          "uptime": [
+            101872695,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.656641185,
+          "uptime": [
+            102096633,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.662135961,
+          "uptime": [
+            102316934,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.66775154,
+          "uptime": [
+            102541982,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108146.673397447,
+          "uptime": [
+            102769019,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        }
+      ],
+      "value": 19785,
+      "after": {
+        "seconds": 108146.679007111,
+        "uptime": [
+          102993096,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "hw": {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000005C01710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2107
+      },
+      "pll": {
+        "command": "@PLL",
+        "reply": "CDCE62005 20009D38\r\n",
+        "duration_s": 0.2108
+      },
+      "after_telemetry": {
+        "seconds": 108147.101160407,
+        "uptime": [
+          119913083,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "restarted": false
+    },
+    {
+      "divider": 600,
+      "address": 1,
+      "before": {
+        "seconds": 108147.106136259,
+        "uptime": [
+          120111448,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "samples": [
+        {
+          "seconds": 108147.109413145,
+          "uptime": [
+            120242843,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108147.114812842,
+          "uptime": [
+            120459736,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108147.120490498,
+          "uptime": [
+            40219953,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        }
+      ],
+      "value": 19785,
+      "after": {
+        "seconds": 108148.127184515,
+        "uptime": [
+          40444563,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "hw": {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000008F03710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2108
+      },
+      "pll": {
+        "command": "@PLL",
+        "reply": "CDCE62005 20009D38\r\n",
+        "duration_s": 0.2109
+      },
+      "after_telemetry": {
+        "seconds": 108148.54963513,
+        "uptime": [
+          57376363,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "restarted": true
+    },
+    {
+      "divider": 600,
+      "address": 2,
+      "before": {
+        "seconds": 108148.56103661,
+        "uptime": [
+          57832275,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "samples": [
+        {
+          "seconds": 108148.564301473,
+          "uptime": [
+            57963237,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.56966037,
+          "uptime": [
+            58178359,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.575191947,
+          "uptime": [
+            58400047,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.580792876,
+          "uptime": [
+            58624626,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.586386014,
+          "uptime": [
+            58848756,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.5919753,
+          "uptime": [
+            59073366,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.597594432,
+          "uptime": [
+            59298446,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.60304669,
+          "uptime": [
+            59516848,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.608655168,
+          "uptime": [
+            59741719,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.614159018,
+          "uptime": [
+            59962265,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.619761552,
+          "uptime": [
+            60186513,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.625194512,
+          "uptime": [
+            60404062,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.630765703,
+          "uptime": [
+            60627377,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.636251571,
+          "uptime": [
+            60847278,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.641832614,
+          "uptime": [
+            61070940,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.647289216,
+          "uptime": [
+            61289615,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.652873635,
+          "uptime": [
+            61513398,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.658381251,
+          "uptime": [
+            61734131,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.663957311,
+          "uptime": [
+            61957584,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.669555297,
+          "uptime": [
+            62181992,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.675045799,
+          "uptime": [
+            62402085,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.68065011,
+          "uptime": [
+            62626647,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.686139121,
+          "uptime": [
+            62846718,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.691764389,
+          "uptime": [
+            63072683,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.697289226,
+          "uptime": [
+            63294077,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.702885714,
+          "uptime": [
+            63518394,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.708444155,
+          "uptime": [
+            63741137,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.714049997,
+          "uptime": [
+            63965822,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.719651885,
+          "uptime": [
+            64189915,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.725142457,
+          "uptime": [
+            64409890,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.73073162,
+          "uptime": [
+            64633983,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.736156981,
+          "uptime": [
+            64851238,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.741745319,
+          "uptime": [
+            65075294,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.747345562,
+          "uptime": [
+            65299717,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.752931426,
+          "uptime": [
+            65523553,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.75848747,
+          "uptime": [
+            65746259,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.764025215,
+          "uptime": [
+            65968187,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.769609719,
+          "uptime": [
+            66192024,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.775043446,
+          "uptime": [
+            66409798,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.780558556,
+          "uptime": [
+            66631102,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.786051398,
+          "uptime": [
+            66850987,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.79164289,
+          "uptime": [
+            67075602,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.797058636,
+          "uptime": [
+            67292495,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.802590879,
+          "uptime": [
+            67514268,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.808022945,
+          "uptime": [
+            67731780,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.813619089,
+          "uptime": [
+            67955996,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.819048692,
+          "uptime": [
+            68173460,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.824564135,
+          "uptime": [
+            68394471,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.830039783,
+          "uptime": [
+            68613956,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.835425201,
+          "uptime": [
+            68829793,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.840905858,
+          "uptime": [
+            69050233,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.846499401,
+          "uptime": [
+            69273653,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.85212939,
+          "uptime": [
+            69499287,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.857606726,
+          "uptime": [
+            69719603,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.863116139,
+          "uptime": [
+            69939611,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.868580506,
+          "uptime": [
+            70158563,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.874110554,
+          "uptime": [
+            70380304,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.879567769,
+          "uptime": [
+            70599064,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.885106802,
+          "uptime": [
+            70821082,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.890839479,
+          "uptime": [
+            71051026,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.896254816,
+          "uptime": [
+            71268212,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.901720002,
+          "uptime": [
+            71487350,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.907160201,
+          "uptime": [
+            71705385,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108148.912648852,
+          "uptime": [
+            71925361,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        }
+      ],
+      "value": 1,
+      "after": {
+        "seconds": 108148.918108136,
+        "uptime": [
+          72145038,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "hw": {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000007F00710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2109
+      },
+      "pll": {
+        "command": "@PLL",
+        "reply": "CDCE62005 20009D38\r\n",
+        "duration_s": 0.2109
+      },
+      "after_telemetry": {
+        "seconds": 108149.340758938,
+        "uptime": [
+          89083627,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "restarted": false
+    },
+    {
+      "divider": 600,
+      "address": 2,
+      "before": {
+        "seconds": 108149.352588573,
+        "uptime": [
+          89556642,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "samples": [
+        {
+          "seconds": 108149.356447884,
+          "uptime": [
+            89711358,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.36184018,
+          "uptime": [
+            89928646,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.368799173,
+          "uptime": [
+            90207364,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.374190346,
+          "uptime": [
+            90423025,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.379618875,
+          "uptime": [
+            90642931,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.385145607,
+          "uptime": [
+            90862400,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.390610612,
+          "uptime": [
+            91081298,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.398029993,
+          "uptime": [
+            91380623,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.405994868,
+          "uptime": [
+            91698299,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.411395966,
+          "uptime": [
+            91914408,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.41678564,
+          "uptime": [
+            92130555,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.422190669,
+          "uptime": [
+            92347171,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.427596539,
+          "uptime": [
+            92563787,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.433045515,
+          "uptime": [
+            92781752,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.438645484,
+          "uptime": [
+            93006832,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.444221842,
+          "uptime": [
+            93229608,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.449736169,
+          "uptime": [
+            93451050,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.455150919,
+          "uptime": [
+            93667511,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.460741585,
+          "uptime": [
+            93892244,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.466181247,
+          "uptime": [
+            94109985,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.472308721,
+          "uptime": [
+            94356084,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.477928817,
+          "uptime": [
+            94580939,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.483587674,
+          "uptime": [
+            94807768,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.489048558,
+          "uptime": [
+            95026944,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.494678909,
+          "uptime": [
+            95252525,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.500169859,
+          "uptime": [
+            95472725,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.505956223,
+          "uptime": [
+            95704765,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.513087258,
+          "uptime": [
+            95990378,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.519419454,
+          "uptime": [
+            96244130,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.524977673,
+          "uptime": [
+            96467060,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.531018585,
+          "uptime": [
+            96708262,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.541080936,
+          "uptime": [
+            97111347,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.547387459,
+          "uptime": [
+            97364805,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.554512371,
+          "uptime": [
+            97649911,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.560081612,
+          "uptime": [
+            97873380,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.565539723,
+          "uptime": [
+            98092471,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.572154018,
+          "uptime": [
+            98357684,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.581073527,
+          "uptime": [
+            98715548,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.588013601,
+          "uptime": [
+            98993209,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.597688742,
+          "uptime": [
+            99380192,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.607015597,
+          "uptime": [
+            99754588,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.612404433,
+          "uptime": [
+            99970835,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.618128859,
+          "uptime": [
+            100200037,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.624044926,
+          "uptime": [
+            100436599,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.629884015,
+          "uptime": [
+            100671337,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.635522431,
+          "uptime": [
+            100897318,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.641006911,
+          "uptime": [
+            101117554,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.646645285,
+          "uptime": [
+            101342719,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.65211949,
+          "uptime": [
+            101562279,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.657709075,
+          "uptime": [
+            101786126,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.66327299,
+          "uptime": [
+            102009584,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.668931373,
+          "uptime": [
+            102236168,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.674578587,
+          "uptime": [
+            102462324,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.680081559,
+          "uptime": [
+            102682796,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.685678233,
+          "uptime": [
+            102907460,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.691273573,
+          "uptime": [
+            103131729,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.696886467,
+          "uptime": [
+            103356014,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108149.70240628,
+          "uptime": [
+            103577301,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        }
+      ],
+      "value": 1,
+      "after": {
+        "seconds": 108149.707988447,
+        "uptime": [
+          103801571,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "hw": {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000005701710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2108
+      },
+      "pll": {
+        "command": "@PLL",
+        "reply": "CDCE62005 20009D38\r\n",
+        "duration_s": 0.2108
+      },
+      "after_telemetry": {
+        "seconds": 108150.13045112,
+        "uptime": [
+          120733232,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "restarted": false
+    },
+    {
+      "divider": 2400,
+      "address": 0,
+      "before": {
+        "seconds": 108150.142986953,
+        "uptime": [
+          121234675,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "samples": [
+        {
+          "seconds": 108150.148317024,
+          "uptime": [
+            121448224,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108150.153682186,
+          "uptime": [
+            121663837,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108150.15914682,
+          "uptime": [
+            40204750,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        }
+      ],
+      "value": 18500,
+      "after": {
+        "seconds": 108151.16590105,
+        "uptime": [
+          40430640,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "hw": {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000008103710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2107
+      },
+      "pll": {
+        "command": "@PLL",
+        "reply": "CDCE62005 20009D38\r\n",
+        "duration_s": 0.2108
+      },
+      "after_telemetry": {
+        "seconds": 108151.588181176,
+        "uptime": [
+          57355651,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "restarted": true
+    },
+    {
+      "divider": 2400,
+      "address": 1,
+      "before": {
+        "seconds": 108151.601181681,
+        "uptime": [
+          57875845,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "samples": [
+        {
+          "seconds": 108151.606911888,
+          "uptime": [
+            58105309,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108151.612282884,
+          "uptime": [
+            58321711,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108151.61791035,
+          "uptime": [
+            40174818,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        }
+      ],
+      "value": 19785,
+      "after": {
+        "seconds": 108152.623695745,
+        "uptime": [
+          40400922,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "hw": {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=89000001000000C301720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2109
+      },
+      "pll": {
+        "command": "@PLL",
+        "reply": "CDCE62005 20009D38\r\n",
+        "duration_s": 0.2108
+      },
+      "after_telemetry": {
+        "seconds": 108153.046072837,
+        "uptime": [
+          57329292,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "restarted": true
+    },
+    {
+      "divider": 2400,
+      "address": 2,
+      "before": {
+        "seconds": 108153.062823424,
+        "uptime": [
+          57999668,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "samples": [
+        {
+          "seconds": 108153.068505578,
+          "uptime": [
+            58227238,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108153.073871054,
+          "uptime": [
+            58443128,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        },
+        {
+          "seconds": 108153.079525686,
+          "uptime": [
+            40174096,
+            0
+          ],
+          "mcu": [
+            0,
+            33
+          ],
+          "writes": 0,
+          "enable": 1,
+          "state": 9
+        }
+      ],
+      "value": 1,
+      "after": {
+        "seconds": 108154.086139165,
+        "uptime": [
+          40394866,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "hw": {
+        "command": "@HW",
+        "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=89000001000000E803710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+        "duration_s": 0.2109
+      },
+      "pll": {
+        "command": "@PLL",
+        "reply": "CDCE62005 20009D38\r\n",
+        "duration_s": 0.2107
+      },
+      "after_telemetry": {
+        "seconds": 108154.508562661,
+        "uptime": [
+          57325609,
+          0
+        ],
+        "mcu": [
+          0,
+          33
+        ],
+        "writes": 0,
+        "enable": 1,
+        "state": 9
+      },
+      "restarted": true
+    }
+  ],
+  "pgood": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=89000001000000B802710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2113
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=89000001000000EE00710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2114
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000000B03720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2119
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000004101720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2117
+    }
+  ],
+  "pll_before": {
+    "command": "@PLL",
+    "reply": "CDCE62005 20009D38\r\n",
+    "duration_s": 0.2125
+  },
+  "hw_before": {
+    "command": "@HW",
+    "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000007C03710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+    "duration_s": 0.2121
+  },
+  "final": {
+    "seconds": 108154.524833497,
+    "uptime": [
+      57976694,
+      0
+    ],
+    "mcu": [
+      0,
+      33
+    ],
+    "writes": 0,
+    "enable": 1,
+    "state": 9
+  },
+  "pgood_after": {
+    "command": "@HW",
+    "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000003502710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+    "duration_s": 0.2107
+  },
+  "finished_utc": "2026-11-13T20:37:26.796275+00:00"
+}

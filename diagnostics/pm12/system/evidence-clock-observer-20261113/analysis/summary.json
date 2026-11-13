@@ -1,0 +1,92 @@
+{
+  "watch_hz_nominal_inferred": 40078700.0,
+  "clock_warning": "CSR383 declares120236100 but watch/SYS ratio and SCK spacing imply watch about40.0787MHz. This is not a calibrated frequency-counter measurement.",
+  "trials": [
+    {
+      "trace": "trace00.json",
+      "address": null,
+      "status": 4106,
+      "hreset": false,
+      "sck_edges": 0,
+      "sck_half_period_ticks": [],
+      "max_ref_heartbeat_age_ticks": 1,
+      "fixed_lock_fall_tick": null,
+      "fixed_lock_rise_tick": null
+    },
+    {
+      "trace": "trace01.json",
+      "address": 0,
+      "status": 274,
+      "hreset": false,
+      "sck_edges": 64,
+      "sck_half_period_ticks": [
+        200
+      ],
+      "max_ref_heartbeat_age_ticks": 102,
+      "fixed_lock_fall_tick": null,
+      "fixed_lock_rise_tick": null
+    },
+    {
+      "trace": "trace02.json",
+      "address": 1,
+      "status": 12582,
+      "hreset": true,
+      "sck_edges": 64,
+      "sck_half_period_ticks": [
+        200
+      ],
+      "max_ref_heartbeat_age_ticks": 103,
+      "fixed_lock_fall_tick": 844099,
+      "fixed_lock_rise_tick": 844440,
+      "delay_from_sel_low_ticks": 381274,
+      "delay_us_nominal": 9513.132910997612,
+      "lock_low_watch_ticks": 341,
+      "lock_low_us_nominal": 8.508259998453044,
+      "sys_release_after_lock_ticks": 2
+    },
+    {
+      "trace": "trace03.json",
+      "address": 2,
+      "status": 286,
+      "hreset": false,
+      "sck_edges": 64,
+      "sck_half_period_ticks": [
+        200
+      ],
+      "max_ref_heartbeat_age_ticks": 102,
+      "fixed_lock_fall_tick": null,
+      "fixed_lock_rise_tick": null
+    },
+    {
+      "trace": "trace04.json",
+      "address": 0,
+      "status": 12574,
+      "hreset": true,
+      "sck_edges": 64,
+      "sck_half_period_ticks": [
+        200
+      ],
+      "max_ref_heartbeat_age_ticks": 103,
+      "fixed_lock_fall_tick": 883757,
+      "fixed_lock_rise_tick": 884097,
+      "delay_from_sel_low_ticks": 393818,
+      "delay_us_nominal": 9826.11711457707,
+      "lock_low_watch_ticks": 340,
+      "lock_low_us_nominal": 8.48330908936667,
+      "sys_release_after_lock_ticks": 2
+    },
+    {
+      "trace": "trace05.json",
+      "address": 1,
+      "status": 286,
+      "hreset": false,
+      "sck_edges": 64,
+      "sck_half_period_ticks": [
+        200
+      ],
+      "max_ref_heartbeat_age_ticks": 102,
+      "fixed_lock_fall_tick": null,
+      "fixed_lock_rise_tick": null
+    }
+  ]
+}

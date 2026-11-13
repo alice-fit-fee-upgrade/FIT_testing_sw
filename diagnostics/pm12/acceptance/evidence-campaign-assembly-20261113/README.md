@@ -1,6 +1,6 @@
 # Assembly verification, fitted group9–12 — 2026-11-13
 
-[52-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
+[55-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
 
 Board PM12-K7-3A17A1B402212223. USB stimulus stays on physical10. This is assembly verification, not an unconditional board release: 30 selected cases,28 PASS,2 FAIL,59 NOT_MEASURED.
 
@@ -18,3 +18,5 @@ Final state: diagnostic SRAM restored, MCU power protection untouched, DIO outpu
 Reproduce offline: extract campaign-raw.tar.gz to a NEW directory; run campaign_report.py (see --help), then assembly_appendix.py --report REPORT --work EXTRACTED/batches/ch09-12-attempt001/working --latex /path/to/tectonic. Matplotlib is required. Alternatively edit the supplied TeX and run tectonic report.tex in this directory. Figures are generated from raw inputs; no hardware access is required. Test results:37acceptance and46CFD tests PASS.
 
 Later follow-up: the PDF now prepends an erratum. Delayed SPI-related SYS resets also occur with outputs held driven. Earlier release attribution is superseded; see [raw follow-up](../../system/evidence-held-spi-20261113/README.md). The selected historical case results and raw archive are unchanged. Current direction/idle state is held, rather than released.
+
+Further direct clock-observer evidence is prepended to the PDF: MMCM LOCK/SYS reset captured, without a proven FIN/external-PLL root cause. Nominal watch time is40.0787MHz, contrary to source120MHz metadata. [Raw follow-up](../../system/evidence-clock-observer-20261113/README.md).

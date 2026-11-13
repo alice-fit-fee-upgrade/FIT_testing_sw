@@ -1,0 +1,42 @@
+{
+  "address": null,
+  "uptime_before": [
+    53140150,
+    0
+  ],
+  "mcu_before": [
+    0,
+    0
+  ],
+  "armed_status": 4105,
+  "status": 4106,
+  "count": 2,
+  "raw_words": [
+    0,
+    67,
+    2,
+    65795
+  ],
+  "uptime_after": [
+    174170534,
+    0
+  ],
+  "mcu_after": [
+    0,
+    0
+  ],
+  "events": [
+    {
+      "tick": 0,
+      "state": 67,
+      "ref_age": 0,
+      "max_ref_age": 0
+    },
+    {
+      "tick": 2,
+      "state": 3,
+      "ref_age": 2,
+      "max_ref_age": 1
+    }
+  ]
+}

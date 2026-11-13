@@ -58,7 +58,7 @@ latches after releasing outputs. At the current baseline both cards are inputs.
 PM HDMI SPI is the isolated diagnostic map, not production peripheral control:
 active-high select, falling-edge shift, 16-bit header followed by 16-bit data.
 Signatures at00/01 are4844/4d49; register02 reports lock.
-**HSEL/HSCK/HMOSI/HMISO are shared with ATxmega PD4/5/6/7.** The host
+**Shared MCU pins (schematic sheet5): HSEL=PD4, HMOSI=PD5, HMISO=PD6, HSCK=PD7.** The host
 rejects writes, nonzero read payloads and every address outside0/1/2 before
 issuing a transaction. The FPGA also has scratch40/count41/complement42, but
 these addresses are NOT qualified for use with the live MCU. Earlier arbitrary
@@ -165,3 +165,7 @@ and TDC ends with a frozen quiet capture. MCU/CPLD/configuration flash images
 were not programmed. External DAC and CFD analog controls were not written.
 The source archive includes the station driver and generated Kasli RTL/XDC;
 regeneration matches the final routed input RTL/XDC byte-for-byte.
+
+See [FIN input-state analysis](FIN_INPUTS.md) for termination, fail-safe limits and the difference between held CSR state and continuously defined physical inputs.
+
+[Reset-independent observer evidence](evidence-clock-observer-20261113/README.md): direct MMCM LOCK loss/SYS reset recorded in2of5SPI trials, with64sampled SCK transitions per frame. Golden restored, Kasli held driven. Watch frequency metadata120MHz disagrees with the observed≈40MHz ratio; no PLL outputs changed. FIN/electrical root cause remains open.

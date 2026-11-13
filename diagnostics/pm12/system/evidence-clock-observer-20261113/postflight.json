@@ -1,0 +1,44 @@
+{
+  "identity": [
+    1347228162,
+    65538,
+    3351522600
+  ],
+  "before": [
+    2184450092,
+    2
+  ],
+  "adc_status": [
+    13
+  ],
+  "after": [
+    2204497363,
+    2
+  ],
+  "held": [
+    1,
+    9
+  ],
+  "pgood": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=89000001000000D903700103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000001002700103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2112
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000004600700103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2114
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000006402700103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2112
+    }
+  ]
+}

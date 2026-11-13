@@ -1,0 +1,8 @@
+{
+  "pass": true,
+  "bit_sha256": "b43506a4fee3e456ddb6b4e10f6916969ee605b8b87496fc2f5abe044d0f7324",
+  "wns_ns": 0.034,
+  "whs_ns": 0.044,
+  "drc": "Only baseline RTSTAT-10 warning",
+  "simulation": "PASS startup clear, SYS reset persistence, rearm, short-pulse latch"
+}
