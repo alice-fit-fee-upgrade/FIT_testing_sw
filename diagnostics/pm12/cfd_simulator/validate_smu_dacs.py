@@ -1,6 +1,7 @@
 """Validate completeness, sample status, DAC restore receipts and safe final state."""
 import argparse
 import csv
+import datetime
 import json
 from pathlib import Path
 from smu_voltage import parse_voltage
@@ -8,7 +9,8 @@ from smu_voltage import parse_voltage
 
 def validate(directory):
     report = json.loads((directory / 'scan-report.json').read_text())
-    rows = list(csv.DictReader((directory / 'samples.csv').open()))
+    with (directory/'samples.csv').open() as stream:
+        rows=list(csv.DictReader(stream))
     assert report.get('scan_complete') and not report.get('error'), 'Scan did not finish'
     assert len(rows) == len(report['scanned_modules']) * 3 * 101 * 3
     assert len(rows) == len(report['measurements'])
@@ -23,7 +25,24 @@ def validate(directory):
     for r in rows:
         parse_voltage(','.join(r[k] for k in ('volts','instrument_time','status')))
     assert report['final'] == {'OUTP?':'0','OUTP:ON:AUTO?':'0','OUTP:OFF:MODE?':'HIZ'}
-    assert set(report['final_tca'].values()) == {0}
+    post_path=directory/'post-cleanup.json'
+    post=None
+    if post_path.exists():
+        post=json.loads(post_path.read_text())
+        assert post['pass_'] is True
+        assert post['identity']==report['identity']
+        assert set(post['connected_modules'])==set(report['connected_modules'])
+        assert set(post['monitor_GPIOA'])=={str(ch) for ch in report['connected_modules']}
+        assert all(type(v) is int and v&8 for v in post['monitor_GPIOA'].values())
+        assert set(post['final_tca'].values())=={0}
+        settings=post['smu_settings']
+        assert settings['OUTP?']=='0' and settings['OUTP:ON:AUTO?']=='0' and settings['OUTP:OFF:MODE?']=='HIZ'
+        assert settings['SOUR:FUNC:MODE?']=='CURR' and float(settings['SOUR:CURR?'])==0 and settings['SENS:REM?']=='0'
+        assert int(settings['SYST:ERR?'].split(',')[0])==0
+        assert datetime.datetime.fromisoformat(post['started_utc'])>=datetime.datetime.fromisoformat(report['finished_utc'])
+    else:
+        assert set(report['final_tca'].values()) == {0}
+
     restores = [r['reply'].strip() for r in report['restoration']]
     assert len(restores) == len(report['scanned_modules']) * 3
     assert all(restores.count(f'DAC SENT {d} 0000') == len(report['scanned_modules']) for d in 'BCD')
@@ -33,6 +52,7 @@ def validate(directory):
             assert len(matches)==1 and matches[0]['reply'].strip()==f'DAC SENT {dac} 0000'
     return dict(pass_=True, samples=len(rows), transfer_curves=len(report['scanned_modules'])*3,
                 points_per_curve=101, samples_per_point=3, safe_final_state=True,
+                explicit_post_cleanup=post is not None, original_tca_masks=report['final_tca'],
                 scope='Acquisition completeness/status/restore checks; no calibrated analog acceptance limits')
 
 

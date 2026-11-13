@@ -1,3 +1,5 @@
+[Latest: internal DAC B/C/D scans on channels9–12](evidence-campaign-smu-20261113/README.md).
+
 [First measured campaign channel12: ADC A/B and integrators](evidence-campaign-ch12-20261113/README.md).
 
 [Active Optiplex campaign and next-fitting handoff](ACTIVE_CAMPAIGN.md).

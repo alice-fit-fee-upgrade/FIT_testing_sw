@@ -85,3 +85,5 @@ transfer scans do not imply exhaustive INL/DNL, calibrated jitter or complete
 board acceptance. Read each validation record alongside its plots and report.
 
 2026-11-13: [four-CFD campaign, first measured channel12](diagnostics/pm12/acceptance/evidence-campaign-ch12-20261113/README.md), with editable LaTeX, raw buffers and explicit twelve-channel coverage.
+
+[2026-11-13: SMU DAC transfer scans on physical channels9–12, with combined27-page LaTeX report](diagnostics/pm12/acceptance/evidence-campaign-smu-20261113/README.md).

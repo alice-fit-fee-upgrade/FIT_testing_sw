@@ -70,3 +70,16 @@ do not bypass the mismatch or silently merge different versions.
 
 [Campaign procedure and CLI](CAMPAIGN.md). Earlier preliminary channel12 and
 12/10/8/6 measurements were not imported as new campaign data.
+
+## Completed SMU scans on the current fitting
+
+Internal DAC B/C/D transfer tests now PASS on9,10,11,12:12curves,
+101codes/curve and3fresh READ? samples per point. Keysight B2910BL
+MY63320299, Force HI/LO local sensing,0A,20V/1PLC. First attempt is retained
+as INCOMPLETE after process termination without final metadata. Second attempt
+is selected explicitly after raw validation and independent post-cleanup.
+The original restored TCA masks(0,8) are retained in raw metadata; post-cleanup
+explicitly cleared both to0. All monitor muxes inhibited, SMU OFF/HIZ, exercised
+B/C/D sent0000; phase DAC-A and external MOD-DAC-28 were not written.
+No USB cable move was announced: both remain declared on12. ADC/integrator
+coverage for9–11 is still missing. See[evidence](evidence-campaign-smu-20261113/README.md).

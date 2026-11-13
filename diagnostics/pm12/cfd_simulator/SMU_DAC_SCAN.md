@@ -79,3 +79,77 @@ no SCPI errors; four muxes inhibited, both TCA masks0, all9 exercised DACs
 restored to raw0000. Phase DAC A and unrelated GPIO were preserved.
 
 For new1–4/5–8/9–12 fittings, use the [campaign workflow](../acceptance/CAMPAIGN.md). The 10November SMU report are historical examples; `report_smu_dacs.py` refuses other fitted/scanned channel sets instead of mislabeling them. New batch reports use `campaign_report.py`.
+
+## Four-channel campaign fitting9–12
+
+The currently connected monitor instrument is again Keysight B2910BL,
+MY63320299; identify it before use even if it is called "Keithley" verbally.
+The previous Force HI/LO,0A/local-sense authorization and connection apply.
+All four physical monitor outputs share the wire; inhibit9/10/11/12 before
+selecting any one. USB ADC/integrator injection remains separately on12 and
+is not needed for these internal DAC voltage scans.
+
+```sh
+/home/codex-hil/kasli-diot-bringup/.venv/bin/python \
+ diagnostics/pm12/cfd_simulator/smu_dac_sweep.py \
+ --connected 9 10 11 12 --channels 9 10 11 12 \
+ --confirm-force-voltmeter --out /absolute/NEW-SMU-SCAN
+```
+
+The runner first checks three fresh readings of the1.3V monitor on each fitted
+module (plausibility0.9..1.6V), with all other monitor outputs inhibited.
+It then acquires12curves/3636samples:101codes and3reads for B/C/D per module.
+Phase DAC-A is untouched. B/C/D finish at0000, monitor outputs inhibited,
+SMU OFF/HIZ. External MOD-DAC-28 outputs are not changed by this script.
+
+`campaign_smu_adapter.py` independently checks native completeness/status,
+CSV against JSON, fresh READ? receipts, producer source hashes and every
+reference check. It creates one receipt per physical channel with B/C/D
+curves. Explicit functional limits: span within5% of nominal schematic
+scaling, reverse step at most0.2mV, repeat standard deviation at most1mV.
+These are assembly screening limits, not a metrology certificate.
+
+```sh
+python3 diagnostics/pm12/cfd_simulator/validate_smu_dacs.py /absolute/SCAN
+/srv/codex-hil-nvme/tool-venvs/fit-measurements/bin/python \
+ diagnostics/pm12/cfd_simulator/plot_smu_dacs.py /absolute/SCAN
+python3 diagnostics/pm12/acceptance/campaign_smu_adapter.py \
+ --source /absolute/SCAN --out /absolute/NEW-NORMALIZED \
+ --root /absolute/CAMPAIGN --batch ch09-12-attempt001
+```
+
+Import each generated ch09..ch12 folder with `campaign.py record`. Generate
+one new campaign report after all four imports; matching DAC curves overlay
+all measured physical channels. Preserve the previous report as a snapshot.
+
+The runner now atomically checkpoints metadata at curve boundaries and every20
+points, flushes raw CSV at every point, and routes SIGTERM through cleanup.
+The identified SMU is brought to OFF/HIZ before touching shared monitor routes.
+Between curves only the previously selected mux needs disabling: all other
+muxes remain inhibited from initialization under the exclusive board lease;
+no unrelated GPIO is written. Output-state/auto-on checks run per point, with
+three fresh READ? acquisitions retained. Initial and final full-inventory mux
+inhibition/readbacks remain in place. The0.1s settling,1PLC and three-sample
+protocol are unchanged.
+
+The first9–12 attempt retained all CSV rows but was terminated before writing
+its final metadata; it is explicitly INCOMPLETE. The independent second scan
+supplies selected coverage, with the first attempt retained in report history.
+
+Before importing the new campaign method, run explicit post-scan verification:
+
+```sh
+/home/codex-hil/kasli-diot-bringup/.venv/bin/python \
+ diagnostics/pm12/cfd_simulator/smu_finish_state.py \
+ --directory /absolute/SCAN --connected 9 10 11 12
+```
+
+This separately records the identified meter's OFF/HIZ/0A/local-sense state,
+checks every monitor inhibit pin and explicitly clears both upstream TCA masks.
+It never rewrites the acquisition receipt. If the scan restored an initially
+nonzero TCA mask, validation retains that original observation and requires the
+later verified correction. Use a new scan directory on repeats; do not overwrite
+an existing post-cleanup receipt. After a previously interrupted session, clear
+and verify incoming TCA masks before the next acquisition.
+
+Latest [four-channel measured report and raw campaign](../acceptance/evidence-campaign-smu-20261113/README.md).
