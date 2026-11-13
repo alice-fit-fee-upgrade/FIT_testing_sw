@@ -1,0 +1,12 @@
+{
+  "after-gates.json": "a8ff2adfb4e4231c66294cc1a7f85ccade740cd6afc22270c0aa692ff440cfe4",
+  "after-nv.log": "200e772ff7b3eb4308e962d01a2cd6b9bbfbb02b111decc0d1395795769c4f1f",
+  "before-gates.json": "dc8a730b8edd4e8bc4e0c7f1cd1487413a4200dd05ce7643584fb8cc6a91c5b4",
+  "before-nv.log": "e2249e844e253ead46001fbb3cdd99230e0d1392c2642d7879a1f9b2240e0871",
+  "console.txt": "aeaaa5b9bdc00897db55751975711597a7ac5b034d8cab64d5f32412fa71ea6f",
+  "dna-jtag.log": "a2355fb1bd3eef284f2c67e777c04723f6dc2399bade8abf2ca6c3adfaa358e5",
+  "restore-cpld12.log": "dba13f58a8caccb346591ab2576ab6b0c6db700aff543f2b19a6ece3bed80f1c",
+  "restore.py": "fa711d5bcc4ea7605f430ff11a70e77f2a38e1a04cbc87e724573710487d1156",
+  "status.json": "3f0740358f1d0730962cf7d216de038b650dbdb7a849f7de58f1009bed188e4a",
+  "verify-all-original.log": "4eab1eca2241de4d72559022062a36a7dab26d7186332095bc7bb8ef1f3e3061"
+}

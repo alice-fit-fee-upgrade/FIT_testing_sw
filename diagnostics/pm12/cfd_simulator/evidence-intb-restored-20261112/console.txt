@@ -1,0 +1,43 @@
+Identity and PGOOD verified
+CPLD baseline known; INTB-off=True
+{
+  "pass_": true,
+  "target_channel": 12,
+  "requested_mode": "Original INTA and INTB gates enabled",
+  "analog_controls_changed": false,
+  "restore_vector_sha256": "267a34aa4a80d8efb202256130c88789f26467c589c13c8226096b079b1bf1cd",
+  "dna": "3A17A1B402212223",
+  "gates_before": {
+    "8": {
+      "rising_edges": 682,
+      "high_samples": 17735,
+      "samples": 32760
+    },
+    "9": {
+      "rising_edges": 0,
+      "high_samples": 0,
+      "samples": 32760
+    }
+  },
+  "was_intb_off": true,
+  "programmed_cpld12": true,
+  "vendor_verify_all_original": true,
+  "changed_channels": [
+    12
+  ],
+  "cpld1_to_11_unchanged": true,
+  "original_gate_mode_verified": true,
+  "gates_after": {
+    "8": {
+      "rising_edges": 683,
+      "high_samples": 17740,
+      "samples": 32760
+    },
+    "9": {
+      "rising_edges": 682,
+      "high_samples": 18162,
+      "samples": 32760
+    }
+  },
+  "gate_pulses_verified": true
+}

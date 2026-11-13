@@ -1,0 +1,73 @@
+{
+  "pass_": true,
+  "target_channel": 12,
+  "requested_mode": "Original INTA and INTB gates enabled",
+  "analog_controls_changed": false,
+  "restore_vector_sha256": "267a34aa4a80d8efb202256130c88789f26467c589c13c8226096b079b1bf1cd",
+  "pgood_before": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000003403730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000006B01730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000008903720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000C001720103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2107
+    }
+  ],
+  "mcu": {
+    "command": "RS",
+    "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    37.0 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+    "duration_s": 0.2107
+  },
+  "dna": "3A17A1B402212223",
+  "gates_before": {
+    "8": {
+      "rising_edges": 682,
+      "high_samples": 17735,
+      "samples": 32760
+    },
+    "9": {
+      "rising_edges": 0,
+      "high_samples": 0,
+      "samples": 32760
+    }
+  },
+  "was_intb_off": true,
+  "programmed_cpld12": true,
+  "vendor_verify_all_original": true,
+  "changed_channels": [
+    12
+  ],
+  "cpld1_to_11_unchanged": true,
+  "original_gate_mode_verified": true,
+  "pgood_after": {
+    "command": "@HW",
+    "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000B602730103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+    "duration_s": 0.2119
+  },
+  "gates_after": {
+    "8": {
+      "rising_edges": 683,
+      "high_samples": 17740,
+      "samples": 32760
+    },
+    "9": {
+      "rising_edges": 682,
+      "high_samples": 18162,
+      "samples": 32760
+    }
+  },
+  "gate_pulses_verified": true
+}

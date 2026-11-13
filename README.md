@@ -19,6 +19,7 @@ PM12 acceptance workflow.** The original ARTIQ PMT simulator remains available a
 | Integrated digital paths | [HDMI, ADC and TDC test runner](diagnostics/pm12/system/README.md) |
 | ADC acquisition | [IPbus acquisition](diagnostics/pm12/ipbus_adc/README.md), [DC response](diagnostics/pm12/cfd_simulator/ADC_DC_SCAN.md) and [data-line checks](diagnostics/pm12/cfd_simulator/ADC_DATA_LINES.md) |
 | TDC and timing | [Live TDC diagnostics](diagnostics/pm12/tdc_live120/README.md), [CFD phase scans](diagnostics/pm12/cfd_simulator/PHASE_SCAN.md) and [four-channel repair verification](diagnostics/pm12/tdc_live120/FOUR_CFD_REPAIR_REPEAT.md) |
+| Integrators | [Channel 12 balance, signed ramp scans and LaTeX report](diagnostics/pm12/cfd_simulator/INTEGRATOR_SCAN.md) |
 | CFD DAC outputs | [Shared-mux voltage scans with Keysight SMU2](diagnostics/pm12/cfd_simulator/SMU_DAC_SCAN.md) |
 | Board dossiers | [Sequential acceptance runner, channel batches and LaTeX/PDF reports](diagnostics/pm12/acceptance/README.md) |
 
@@ -68,6 +69,8 @@ No firmware flashing or hardware operation is needed to regenerate reports from
 archived measurements.
 
 ## Example evidence and reports
+
+- **Integrator balance, channel 12:** [PDF](diagnostics/pm12/cfd_simulator/evidence-integrator-20261113/report.pdf), [procedure and results](diagnostics/pm12/cfd_simulator/INTEGRATOR_SCAN.md). Signed A/B ramp response and revisited zero crossings; 688 raw ADC buffers.
 
 - **CFD DAC outputs, channels 10/8/6:** [PDF](diagnostics/pm12/cfd_simulator/evidence-smu-dac-20261110/report.pdf), [editable LaTeX](diagnostics/pm12/cfd_simulator/evidence-smu-dac-20261110/report.tex), [raw CSV](diagnostics/pm12/cfd_simulator/evidence-smu-dac-20261110/samples.csv). Nine transfer curves, 2727 samples; acquisition/status/restoration checks passed.
 - **Board dossier and wiring tables:** [compact specimen](diagnostics/pm12/acceptance/evidence-english-setup-20261108/report.pdf).
