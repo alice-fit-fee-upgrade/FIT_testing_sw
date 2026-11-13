@@ -22,7 +22,7 @@ MCU, Kasli and SMU leases are held over configure/acquire/cleanup.
 /home/codex-hil/kasli-diot-bringup/.venv/bin/python \
   diagnostics/pm12/cfd_simulator/smu_dac_sweep.py \
   --out /absolute/new/run-directory --confirm-force-voltmeter \
-  --channels 10 8 6
+  --connected 12 10 8 6 --channels 10 8 6
 ```
 
 101 integer codes span 0..65535. Each point has 100 ms settling followed by
@@ -77,3 +77,5 @@ Acquisition/status/restoration validation:9 curves,101 codes,3 repeats,
 SMU OFF/HIZ, auto-ON OFF, source0A, local sensing, fixed1uA source range,
 no SCPI errors; four muxes inhibited, both TCA masks0, all9 exercised DACs
 restored to raw0000. Phase DAC A and unrelated GPIO were preserved.
+
+For new1–4/5–8/9–12 fittings, use the [campaign workflow](../acceptance/CAMPAIGN.md). The 10November SMU report are historical examples; `report_smu_dacs.py` refuses other fitted/scanned channel sets instead of mislabeling them. New batch reports use `campaign_report.py`.

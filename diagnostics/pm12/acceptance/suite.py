@@ -106,8 +106,8 @@ def collect(station_path, plan_path, output, channels):
     cfg = json.loads(station_path.read_text())
     plan = json.loads(plan_path.read_text())
     if not cfg.get('board_uid'): raise ValueError('Enroll hardware DNA first; EEPROM/cable serial is insufficient')
-    if not channels or len(set(channels)) != len(channels) or len(channels)>3 or any(x not in range(1,13) for x in channels):
-        raise ValueError('A CFD acquisition batch contains 1..3 distinct channels in 1..12')
+    if not channels or len(set(channels)) != len(channels) or len(channels)>4 or any(x not in range(1,13) for x in channels):
+        raise ValueError('A CFD acquisition batch contains 1..4 distinct channels in 1..12')
     output = output.resolve()
     output.mkdir(parents=True, exist_ok=False)
     shutil.copy2(station_path, output/'station.json')

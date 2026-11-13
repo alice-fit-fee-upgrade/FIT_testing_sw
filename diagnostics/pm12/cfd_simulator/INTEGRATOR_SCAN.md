@@ -62,12 +62,12 @@ correctly identified PM12 MCU1803/FPGA c7c42d28 and MOD-DAC-28 instrument. No
 instrument access is performed by plotting/report generation. Acquisition
 checks physical PGOOD, FPGA/MCU identity and every DAC setpoint against0..3.3V.
 Only the selected DAC pair and channel12 MCP are controlled; this initial runner
-is channel12-specific and requires the documented fixture.
+accepts --afe 1..12 and requires the documented fixture; physical qualification so far covers channel12. Use campaign reporting for later channels.
 
 ```sh
 /home/codex-hil/kasli-phase-tester/run-python \
   diagnostics/pm12/cfd_simulator/integrator_scan.py \
-  --out /absolute/NEW-RUN --base 2.048 1.024 \
+  --out /absolute/NEW-RUN --afe 12 --base 2.048 1.024 \
   --offsets -0.02 -0.01 0 0.01 0.02 --repeats 4 \
   --park 2.0446 1.0274
 ```

@@ -10,6 +10,7 @@ def main():
     x=json.loads((a.analysis/'analysis.json').read_text());buffers=0;count=0;generations=[]
     for name in ['probe01','matrix01','sweep01','fine01','validation01','validation02']:
         root=a.root/name;r=json.loads((root/'status.json').read_text());assert r['pass_']
+        if r['physical_channel']!=12 or r.get('dac_channels',[0,1])!=[0,1]:raise ValueError('Reference experiment validation is channel12-specific; use a channel-aware validator')
         rows=r.get('disabled_controls',[])+r.get('final_captures',[])+[c for point in r['points'] for c in point['captures']]
         for row in rows:
             words=struct.unpack('<4096H',(root/row['file']).read_bytes());samples,_=decode(list(words),row['bank'])

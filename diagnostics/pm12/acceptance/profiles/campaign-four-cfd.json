@@ -1,0 +1,151 @@
+{
+  "schema": 1,
+  "name": "PM12 twelve-channel characterization, three fittings of four CFDs",
+  "groups": [
+    [
+      1,
+      2,
+      3,
+      4
+    ],
+    [
+      5,
+      6,
+      7,
+      8
+    ],
+    [
+      9,
+      10,
+      11,
+      12
+    ]
+  ],
+  "tests": [
+    {
+      "id": "jtag",
+      "scope": "board",
+      "title": "Boundary scan and CPLD\u2013FPGA connections"
+    },
+    {
+      "id": "mcu",
+      "scope": "board",
+      "title": "MCU, CPU\u2013FPGA communication and peripheral IDs"
+    },
+    {
+      "id": "i2c",
+      "scope": "board",
+      "title": "I2C sensors, currents and voltages"
+    },
+    {
+      "id": "hdmi",
+      "scope": "board",
+      "title": "HDMI digital link"
+    },
+    {
+      "id": "ethernet",
+      "scope": "board",
+      "title": "Ethernet/bridge diagnostic"
+    },
+    {
+      "id": "cfd-monitor",
+      "scope": "channel",
+      "title": "CFD voltage monitor"
+    },
+    {
+      "id": "cfd-dacs",
+      "scope": "channel",
+      "title": "Internal DAC B/C/D transfer",
+      "required_observables": [
+        {
+          "name": "dac_B"
+        },
+        {
+          "name": "dac_C"
+        },
+        {
+          "name": "dac_D"
+        }
+      ]
+    },
+    {
+      "id": "gate-phase",
+      "scope": "channel",
+      "title": "DAC-A phase response",
+      "required_observables": [
+        {
+          "name": "gate_phase",
+          "bank": "A"
+        },
+        {
+          "name": "gate_phase",
+          "bank": "B"
+        }
+      ]
+    },
+    {
+      "id": "tdc",
+      "scope": "channel",
+      "title": "TDC response versus stimulus phase"
+    },
+    {
+      "id": "adc-dc",
+      "scope": "channel",
+      "title": "ADC A/B DC response",
+      "required_observables": [
+        {
+          "name": "adc_response",
+          "bank": "A"
+        },
+        {
+          "name": "adc_response",
+          "bank": "B"
+        }
+      ]
+    },
+    {
+      "id": "adc-lines",
+      "scope": "channel",
+      "title": "ADC data-line integrity",
+      "required_observables": [
+        {
+          "name": "adjacent_pair_states",
+          "bank": "A"
+        },
+        {
+          "name": "adjacent_pair_states",
+          "bank": "B"
+        }
+      ]
+    },
+    {
+      "id": "integrator",
+      "scope": "channel",
+      "title": "Integrator balance and signed response",
+      "required_observables": [
+        {
+          "name": "balance_delta",
+          "bank": "A"
+        },
+        {
+          "name": "balance_delta",
+          "bank": "B"
+        },
+        {
+          "name": "ramp_response",
+          "bank": "A"
+        },
+        {
+          "name": "ramp_response",
+          "bank": "B"
+        }
+      ]
+    }
+  ],
+  "hardware_configuration_fields": [
+    "pm_build",
+    "kasli_build",
+    "clock_profile",
+    "cpld_gate_mode"
+  ]
+}

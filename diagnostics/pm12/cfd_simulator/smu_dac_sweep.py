@@ -1,4 +1,4 @@
-import sys, contextlib, json, time, csv, math, statistics
+import sys, contextlib, json, time, csv, math, statistics, datetime
 from pathlib import Path
 P = Path(__file__).resolve().parents[1]
 sys.path[:0] = [str(P / 'acceptance'), str(P / 'cfd_simulator'), '/home/codex-hil/FIT_PM_FW_uPC/tools/hardware', '/home/codex-hil/lab-instruments']
@@ -11,25 +11,31 @@ from pm12_console_regression import capture
 from labinstruments.transport import Transport
 from labinstruments.drivers import Driver
 from smu_voltage import parse_voltage
+from channel_settings import connected_channels,require_serial_reply,snapshot_sources
 import argparse
 a = argparse.ArgumentParser(description='Four-CFD shared-monitor DAC scan with B2910BL as 0-A, 2-wire voltmeter. Force HI/LO connected.')
 a.add_argument('--out', type=Path, required=True)
-a.add_argument('--channels', nargs='+', type=int, choices=[12, 10, 8, 6], default=[10, 8, 6])
+a.add_argument('--board-serial',default='1803')
+a.add_argument('--connected',nargs=4,type=int,choices=range(1,13),required=True,help='Every fitted CFD sharing the monitor wire')
+a.add_argument('--channels',nargs='+',type=int,choices=range(1,13),help='Subset to scan; defaults to all connected')
 a.add_argument('--confirm-force-voltmeter', action='store_true', required=True)
 args = a.parse_args()
+try:args.connected,args.channels=connected_channels(args.connected,args.channels)
+except ValueError as error:a.error(str(error))
 r = args.out.resolve()
 r.mkdir(parents=True, exist_ok=False)
-report = {'commands': [], 'measurements': [], 'connected_modules': [12, 10, 8, 6], 'scanned_modules': args.channels, 'source_current_A': 0, 'sense': 'local Force HI/LO', 'final_dac_codes': 'Each exercised DAC B/C/D explicitly restored to 0000; DAC-A unchanged'}
+sources=snapshot_sources(r,['__main__','channel_settings','smu_voltage','console','mcp23017','control','lease','station','pm12_console_regression','pm12_power','labinstruments.transport','labinstruments.drivers'])
+report = {'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'executed_sources':sources,'commands': [], 'measurements': [], 'connected_modules': args.connected, 'scanned_modules': args.channels, 'source_current_A': 0, 'sense': 'local Force HI/LO', 'final_dac_codes': 'Each exercised DAC B/C/D explicitly restored to 0000; DAC-A unchanged'}
 with contextlib.ExitStack() as st:
     for n in sorted(['atmel-ice-J41800043065', 'pm12-210249A73E43', 'kasli-diot-00001', 'b2910bl-MY63320299']):
         st.enter_context(acquire(Path.home() / '.cache' / (n + '.lock')))
     u = st.enter_context(console({'uart': '/dev/serial/by-id/usb-Prolific_Technology_Inc._USB-Serial_Controller-if00-port0'}))
     report['pg'] = wait_power_good(u, capture)
-    assert 'Board S/N: 1803' in capture(u, 'RS')['reply']
+    require_serial_reply(capture(u,'RS')['reply'],args.board_serial)
     bus = ConsoleI2C(u, capture)
 
     def off_all():
-        for ch in [12, 10, 8, 6]:
+        for ch in args.connected:
             with bus.routed(*afe_route(ch)):
                 regs = Registers(bus)
                 MCP23017Monitor(regs).initialize_monitor().off()

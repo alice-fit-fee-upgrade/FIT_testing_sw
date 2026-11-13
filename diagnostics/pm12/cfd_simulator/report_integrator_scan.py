@@ -94,6 +94,7 @@ Raw buffers, rejected probes, command receipts and analysis hashes are retained.
 def main():
  p=argparse.ArgumentParser(description=__doc__);p.add_argument('--root',type=Path,required=True);p.add_argument('--analysis',type=Path,required=True);a=p.parse_args()
  x=json.loads((a.analysis/'analysis.json').read_text());final=json.loads((a.root/'validation02/status.json').read_text());assert final['pass_']
+ if final['physical_channel']!=12 or final.get('dac_channels',[0,1])!=[0,1]:raise ValueError('Reference experiment report is channel12-specific; use campaign_report.py for other channels')
  assert all(abs(v-w)<6e-5 for v,w in zip(final['dac_final'][:2],[2.0446,1.0274])) and final['mcp_final']['18']&0x88==8 and final['mcp_final']['21']&32
  assert set(final['tca_final'].values())=={0}
  fits=[];validation=[]

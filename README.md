@@ -29,6 +29,8 @@ interchangeable across arbitrary FPGA images or bench connections.
 
 ## Collect data, generate chapters, assemble the dossier
 
+For the current four-CFD bench, use the [twelve-channel campaign workflow](diagnostics/pm12/acceptance/CAMPAIGN.md): fittings1–4,5–8,9–12, explicit CFD/cable mapping, retained repeats and one combined editable LaTeX report.
+
 1. Identify the board and instruments, configure the station profile and verify
    wiring. Acquire the shared board/instrument leases before hardware access.
 2. Run the selected hardware procedures and retain raw samples, command logs,
@@ -81,3 +83,5 @@ A PASS applies to the selected procedure, configuration and measured channels.
 Archived examples do not certify other boards or unmeasured channels. Functional
 transfer scans do not imply exhaustive INL/DNL, calibrated jitter or complete
 board acceptance. Read each validation record alongside its plots and report.
+
+2026-11-13: [four-CFD campaign, first measured channel12](diagnostics/pm12/acceptance/evidence-campaign-ch12-20261113/README.md), with editable LaTeX, raw buffers and explicit twelve-channel coverage.
