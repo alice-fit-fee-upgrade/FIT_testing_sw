@@ -117,6 +117,10 @@ def generate(root, output, latex=None):
         text+=r'\subsection{'+tex(method)+r'}'+'\n'
         text+=table(['Setting','Recorded value'],[(key,json.dumps(value,sort_keys=True)) for key,value in settings.items() if key!='hardware_configuration' or len(hardware)!=1])
     for limit in sorted(limits):text+=tex(limit)+'.\n\n'
+    for record in summary['records'].values():
+        result=record['result']
+        for note in result.get('notes',[]):
+            text+=tex(str(result['test'])+'; physical channel '+str(result.get('channel','board'))+': '+note)+'.\n\n'
     text+='ADC total RMS includes the complete connected chain and periodic gate feedthrough. The four-phase-removed RMS removes the mean of each sample phase; it is a residual statistic, not an intrinsic ADC noise specification. FFT and time axes use the declared clock frequency, not an independent frequency measurement.\n\n'
     text+=r'\section{Measurements and common channel plots}'+'\n'
     if metrics:text+=table(['Test','Channel','Bank','Observable','Value','Unit'],metrics)

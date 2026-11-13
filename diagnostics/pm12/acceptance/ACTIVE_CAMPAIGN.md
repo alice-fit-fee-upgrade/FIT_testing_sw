@@ -26,14 +26,14 @@ port produced16 TDC events only on its expected channel, with quiet controls.
 Labels identify bench port assignments, not verified factory serial numbers.
 The initial ascending declaration is preserved in `mapping-declared.json`.
 
-Both analog USB cables currently terminate on **channel11 only**, after the owner confirmed the move from12:
+Both analog USB cables currently terminate on **channel10 only**, after the owner confirmed the move from11:
 
 | MOD-DAC-28 outputs | CFD_SIM input | Measurement |
 |---|---|---|
 |0/1|J8, direct ADC|ADC transfer and adjacent-bit exercise|
 |2/3|J6, integrator|Balance and signed ramp response|
 
-Next move both cables together to10, then9, only after the owner confirms each move.
+Next move both cables together to9 only after the owner confirms the move.
 Other fitted channels are not implicitly analog-connected. Update that receipt
 before acquiring them; never infer the analog destination from an RJ45 route.
 
@@ -112,3 +112,29 @@ all three new cases imported without changing comparison contracts.
 
 Analog ADC/integrator coverage is now11and12;9and10 still await confirmed USB
 moves. All four internal DAC B/C/D tests remain covered.
+
+## Completed analog tests on channel10
+
+Owner confirmed both USB pairs moved11→10, with RJ45 mapping unchanged.
+Preflight MCU1803/FPGAc7c42d28/PGOOD/TCA masks0 and selected A/B voltage probes
+PASS. Both257-point ADC transfer and adjacent-bit cases PASS. Gains are
+−1777.67/−1778.27code/V; residual RMS after phase-template removal0.513/0.508code.
+
+Integrator fine26points and four candidate revisits per ADC with±5mV controls
+PASS. A pair2/3=1.0251/2.0469V, B=1.0284/2.0436V. Mean near-balance changes
+−0.234/+0.191code. A/B differential balance separation6.766mV. The coarse
+waveform high-pair assignment produced an additional positive-going crossing
+near+40mV; it was not used as balance. Fine acquisition followed the central
+negative-going crossing, confirmed independently. Both controller versions and
+all original coarse data remain archived; the measurement source/settings
+contracts were unchanged. Of552buffers analyzed,512were retained:28clipped
+coarse,4ambiguous coarse and8ambiguous auxiliary validation buffers excluded.
+Required candidate returns and positive/negative response controls passed.
+
+Final external DAC0/1=1/1V,2/3=1.0268/2.0452V; other outputs unchanged.
+Channel10 amps enabled, direct ADC injection isolated, all monitor muxes
+inhibited, both TCA masks0, ADC A last. Other fitted channels' amps/bypass
+remain disabled from preflight. No MCU/CPLD/FPGA/flash/clock/SMU changes.
+Analog coverage now10,11,12;9 awaits the next confirmed USB move. Earlier
+results remain selected for their own physical channels. See
+[evidence](evidence-campaign-ch10-20261113/README.md).

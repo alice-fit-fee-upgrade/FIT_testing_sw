@@ -1,0 +1,111 @@
+{
+  "mode": "LIVE",
+  "board_uid": "PM12-K7-3A17A1B402212223",
+  "test": "adc-lines",
+  "channel": 10,
+  "fixture_id": "CFD03",
+  "measured_utc": "2026-11-13T16:12:12.285134+00:00",
+  "status": "PASS",
+  "protocol": {
+    "method": "adjacent-pair-states-v1",
+    "hardware_configuration": {
+      "pm_build": "c7c42d28",
+      "kasli_build": {
+        "ABI": "CFD4",
+        "expected_bit_sha256": "a71a08a258620b0e5a52c5d03aefd8c69040c9d15e8de6391c484ac182b7173b"
+      },
+      "clock_profile": {
+        "reference_mhz": 40.0787,
+        "adc_rate": "2x reference",
+        "kasli_rate": "3x reference"
+      },
+      "cpld_gate_mode": "original INTA/INTB enabled, nominal20MHz"
+    },
+    "stimulus_points_per_bank": 257,
+    "commanded_range_V": [
+      -1.2,
+      1.2
+    ],
+    "common_mode_V": 1.0,
+    "dac_channels": [
+      0,
+      1
+    ],
+    "fit_interval_V": [
+      -0.8,
+      0.8
+    ],
+    "fft_sample_rate_assumed_Hz": 80157400,
+    "integrator_input_parked_V": [
+      2.0480001,
+      1.02400005
+    ]
+  },
+  "source_files": [
+    "acquisition/scan/sources/__main__.py",
+    "acquisition/scan/sources/channel_settings.py",
+    "acquisition/scan/sources/adc_decode.py",
+    "acquisition/scan/sources/mod_dac28.py",
+    "acquisition/scan/sources/console.py",
+    "acquisition/scan/sources/mcp23017.py",
+    "acquisition/scan/sources/control.py",
+    "acquisition/scan/sources/client.py",
+    "acquisition/scan/sources/lease.py",
+    "acquisition/scan/sources/pm12_console_regression.py",
+    "acquisition/scan/sources/pm12_power.py",
+    "analysis-sources/campaign_adapters.py",
+    "analysis-sources/adc_line_test.py",
+    "analysis-sources/validate_adc_lines.py",
+    "analysis-sources/integrator_analysis.py",
+    "analysis-sources/adc_decode.py"
+  ],
+  "validation": [
+    {
+      "file": "validation.json",
+      "key": "adc_line_pass",
+      "equals": true
+    }
+  ],
+  "channel_checks": [
+    {
+      "file": "acquisition/scan/status.json",
+      "key": "channel"
+    }
+  ],
+  "connections": {
+    "usb_input": "J8",
+    "stimulus_channel": 10,
+    "dac_channels": [
+      0,
+      1
+    ]
+  },
+  "metrics": [
+    {
+      "name": "adjacent_pair_states",
+      "bank": "A",
+      "value": 44,
+      "unit": "state"
+    },
+    {
+      "name": "visited_codes",
+      "bank": "A",
+      "value": 3220,
+      "unit": "code"
+    },
+    {
+      "name": "adjacent_pair_states",
+      "bank": "B",
+      "value": 44,
+      "unit": "state"
+    },
+    {
+      "name": "visited_codes",
+      "bank": "B",
+      "value": 3266,
+      "unit": "code"
+    }
+  ],
+  "curves": [],
+  "limits": "Commanded DAC voltages, whole connected chain; not calibrated ADC-only INL/noise or electrical continuity proof"
+}
