@@ -168,3 +168,5 @@ See[TIMING_CAMPAIGN.md](TIMING_CAMPAIGN.md) and the
 ## Fresh assembly verification — 2026-11-13
 
 Completed available tests without moving USB from physical10. Scoped JTAG168links in both paths, MCU/FPGA32patterns, populated rail voltages and Ethernet/IPbus PASS. CFD monitors9/10/12 PASS; fixture11 MUX7 FAIL (5.479V raw; check R3/R4 divider). HDMI data lanes pass but pad release after SPI reads resets SYS: overall HDMI FAIL. These findings prevent unconditional release. Analog9 awaits the next USB move. Current coverage:28PASS,2FAIL,59NOT_MEASURED. See [52-page report and reproducible evidence](evidence-campaign-assembly-20261113/README.md).
+
+HDMI follow-up: [held-output isolation](../system/evidence-held-spi-20261113/README.md) reproduces delayed SYS restart after SPI reads without releasing outputs. Earlier attribution to release is superseded; HDMI remains FAIL. Slot6 SPI is now held driven at idle0, direction0x00b0. Avoid legacy integrated/STOP/input_cards cleanup.

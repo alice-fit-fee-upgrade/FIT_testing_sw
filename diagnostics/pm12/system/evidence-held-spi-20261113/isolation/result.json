@@ -1,0 +1,934 @@
+{
+  "trace": [
+    {
+      "label": "initial held",
+      "seconds": 105664.19468055,
+      "uptime": [
+        1904711292,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        1
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "idle 0",
+      "seconds": 105664.445305148,
+      "uptime": [
+        1914756857,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        1
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "idle 1",
+      "seconds": 105664.696306725,
+      "uptime": [
+        1924816428,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        1
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "idle 2",
+      "seconds": 105664.947360167,
+      "uptime": [
+        1934878164,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        1
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "idle 3",
+      "seconds": 105665.198334808,
+      "uptime": [
+        1944937217,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        1
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "before mode 0",
+      "seconds": 105665.19923752,
+      "uptime": [
+        1944972569,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        1
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "after mode 0",
+      "seconds": 105665.257725979,
+      "uptime": [
+        1947317235,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        2
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "before mode 15",
+      "seconds": 105665.258610375,
+      "uptime": [
+        1947352107,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        2
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "after mode 15",
+      "seconds": 105665.309310336,
+      "uptime": [
+        1949384634,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        3
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        15
+      ]
+    },
+    {
+      "label": "before mode 1",
+      "seconds": 105665.31023332,
+      "uptime": [
+        1949421095,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        3
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        15
+      ]
+    },
+    {
+      "label": "after mode 1",
+      "seconds": 105665.361121112,
+      "uptime": [
+        1951461414,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        4
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        1
+      ]
+    },
+    {
+      "label": "before mode 2",
+      "seconds": 105665.362091204,
+      "uptime": [
+        1951499417,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        4
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        1
+      ]
+    },
+    {
+      "label": "after mode 2",
+      "seconds": 105665.413120085,
+      "uptime": [
+        1953545245,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        5
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        2
+      ]
+    },
+    {
+      "label": "before mode 4",
+      "seconds": 105665.414164114,
+      "uptime": [
+        1953586538,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        5
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        2
+      ]
+    },
+    {
+      "label": "after mode 4",
+      "seconds": 105665.464981673,
+      "uptime": [
+        1955625214,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        6
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        4
+      ]
+    },
+    {
+      "label": "before mode 8",
+      "seconds": 105665.466128158,
+      "uptime": [
+        1955669189,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        6
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        4
+      ]
+    },
+    {
+      "label": "after mode 8",
+      "seconds": 105665.51697329,
+      "uptime": [
+        1957707775,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        7
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        8
+      ]
+    },
+    {
+      "label": "before mode 5",
+      "seconds": 105665.518127329,
+      "uptime": [
+        1957753175,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        7
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        8
+      ]
+    },
+    {
+      "label": "after mode 5",
+      "seconds": 105665.569171707,
+      "uptime": [
+        1959799814,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        8
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        5
+      ]
+    },
+    {
+      "label": "before mode 10",
+      "seconds": 105665.570131785,
+      "uptime": [
+        1959837470,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        8
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        5
+      ]
+    },
+    {
+      "label": "after mode 10",
+      "seconds": 105665.620989549,
+      "uptime": [
+        1961876386,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        9
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        10
+      ]
+    },
+    {
+      "label": "before mode 48",
+      "seconds": 105665.622137508,
+      "uptime": [
+        1961921786,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        9
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        10
+      ]
+    },
+    {
+      "label": "after mode 48",
+      "seconds": 105665.673267279,
+      "uptime": [
+        1963971715,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        10
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        48
+      ]
+    },
+    {
+      "label": "before mode 32",
+      "seconds": 105665.674340178,
+      "uptime": [
+        1964013978,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        10
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        48
+      ]
+    },
+    {
+      "label": "after mode 32",
+      "seconds": 105665.725290157,
+      "uptime": [
+        1966056771,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        11
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        32
+      ]
+    },
+    {
+      "label": "before mode 16",
+      "seconds": 105665.72643705,
+      "uptime": [
+        1966102533,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        11
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        32
+      ]
+    },
+    {
+      "label": "after mode 16",
+      "seconds": 105665.777456249,
+      "uptime": [
+        1968147422,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        12
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        16
+      ]
+    },
+    {
+      "label": "before mode 0",
+      "seconds": 105665.77853466,
+      "uptime": [
+        1968189894,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        12
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        16
+      ]
+    },
+    {
+      "label": "after mode 0",
+      "seconds": 105665.829535098,
+      "uptime": [
+        1970234783,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        13
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "before SPI 0",
+      "seconds": 105665.830623521,
+      "uptime": [
+        1970277548,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        13
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "after SPI 0",
+      "seconds": 105665.832085216,
+      "uptime": [
+        1970335967,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        13
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "settled SPI 0",
+      "seconds": 105665.93299795,
+      "uptime": [
+        1974381490,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        13
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "before SPI 1",
+      "seconds": 105665.934283137,
+      "uptime": [
+        1974432085,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        13
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "after SPI 1",
+      "seconds": 105665.935882532,
+      "uptime": [
+        1974495869,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        13
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "settled SPI 1",
+      "seconds": 105666.036893263,
+      "uptime": [
+        43798614,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        0
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "before SPI 2",
+      "seconds": 105667.040262808,
+      "uptime": [
+        43882068,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        0
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "after SPI 2",
+      "seconds": 105667.042580125,
+      "uptime": [
+        43974248,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        0
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "settled SPI 2",
+      "seconds": 105667.144413611,
+      "uptime": [
+        3701546,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        0
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "final idle 0",
+      "seconds": 105667.398666748,
+      "uptime": [
+        13891661,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        0
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "final idle 1",
+      "seconds": 105667.653267768,
+      "uptime": [
+        24095663,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        0
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "final idle 2",
+      "seconds": 105667.908276256,
+      "uptime": [
+        34313672,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        0
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    },
+    {
+      "label": "final idle 3",
+      "seconds": 105668.159921885,
+      "uptime": [
+        44402293,
+        0
+      ],
+      "mcu_scratch": [
+        0,
+        33
+      ],
+      "scratch": [
+        0,
+        0
+      ],
+      "enable": 1,
+      "state": 9,
+      "mode": [
+        0
+      ]
+    }
+  ],
+  "started_utc": "2026-11-13T19:55:54.621470+00:00",
+  "pgood": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=89000001000000FA02710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2125
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000002E01710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2118
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000004C03710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000008301710103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    }
+  ],
+  "spi": [
+    [
+      0,
+      18500
+    ],
+    [
+      1,
+      19785
+    ],
+    [
+      2,
+      1
+    ]
+  ],
+  "pgood_after": {
+    "command": "@HW",
+    "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=89000001000000EB00700103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+    "duration_s": 0.2119
+  },
+  "mcu_status": {
+    "command": "RS",
+    "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    36.8 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+    "duration_s": 0.2124
+  },
+  "finished_utc": "2026-11-13T19:56:00.650030+00:00"
+}

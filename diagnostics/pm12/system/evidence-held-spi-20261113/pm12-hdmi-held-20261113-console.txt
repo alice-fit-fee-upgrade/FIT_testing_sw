@@ -1,0 +1,10 @@
+{'label': 'before hold', 'monotonic': 105613.245446429, 'uptime': [1835194182, 46], 'pm_scratch': [0, 11], 'kasli_enable': 0, 'kasli_state': 1}
+{'label': 'before run1', 'monotonic': 105613.245925891, 'uptime': [1835213521, 46], 'pm_scratch': [0, 11], 'kasli_enable': 0, 'kasli_state': 1}
+{'label': 'after run1', 'monotonic': 105613.947742082, 'uptime': [4852988, 0], 'pm_scratch': [0, 1], 'kasli_enable': 1, 'kasli_state': 9}
+{'label': 'before run2', 'monotonic': 105614.198670419, 'uptime': [14910397, 0], 'pm_scratch': [0, 1], 'kasli_enable': 1, 'kasli_state': 9}
+{'label': 'after run2', 'monotonic': 105615.872221416, 'uptime': [45099489, 0], 'pm_scratch': [0, 0], 'kasli_enable': 1, 'kasli_state': 9}
+{'label': 'before run3', 'monotonic': 105616.123357775, 'uptime': [55165292, 0], 'pm_scratch': [0, 0], 'kasli_enable': 1, 'kasli_state': 9}
+{'label': 'after run3', 'monotonic': 105617.795565576, 'uptime': [45104116, 0], 'pm_scratch': [0, 0], 'kasli_enable': 1, 'kasli_state': 9}
+{'label': 'before stable dwell', 'monotonic': 105618.046826885, 'uptime': [55175045, 0], 'pm_scratch': [0, 0], 'kasli_enable': 1, 'kasli_state': 9}
+{'label': 'after stable dwell', 'monotonic': 105620.048271682, 'uptime': [135390017, 0], 'pm_scratch': [0, 0], 'kasli_enable': 1, 'kasli_state': 9}
+{'label': 'final', 'monotonic': 105620.356507708, 'uptime': [147743367, 0], 'pm_scratch': [0, 1], 'kasli_enable': 1, 'kasli_state': 9}

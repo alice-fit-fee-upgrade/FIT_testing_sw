@@ -1,5 +1,5 @@
 {
-  "README.md": "db453e80e53bddae4bac52435ab0959437b8d9088031ecfb53f1e309e820e46e",
+  "README.md": "f2c2e5e121bd61423debe0393c0df708dfcb19a6b34b6ec4e9d7a0a4e2c0e9a6",
   "acceptance-tests.txt": "a17fe729a276d81c7836fd65d3fee0c8e91e81c96338ea69d37af1a6f71d8fe4",
   "assembly-connections.tex": "1a8aedf046282bbbdcda4f264fb2da677bc3b7ce3388b412ad8f520c7bd6b7f6",
   "assembly-findings.tex": "670926a151a87fcf9f2adcfa4cf37789215ec23ca470b9f6cbc1fb20757f5f06",
@@ -157,9 +157,10 @@
   "figures/figure-072.png": "cbd71acbf4045424cfdad23e1ca9f7241165ca7b8e92b7e6b8bbce171638698c",
   "figures/figure-073.pdf": "0a147541b6b76b2b4e1dc3705f16988117f695e9432acc73218e0a405f8bf762",
   "figures/figure-073.png": "ec38a0ff8de7295479bfc3ef26067579eacec3cc64c7d317dd0883a3b72f9dd5",
+  "held-spi-followup.tex": "18c9e32c33a54947afd17785183a2da8328e327a84150deea50a1183dfa6f84b",
   "latex-build.txt": "a6fe43aa4650b5b1fe160c6d00260a5748ae0ce7a239c6c7d55137ffaf05203c",
   "monitor-assembly.pdf": "d13f350a72f707cb5e53f5fab18c43207e3d27defdcdc672eb62b3dad154cb7c",
   "monitor-assembly.png": "fa18e0947581fd267e951d9bc2060b64007b4b9cd380dbea51a85dfe3a31c401",
-  "report.pdf": "48f0ad2c8a35e1b3ff923cf40191b69668ea5822dfd5a05cc39fb88b28e5b57b",
-  "report.tex": "6d05ea1fabb5fdb2aa283654448361f539e235e5e29a45655287082c4133ac9f"
+  "report.pdf": "d7fd590a93b0825eccb98ef9f72e8c50a402a45c5a567398319f7fac94ce0d70",
+  "report.tex": "94fdef8e74dd56e3ca95ad59bbb5ff898b87729ea272225167b4ef7600b9d2ed"
 }

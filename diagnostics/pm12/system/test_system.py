@@ -12,7 +12,9 @@ def main():
     launcher=args.kasli_root/'run-python'
     if not launcher.is_file():
         raise SystemExit('Missing pinned Kasli station environment: '+str(launcher))
-    return subprocess.call([str(launcher),'-m','host.pm_system_test',*rest])
+    # The legacy runner disables output buffers at entry and exit.
+    # Keep its historical source unchanged; current entry uses held SPI.
+    return subprocess.call([str(launcher),str(Path(__file__).with_name('hold_spi.py')),*rest])
 
 
 if __name__=='__main__':

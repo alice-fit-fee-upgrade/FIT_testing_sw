@@ -1,6 +1,8 @@
 # Integrated PM12 / Kasli diagnostic image pair
 
-**2026-11-13 regression:** repeated resident runs reset SYS when FPGA pads are released after SPI signature reads. Walking/PRBS/idle data lanes pass, but the full HDMI test FAILS. Historical qualification below does not qualify the current setup. See [fresh evidence](../acceptance/evidence-campaign-assembly-20261113/README.md). Do not treat SPI release as qualified until fixed and retested.
+**2026-11-13 follow-up:** [Held-output isolation](evidence-held-spi-20261113/README.md) shows delayed SYS restarts after SPI reads even with enable1 and unchanged buffer directions. Output release is not established as the cause. The current `test_system.py` entry runs `hold_spi.py` and leaves SPI driven; legacy `station.py integrated` / `host.pm_system_test.run` must not be used in the held setup. MCU SPI counters persist across SYS restarts, supporting a domain reset rather than whole-chip reconfiguration.
+
+**Earlier2026-11-13 observation (causal attribution superseded):** repeated resident runs reset SYS when FPGA pads are released after SPI signature reads. Walking/PRBS/idle data lanes pass, but the full HDMI test FAILS. Historical qualification below does not qualify the current setup. See [fresh evidence](../acceptance/evidence-campaign-assembly-20261113/README.md). Do not treat SPI release as qualified until fixed and retested.
 
 HDMI is added alongside the resident ADC/TDC and the Kasli SFP bridge. No
 production PM firmware, CPLD mux, MCU firmware, PLL profile or flash changes.

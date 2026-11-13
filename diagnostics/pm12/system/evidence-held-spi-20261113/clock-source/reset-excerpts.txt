@@ -1,0 +1,41 @@
+5195: 		default: begin
+5196: 			sync_rhs_self5 <= 1'd1;
+5197: 		end
+5198: 	endcase
+5199: // synthesis translate_off
+5200: 	dummy_d_51 <= dummy_s;
+5201: // synthesis translate_on
+5202: end
+5203: assign xilinxasyncresetsynchronizerimpl0_async_reset = (~top_fixed_cm_locked);
+5204: assign xilinxasyncresetsynchronizerimpl1_async_reset = (~top_cap_cm_locked);
+5205: assign top_lp_abi_ping_toggle_o = xilinxmultiregimpl01;
+5206: assign top_lp_abi_pong_toggle_o = xilinxmultiregimpl11;
+5207: assign top_lp_abi_obuffer = xilinxmultiregimpl21;
+
+6465: 		top_registers_bank <= 1'd0;
+6466: 		top_registers_remaining <= 16'd0;
+6467: 		top_registers_settling <= 1'd0;
+6468: 		top_registers_arm <= 1'd0;
+6469: 		top_registers_trace_arm <= 1'd0;
+6470: 		top_registers_adr <= 32'd0;
+6471: 		top_registers_wd <= 32'd0;
+6472: 		top_registers_wr <= 1'd0;
+6473: 		top_registers_uptime <= 64'd0;
+6474: 		top_startup <= 21'd2000000;
+6475: 		top_ipb_count <= 32'd0;
+6476: 		gtxtxinit_state <= 4'd0;
+6477: 		gtxrxinit_state <= 4'd0;
+
+9394: 
+9395: (* ars_ff2 = "true", async_reg = "true" *) FDPE #(
+9396: 	.INIT(1'd1)
+9397: ) FDPE_1 (
+9398: 	.C(sys_clk),
+9399: 	.CE(1'd1),
+9400: 	.D(xilinxasyncresetsynchronizerimpl0_rst_meta),
+9401: 	.PRE(xilinxasyncresetsynchronizerimpl0_async_reset),
+9402: 	.Q(sys_rst)
+9403: );
+9404: 
+9405: (* ars_ff1 = "true", async_reg = "true" *) FDPE #(
+9406: 	.INIT(1'd1)

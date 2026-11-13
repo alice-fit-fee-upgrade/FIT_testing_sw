@@ -16,3 +16,5 @@ Analog9 remains NOT_MEASURED until the next USB move; fixtures1–8 are absent. 
 Final state: diagnostic SRAM restored, MCU power protection untouched, DIO outputs released, SMU OFF/HIZ/0A, all four monitor muxes inhibited and TCA masks zero. No persistent programming or clock changes.
 
 Reproduce offline: extract campaign-raw.tar.gz to a NEW directory; run campaign_report.py (see --help), then assembly_appendix.py --report REPORT --work EXTRACTED/batches/ch09-12-attempt001/working --latex /path/to/tectonic. Matplotlib is required. Alternatively edit the supplied TeX and run tectonic report.tex in this directory. Figures are generated from raw inputs; no hardware access is required. Test results:37acceptance and46CFD tests PASS.
+
+Later follow-up: the PDF now prepends an erratum. Delayed SPI-related SYS resets also occur with outputs held driven. Earlier release attribution is superseded; see [raw follow-up](../../system/evidence-held-spi-20261113/README.md). The selected historical case results and raw archive are unchanged. Current direction/idle state is held, rather than released.
