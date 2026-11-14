@@ -1,3 +1,9 @@
+Selective HDMI repeat: [results and raw data](evidence-selective-20261114/README.md).
+LVDS data outputs independently stable; SPI frames reproduce SYS restarts.
+SEL/SCK/MOSI not independently controllable in the resident image. Kasli
+was not reloaded; outputs remain driven. Do not interpret a busy sample
+before a blocked read as proof of reset during SEL assertion.
+
 **Current 2026-11-14:** corrected-clock SRAM build `c7531465` retained; TDC9–12 repeat PASS (19,268 events), ADC digital regression all12/both banks PASS. HDMI/SPI SYS restarts persist (8/12 reads). [Evidence](../tdc_live120/evidence-clock40-20261114/README.md). No external PLL profile was changed. Slot6 SPI outputs must remain driven. Historical c7c42d28 results below are not correct-clock qualification.
 
 # Integrated PM12 / Kasli diagnostic image pair

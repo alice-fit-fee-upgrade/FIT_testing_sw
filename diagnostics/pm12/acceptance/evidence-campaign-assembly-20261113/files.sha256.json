@@ -1,5 +1,5 @@
 {
-  "README.md": "c46a99c55c1dc3b39b8341de2fb732f77862397e6a3e355babe5b7726ccc4095",
+  "README.md": "5928fe06f2f82d57f228786676f182f3cd16cf5e0fc8ebf5b737f57e579da4ab",
   "acceptance-tests.txt": "a17fe729a276d81c7836fd65d3fee0c8e91e81c96338ea69d37af1a6f71d8fe4",
   "assembly-connections.tex": "1a8aedf046282bbbdcda4f264fb2da677bc3b7ce3388b412ad8f520c7bd6b7f6",
   "assembly-findings.tex": "670926a151a87fcf9f2adcfa4cf37789215ec23ca470b9f6cbc1fb20757f5f06",
@@ -165,8 +165,11 @@
   "latex-build.txt": "a6fe43aa4650b5b1fe160c6d00260a5748ae0ce7a239c6c7d55137ffaf05203c",
   "monitor-assembly.pdf": "d13f350a72f707cb5e53f5fab18c43207e3d27defdcdc672eb62b3dad154cb7c",
   "monitor-assembly.png": "fa18e0947581fd267e951d9bc2060b64007b4b9cd380dbea51a85dfe3a31c401",
-  "report.pdf": "034918f6f730b435a95e7a97e7a7bbddc4ccc51050704a8b091ba19e2a26dc89",
-  "report.tex": "5932126fef384eadf629042f93ea09df0f6caa4aaecf784ecd9e28d482775122",
+  "report.pdf": "da5751a809c6822ae829474e39fd640b909cf733f999308b41ced37f1c61e1e9",
+  "report.tex": "154b1cfe34c18c6b546cf2a5e4d2bd1377054abd5169b766e074bae325cff644",
+  "selective-latex-build.txt": "92313e417f2989caac0ddd8ce79bde734cc054fd0b6a06312d93062b7f792d9b",
+  "selective-spi-followup.tex": "1e45f33ffe5796d496f92954d73cf3259e1a6bb226cef5d8e5c9dd7a2875a311",
+  "selective-spi.pdf": "4925adade9d79e6e53c5e1060888154679e862a9f311653f0cf72c6b3f20750b",
   "tdc-clock40-followup.tex": "9e480a0b6d2f19273098d0d81eddf881789cbe1ffce5fd90049bc227127ba155",
   "tdc-clock40-phase.pdf": "27574a66121b91b9fac79762df4a549c4f5e2598cdd48225baf5ed49d81729ff"
 }

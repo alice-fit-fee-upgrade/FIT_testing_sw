@@ -1,3 +1,9 @@
+Latest selective HDMI follow-up: each of four data outputs160 isolated cycles,
+no SYS restart. Coupled SPI remains the reproducer, including at917Hz SCK.
+An apparent busy/reset overlap was caused by delayed counter readback and
+is not causal evidence. Timed nominal epochs are after frame completion.
+[Raw traces and conservative reanalysis](../../system/evidence-selective-20261114/README.md).
+
 **Latest 2026-11-14:** the report starts with the corrected-clock TDC repeat.
 Current SRAM build **c7531465**; TDC9–12 PASS, 19,268 events, 25 phase
 positions/channel. ADC digital regression all12/both banks PASS. HDMI/SPI
@@ -9,7 +15,7 @@ correct-clock TDC qualification. USB stimulus still on PM10.
 
 # Assembly verification, fitted group9–12 — 2026-11-13
 
-[58-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
+[59-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
 
 Board PM12-K7-3A17A1B402212223. USB stimulus stays on physical10. This is assembly verification, not an unconditional board release: 30 selected cases,28 PASS,2 FAIL,59 NOT_MEASURED.
 
