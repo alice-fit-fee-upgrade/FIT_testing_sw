@@ -30,6 +30,6 @@
   "spi_outputs_held": true,
   "previous_fallback_build": "c7c42d28",
   "previous_fallback_clock_qualification": false,
-  "latest_followup": "PM HDMI parser reset A/B inconclusive:132 frames on temporary8da2d6d3 all stable, including normal controls. Exactc7531465 restored;36 original-image signatures stable. Kasli unchanged, SPI driven, ADC postflightPASS. Intermittent fault remains open.",
+  "latest_followup": "Direct SPI-state observer:4 SYS resets among12 saved frames, all parserIDLE9.608\u201310.219nominal ms after frame. SYS MMCMLOCK falls, RST/PWR0; CAP/GTXLOCK1.600:0/6,601:4/6, partial sweep. No SPI alias in audited reset/clock cone. Exactc7531465 restored; Kasli unchanged/driven; ADC/power/frontendPASS. Fault remains open.",
   "additional_observation": "Onech01 ADC capture stability failure at selected position1255; raw retained. Fresh leased all12 ADC bankA postflight PASS."
 }

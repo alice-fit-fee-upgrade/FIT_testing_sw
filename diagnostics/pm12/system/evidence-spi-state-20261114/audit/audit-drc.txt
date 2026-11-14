@@ -1,0 +1,36 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (lin64) Build 6299465 Fri Nov 14 12:34:56 MST 2025
+| Date         : Sat Nov 14 16:39:50 2026
+| Host         : codex-hil-Precision-5820-Tower-X-Series running 64-bit Ubuntu 22.04.5 LTS
+| Command      : report_drc -checks {MDRV-1 NSTD-1 UCIO-1} -file audit-drc.txt
+| Design       : pm12_ipbus_adc
+| Device       : xc7k160tffg676-3
+| Speed File   : -3
+| Design State : ignored
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: checkpoint_pm12_ipbus_adc
+      Design limits: <entire design considered>
+
+            Checks: MDRV-1 NSTD-1 UCIO-1
+             Max checks: <unlimited>
+             Checks found: 0
++------+----------+-------------+--------+
+| Rule | Severity | Description | Checks |
++------+----------+-------------+--------+
++------+----------+-------------+--------+
+
+2. REPORT DETAILS
+-----------------
+

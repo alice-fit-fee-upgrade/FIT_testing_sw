@@ -1,0 +1,2 @@
+PASS state/address/data capture, idle-state correlation at SYS reset, persistence/readout, rearm and short-lock-loss latch
+diagnostics/pm12/system/spi_state/tb.v:22: $finish called at 56087600 (1ps)

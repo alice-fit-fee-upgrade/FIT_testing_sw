@@ -1,3 +1,9 @@
+Latest direct correlation: [four reset traces and netlist audit](evidence-spi-state-20261114/README.md).
+All four resets occur with parserIDLE9.6–10.2nominal ms after frame; fixed
+MMCMLOCK falls while its reset/powerdown controls remain0. No unintended SPI
+connection found in the audited reset/clock cone. Partial sweep explicitly
+retained; exactc7531465 restored, Kasli unchanged/driven, ADC postflightPASS.
+
 Latest parser-reset A/B: [raw evidence](evidence-spi-reset-20261114/README.md).
 PM receiver held in reset at runtime;132 frames stable, including normal
 controls. Inconclusive for suppression. Exactc7531465 restored;36 further

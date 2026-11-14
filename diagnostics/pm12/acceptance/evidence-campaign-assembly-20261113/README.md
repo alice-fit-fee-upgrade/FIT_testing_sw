@@ -1,3 +1,9 @@
+Latest direct SPI-state/clock correlation: [four reset traces and netlist audit](../../system/evidence-spi-state-20261114/README.md).
+All four SYS resets occur with parserIDLE9.6–10.2nominal ms after frame end;
+fixedMMCMLOCK falls withRST/PWR0, CAP/GTXLOCK1.600:0/6,601:4/6 (small ordered
+partial series). No SPI merge found in audited clock/reset/control cone.
+Exactc7531465 restored, Kasli unchanged/driven, ADC/power/frontend postflightPASS.
+
 Latest parser-reset A/B: [raw records](../../system/evidence-spi-reset-20261114/README.md).
 132 measured frames stable in both held and normal modes: inconclusive for
 suppression. After exactc7531465 restore,36 ordinary signatures also stable.
@@ -28,7 +34,7 @@ correct-clock TDC qualification. USB stimulus still on PM10.
 
 # Assembly verification, fitted group9–12 — 2026-11-13
 
-[61-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
+[63-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
 
 Board PM12-K7-3A17A1B402212223. USB stimulus stays on physical10. This is assembly verification, not an unconditional board release: 30 selected cases,28 PASS,2 FAIL,59 NOT_MEASURED.
 

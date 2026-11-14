@@ -1,0 +1,77 @@
+Acquired Dell heavy-build slot 1/3
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Sat Nov 14 16:39:33 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source audit.tcl
+# set_param general.maxThreads 4
+# open_checkpoint [lindex $argv 0]
+Command: open_checkpoint /srv/nvme-fast-1/vivado-work/pm12-tdc-clock40-20261114/build/pm12_ipbus_adc.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.04 . Memory (MB): peak = 1552.156 ; gain = 0.000 ; free physical = 19462 ; free virtual = 64866
+INFO: [Device 21-403] Loading part xc7k160tffg676-3
+Netlist sorting complete. Time (s): cpu = 00:00:00.06 ; elapsed = 00:00:00.07 . Memory (MB): peak = 1764.211 ; gain = 0.000 ; free physical = 19243 ; free virtual = 64652
+INFO: [Netlist 29-17] Analyzing 566 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1858.898 ; gain = 3.000 ; free physical = 19131 ; free virtual = 64541
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2477.773 ; gain = 0.000 ; free physical = 18580 ; free virtual = 63989
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2477.773 ; gain = 0.000 ; free physical = 18580 ; free virtual = 63989
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2477.773 ; gain = 0.000 ; free physical = 18580 ; free virtual = 63989
+Read placeStorage: Time (s): cpu = 00:00:00.33 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2477.773 ; gain = 0.000 ; free physical = 18580 ; free virtual = 63989
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2477.773 ; gain = 0.000 ; free physical = 18580 ; free virtual = 63989
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.26 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2477.773 ; gain = 0.000 ; free physical = 18572 ; free virtual = 63981
+Read Physdb Files: Time (s): cpu = 00:00:00.62 ; elapsed = 00:00:00.48 . Memory (MB): peak = 2477.773 ; gain = 0.000 ; free physical = 18572 ; free virtual = 63981
+Restored from archive | CPU: 0.680000 secs | Memory: 14.067413 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.66 ; elapsed = 00:00:00.51 . Memory (MB): peak = 2477.773 ; gain = 5.938 ; free physical = 18572 ; free virtual = 63981
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2477.773 ; gain = 0.000 ; free physical = 18572 ; free virtual = 63981
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 80 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+  SRLC16E => SRL16E: 72 instances
+  SRLC32E => SRL16E: 2 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 2485.809 ; gain = 933.652 ; free physical = 18572 ; free virtual = 63981
+# set f [open [lindex $argv 1] w]
+# proc describe {f p} {
+#  puts $f "PIN $p"
+#  puts $f "NET [get_nets -quiet -segments -of_objects $p]"
+#  puts $f "DRIVERS [get_pins -quiet -of_objects [get_nets -quiet -of_objects $p] -filter {DIRECTION == OUT}]"
+#  puts $f "STARTPOINTS [all_fanin -quiet -flat -startpoints_only -to $p]"
+# }
+# foreach c [get_cells -hier -filter {REF_NAME =~ MMCME2*}] {
+#  puts $f "CELL $c [get_property REF_NAME $c]"
+#  foreach n {CLKIN1 CLKIN2 CLKINSEL CLKFBIN RST PWRDWN} {foreach p [get_pins -quiet $c/$n] {describe $f $p}}
+# }
+# foreach name {HSCK HSEL HMOSI HMISO MGTCLK_P MGTCLK_N MCLK1_P MCLK1_N} {
+#  set p [get_ports $name];puts $f "PORT $name PIN=[get_property PACKAGE_PIN $p] NET=[get_nets -of_objects $p]"
+#  puts $f "FANOUT [all_fanout -quiet -flat -endpoints_only -from $p]"
+# }
+# foreach n [get_nets -quiet -hier -filter {NAME == sys_rst || NAME =~ *async_reset*}] {
+#  puts $f "RESET_NET $n";foreach p [get_pins -quiet -of_objects $n -filter {DIRECTION == OUT}] {describe $f $p}
+# }
+# close $f
+# report_drc -checks {MDRV-1 NSTD-1 UCIO-1} -file [lindex $argv 2]
+Command: report_drc -checks {MDRV-1 NSTD-1 UCIO-1} -file audit-drc.txt
+INFO: [DRC 23-27] Running DRC with 4 threads
+INFO: [Vivado_Tcl 2-168] The results of DRC are in file /srv/nvme-fast-1/vivado-work/pm12-spi-state-20261114/audit-drc.txt.
+report_drc completed successfully
+# exit
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 14 16:39:50 2026...
