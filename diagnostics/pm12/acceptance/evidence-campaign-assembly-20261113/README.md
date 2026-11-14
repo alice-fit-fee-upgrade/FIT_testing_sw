@@ -1,3 +1,8 @@
+Latest parser-reset A/B: [raw records](../../system/evidence-spi-reset-20261114/README.md).
+132 measured frames stable in both held and normal modes: inconclusive for
+suppression. After exactc7531465 restore,36 ordinary signatures also stable.
+Fault remains open/intermittent. Kasli unchanged, SPI driven, ADC postflightPASS.
+
 Individual SPI pin follow-up: temporary GPIO mode confirmed by MCU pin reads;
 SEL/SCK/MOSI separately36 cycles and selected MOSI24 cycles without observed
 reset. Full-frame controls still reproduce (2/12 confirmed before and after;
@@ -23,7 +28,7 @@ correct-clock TDC qualification. USB stimulus still on PM10.
 
 # Assembly verification, fitted group9–12 — 2026-11-13
 
-[60-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
+[61-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
 
 Board PM12-K7-3A17A1B402212223. USB stimulus stays on physical10. This is assembly verification, not an unconditional board release: 30 selected cases,28 PASS,2 FAIL,59 NOT_MEASURED.
 

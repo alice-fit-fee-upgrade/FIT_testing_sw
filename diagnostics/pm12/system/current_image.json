@@ -30,6 +30,6 @@
   "spi_outputs_held": true,
   "previous_fallback_build": "c7c42d28",
   "previous_fallback_clock_qualification": false,
-  "latest_followup": "Individual input pins: no observed resets in host-timed GPIO trials; coupled SPI positive controls2/12 each before/after. Original Kasli restored. MISO comparison inconclusive due stable controls.",
+  "latest_followup": "PM HDMI parser reset A/B inconclusive:132 frames on temporary8da2d6d3 all stable, including normal controls. Exactc7531465 restored;36 original-image signatures stable. Kasli unchanged, SPI driven, ADC postflightPASS. Intermittent fault remains open.",
   "additional_observation": "Onech01 ADC capture stability failure at selected position1255; raw retained. Fresh leased all12 ADC bankA postflight PASS."
 }

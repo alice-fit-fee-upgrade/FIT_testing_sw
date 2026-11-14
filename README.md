@@ -1,5 +1,5 @@
 Latest PM12 result (2026-11-14): corrected-clock TDC9–12 repeat PASS,
-19,268 events; [60-page editable acceptance report](diagnostics/pm12/acceptance/evidence-campaign-assembly-20261113/report.pdf)
+19,268 events; [61-page editable acceptance report](diagnostics/pm12/acceptance/evidence-campaign-assembly-20261113/report.pdf)
 and [raw evidence](diagnostics/pm12/tdc_live120/evidence-clock40-20261114/README.md).
 Current diagnostic c7531465; HDMI/SPI reset remains an open finding.
 

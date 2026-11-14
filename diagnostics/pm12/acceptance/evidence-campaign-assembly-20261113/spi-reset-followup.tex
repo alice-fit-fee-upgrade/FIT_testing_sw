@@ -1,0 +1,44 @@
+\clearpage
+\section{PM HDMI parser held in reset: 14 November 2026}
+Temporary PM image \texttt{8da2d6d3}, derived from the corrected-clock
+\texttt{c7531465}. Only the PM HDMI parser is held in its original deselected
+reset branch; this does not reset the Kasli master or MCU SPI engine.
+Physical SCK still clocks the circuit. Runtime IPbus 305 selects hold 0/1;
+the control is initialized at configuration but deliberately survives SYS
+reset. It was read back after every block. No SYS reset occurred to demonstrate
+retention physically. Invalid hold value 2 was rejected.
+
+MISO data is forced zero while held; actual HSEL still controls its physical
+output enable. Normal read 3 is primed before each block to logically match
+zero MISO. Alternating normal/held trials share one PM image and unchanged
+Kasli, buffer direction, OE and external clock profiles.
+\begin{center}\begin{tabular}{lrrr}\toprule
+Group & Frames & SYS decreases & Timeouts\\\midrule
+Normal signatures &24&0&0\\
+Normal matched read 3 &48&0&0\\
+Held matched read 3 &48&0&0\\
+Held signature stimuli &12&0&0\\\bottomrule\end{tabular}\end{center}
+Nine priming reads are additional and excluded from these 132 measured frames.
+\textbf{The result is inconclusive for suppression: normal controls also did
+not reproduce the fault.} Resetting the parser has not been established as
+a fix or the unique cause. Logical MISO matching is not a continuous electrical
+pad measurement. The original source and a testbench check normal signatures,
+held parser state under full frames, zero output and release/recovery.
+Dell implementation: WNS 0.095 ns, WHS 0.007 ns; no DRC errors, baseline FIFO warning.
+
+Exact \texttt{c7531465} was restored afterwards. A further 36 normal signature
+frames also had zero observed decreases/timeouts. Thus the fault remains an
+open intermittent observation, currently not reproduced. No clock-phase,
+routing or initialization mechanism is established by this comparison.
+Fresh physical ADC bankA passed all 12 channels after restoration and after
+the original-image control. Power, TDC frontend 0xfff and driven Kasli SPI
+were healthy. No Kasli, MCU, CPLD or flash programming or explicit external
+PLL/profile changes were performed.
+
+Raw data, exact candidate source/bitstream, timing, simulation and restoration
+receipts are retained in \texttt{system/evidence-spi-reset-20261114}.
+An initial preflight rejected the current image because a historical helper
+hardcoded old \texttt{c7c42d28}; it stopped before programming and is retained
+as rejected. The completed test uses explicit current identity and physical
+DNA. Historical campaign source contracts were preserved.
+\clearpage

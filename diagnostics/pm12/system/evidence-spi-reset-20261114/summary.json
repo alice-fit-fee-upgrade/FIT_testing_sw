@@ -1,0 +1,98 @@
+{
+  "groups": {
+    "signatures-normal": {
+      "frames": 24,
+      "counter_decreases": 0,
+      "timeouts": 0,
+      "frames_with_timeouts": 0
+    },
+    "matched-zero-normal": {
+      "frames": 48,
+      "counter_decreases": 0,
+      "timeouts": 0,
+      "frames_with_timeouts": 0
+    },
+    "matched-zero-held": {
+      "frames": 48,
+      "counter_decreases": 0,
+      "timeouts": 0,
+      "frames_with_timeouts": 0
+    },
+    "signatures-held": {
+      "frames": 12,
+      "counter_decreases": 0,
+      "timeouts": 0,
+      "frames_with_timeouts": 0
+    }
+  },
+  "blocks": [
+    {
+      "label": "signatures-before",
+      "held": 0,
+      "frames": 12,
+      "counter_decreases": 0,
+      "timeouts": 0
+    },
+    {
+      "label": "matched-zero-0",
+      "held": 0,
+      "frames": 16,
+      "counter_decreases": 0,
+      "timeouts": 0
+    },
+    {
+      "label": "matched-zero-1",
+      "held": 1,
+      "frames": 16,
+      "counter_decreases": 0,
+      "timeouts": 0
+    },
+    {
+      "label": "matched-zero-2",
+      "held": 0,
+      "frames": 16,
+      "counter_decreases": 0,
+      "timeouts": 0
+    },
+    {
+      "label": "matched-zero-3",
+      "held": 1,
+      "frames": 16,
+      "counter_decreases": 0,
+      "timeouts": 0
+    },
+    {
+      "label": "matched-zero-4",
+      "held": 1,
+      "frames": 16,
+      "counter_decreases": 0,
+      "timeouts": 0
+    },
+    {
+      "label": "matched-zero-5",
+      "held": 0,
+      "frames": 16,
+      "counter_decreases": 0,
+      "timeouts": 0
+    },
+    {
+      "label": "held-signatures",
+      "held": 1,
+      "frames": 12,
+      "counter_decreases": 0,
+      "timeouts": 0
+    },
+    {
+      "label": "signatures-after",
+      "held": 0,
+      "frames": 12,
+      "counter_decreases": 0,
+      "timeouts": 0
+    }
+  ],
+  "conclusion": "Matched normal zero-data frames did not reproduce the restart; this comparison cannot establish suppression by reset.",
+  "hold_verified_after_each_block": true,
+  "restored": true,
+  "adc_validated": true,
+  "scope": "Conservative counter decreases. Timeouts remain unknown outcomes. Logical zero MISO matching is source/protocol based, not continuous electrical observation."
+}

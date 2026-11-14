@@ -1,3 +1,8 @@
+Latest parser-reset A/B: [raw evidence](evidence-spi-reset-20261114/README.md).
+PM receiver held in reset at runtime;132 frames stable, including normal
+controls. Inconclusive for suppression. Exactc7531465 restored;36 further
+original-image controls stable. Kasli was not reloaded. Fault remains open.
+
 Latest individual-pin repeat: [evidence and limitations](evidence-spi-pins-20261114/README.md).
 SEL/SCK/MOSI independently exercised without reset; full SPI controls still
 reproduce SYS restarts. MISO constant-data comparison inconclusive. Original
