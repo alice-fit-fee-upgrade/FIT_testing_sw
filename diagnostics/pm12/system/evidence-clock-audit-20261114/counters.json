@@ -1,0 +1,105 @@
+{
+  "utc": "2026-11-14T08:09:58.509584+00:00",
+  "measurements": [
+    {
+      "before": {
+        "time_mid": 149706.4529852345,
+        "span_s": 0.00016872299602255225,
+        "kasli_sys": 603172580,
+        "kasli_pm_ref": 2403657007,
+        "pm_sys": 1574347908040
+      },
+      "after": {
+        "time_mid": 149708.4533117395,
+        "span_s": 0.00040914700366556644,
+        "kasli_sys": 843672440,
+        "kasli_pm_ref": 2523912024,
+        "pm_sys": 1574428080776
+      },
+      "elapsed_s": 2.0003265049890615,
+      "kasli_sys_hz": 120230302.10326345,
+      "kasli_pm_ref_hz": 60117694.136466786,
+      "pm_sys_hz": 40079824.868609846
+    },
+    {
+      "before": {
+        "time_mid": 149708.45368818298,
+        "span_s": 0.0003263280086684972,
+        "kasli_sys": 843720326,
+        "kasli_pm_ref": 2523934642,
+        "pm_sys": 1574428094766
+      },
+      "after": {
+        "time_mid": 149710.4546043045,
+        "span_s": 0.0007000289915595204,
+        "kasli_sys": 1084289504,
+        "kasli_pm_ref": 2644224534,
+        "pm_sys": 1574508294201
+      },
+      "elapsed_s": 2.0009161215275526,
+      "kasli_sys_hz": 120229516.57580882,
+      "kasli_pm_ref_hz": 60117408.57391238,
+      "pm_sys_hz": 40081357.802631736
+    },
+    {
+      "before": {
+        "time_mid": 149710.455371405,
+        "span_s": 0.0007815060089342296,
+        "kasli_sys": 1084373540,
+        "kasli_pm_ref": 2644269745,
+        "pm_sys": 1574508324207
+      },
+      "after": {
+        "time_mid": 149712.4565596045,
+        "span_s": 0.0007794629782438278,
+        "kasli_sys": 1324991168,
+        "kasli_pm_ref": 2764575595,
+        "pm_sys": 1574588528469
+      },
+      "elapsed_s": 2.0011881995014846,
+      "kasli_sys_hz": 120237381.00191686,
+      "kasli_pm_ref_hz": 60117209.38089149,
+      "pm_sys_hz": 40078320.47979278
+    }
+  ],
+  "identity": [
+    1347228162,
+    65538,
+    3351522600
+  ],
+  "held": [
+    1,
+    9
+  ],
+  "pgood": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=89000001000000B6026C0103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2116
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=89000001000000EC006C0103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=890000010000000A036C0103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2118
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6F0F9EFC STATE 2157..2162=8900000100000040016C0103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2116
+    }
+  ],
+  "mcu_status": {
+    "command": "RS",
+    "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    36.4 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+    "duration_s": 0.2121
+  },
+  "adc_cap_count_metadata": [
+    4096,
+    12
+  ]
+}

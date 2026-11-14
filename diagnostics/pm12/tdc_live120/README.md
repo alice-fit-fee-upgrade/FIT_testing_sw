@@ -1,3 +1,5 @@
+**2026-11-14 clock audit:** c7c42d28 assumes120MHz on MCLK1, but the audited TI profile and physical ratios give40.0787MHz. Its TDC MMCM clock configuration is outside the VCO operating range. Earlier event/phase results below are retained historical functional observations, not correct-clock qualification. Clock40 retest is being prepared; [audit evidence](../system/evidence-clock-audit-20261114/README.md).
+
 # DIO5/9 repair verified —2026-11-10
 
 All eight gate-return lanes now have valid edges through404 DAC points.

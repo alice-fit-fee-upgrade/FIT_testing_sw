@@ -169,3 +169,5 @@ regeneration matches the final routed input RTL/XDC byte-for-byte.
 See [FIN input-state analysis](FIN_INPUTS.md) for termination, fail-safe limits and the difference between held CSR state and continuously defined physical inputs.
 
 [Reset-independent observer evidence](evidence-clock-observer-20261113/README.md): direct MMCM LOCK loss/SYS reset recorded in2of5SPI trials, with64sampled SCK transitions per frame. Golden restored, Kasli held driven. Watch frequency metadata120MHz disagrees with the observed≈40MHz ratio; no PLL outputs changed. FIN/electrical root cause remains open.
+
+[2026-11-14 clock audit](evidence-clock-audit-20261114/README.md): decoded MCU profile and fresh hardware ratios establish MCLK40 and MGT200; the TDC frontend assumes120MHz and requires correction/retest. No external PLL profile changes were made.

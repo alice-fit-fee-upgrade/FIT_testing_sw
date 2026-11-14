@@ -172,3 +172,5 @@ Completed available tests without moving USB from physical10. Scoped JTAG168link
 HDMI follow-up: [held-output isolation](../system/evidence-held-spi-20261113/README.md) reproduces delayed SYS restart after SPI reads without releasing outputs. Earlier attribution to release is superseded; HDMI remains FAIL. Slot6 SPI is now held driven at idle0, direction0x00b0. Avoid legacy integrated/STOP/input_cards cleanup.
 
 Clock observer follow-up: [direct traces](../system/evidence-clock-observer-20261113/README.md) establish SYS MMCM LOCK loss and reset after complete SPI frames. No FIN/electrical root cause is established. No case status changes. Golden restored; Kasli still held driven. Watch input frequency metadata needs audit (observed≈40MHz, source120MHz).
+
+2026-11-14: [clock audit](../system/evidence-clock-audit-20261114/README.md) identifies an invalid120MHz assumption in c7 TDC frontend. Historical TDC phase/count passes remain raw functional evidence; their correct-clock qualification is withdrawn pending clock40 retest. Other frozen cases are not overwritten.
