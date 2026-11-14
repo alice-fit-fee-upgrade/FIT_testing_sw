@@ -1,0 +1,12 @@
+{
+  "README.md": "cab2b2173fa30f54228587d0af42ed3ffeb7b090d7eec321fc8c61f55939a084",
+  "current_image.json": "1ca210d7d3042dc42d7a233900d9abe323d921f39126f0793691879677e7e5c2",
+  "hardware-raw.tar.gz": "1a30e0901e68f2aa6cc853b891c9951979618052783cdf37de5d8108f42e5f5b",
+  "phase.csv": "cd27d503d27c5fa2f331398b4780f894c165a05629f3a09cb08d869f1a4d5f41",
+  "source-and-bit.tar.gz": "bdced601f74f3705bbe0ae0be6bf80f4c51cc3cb83f5cf278564da63f2525068",
+  "tdc-clock40-phase.pdf": "27574a66121b91b9fac79762df4a549c4f5e2598cdd48225baf5ed49d81729ff",
+  "tdc-clock40-phase.png": "25f07f344bcaebeab2afd77c749251df66d4440f24bf06414dd6bded53ab862e",
+  "tdc-coarse-span.pdf": "e716d673f2e4aa143bc0bd82d803c8872e68fcd2fd5bd9d65a886519acccfbbd",
+  "tdc-coarse-span.png": "70fb96361b5812ef053f1bd8385997221be13a568c0bb7db690035bf62bdbd6f",
+  "validation.json": "0f52f98f83b9776d57006fdb6b2c2f486c7fb81042127a3a16babb7a806436a4"
+}

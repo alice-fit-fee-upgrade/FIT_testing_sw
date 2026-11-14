@@ -1,3 +1,5 @@
+**Current 2026-11-14:** corrected-clock SRAM build `c7531465` retained; TDC9–12 repeat PASS (19,268 events), ADC digital regression all12/both banks PASS. HDMI/SPI SYS restarts persist (8/12 reads). [Evidence](../tdc_live120/evidence-clock40-20261114/README.md). No external PLL profile was changed. Slot6 SPI outputs must remain driven. Historical c7c42d28 results below are not correct-clock qualification.
+
 # Integrated PM12 / Kasli diagnostic image pair
 
 **2026-11-13 follow-up:** [Held-output isolation](evidence-held-spi-20261113/README.md) shows delayed SYS restarts after SPI reads even with enable1 and unchanged buffer directions. Output release is not established as the cause. The current `test_system.py` entry runs `hold_spi.py` and leaves SPI driven; legacy `station.py integrated` / `host.pm_system_test.run` must not be used in the held setup. MCU SPI counters persist across SYS restarts, supporting a domain reset rather than whole-chip reconfiguration.

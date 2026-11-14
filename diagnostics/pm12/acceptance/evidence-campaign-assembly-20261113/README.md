@@ -1,6 +1,15 @@
+**Latest 2026-11-14:** the report starts with the corrected-clock TDC repeat.
+Current SRAM build **c7531465**; TDC9–12 PASS, 19,268 events, 25 phase
+positions/channel. ADC digital regression all12/both banks PASS. HDMI/SPI
+SYS restarts persist (8/12 reads); CFD11 MUX7 finding remains open.
+[New raw evidence and plots](../../tdc_live120/evidence-clock40-20261114/README.md).
+External PLL profiles were not changed; slot6 SPI stays driven. Historical
+campaign coverage below is unchanged. The previous c7 image is not a
+correct-clock TDC qualification. USB stimulus still on PM10.
+
 # Assembly verification, fitted group9–12 — 2026-11-13
 
-[55-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
+[58-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
 
 Board PM12-K7-3A17A1B402212223. USB stimulus stays on physical10. This is assembly verification, not an unconditional board release: 30 selected cases,28 PASS,2 FAIL,59 NOT_MEASURED.
 

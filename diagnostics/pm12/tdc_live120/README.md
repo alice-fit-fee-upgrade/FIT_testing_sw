@@ -1,4 +1,4 @@
-**2026-11-14 clock audit:** c7c42d28 assumes120MHz on MCLK1, but the audited TI profile and physical ratios give40.0787MHz. Its TDC MMCM clock configuration is outside the VCO operating range. Earlier event/phase results below are retained historical functional observations, not correct-clock qualification. Clock40 retest is being prepared; [audit evidence](../system/evidence-clock-audit-20261114/README.md).
+**Current 2026-11-14:** corrected-clock SRAM build `c7531465` retained; TDC9–12 repeat PASS (19,268 events), ADC digital regression all12/both banks PASS. HDMI/SPI SYS restarts persist (8/12 reads). [Evidence](evidence-clock40-20261114/README.md). No external PLL profile was changed. Slot6 SPI outputs must remain driven. Historical c7c42d28 results below are not correct-clock qualification.
 
 # DIO5/9 repair verified —2026-11-10
 

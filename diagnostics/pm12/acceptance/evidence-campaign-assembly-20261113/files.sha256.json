@@ -1,5 +1,5 @@
 {
-  "README.md": "917776b709b3977391db194e8bc141293b352595f923c922dceb1da41defd2c9",
+  "README.md": "c46a99c55c1dc3b39b8341de2fb732f77862397e6a3e355babe5b7726ccc4095",
   "acceptance-tests.txt": "a17fe729a276d81c7836fd65d3fee0c8e91e81c96338ea69d37af1a6f71d8fe4",
   "assembly-connections.tex": "1a8aedf046282bbbdcda4f264fb2da677bc3b7ce3388b412ad8f520c7bd6b7f6",
   "assembly-findings.tex": "670926a151a87fcf9f2adcfa4cf37789215ec23ca470b9f6cbc1fb20757f5f06",
@@ -9,6 +9,7 @@
   "clock-loss-read0.pdf": "aa3a5a9eecf73380bc1563f6d031a57b1e65af4cfb7e65e993781ad94a03afa5",
   "clock-loss-read1.pdf": "d4c8c173329d01e2aa3ac32171e76f7530a20ee7a15d1f359d695282972686a7",
   "clock-observer-followup.tex": "2a201cedaf2c8d61fe1ad8cf9686b62b33d1851efc39da8f2cf1dd6b5a2efdf6",
+  "clock40-latex-build.txt": "943c4b157412e881bff0d2629a99db49799ae92cd6c2e387f75f9063cfe039b9",
   "content.tex": "1a99b127c3b934b01defed2d9c84a14caa8b633c6c7a5acf6c19f2a8fe1e3524",
   "coverage.json": "ec2d7c3dccf14803c3c7db17d6fe4126ddc04595fd5cedaf37bec237d33ab586",
   "executed-assembly-appendix.py": "a7a90377eeba85807b41d54b9da3dc4133905a1629b747958a72bc1f219d1ce3",
@@ -164,6 +165,8 @@
   "latex-build.txt": "a6fe43aa4650b5b1fe160c6d00260a5748ae0ce7a239c6c7d55137ffaf05203c",
   "monitor-assembly.pdf": "d13f350a72f707cb5e53f5fab18c43207e3d27defdcdc672eb62b3dad154cb7c",
   "monitor-assembly.png": "fa18e0947581fd267e951d9bc2060b64007b4b9cd380dbea51a85dfe3a31c401",
-  "report.pdf": "b7003c740720f345671395e251d5a55d9330917372b8fdb0cd194be8cd151632",
-  "report.tex": "c723433ba9cf212c167fee77e46e7c503a6bf1d1a0a7657d0f78bef778faa3b5"
+  "report.pdf": "034918f6f730b435a95e7a97e7a7bbddc4ccc51050704a8b091ba19e2a26dc89",
+  "report.tex": "5932126fef384eadf629042f93ea09df0f6caa4aaecf784ecd9e28d482775122",
+  "tdc-clock40-followup.tex": "9e480a0b6d2f19273098d0d81eddf881789cbe1ffce5fd90049bc227127ba155",
+  "tdc-clock40-phase.pdf": "27574a66121b91b9fac79762df4a549c4f5e2598cdd48225baf5ed49d81729ff"
 }
