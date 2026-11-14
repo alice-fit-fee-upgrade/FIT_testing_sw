@@ -1,3 +1,5 @@
+Current2026-11-13: original A/B gates are restored, and CFD port assignments now cover12/11/10/9. See the[latest campaign procedure](../../acceptance/TIMING_CAMPAIGN.md).
+
 # Four CFD simulators on the existing slot7 DIO card
 
 ## Physical assignment
@@ -79,7 +81,7 @@ DAC readback is claimed. `pass_` in this acquisition receipt means completed
 acquisition/cleanup; missing gate edges are retained as measurement results,
 not converted into a hardware PASS.
 
-**CPLD12 currently retains the INTB-off experimental image.** Both original
+**Historical state on2026-11-10: CPLD12 retained the INTB-off experimental image.** Both original
 complementary gates were temporarily restored for its full phase-shifter scan,
 then INTB-off was restored and vendor-verified. Establish the required gate mode
 explicitly before repeating that measurement; the generic scan does not program

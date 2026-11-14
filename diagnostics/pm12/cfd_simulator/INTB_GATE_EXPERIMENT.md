@@ -1,5 +1,19 @@
 # INTB gate isolation on physical channel 12
 
+**Current state, 2026-11-12: original INTA and INTB operation restored.**
+Owner requested ending the INTB-off experiment. Only CPLD12 was programmed
+with the archived original-gate vector. Vendor verification and two complete
+array reads confirm all12 CPLDs match the original baseline; CPLD1..11
+nonvolatile contents are unchanged. Kasli gate capture before/after: INTA
+682→683 rising edges; INTB0→682, over32760samples per lane. PGOOD and MCU1803 /
+FPGA DNA3A17A1B402212223 were verified. No FPGA/MCU programming, DAC writes
+or analog routing changes. Kasli capture stopped and leases released.
+[Restoration receipt](evidence-intb-restored-20261112/status.json) and
+[raw captures, programming/verification logs](evidence-intb-restored-20261112/).
+The INTB-off measurements below are historical; their experimental image is
+no longer the retained hardware state.
+
+
 2026-11-08 experiment: retain the original INTA/P53 divider waveform for the
 CFD_SIM phase shifter, hold INTB/P54 LOW. Only CPLD12 nonvolatile configuration
 is changed; the other eleven CPLDs, PM FPGA, Kasli FPGA and MCU images remain.

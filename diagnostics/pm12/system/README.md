@@ -1,4 +1,33 @@
+Latest direct correlation: [four reset traces and netlist audit](evidence-spi-state-20261114/README.md).
+All four resets occur with parserIDLE9.6–10.2nominal ms after frame; fixed
+MMCMLOCK falls while its reset/powerdown controls remain0. No unintended SPI
+connection found in the audited reset/clock cone. Partial sweep explicitly
+retained; exactc7531465 restored, Kasli unchanged/driven, ADC postflightPASS.
+
+Latest parser-reset A/B: [raw evidence](evidence-spi-reset-20261114/README.md).
+PM receiver held in reset at runtime;132 frames stable, including normal
+controls. Inconclusive for suppression. Exactc7531465 restored;36 further
+original-image controls stable. Kasli was not reloaded. Fault remains open.
+
+Latest individual-pin repeat: [evidence and limitations](evidence-spi-pins-20261114/README.md).
+SEL/SCK/MOSI independently exercised without reset; full SPI controls still
+reproduce SYS restarts. MISO constant-data comparison inconclusive. Original
+Kasli image restored; driven outputs retained. One ADC capture-coherency warning
+retained; fresh postflight passed. No external PLL changes.
+
+Selective HDMI repeat: [results and raw data](evidence-selective-20261114/README.md).
+LVDS data outputs independently stable; SPI frames reproduce SYS restarts.
+SEL/SCK/MOSI not independently controllable in the resident image. Kasli
+was not reloaded; outputs remain driven. Do not interpret a busy sample
+before a blocked read as proof of reset during SEL assertion.
+
+**Current 2026-11-14:** corrected-clock SRAM build `c7531465` retained; TDC9–12 repeat PASS (19,268 events), ADC digital regression all12/both banks PASS. HDMI/SPI SYS restarts persist (8/12 reads). [Evidence](../tdc_live120/evidence-clock40-20261114/README.md). No external PLL profile was changed. Slot6 SPI outputs must remain driven. Historical c7c42d28 results below are not correct-clock qualification.
+
 # Integrated PM12 / Kasli diagnostic image pair
+
+**2026-11-13 follow-up:** [Held-output isolation](evidence-held-spi-20261113/README.md) shows delayed SYS restarts after SPI reads even with enable1 and unchanged buffer directions. Output release is not established as the cause. The current `test_system.py` entry runs `hold_spi.py` and leaves SPI driven; legacy `station.py integrated` / `host.pm_system_test.run` must not be used in the held setup. MCU SPI counters persist across SYS restarts, supporting a domain reset rather than whole-chip reconfiguration.
+
+**Earlier2026-11-13 observation (causal attribution superseded):** repeated resident runs reset SYS when FPGA pads are released after SPI signature reads. Walking/PRBS/idle data lanes pass, but the full HDMI test FAILS. Historical qualification below does not qualify the current setup. See [fresh evidence](../acceptance/evidence-campaign-assembly-20261113/README.md). Do not treat SPI release as qualified until fixed and retested.
 
 HDMI is added alongside the resident ADC/TDC and the Kasli SFP bridge. No
 production PM firmware, CPLD mux, MCU firmware, PLL profile or flash changes.
@@ -54,7 +83,7 @@ latches after releasing outputs. At the current baseline both cards are inputs.
 PM HDMI SPI is the isolated diagnostic map, not production peripheral control:
 active-high select, falling-edge shift, 16-bit header followed by 16-bit data.
 Signatures at00/01 are4844/4d49; register02 reports lock.
-**HSEL/HSCK/HMOSI/HMISO are shared with ATxmega PD4/5/6/7.** The host
+**Shared MCU pins (schematic sheet5): HSEL=PD4, HMOSI=PD5, HMISO=PD6, HSCK=PD7.** The host
 rejects writes, nonzero read payloads and every address outside0/1/2 before
 issuing a transaction. The FPGA also has scratch40/count41/complement42, but
 these addresses are NOT qualified for use with the live MCU. Earlier arbitrary
@@ -161,3 +190,9 @@ and TDC ends with a frozen quiet capture. MCU/CPLD/configuration flash images
 were not programmed. External DAC and CFD analog controls were not written.
 The source archive includes the station driver and generated Kasli RTL/XDC;
 regeneration matches the final routed input RTL/XDC byte-for-byte.
+
+See [FIN input-state analysis](FIN_INPUTS.md) for termination, fail-safe limits and the difference between held CSR state and continuously defined physical inputs.
+
+[Reset-independent observer evidence](evidence-clock-observer-20261113/README.md): direct MMCM LOCK loss/SYS reset recorded in2of5SPI trials, with64sampled SCK transitions per frame. Golden restored, Kasli held driven. Watch frequency metadata120MHz disagrees with the observed≈40MHz ratio; no PLL outputs changed. FIN/electrical root cause remains open.
+
+[2026-11-14 clock audit](evidence-clock-audit-20261114/README.md): decoded MCU profile and fresh hardware ratios establish MCLK40 and MGT200; the TDC frontend assumes120MHz and requires correction/retest. No external PLL profile changes were made.

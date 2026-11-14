@@ -1,0 +1,166 @@
+{
+  "samples": [
+    {
+      "monotonic": 105972.252261279,
+      "uptime": [
+        3642032028,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    },
+    {
+      "monotonic": 105972.502540917,
+      "uptime": [
+        3652063447,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    },
+    {
+      "monotonic": 105972.753007728,
+      "uptime": [
+        3662102003,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    },
+    {
+      "monotonic": 105973.003551919,
+      "uptime": [
+        3672143294,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    },
+    {
+      "monotonic": 105973.254062428,
+      "uptime": [
+        3682183716,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    },
+    {
+      "monotonic": 105973.504631825,
+      "uptime": [
+        3692226117,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    },
+    {
+      "monotonic": 105973.755187378,
+      "uptime": [
+        3702267718,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    },
+    {
+      "monotonic": 105974.005722596,
+      "uptime": [
+        3712308924,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    },
+    {
+      "monotonic": 105974.256139739,
+      "uptime": [
+        3722345042,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    },
+    {
+      "monotonic": 105974.506616547,
+      "uptime": [
+        3732383907,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    },
+    {
+      "monotonic": 105974.757152683,
+      "uptime": [
+        3742425167,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    },
+    {
+      "monotonic": 105975.007651672,
+      "uptime": [
+        3752464827,
+        2
+      ],
+      "mcu_registers": [
+        0,
+        33
+      ],
+      "enable": 1,
+      "state": 9
+    }
+  ],
+  "identity": [
+    1347228162,
+    65538,
+    3351522600
+  ],
+  "pass": true
+}

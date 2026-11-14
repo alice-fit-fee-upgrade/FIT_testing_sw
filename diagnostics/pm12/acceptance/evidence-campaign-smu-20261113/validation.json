@@ -1,0 +1,14 @@
+{
+  "pass_": true,
+  "samples": 3636,
+  "transfer_curves": 12,
+  "points_per_curve": 101,
+  "samples_per_point": 3,
+  "safe_final_state": true,
+  "explicit_post_cleanup": true,
+  "original_tca_masks": {
+    "112": 0,
+    "113": 8
+  },
+  "scope": "Acquisition completeness/status/restore checks; no calibrated analog acceptance limits"
+}

@@ -1,0 +1,35 @@
+{
+  "schema": 1,
+  "board_uid": "PM12-K7-3A17A1B402212223",
+  "build_id": "c7531465",
+  "bit_sha256": "4f0b3edba1271eed41757bc7f21845e43a4ecb2e2c023abe28f3b5770abc8c16",
+  "bit_path": "/srv/codex-hil-nvme/pm12-tdc-clock40-20261114/candidate/pm12_ipbus_adc.bit",
+  "volatile_sram_only": true,
+  "mclk_hz": 40078700,
+  "tdc_reference_hz": 200393500,
+  "tdc_mmcm": {
+    "input_divider": 1,
+    "feedback_multiplier": 30,
+    "output_dividers": [
+      2,
+      2,
+      4
+    ],
+    "vco_hz": 1202361000,
+    "fast_hz": 601180500,
+    "coarse_hz": 300590250
+  },
+  "qualified_scope": [
+    "TDC counts and relative fine/coarse phase channels9\u201312",
+    "ADC digital acquisition and transport all12channels/bothbanks"
+  ],
+  "known_open_findings": [
+    "HDMI SPI causes SYS counter restarts:8/12reads in this repeat",
+    "CFD fixture at11 MUX7 divider discrepancy"
+  ],
+  "spi_outputs_held": true,
+  "previous_fallback_build": "c7c42d28",
+  "previous_fallback_clock_qualification": false,
+  "latest_followup": "Direct SPI-state observer:4 SYS resets among12 saved frames, all parserIDLE9.608\u201310.219nominal ms after frame. SYS MMCMLOCK falls, RST/PWR0; CAP/GTXLOCK1.600:0/6,601:4/6, partial sweep. No SPI alias in audited reset/clock cone. Exactc7531465 restored; Kasli unchanged/driven; ADC/power/frontendPASS. Fault remains open.",
+  "additional_observation": "Onech01 ADC capture stability failure at selected position1255; raw retained. Fresh leased all12 ADC bankA postflight PASS."
+}

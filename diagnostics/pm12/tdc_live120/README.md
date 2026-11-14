@@ -1,3 +1,5 @@
+**Current 2026-11-14:** corrected-clock SRAM build `c7531465` retained; TDC9–12 repeat PASS (19,268 events), ADC digital regression all12/both banks PASS. HDMI/SPI SYS restarts persist (8/12 reads). [Evidence](evidence-clock40-20261114/README.md). No external PLL profile was changed. Slot6 SPI outputs must remain driven. Historical c7c42d28 results below are not correct-clock qualification.
+
 # DIO5/9 repair verified —2026-11-10
 
 All eight gate-return lanes now have valid edges through404 DAC points.

@@ -1,3 +1,8 @@
+Latest PM12 result (2026-11-14): corrected-clock TDC9–12 repeat PASS,
+19,268 events; [63-page editable acceptance report](diagnostics/pm12/acceptance/evidence-campaign-assembly-20261113/report.pdf)
+and [raw evidence](diagnostics/pm12/tdc_live120/evidence-clock40-20261114/README.md).
+Current diagnostic c7531465; HDMI/SPI reset remains an open finding.
+
 # FIT hardware testing and characterization
 
 Software, diagnostic gateware, measurement procedures and reports for testing
@@ -19,6 +24,7 @@ PM12 acceptance workflow.** The original ARTIQ PMT simulator remains available a
 | Integrated digital paths | [HDMI, ADC and TDC test runner](diagnostics/pm12/system/README.md) |
 | ADC acquisition | [IPbus acquisition](diagnostics/pm12/ipbus_adc/README.md), [DC response](diagnostics/pm12/cfd_simulator/ADC_DC_SCAN.md) and [data-line checks](diagnostics/pm12/cfd_simulator/ADC_DATA_LINES.md) |
 | TDC and timing | [Live TDC diagnostics](diagnostics/pm12/tdc_live120/README.md), [CFD phase scans](diagnostics/pm12/cfd_simulator/PHASE_SCAN.md) and [four-channel repair verification](diagnostics/pm12/tdc_live120/FOUR_CFD_REPAIR_REPEAT.md) |
+| Integrators | [Channel 12 balance, signed ramp scans and LaTeX report](diagnostics/pm12/cfd_simulator/INTEGRATOR_SCAN.md) |
 | CFD DAC outputs | [Shared-mux voltage scans with Keysight SMU2](diagnostics/pm12/cfd_simulator/SMU_DAC_SCAN.md) |
 | Board dossiers | [Sequential acceptance runner, channel batches and LaTeX/PDF reports](diagnostics/pm12/acceptance/README.md) |
 
@@ -27,6 +33,8 @@ restoration behavior and qualification status. The acquisition scripts are not
 interchangeable across arbitrary FPGA images or bench connections.
 
 ## Collect data, generate chapters, assemble the dossier
+
+For the current four-CFD bench, use the [twelve-channel campaign workflow](diagnostics/pm12/acceptance/CAMPAIGN.md): fittings1–4,5–8,9–12, explicit CFD/cable mapping, retained repeats and one combined editable LaTeX report.
 
 1. Identify the board and instruments, configure the station profile and verify
    wiring. Acquire the shared board/instrument leases before hardware access.
@@ -69,6 +77,8 @@ archived measurements.
 
 ## Example evidence and reports
 
+- **Integrator balance, channel 12:** [PDF](diagnostics/pm12/cfd_simulator/evidence-integrator-20261113/report.pdf), [procedure and results](diagnostics/pm12/cfd_simulator/INTEGRATOR_SCAN.md). Signed A/B ramp response and revisited zero crossings; 688 raw ADC buffers.
+
 - **CFD DAC outputs, channels 10/8/6:** [PDF](diagnostics/pm12/cfd_simulator/evidence-smu-dac-20261110/report.pdf), [editable LaTeX](diagnostics/pm12/cfd_simulator/evidence-smu-dac-20261110/report.tex), [raw CSV](diagnostics/pm12/cfd_simulator/evidence-smu-dac-20261110/samples.csv). Nine transfer curves, 2727 samples; acquisition/status/restoration checks passed.
 - **Board dossier and wiring tables:** [compact specimen](diagnostics/pm12/acceptance/evidence-english-setup-20261108/report.pdf).
 - **ADC timing investigation:** [diagnosis and controlled repeats](diagnostics/pm12/acceptance/ADC_STROBE_DEBUG.md), with original rejected evidence retained.
@@ -78,3 +88,15 @@ A PASS applies to the selected procedure, configuration and measured channels.
 Archived examples do not certify other boards or unmeasured channels. Functional
 transfer scans do not imply exhaustive INL/DNL, calibrated jitter or complete
 board acceptance. Read each validation record alongside its plots and report.
+
+2026-11-13: [four-CFD campaign, first measured channel12](diagnostics/pm12/acceptance/evidence-campaign-ch12-20261113/README.md), with editable LaTeX, raw buffers and explicit twelve-channel coverage.
+
+[2026-11-13: SMU DAC transfer scans on physical channels9–12, with combined27-page LaTeX report](diagnostics/pm12/acceptance/evidence-campaign-smu-20261113/README.md).
+
+[2026-11-13: channel11 ADC A/B and integrator balance, compared with channel12](diagnostics/pm12/acceptance/evidence-campaign-ch11-20261113/README.md).
+
+[2026-11-13: channel10 ADC/integrator measurements and common plots for10–12](diagnostics/pm12/acceptance/evidence-campaign-ch10-20261113/README.md).
+
+[2026-11-13: TDC and both gate-phase responses on9–12;39-page cumulative report](diagnostics/pm12/acceptance/evidence-campaign-timing-20261113/README.md).
+
+Latest [assembly verification report](diagnostics/pm12/acceptance/evidence-campaign-assembly-20261113/README.md): two open findings (CFD monitor divider at11 and HDMI shared-SPI reset); this board is not unconditionally released.

@@ -1,5 +1,5 @@
 """External differential DAC->MAX4053->AD9236 A/B DC scan, selected PM channel."""
-import argparse,contextlib,fcntl,json,math,re,socket,statistics,struct,sys,time
+import argparse,contextlib,fcntl,json,math,re,socket,statistics,struct,sys,time,datetime
 from pathlib import Path
 HERE=Path(__file__).resolve().parent
 sys.path[:0]=[str(HERE),str(HERE.parent/'ipbus_adc'),'/home/codex-hil/FIT_PM_FW_uPC/tools/hardware']
@@ -8,6 +8,7 @@ from console import ConsoleI2C,Registers
 from mcp23017 import afe_route
 from client import Client
 from adc_decode import decode
+from channel_settings import snapshot_sources
 from pm12_console_regression import PORT,capture
 from pm12_power import wait_power_good,require_power_good
 import serial
@@ -57,7 +58,7 @@ def main():
  for v in differences:
   try:voltage(1+v/2);voltage(1-v/2)
   except (ValueError,TypeError):p.error('Both differential legs must remain within0..3.3V')
- a.out.mkdir(parents=True,exist_ok=False);report=dict(pass_=False,strict_edges=a.strict_edges,channel=a.afe,dac_channels=a.dac_channels,common_mode_v=1.0,max_pin_voltage_v=3.3,measurements=[])
+ a.out.mkdir(parents=True,exist_ok=False);sources=snapshot_sources(a.out,['__main__','channel_settings','adc_decode','mod_dac28','console','mcp23017','control','client','lease','pm12_console_regression','pm12_power']);report=dict(pass_=False,executed_sources=sources,started_utc=datetime.datetime.now(datetime.timezone.utc).isoformat(),strict_edges=a.strict_edges,channel=a.afe,dac_channels=a.dac_channels,common_mode_v=1.0,max_pin_voltage_v=3.3,measurements=[])
  def save():(a.out/'status.json').write_text(json.dumps(report,indent=2)+'\n')
  with contextlib.ExitStack() as st:
   for n in sorted(['atmel-ice-J41800043065','pm12-210249A73E43','kasli-diot-00001','esp32-6825dd4c49e4','lattice-VER00001']):
@@ -106,5 +107,5 @@ def main():
    if u:u.rts=False;u.dtr=False;u.close()
    if bus:report['i2c_commands']=bus.records
    if dac:report['scpi_commands']=dac.records;dac.close()
-   report['pass']=report.pop('pass_');save()
+   report['finished_utc']=datetime.datetime.now(datetime.timezone.utc).isoformat();report['pass']=report.pop('pass_');save()
 if __name__=='__main__':main()

@@ -1,0 +1,249 @@
+{
+  "pgood": [
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=890000010000008400690103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000A202690103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000D900690103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@HW",
+      "reply": "HW V2 PORTS A..F=9EFC6FBF9EFC STATE 2157..2162=89000001000000F802690103 GPIOR0=02 A_OUT=9A TEMPFLAGS=00 TEMPSEEN=00\r\n",
+      "duration_s": 0.2107
+    }
+  ],
+  "mcu": {
+    "command": "RS",
+    "reply": "Board S/N: 1803 Flash Timestamp: 852AD92B\r\nExternal power source: OK\r\nTemperature    36.1 NORMAL\r\nBoard power ON, OK\r\nClock source PRIMARY, PLL LOCKED\r\nFPGA not ready\r\n",
+    "duration_s": 0.2107
+  },
+  "mcp12": {
+    "0x0": 112,
+    "0x1": 31,
+    "0xa": 0,
+    "0xb": 0,
+    "0x12": 235,
+    "0x13": 192,
+    "0x14": 139,
+    "0x15": 192
+  },
+  "i2c": [
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 70 00",
+      "reply": "I2C ADDR=70 TX=00 RX=\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 71 00",
+      "reply": "I2C ADDR=71 TX=00 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 71 08",
+      "reply": "I2C ADDR=71 TX=08 RX=\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=08\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 00",
+      "reply": "I2C ADDR=20 TX=00 RX=70\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 01",
+      "reply": "I2C ADDR=20 TX=01 RX=1F\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 0A",
+      "reply": "I2C ADDR=20 TX=0A RX=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 0B",
+      "reply": "I2C ADDR=20 TX=0B RX=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C WR 20 01 12",
+      "reply": "I2C ADDR=20 TX=12 RX=EB\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 13",
+      "reply": "I2C ADDR=20 TX=13 RX=C0\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 14",
+      "reply": "I2C ADDR=20 TX=14 RX=8B\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C WR 20 01 15",
+      "reply": "I2C ADDR=20 TX=15 RX=C0\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C W 70 00",
+      "reply": "I2C ADDR=70 TX=00 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C W 71 00",
+      "reply": "I2C ADDR=71 TX=00 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 70 00",
+      "reply": "I2C ADDR=70 TX=00 RX=\r\n",
+      "duration_s": 0.2108
+    },
+    {
+      "command": "@I2C R 70 01",
+      "reply": "I2C ADDR=70 TX= RX=00\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C W 71 00",
+      "reply": "I2C ADDR=71 TX=00 RX=\r\n",
+      "duration_s": 0.2107
+    },
+    {
+      "command": "@I2C R 71 01",
+      "reply": "I2C ADDR=71 TX= RX=00\r\n",
+      "duration_s": 0.2108
+    }
+  ],
+  "dac": [
+    1.0,
+    1.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0,
+    0.0
+  ],
+  "dac_commands": [
+    {
+      "command": "*IDN?",
+      "reply": "MODULIQ,MOD-DAC-28,FIT-CTRL-6825DD4C49E4,1.0"
+    },
+    {
+      "command": "STAT:READ?",
+      "reply": "1"
+    },
+    {
+      "command": "SYST:PROJ?",
+      "reply": "28"
+    },
+    {
+      "command": "SYST:REV?",
+      "reply": "16"
+    },
+    {
+      "command": "SOUR:ZERO:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:ONE:VOLT?",
+      "reply": "1"
+    },
+    {
+      "command": "SOUR:TWO:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:THR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FOUR:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:FIVE:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SIX:VOLT?",
+      "reply": "0"
+    },
+    {
+      "command": "SOUR:SEV:VOLT?",
+      "reply": "0"
+    }
+  ],
+  "pm": [
+    1347228162,
+    65538,
+    3351522600,
+    0,
+    0,
+    1286199571,
+    648,
+    40000000,
+    320000000,
+    63
+  ],
+  "adc": [
+    12,
+    0,
+    4096,
+    12
+  ],
+  "gates": {
+    "8": {
+      "rising_edges": 683,
+      "high": 17740
+    },
+    "9": {
+      "rising_edges": 682,
+      "high": 18432
+    }
+  }
+}

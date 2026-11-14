@@ -45,7 +45,12 @@ def jtag_command(cfg, out):
                 if server.poll() is not None or time.monotonic()>deadline:
                     raise RuntimeError('Dedicated JTAG server did not start')
                 time.sleep(.25)
-            yield docker+['exec','-e','LD_PRELOAD=/lib/x86_64-linux-gnu/libudev.so.1',name,binary+'/vivado']
+            client=docker+['exec','-e','LD_PRELOAD=/lib/x86_64-linux-gnu/libudev.so.1']
+            if cfg.get('jtag_workspace'):
+                work=Path(cfg['jtag_workspace']).resolve()
+                for sub in ['home','tmp']:(work/sub).mkdir(parents=True,exist_ok=True)
+                client+=['-w',str(work),'-e','HOME='+str(work/'home'),'-e','TMPDIR='+str(work/'tmp')]
+            yield client+[name,binary+'/vivado']
         finally:
             subprocess.run(docker+['stop','--time','5',name],stdout=subprocess.DEVNULL,stderr=subprocess.DEVNULL,timeout=20)
             server.wait(timeout=20)

@@ -1,0 +1,10 @@
+{
+  "offline_archive_replay": "PASS",
+  "fitted_values_and_point_statistics_equal": true,
+  "raw_validation": "PASS; 688 buffers / 703824 decoded samples",
+  "regenerated_latex_pdf": "PASS; three pages, no layout warnings",
+  "software_tests": {
+    "passed": 40,
+    "command": "python3 -m unittest discover -s diagnostics/pm12/cfd_simulator -p test_*.py"
+  }
+}

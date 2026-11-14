@@ -1,0 +1,11 @@
+{
+  "raw_trace_consistency": "PASS",
+  "trials": 6,
+  "spi_frames": 5,
+  "sck_edges_per_frame": 64,
+  "sck_half_period_watch_ticks": 200,
+  "lock_loss_and_sys_reset_trials": 2,
+  "cap_lock_drops_observed": 0,
+  "golden_restored": true,
+  "overall_hdmi_case": "FAIL; electrical cause unresolved"
+}

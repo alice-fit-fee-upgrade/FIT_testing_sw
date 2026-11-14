@@ -1,0 +1,50 @@
+{
+  "pass": true,
+  "captures": 128,
+  "total_events": 19268,
+  "phase_events": 12800,
+  "quiet_windows": 8,
+  "channels": {
+    "9": {
+      "coarse_cut": 61,
+      "coarse_raw_span": 29,
+      "fine_slope_codes_per_ns": -46.195613865165924,
+      "fine_max_fit_residual": 1.8987479144490749,
+      "coarse_slope_codes_per_phase_bin": 1.2523076923076923,
+      "coarse_max_fit_residual": 0.4030769230769238,
+      "max_fine_std": 1.0633039258927859,
+      "pass": true
+    },
+    "10": {
+      "coarse_cut": 62,
+      "coarse_raw_span": 29,
+      "fine_slope_codes_per_ns": -46.16387726126029,
+      "fine_max_fit_residual": 1.2049988106341516,
+      "coarse_slope_codes_per_phase_bin": 1.251600141658069,
+      "coarse_max_fit_residual": 0.30009315484702537,
+      "max_fine_std": 1.5935777149987338,
+      "pass": true
+    },
+    "11": {
+      "coarse_cut": 62,
+      "coarse_raw_span": 29,
+      "fine_slope_codes_per_ns": -46.16039951028736,
+      "fine_max_fit_residual": 1.6263192969325075,
+      "coarse_slope_codes_per_phase_bin": 1.251114523314554,
+      "coarse_max_fit_residual": 0.44320578276535727,
+      "max_fine_std": 1.049291753327883,
+      "pass": true
+    },
+    "12": {
+      "coarse_cut": 61,
+      "coarse_raw_span": 31,
+      "fine_slope_codes_per_ns": -46.18421691951885,
+      "fine_max_fit_residual": 1.3089381967931786,
+      "coarse_slope_codes_per_phase_bin": 1.2476923076923077,
+      "coarse_max_fit_residual": 0.41076923076922967,
+      "max_fine_std": 1.2298919796765766,
+      "pass": true
+    }
+  },
+  "coarse_normalization": "Raw6-bit coarse codes are unwrapped across the largest empty arc, then folded modulo10 (one Kasli word at4*300.59025MHz). This removes whole-word/LHC-slot start branches; it is not absolute LHC trigger alignment."
+}

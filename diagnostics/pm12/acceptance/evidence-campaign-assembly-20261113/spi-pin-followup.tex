@@ -1,0 +1,51 @@
+\clearpage
+\section{Individual SPI pin stimulation: 14 November 2026}
+PM build \texttt{c7531465} unchanged. A temporary Kasli GPIO mux was built
+on Dell (WNS 0.162 ns, WHS 0.067 ns, DRC 0 errors) and checked in simulation.
+Physical input mapping was verified through ATxmega port reads:
+SEL$\rightarrow$PD4, SCK$\rightarrow$PD7, MOSI$\rightarrow$PD5; no other
+SPI input bits changed. The exact original four-port Kasli image was restored.
+\begin{center}\begin{tabular}{lrrr}\toprule
+Stimulus & Cycles & SYS decreases & Timeouts\\\midrule
+SEL alone &36&0&0\\
+SCK alone, SEL low &36&0&0\\
+MOSI alone, SEL low &36&0&0\\
+MOSI, SEL high/SCK low &24&0&0\\\bottomrule\end{tabular}\end{center}
+Pulses were host-timed with requested 1 ms / 10 ms dwell plus I/O latency;
+this is not full-speed single-line stress. Normal read-frame controls before
+and after the GPIO series still reproduced the fault: two confirmed SYS
+counter decreases in 12 frames on each side. Counter read timeouts occurred
+in 4/12 and 6/12 frames and remain unknown, not stable PASS outcomes.
+Independent analysis validates GPIO readbacks and conservative counter decreases.
+Thus raw pin activity did not reproduce the full-frame fault under these
+conditions; no individual faulty wire or PLL/MCU cause is established.
+
+\subsection{Return MISO probe and limitations}
+On the restored original Kasli, diagnostic read3 returns zero from the
+retained isolated PM slave map. After warmup, 23 frames logically keep its
+MISO data zero while selected. No restart was observed, but 18 ordinary
+signature controls were also stable: this comparison is inconclusive.
+Output still gates with SEL; no continuous electrical pad observation is claimed.
+A previous programming interval may have changed the condition, but causation
+or a clock-phase mechanism is not established.
+
+The terminal ADC check found one unstable selected word on channel 1,
+position 1255. Its complete raw buffer and exception are retained. A fresh
+leased physical ADC bankA capture subsequently passed all 12 channels.
+This is an open transient observation, not an unconditional ADC qualification.
+The constant-MISO helper saved all 43 SPI trials before its final ADC exception;
+its final metadata were not saved, so a separate postflight provides final state.
+
+Two initial attempts are retained as interrupted, not negative results:
+one was stopped after lengthy read timeouts, another lost a mode-write ACK.
+Both restored the original image. The completed bounded series is separately
+identified as \texttt{bounded03}. Raw sources/logs, candidate bitstream,
+validation and postflight are in \texttt{system/evidence-spi-pins-20261114}.
+
+The FIN control selects direction, not disable-both. No direction reversal
+into an active FPGA was attempted. Kasli reload intervals interrupt outputs
+and are excluded; outputs remained driven during pin trials. Final state:
+original Kasli SHA \texttt{a71a08a2...}, slot 6 mask 00b0, enable 1/status 9,
+PM \texttt{c7531465}, frontend 0xfff and power healthy. No external PLL,
+MCU, CPLD, flash or analog settings were changed.
+\clearpage

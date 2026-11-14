@@ -1,0 +1,595 @@
+{
+  "address": 1,
+  "uptime_before": [
+    40662726,
+    0
+  ],
+  "mcu_before": [
+    0,
+    0
+  ],
+  "armed_status": 9,
+  "signature": 19785,
+  "status": 286,
+  "count": 71,
+  "raw_words": [
+    0,
+    67,
+    2,
+    65795,
+    495036,
+    6688555,
+    495236,
+    6688059,
+    495436,
+    6687403,
+    495536,
+    6686987,
+    495636,
+    6686747,
+    495836,
+    6686091,
+    496036,
+    6685467,
+    496236,
+    6684939,
+    496436,
+    6697371,
+    496636,
+    6696715,
+    496836,
+    6696219,
+    497036,
+    6695563,
+    497236,
+    6694939,
+    497436,
+    6694283,
+    497636,
+    6693659,
+    497836,
+    6693131,
+    498036,
+    6692507,
+    498236,
+    6691851,
+    498436,
+    6691227,
+    498636,
+    6690571,
+    498736,
+    6690347,
+    498836,
+    6690107,
+    499036,
+    6689451,
+    499136,
+    6689035,
+    499236,
+    6688795,
+    499436,
+    6688139,
+    499636,
+    6687515,
+    499836,
+    6686987,
+    500036,
+    6686363,
+    500236,
+    6685707,
+    500436,
+    6685083,
+    500636,
+    6697611,
+    500836,
+    6696987,
+    501036,
+    6696331,
+    501236,
+    6695707,
+    501436,
+    6695179,
+    501636,
+    6694555,
+    501836,
+    6693899,
+    502036,
+    6693275,
+    502236,
+    6692619,
+    502436,
+    6692123,
+    502636,
+    6691467,
+    502836,
+    6690843,
+    503036,
+    6690187,
+    503236,
+    6689563,
+    503436,
+    6689035,
+    503636,
+    6688411,
+    503836,
+    6687755,
+    504036,
+    6687131,
+    504236,
+    6686475,
+    504436,
+    6685979,
+    504636,
+    6685323,
+    504836,
+    6684699,
+    505036,
+    6697227,
+    505236,
+    6696603,
+    505436,
+    6695947,
+    505636,
+    6695323,
+    505836,
+    6694667,
+    506036,
+    6694171,
+    506236,
+    6693515,
+    506436,
+    6692891,
+    506636,
+    6692235,
+    506836,
+    6691611,
+    507036,
+    6691083,
+    507236,
+    6690459,
+    507436,
+    6689803,
+    507636,
+    6689179,
+    507836,
+    6688523,
+    508036,
+    6688003
+  ],
+  "uptime_after": [
+    161809636,
+    0
+  ],
+  "mcu_after": [
+    0,
+    0
+  ],
+  "events": [
+    {
+      "tick": 0,
+      "state": 67,
+      "ref_age": 0,
+      "max_ref_age": 0
+    },
+    {
+      "tick": 2,
+      "state": 3,
+      "ref_age": 2,
+      "max_ref_age": 1
+    },
+    {
+      "tick": 495036,
+      "state": 43,
+      "ref_age": 30,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 495236,
+      "state": 59,
+      "ref_age": 26,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 495436,
+      "state": 43,
+      "ref_age": 21,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 495536,
+      "state": 11,
+      "ref_age": 18,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 495636,
+      "state": 27,
+      "ref_age": 16,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 495836,
+      "state": 11,
+      "ref_age": 11,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 496036,
+      "state": 27,
+      "ref_age": 6,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 496236,
+      "state": 11,
+      "ref_age": 2,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 496436,
+      "state": 27,
+      "ref_age": 99,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 496636,
+      "state": 11,
+      "ref_age": 94,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 496836,
+      "state": 27,
+      "ref_age": 90,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 497036,
+      "state": 11,
+      "ref_age": 85,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 497236,
+      "state": 27,
+      "ref_age": 80,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 497436,
+      "state": 11,
+      "ref_age": 75,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 497636,
+      "state": 27,
+      "ref_age": 70,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 497836,
+      "state": 11,
+      "ref_age": 66,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 498036,
+      "state": 27,
+      "ref_age": 61,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 498236,
+      "state": 11,
+      "ref_age": 56,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 498436,
+      "state": 27,
+      "ref_age": 51,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 498636,
+      "state": 11,
+      "ref_age": 46,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 498736,
+      "state": 43,
+      "ref_age": 44,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 498836,
+      "state": 59,
+      "ref_age": 42,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 499036,
+      "state": 43,
+      "ref_age": 37,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 499136,
+      "state": 11,
+      "ref_age": 34,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 499236,
+      "state": 27,
+      "ref_age": 32,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 499436,
+      "state": 11,
+      "ref_age": 27,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 499636,
+      "state": 27,
+      "ref_age": 22,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 499836,
+      "state": 11,
+      "ref_age": 18,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 500036,
+      "state": 27,
+      "ref_age": 13,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 500236,
+      "state": 11,
+      "ref_age": 8,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 500436,
+      "state": 27,
+      "ref_age": 3,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 500636,
+      "state": 11,
+      "ref_age": 101,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 500836,
+      "state": 27,
+      "ref_age": 96,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 501036,
+      "state": 11,
+      "ref_age": 91,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 501236,
+      "state": 27,
+      "ref_age": 86,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 501436,
+      "state": 11,
+      "ref_age": 82,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 501636,
+      "state": 27,
+      "ref_age": 77,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 501836,
+      "state": 11,
+      "ref_age": 72,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 502036,
+      "state": 27,
+      "ref_age": 67,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 502236,
+      "state": 11,
+      "ref_age": 62,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 502436,
+      "state": 27,
+      "ref_age": 58,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 502636,
+      "state": 11,
+      "ref_age": 53,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 502836,
+      "state": 27,
+      "ref_age": 48,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 503036,
+      "state": 11,
+      "ref_age": 43,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 503236,
+      "state": 27,
+      "ref_age": 38,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 503436,
+      "state": 11,
+      "ref_age": 34,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 503636,
+      "state": 27,
+      "ref_age": 29,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 503836,
+      "state": 11,
+      "ref_age": 24,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 504036,
+      "state": 27,
+      "ref_age": 19,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 504236,
+      "state": 11,
+      "ref_age": 14,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 504436,
+      "state": 27,
+      "ref_age": 10,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 504636,
+      "state": 11,
+      "ref_age": 5,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 504836,
+      "state": 27,
+      "ref_age": 0,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 505036,
+      "state": 11,
+      "ref_age": 98,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 505236,
+      "state": 27,
+      "ref_age": 93,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 505436,
+      "state": 11,
+      "ref_age": 88,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 505636,
+      "state": 27,
+      "ref_age": 83,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 505836,
+      "state": 11,
+      "ref_age": 78,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 506036,
+      "state": 27,
+      "ref_age": 74,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 506236,
+      "state": 11,
+      "ref_age": 69,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 506436,
+      "state": 27,
+      "ref_age": 64,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 506636,
+      "state": 11,
+      "ref_age": 59,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 506836,
+      "state": 27,
+      "ref_age": 54,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 507036,
+      "state": 11,
+      "ref_age": 50,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 507236,
+      "state": 27,
+      "ref_age": 45,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 507436,
+      "state": 11,
+      "ref_age": 40,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 507636,
+      "state": 27,
+      "ref_age": 35,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 507836,
+      "state": 11,
+      "ref_age": 30,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 508036,
+      "state": 3,
+      "ref_age": 26,
+      "max_ref_age": 102
+    }
+  ]
+}

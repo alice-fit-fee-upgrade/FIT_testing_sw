@@ -1,0 +1,123 @@
+Acquired Dell heavy-build slot 1/3
+
+****** Vivado v2025.2 (64-bit)
+  **** SW Build 6299465 on Fri Nov 14 12:34:56 MST 2025
+  **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+  **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+  **** Start of session at: Sat Nov 14 16:57:20 2026
+    ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
+    ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+
+source audit_controls.tcl
+# set_param general.maxThreads 4
+# set f [open [lindex $argv 2] w]
+# foreach file [lrange $argv 0 1] {
+#  open_checkpoint $file
+#  puts $f "CHECKPOINT $file"
+#  set c [get_cells MMCME2_ADV]
+#  puts $f "MMCM $c COMPENSATION=[get_property COMPENSATION $c]"
+#  foreach n {RST PWRDWN CLKINSEL CLKIN1 CLKIN2 CLKFBIN PSCLK PSEN PSINCDEC DCLK DEN DWE} {
+#   set p [get_pins -quiet $c/$n];if {[llength $p]} {
+#    puts $f "PIN $p DRIVERS=[get_pins -of_objects [get_nets -of_objects $p] -filter {DIRECTION==OUT}] STARTPOINTS=[all_fanin -flat -startpoints_only -to $p]"
+#   }
+#  }
+#  close_design
+# }
+Command: open_checkpoint /srv/nvme-fast-1/vivado-work/pm12-tdc-clock40-20261114/build/pm12_ipbus_adc.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00.04 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1492.664 ; gain = 0.000 ; free physical = 19413 ; free virtual = 64867
+INFO: [Device 21-403] Loading part xc7k160tffg676-3
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.06 . Memory (MB): peak = 1764.469 ; gain = 0.000 ; free physical = 19196 ; free virtual = 64650
+INFO: [Netlist 29-17] Analyzing 566 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.03 . Memory (MB): peak = 1859.156 ; gain = 3.000 ; free physical = 19086 ; free virtual = 64540
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2476.094 ; gain = 0.000 ; free physical = 18535 ; free virtual = 63989
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2476.094 ; gain = 0.000 ; free physical = 18535 ; free virtual = 63989
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2476.094 ; gain = 0.000 ; free physical = 18535 ; free virtual = 63989
+Read placeStorage: Time (s): cpu = 00:00:00.33 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2476.094 ; gain = 0.000 ; free physical = 18527 ; free virtual = 63981
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2476.094 ; gain = 0.000 ; free physical = 18527 ; free virtual = 63981
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.13 . Memory (MB): peak = 2476.094 ; gain = 0.000 ; free physical = 18519 ; free virtual = 63973
+Read Physdb Files: Time (s): cpu = 00:00:00.62 ; elapsed = 00:00:00.48 . Memory (MB): peak = 2476.094 ; gain = 0.000 ; free physical = 18519 ; free virtual = 63973
+Restored from archive | CPU: 0.670000 secs | Memory: 14.067413 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.66 ; elapsed = 00:00:00.52 . Memory (MB): peak = 2476.094 ; gain = 2.969 ; free physical = 18519 ; free virtual = 63973
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2476.094 ; gain = 0.000 ; free physical = 18519 ; free virtual = 63973
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 80 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+  SRLC16E => SRL16E: 72 instances
+  SRLC32E => SRL16E: 2 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:19 ; elapsed = 00:00:14 . Memory (MB): peak = 2484.129 ; gain = 991.465 ; free physical = 18519 ; free virtual = 63973
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/RST]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/PWRDWN]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/CLKINSEL]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/CLKIN2]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/PSCLK]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/PSEN]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/PSINCDEC]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/DCLK]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/DEN]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/DWE]'.
+Command: open_checkpoint /srv/nvme-fast-1/vivado-work/pm12-spi-state-20261114/build/pm12_ipbus_adc.dcp
+
+Starting open_checkpoint Task
+
+Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18519 ; free virtual = 63973
+Netlist sorting complete. Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.07 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18519 ; free virtual = 63973
+INFO: [Netlist 29-17] Analyzing 620 Unisim elements for replacement
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Project 1-479] Netlist was created with Vivado 2025.2
+INFO: [Project 1-570] Preparing netlist for logic optimization
+Read ShapeDB Complete: Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18519 ; free virtual = 63973
+INFO: [Timing 38-478] Restoring timing data from binary archive.
+INFO: [Timing 38-479] Binary timing data restore complete.
+INFO: [Project 1-856] Restoring constraints from binary archive.
+INFO: [Project 1-853] Binary constraint restore complete.
+INFO: [Designutils 20-5722] Start Reading Physical Databases.
+Reading placement.
+Read Netlist Cache: Time (s): cpu = 00:00:00.02 ; elapsed = 00:00:00.02 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18496 ; free virtual = 63950
+Reading placer database...
+Read Device Cache: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.01 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18496 ; free virtual = 63950
+Read PlaceDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18496 ; free virtual = 63950
+Read placeStorage: Time (s): cpu = 00:00:00.34 ; elapsed = 00:00:00.33 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18496 ; free virtual = 63950
+Read PulsedLatchDB: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18496 ; free virtual = 63950
+Reading routing.
+Read RouteStorage: Time (s): cpu = 00:00:00.27 ; elapsed = 00:00:00.12 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18496 ; free virtual = 63950
+Read Physdb Files: Time (s): cpu = 00:00:00.63 ; elapsed = 00:00:00.48 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18496 ; free virtual = 63950
+Restored from archive | CPU: 0.630000 secs | Memory: 13.196304 MB |
+Finished XDEF File Restore: Time (s): cpu = 00:00:00.63 ; elapsed = 00:00:00.48 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18496 ; free virtual = 63950
+Netlist sorting complete. Time (s): cpu = 00:00:00.01 ; elapsed = 00:00:00 . Memory (MB): peak = 2484.129 ; gain = 0.000 ; free physical = 18496 ; free virtual = 63950
+INFO: [Project 1-111] Unisim Transformation Summary:
+  A total of 80 instances were transformed.
+  RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
+  SRLC16E => SRL16E: 72 instances
+  SRLC32E => SRL16E: 2 instances
+
+INFO: [Project 1-604] Checkpoint was created with Vivado v2025.2 (64-bit) build 6299465
+open_checkpoint: Time (s): cpu = 00:00:09 ; elapsed = 00:00:09 . Memory (MB): peak = 2492.129 ; gain = 8.000 ; free physical = 18496 ; free virtual = 63950
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/RST]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/PWRDWN]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/CLKINSEL]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/CLKIN2]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/PSCLK]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/PSEN]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/PSINCDEC]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/DCLK]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/DEN]'.
+WARNING: [Vivado 12-829] No fanin objects found for 'all_fanin -flat -startpoints_only -to [get_pins -quiet MMCME2_ADV/DWE]'.
+# close $f
+# exit
+INFO: [Common 17-206] Exiting Vivado at Sat Nov 14 16:57:46 2026...

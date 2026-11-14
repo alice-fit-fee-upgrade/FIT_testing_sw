@@ -1,0 +1,18 @@
+{
+  "profile_decode_40MHz": "PASS",
+  "profile_decode_LHC": "PASS",
+  "fresh_counter_intervals": 3,
+  "adc_strobe_intervals_all4": 1023,
+  "gate_rising_gaps_all48": [
+    84,
+    85
+  ],
+  "pll_profile_writes": false,
+  "programming": false,
+  "kasli_held": [
+    1,
+    9
+  ],
+  "active_ram_full_dump": false,
+  "tdc_clock_mismatch": "OPEN; not corrected in this audit"
+}

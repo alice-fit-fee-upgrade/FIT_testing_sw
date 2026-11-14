@@ -1,3 +1,20 @@
+[Latest: TDC and DAC-A phase tests on9–12](evidence-campaign-timing-20261113/README.md), with[repeat procedure](TIMING_CAMPAIGN.md).
+
+[Latest: channel10 ADC/integrators, compared with11and12](evidence-campaign-ch10-20261113/README.md).
+
+[Latest: channel11 ADC/integrator measurements and common plots with12](evidence-campaign-ch11-20261113/README.md).
+
+[Latest: internal DAC B/C/D scans on channels9–12](evidence-campaign-smu-20261113/README.md).
+
+[First measured campaign channel12: ADC A/B and integrators](evidence-campaign-ch12-20261113/README.md).
+
+[Active Optiplex campaign and next-fitting handoff](ACTIVE_CAMPAIGN.md).
+
+Current four-CFD workflow: [three fittings covering channels1–4,5–8,9–12](CAMPAIGN.md).
+Use the campaign registry for new twelve-channel measurements, fixture mapping,
+immutable repeats and the combined LaTeX report. The older examples below retain
+their historical three-channel convention; the generic collector now permits four.
+
 Parameterized diagrams: see [BENCH_CONFIGURATION.md](BENCH_CONFIGURATION.md). A small JSON override changes labels, slots and clocks; `--bench-config` applies it to a report and archives the effective configuration.
 
 Setup2026-11-08: [English wiring diagram](evidence-english-setup-20261108/bench.pdf)
@@ -239,3 +256,9 @@ On an ADC error, existing acquisition parks the selected DAC pair at0V and
 attempts GPIO restoration. `recover_dac_baseline.py` is an explicit leased
 control action to return a configured pair to1V/1V after checking physical board
 identity and PGOOD; it does not turn a failed ADC result into PASS.
+
+## Fresh assembly verification — 2026-11-13
+
+Completed available tests without moving USB from physical10. Scoped JTAG168links in both paths, MCU/FPGA32patterns, populated rail voltages and Ethernet/IPbus PASS. CFD monitors9/10/12 PASS; fixture11 MUX7 FAIL (5.479V raw; check R3/R4 divider). HDMI data lanes pass but pad release after SPI reads resets SYS: overall HDMI FAIL. These findings prevent unconditional release. Analog9 awaits the next USB move. Current coverage:28PASS,2FAIL,59NOT_MEASURED. See [52-page report and reproducible evidence](evidence-campaign-assembly-20261113/README.md).
+
+HDMI follow-up: [held-output isolation](../system/evidence-held-spi-20261113/README.md) reproduces delayed SYS restart after SPI reads without releasing outputs. Earlier attribution to release is superseded; HDMI remains FAIL. Slot6 SPI is now held driven at idle0, direction0x00b0. Avoid legacy integrated/STOP/input_cards cleanup.

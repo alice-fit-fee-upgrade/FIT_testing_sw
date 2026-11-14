@@ -1,0 +1,302 @@
+{
+  "capture_id": 1,
+  "status": 13,
+  "bank": 0,
+  "synthetic": false,
+  "format": "12files each4096little-endianu16; ADC bits0..11,EV12,STR13 for physical mode",
+  "sample_rate_nominal_hz": 320000000,
+  "channels": [
+    {
+      "channel": 1,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "ALIGNED",
+        "rising_edges": 1024,
+        "falling_edges": 1024,
+        "interval_counts": {
+          "4": 1023
+        },
+        "rising_phase_span_samples": 0,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 2048,
+      "adc_max": 2113,
+      "adc_mean": 2077.14453125,
+      "adc_stddev": 25.637270487739592,
+      "unique_codes": 19
+    },
+    {
+      "channel": 2,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "EDGE_QUANTIZED",
+        "rising_edges": 1024,
+        "falling_edges": 1023,
+        "interval_counts": {
+          "3": 330,
+          "5": 329,
+          "4": 364
+        },
+        "rising_phase_span_samples": 1,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 2061,
+      "adc_max": 2160,
+      "adc_mean": 2111.951416015625,
+      "adc_stddev": 16.45636194852426,
+      "unique_codes": 18
+    },
+    {
+      "channel": 3,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "ALIGNED",
+        "rising_edges": 1024,
+        "falling_edges": 1024,
+        "interval_counts": {
+          "4": 1023
+        },
+        "rising_phase_span_samples": 0,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 1795,
+      "adc_max": 2191,
+      "adc_mean": 2033.450439453125,
+      "adc_stddev": 55.793905994256605,
+      "unique_codes": 48
+    },
+    {
+      "channel": 4,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "ALIGNED",
+        "rising_edges": 1024,
+        "falling_edges": 1024,
+        "interval_counts": {
+          "4": 1023
+        },
+        "rising_phase_span_samples": 0,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 2096,
+      "adc_max": 2134,
+      "adc_mean": 2116.673828125,
+      "adc_stddev": 13.370547542844271,
+      "unique_codes": 19
+    },
+    {
+      "channel": 5,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "ALIGNED",
+        "rising_edges": 1024,
+        "falling_edges": 1024,
+        "interval_counts": {
+          "4": 1023
+        },
+        "rising_phase_span_samples": 0,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 2067,
+      "adc_max": 2133,
+      "adc_mean": 2104.000732421875,
+      "adc_stddev": 21.99795244046439,
+      "unique_codes": 26
+    },
+    {
+      "channel": 6,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "ALIGNED",
+        "rising_edges": 1024,
+        "falling_edges": 1024,
+        "interval_counts": {
+          "4": 1023
+        },
+        "rising_phase_span_samples": 0,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 2082,
+      "adc_max": 2155,
+      "adc_mean": 2102.78271484375,
+      "adc_stddev": 19.47948525384137,
+      "unique_codes": 26
+    },
+    {
+      "channel": 7,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "ALIGNED",
+        "rising_edges": 1024,
+        "falling_edges": 1024,
+        "interval_counts": {
+          "4": 1023
+        },
+        "rising_phase_span_samples": 0,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 2112,
+      "adc_max": 2151,
+      "adc_mean": 2131.24462890625,
+      "adc_stddev": 16.510316390766924,
+      "unique_codes": 15
+    },
+    {
+      "channel": 8,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "ALIGNED",
+        "rising_edges": 1024,
+        "falling_edges": 1024,
+        "interval_counts": {
+          "4": 1023
+        },
+        "rising_phase_span_samples": 0,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 2048,
+      "adc_max": 2173,
+      "adc_mean": 2094.443359375,
+      "adc_stddev": 24.60185331170905,
+      "unique_codes": 47
+    },
+    {
+      "channel": 9,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "ALIGNED",
+        "rising_edges": 1024,
+        "falling_edges": 1024,
+        "interval_counts": {
+          "4": 1023
+        },
+        "rising_phase_span_samples": 0,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 2082,
+      "adc_max": 2156,
+      "adc_mean": 2135.588623046875,
+      "adc_stddev": 23.087701285382714,
+      "unique_codes": 23
+    },
+    {
+      "channel": 10,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "EDGE_QUANTIZED",
+        "rising_edges": 1024,
+        "falling_edges": 1024,
+        "interval_counts": {
+          "4": 1003,
+          "5": 10,
+          "3": 10
+        },
+        "rising_phase_span_samples": 1,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 67,
+      "adc_max": 242,
+      "adc_mean": 115.51318359375,
+      "adc_stddev": 32.148031354079144,
+      "unique_codes": 65
+    },
+    {
+      "channel": 11,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "ALIGNED",
+        "rising_edges": 1024,
+        "falling_edges": 1023,
+        "interval_counts": {
+          "4": 1023
+        },
+        "rising_phase_span_samples": 0,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 2098,
+      "adc_max": 2197,
+      "adc_mean": 2150.37548828125,
+      "adc_stddev": 35.37576778036971,
+      "unique_codes": 14
+    },
+    {
+      "channel": 12,
+      "kind": "physical CPLD/ADC inputs",
+      "clock_hz_nominal": 80000000,
+      "strobe_timing": {
+        "status": "ALIGNED",
+        "rising_edges": 1024,
+        "falling_edges": 1024,
+        "interval_counts": {
+          "4": 1023
+        },
+        "rising_phase_span_samples": 0,
+        "falling_phase_span_samples": 0,
+        "selected_words_stable": true,
+        "selected_word_rule": "sample before STR rising, equal to its preceding ADC-data sample",
+        "scope": "4x sampled timing/coherency; not physical clock-jitter qualification"
+      },
+      "selector": 0,
+      "adc_min": 2044,
+      "adc_max": 2111,
+      "adc_mean": 2074.338134765625,
+      "adc_stddev": 26.55364136909288,
+      "unique_codes": 13
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+label,tick,nominal_ms,fixed_lock,cap_lock,sys_reset,sel,sck,mosi,miso_data,lock_loss_latched,mmcm_rst,mmcm_powerdown,gt_lock,bit_count,reading,address,spi_stable,shift,ref_age,max_ref_age,since_sel_low_nominal_us
+div601-rep0-read0,656012,16.368095771569436,0,1,1,0,0,0,0,1,0,0,1,0,0,0,True,18500,31,102,10219.468196323733
+div601-rep0-read1,634273,15.825687958940783,0,1,1,0,0,0,0,1,0,0,1,0,0,1,True,19785,4,102,9608.395481889384
+div601-rep1-read0,629930,15.717326160778669,0,1,1,0,0,0,0,1,0,0,1,0,0,0,True,18500,42,102,9632.248550975955
+div601-rep1-read1,639847,15.964764326188225,0,1,1,0,0,0,0,1,0,0,1,0,0,1,True,19785,0,102,10059.732476352776

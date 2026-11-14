@@ -87,6 +87,8 @@ def main():
     d = p.parse_args().directory
     rows = json.loads((d/'summary.json').read_text())
     r = json.loads((d/'scan-report.json').read_text())
+    if set(r.get('scanned_modules',[]))!={10,8,6} or set(r.get('connected_modules',[]))!={12,10,8,6}:
+        raise ValueError('Historical SMU report is fixture-specific; use campaign_report.py for new batches')
     validation = json.loads((d/'validation.json').read_text())
     if not validation['pass_']:
         raise ValueError('Validate acquisition before generating the report')

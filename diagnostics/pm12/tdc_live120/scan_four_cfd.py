@@ -1,7 +1,8 @@
 """Four physical CFD inputs; discovered mapping and finite one-ns phase scan."""
+import datetime,signal
 import argparse,sys,json,contextlib,time,collections,math
 from pathlib import Path
-P=Path(__file__).resolve().parents[1];sys.path[:0]=[str(P/'acceptance'),str(P/'ipbus_adc'),str(P/'tdc_live120'),'/home/codex-hil/kasli-phase-tester','/home/codex-hil/FIT_PM_FW_uPC/tools/hardware']
+P=Path(__file__).resolve().parents[1];sys.path[:0]=[str(P/'acceptance'),str(P/'ipbus_adc'),str(P/'tdc_live120'),str(P/'cfd_simulator'),'/home/codex-hil/kasli-phase-tester','/home/codex-hil/FIT_PM_FW_uPC/tools/hardware']
 from lease import acquire as lease
 from station import console
 from pm12_power import wait_power_good,require_power_good
@@ -36,10 +37,21 @@ class RoutedBurst(CFDBurstDevice):
     if time.monotonic()>end:raise TimeoutError('Commit patch')
    assert not self.device.read(0xe4)&16
   self.bank_images[target]=list(words);self.active_shadow=target
+from channel_settings import snapshot_sources
+
+def snapshot_local_sources(out):
+ roots=[P.resolve(),Path('/home/codex-hil/kasli-phase-tester').resolve(),Path('/home/codex-hil/FIT_PM_FW_uPC/tools/hardware').resolve()]
+ names=[]
+ for name,module in list(sys.modules.items()):
+  value=getattr(module,'__file__',None)
+  if value and Path(value).suffix=='.py' and any(Path(value).resolve().is_relative_to(root) for root in roots):names.append(name)
+ return snapshot_sources(out,sorted(names))
+def terminated(signum,frame):raise KeyboardInterrupt('Termination signal '+str(signum))
+signal.signal(signal.SIGTERM,terminated)
 parser=argparse.ArgumentParser(description=__doc__);parser.add_argument('--out',type=Path,required=True);parser.add_argument('--channels',type=int,nargs='+',default=[12,10,8,6]);args=parser.parse_args()
 if not 1<=len(args.channels)<=4 or len(set(args.channels))!=len(args.channels) or any(c not in range(1,13) for c in args.channels):parser.error('One to four distinct PM channels1..12 required')
 out=args.out.resolve();out.mkdir(parents=True,exist_ok=False)
-report={'pass_':False,'mapping':{},'captures':[],'statistics':[],'sample_hz_assumed':40.0787e6*24,'stimulus':'128 finite pulses at each of 25 phase positions, step one OSERDES bit; no TDC time calibration','expected_channels':args.channels}
+report={'started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'executed_sources':snapshot_local_sources(out),'pass_':False,'mapping':{},'captures':[],'statistics':[],'sample_hz_assumed':40.0787e6*24,'stimulus':'128 finite pulses at each of 25 phase positions, step one OSERDES bit; no TDC time calibration','expected_channels':args.channels}
 def save():(out/'status.json').write_text(json.dumps(report,indent=2)+'\n')
 def statistics(row):
  words=[]
@@ -77,5 +89,5 @@ with contextlib.ExitStack() as st:
     quiet=acquire(c,out,f'p{port}-quiet-after');report['captures'].append(quiet);assert quiet['counts']==[0]*12
   report['pg_final']=require_power_good(u,capture);report['pass_']=True
  finally:
-  d.write(0xe0,0);d.stop();d.write(0xdc,0);report['directions_final']=input_cards(d);report['final']={'cfd_enabled':d.read(0xe0),'selected_port':d.read(0xdc),'pm_build':c.read(2)[0],'tdc_status':c.read(0x201)[0]};save()
+  d.write(0xe0,0);d.stop();d.write(0xdc,0);report['directions_final']=input_cards(d);report['final']={'cfd_enabled':d.read(0xe0),'selected_port':d.read(0xdc),'pm_build':c.read(2)[0],'tdc_status':c.read(0x201)[0]};report['finished_utc']=datetime.datetime.now(datetime.timezone.utc).isoformat();save()
 print('FOUR_TDC_SCAN_PASS',flush=True)

@@ -1,0 +1,670 @@
+{
+  "campaign_id": "5ef2e2b4-c04a-4fad-b86f-a23be621d7a7",
+  "board_uid": "PM12-K7-3A17A1B402212223",
+  "status": "INCOMPLETE",
+  "cases": [
+    {
+      "test": "jtag",
+      "channel": null,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "mcu",
+      "channel": null,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "i2c",
+      "channel": null,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "hdmi",
+      "channel": null,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "ethernet",
+      "channel": null,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 1,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 2,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 3,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 4,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 5,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 6,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 7,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 8,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 9,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 10,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 11,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-monitor",
+      "channel": 12,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 1,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 2,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 3,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 4,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 5,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 6,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 7,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 8,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 9,
+      "required": true,
+      "status": "PASS",
+      "result_id": "result-9e64b43efb074c44b6c678edbe705467"
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 10,
+      "required": true,
+      "status": "PASS",
+      "result_id": "result-0fcaadd7cb084d5d9423a252f6a4ecb4"
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 11,
+      "required": true,
+      "status": "PASS",
+      "result_id": "result-8b6b8aa74bde4bb48ac176addb11e862"
+    },
+    {
+      "test": "cfd-dacs",
+      "channel": 12,
+      "required": true,
+      "status": "PASS",
+      "result_id": "result-b4c6c497aa5949849b92571087cd00a0"
+    },
+    {
+      "test": "gate-phase",
+      "channel": 1,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "gate-phase",
+      "channel": 2,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "gate-phase",
+      "channel": 3,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "gate-phase",
+      "channel": 4,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "gate-phase",
+      "channel": 5,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "gate-phase",
+      "channel": 6,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "gate-phase",
+      "channel": 7,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "gate-phase",
+      "channel": 8,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "gate-phase",
+      "channel": 9,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "gate-phase",
+      "channel": 10,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "gate-phase",
+      "channel": 11,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "gate-phase",
+      "channel": 12,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 1,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 2,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 3,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 4,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 5,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 6,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 7,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 8,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 9,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 10,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 11,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "tdc",
+      "channel": 12,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-dc",
+      "channel": 1,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-dc",
+      "channel": 2,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-dc",
+      "channel": 3,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-dc",
+      "channel": 4,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-dc",
+      "channel": 5,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-dc",
+      "channel": 6,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-dc",
+      "channel": 7,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-dc",
+      "channel": 8,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-dc",
+      "channel": 9,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-dc",
+      "channel": 10,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-dc",
+      "channel": 11,
+      "required": true,
+      "status": "PASS",
+      "result_id": "result-aa2f2b7ceeb44d5bb0b272cfefa5cbe8"
+    },
+    {
+      "test": "adc-dc",
+      "channel": 12,
+      "required": true,
+      "status": "PASS",
+      "result_id": "result-b912623559554cbaab4b734199641fd4"
+    },
+    {
+      "test": "adc-lines",
+      "channel": 1,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-lines",
+      "channel": 2,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-lines",
+      "channel": 3,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-lines",
+      "channel": 4,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-lines",
+      "channel": 5,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-lines",
+      "channel": 6,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-lines",
+      "channel": 7,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-lines",
+      "channel": 8,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-lines",
+      "channel": 9,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-lines",
+      "channel": 10,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "adc-lines",
+      "channel": 11,
+      "required": true,
+      "status": "PASS",
+      "result_id": "result-fa68f8092aaa4db5b954b85634ef1db9"
+    },
+    {
+      "test": "adc-lines",
+      "channel": 12,
+      "required": true,
+      "status": "PASS",
+      "result_id": "result-ee0613ea5b1049ae8233aeffaebf92fc"
+    },
+    {
+      "test": "integrator",
+      "channel": 1,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "integrator",
+      "channel": 2,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "integrator",
+      "channel": 3,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "integrator",
+      "channel": 4,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "integrator",
+      "channel": 5,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "integrator",
+      "channel": 6,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "integrator",
+      "channel": 7,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "integrator",
+      "channel": 8,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "integrator",
+      "channel": 9,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "integrator",
+      "channel": 10,
+      "required": true,
+      "status": "NOT_MEASURED",
+      "result_id": null
+    },
+    {
+      "test": "integrator",
+      "channel": 11,
+      "required": true,
+      "status": "PASS",
+      "result_id": "result-021f9e97219f49499df68955c91dac36"
+    },
+    {
+      "test": "integrator",
+      "channel": 12,
+      "required": true,
+      "status": "PASS",
+      "result_id": "result-217f5cb4ec5044c5ad57a194c2b8175f"
+    }
+  ],
+  "fixtures": [
+    {
+      "id": "CFD01",
+      "slot": 7,
+      "port": 0,
+      "physical_uid": null,
+      "identity_status": "PROVISIONAL bench label; confirm attachment at each fitting"
+    },
+    {
+      "id": "CFD02",
+      "slot": 7,
+      "port": 1,
+      "physical_uid": null,
+      "identity_status": "PROVISIONAL bench label; confirm attachment at each fitting"
+    },
+    {
+      "id": "CFD03",
+      "slot": 7,
+      "port": 2,
+      "physical_uid": null,
+      "identity_status": "PROVISIONAL bench label; confirm attachment at each fitting"
+    },
+    {
+      "id": "CFD04",
+      "slot": 7,
+      "port": 3,
+      "physical_uid": null,
+      "identity_status": "PROVISIONAL bench label; confirm attachment at each fitting"
+    }
+  ],
+  "batches": [
+    {
+      "id": "ch09-12-attempt001",
+      "start": 9,
+      "path": "batches/ch09-12-attempt001",
+      "sha256": "3094a1aaf0fa0a9f2987abf7e32c8abd27c050155ca50298f033668572c5c7e9",
+      "fitting_sha256": "2f720cd91fc53bec89370566ae6b4766ec505a0984778be46ada1759d5ac3eca"
+    }
+  ],
+  "retained_results": 14
+}

@@ -1,0 +1,51 @@
+[
+  {
+    "file": "ch01.bin",
+    "pass_": false,
+    "error": "ADC word lacks two-sample stability at 1 selected positions; first=[1255]"
+  },
+  {
+    "file": "ch02.bin",
+    "pass_": true
+  },
+  {
+    "file": "ch03.bin",
+    "pass_": true
+  },
+  {
+    "file": "ch04.bin",
+    "pass_": true
+  },
+  {
+    "file": "ch05.bin",
+    "pass_": true
+  },
+  {
+    "file": "ch06.bin",
+    "pass_": true
+  },
+  {
+    "file": "ch07.bin",
+    "pass_": true
+  },
+  {
+    "file": "ch08.bin",
+    "pass_": true
+  },
+  {
+    "file": "ch09.bin",
+    "pass_": true
+  },
+  {
+    "file": "ch10.bin",
+    "pass_": true
+  },
+  {
+    "file": "ch11.bin",
+    "pass_": true
+  },
+  {
+    "file": "ch12.bin",
+    "pass_": true
+  }
+]

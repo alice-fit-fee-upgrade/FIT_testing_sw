@@ -1,0 +1,155 @@
+\section{Scope and recorded coverage}
+Board PM12-\allowbreak{}K7-\allowbreak{}3A17A1\allowbreak{}B40221\allowbreak{}2223. Campaign 5ef2e2\allowbreak{}b4-\allowbreak{}c04a-\allowbreak{}4fad-\allowbreak{}b86f-\allowbreak{}a23be6\allowbreak{}21d7a7\allowbreak{}.
+
+Recorded status: INCOMP\allowbreak{}LETE. Missing tests are NOT MEASURED. Complete selected-protocol coverage is not a calibrated whole-board release.
+
+\begingroup\setlength{\tabcolsep}{3pt}\begin{longtable}{>{\raggedright\arraybackslash}p{0.1075\linewidth}>{\raggedright\arraybackslash}p{0.1075\linewidth}>{\raggedright\arraybackslash}p{0.1075\linewidth}>{\raggedright\arraybackslash}p{0.1075\linewidth}>{\raggedright\arraybackslash}p{0.1075\linewidth}>{\raggedright\arraybackslash}p{0.1075\linewidth}>{\raggedright\arraybackslash}p{0.1075\linewidth}>{\raggedright\arraybackslash}p{0.1075\linewidth}}\toprule
+Channe\allowbreak{}l & cfd-\allowbreak{}monito\allowbreak{}r & cfd-\allowbreak{}dacs & gate-\allowbreak{}phase & tdc & adc-\allowbreak{}dc & adc-\allowbreak{}lines & integr\allowbreak{}ator\\\midrule\endhead
+1 & NM & NM & NM & NM & NM & NM & NM\\
+2 & NM & NM & NM & NM & NM & NM & NM\\
+3 & NM & NM & NM & NM & NM & NM & NM\\
+4 & NM & NM & NM & NM & NM & NM & NM\\
+5 & NM & NM & NM & NM & NM & NM & NM\\
+6 & NM & NM & NM & NM & NM & NM & NM\\
+7 & NM & NM & NM & NM & NM & NM & NM\\
+8 & NM & NM & NM & NM & NM & NM & NM\\
+9 & NM & NM & NM & NM & NM & NM & NM\\
+10 & NM & NM & NM & NM & NM & NM & NM\\
+11 & NM & NM & NM & NM & NM & NM & NM\\
+12 & NM & NM & NM & NM & PASS & PASS & PASS\\
+\bottomrule\end{longtable}\endgroup
+NM = not measured; INC = incomplete; ERR = acquisition error. No missing series is invented.
+\subsection{Board-level tests}
+\begingroup\setlength{\tabcolsep}{3pt}\begin{longtable}{>{\raggedright\arraybackslash}p{0.4300\linewidth}>{\raggedright\arraybackslash}p{0.4300\linewidth}}\toprule
+Test & Status\allowbreak{}\\\midrule\endhead
+Bounda\allowbreak{}ry scan and CPLD–FPGA connec\allowbreak{}tions & NOT\_\allowbreak{}MEASUR\allowbreak{}ED\\
+MCU,\allowbreak{} CPU–FPGA commun\allowbreak{}icatio\allowbreak{}n and periph\allowbreak{}eral IDs & NOT\_\allowbreak{}MEASUR\allowbreak{}ED\\
+I2C sensor\allowbreak{}s,\allowbreak{} curren\allowbreak{}ts and voltag\allowbreak{}es & NOT\_\allowbreak{}MEASUR\allowbreak{}ED\\
+HDMI digita\allowbreak{}l link & NOT\_\allowbreak{}MEASUR\allowbreak{}ED\\
+Ethern\allowbreak{}et/\allowbreak{}bridge\allowbreak{} diagno\allowbreak{}stic & NOT\_\allowbreak{}MEASUR\allowbreak{}ED\\
+\bottomrule\end{longtable}\endgroup
+\section{Fitted batches and fixture provenance}
+\begingroup\setlength{\tabcolsep}{3pt}\begin{longtable}{>{\raggedright\arraybackslash}p{0.1720\linewidth}>{\raggedright\arraybackslash}p{0.1720\linewidth}>{\raggedright\arraybackslash}p{0.1720\linewidth}>{\raggedright\arraybackslash}p{0.1720\linewidth}>{\raggedright\arraybackslash}p{0.1720\linewidth}}\toprule
+Batch attemp\allowbreak{}t & PM channe\allowbreak{}l & CFD label & Declar\allowbreak{}ed connec\allowbreak{}tion & Fittin\allowbreak{}g\\\midrule\endhead
+ch09-\allowbreak{}12-\allowbreak{}attemp\allowbreak{}t001 & 12 & CFD01 & slot 7,\allowbreak{} RJ45 0 & Identi\allowbreak{}ty/\allowbreak{}fittin\allowbreak{}g confir\allowbreak{}med\\
+ch09-\allowbreak{}12-\allowbreak{}attemp\allowbreak{}t001 & 11 & CFD02 & slot 7,\allowbreak{} RJ45 1 & Identi\allowbreak{}ty/\allowbreak{}fittin\allowbreak{}g confir\allowbreak{}med\\
+ch09-\allowbreak{}12-\allowbreak{}attemp\allowbreak{}t001 & 10 & CFD03 & slot 7,\allowbreak{} RJ45 2 & Identi\allowbreak{}ty/\allowbreak{}fittin\allowbreak{}g confir\allowbreak{}med\\
+ch09-\allowbreak{}12-\allowbreak{}attemp\allowbreak{}t001 & 9 & CFD04 & slot 7,\allowbreak{} RJ45 3 & Identi\allowbreak{}ty/\allowbreak{}fittin\allowbreak{}g confir\allowbreak{}med\\
+\bottomrule\end{longtable}\endgroup
+Fixture labels CFD01--CFD04 are provisional bench labels. Factory identities and photos remain unknown until supplied; a label is not proof of module identity. Declared cable routes must be checked physically.
+
+Raw inputs and selected result IDs are retained in inputs/. Repeated measurements are never silently substituted.
+\section{Retained attempts and explicit selection}
+\begingroup\setlength{\tabcolsep}{3pt}\begin{longtable}{>{\raggedright\arraybackslash}p{0.1433\linewidth}>{\raggedright\arraybackslash}p{0.1433\linewidth}>{\raggedright\arraybackslash}p{0.1433\linewidth}>{\raggedright\arraybackslash}p{0.1433\linewidth}>{\raggedright\arraybackslash}p{0.1433\linewidth}>{\raggedright\arraybackslash}p{0.1433\linewidth}}\toprule
+Result\allowbreak{} ID prefix\allowbreak{} & Test & Channe\allowbreak{}l & Fittin\allowbreak{}g & Status\allowbreak{} & Select\allowbreak{}ed\\\midrule\endhead
+result\allowbreak{}-\allowbreak{}b91262\allowbreak{}35 & adc-\allowbreak{}dc & 12 & ch09-\allowbreak{}12-\allowbreak{}attemp\allowbreak{}t001 & PASS & yes\\
+result\allowbreak{}-\allowbreak{}ee0613\allowbreak{}ea & adc-\allowbreak{}lines & 12 & ch09-\allowbreak{}12-\allowbreak{}attemp\allowbreak{}t001 & PASS & yes\\
+result\allowbreak{}-\allowbreak{}217f5c\allowbreak{}b4 & integr\allowbreak{}ator & 12 & ch09-\allowbreak{}12-\allowbreak{}attemp\allowbreak{}t001 & PASS & yes\\
+\bottomrule\end{longtable}\endgroup
+All attempts, including failures and rejected repeats, remain in the archived inputs. The coverage matrix uses only the explicitly selected attempt.
+\section{Selected measurement conditions and limits}
+\begingroup\setlength{\tabcolsep}{3pt}\begin{longtable}{>{\raggedright\arraybackslash}p{0.2867\linewidth}>{\raggedright\arraybackslash}p{0.2867\linewidth}>{\raggedright\arraybackslash}p{0.2867\linewidth}}\toprule
+Test & Physic\allowbreak{}al channe\allowbreak{}l & Confir\allowbreak{}med stimul\allowbreak{}us connec\allowbreak{}tion\\\midrule\endhead
+adc-\allowbreak{}dc & 12 & \{"dac\_\allowbreak{}channe\allowbreak{}ls": [0,\allowbreak{} 1],\allowbreak{} "stimul\allowbreak{}us\_\allowbreak{}channe\allowbreak{}l": 12,\allowbreak{} "usb\_\allowbreak{}input": "J8"\}\\
+adc-\allowbreak{}lines & 12 & \{"dac\_\allowbreak{}channe\allowbreak{}ls": [0,\allowbreak{} 1],\allowbreak{} "stimul\allowbreak{}us\_\allowbreak{}channe\allowbreak{}l": 12,\allowbreak{} "usb\_\allowbreak{}input": "J8"\}\\
+integr\allowbreak{}ator & 12 & \{"dac\_\allowbreak{}channe\allowbreak{}ls": [2,\allowbreak{} 3],\allowbreak{} "stimul\allowbreak{}us\_\allowbreak{}channe\allowbreak{}l": 12,\allowbreak{} "usb\_\allowbreak{}input": "J6"\}\\
+\bottomrule\end{longtable}\endgroup
+\subsection{Common hardware configuration}
+\begingroup\setlength{\tabcolsep}{3pt}\begin{longtable}{>{\raggedright\arraybackslash}p{0.4300\linewidth}>{\raggedright\arraybackslash}p{0.4300\linewidth}}\toprule
+Settin\allowbreak{}g & Record\allowbreak{}ed value\\\midrule\endhead
+clock\_\allowbreak{}profil\allowbreak{}e.adc\_\allowbreak{}rate & 2x refere\allowbreak{}nce\\
+clock\_\allowbreak{}profil\allowbreak{}e.kasli\_\allowbreak{}rate & 3x refere\allowbreak{}nce\\
+clock\_\allowbreak{}profil\allowbreak{}e.refere\allowbreak{}nce\_\allowbreak{}mhz & 40.0787\\
+cpld\_\allowbreak{}gate\_\allowbreak{}mode & origin\allowbreak{}al INTA/\allowbreak{}INTB enable\allowbreak{}d,\allowbreak{} nomina\allowbreak{}l20MHz\allowbreak{}\\
+kasli\_\allowbreak{}build.ABI & CFD4\\
+kasli\_\allowbreak{}build.expect\allowbreak{}ed\_\allowbreak{}bit\_\allowbreak{}sha256\allowbreak{} & a71a08\allowbreak{}a25862\allowbreak{}0b0e5a\allowbreak{}52c5d0\allowbreak{}3aefd8\allowbreak{}c69040\allowbreak{}c9d15e\allowbreak{}8de639\allowbreak{}1c484a\allowbreak{}c182b7\allowbreak{}173b\\
+pm\_\allowbreak{}build & c7c42d\allowbreak{}28\\
+\bottomrule\end{longtable}\endgroup
+\subsection{adc-\allowbreak{}dc}
+\begingroup\setlength{\tabcolsep}{3pt}\begin{longtable}{>{\raggedright\arraybackslash}p{0.4300\linewidth}>{\raggedright\arraybackslash}p{0.4300\linewidth}}\toprule
+Settin\allowbreak{}g & Record\allowbreak{}ed value\\\midrule\endhead
+method\allowbreak{} & "direct\allowbreak{}-\allowbreak{}ADC-\allowbreak{}DC-\allowbreak{}v1"\\
+stimul\allowbreak{}us\_\allowbreak{}points\allowbreak{}\_\allowbreak{}per\_\allowbreak{}bank & 257\\
+comman\allowbreak{}ded\_\allowbreak{}range\_\allowbreak{}V & [-\allowbreak{}1.2,\allowbreak{} 1.2]\\
+common\allowbreak{}\_\allowbreak{}mode\_\allowbreak{}V & 1.0\\
+dac\_\allowbreak{}channe\allowbreak{}ls & [0,\allowbreak{} 1]\\
+fit\_\allowbreak{}interv\allowbreak{}al\_\allowbreak{}V & [-\allowbreak{}0.8,\allowbreak{} 0.8]\\
+fft\_\allowbreak{}sample\allowbreak{}\_\allowbreak{}rate\_\allowbreak{}assume\allowbreak{}d\_\allowbreak{}Hz & 801574\allowbreak{}00\\
+integr\allowbreak{}ator\_\allowbreak{}input\_\allowbreak{}parked\allowbreak{}\_\allowbreak{}V & [2.048000\allowbreak{}1,\allowbreak{} 1.024000\allowbreak{}05]\\
+\bottomrule\end{longtable}\endgroup
+\subsection{adc-\allowbreak{}lines}
+\begingroup\setlength{\tabcolsep}{3pt}\begin{longtable}{>{\raggedright\arraybackslash}p{0.4300\linewidth}>{\raggedright\arraybackslash}p{0.4300\linewidth}}\toprule
+Settin\allowbreak{}g & Record\allowbreak{}ed value\\\midrule\endhead
+method\allowbreak{} & "adjace\allowbreak{}nt-\allowbreak{}pair-\allowbreak{}states\allowbreak{}-\allowbreak{}v1"\\
+stimul\allowbreak{}us\_\allowbreak{}points\allowbreak{}\_\allowbreak{}per\_\allowbreak{}bank & 257\\
+comman\allowbreak{}ded\_\allowbreak{}range\_\allowbreak{}V & [-\allowbreak{}1.2,\allowbreak{} 1.2]\\
+common\allowbreak{}\_\allowbreak{}mode\_\allowbreak{}V & 1.0\\
+dac\_\allowbreak{}channe\allowbreak{}ls & [0,\allowbreak{} 1]\\
+fit\_\allowbreak{}interv\allowbreak{}al\_\allowbreak{}V & [-\allowbreak{}0.8,\allowbreak{} 0.8]\\
+fft\_\allowbreak{}sample\allowbreak{}\_\allowbreak{}rate\_\allowbreak{}assume\allowbreak{}d\_\allowbreak{}Hz & 801574\allowbreak{}00\\
+integr\allowbreak{}ator\_\allowbreak{}input\_\allowbreak{}parked\allowbreak{}\_\allowbreak{}V & [2.048000\allowbreak{}1,\allowbreak{} 1.024000\allowbreak{}05]\\
+\bottomrule\end{longtable}\endgroup
+\subsection{integr\allowbreak{}ator}
+\begingroup\setlength{\tabcolsep}{3pt}\begin{longtable}{>{\raggedright\arraybackslash}p{0.4300\linewidth}>{\raggedright\arraybackslash}p{0.4300\linewidth}}\toprule
+Settin\allowbreak{}g & Record\allowbreak{}ed value\\\midrule\endhead
+method\allowbreak{} & "signed\allowbreak{}-\allowbreak{}integr\allowbreak{}ation-\allowbreak{}pair-\allowbreak{}v1"\\
+dac\_\allowbreak{}channe\allowbreak{}ls & [2,\allowbreak{} 3]\\
+base\_\allowbreak{}V & [1.024,\allowbreak{} 2.048]\\
+coarse\allowbreak{}\_\allowbreak{}offset\allowbreak{}s\_\allowbreak{}V & [-\allowbreak{}0.099999\allowbreak{}999999\allowbreak{}99987,\allowbreak{} -\allowbreak{}0.080000\allowbreak{}000000\allowbreak{}00007,\allowbreak{} -\allowbreak{}0.059999\allowbreak{}999999\allowbreak{}99983,\allowbreak{} -\allowbreak{}0.040000\allowbreak{}000000\allowbreak{}000036\allowbreak{},\allowbreak{} -\allowbreak{}0.019999\allowbreak{}999999\allowbreak{}999796\allowbreak{},\allowbreak{} -\allowbreak{}0.010000\allowbreak{}000000\allowbreak{}000009\allowbreak{},\allowbreak{} 0.0,\allowbreak{} 0.009999\allowbreak{}999999\allowbreak{}999787\allowbreak{},\allowbreak{} 0.020000\allowbreak{}000000\allowbreak{}00024,\allowbreak{} 0.040000\allowbreak{}000000\allowbreak{}000036\allowbreak{},\allowbreak{} 0.060000\allowbreak{}000000\allowbreak{}000275\allowbreak{},\allowbreak{} 0.080000\allowbreak{}000000\allowbreak{}00007,\allowbreak{} 0.100000\allowbreak{}000000\allowbreak{}00009]\\
+fine\_\allowbreak{}method\allowbreak{} & "26 points\allowbreak{},\allowbreak{}0.4mV step around\allowbreak{} coarse\allowbreak{} estima\allowbreak{}te"\\
+return\allowbreak{}\_\allowbreak{}method\allowbreak{} & "two candid\allowbreak{}ate revisi\allowbreak{}ts and +/\allowbreak{}-\allowbreak{}5mV offset\allowbreak{}s;near-\allowbreak{}zero <=2codes\allowbreak{}; signed\allowbreak{} respon\allowbreak{}se >4codes\allowbreak{}"\\
+\bottomrule\end{longtable}\endgroup
+Comman\allowbreak{}ded DAC voltag\allowbreak{}es,\allowbreak{} whole connec\allowbreak{}ted chain; not calibr\allowbreak{}ated ADC-\allowbreak{}only INL/\allowbreak{}noise or electr\allowbreak{}ical contin\allowbreak{}uity proof.
+
+Effect\allowbreak{}ive differ\allowbreak{}ential\allowbreak{} whole-\allowbreak{}chain balanc\allowbreak{}e; wavefo\allowbreak{}rm-\allowbreak{}based integr\allowbreak{}ation pair,\allowbreak{} not an absolu\allowbreak{}te gate timest\allowbreak{}amp or calibr\allowbreak{}ated opamp bias.
+
+ADC total RMS includes the complete connected chain and periodic gate feedthrough. The four-phase-removed RMS removes the mean of each sample phase; it is a residual statistic, not an intrinsic ADC noise specification. FFT and time axes use the declared clock frequency, not an independent frequency measurement.
+
+\section{Measurements and common channel plots}
+\begingroup\setlength{\tabcolsep}{3pt}\begin{longtable}{>{\raggedright\arraybackslash}p{0.1433\linewidth}>{\raggedright\arraybackslash}p{0.1433\linewidth}>{\raggedright\arraybackslash}p{0.1433\linewidth}>{\raggedright\arraybackslash}p{0.1433\linewidth}>{\raggedright\arraybackslash}p{0.1433\linewidth}>{\raggedright\arraybackslash}p{0.1433\linewidth}}\toprule
+Test & Channe\allowbreak{}l & Bank & Observ\allowbreak{}able & Value & Unit\\\midrule\endhead
+adc-\allowbreak{}dc & 12 & A & gain & -\allowbreak{}1784.205440\allowbreak{}671235\allowbreak{} & code/\allowbreak{}V\\
+adc-\allowbreak{}dc & 12 & A & zero\_\allowbreak{}mean & 2162.081133\allowbreak{}919843\allowbreak{}5 & code\\
+adc-\allowbreak{}dc & 12 & A & zero\_\allowbreak{}total\_\allowbreak{}rms & 56.227545\allowbreak{}889877\allowbreak{}61 & code\\
+adc-\allowbreak{}dc & 12 & A & zero\_\allowbreak{}four\_\allowbreak{}phase\_\allowbreak{}remove\allowbreak{}d\_\allowbreak{}rms & 0.592637\allowbreak{}125072\allowbreak{}8474 & code\\
+adc-\allowbreak{}dc & 12 & B & gain & -\allowbreak{}1784.269486\allowbreak{}954563\allowbreak{}5 & code/\allowbreak{}V\\
+adc-\allowbreak{}dc & 12 & B & zero\_\allowbreak{}mean & 2165.847507\allowbreak{}331378\allowbreak{}4 & code\\
+adc-\allowbreak{}dc & 12 & B & zero\_\allowbreak{}total\_\allowbreak{}rms & 64.408946\allowbreak{}780400\allowbreak{}04 & code\\
+adc-\allowbreak{}dc & 12 & B & zero\_\allowbreak{}four\_\allowbreak{}phase\_\allowbreak{}remove\allowbreak{}d\_\allowbreak{}rms & 0.562557\allowbreak{}186635\allowbreak{}5403 & code\\
+adc-\allowbreak{}lines & 12 & A & adjace\allowbreak{}nt\_\allowbreak{}pair\_\allowbreak{}states\allowbreak{} & 44 & state\\
+adc-\allowbreak{}lines & 12 & A & visite\allowbreak{}d\_\allowbreak{}codes & 3147 & code\\
+adc-\allowbreak{}lines & 12 & B & adjace\allowbreak{}nt\_\allowbreak{}pair\_\allowbreak{}states\allowbreak{} & 44 & state\\
+adc-\allowbreak{}lines & 12 & B & visite\allowbreak{}d\_\allowbreak{}codes & 3184 & code\\
+integr\allowbreak{}ator & 12 & A & balanc\allowbreak{}e\_\allowbreak{}delta & 0.006030\allowbreak{}008721\allowbreak{}686399\allowbreak{} & V\\
+integr\allowbreak{}ator & 12 & A & gain & -\allowbreak{}2530.411960\allowbreak{}665549\allowbreak{} & code/\allowbreak{}V\\
+integr\allowbreak{}ator & 12 & A & near\_\allowbreak{}balanc\allowbreak{}e\_\allowbreak{}change\allowbreak{} & 0.130164\allowbreak{}910452\allowbreak{}36994 & code\\
+integr\allowbreak{}ator & 12 & B & balanc\allowbreak{}e\_\allowbreak{}delta & 0.007424\allowbreak{}191555\allowbreak{}263186\allowbreak{} & V\\
+integr\allowbreak{}ator & 12 & B & gain & -\allowbreak{}2448.007789\allowbreak{}561749\allowbreak{}6 & code/\allowbreak{}V\\
+integr\allowbreak{}ator & 12 & B & near\_\allowbreak{}balanc\allowbreak{}e\_\allowbreak{}change\allowbreak{} & 0.111943\allowbreak{}222170\allowbreak{}75807 & code\\
+\bottomrule\end{longtable}\endgroup
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-000.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-001.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-002.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-003.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-004.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-005.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-006.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-007.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-008.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-009.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-010.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-011.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-012.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-013.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-014.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-015.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-016.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-017.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-018.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-019.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-020.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-021.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-022.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-023.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-024.pdf}\end{center}
+\begin{center}\includegraphics[width=\textwidth]{figures/figure-025.pdf}\end{center}

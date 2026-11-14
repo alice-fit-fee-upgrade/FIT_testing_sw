@@ -1,0 +1,2 @@
+CLOCK_OBSERVER_SIM_PASS reset persistence rearm short-pulse latch count=         3
+tb_observer.v:23: $finish called at 29915050 (1ps)

@@ -1,0 +1,56 @@
+Latest direct SPI-state/clock correlation: [four reset traces and netlist audit](../../system/evidence-spi-state-20261114/README.md).
+All four SYS resets occur with parserIDLE9.6–10.2nominal ms after frame end;
+fixedMMCMLOCK falls withRST/PWR0, CAP/GTXLOCK1.600:0/6,601:4/6 (small ordered
+partial series). No SPI merge found in audited clock/reset/control cone.
+Exactc7531465 restored, Kasli unchanged/driven, ADC/power/frontend postflightPASS.
+
+Latest parser-reset A/B: [raw records](../../system/evidence-spi-reset-20261114/README.md).
+132 measured frames stable in both held and normal modes: inconclusive for
+suppression. After exactc7531465 restore,36 ordinary signatures also stable.
+Fault remains open/intermittent. Kasli unchanged, SPI driven, ADC postflightPASS.
+
+Individual SPI pin follow-up: temporary GPIO mode confirmed by MCU pin reads;
+SEL/SCK/MOSI separately36 cycles and selected MOSI24 cycles without observed
+reset. Full-frame controls still reproduce (2/12 confirmed before and after;
+read timeouts retained as unknown). MISO probe inconclusive because controls
+also stable after restore. Onech01 ADC capture warning retained, fresh capture
+passed. [Raw evidence](../../system/evidence-spi-pins-20261114/README.md).
+Original four-port Kasli restored, PMc7531465 unchanged, SPI stays driven.
+
+Latest selective HDMI follow-up: each of four data outputs160 isolated cycles,
+no SYS restart. Coupled SPI remains the reproducer, including at917Hz SCK.
+An apparent busy/reset overlap was caused by delayed counter readback and
+is not causal evidence. Timed nominal epochs are after frame completion.
+[Raw traces and conservative reanalysis](../../system/evidence-selective-20261114/README.md).
+
+**Latest 2026-11-14:** the report starts with the corrected-clock TDC repeat.
+Current SRAM build **c7531465**; TDC9–12 PASS, 19,268 events, 25 phase
+positions/channel. ADC digital regression all12/both banks PASS. HDMI/SPI
+SYS restarts persist (8/12 reads); CFD11 MUX7 finding remains open.
+[New raw evidence and plots](../../tdc_live120/evidence-clock40-20261114/README.md).
+External PLL profiles were not changed; slot6 SPI stays driven. Historical
+campaign coverage below is unchanged. The previous c7 image is not a
+correct-clock TDC qualification. USB stimulus still on PM10.
+
+# Assembly verification, fitted group9–12 — 2026-11-13
+
+[63-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
+
+Board PM12-K7-3A17A1B402212223. USB stimulus stays on physical10. This is assembly verification, not an unconditional board release: 30 selected cases,28 PASS,2 FAIL,59 NOT_MEASURED.
+
+Fresh scoped JTAG/static connections168/168 in both independent paths, MCU/FPGA32walking patterns, populated rail voltages and functional Ethernet/IPbus transfers PASS. Monitor inputs on9,10,12 PASS.
+
+Two open findings:
+
+* CFD fixture at11 MUX7 reads5.479V raw instead of approximately3.41V. Independently repeated. Inspect its R3=33kΩ to ground and R4=20kΩ from P5V5, soldering or intended variant. The nominal-divider equivalent8.80V is NOT a measured PM rail; independent PM telemetry is5.496V.
+* HDMI walking/PRBS/idle data pass, but SYS resets on FPGA-pad release after SPI signature reads. Full HDMI case remains FAIL. Legacy boundary wrapper consequently reports ERROR after restoration; raw evidence retained. Static JTAG PASS is scoped and independently validated, with healthy ADC/TDC after restoration.
+
+Analog9 remains NOT_MEASURED until the next USB move; fixtures1–8 are absent. Existing analog10–12 and timing9–12 remain selected with original settings. The fitted3.8V shunt is1mΩ; host conversion gives nominal3.12A from raw INA data while retaining the stale firmware flag.
+
+Final state: diagnostic SRAM restored, MCU power protection untouched, DIO outputs released, SMU OFF/HIZ/0A, all four monitor muxes inhibited and TCA masks zero. No persistent programming or clock changes.
+
+Reproduce offline: extract campaign-raw.tar.gz to a NEW directory; run campaign_report.py (see --help), then assembly_appendix.py --report REPORT --work EXTRACTED/batches/ch09-12-attempt001/working --latex /path/to/tectonic. Matplotlib is required. Alternatively edit the supplied TeX and run tectonic report.tex in this directory. Figures are generated from raw inputs; no hardware access is required. Test results:37acceptance and46CFD tests PASS.
+
+Later follow-up: the PDF now prepends an erratum. Delayed SPI-related SYS resets also occur with outputs held driven. Earlier release attribution is superseded; see [raw follow-up](../../system/evidence-held-spi-20261113/README.md). The selected historical case results and raw archive are unchanged. Current direction/idle state is held, rather than released.
+
+Further direct clock-observer evidence is prepended to the PDF: MMCM LOCK/SYS reset captured, without a proven FIN/external-PLL root cause. Nominal watch time is40.0787MHz, contrary to source120MHz metadata. [Raw follow-up](../../system/evidence-clock-observer-20261113/README.md).

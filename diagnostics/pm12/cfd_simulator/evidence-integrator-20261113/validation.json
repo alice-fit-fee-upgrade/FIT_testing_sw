@@ -1,0 +1,23 @@
+{
+  "pass_": true,
+  "raw_buffers": 688,
+  "strobe_decimated_ADC_samples": 703824,
+  "analysis_accepted_buffers": 520,
+  "analysis_rejected_buffers": 32,
+  "observations": {
+    "A": {
+      "near_zero_change_codes": -0.28137254901960784,
+      "negative_offset_change_codes": -12.511274509803922,
+      "positive_offset_change_codes": 13.01764705882353
+    },
+    "B": {
+      "near_zero_change_codes": 0.3286764705882353,
+      "negative_offset_change_codes": -13.48578431372549,
+      "positive_offset_change_codes": 12.333333333333334
+    }
+  },
+  "amplifiers_enabled": true,
+  "direct_ADC_bypass_isolated": true,
+  "other_DAC_outputs_unchanged": true,
+  "scope": "Observed channel12 signed response and effective differential balance; not full board acceptance"
+}

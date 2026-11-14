@@ -1,0 +1,20 @@
+{
+  "adc_dc_pass": true,
+  "adc_line_pass": true,
+  "raw": {
+    "pass": true,
+    "captures": 514,
+    "raw_words": 2105344,
+    "histograms_exact": true,
+    "ev_tags_exact": true,
+    "all_strobe_periods": 4,
+    "quantized_buffers": 0,
+    "strobe_interval_counts": {
+      "4": 525822
+    },
+    "selected_words_stable": true,
+    "max_allowed_edge_phase_span_samples": 1,
+    "generations_contiguous": true
+  },
+  "physical_channel": 11
+}

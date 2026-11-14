@@ -1,0 +1,2 @@
+PASS normal signatures, parser held in reset under clocked frames, zero MISO, release/recovery, constant-zero normal read3
+diagnostics/pm12/system/spi_reset/tb.v:18: $finish called at 2360000 (1ps)

@@ -1,0 +1,7 @@
+{
+  "mode": "UNMEASURED_SCAFFOLD",
+  "hardware_actions": false,
+  "case_count": 89,
+  "all_case_statuses": "NOT_MEASURED",
+  "physical_validation_of_new_channel_selection": "NOT_RUN; waiting for fitted group"
+}

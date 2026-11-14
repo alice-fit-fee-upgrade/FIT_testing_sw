@@ -1,0 +1,163 @@
+{
+  "groups": {
+    "idle": {
+      "completed": 8,
+      "restarts": 0
+    },
+    "lvds-single": {
+      "completed": 32,
+      "restarts": 0
+    },
+    "spi-frame divider60": {
+      "completed": 16,
+      "restarts": 8
+    },
+    "spi-frame divider600": {
+      "completed": 9,
+      "restarts": 3
+    },
+    "spi-frame divider6000": {
+      "completed": 9,
+      "restarts": 4
+    }
+  },
+  "incomplete": [
+    "spi-div60-addr1-2"
+  ],
+  "slow": [
+    {
+      "series": "slow-trace",
+      "runs": [
+        {
+          "repeat": 0,
+          "address": 0,
+          "counter_decreases": 0,
+          "nominal_reset_epoch_ms": []
+        },
+        {
+          "repeat": 0,
+          "address": 1,
+          "counter_decreases": 1,
+          "nominal_reset_epoch_ms": []
+        },
+        {
+          "repeat": 0,
+          "address": 2,
+          "counter_decreases": 0,
+          "nominal_reset_epoch_ms": []
+        },
+        {
+          "repeat": 1,
+          "address": 0,
+          "counter_decreases": 1,
+          "nominal_reset_epoch_ms": []
+        },
+        {
+          "repeat": 1,
+          "address": 1,
+          "counter_decreases": 1,
+          "nominal_reset_epoch_ms": []
+        },
+        {
+          "repeat": 1,
+          "address": 2,
+          "counter_decreases": 1,
+          "nominal_reset_epoch_ms": []
+        },
+        {
+          "repeat": 2,
+          "address": 0,
+          "counter_decreases": 0,
+          "nominal_reset_epoch_ms": []
+        },
+        {
+          "repeat": 2,
+          "address": 1,
+          "counter_decreases": 0,
+          "nominal_reset_epoch_ms": []
+        },
+        {
+          "repeat": 2,
+          "address": 2,
+          "counter_decreases": 1,
+          "nominal_reset_epoch_ms": []
+        }
+      ],
+      "restart_frames": 5,
+      "completed": 9
+    },
+    {
+      "series": "slow-trace-timed",
+      "runs": [
+        {
+          "repeat": 0,
+          "address": 0,
+          "counter_decreases": 1,
+          "nominal_reset_epoch_ms": [
+            40.98967110621743
+          ]
+        },
+        {
+          "repeat": 0,
+          "address": 1,
+          "counter_decreases": 1,
+          "nominal_reset_epoch_ms": [
+            43.77003078116104
+          ]
+        },
+        {
+          "repeat": 0,
+          "address": 2,
+          "counter_decreases": 0,
+          "nominal_reset_epoch_ms": []
+        },
+        {
+          "repeat": 1,
+          "address": 0,
+          "counter_decreases": 0,
+          "nominal_reset_epoch_ms": []
+        },
+        {
+          "repeat": 1,
+          "address": 1,
+          "counter_decreases": 1,
+          "nominal_reset_epoch_ms": [
+            43.32525242352858
+          ]
+        },
+        {
+          "repeat": 1,
+          "address": 2,
+          "counter_decreases": 1,
+          "nominal_reset_epoch_ms": [
+            43.64829117548652
+          ]
+        },
+        {
+          "repeat": 2,
+          "address": 0,
+          "counter_decreases": 0,
+          "nominal_reset_epoch_ms": []
+        },
+        {
+          "repeat": 2,
+          "address": 1,
+          "counter_decreases": 1,
+          "nominal_reset_epoch_ms": [
+            43.818617501528934
+          ]
+        },
+        {
+          "repeat": 2,
+          "address": 2,
+          "counter_decreases": 0,
+          "nominal_reset_epoch_ms": []
+        }
+      ],
+      "restart_frames": 5,
+      "completed": 9
+    }
+  ],
+  "criterion": "Conservative observed counter decrease only. Earlier executed helpers also used a host-time ratio that can falsely flag a sample following a delayed read; those flags are superseded by this raw recomputation.",
+  "timing_limitation": "Busy sampled before a blocking PM read cannot locate the reset. Timed repeat uses read completion minus fresh uptime as nominal epoch, assuming running SYS clock and small final reply latency. Not a direct reset/SEL latch."
+}

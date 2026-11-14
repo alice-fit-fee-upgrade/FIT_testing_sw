@@ -1,0 +1,611 @@
+{
+  "address": 1,
+  "uptime_before": [
+    295257979,
+    0
+  ],
+  "mcu_before": [
+    0,
+    0
+  ],
+  "armed_status": 4101,
+  "signature": 19785,
+  "status": 12582,
+  "count": 73,
+  "raw_words": [
+    0,
+    3,
+    449825,
+    6690219,
+    450025,
+    6689595,
+    450225,
+    6688939,
+    450325,
+    6688651,
+    450425,
+    6688283,
+    450625,
+    6687627,
+    450825,
+    6687131,
+    451025,
+    6686475,
+    451225,
+    6685851,
+    451425,
+    6685195,
+    451625,
+    6697755,
+    451825,
+    6697099,
+    452025,
+    6696475,
+    452225,
+    6695819,
+    452425,
+    6695323,
+    452625,
+    6694667,
+    452825,
+    6694043,
+    453025,
+    6693387,
+    453225,
+    6692763,
+    453425,
+    6692235,
+    453525,
+    6691883,
+    453625,
+    6691643,
+    453825,
+    6690987,
+    453925,
+    6690699,
+    454025,
+    6690331,
+    454225,
+    6689675,
+    454425,
+    6689179,
+    454625,
+    6688523,
+    454825,
+    6687899,
+    455025,
+    6687243,
+    455225,
+    6686619,
+    455425,
+    6686091,
+    455625,
+    6685467,
+    455825,
+    6684811,
+    456025,
+    6697371,
+    456225,
+    6696715,
+    456425,
+    6696091,
+    456625,
+    6695435,
+    456825,
+    6694811,
+    457025,
+    6694283,
+    457225,
+    6693659,
+    457425,
+    6693003,
+    457625,
+    6692379,
+    457825,
+    6691723,
+    458025,
+    6691227,
+    458225,
+    6690571,
+    458425,
+    6689947,
+    458625,
+    6689291,
+    458825,
+    6688667,
+    459025,
+    6688139,
+    459225,
+    6687515,
+    459425,
+    6686859,
+    459625,
+    6686235,
+    459825,
+    6685579,
+    460025,
+    6685083,
+    460225,
+    6697483,
+    460425,
+    6696859,
+    460625,
+    6696331,
+    460825,
+    6695707,
+    461025,
+    6695051,
+    461225,
+    6694427,
+    461425,
+    6693771,
+    461625,
+    6693275,
+    461825,
+    6692619,
+    462025,
+    6691995,
+    462225,
+    6691339,
+    462425,
+    6690715,
+    462625,
+    6690187,
+    462825,
+    6689539,
+    844099,
+    6694598,
+    844440,
+    6751175,
+    844442,
+    6751427
+  ],
+  "uptime_after": [
+    40584942,
+    0
+  ],
+  "mcu_after": [
+    0,
+    0
+  ],
+  "events": [
+    {
+      "tick": 0,
+      "state": 3,
+      "ref_age": 0,
+      "max_ref_age": 0
+    },
+    {
+      "tick": 449825,
+      "state": 43,
+      "ref_age": 43,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 450025,
+      "state": 59,
+      "ref_age": 38,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 450225,
+      "state": 43,
+      "ref_age": 33,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 450325,
+      "state": 11,
+      "ref_age": 31,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 450425,
+      "state": 27,
+      "ref_age": 28,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 450625,
+      "state": 11,
+      "ref_age": 23,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 450825,
+      "state": 27,
+      "ref_age": 19,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 451025,
+      "state": 11,
+      "ref_age": 14,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 451225,
+      "state": 27,
+      "ref_age": 9,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 451425,
+      "state": 11,
+      "ref_age": 4,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 451625,
+      "state": 27,
+      "ref_age": 102,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 451825,
+      "state": 11,
+      "ref_age": 97,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 452025,
+      "state": 27,
+      "ref_age": 92,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 452225,
+      "state": 11,
+      "ref_age": 87,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 452425,
+      "state": 27,
+      "ref_age": 83,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 452625,
+      "state": 11,
+      "ref_age": 78,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 452825,
+      "state": 27,
+      "ref_age": 73,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 453025,
+      "state": 11,
+      "ref_age": 68,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 453225,
+      "state": 27,
+      "ref_age": 63,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 453425,
+      "state": 11,
+      "ref_age": 59,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 453525,
+      "state": 43,
+      "ref_age": 56,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 453625,
+      "state": 59,
+      "ref_age": 54,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 453825,
+      "state": 43,
+      "ref_age": 49,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 453925,
+      "state": 11,
+      "ref_age": 47,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 454025,
+      "state": 27,
+      "ref_age": 44,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 454225,
+      "state": 11,
+      "ref_age": 39,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 454425,
+      "state": 27,
+      "ref_age": 35,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 454625,
+      "state": 11,
+      "ref_age": 30,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 454825,
+      "state": 27,
+      "ref_age": 25,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 455025,
+      "state": 11,
+      "ref_age": 20,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 455225,
+      "state": 27,
+      "ref_age": 15,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 455425,
+      "state": 11,
+      "ref_age": 11,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 455625,
+      "state": 27,
+      "ref_age": 6,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 455825,
+      "state": 11,
+      "ref_age": 1,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 456025,
+      "state": 27,
+      "ref_age": 99,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 456225,
+      "state": 11,
+      "ref_age": 94,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 456425,
+      "state": 27,
+      "ref_age": 89,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 456625,
+      "state": 11,
+      "ref_age": 84,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 456825,
+      "state": 27,
+      "ref_age": 79,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 457025,
+      "state": 11,
+      "ref_age": 75,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 457225,
+      "state": 27,
+      "ref_age": 70,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 457425,
+      "state": 11,
+      "ref_age": 65,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 457625,
+      "state": 27,
+      "ref_age": 60,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 457825,
+      "state": 11,
+      "ref_age": 55,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 458025,
+      "state": 27,
+      "ref_age": 51,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 458225,
+      "state": 11,
+      "ref_age": 46,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 458425,
+      "state": 27,
+      "ref_age": 41,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 458625,
+      "state": 11,
+      "ref_age": 36,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 458825,
+      "state": 27,
+      "ref_age": 31,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 459025,
+      "state": 11,
+      "ref_age": 27,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 459225,
+      "state": 27,
+      "ref_age": 22,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 459425,
+      "state": 11,
+      "ref_age": 17,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 459625,
+      "state": 27,
+      "ref_age": 12,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 459825,
+      "state": 11,
+      "ref_age": 7,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 460025,
+      "state": 27,
+      "ref_age": 3,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 460225,
+      "state": 11,
+      "ref_age": 100,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 460425,
+      "state": 27,
+      "ref_age": 95,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 460625,
+      "state": 11,
+      "ref_age": 91,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 460825,
+      "state": 27,
+      "ref_age": 86,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 461025,
+      "state": 11,
+      "ref_age": 81,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 461225,
+      "state": 27,
+      "ref_age": 76,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 461425,
+      "state": 11,
+      "ref_age": 71,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 461625,
+      "state": 27,
+      "ref_age": 67,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 461825,
+      "state": 11,
+      "ref_age": 62,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 462025,
+      "state": 27,
+      "ref_age": 57,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 462225,
+      "state": 11,
+      "ref_age": 52,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 462425,
+      "state": 27,
+      "ref_age": 47,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 462625,
+      "state": 11,
+      "ref_age": 43,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 462825,
+      "state": 3,
+      "ref_age": 38,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 844099,
+      "state": 70,
+      "ref_age": 77,
+      "max_ref_age": 102
+    },
+    {
+      "tick": 844440,
+      "state": 71,
+      "ref_age": 7,
+      "max_ref_age": 103
+    },
+    {
+      "tick": 844442,
+      "state": 67,
+      "ref_age": 9,
+      "max_ref_age": 103
+    }
+  ]
+}

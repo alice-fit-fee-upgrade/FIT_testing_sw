@@ -1,0 +1,11 @@
+\section{Later follow-up: SPI outputs held driven}
+The earlier causal attribution to FPGA pad release is superseded. It remains a timestamped observation in the historical results below, not an established root cause. Full HDMI remains FAIL; campaign coverage is unchanged.
+
+Three repeated HDMI tests with continuously enabled Kasli outputs still restart the PM SYS counter. A separate experiment with unchanged card directions and output enable confirms that twelve HDMI mode changes and idle intervals are monotonic. Delayed resets follow SPI reads1 and2 without any output release. All three signature values remain correct.
+
+The MCU--FPGA SPI registers retain scratch0 and write count33 across SYS restarts. The generated c7c42d28 design resets SYS from loss of its fixed-clock MMCM LOCK; HDMI SPI has no logical reset connection to SYS. These observations support a clock-domain reset rather than whole-chip reconfiguration. They do not identify why the clock path is disturbed or electrically prove the state of PROGRAM/INIT/DONE.
+
+Current state supersedes the earlier cleanup state: Kasli HDMI output enable1, slot6 direction mask0x00b0, SEL/SCK/MOSI driven idle0, HDMI mode0. Slot7 and analog stimuli were not changed. A final twelve-sample held-idle check is monotonic. Do not use the legacy integrated runner or global STOP/input-card cleanup on this held setup.
+
+Raw evidence and executed scripts are in the sibling system/evidence-held-spi-20261113 directory in the repository. The current station entry uses hold\_spi.py and retains output enable and card directions. No programming, persistent writes or clock-profile changes were made.
+\clearpage

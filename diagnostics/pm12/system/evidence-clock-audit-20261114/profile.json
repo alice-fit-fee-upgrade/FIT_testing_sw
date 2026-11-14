@@ -1,0 +1,73 @@
+{
+  "reference_hz_assumed": 40078700,
+  "registers": {
+    "0": "0xEB070320",
+    "1": "0xEB800321",
+    "2": "0xEB060302",
+    "3": "0xEB800303",
+    "4": "0x68840334",
+    "5": "0x40040F35",
+    "6": "0xC4FE0186",
+    "7": "0xBD42BBF7",
+    "8": "0x00001808"
+  },
+  "primary_predivide": 1,
+  "reference_divide": 1,
+  "pll_input_divide": 2,
+  "feedback_divide": 20,
+  "feedback_bypass_divide": 1,
+  "prescale": 5,
+  "synth_hz": 400787000.0,
+  "vco_hz": 2003935000.0,
+  "outputs": [
+    {
+      "index": 0,
+      "divider_code": 3,
+      "divider_enabled": true,
+      "divider": 10,
+      "frequency_hz": 40078700.0
+    },
+    {
+      "index": 1,
+      "divider_code": 64,
+      "divider_enabled": true,
+      "divider": 2,
+      "frequency_hz": 200393500.0
+    },
+    {
+      "index": 2,
+      "divider_code": 3,
+      "divider_enabled": true,
+      "divider": 10,
+      "frequency_hz": 40078700.0
+    },
+    {
+      "index": 3,
+      "divider_code": 64,
+      "divider_enabled": true,
+      "divider": 2,
+      "frequency_hz": 200393500.0
+    },
+    {
+      "index": 4,
+      "divider_code": 66,
+      "divider_enabled": false,
+      "divider": null,
+      "frequency_hz": null
+    }
+  ],
+  "firmware_sha256": "f49643c80c6189afebdaa3f7301f4ecebacb55645e60456f66831106d38b9464",
+  "table_offset": 10518,
+  "transmitted_words": [
+    "0x00001808",
+    "0xEB070320",
+    "0xEB800321",
+    "0xEB060302",
+    "0xEB800303",
+    "0x68840334",
+    "0x40040F35",
+    "0xC0FE0186",
+    "0xBD42BBF7",
+    "0xC4FE0186"
+  ]
+}
