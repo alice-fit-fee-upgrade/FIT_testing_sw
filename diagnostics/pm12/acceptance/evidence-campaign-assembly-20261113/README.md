@@ -1,3 +1,11 @@
+Individual SPI pin follow-up: temporary GPIO mode confirmed by MCU pin reads;
+SEL/SCK/MOSI separately36 cycles and selected MOSI24 cycles without observed
+reset. Full-frame controls still reproduce (2/12 confirmed before and after;
+read timeouts retained as unknown). MISO probe inconclusive because controls
+also stable after restore. Onech01 ADC capture warning retained, fresh capture
+passed. [Raw evidence](../../system/evidence-spi-pins-20261114/README.md).
+Original four-port Kasli restored, PMc7531465 unchanged, SPI stays driven.
+
 Latest selective HDMI follow-up: each of four data outputs160 isolated cycles,
 no SYS restart. Coupled SPI remains the reproducer, including at917Hz SCK.
 An apparent busy/reset overlap was caused by delayed counter readback and
@@ -15,7 +23,7 @@ correct-clock TDC qualification. USB stimulus still on PM10.
 
 # Assembly verification, fitted group9–12 — 2026-11-13
 
-[59-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
+[60-page report](report.pdf), editable [template](report.tex), [findings](assembly-findings.tex), [content](content.tex), [connection table](assembly-connections.tex), [monitor plot](monitor-assembly.png), [raw campaign](campaign-raw.tar.gz).
 
 Board PM12-K7-3A17A1B402212223. USB stimulus stays on physical10. This is assembly verification, not an unconditional board release: 30 selected cases,28 PASS,2 FAIL,59 NOT_MEASURED.
 

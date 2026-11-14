@@ -1,0 +1,46 @@
+{
+  "groups": {
+    "idle": {
+      "trials": 1,
+      "cycles": 10,
+      "counter_decreases": 0
+    },
+    "SEL": {
+      "trials": 6,
+      "cycles": 36,
+      "counter_decreases": 0
+    },
+    "SCK": {
+      "trials": 6,
+      "cycles": 36,
+      "counter_decreases": 0
+    },
+    "MOSI": {
+      "trials": 6,
+      "cycles": 36,
+      "counter_decreases": 0
+    },
+    "MOSI-selected": {
+      "trials": 3,
+      "cycles": 24,
+      "counter_decreases": 0
+    }
+  },
+  "controls": {
+    "spi_control_before": {
+      "frames": 12,
+      "counter_decreases": 2,
+      "counter_read_timeouts": 4
+    },
+    "spi_control_after": {
+      "frames": 12,
+      "counter_decreases": 2,
+      "counter_read_timeouts": 6
+    }
+  },
+  "physical_mapping_pass": true,
+  "raw_cases_validated": true,
+  "normal_spi_reproduces_both_sides": true,
+  "restored": true,
+  "scope": "Stable DC pin mapping verified by MCU; raw trials contain no complete SPI frames. Counter decreases are a conservative reset observation, not continuous MMCM/OE monitoring."
+}

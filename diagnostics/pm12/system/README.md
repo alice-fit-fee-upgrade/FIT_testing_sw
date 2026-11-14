@@ -1,3 +1,9 @@
+Latest individual-pin repeat: [evidence and limitations](evidence-spi-pins-20261114/README.md).
+SEL/SCK/MOSI independently exercised without reset; full SPI controls still
+reproduce SYS restarts. MISO constant-data comparison inconclusive. Original
+Kasli image restored; driven outputs retained. One ADC capture-coherency warning
+retained; fresh postflight passed. No external PLL changes.
+
 Selective HDMI repeat: [results and raw data](evidence-selective-20261114/README.md).
 LVDS data outputs independently stable; SPI frames reproduce SYS restarts.
 SEL/SCK/MOSI not independently controllable in the resident image. Kasli
